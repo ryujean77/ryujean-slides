@@ -1725,7 +1725,7 @@
 
     <script>
         // [설정] Google Apps Script 웹 앱 배포 URL
-        const GAS_ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbx8z3erTWvEJIZWvDnPm8TzdYTwxuKkeWSHjMS7N0r1V6u7bvxkA1Xyw9imbCD1P38h/exec"; 
+        const GAS_ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbzdeAVdWthakMd23o7V9CxvGuantgL6eUmEU3f6N-JqozEDpHaRJzfp1VN4cXxVXymQ/exec"; 
         const DOWNLOAD_TARGET_FILE = "./presentation.pptx";
 
         function openLeadModal(e) {
@@ -1772,12 +1772,18 @@
 
             try {
                 if (GAS_ENDPOINT_URL && GAS_ENDPOINT_URL.startsWith("http")) {
-                    await fetch(GAS_ENDPOINT_URL, {
+                    // 1. GET URLSearchParams Sync (100% Reliable across all browsers)
+                    const params = new URLSearchParams(payload);
+                    const getUrl = GAS_ENDPOINT_URL + (GAS_ENDPOINT_URL.includes('?') ? '&' : '?') + params.toString();
+                    fetch(getUrl, { mode: 'no-cors' }).catch(function() {});
+
+                    // 2. POST Fallback
+                    fetch(GAS_ENDPOINT_URL, {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                         body: JSON.stringify(payload)
-                    });
+                    }).catch(function() {});
                 } else {
                     console.log("[Lead Captured Locally]:", payload);
                 }
