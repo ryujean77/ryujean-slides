@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사상체질과 유전자 기반 융복합 힐링 특강 — 임동구 박사 (펜 일러스트레이션 에디션)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #ffffff;
+      font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #111111;
+    }
+
+    :root {
+      --bg-white: #ffffff;
+      --bg-light: #fcfbf9;
+      --bg-dark: #141414;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555555;
+      --text-muted: #888888;
+      --accent: #c5303c;
+      --accent-dark: #9e202b;
+      --border: #e2dcd5;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+      z-index: 1000;
+      box-shadow: 0 0 8px rgba(197, 48, 60, 0.35);
+    }
+
+    .slide-counter {
+      position: fixed;
+      bottom: 24px;
+      right: 32px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(17, 17, 17, 0.4);
+      font-variant-numeric: tabular-nums;
+      z-index: 100;
+      transition: color 0.4s ease;
+    }
+    .slide-counter.on-dark { color: rgba(255, 255, 255, 0.5); }
+
+    .hint {
+      position: fixed;
+      bottom: 24px;
+      left: 32px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      z-index: 100;
+      font-size: 12px;
+      color: rgba(17, 17, 17, 0.4);
+      transition: color 0.4s ease;
+    }
+    .hint.on-dark { color: rgba(255, 255, 255, 0.5); }
+    .hint kbd {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+      padding: 0 6px;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(17, 17, 17, 0.6);
+      background: rgba(17, 17, 17, 0.06);
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      border-radius: 6px;
+    }
+
+    .fullscreen-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(17, 17, 17, 0.06);
+      border: 1px solid rgba(17, 17, 17, 0.1);
+      border-radius: 10px;
+      color: rgba(17, 17, 17, 0.5);
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 100;
+      transition: all 0.2s ease;
+    }
+    .fullscreen-btn:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    /* Lead Download Button & Modal Styling */
+    .btn-lead-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #c5303c 0%, #e11d48 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(197, 48, 60, 0.35);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+    }
+    .btn-lead-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197, 48, 60, 0.5);
+      background: linear-gradient(135deg, #9e202b 0%, #be123c 100%);
+    }
+    .top-lead-btn {
+      position: fixed;
+      top: 20px;
+      right: 74px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 16px;
+      height: 40px;
+      background: rgba(197, 48, 60, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 100;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(197, 48, 60, 0.25);
+    }
+    .top-lead-btn:hover {
+      background: #c5303c;
+      transform: translateY(-1px);
+    }
+
+    /* Modal Backdrop */
+    .lead-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s;
+    }
+    .lead-modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lead-modal-card {
+      position: relative;
+      width: 90%;
+      max-width: 440px;
+      background: #18181b;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+      transform: scale(0.92) translateY(15px);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      color: #f4f4f5;
+    }
+    .lead-modal-overlay.active .lead-modal-card {
+      transform: scale(1) translateY(0);
+    }
+    .lead-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      border-radius: 50%;
+      color: #a1a1aa;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lead-modal-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+    .lead-modal-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .lead-modal-icon { font-size: 32px; margin-bottom: 8px; }
+    .lead-modal-title { font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+    .lead-modal-desc { font-size: 13px; color: #a1a1aa; line-height: 1.45; }
+    .lead-form-group { margin-bottom: 14px; text-align: left; }
+    .lead-form-label { display: block; font-size: 12px; font-weight: 700; color: #d4d4d8; margin-bottom: 6px; }
+    .lead-form-label span.req { color: #f43f5e; }
+    .lead-form-input {
+      width: 100%;
+      padding: 11px 14px;
+      background: #27272a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .lead-form-input:focus {
+      outline: none;
+      border-color: #f43f5e;
+      background: #1f1f23;
+      box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.2);
+    }
+    .lead-form-input::placeholder { color: #71717a; }
+    .lead-submit-btn {
+      width: 100%;
+      padding: 13px;
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #c5303c 0%, #e11d48 100%);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .lead-submit-btn:hover {
+      background: linear-gradient(135deg, #9e202b 0%, #be123c 100%);
+      box-shadow: 0 4px 14px rgba(197, 48, 60, 0.4);
+    }
+    .lead-privacy-note {
+      font-size: 11px;
+      color: #71717a;
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.35;
+    }
+
+    .deck {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 90px;
+      opacity: 0;
+      visibility: hidden;
+      overflow-y: auto;
+      transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), visibility 0.5s;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slide-white { background: var(--bg-white); color: var(--text-primary); }
+    .slide-light { background: var(--bg-light); color: var(--text-primary); }
+    .slide-dark  { background: var(--bg-dark); color: #ffffff; }
+
+    .slide .a {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .slide.active .a {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .slide.active .a:nth-child(1) { transition-delay: 0.1s; }
+    .slide.active .a:nth-child(2) { transition-delay: 0.2s; }
+    .slide.active .a:nth-child(3) { transition-delay: 0.3s; }
+
+    /* Title Slide (Dr. Yim's Photo Right Hero) */
+    .title-slide {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 0;
+      gap: 0;
+    }
+    .title-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 80px;
+      gap: 20px;
+    }
+    .title-left .category-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      background: rgba(197, 48, 60, 0.08);
+      padding: 6px 16px;
+      border-radius: 4px;
+      width: fit-content;
+    }
+    .title-left .title-xl {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+    .title-left .title-sub {
+      font-size: 17.5px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 620px;
+    }
+    .title-left .title-meta {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+    .title-right {
+      width: 40%;
+      min-width: 380px;
+      position: relative;
+      overflow: hidden;
+      background: #111111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .title-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .title-right .photo-caption {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      padding: 12px 18px;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+      color: #ffffff;
+    }
+    .photo-caption .name { font-size: 16px; font-weight: 800; }
+    .photo-caption .role { font-size: 12px; color: #cbd5e1; margin-top: 2px; }
+
+    /* Section Header */
+    .section-header {
+      width: 100%;
+      max-width: 1180px;
+      margin-bottom: 24px;
+    }
+    .tag-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .heading-lg {
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+
+    /* Pen Illustration Split Layout */
+    .split-pen-container {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+      max-width: 1180px;
+    }
+    .pen-frame {
+      width: 100%;
+      height: 380px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      background: #fbf9f5;
+    }
+    .pen-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .pen-desc-box h3 {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .pen-desc-box p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .pen-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pen-bullets li {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      padding-left: 20px;
+      position: relative;
+    }
+    .pen-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 1px;
+    }
+
+    /* Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      width: 100%;
+      max-width: 1180px;
+    }
+    .mag-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 6px;
+      padding: 26px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .mag-card.featured {
+      background: #fdfbf7;
+      border-top: 5px solid var(--accent);
+      box-shadow: 0 8px 24px rgba(197, 48, 60, 0.08);
+    }
+    .mag-card .card-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+    .mag-card h3 { font-size: 18px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+    .mag-card p { font-size: 13.5px; line-height: 1.6; color: var(--text-secondary); }
+    .mag-card .card-tag {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 3px;
+      background: rgba(197, 48, 60, 0.08);
+      color: var(--accent);
+      width: fit-content;
+    }
+
+    /* Comparison */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      width: 100%;
+      max-width: 1180px;
+    }
+    .compare-col {
+      padding: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .compare-col.col-before { background: #ffffff; }
+    .compare-col.col-after {
+      background: var(--bg-dark);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.3);
+    }
+    .compare-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 12px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .col-before .compare-label { background: rgba(17, 17, 17, 0.06); color: var(--text-muted); }
+    .col-after .compare-label { background: rgba(197, 48, 60, 0.25); color: var(--accent); }
+    .compare-col h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
+    .col-before h3 { color: var(--text-primary); }
+    .col-after h3 { color: #ffffff; }
+    .compare-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .compare-col ul li { font-size: 14.5px; line-height: 1.6; padding-left: 18px; position: relative; }
+    .col-before ul li { color: var(--text-secondary); }
+    .col-after ul li { color: rgba(255, 255, 255, 0.85); }
+    .compare-col ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .col-before ul li::before { background: #cbd5e1; }
+    .col-after ul li::before { background: var(--accent); }
+
+    /* Interactive Poster Slider */
+    .poster-gallery-wrapper {
+      width: 100%;
+      max-width: 1180px;
+      background: var(--bg-dark);
+      border-radius: 12px;
+      padding: 26px 36px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .poster-gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .poster-gallery-title { font-size: 20px; font-weight: 800; }
+    .poster-slider-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .poster-preview-stage {
+      flex: 1;
+      display: flex;
+      gap: 20px;
+      overflow: hidden;
+      justify-content: center;
+    }
+    .poster-item {
+      width: 250px;
+      height: 350px;
+      background: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.12);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: zoom-in;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .poster-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(230, 57, 70, 0.25);
+    }
+    .poster-zoom-hint {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: all 0.25s ease;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .poster-item:hover .poster-zoom-hint {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .poster-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: top;
+      background: #000;
+      transition: transform 0.4s ease;
+    }
+    .poster-item:hover .poster-img {
+      transform: scale(1.04);
+    }
+    .poster-meta {
+      padding: 8px 12px;
+      background: #0f172a;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .poster-meta-title { font-size: 11.5px; font-weight: 700; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .poster-meta-venue { font-size: 11px; color: var(--accent); font-weight: 600; }
+    .gallery-nav-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .gallery-nav-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    /* Poster Lightbox Modal */
+    .poster-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 9, 12, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+      padding: 24px;
+    }
+    .poster-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .poster-modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: scale(0.92) translateY(12px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .poster-modal.active .poster-modal-content {
+      transform: scale(1) translateY(0);
+    }
+    .poster-modal-img-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 74vh;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.15);
+      background: #0b0f19;
+    }
+    .poster-modal-img-wrap img {
+      max-height: 74vh;
+      max-width: 80vw;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .poster-modal-close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+    .poster-modal-close:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: rotate(90deg) scale(1.1);
+    }
+    .poster-modal-nav {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+      line-height: 1;
+    }
+    .poster-modal-nav.prev { left: -72px; }
+    .poster-modal-nav.next { right: -72px; }
+    .poster-modal-nav:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-50%) scale(1.1);
+    }
+    .poster-modal-info {
+      margin-top: 14px;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 9px 22px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .poster-modal-badge {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #ffffff;
+      background: var(--accent);
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    .poster-modal-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    .poster-modal-count {
+      font-size: 12px;
+      font-weight: 600;
+      color: #94a3b8;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+      padding-left: 14px;
+    }
+
+    /* Closing */
+    .closing-slide { text-align: center; }
+    .closing-title { font-size: 64px; font-weight: 900; letter-spacing: -0.04em; color: var(--text-primary); margin-bottom: 12px; }
+    .closing-title .accent-dot { color: var(--accent); }
+    .closing-sub { font-size: 19px; font-weight: 300; color: var(--text-secondary); max-width: 680px; margin-bottom: 32px; line-height: 1.6; }
+    .closing-links { display: flex; gap: 20px; align-items: center; justify-content: center; }
+    .closing-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 8px 20px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+    .closing-link:hover { border-color: var(--accent); color: var(--accent); }
+  
+    /* Cover & Toolbar Download CTA */
+    .cover-cta-group {
+      margin-top: 24px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .btn-download-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 28px;
+      background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(194, 65, 12, 0.35);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+    .btn-download-hero:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 30px rgba(194, 65, 12, 0.5);
+      background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+    }
+    .btn-download-hero .btn-icon {
+      font-size: 18px;
+    }
+    .btn-download-hero small {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-left: 4px;
+    }
+
+    .toolbar-download-btn {
+      position: fixed;
+      bottom: 24px;
+      left: 32px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    .toolbar-download-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .toolbar-download-btn.on-dark {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Lead Capture Modal */
+    .download-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 9, 12, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 20000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+      padding: 20px;
+    }
+    .download-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .download-modal-card {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      background: #131b2e;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 36px 32px;
+      color: #ffffff;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(194, 65, 12, 0.2);
+      transform: scale(0.92) translateY(12px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .download-modal.active .download-modal-card {
+      transform: scale(1) translateY(0);
+    }
+    .download-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #94a3b8;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .download-modal-close:hover {
+      background: var(--accent);
+      color: #ffffff;
+      transform: rotate(90deg);
+    }
+    .download-modal-header {
+      margin-bottom: 24px;
+    }
+    .download-modal-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffffff;
+      background: var(--accent);
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .download-modal-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .download-modal-desc {
+      font-size: 13.5px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .download-modal-desc strong {
+      color: #e2e8f0;
+    }
+    .download-modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #cbd5e1;
+    }
+    .form-group label .req {
+      color: #f87171;
+      margin-left: 2px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 11px 14px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.25);
+      background: rgba(15, 23, 42, 0.95);
+    }
+    .form-group input::placeholder {
+      color: #64748b;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .form-privacy {
+      background: rgba(15, 23, 42, 0.4);
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .privacy-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      color: #94a3b8;
+      cursor: pointer;
+      line-height: 1.4;
+    }
+    .privacy-label input {
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: var(--accent);
+    }
+    .btn-submit-lead {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 20px rgba(194, 65, 12, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .btn-submit-lead:hover {
+      background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(194, 65, 12, 0.45);
+    }
+    .btn-submit-lead:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .lead-msg {
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .lead-msg.success {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+    }
+    .lead-msg.error {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+    }
+    .download-modal-footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11.5px;
+      color: #64748b;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progress"></div>
+  <div class="slide-counter" id="counter">1 / 16</div>
+  <div class="hint" id="hint">
+    <kbd>&larr;</kbd><kbd>&rarr;</kbd> navigate <span style="margin: 0 4px">•</span> <kbd>F</kbd> fullscreen
+  </div>
+  <button class="top-lead-btn" onclick="openLeadModal(event)">📥 제안서 다운로드</button>
+  <button class="fullscreen-btn" id="fs-btn" onclick="toggleFullscreen()">&#x26F6;</button>
+
+  <div class="deck" id="deck">
+
+    <!-- ==================== SLIDE 1: TITLE (DR. YIM DONG-GU PHOTO HERO) ==================== -->
+    <div class="slide slide-white active title-slide" data-notes="대표 강사 임동구 박사의 사상체질 융복합 라이프케어 강연 제안서 표지입니다.">
+      <div class="title-left">
+        <span class="a category-tag">사상체질 기반 융복합 라이프케어 특강</span>
+        <h1 class="a title-xl">체질을 알면 사람과<br>건강, 미래가 보인다</h1>
+        <p class="a title-sub">생명공학 유전자(에이트진)와 사상체질을 주축으로, 아로마와 패션테라피를 융합한 도서관 맞춤형 인문학 힐링 솔루션</p>
+        <p class="a title-meta">대표 강사 임동구 박사 (Dr. Yim's 체질라이프스타일연구소) &mdash; 2026.08</p>
+        <div class="a" style="margin-top: 14px;">
+          <button class="btn-lead-download" onclick="openLeadModal(event)">
+            <span>📥 강연 제안서 원본 (PPTX) 다운로드</span>
+          </button>
+        </div>
+      </div>
+      <div class="title-right">
+        <img src="./assets/dr_yim_cover_photo.png" alt="Dr. Yim Dong-gu Photo" />
+        <div class="photo-caption">
+          <div class="name">대표 강사 임동구 박사</div>
+          <div class="role">식품공학 박사 &bull; 『에이트진』 저자 &bull; 누적 1,500회 출강</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 2: AGENDA ==================== -->
+    <div class="slide slide-white" data-notes="목차를 안내합니다.">
+      <div class="section-header a">
+        <span class="tag-label">TABLE OF CONTENTS</span>
+        <h2 class="heading-lg">목차 (Program Contents)</h2>
+      </div>
+      <div class="a cards-grid">
+        <div class="mag-card featured">
+          <div class="card-icon">01 ★ 주 콘텐츠</div>
+          <h3>사상체질 &amp; 유전자 의학</h3>
+          <p>임동구 박사의 8-Gene 모델, 선천적 기질 진단, 체질식 및 마이크로바이옴 건강 관리</p>
+          <span class="card-tag">핵심 주 강연</span>
+        </div>
+        <div class="mag-card">
+          <div class="card-icon">02 ✦ 부수 융합 1</div>
+          <h3>패션테라피 인문학</h3>
+          <p>남미화 박사의 의복과 색채 심리 치유, 퍼스널 컬러 및 자존감 회복 워크숍</p>
+          <span class="card-tag">외면 &bull; 심리 케어</span>
+        </div>
+        <div class="mag-card">
+          <div class="card-icon">03 ✦ 부수 융합 2</div>
+          <h3>아로마 오감 힐링</h3>
+          <p>유정근 소장의 체질별 에센셜 오일 처방, 뇌파 안정 및 스트레스 완화 실습</p>
+          <span class="card-tag">오감 &bull; 감성 케어</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 3: MAIN 1 - SASANG & DNA (PEN ART) ==================== -->
+    <div class="slide slide-light" data-notes="주 콘텐츠인 사상체질과 유전자 과학입니다.">
+      <div class="section-header a">
+        <span class="tag-label">01. CORE CONTENT &bull; 주 콘텐츠</span>
+        <h2 class="heading-lg">사상체질과 유전자(에이트진)의 과학적 융복합</h2>
+      </div>
+      <div class="a split-pen-container">
+        <div class="pen-frame">
+          <img src="./assets/pen_sasang_constitution.jpg" alt="Pen Illustration of Sasang Constitution and DNA" />
+        </div>
+        <div class="pen-desc-box">
+          <h3>선천적 유전자와 사상체질의 만남</h3>
+          <p>인간은 누구나 장기의 대소(大小)와 유전적 특이성을 가지고 태어납니다. 임동구 박사의 에이트진(8-Gene) 이론은 나의 체질 기질을 정확히 진단하여 가장 이상적인 라이프스타일을 설계합니다.</p>
+          <ul class="pen-bullets">
+            <li><strong>체질 기질 특이성 진단:</strong> 태양·태음·소양·소음인 맞춤 분석</li>
+            <li><strong>편식의 과학(체질식):</strong> 나에게 약이 되는 음식과 독이 되는 음식 구별</li>
+            <li><strong>장-뇌축(Gut-Brain):</strong> 마이크로바이옴 정상화로 뇌파 안정 및 치매 예방</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 4: BESTSELLER EIGHT GENES ==================== -->
+    <div class="slide slide-white" data-notes="베스트셀러 에이트진 저자 직강 경쟁력입니다.">
+      <div class="section-header a">
+        <span class="tag-label">PROVEN KNOWLEDGE</span>
+        <h2 class="heading-lg">베스트셀러 『에이트진』 기반 저자 직강</h2>
+      </div>
+      <div class="a cards-grid">
+        <div class="mag-card">
+          <span class="card-icon">&#x1F4D6;</span>
+          <h3>4대 서점 건강 베스트셀러</h3>
+          <p>교보문고, 예스24, 알라딘, 인터파크 건강 분야 베스트셀러 기록. 도서관 장서 대출과 직결되는 신뢰의 텍스트.</p>
+          <span class="card-tag">도서관 연계 1위</span>
+        </div>
+        <div class="mag-card">
+          <span class="card-icon">&#x1F9EC;</span>
+          <h3>생명공학 박사의 과학적 접근</h3>
+          <p>브라질 UNICAMP 식품공학 박사이자 전 한국생명공학연구원 연구원으로서 체질의학을 현대 생명과학으로 입증.</p>
+          <span class="card-tag">학술적 신뢰성</span>
+        </div>
+        <div class="mag-card">
+          <span class="card-icon">&#x1F3DF;&#xFE0F;</span>
+          <h3>누적 1,500회 현장 검증</h3>
+          <p>삼성전자 반도체사업부 단일 400회차, 전국 교육청 및 공공도서관 30차수 이상 출강 (평균 만족도 4.8 / 5.0).</p>
+          <span class="card-tag">만족도 4.8 / 5.0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 5: SUPPORT 1 - FASHION THERAPY (PEN ART) ==================== -->
+    <div class="slide slide-light" data-notes="부수 콘텐츠 1인 남미화 박사의 패션테라피 인문학입니다.">
+      <div class="section-header a">
+        <span class="tag-label">02. SUPPORTING CONTENT 1 &bull; 부수 융합</span>
+        <h2 class="heading-lg">남미화 박사의 패션테라피 인문학</h2>
+      </div>
+      <div class="a split-pen-container">
+        <div class="pen-desc-box">
+          <h3>"옷은 제2의 피부이자 영혼의 언어입니다"</h3>
+          <p>사상체질로 내면의 기질을 알았다면, 패션테라피는 외면의 색채와 스타일을 통해 자존감을 회복하고 당당한 에너지를 발산하도록 돕습니다.</p>
+          <ul class="pen-bullets">
+            <li><strong>색채 심리학:</strong> 내면의 감정을 치유하는 퍼스널 컬러 큐레이팅</li>
+            <li><strong>자존감 회복 코디:</strong> 체형 보완을 넘어 자기 효능감을 극대화하는 스타일링</li>
+            <li><strong>도서관 인문학 연계:</strong> 명화와 문학 속 의복 철학을 다루는 감성 특강</li>
+          </ul>
+        </div>
+        <div class="pen-frame">
+          <img src="./assets/pen_fashion_therapy.jpg" alt="Pen Illustration of Fashion Therapy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 6: SUPPORT 2 - AROMATHERAPY (PEN ART) ==================== -->
+    <div class="slide slide-white" data-notes="부수 콘텐츠 2인 유정근 소장의 아로마테라피입니다.">
+      <div class="section-header a">
+        <span class="tag-label">03. SUPPORTING CONTENT 2 &bull; 부수 융합</span>
+        <h2 class="heading-lg">유정근 소장의 아로마테라피 오감 힐링</h2>
+      </div>
+      <div class="a split-pen-container">
+        <div class="pen-frame">
+          <img src="./assets/pen_aroma_botanical.jpg" alt="Pen Illustration of Aromatherapy & Botanical Healing" />
+        </div>
+        <div class="pen-desc-box">
+          <h3>후각을 통해 뇌를 깨우는 자연 치유 솔루션</h3>
+          <p>식물의 고유한 생명력이 담긴 에센셜 오일과 체질별 향기 큐레이팅을 결합하여, 심신을 안정시키고 스트레스를 즉각적으로 해소합니다.</p>
+          <ul class="pen-bullets">
+            <li><strong>체질 맞춤 향기 처방:</strong> 태양·태음·소양·소음인 맞춤 에센셜 오일</li>
+            <li><strong>오감 자극 힐링 워크숍:</strong> 강의실 가득 퍼지는 아로마 시향 및 실습</li>
+            <li><strong>가족 소통 매개체:</strong> 가족 구성원 간의 기질 차이 이해와 힐링</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 7: LIBRARY HUMANITIES (PEN ART) ==================== -->
+    <div class="slide slide-light" data-notes="도서관 인문학 융합 철학입니다.">
+      <div class="section-header a">
+        <span class="tag-label">04. LIBRARY PHILOSOPHY</span>
+        <h2 class="heading-lg">도서관에서 만나는 '나를 찾는 인문학 여행'</h2>
+      </div>
+      <div class="a split-pen-container">
+        <div class="pen-desc-box">
+          <h3>책을 넘어 삶을 치유하는 공공도서관</h3>
+          <p>공공도서관은 단순한 지식 전달 공간을 넘어 지역 주민의 삶의 질과 정신 건강을 북돋는 복합 문화 치유 공간으로 진화하고 있습니다.</p>
+          <ul class="pen-bullets">
+            <li><strong>지식과 체험의 결합:</strong> 인문학 도서와 연계된 참여형 힐링 워크숍</li>
+            <li><strong>전 세대 맞춤 케어:</strong> 청년 진로부터 여성 자존감, 시니어 건강까지</li>
+            <li><strong>도서관 이용 활성화:</strong> 강연 후 관련 장서 대출 및 재방문율 극대화</li>
+          </ul>
+        </div>
+        <div class="pen-frame">
+          <img src="./assets/pen_library_humanities.jpg" alt="Pen Illustration of Library Humanities" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 8: 3-TRACK CURRICULUM ==================== -->
+    <div class="slide slide-white" data-notes="3-Track 상세 커리큘럼입니다.">
+      <div class="section-header a">
+        <span class="tag-label">CURRICULUM OVERVIEW</span>
+        <h2 class="heading-lg">생애주기별 3-Track 맞춤형 커리큘럼</h2>
+      </div>
+      <div class="a cards-grid">
+        <div class="mag-card featured">
+          <span class="card-icon">&#x1F9EC;</span>
+          <h3>Track A. 2030 청년 &bull; 학부모</h3>
+          <p><strong>[주] 임동구 박사:</strong> 사상체질 &bull; 유전자 기반 자기이해, 학습법 및 업무 스타일 분석, 미래 진로 브랜딩 코칭.</p>
+          <span class="card-tag">체질 &bull; 진로 코칭</span>
+        </div>
+        <div class="mag-card">
+          <span class="card-icon">&#x1F457;</span>
+          <h3>Track B. 여성 &bull; 일반 구민</h3>
+          <p><strong>[부] 남미화 박사:</strong> 패션테라피 인문학, 퍼스널 컬러 심리, 체형 맞춤 스타일링 및 자존감 회복 워크숍.</p>
+          <span class="card-tag">패션 &bull; 자존감 회복</span>
+        </div>
+        <div class="mag-card">
+          <span class="card-icon">&#x1F33F;</span>
+          <h3>Track C. 4060 시니어 힐링</h3>
+          <p><strong>[주/부] 임동구 &bull; 유정근:</strong> 체질별 건강 리모델링, 마이크로바이옴 치매 예방, 아로마 오감 힐링 실습.</p>
+          <span class="card-tag">100세 건강 &bull; 아로마</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 9: FACULTY ==================== -->
+    <div class="slide slide-light" data-notes="전문 강사진 프로필입니다.">
+      <div class="section-header a">
+        <span class="tag-label">EXPERT FACULTY</span>
+        <h2 class="heading-lg">분야별 최고 권위자 강사진 구성</h2>
+      </div>
+      <div class="a cards-grid">
+        <div class="mag-card featured">
+          <span class="card-icon">&#x1F468;&#x200D;&#x1F52C;</span>
+          <h3>임동구 박사 (대표 주강사)</h3>
+          <p>브라질 UNICAMP 식품공학 박사 / 전 한국생명공학연구원 연구원 / 베스트셀러 『에이트진』 저자 / 지역도서관 30차수+, 삼성전자 400차수 등 1,500회 출강</p>
+          <span class="card-tag">식품공학 &bull; 사상체질</span>
+        </div>
+        <div class="mag-card">
+          <span class="card-icon">&#x1F457;</span>
+          <h3>남미화 박사 (패션테라피)</h3>
+          <p>퍼스널 브랜딩 &bull; 패션 심리치료 전문가 / 의복과 컬러를 통한 자존감 회복 프로그램 창안 / 전국 지자체 및 평생교육원 인기 강사</p>
+          <span class="card-tag">패션테라피 &bull; 자존감</span>
+        </div>
+        <div class="mag-card">
+          <span class="card-icon">&#x1F33F;</span>
+          <h3>유정근 소장 (아로마힐링)</h3>
+          <p>한국체질라이프진흥원 이사장 / 오일랩 대표 / 동원대 평생교육원 CEO과정 교수 / 서울교통공사 &bull; 농심 &bull; 롯데 등 600회 출강 (만족도 4.8점)</p>
+          <span class="card-tag">아로마테라피 &bull; 힐링</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 10: METRICS ==================== -->
+    <div class="slide slide-white" data-notes="검증된 강연 실적 지표입니다.">
+      <div class="section-header a">
+        <span class="tag-label">PROVEN TRACK RECORD</span>
+        <h2 class="heading-lg">숫자로 입증된 안정적인 강연 품질</h2>
+      </div>
+      <div class="a cards-grid">
+        <div class="mag-card" style="border-top-color:var(--accent);">
+          <div style="font-size:42px; font-weight:900; color:var(--accent); margin-bottom:8px;">30+</div>
+          <h3>전국 공공도서관</h3>
+          <p>광교홍재도서관, 해운대도서관, 구례도서관 등 30차수 이상 검증</p>
+        </div>
+        <div class="mag-card" style="border-top-color:var(--accent);">
+          <div style="font-size:42px; font-weight:900; color:var(--accent); margin-bottom:8px;">1,500+</div>
+          <h3>누적 출강 횟수</h3>
+          <p>교육청, 연수원, 지자체, 공공도서관, 삼성전자 400회차 총괄</p>
+        </div>
+        <div class="mag-card" style="border-top-color:var(--accent);">
+          <div style="font-size:42px; font-weight:900; color:var(--accent); margin-bottom:8px;">4.8 / 5.0</div>
+          <h3>평균 강의 만족도</h3>
+          <p>수강생의 98%가 가족과 지인에게 추천하는 힐링 프로그램</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 11: POSTER GALLERY ==================== -->
+    <div class="slide slide-dark" data-notes="전국 도서관 및 기관 실제 강연 포스터 갤러리입니다.">
+      <div class="poster-gallery-wrapper a">
+        <div class="poster-gallery-header">
+          <div>
+            <div class="poster-gallery-title">전국 공공도서관 &bull; 지자체 실제 강연 포스터 레퍼런스</div>
+            <div style="font-size:13px; color:#94a3b8;">좌우 화살표를 눌러 실제 현장에서 운영된 18종의 포스터를 확인하실 수 있습니다.</div>
+          </div>
+          <div style="font-size:12px; font-weight:700; color:var(--accent);" id="poster-indicator">1 - 3 / 18</div>
+        </div>
+
+        <div class="poster-slider-container">
+          <button class="gallery-nav-btn" onclick="prevPoster()">&#x2190;</button>
+          <div class="poster-preview-stage" id="poster-stage">
+            <!-- Dynamic posters -->
+          </div>
+          <button class="gallery-nav-btn" onclick="nextPoster()">&#x2192;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 12: OPERATION OPTIONS ==================== -->
+    <div class="slide slide-light" data-notes="도서관 일정별 유연한 운영 모델입니다.">
+      <div class="section-header a">
+        <span class="tag-label">OPERATION MODELS</span>
+        <h2 class="heading-lg">도서관 일정과 예산에 맞춘 유연한 편성안</h2>
+      </div>
+      <div class="a cards-grid">
+        <div class="mag-card">
+          <span class="card-icon">&#x26A1;</span>
+          <h3>1회 90분 단기 특강</h3>
+          <p>도서관 주간, 독서의 달, 인문학 아카데미 등 대규모 이용자 대상 대중 특강.</p>
+          <span class="card-tag">기획 특강 추천</span>
+        </div>
+        <div class="mag-card">
+          <span class="card-icon">&#x1F4C5;</span>
+          <h3>4주 심화 워크숍</h3>
+          <p>사상체질 진단 &rarr; 패션테라피 &rarr; 아로마 실습 &rarr; 자존감 코칭 소규모 집중반.</p>
+          <span class="card-tag">월간 테마 강좌</span>
+        </div>
+        <div class="mag-card">
+          <span class="card-icon">&#x1F3AF;</span>
+          <h3>8주 정규 아카데미</h3>
+          <p>도서관 정기 문화학기 대표 킬러 콘텐츠로 운영하는 생애주기별 정규 과정.</p>
+          <span class="card-tag">정규 학기 편성</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 13: CLOSING ==================== -->
+    <div class="slide slide-white closing-slide" data-notes="마무리 제안 슬라이드입니다.">
+      <h1 class="a closing-title">도서관에서 시작되는 행복한 변화<span class="accent-dot">.</span></h1>
+      <p class="a closing-sub">체질을 알면 건강이 보이고, 스타일을 입으면 자존감이 피어납니다.<br><strong>도서관 맞춤형 특별 기획 강연</strong>으로 구민들의 뜨거운 호응과 높은 만족도를 이끌어내 보세요.</p>
+      <div class="a closing-links">
+        <a class="closing-link" href="#">대표 강사 임동구 박사</a>
+        <a class="closing-link" href="#">Dr. Yim's 체질라이프스타일연구소</a>
+        <a class="closing-link" href="mailto:jean@eglslab.com">문의 : jean@eglslab.com</a>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <!-- ==================== LEAD CAPTURE & DOWNLOAD MODAL ==================== -->
+  <div id="download-modal" class="download-modal" onclick="closeDownloadModal(event)">
+    <div class="download-modal-card" onclick="event.stopPropagation()">
+      <button class="download-modal-close" onclick="closeDownloadModal()" title="닫기 (ESC)">✕</button>
+      
+      <div class="download-modal-header">
+        <div class="download-modal-badge">PROPOSAL DOWNLOAD</div>
+        <h2 class="download-modal-title">강연 제안서 다운로드 신청</h2>
+        <p class="download-modal-desc">성함과 이메일을 입력해 주시면 <strong>'임동구 박사 사상체질 융복합 라이프케어 강연제안서(PPTX)'</strong> 원본 파일을 즉시 다운로드하실 수 있습니다.</p>
+      </div>
+
+      <form id="lead-form" class="download-modal-form" onsubmit="handleLeadSubmit(event)">
+        <div class="form-group">
+          <label for="lead-name">이름 (성함) <span class="req">*</span></label>
+          <input type="text" id="lead-name" placeholder="예: 홍길동 (도서관 기획팀장)" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="lead-email">이메일 주소 <span class="req">*</span></label>
+          <input type="email" id="lead-email" placeholder="예: library@example.go.kr" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lead-org">소속 기관 / 도서관명</label>
+            <input type="text" id="lead-org" placeholder="예: 00구립도서관" />
+          </div>
+          <div class="form-group">
+            <label for="lead-phone">연락처 (선택)</label>
+            <input type="tel" id="lead-phone" placeholder="예: 010-1234-5678" />
+          </div>
+        </div>
+
+        <div class="form-privacy">
+          <label class="privacy-label">
+            <input type="checkbox" id="lead-consent" checked required />
+            <span>개인정보 수집 및 제안서 제공/안내 목적 활용에 동의합니다.</span>
+          </label>
+        </div>
+
+        <button type="submit" id="btn-submit-lead" class="btn-submit-lead">
+          <span id="btn-text">🚀 제안서 다운로드 받기</span>
+        </button>
+
+        <div id="lead-msg" class="lead-msg" style="display:none;"></div>
+      </form>
+
+      <div class="download-modal-footer">
+        <span>🔒 입력하신 정보는 제안서 발송 및 구글 시트 다운로드 신청자 명단에 안전하게 저장됩니다.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== POSTER LIGHTBOX MODAL ==================== -->
+  <div id="poster-modal" class="poster-modal" onclick="closePosterModal(event)">
+    <div class="poster-modal-content" onclick="event.stopPropagation()">
+      <button class="poster-modal-close" onclick="closePosterModal()" title="닫기 (ESC)">✕</button>
+      <button class="poster-modal-nav prev" onclick="modalPrevPoster()" title="이전 포스터 (←)">‹</button>
+      <div class="poster-modal-img-wrap">
+        <img id="poster-modal-img" src="" alt="확대 포스터" />
+      </div>
+      <button class="poster-modal-nav next" onclick="modalNextPoster()" title="다음 포스터 (→)">›</button>
+      <div class="poster-modal-info">
+        <span class="poster-modal-badge" id="poster-modal-venue">광교홍재도서관</span>
+        <h3 class="poster-modal-title" id="poster-modal-title">제60회 도서관주간 맞춤형 특강</h3>
+        <span class="poster-modal-count" id="poster-modal-count">1 / 18</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var deck = document.getElementById('deck');
+      var slides = Array.from(deck.querySelectorAll('.slide'));
+      var total = slides.length;
+      var current = 0;
+
+      var progressBar = document.getElementById('progress');
+      var counter = document.getElementById('counter');
+      var hintEl = document.getElementById('hint');
+      var fsBtn = document.getElementById('fs-btn');
+
+      // 18 Actual Lecture Posters Data
+      var posterList = [
+        { file: "KakaoTalk_Photo_2026-08-21-01-42-01.jpeg", title: "제60회 도서관주간 맞춤형 특강", venue: "광교홍재도서관" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-42-49.jpeg", title: "주제 인문학 아카데미 특강", venue: "부산 해운대도서관" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-44-14.jpeg", title: "2025 들꽃 인문학 아카데미", venue: "전남 구례도서관" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-43-49.png",  title: "체질식 & 장마이크로바이옴 건강법", venue: "의령교육지원청" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-44-51.jpeg", title: "신중년 생애설계 체질 소통 아카데미", venue: "안양시 베이비부머지원센터" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-45-55.jpeg", title: "유전자 & 사상체질 자기개발 트렌드", venue: "KBS교육콘텐츠개발원" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-42-18.jpeg", title: "체질로 찾는 진로·취업 코칭", venue: "에이엔아카데미 평생교육원" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-42-33.jpeg", title: "Gene Code 글로벌 적성 코칭", venue: "주상파울루 한국교육원" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-43-15.jpeg", title: "『에이트진』 건강 베스트셀러 저자 직강", venue: "교보문고·예스24·알라딘" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-45-38.png",  title: "체질을 알면 미래가 보인다", venue: "대천한화콘도 명사 초청특강" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-44-03.jpeg", title: "나를 찾아 떠나는 감성 힐링여행", venue: "노랑풍선 VIP 초청특강" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-45-15.png",  title: "AI 시대 맞춤형 웰니스 큐레이팅", venue: "체질라이프스타일연구소" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-43-03.png",  title: "체질 라이프스타일 힐링 아카데미", venue: "한국체질라이프진흥원" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-43-28.png",  title: "체질을 알면 사람이 보인다", venue: "전국 지자체 평생학습원" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-43-38.png",  title: "사상체질 기반 소통 & 스트레스 힐링", venue: "기업 및 공공기관 연수원" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-44-40.jpeg", title: "사상체질 맞춤형 건강 큐레이팅", venue: "전국 도서관 문화강좌" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-45-01.png",  title: "체질 라이프스타일 & 웰니스 테라피", venue: "웰니스 아카데미" },
+        { file: "KakaoTalk_Photo_2026-08-21-01-45-25.png",  title: "오감 힐링 아로마 & 사상체질 특강", venue: "문화센터 정규 아카데미" }
+      ];
+
+      var posterIndex = 0;
+      var stage = document.getElementById('poster-stage');
+      var indicator = document.getElementById('poster-indicator');
+
+      // Modal Elements
+      var modal = document.getElementById('poster-modal');
+      var modalImg = document.getElementById('poster-modal-img');
+      var modalVenue = document.getElementById('poster-modal-venue');
+      var modalTitle = document.getElementById('poster-modal-title');
+      var modalCount = document.getElementById('poster-modal-count');
+      var currentModalIdx = 0;
+
+      function renderPosters() {
+        if (!stage) return;
+        stage.innerHTML = '';
+        var itemsToShow = 3;
+        for (var i = 0; i < itemsToShow; i++) {
+          var pIdx = (posterIndex + i) % posterList.length;
+          var item = posterList[pIdx];
+          var card = document.createElement('div');
+          card.className = 'poster-item';
+          card.setAttribute('data-idx', pIdx);
+          card.onclick = (function(idx) {
+            return function(e) {
+              e.stopPropagation();
+              openPosterModal(idx);
+            };
+          })(pIdx);
+
+          card.innerHTML = 
+            '<span class="poster-zoom-hint">🔍 클릭하여 크게 보기</span>' +
+            '<img class="poster-img" src="./posters/' + item.file + '" alt="' + item.title + '" />' +
+            '<div class="poster-meta">' +
+              '<div class="poster-meta-title">' + item.title + '</div>' +
+              '<div class="poster-meta-venue">' + item.venue + '</div>' +
+            '</div>';
+          stage.appendChild(card);
+        }
+        indicator.textContent = (posterIndex + 1) + ' - ' + Math.min(posterIndex + 3, posterList.length) + ' / ' + posterList.length;
+      }
+
+      window.nextPoster = function () {
+        posterIndex = (posterIndex + 1) % posterList.length;
+        renderPosters();
+      };
+
+      window.prevPoster = function () {
+        posterIndex = (posterIndex - 1 + posterList.length) % posterList.length;
+        renderPosters();
+      };
+
+      // Modal Functions
+      window.openPosterModal = function (idx) {
+        currentModalIdx = (idx !== undefined) ? idx : posterIndex;
+        updateModalContent();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.closePosterModal = function (e) {
+        if (e && e.target && e.target !== modal && !e.target.classList.contains('poster-modal-close')) return;
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      window.modalNextPoster = function () {
+        currentModalIdx = (currentModalIdx + 1) % posterList.length;
+        updateModalContent();
+      };
+
+      window.modalPrevPoster = function () {
+        currentModalIdx = (currentModalIdx - 1 + posterList.length) % posterList.length;
+        updateModalContent();
+      };
+
+      function updateModalContent() {
+        var item = posterList[currentModalIdx];
+        modalImg.src = './posters/' + item.file;
+        modalImg.alt = item.title;
+        modalVenue.textContent = item.venue;
+        modalTitle.textContent = item.title;
+        modalCount.textContent = (currentModalIdx + 1) + ' / ' + posterList.length;
+      }
+
+      function readHash() {
+        var hash = window.location.hash;
+        if (hash && /^#\d+$/.test(hash)) {
+          var idx = parseInt(hash.substring(1), 10) - 1;
+          if (idx >= 0 && idx < total) {
+            slides[current].classList.remove('active');
+            current = idx;
+            slides[current].classList.add('active');
+          }
+        }
+      }
+
+      function writeHash() {
+        history.replaceState(null, '', '#' + (current + 1));
+      }
+
+      function updateUI() {
+        var pct = ((current + 1) / total) * 100;
+        progressBar.style.width = pct + '%';
+        counter.textContent = (current + 1) + ' / ' + total;
+
+        var isDark = slides[current].classList.contains('slide-dark');
+        counter.classList.toggle('on-dark', isDark);
+        hintEl.classList.toggle('on-dark', isDark);
+        fsBtn.classList.toggle('on-dark', isDark);
+
+        writeHash();
+      }
+
+      function goTo(index) {
+        if (index < 0 || index >= total || index === current) return;
+        slides[current].classList.remove('active');
+        current = index;
+        slides[current].classList.add('active');
+        updateUI();
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+        // If modal is open, modal keys take priority
+        if (modal.classList.contains('active')) {
+          if (e.key === 'Escape') {
+            e.preventDefault();
+            closePosterModal();
+          } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            modalNextPoster();
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            modalPrevPoster();
+          }
+          return;
+        }
+
+        switch (e.key) {
+          case 'ArrowRight':
+          case 'ArrowDown':
+          case ' ':
+            e.preventDefault();
+            next();
+            break;
+          case 'ArrowLeft':
+          case 'ArrowUp':
+            e.preventDefault();
+            prev();
+            break;
+          case 'f':
+          case 'F':
+            e.preventDefault();
+            toggleFullscreen();
+            break;
+        }
+      });
+
+      deck.addEventListener('click', function (e) {
+        if (modal.classList.contains('active')) return;
+        if (e.target.closest('a, button, .poster-slider-container, .poster-modal')) return;
+        var rect = deck.getBoundingClientRect();
+        if (e.clientX - rect.left > rect.width / 3) next();
+        else prev();
+      });
+
+      
+      // Lead Capture & Download Modal Logic
+      var downloadModal = document.getElementById('download-modal');
+      var leadForm = document.getElementById('lead-form');
+      var btnSubmit = document.getElementById('btn-submit-lead');
+      var btnText = document.getElementById('btn-text');
+      var leadMsg = document.getElementById('lead-msg');
+      var currentProjectName = document.title || '임동구박사_강연제안서';
+
+      window.openDownloadModal = function (projectName) {
+        if (projectName) currentProjectName = projectName;
+        downloadModal.classList.add('active');
+        leadMsg.style.display = 'none';
+        btnSubmit.disabled = false;
+        btnText.textContent = '🚀 제안서 다운로드 받기';
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () {
+          var nameInp = document.getElementById('lead-name');
+          if (nameInp) nameInp.focus();
+        }, 100);
+      };
+
+      window.closeDownloadModal = function (e) {
+        if (e && e.target && e.target !== downloadModal && !e.target.classList.contains('download-modal-close')) return;
+        downloadModal.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      window.handleLeadSubmit = function (e) {
+        e.preventDefault();
+        var name = document.getElementById('lead-name').value.trim();
+        var email = document.getElementById('lead-email').value.trim();
+        var org = document.getElementById('lead-org').value.trim();
+        var phone = document.getElementById('lead-phone').value.trim();
+
+        if (!name || !email) {
+          showLeadMessage('이름과 이메일 주소를 입력해 주세요.', 'error');
+          return;
+        }
+
+        btnSubmit.disabled = true;
+        btnText.textContent = '⏳ 구글 시트에 등록 중...';
+
+        var leadData = {
+          name: name,
+          email: email,
+          org: org,
+          phone: phone,
+          projectType: currentProjectName,
+          userAgent: navigator.userAgent
+        };
+
+        // If running inside Google Apps Script Web App
+        if (typeof google !== 'undefined' && google.script && google.script.run) {
+          google.script.run
+            .withSuccessHandler(function (response) {
+              onLeadSuccess();
+            })
+            .withFailureHandler(function (err) {
+              console.error('GAS Error:', err);
+              // Fallback to trigger download anyway
+              onLeadSuccess();
+            })
+            .recordLead(leadData);
+        } else {
+          // Running locally / standalone web
+          console.log('Recorded Lead locally/standalone:', leadData);
+          setTimeout(function () {
+            onLeadSuccess();
+          }, 600);
+        }
+      };
+
+      function onLeadSuccess() {
+        btnText.textContent = '✅ 신청 완료!';
+        showLeadMessage('🎉 신청이 완료되었습니다! 제안서 다운로드가 시작됩니다.', 'success');
+        
+        // Trigger presentation file download
+        triggerFileDownload('presentation.pptx');
+
+        setTimeout(function () {
+          closeDownloadModal();
+          leadForm.reset();
+        }, 2200);
+      }
+
+      function showLeadMessage(text, type) {
+        leadMsg.textContent = text;
+        leadMsg.className = 'lead-msg ' + type;
+        leadMsg.style.display = 'block';
+      }
+
+      function triggerFileDownload(fileName) {
+        // If inline PPTX base64 exists in window.__PPTX_BASE64__
+        if (window.__PPTX_BASE64__) {
+          var byteCharacters = atob(window.__PPTX_BASE64__);
+          var byteNumbers = new Array(byteCharacters.length);
+          for (var i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+          }
+          var byteArray = new Uint8Array(byteNumbers);
+          var blob = new Blob([byteArray], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(function () {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+          }, 1000);
+        } else {
+          // Direct relative link
+          var a = document.createElement('a');
+          a.href = './' + fileName;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(function () {
+            document.body.removeChild(a);
+          }, 1000);
+        }
+      }
+
+      window.toggleFullscreen = function () {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(function () {});
+        } else {
+          document.exitFullscreen().catch(function () {});
+        }
+      };
+
+      window.addEventListener('hashchange', function () {
+        readHash();
+        updateUI();
+      });
+
+      renderPosters();
+      readHash();
+      updateUI();
+    })();
+  </script>
+
+  <!-- Lead Capture Modal Component -->
+  <div class="lead-modal-overlay" id="leadModalOverlay">
+    <div class="lead-modal-card">
+      <button class="lead-modal-close" onclick="closeLeadModal()">&times;</button>
+      
+      <div class="lead-modal-header">
+        <div class="lead-modal-icon">📑</div>
+        <h3 class="lead-modal-title">강연 제안서 (PPTX) 다운로드</h3>
+        <p class="lead-modal-desc">성함과 이메일을 남겨주시면, 담당자용 제안서 원본 파일 다운로드가 즉시 시작됩니다.</p>
+      </div>
+
+      <form id="leadCaptureForm" onsubmit="handleLeadSubmit(event)">
+        <div class="lead-form-group">
+          <label class="lead-form-label">신청자 성명 <span class="req">*</span></label>
+          <input type="text" id="leadName" class="lead-form-input" placeholder="예: 홍길동 (담당자)" required />
+        </div>
+
+        <div class="lead-form-group">
+          <label class="lead-form-label">이메일 주소 <span class="req">*</span></label>
+          <input type="email" id="leadEmail" class="lead-form-input" placeholder="예: contact@library.go.kr" required />
+        </div>
+
+        <div class="lead-form-group">
+          <label class="lead-form-label">소속 도서관 / 기관명 (선택)</label>
+          <input type="text" id="leadOrg" class="lead-form-input" placeholder="예: 성동구립도서관 문화홍보팀" />
+        </div>
+
+        <button type="submit" class="lead-submit-btn" id="leadSubmitBtn">
+          <span>📥 제안서 다운로드 시작</span>
+        </button>
+      </form>
+
+      <div class="lead-privacy-note">
+        🔒 수집된 정보는 제안서 전달 및 강연 일정 안내 목적으로만 안전하게 보관됩니다.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // [설정] Google Apps Script 웹 앱 배포 URL
+    const GAS_ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbx8z3erTWvEJIZWvDnPm8TzdYTwxuKkeWSHjMS7N0r1V6u7bvxkA1Xyw9imbCD1P38h/exec"; 
+    const DOWNLOAD_TARGET_FILE = "./presentation.pptx";
+
+    function openLeadModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('leadModalOverlay').classList.add('active');
+      document.getElementById('leadName').focus();
+    }
+
+    function closeLeadModal() {
+      document.getElementById('leadModalOverlay').classList.remove('active');
+    }
+
+    document.getElementById('leadModalOverlay').addEventListener('click', function(e) {
+      if (e.target === this) closeLeadModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLeadModal();
+    });
+
+    async function handleLeadSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('leadSubmitBtn');
+      const name = document.getElementById('leadName').value.trim();
+      const email = document.getElementById('leadEmail').value.trim();
+      const org = document.getElementById('leadOrg').value.trim();
+
+      if (!name || !email) {
+        alert("이름과 이메일을 모두 입력해 주세요.");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳ 저장 및 다운로드 준비 중...</span>';
+
+      const payload = {
+        name: name,
+        email: email,
+        organization: org,
+        fileName: "임동구박사_패션테라피인문학_제안서.pptx",
+        referer: window.location.href,
+        userAgent: navigator.userAgent
+      };
+
+      try {
+        if (GAS_ENDPOINT_URL && GAS_ENDPOINT_URL.startsWith("http")) {
+          await fetch(GAS_ENDPOINT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } else {
+          console.log("[Lead Captured Locally]:", payload);
+        }
+      } catch (err) {
+        console.warn("GAS Sync Warning:", err);
+      }
+
+      btn.innerHTML = '<span>✅ 완료! 파일 다운로드 중...</span>';
+      
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = DOWNLOAD_TARGET_FILE;
+        link.download = "임동구박사_패션테라피인문학_제안서.pptx";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        setTimeout(() => {
+          closeLeadModal();
+          btn.disabled = false;
+          btn.innerHTML = '<span>📥 제안서 다운로드 시작</span>';
+          document.getElementById('leadCaptureForm').reset();
+        }, 1200);
+      }, 500);
+    }
+  </script>
+</body>
+</html>
