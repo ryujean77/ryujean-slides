@@ -631,21 +631,23 @@
                         }
                     } catch(e) {}
 
-                    // 2. 레지스트리 로드
+                    // 2. 서버의 최신 publishing_registry.json 우선 로드 (캐시 무효화)
+                    try {
+                        const res = await fetch('publishing_registry.json?v=' + Date.now());
+                        if (res.ok) {
+                            const data = await res.json();
+                            items.value = data.items || [];
+                            localStorage.setItem("published_html_registry", JSON.stringify(data));
+                            return;
+                        }
+                    } catch(e) {}
+
+                    // 로컬스토리지 폴백
                     try {
                         const localData = localStorage.getItem("published_html_registry");
                         if (localData) {
                             const parsed = JSON.parse(localData);
                             items.value = parsed.items || [];
-                            return;
-                        }
-                    } catch(e) {}
-
-                    try {
-                        const res = await fetch('publishing_registry.json');
-                        if (res.ok) {
-                            const data = await res.json();
-                            items.value = data.items || [];
                         }
                     } catch(e) {}
                 };

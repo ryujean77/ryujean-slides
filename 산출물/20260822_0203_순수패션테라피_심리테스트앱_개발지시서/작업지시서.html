@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>순수 패션테라피 심리테스트 앱 — 구체적 개발 작업지시서 (Pure Fashion Therapy Spec)</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap">
+  <style>
+    :root {
+      --bg-base: #0c0a14;
+      --bg-surface: #141122;
+      --bg-surface-card: rgba(24, 20, 40, 0.85);
+      --border-subtle: rgba(244, 63, 94, 0.12);
+      --border-medium: rgba(255, 255, 255, 0.12);
+      --border-glow: rgba(244, 63, 94, 0.4);
+      
+      --text-main: #fdf2f4;
+      --text-muted: #a19bb5;
+      --text-dim: #6b6480;
+      
+      --rose-primary: #f43f5e;
+      --rose-gradient: linear-gradient(135deg, #f43f5e 0%, #fb7185 50%, #fda4af 100%);
+      --violet-accent: #a855f7;
+      --amber-gold: #fbbf24;
+      --emerald-teal: #10b981;
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
+      --shadow-glow: 0 0 30px rgba(244, 63, 94, 0.22);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20vw;
+      right: -10vw;
+      width: 55vw;
+      height: 55vw;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -20vw;
+      left: -10vw;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--rose-gradient);
+      width: 0%;
+      z-index: 1000;
+      box-shadow: 0 0 12px rgba(244, 63, 94, 0.6);
+    }
+
+    .top-header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(12, 10, 20, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge-pure {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(244, 63, 94, 0.15);
+      color: #fda4af;
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      letter-spacing: 0.05em;
+    }
+
+    .app-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 48px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 85px;
+      height: calc(100vh - 110px);
+      overflow-y: auto;
+    }
+    .toc-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 22px 18px;
+      backdrop-filter: blur(12px);
+    }
+    .toc-header {
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+    }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .toc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .toc-link:hover {
+      color: #fff;
+      background: rgba(244, 63, 94, 0.08);
+      transform: translateX(3px);
+    }
+    .toc-link.active {
+      color: #fff;
+      background: linear-gradient(90deg, rgba(244, 63, 94, 0.18) 0%, transparent 100%);
+      border-left: 3px solid var(--rose-primary);
+      font-weight: 700;
+    }
+
+    .doc-hero {
+      background: linear-gradient(135deg, rgba(35, 25, 50, 0.8) 0%, rgba(18, 14, 30, 0.95) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 44px 40px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .doc-hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 360px;
+      height: 100%;
+      background: radial-gradient(circle at 80% 30%, rgba(244, 63, 94, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+    .hero-tag {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-medium);
+      color: var(--text-muted);
+    }
+    .hero-tag.highlight {
+      background: rgba(244, 63, 94, 0.15);
+      border-color: rgba(244, 63, 94, 0.35);
+      color: #fda4af;
+    }
+    .doc-hero h1 {
+      font-size: 35px;
+      font-weight: 900;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 40%, #fda4af 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .doc-hero p.lead {
+      font-size: 16.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 860px;
+    }
+
+    .section-block {
+      margin-bottom: 56px;
+      scroll-margin-top: 95px;
+    }
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: var(--rose-primary);
+      color: #fff;
+    }
+    .section-title {
+      font-size: 23px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.015em;
+    }
+
+    .card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-card);
+      transition: all 0.25s ease;
+    }
+    .card:hover {
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-glow);
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout {
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      display: flex;
+      gap: 16px;
+      border-left: 4px solid var(--rose-primary);
+      background: rgba(244, 63, 94, 0.06);
+    }
+    .callout-icon { font-size: 22px; line-height: 1; }
+    .callout h4 { font-size: 15.5px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .callout p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    .table-container {
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 24px;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      text-align: left;
+      background: var(--bg-surface);
+    }
+    table.data-table th {
+      background: #1c172e;
+      color: #fff;
+      font-weight: 700;
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--border-medium);
+      white-space: nowrap;
+    }
+    table.data-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      vertical-align: middle;
+    }
+    table.data-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-main);
+    }
+
+    .color-chip {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .checklist-wrap {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .checklist-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.2s;
+    }
+    .checklist-row:hover { background: rgba(244, 63, 94, 0.05); }
+    .chk-box {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--rose-primary);
+      cursor: pointer;
+    }
+    .chk-label { flex: 1; cursor: pointer; font-size: 14.5px; color: var(--text-main); }
+    .badge-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(244, 63, 94, 0.15);
+      color: #fda4af;
+    }
+
+    @media (max-width: 992px) {
+      .app-container { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .doc-hero { padding: 30px 20px; }
+      .doc-hero h1 { font-size: 27px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <header class="top-header">
+    <div class="brand-title">
+      <span class="badge-pure">PURE FASHION THERAPY</span>
+      <span>순수 패션테라피 심리테스트 앱 개발지시서</span>
+    </div>
+    <div style="font-size:12px; color:var(--emerald-teal); font-weight:700;">
+      ● 단독 에디션 (사상체질 배제 버전)
+    </div>
+  </header>
+
+  <div class="app-container">
+
+    <aside class="sidebar">
+      <div class="toc-card">
+        <div class="toc-header">SECTIONS</div>
+        <ul class="toc-list">
+          <li><a class="toc-link active" href="#sec-1">01. 순수 기획 의도 &amp; 컨셉</a></li>
+          <li><a class="toc-link" href="#sec-2">02. 4대 의복 심리 진단 축</a></li>
+          <li><a class="toc-link" href="#sec-3">03. 8대 스타일 자아 페르소나</a></li>
+          <li><a class="toc-link" href="#sec-4">04. 24문항 구성 &amp; 채점 로직</a></li>
+          <li><a class="toc-link" href="#sec-5">05. 남미화 박사 강연 리드 연계</a></li>
+          <li><a class="toc-link" href="#sec-6">06. 개발 작업 체크리스트</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main>
+      <!-- Hero -->
+      <div class="doc-hero">
+        <div class="hero-tags">
+          <span class="hero-tag highlight">남미화 박사 단독 자문 에디션</span>
+          <span class="hero-tag">의복 심리학 × 퍼스널 컬러 테라피</span>
+          <span class="hero-tag">24문항 모바일 최적화</span>
+        </div>
+        <h1>패션 테라피 이너 스타일러<br>(FASHION THERAPY INNER STYLER)</h1>
+        <p class="lead">
+          사상체질 프레임워크에서 완전히 독립하여, <strong>의복이 인간의 무의식과 자아존중감에 미치는 심리적 치유 효과</strong>만을 집중 조명한 순수 패션테라피 심리테스트 웹앱 개발 명세서입니다.
+        </p>
+      </div>
+
+      <!-- Sec 1 -->
+      <section id="sec-1" class="section-block">
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <h2 class="section-title">순수 기획 의도 &amp; 핵심 차별화</h2>
+        </div>
+        <div class="card">
+          <h3 class="card-title">👗 왜 "순수 패션테라피" 전용 버전인가?</h3>
+          <p style="color:var(--text-muted); margin-bottom:16px;">
+            한의학적 사상체질 개념 없이도, <strong>2030 MZ세대 및 여성 대중이 가장 직관적이고 트렌디하게 공감할 수 있는 '컬러 &amp; 옷차림 심리학'</strong>을 완성하기 위함입니다.
+          </p>
+          <div class="callout">
+            <div class="callout-icon">✨</div>
+            <div>
+              <h4>"오늘 내가 입은 옷이 내 하루의 마음가짐을 바꿉니다"</h4>
+              <p>우울할 때 입는 보호색, 자신감을 원할 때 찾는 파워 컬러 등 의복 행동의 무의식적 기제를 과학적·감성적으로 진단합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec 2 -->
+      <section id="sec-2" class="section-block">
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <h2 class="section-title">4대 의복 심리 진단 축 (Psychological Dimensions)</h2>
+        </div>
+        <div class="card">
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>진단 축 (Dimension)</th>
+                  <th>측정 극점 A (양성/확장)</th>
+                  <th>측정 극점 B (음성/안정)</th>
+                  <th>심리적 의미</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. 색채 에너지 (Vitality)</strong></td>
+                  <td><span style="color:#f43f5e; font-weight:700;">비비드 &amp; 브라이트</span> (생동감)</td>
+                  <td><span style="color:#a855f7; font-weight:700;">뉴트럴 &amp; 파스텔</span> (평온함)</td>
+                  <td>외부로 에너지를 발산하는가, 내면의 쉼을 원하는가</td>
+                </tr>
+                <tr>
+                  <td><strong>2. 스타일 표현성 (Expression)</strong></td>
+                  <td><span style="color:#f43f5e; font-weight:700;">볼드 &amp; 아방가르드</span> (개성)</td>
+                  <td><span style="color:#a855f7; font-weight:700;">클래식 &amp; 미니멀</span> (절제)</td>
+                  <td>독창성을 드러내는가, 단정함과 규율을 중시하는가</td>
+                </tr>
+                <tr>
+                  <td><strong>3. 의복 동기 (Motivation)</strong></td>
+                  <td><span style="color:#f43f5e; font-weight:700;">소셜 공감형</span> (대인 조화)</td>
+                  <td><span style="color:#a855f7; font-weight:700;">독립 주체형</span> (자기 만족)</td>
+                  <td>타인과의 유대를 위해 입는가, 나만의 가치를 위해 입는가</td>
+                </tr>
+                <tr>
+                  <td><strong>4. 자존감 탄력성 (Resilience)</strong></td>
+                  <td><span style="color:#f43f5e; font-weight:700;">무드 부스터</span> (도약적 치유)</td>
+                  <td><span style="color:#a855f7; font-weight:700;">이너 앵커</span> (본연의 지지)</td>
+                  <td>옷으로 기분을 반전시키는가, 내 상태를 온전히 수용하는가</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec 3 -->
+      <section id="sec-3" class="section-block">
+        <div class="section-head">
+          <span class="section-num">03</span>
+          <h2 class="section-title">8대 스타일 자아 페르소나 (8 Style Personas)</h2>
+        </div>
+        <div class="card">
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>유형 명칭</th>
+                  <th>성향 요약</th>
+                  <th>추천 퍼스널 힐링 컬러</th>
+                  <th>스타일링 &amp; 처방전</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>🎨 비비드 크리에이터</strong></td>
+                  <td>자유로운 영감과 유쾌한 에너지를 입는 예술가</td>
+                  <td><span class="color-chip" style="background:#f43f5e;"></span>코랄 레드, <span class="color-chip" style="background:#fb923c;"></span>탠저린</td>
+                  <td>비대칭 컷팅, 원포인트 비비드 백</td>
+                </tr>
+                <tr>
+                  <td><strong>🏛️ 클래식 큐레이터</strong></td>
+                  <td>단아한 품격과 확고한 신뢰를 전하는 완벽주의자</td>
+                  <td><span class="color-chip" style="background:#1e3a8a;"></span>로열 네이비, <span class="color-chip" style="background:#881337;"></span>버건디</td>
+                  <td>테일러드 자켓, 정제된 H라인</td>
+                </tr>
+                <tr>
+                  <td><strong>🌿 내추럴 힐러</strong></td>
+                  <td>자연의 편안한 숨결로 주변을 위로하는 평화주의자</td>
+                  <td><span class="color-chip" style="background:#65a30d;"></span>올리브, <span class="color-chip" style="background:#d6d3d1;"></span>오트밀</td>
+                  <td>오가닉 린넨, 편안한 오버핏 니트</td>
+                </tr>
+                <tr>
+                  <td><strong>⚡ 파워 드레서</strong></td>
+                  <td>당당한 카리스마로 시선을 리드하는 리더</td>
+                  <td><span class="color-chip" style="background:#09090b;"></span>매트 블랙, <span class="color-chip" style="background:#047857;"></span>에메랄드</td>
+                  <td>직선적 숄더 수트, 볼드 주얼리</td>
+                </tr>
+                <tr>
+                  <td><strong>🌸 소프트 로맨틱</strong></td>
+                  <td>따뜻한 공감과 섬세한 다정함을 건네는 사랑주의자</td>
+                  <td><span class="color-chip" style="background:#f472b6;"></span>베이비 핑크, <span class="color-chip" style="background:#c084fc;"></span>라벤더</td>
+                  <td>실크 블라우스, 플리츠 스커트</td>
+                </tr>
+                <tr>
+                  <td><strong>📐 모던 미니멀리스트</strong></td>
+                  <td>불필요함을 덜어내고 본질에 집중하는 스타일 철학자</td>
+                  <td><span class="color-chip" style="background:#475569;"></span>챠콜, <span class="color-chip" style="background:#f8fafc;"></span>클린 화이트</td>
+                  <td>슬릭한 원피스, 톤온톤 매칭</td>
+                </tr>
+                <tr>
+                  <td><strong>🚀 트렌드 파이오니어</strong></td>
+                  <td>새로운 변화와 감각적인 실험을 즐기는 인플루언서</td>
+                  <td><span class="color-chip" style="background:#0284c7;"></span>코발트, <span class="color-chip" style="background:#a3e635;"></span>네온 라임</td>
+                  <td>트렌디 믹스매치, 유니크 아이템</td>
+                </tr>
+                <tr>
+                  <td><strong>📜 어반 아카이비스트</strong></td>
+                  <td>시간이 흘러도 변치 않는 깊이를 사랑하는 지성인</td>
+                  <td><span class="color-chip" style="background:#78350f;"></span>앤틱 브라운, <span class="color-chip" style="background:#701a75;"></span>딥 플럼</td>
+                  <td>클래식 트렌치코트, 빈티지 레더</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec 4 -->
+      <section id="sec-4" class="section-block">
+        <div class="section-head">
+          <span class="section-num">04</span>
+          <h2 class="section-title">24문항 구성 &amp; 채점 로직 (8 스텝)</h2>
+        </div>
+        <div class="card">
+          <p style="color:var(--text-muted); margin-bottom:14px;">
+            모바일 최적화를 위해 **8페이지(페이지당 3문항 = 총 24문항)**의 간결한 [예 / 아니오] 이분형 방식을 적용합니다.
+          </p>
+          <div class="callout">
+            <div class="callout-icon">💡</div>
+            <div>
+              <h4>채점 방식 (Zero Latency)</h4>
+              <p>클라이언트 브라우저에서 4개 축별 점수를 합산(Trait Score: -3 ~ +3)하여, 가장 우세한 사분면과 에너지 수준에 매칭되는 8대 페르소나를 0.1초 내 즉시 도출합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec 5 -->
+      <section id="sec-5" class="section-block">
+        <div class="section-head">
+          <span class="section-num">05</span>
+          <h2 class="section-title">남미화 박사 강연 &amp; 워크숍 리드 연계</h2>
+        </div>
+        <div class="card">
+          <h3 class="card-title">📑 B2B/B2C 강연 제안서 다운로드 백엔드 연동</h3>
+          <p style="color:var(--text-muted); margin-bottom:14px;">
+            테스트 결과 페이지 하단에 <strong>"남미화 박사의 패션테라피 인문학 특강 제안서(PPTX) 다운로드"</strong> 폼을 탑재하여 지자체 평생학습관, 공공도서관, 기업 HR 담당자의 섭외 리드를 Google 스프레드시트로 자동 동기화합니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sec 6 -->
+      <section id="sec-6" class="section-block">
+        <div class="section-head">
+          <span class="section-num">06</span>
+          <h2 class="section-title">개발 작업 체크리스트 (Action Items)</h2>
+        </div>
+        <div class="checklist-wrap">
+          <div class="checklist-row">
+            <input type="checkbox" class="chk-box" id="c1" checked>
+            <label class="chk-label" for="c1"><strong>[기획]</strong> 순수 패션테라피 4대 축 및 8대 스타일 자아 페르소나 정의 완료</label>
+            <span class="badge-tag">DONE</span>
+          </div>
+          <div class="checklist-row">
+            <input type="checkbox" class="chk-box" id="c2">
+            <label class="chk-label" for="c2"><strong>[데이터]</strong> 순수 패션테라피 전용 24문항 JSON 스키마 구축</label>
+            <span class="badge-tag">TODO</span>
+          </div>
+          <div class="checklist-row">
+            <input type="checkbox" class="chk-box" id="c3">
+            <label class="chk-label" for="c3"><strong>[프론트]</strong> 럭셔리 에디토리얼 테마의 모바일 3문항 스와이프 UI 개발</label>
+            <span class="badge-tag">TODO</span>
+          </div>
+          <div class="checklist-row">
+            <input type="checkbox" class="chk-box" id="c4">
+            <label class="chk-label" for="c4"><strong>[백엔드]</strong> 남미화 박사 강연 신청 폼 Google Apps Script Webhook 연동</label>
+            <span class="badge-tag">TODO</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      document.getElementById('progress-bar').style.width = ((winScroll / height) * 100) + '%';
+    });
+
+    const sections = document.querySelectorAll('.section-block');
+    const navLinks = document.querySelectorAll('.toc-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        if (pageYOffset >= section.offsetTop - 120) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
