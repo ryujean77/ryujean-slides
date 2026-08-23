@@ -1,0 +1,97 @@
+{
+  "version": "1.3.0",
+  "lastUpdated": "2026-08-24T04:15:00+09:00",
+  "githubConfig": {
+    "connected": true,
+    "owner": "ryujean77",
+    "repo": "ryujean-slides",
+    "branch": "gh-pages"
+  },
+  "categories": [
+    "전체",
+    "패션테라피 심리테스트",
+    "도서관/기관 강연 제안",
+    "1:1 개인 케어",
+    "B2B/기관 교육",
+    "기획/회의 분석"
+  ],
+  "statusList": [
+    "아이디어/작성중",
+    "검토완료",
+    "배포완료",
+    "고객전달완료",
+    "보관/아카이빙"
+  ],
+  "items": [
+    {
+      "id": "PUB-20260821-01",
+      "title": "임동구 & 남미화 박사 패션테라피 인문학 제안서 (일러스트 에디션)",
+      "client": "공공도서관 및 문화센터",
+      "category": "도서관/기관 강연 제안",
+      "date": "2026-08-21",
+      "status": "배포완료",
+      "folderName": "fashion-therapy",
+      "htmlPath": "https://ryujean77.github.io/ryujean-slides/fashion-therapy/",
+      "githubUrl": "https://ryujean77.github.io/ryujean-slides/fashion-therapy/",
+      "summary": "사상체질 의학(임동구 박사)과 의복심리학(남미화 박사)이 결합된 힐링 인문학 강연 제안서. 모바일 터치 제스처 스와이프 지원.",
+      "deliveryChannel": "GitHub Pages + 카카오톡/메일",
+      "shareMessageTemplate": "안녕하세요! 패션테라피진흥원에서 제안드리는 '사상체질 X 패션테라피 인문학 강연 제안서' 모바일 웹 링크를 전달드립니다.\nhttps://ryujean77.github.io/ryujean-slides/fashion-therapy/"
+    },
+    {
+      "id": "PUB-20260821-02",
+      "title": "임동구 박사의 체질 인문학 도서관 강연 제안서",
+      "client": "전국 도서관 및 평생학습관",
+      "category": "도서관/기관 강연 제안",
+      "date": "2026-08-21",
+      "status": "배포완료",
+      "folderName": "library-lecture",
+      "htmlPath": "https://ryujean77.github.io/ryujean-slides/library-lecture/",
+      "githubUrl": "https://ryujean77.github.io/ryujean-slides/library-lecture/",
+      "summary": "사상체질로 읽는 나만의 힐링 인문학 도서관 특강 프로그램 제안서. 16:9 슬라이드 및 모바일 세로 스택 완벽 대응.",
+      "deliveryChannel": "GitHub Pages + 이메일",
+      "shareMessageTemplate": "안녕하세요! 임동구 박사의 도서관 체질 인문학 특강 제안서를 전달드립니다. 아래 링크에서 편리하게 검토하실 수 있습니다.\nhttps://ryujean77.github.io/ryujean-slides/library-lecture/"
+    },
+    {
+      "id": "PUB-20260821-03",
+      "title": "사상체질 융합 패션테라피 심리테스트 앱 — 구체적 작업지시서",
+      "client": "남미화 박사 & 개발기획팀",
+      "category": "패션테라피 심리테스트",
+      "date": "2026-08-21",
+      "status": "검토완료",
+      "folderName": "20260821_2352_패션테라피_심리테스트앱_개발지시서",
+      "htmlPath": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/구체적_작업지시서.html",
+      "githubUrl": "",
+      "summary": "사이버 인디고 테마 세로형 기술 명세서. 12문항 스코어링 엔진, 8대 캐릭터 카드 목업, 실시간 JSON 복사기 내장.",
+      "deliveryChannel": "이메일 첨부 전달완료",
+      "shareMessageTemplate": "남미화 박사님, 사상체질 융합 패션테라피 심리테스트 앱 세부 기술 작업지시서 파일입니다."
+    },
+    {
+      "id": "PUB-20260822-01",
+      "title": "순수 패션테라피 단독 에디션 (Inner Styler) — 개발지시서",
+      "client": "남미화 박사 & 개발팀",
+      "category": "패션테라피 심리테스트",
+      "date": "2026-08-22",
+      "status": "검토완료",
+      "folderName": "20260822_0203_순수패션테라피_심리테스트앱_개발지시서",
+      "htmlPath": "산출물/20260822_0203_순수패션테라피_심리테스트앱_개발지시서/작업지시서.html",
+      "githubUrl": "",
+      "summary": "사상체질을 배제하고 4대 의복심리 축과 8대 스타일 자아 페르소나를 독자 정의한 로즈 코랄 럭셔리 테마 명세서.",
+      "deliveryChannel": "이메일 첨부 전달완료",
+      "shareMessageTemplate": "남미화 박사님, 순수 패션테라피 단독 에디션 전용 개발지시서 및 질문지입니다."
+    },
+    {
+      "id": "PUB-20260824-01",
+      "title": "패션테라피 심리테스트 앱 — 2차 기획회의 분석 산출물 패키지",
+      "client": "남미화 박사 & 류지연 총괄",
+      "category": "기획/회의 분석",
+      "date": "2026-08-24",
+      "status": "검토완료",
+      "folderName": "20260824_0139_패션테라피_심리테스트앱_기획회의_2차",
+      "htmlPath": "산출물/20260824_0139_패션테라피_심리테스트앱_기획회의_2차/00_INDEX.md",
+      "githubUrl": "",
+      "summary": "남미화 박사 음성 대화 정밀 분석. 시간대별 회의록, 린캔버스, 역할분담표, 인문학 에세이 초안 및 개발지시서 v1.1 개정.",
+      "deliveryChannel": "GitHub Repository 백업완료",
+      "shareMessageTemplate": "2차 기획회의 분석 회의록 및 린캔버스 산출물입니다."
+    }
+  ]
+}
