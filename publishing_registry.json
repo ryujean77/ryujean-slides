@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "lastUpdated": "2026-08-24T04:15:00+09:00",
+  "lastUpdated": "2026-08-25T00:40:00+09:00",
   "githubConfig": {
     "connected": true,
     "owner": "ryujean77",
@@ -23,6 +23,20 @@
     "보관/아카이빙"
   ],
   "items": [
+    {
+      "id": "PUB-20260825-01",
+      "title": "최토미 교수 맞춤형 아로마 케어 플랜 & 1:1 웰니스 가이드",
+      "client": "최토미 교수",
+      "category": "1:1 개인 케어",
+      "date": "2026-08-25",
+      "status": "배포완료",
+      "folderName": "choi-tommy-care",
+      "htmlPath": "https://ryujean77.github.io/ryujean-slides/choi-tommy-care/",
+      "githubUrl": "https://ryujean77.github.io/ryujean-slides/choi-tommy-care/",
+      "summary": "목 부위 피부 자극 진정 처방, 3대 안전 수칙 및 센다로·유칼립투스 연계 1:1 VIP 웰니스 케어 가이드 (듀얼 모드 웹앱).",
+      "deliveryChannel": "GitHub Pages + 카카오톡/문자",
+      "shareMessageTemplate": "최토미 교수님, 안녕하세요! 지난번 말씀 나누었던 목 부위 피부 진정 맞춤 가이드와 아로마 안전 사용법을 모바일 웹으로 정리해 드립니다.\nhttps://ryujean77.github.io/ryujean-slides/choi-tommy-care/"
+    },
     {
       "id": "PUB-20260821-01",
       "title": "임동구 & 남미화 박사 패션테라피 인문학 제안서 (일러스트 에디션)",

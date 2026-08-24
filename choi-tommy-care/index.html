@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>최토미 교수 맞춤형 아로마 케어 플랜 & 1:1 웰니스 가이드</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome 6 & Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e5ede5',
+                            200: '#cdddc9',
+                            300: '#a7c4a1',
+                            400: '#7ea577',
+                            500: '#5e8756',
+                            600: '#486b42',
+                            700: '#3a5435',
+                            800: '#2f442b',
+                            900: '#1b2c18',
+                        },
+                        amberGold: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] { display: none !important; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #faf9f6; }
+        .hero-gradient {
+            background: linear-gradient(145deg, #1b2c18 0%, #2f442b 60%, #3a5435 100%);
+        }
+        .gold-border {
+            border: 1px solid rgba(217, 119, 6, 0.25);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 237, 229, 0.8);
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 30px -5px rgba(27, 44, 24, 0.08);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen pb-24" x-data="careApp()">
+
+    <!-- Top Sticky Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2.5">
+                <span class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center text-sage-800 text-sm font-bold shadow-inner">
+                    <i class="fa-solid fa-spa"></i>
+                </span>
+                <div>
+                    <span class="text-[10px] font-extrabold tracking-widest text-amberGold-700 uppercase block leading-none">1:1 VIP Personal Care</span>
+                    <h1 class="text-sm sm:text-base font-black text-slate-900 leading-tight">최토미 교수 아로마 맞춤 솔루션</h1>
+                </div>
+            </div>
+            <!-- View Mode Switcher -->
+            <div class="flex items-center bg-slate-100 p-1 rounded-xl text-xs font-bold border border-slate-200">
+                <button @click="viewMode = 'client'" :class="viewMode === 'client' ? 'bg-white text-sage-800 shadow-sm' : 'text-slate-500 hover:text-slate-800'" class="px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-heart text-amberGold-600"></i>
+                    <span>고객용 가이드</span>
+                </button>
+                <button @click="viewMode = 'script'" :class="viewMode === 'script' ? 'bg-sage-800 text-white shadow-sm' : 'text-slate-500 hover:text-slate-800'" class="px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-headset text-sage-300"></i>
+                    <span>상담 스크립트</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-gradient text-white py-10 sm:py-14 px-4 sm:px-6 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-72 h-72 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 mb-3">
+                <i class="fa-solid fa-leaf text-[11px]"></i> 천연 아로마 피부 진정 & 리커버리 솔루션
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-3">
+                민감해진 피부를 다독이는<br>
+                <span class="text-amberGold-200 font-serif">맞춤형 아로마 테라피</span> & 안심 케어 플랜
+            </h2>
+            <p class="text-emerald-100/80 text-xs sm:text-sm max-w-2xl leading-relaxed font-light">
+                천연 원액의 풍부한 생명력이 피부에 가장 편안하게 스며들 수 있도록, 1:1 맞춤형 희석 비율과 단계별 회복 가이드를 정성껏 준비했습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 -mt-6 relative z-20 space-y-8">
+
+        <!-- ================= MODE 1: CLIENT FACING VIEW ================= -->
+        <div x-show="viewMode === 'client'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-8">
+            
+            <!-- 1. Custom Prescription Card -->
+            <section class="bg-white rounded-3xl p-6 sm:p-8 custom-shadow border border-sage-100">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-12 h-12 rounded-2xl bg-amberGold-50 text-amberGold-700 flex items-center justify-center text-xl shadow-sm">
+                            <i class="fa-solid fa-clipboard-user"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-lg font-black text-slate-900">최토미 교수님 맞춤 처방 요약</h3>
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800">피부 진정 우선</span>
+                            </div>
+                            <p class="text-xs text-slate-500">목 부위 일시적 민감 반응 케어 및 순차적 적응 프로그램</p>
+                        </div>
+                    </div>
+                    <button @click="copyShareMessage()" class="px-4 py-2 bg-sage-50 hover:bg-sage-100 text-sage-800 rounded-xl text-xs font-bold transition flex items-center gap-1.5 self-start sm:self-auto border border-sage-200">
+                        <i class="fa-solid fa-share-nodes text-sage-600"></i>
+                        <span x-text="shareBtnText">카카오톡 전송문구 복사</span>
+                    </button>
+                </div>
+
+                <!-- 3 Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100">
+                        <div class="flex items-center gap-2 text-rose-600 font-bold text-xs mb-2">
+                            <i class="fa-solid fa-hand"></i> 현재 일시 중단
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1.5">복합 오일 동시 도포</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">여러 고농축 원액을 한 번에 목 부위에 직접 바르는 것을 며칠간 잠시 쉬어줍니다.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-100">
+                        <div class="flex items-center gap-2 text-emerald-700 font-bold text-xs mb-2">
+                            <i class="fa-solid fa-droplet"></i> 현재 유지 처방
+                        </div>
+                        <h4 class="font-bold text-emerald-950 text-sm mb-1.5">미르(Myrrh) 단독 극소량</h4>
+                        <p class="text-xs text-emerald-800/90 leading-relaxed">뛰어난 수렴·진정 효능의 미르 오일만 캐리어 오일과 1:5 비율로 극소량 사용합니다.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-amberGold-50/60 border border-amberGold-100">
+                        <div class="flex items-center gap-2 text-amberGold-800 font-bold text-xs mb-2">
+                            <i class="fa-solid fa-box-open"></i> 피부 회복 후 추천
+                        </div>
+                        <h4 class="font-bold text-amberGold-950 text-sm mb-1.5">센다로 & 유칼립투스</h4>
+                        <p class="text-xs text-amberGold-900/90 leading-relaxed">피부 장벽이 강화된 후, 재생에 탁월한 센다로와 호흡을 맑게 하는 유칼립투스로 순차 복귀합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. The 3 Golden Rules of Aroma Safety -->
+            <section class="bg-white rounded-3xl p-6 sm:p-8 custom-shadow border border-sage-100">
+                <div class="mb-6">
+                    <span class="text-xs font-extrabold tracking-wider text-sage-600 uppercase block mb-1">Safety First Guide</span>
+                    <h3 class="text-xl font-black text-slate-900">아로마를 안전하게 즐기는 3대 골든 룰</h3>
+                    <p class="text-xs text-slate-500 mt-1">고농축 천연 에센셜 오일의 효능을 100% 누리기 위한 기본 원칙입니다.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="relative bg-sage-50/50 p-6 rounded-2xl border border-sage-200/60 flex flex-col justify-between">
+                        <div>
+                            <span class="w-8 h-8 rounded-full bg-sage-600 text-white flex items-center justify-center font-bold text-sm mb-4">1</span>
+                            <h4 class="font-bold text-slate-900 text-base mb-2">사전 패치 테스트</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                새로운 오일 사용 전, 귀 뒤나 손목 안쪽에 캐리어 오일과 함께 1방울 떨어뜨려 24시간 동안 피부 반응을 확인합니다.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-sage-200/40 text-[11px] font-semibold text-sage-700">
+                            💡 예민한 목 부위 도포 전 필수
+                        </div>
+                    </div>
+
+                    <div class="relative bg-sage-50/50 p-6 rounded-2xl border border-sage-200/60 flex flex-col justify-between">
+                        <div>
+                            <span class="w-8 h-8 rounded-full bg-sage-600 text-white flex items-center justify-center font-bold text-sm mb-4">2</span>
+                            <h4 class="font-bold text-slate-900 text-base mb-2">캐리어 오일 희석</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                코코넛 오일이나 호호바 오일 같은 순한 식물성 베이스 오일에 1~2% 비율(베이스 5ml 당 원액 1~2방울)로 희석해 도포합니다.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-sage-200/40 text-[11px] font-semibold text-sage-700">
+                            💡 피부 흡수율 증가 & 자극 최소화
+                        </div>
+                    </div>
+
+                    <div class="relative bg-sage-50/50 p-6 rounded-2xl border border-sage-200/60 flex flex-col justify-between">
+                        <div>
+                            <span class="w-8 h-8 rounded-full bg-sage-600 text-white flex items-center justify-center font-bold text-sm mb-4">3</span>
+                            <h4 class="font-bold text-slate-900 text-base mb-2">점진적 적응 기간</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                한 번에 여러 오일을 섞지 않고, 한 가지 오일에 피부가 충분히 적응할 시간(3~4일)을 두고 천천히 가짓수를 늘려갑니다.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-sage-200/40 text-[11px] font-semibold text-sage-700">
+                            💡 피부 자연 치유력 존중
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Recommendation Product Spotlight -->
+            <section class="bg-gradient-to-br from-slate-900 to-sage-950 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="max-w-3xl">
+                    <span class="text-xs font-extrabold text-amberGold-400 tracking-widest uppercase block mb-2">Next Step Product Guide</span>
+                    <h3 class="text-xl sm:text-2xl font-black mb-3">피부 회복 후 만나는 프리미엄 듀오</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-light">
+                        본사 직배송 정품으로 가장 신선하고 안전하게 교수님 댁으로 전달해 드립니다.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white/10 p-5 rounded-2xl backdrop-blur border border-white/15">
+                            <div class="flex items-center gap-2 text-amberGold-300 font-bold text-sm mb-1.5">
+                                <i class="fa-solid fa-sparkles"></i> 센다로 (Zendocrane / Sandalo)
+                            </div>
+                            <p class="text-xs text-slate-200 leading-relaxed">
+                                지친 피부의 재생을 돕고, 심신을 차분하게 이완시키는 고급 힐링 블렌드.
+                            </p>
+                        </div>
+                        <div class="bg-white/10 p-5 rounded-2xl backdrop-blur border border-white/15">
+                            <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm mb-1.5">
+                                <i class="fa-solid fa-wind"></i> 유칼립투스 (Eucalyptus)
+                            </div>
+                            <p class="text-xs text-slate-200 leading-relaxed">
+                                답답한 호흡기를 상쾌하게 정화하고 머리를 맑게 깨워주는 청량한 아로마.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= MODE 2: CONSULTANT SCRIPT VIEW ================= -->
+        <div x-show="viewMode === 'script'" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-8">
+            
+            <!-- Stepper Container -->
+            <section class="bg-white rounded-3xl p-6 sm:p-8 custom-shadow border border-sage-100">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-extrabold tracking-wider text-sage-600 uppercase block mb-1">Consultant Calling Guide</span>
+                        <h3 class="text-xl font-black text-slate-900">5단계 넥스트 콜(Next Call) 실전 스크립트</h3>
+                    </div>
+                    <span class="text-xs bg-sage-100 text-sage-800 px-3 py-1 rounded-full font-bold">
+                        Step <span x-text="currentStep + 1"></span> / 5
+                    </span>
+                </div>
+
+                <!-- Stepper Buttons -->
+                <div class="grid grid-cols-5 gap-2 mb-6">
+                    <template x-for="(step, idx) in steps" :key="idx">
+                        <button @click="currentStep = idx" 
+                                :class="currentStep === idx ? 'bg-sage-800 text-white shadow-md' : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border-slate-200'"
+                                class="p-2.5 sm:p-3 rounded-xl border text-center transition-all flex flex-col items-center justify-center">
+                            <span class="text-[10px] font-bold opacity-75">Step 0<span x-text="idx + 1"></span></span>
+                            <span class="text-xs font-bold truncate max-w-full hidden sm:inline" x-text="step.title"></span>
+                        </button>
+                    </template>
+                </div>
+
+                <!-- Active Script Box -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-200">
+                        <div>
+                            <h4 class="font-extrabold text-slate-900 text-base" x-text="steps[currentStep].longTitle"></h4>
+                            <p class="text-xs text-sage-700 font-medium" x-text="'목표: ' + steps[currentStep].objective"></p>
+                        </div>
+                        <button @click="copyScript(steps[currentStep].scriptText)" class="px-3.5 py-1.5 bg-white hover:bg-sage-50 text-slate-800 rounded-lg text-xs font-bold border border-slate-300 transition flex items-center gap-1.5 self-start sm:self-auto shadow-sm">
+                            <i class="fa-solid fa-copy text-sage-600"></i>
+                            <span x-text="scriptCopyText">스크립트 복사</span>
+                        </button>
+                    </div>
+
+                    <!-- Step 2 Branching -->
+                    <template x-if="currentStep === 1">
+                        <div class="p-3 bg-amberGold-50 border border-amberGold-200 rounded-xl space-y-2">
+                            <span class="text-xs font-bold text-amberGold-800 block">💡 고객 응답 분기 선택:</span>
+                            <div class="flex flex-wrap gap-2">
+                                <button @click="subStep = 'improved'" :class="subStep === 'improved' ? 'bg-amberGold-700 text-white' : 'bg-white text-slate-700 border-slate-200'" class="px-3 py-1 rounded-lg text-xs font-bold border transition">상태 호전 시</button>
+                                <button @click="subStep = 'irritated'" :class="subStep === 'irritated' ? 'bg-amberGold-700 text-white' : 'bg-white text-slate-700 border-slate-200'" class="px-3 py-1 rounded-lg text-xs font-bold border transition">자극 지속 시</button>
+                                <button @click="subStep = 'myrrh'" :class="subStep === 'myrrh' ? 'bg-amberGold-700 text-white' : 'bg-white text-slate-700 border-slate-200'" class="px-3 py-1 rounded-lg text-xs font-bold border transition">미르 오일 확인</button>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Spoken Dialog -->
+                    <div class="bg-white p-5 rounded-xl border border-sage-200/80 shadow-sm leading-relaxed text-sm font-medium text-slate-800">
+                        <template x-if="currentStep !== 1">
+                            <div x-html="steps[currentStep].scriptHTML"></div>
+                        </template>
+                        <template x-if="currentStep === 1">
+                            <div>
+                                <div x-show="subStep === 'improved'">
+                                    <span class="text-xs font-bold text-emerald-700 block mb-1">[상태가 호전된 경우]</span>
+                                    <p class="text-slate-900 font-bold">"아, 정말 다행입니다 교수님! 소식 듣고 나니 제 마음이 다 놓이네요. 고생 많으셨을 텐데 잘 견뎌주셔서 감사해요."</p>
+                                </div>
+                                <div x-show="subStep === 'irritated'">
+                                    <span class="text-xs font-bold text-rose-700 block mb-1">[여전히 자극이 남아있는 경우]</span>
+                                    <p class="text-slate-900 font-bold">"아이고, 아직 완전히 가라앉지 않으셨군요. 많이 불편하시겠습니다. 당분간은 오일 사용을 잠시 멈춰주시고요, 시원한 찜질이나 알로에 젤 같은 순한 보습제 위주로 피부를 먼저 진정시켜 주시는 것이 좋습니다."</p>
+                                </div>
+                                <div x-show="subStep === 'myrrh'">
+                                    <span class="text-xs font-bold text-blue-700 block mb-1">[미르 오일 단독 사용 확인]</span>
+                                    <p class="text-slate-900 font-bold">"혹시 지금 사용 중이신 ‘미르 오일’은 계속 쓰고 계신가요? 미르 오일을 바르실 때도 혹시 미세한 자극이나 가려움이 있으셨는지요?"</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Guides -->
+                    <div class="pt-2">
+                        <span class="text-xs font-bold text-slate-400 block mb-2">상담 핵심 포인트</span>
+                        <ul class="space-y-1.5 text-xs text-slate-600">
+                            <template x-for="g in steps[currentStep].guides">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-sage-600 text-[10px]"></i>
+                                    <span x-text="g"></span>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Navigation inside Stepper -->
+                <div class="flex justify-between items-center mt-6 pt-4 border-t border-slate-100">
+                    <button @click="currentStep = Math.max(0, currentStep - 1)" :disabled="currentStep === 0" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl text-xs font-bold hover:bg-slate-200 disabled:opacity-40">
+                        <i class="fa-solid fa-chevron-left mr-1"></i> 이전
+                    </button>
+                    <button @click="currentStep = Math.min(4, currentStep + 1)" :disabled="currentStep === 4" class="px-4 py-2 bg-sage-800 text-white rounded-xl text-xs font-bold hover:bg-sage-700 disabled:opacity-40 shadow-sm">
+                        다음 <i class="fa-solid fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Objection Handling Accordion -->
+            <section class="bg-white rounded-3xl p-6 sm:p-8 custom-shadow border border-sage-100 space-y-4">
+                <div class="mb-4">
+                    <span class="text-xs font-extrabold tracking-wider text-amberGold-700 uppercase block mb-1">Objection Handling</span>
+                    <h3 class="text-lg font-black text-slate-900">상황별 거절 극복 응대 스크립트</h3>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full flex items-center justify-between p-4 bg-slate-50 text-left font-bold text-xs sm:text-sm text-slate-800 hover:bg-slate-100/80">
+                        <span class="flex items-center gap-2"><span class="px-2 py-0.5 bg-amberGold-100 text-amberGold-800 rounded text-[11px]">Q1</span> "회원가입 절차가 너무 번거롭고 귀찮아요."</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform" :class="open ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="open" class="p-5 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3">
+                        <p class="bg-amberGold-50/50 p-3 rounded-xl border border-amberGold-200/60 font-medium text-slate-800">
+                            "아, 암요. 교수님, 충분히 번거롭게 느끼실 수 있습니다. 그래서 복잡한 본인 인증이나 서류 작성 없이, 제가 지금 전화상으로 성함과 주소만 받아 3분 만에 간편하게 대리 등록을 도와드리려고 합니다. 한 번 등록해 두시면 평생 본사 정품을 회원가 혜택으로 안전하게 직배송받으실 수 있으니 이번 기회에 마련해 두시는 것이 훨씬 편리하십니다."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full flex items-center justify-between p-4 bg-slate-50 text-left font-bold text-xs sm:text-sm text-slate-800 hover:bg-slate-100/80">
+                        <span class="flex items-center gap-2"><span class="px-2 py-0.5 bg-amberGold-100 text-amberGold-800 rounded text-[11px]">Q2</span> "피부 자극을 겪고 나니 오일 쓰기가 좀 두려워요."</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform" :class="open ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="open" class="p-5 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3">
+                        <p class="bg-amberGold-50/50 p-3 rounded-xl border border-amberGold-200/60 font-medium text-slate-800">
+                            "갑작스러운 반응에 많이 놀라셨을 마음 충분히 이해합니다, 교수님. 하지만 이는 제품 결함이 아니라 고농축 천연 성분에 피부가 일시적으로 놀란 자연스러운 현상입니다. 특히 다음에 보내드릴 센다로 오일은 피부 진정과 장벽 재생에 매우 우수합니다. 피부가 완전히 안정된 후 소량부터 안전하게 쓰실 수 있도록 제가 옆에서 1:1로 꼼꼼히 코칭해 드릴 테니 안심하셔도 괜찮습니다."
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Floating Quick Action Bar for Mobile -->
+    <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-11/12 max-w-md bg-slate-900/90 backdrop-blur-md text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center justify-between border border-slate-700 text-xs">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="font-bold">1:1 VIP 케어 솔루션</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <button @click="copyShareMessage()" class="px-3 py-1.5 bg-amberGold-600 hover:bg-amberGold-500 text-white rounded-xl font-bold transition flex items-center gap-1 shadow-sm">
+                <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                <span x-text="shareBtnText">링크 복사</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Application State Script -->
+    <script>
+        function careApp() {
+            return {
+                viewMode: 'client',
+                currentStep: 0,
+                subStep: 'improved',
+                shareBtnText: '카톡 전송문구 복사',
+                scriptCopyText: '스크립트 복사',
+                steps: [
+                    {
+                        title: '안부 & 오프닝',
+                        longTitle: '[1단계] 안부 및 공감대 형성',
+                        objective: '세일즈 목적을 완전 배제하고 고객의 피부 안위와 걱정에 대한 진솔한 공감을 표합니다.',
+                        scriptHTML: `“교수님, 안녕하세요! 지난번에 목 부위가 조금 간지럽고 불편하다고 하셔서, 제 마음이 내내 쓰이더라고요. 요 며칠 피부는 좀 어떠신가 해서 안부 차 연락드렸습니다. 간지러운 증상은 좀 가라앉으셨을까요?”`,
+                        scriptText: `교수님, 안녕하세요! 지난번에 목 부위가 조금 간지럽고 불편하다고 하셔서, 제 마음이 내내 쓰이더라고요. 요 며칠 피부는 좀 어떠신가 해서 안부 차 연락드렸습니다. 간지러운 증상은 좀 가라앉으셨을까요?`,
+                        guides: ['밝고 조심스러운 톤 유지', '세일즈 멘트 배제하고 진솔한 안부 집중']
+                    },
+                    {
+                        title: '상태 확인',
+                        longTitle: '[2단계] 피부 상태 진단 및 경청',
+                        objective: '현재 피부 반응과 미르 오일 사용법을 정밀 확인합니다.',
+                        scriptHTML: '',
+                        scriptText: '고객 응답에 따라 상단 탭(호전됨/지속됨/미르확인)을 선택해 맞춤형 대화를 이어갑니다.',
+                        guides: ['고객 피드백에 맞춰 신속하게 공감 처방', '미르 오일 과다 도포 여부 체크']
+                    },
+                    {
+                        title: '올바른 코칭',
+                        longTitle: '[3단계] 올바른 아로마 3대 안전 수칙 코칭',
+                        objective: '천연 원액의 고농축 특성을 알기 쉽게 설명하고 전문가적 신뢰를 확보합니다.',
+                        scriptHTML: `“교수님, 천연 아로마는 고농축 원액이라 여러 종류를 한 번에 바르시면 피부가 일시적으로 놀랄 수 있습니다. 앞으로 안전하게 즐기실 수 있도록 딱 세 가지만 기억해 주세요.<br><br>
+                        <strong>1. 사전 패치 테스트:</strong> 귀 뒤나 손목에 1방울 먼저 확인<br>
+                        <strong>2. 캐리어 오일 희석:</strong> 코코넛 오일에 희석해 부드럽게 사용<br>
+                        <strong>3. 점진적 적응:</strong> 3~4일 간격을 두고 한 가지씩 천천히 늘려가기”`,
+                        scriptText: `교수님, 천연 아로마는 고농축 원액이라 여러 종류를 한 번에 바르시면 피부가 일시적으로 놀랄 수 있습니다. 앞으로 안전하게 즐기실 수 있도록 딱 세 가지만 기억해 주세요. 1. 사전 패치 테스트, 2. 캐리어 오일 희석, 3. 3~4일 간격의 점진적 적응입니다.`,
+                        guides: ['차분하고 격식 있는 전문가 어조', '3대 안전수칙으로 안도감 부여']
+                    },
+                    {
+                        title: '제품제안 & 가입',
+                        longTitle: '[4단계] 센다로·유칼립투스 본사 직배송 간편 가입 제안',
+                        objective: '피부 재생과 호흡기 정화 혜택을 안내하고 본사 직배송 3분 간편 가입을 제안합니다.',
+                        scriptHTML: `“피부가 편안해지시면 피부 장벽 재생에 탁월한 <strong>'센다로'</strong>와 호흡기를 맑게 하는 <strong>'유칼립투스'</strong>를 꼭 권해드리고 싶어요. <br><br>가장 신선한 본사 정품으로 안전하게 직배송받으실 수 있도록, 제가 지금 전화상으로 3분 만에 간편 가입을 도와드릴까요? 성함과 배송 주소만 확인해 주시면 바로 접수해 드리겠습니다.”`,
+                        scriptText: `피부가 편안해지시면 피부 장벽 재생에 탁월한 '센다로'와 호흡기를 맑게 하는 '유칼립투스'를 꼭 권해드리고 싶어요. 가장 신선한 본사 정품으로 안전하게 직배송받으실 수 있도록, 제가 지금 전화상으로 3분 만에 간편 가입을 도와드릴까요? 성함과 배송 주소만 확인해 주시면 바로 접수해 드리겠습니다.`,
+                        guides: ['피부 치유 및 웰니스 시너지 어필', '민감정보 없는 3분 간편 대리등록 안내']
+                    },
+                    {
+                        title: '클로징',
+                        longTitle: '[5단계] 신뢰 유지 및 후속 통화 예약',
+                        objective: '부담 없는 마무리로 든든한 1:1 전담 컨설턴트 포지션을 확립합니다.',
+                        scriptHTML: `“네, 교수님. 서두르실 필요 없이 우선 피부 안정을 최우선으로 생각해 주세요. 며칠 지켜보시고, 이번 주 후반에 피부 상태 여쭐 겸 다시 연락드리겠습니다. 편안한 하루 보내세요!”`,
+                        scriptText: `네, 교수님. 서두르실 필요 없이 우선 피부 안정을 최우선으로 생각해 주세요. 며칠 지켜보시고, 이번 주 후반에 피부 상태 여쭐 겸 다시 연락드리겠습니다. 편안한 하루 보내세요!`,
+                        guides: ['절대 강요하지 않는 편안한 톤', '주 후반 확인 콜 약속']
+                    }
+                ],
+                copyShareMessage() {
+                    const msg = `최토미 교수님, 안녕하세요! 지난번 말씀 나누었던 목 부위 피부 진정 맞춤 가이드와 아로마 안전 사용법을 모바일 웹으로 정리해 드립니다.\nhttps://ryujean77.github.io/ryujean-slides/choi-tommy-care/`;
+                    navigator.clipboard.writeText(msg).then(() => {
+                        this.shareBtnText = '복사 완료! 🎉';
+                        setTimeout(() => this.shareBtnText = '카톡 전송문구 복사', 2500);
+                    });
+                },
+                copyScript(text) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        this.scriptCopyText = '복사 완료!';
+                        setTimeout(() => this.scriptCopyText = '스크립트 복사', 2000);
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
