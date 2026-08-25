@@ -3,81 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패션테라피 심리테스트 2차 기획회의 종합 분석 보고서</title>
+    <title>패션테라피 심리테스트 2차 기획회의 종합 분석 보고서 패키지</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Pretendard', sans-serif; }
-        .markdown-body h1 { font-size: 1.875rem; font-weight: 800; margin-top: 1.5rem; margin-bottom: 1rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
-        .markdown-body h2 { font-size: 1.5rem; font-weight: 700; margin-top: 1.25rem; margin-bottom: 0.75rem; color: #334155; }
-        .markdown-body h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; color: #475569; }
-        .markdown-body p { margin-bottom: 0.875rem; line-height: 1.75; color: #334155; }
-        .markdown-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.925rem; }
-        .markdown-body th, .markdown-body td { border: 1px solid #cbd5e1; padding: 0.625rem 0.875rem; text-align: left; }
-        .markdown-body th { background-color: #f1f5f9; font-weight: 700; color: #1e293b; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; }
+        .markdown-body h1 { font-size: 1.875rem; font-weight: 800; margin-top: 1.75rem; margin-bottom: 1rem; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .markdown-body h2 { font-size: 1.45rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1e293b; border-left: 4px solid #4f46e5; padding-left: 0.75rem; }
+        .markdown-body h3 { font-size: 1.2rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; color: #334155; }
+        .markdown-body p { margin-bottom: 0.875rem; line-height: 1.8; color: #334155; font-size: 0.95rem; }
+        .markdown-body table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.875rem; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); }
+        .markdown-body th, .markdown-body td { border: 1px solid #e2e8f0; padding: 0.75rem 1rem; text-align: left; }
+        .markdown-body th { background-color: #f1f5f9; font-weight: 700; color: #0f172a; }
         .markdown-body tr:nth-child(even) { background-color: #f8fafc; }
-        .markdown-body blockquote { border-left: 4px solid #6366f1; padding-left: 1rem; color: #4f46e5; background-color: #eef2ff; padding-top: 0.5rem; padding-bottom: 0.5rem; border-radius: 0 0.375rem 0.375rem 0; margin: 1rem 0; }
-        .markdown-body ul, .markdown-body ol { padding-left: 1.5rem; margin-bottom: 1rem; }
-        .markdown-body li { margin-bottom: 0.375rem; list-style-type: disc; }
-        .markdown-body pre { background-color: #1e293b; color: #f8fafc; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; margin: 1rem 0; }
-        .markdown-body code { background-color: #f1f5f9; color: #e11d48; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875em; }
+        .markdown-body tr:hover { background-color: #f1f5f9; }
+        .markdown-body blockquote { border-left: 4px solid #6366f1; padding-left: 1rem; color: #4338ca; background-color: #eef2ff; padding-top: 0.75rem; padding-bottom: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin: 1.25rem 0; font-style: normal; }
+        .markdown-body ul, .markdown-body ol { padding-left: 1.5rem; margin-bottom: 1rem; color: #334155; font-size: 0.95rem; }
+        .markdown-body li { margin-bottom: 0.375rem; line-height: 1.7; }
+        .markdown-body ul > li { list-style-type: disc; }
+        .markdown-body ol > li { list-style-type: decimal; }
+        .markdown-body pre { background-color: #0f172a; color: #f8fafc; padding: 1.25rem; border-radius: 0.75rem; overflow-x: auto; margin: 1.25rem 0; font-size: 0.875rem; }
+        .markdown-body code { background-color: #f1f5f9; color: #e11d48; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.875em; font-family: monospace; }
+        .markdown-body a { color: #4f46e5; text-decoration: underline; font-weight: 600; }
+        .markdown-body hr { border: 0; border-top: 1px solid #e2e8f0; margin: 2rem 0; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen">
-    <!-- Header -->
-    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-50">
+<body class="text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Header -->
+    <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white shadow-xl sticky top-0 z-50 border-b border-indigo-800/40">
         <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
             <div class="flex items-center space-x-3">
-                <span class="bg-indigo-700 text-indigo-200 text-xs px-2.5 py-1 rounded-full font-bold">2차 기획회의 종합분석</span>
-                <h1 class="text-xl font-bold tracking-tight">패션테라피 심리테스트 산출물 패키지</h1>
+                <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-sm">
+                    <i class="fa-solid fa-layer-group mr-1"></i> 기획회의 2차 산출물
+                </span>
+                <h1 class="text-lg md:text-xl font-black tracking-tight">패션테라피 심리테스트 종합 분석 리포트</h1>
             </div>
-            <div class="flex items-center space-x-2 text-xs text-indigo-200">
-                <span><i class="fa-solid fa-user-tie mr-1"></i>남미화 박사 & 류지연 총괄</span>
+            <div class="flex items-center space-x-3 text-xs text-indigo-200">
+                <span><i class="fa-solid fa-user-tie mr-1 text-indigo-400"></i> 남미화 박사 & 류지연 총괄</span>
                 <span>•</span>
-                <span><i class="fa-solid fa-calendar mr-1"></i>2026.08.24</span>
+                <span><i class="fa-solid fa-calendar mr-1 text-indigo-400"></i> 2026. 08. 24</span>
+                <a href="05_남미화박사님께_보내는_보고서.html" target="_blank" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-bold transition shadow text-xs inline-flex items-center gap-1">
+                    <i class="fa-solid fa-envelope-open-text"></i> 남박사님 보고서(전체보기)
+                </a>
             </div>
         </div>
+
         <!-- Tab Navigation -->
-        <div class="max-w-6xl mx-auto px-4 flex overflow-x-auto space-x-2 pb-2 text-sm">
-            <button onclick="switchTab('tab-index')" id="btn-tab-index" class="tab-btn px-4 py-2 rounded-t-lg font-bold bg-white text-indigo-900 transition shadow">📋 개요 & 종합안내</button>
-            <button onclick="switchTab('tab-minutes')" id="btn-tab-minutes" class="tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition">⏱️ 01. 핵심 회의록</button>
-            <button onclick="switchTab('tab-canvas')" id="btn-tab-canvas" class="tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition">📊 02. 린 캔버스</button>
-            <button onclick="switchTab('tab-raci')" id="btn-tab-raci" class="tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition">👥 03. RACI 역할분담</button>
-            <button onclick="switchTab('tab-essay')" id="btn-tab-essay" class="tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition">✍️ 04. 인문학 에세이</button>
+        <div class="max-w-6xl mx-auto px-4 flex overflow-x-auto space-x-1.5 pt-1 pb-2 text-xs md:text-sm no-scrollbar">
+            <button onclick="switchTab('tab-index')" id="btn-tab-index" class="tab-btn px-4 py-2.5 rounded-xl font-bold bg-white text-indigo-900 transition shadow">
+                <i class="fa-solid fa-house-chimney mr-1.5"></i> 00. 개요 & 종합안내
+            </button>
+            <button onclick="switchTab('tab-minutes')" id="btn-tab-minutes" class="tab-btn px-4 py-2.5 rounded-xl font-medium text-indigo-200 hover:text-white hover:bg-white/10 transition">
+                <i class="fa-solid fa-stopwatch mr-1.5"></i> 01. 핵심 회의록
+            </button>
+            <button onclick="switchTab('tab-canvas')" id="btn-tab-canvas" class="tab-btn px-4 py-2.5 rounded-xl font-medium text-indigo-200 hover:text-white hover:bg-white/10 transition">
+                <i class="fa-solid fa-chart-pie mr-1.5"></i> 02. 린 캔버스
+            </button>
+            <button onclick="switchTab('tab-raci')" id="btn-tab-raci" class="tab-btn px-4 py-2.5 rounded-xl font-medium text-indigo-200 hover:text-white hover:bg-white/10 transition">
+                <i class="fa-solid fa-user-group mr-1.5"></i> 03. RACI 역할분담
+            </button>
+            <button onclick="switchTab('tab-essay')" id="btn-tab-essay" class="tab-btn px-4 py-2.5 rounded-xl font-medium text-indigo-200 hover:text-white hover:bg-white/10 transition">
+                <i class="fa-solid fa-pen-nib mr-1.5"></i> 04. 인문학 에세이
+            </button>
         </div>
     </header>
 
     <!-- Main Content Area -->
-    <main class="max-w-6xl mx-auto px-4 py-8">
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-10">
+    <main class="max-w-6xl mx-auto px-4 py-8 w-full flex-1">
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 md:p-12 min-h-[600px]">
             <div id="content-area" class="markdown-body"></div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="max-w-6xl mx-auto px-4 py-8 text-center text-xs text-slate-400">
-        <p>패션테라피 심리테스트 프로젝트 — 류지연 총괄 기획 & 남미화 의복심리학 박사 협업</p>
-        <p class="mt-1">Powered by Antigravity AI Engine • GitNotion Automated Publishing</p>
+    <footer class="max-w-6xl mx-auto px-4 py-8 text-center text-xs text-slate-400 border-t border-slate-200 mt-8 w-full">
+        <p class="font-medium text-slate-500">패션테라피 심리테스트 프로젝트 — 류지연 총괄 기획 & 남미화 의복심리학 박사 협업</p>
+        <p class="mt-1 text-slate-400">Powered by Antigravity AI Engine • GitNotion Automated Publishing Hub</p>
     </footer>
 
     <script>
-        const rawDocs = {
-            'tab-index': "# 패션테라피 심리테스트 앱 — 기획회의 2차 산출물 (2026-08-24)\n\n원본: 남미화 박사와 나눈 음성 대화(`I:\\내 드라이브\\01_Inbox_Raw\\음성 260823_200915_original.txt`)를\n프로젝트 매니저 관점에서 분석해 아래 4개 문서로 정리했습니다.\n\n1. [01_회의록.md](01_회의록.md) — 대화 시간대별 요약, 합의 원칙, 미결 사항\n2. [02_기획반영_및_린캔버스.md](02_기획반영_및_린캔버스.md) — 적용/추가/부족/리스크 4분류 + 서비스 린캔버스\n3. [03_역할분담.md](03_역할분담.md) — 남미화 박사 / 오빠(총괄) 담당 업무 분리\n4. [04_인사이트_에세이.md](04_인사이트_에세이.md) — 인문학적 인사이트 정리 + 블로그/에세이 초안\n5. [05_남미화박사님께_보내는_보고서.html](05_남미화박사님께_보내는_보고서.html) — 위 4개 문서를 남박사님이 읽기 편하게 풀어쓴 종합 HTML 보고서 (이메일 발송용)\n\n**개발지시서(살아있는 문서, 계속 업데이트)**: [../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md](../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md) — 본 회의 내용을 반영해 v1.0 → v1.1로 갱신 완료(§3.4~3.6, §9, §11 개정이력 참고)\n\n## 참고: 원본 음성 스크립트 파일 안내\n원본 `.txt` 파일이 **UTF-16(BE) 인코딩**으로 저장되어 있어 일반 텍스트 뷰어에서 깨져 보일 수 있습니다.\nUTF-8로 변환한 전문이 필요하면 말씀해 주세요.\n",
-            'tab-minutes': "",
-            'tab-canvas': "",
-            'tab-raci': "",
-            'tab-essay': ""
-        };
+        const rawDocs = {"tab-index": "# 패션테라피 심리테스트 앱 — 기획회의 2차 산출물 (2026-08-24)\n\n원본: 남미화 박사와 나눈 음성 대화(`I:\\내 드라이브\\01_Inbox_Raw\\음성 260823_200915_original.txt`)를\n프로젝트 매니저 관점에서 분석해 아래 4개 문서로 정리했습니다.\n\n1. [01_회의록.md](01_회의록.md) — 대화 시간대별 요약, 합의 원칙, 미결 사항\n2. [02_기획반영_및_린캔버스.md](02_기획반영_및_린캔버스.md) — 적용/추가/부족/리스크 4분류 + 서비스 린캔버스\n3. [03_역할분담.md](03_역할분담.md) — 남미화 박사 / 오빠(총괄) 담당 업무 분리\n4. [04_인사이트_에세이.md](04_인사이트_에세이.md) — 인문학적 인사이트 정리 + 블로그/에세이 초안\n5. [05_남미화박사님께_보내는_보고서.html](05_남미화박사님께_보내는_보고서.html) — 위 4개 문서를 남박사님이 읽기 편하게 풀어쓴 종합 HTML 보고서 (이메일 발송용)\n\n**개발지시서(살아있는 문서, 계속 업데이트)**: [../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md](../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md) — 본 회의 내용을 반영해 v1.0 → v1.1로 갱신 완료(§3.4~3.6, §9, §11 개정이력 참고)\n\n## 참고: 원본 음성 스크립트 파일 안내\n원본 `.txt` 파일이 **UTF-16(BE) 인코딩**으로 저장되어 있어 일반 텍스트 뷰어에서 깨져 보일 수 있습니다.\nUTF-8로 변환한 전문이 필요하면 말씀해 주세요.\n", "tab-minutes": "# 회의록 — 패션테라피 심리테스트 앱 기획 논의 (음성 대화 분석)\n\n- **원본 파일**: `I:\\내 드라이브\\01_Inbox_Raw\\음성 260823_200915_original.txt` (AI 자동 생성 스크립트, UTF-16 인코딩 원본)\n- **추정 일시**: 2026-08-23 저녁 8시경 (파일명 기준), 대화 실질 길이 약 20분\n- **참석자(내용 기반 추정)**:\n  - **발화자 1 = 남미화 박사**: 패션테라피 인문학 저자, 콘텐츠(문항/카피/이론) 담당. 대화 중 \"오빠\"로 상대를 호칭.\n  - **발화자 2 = 프로젝트 총괄(\"오빠\")**: 앱 구조/UX/마케팅 퍼널 설계 담당. 대화 중 남박사를 \"자기\"로 호칭하며, 남박사를 3인칭으로 \"남 박사\"라 부르는 카피 예시를 직접 제시(→ 화자 구분의 근거).\n  - ※ 화자 라벨은 원본 STT의 \"발화자 1/2\" 순서를 그대로 따랐으며, 내용상 정황 추정이므로 실제와 다르면 정정 요청 바람.\n- **작성**: Claude(프로젝트 매니저 역할)\n- **목적**: itcolor \"INNER COLOR\" 벤치마킹 이후, 패션테라피진흥원 자체 심리테스트 앱의 방향을 잡기 위한 실무 논의를 회의록 형태로 정리하고, 개발지시서/사업기획 문서에 반영한다.\n\n---\n\n## 1. 회의 배경\n\n지난 라운드에서 Claude가 itcolor.kr의 \"INNER COLOR\" 테스트를 벤치마킹해 [개발지시서 v1](../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md)을 작성했다. 이후 남미화 박사가 해당 벤치마크 화면을 직접 검토하며 \"카피(참고)할 지점\"을 판단했고, 그 결과를 두고 프로젝트 총괄과 나눈 실무 조율 대화가 본 녹취다. 대화의 실질적 결론은 **\"무엇을 베꼈다고 착각했는가\"에 대한 재정의**에서 출발해, **콘텐츠 전략과 타겟 세그먼트 다변화**로 확장된다.\n\n---\n\n## 2. 시간대별 논의 요약\n\n| 구간 | 주제 | 핵심 내용 |\n|---|---|---|\n| 00:00–03:54 | 구조 vs 외형 | 남박사는 itcolor 앱의 이모티콘·색상 등 **외형**을 \"카피\"라고 표현했으나, 총괄은 **문항 수/페이지당 배치/응답 방식/결과 유형 개수 같은 \"구조(뼈대)\"는 아직 설계되지 않았다**고 지적. \"구조와 외형은 다르다\"는 프레임 정립. |\n| 04:05–05:00 | 협업 커뮤니케이션 원칙 | 총괄이 남박사에게 \"그렇게 된 이유를 해명하지 말고, 지금부터 뭘 할지에 집중하라\"는 피드백 제공. 프로젝트 운영 전반에 적용할 원칙으로 채택 가능. |\n| 05:17–08:15 | **\"내용이 형식을 결정한다\"** | 목적이 (a) 재미+리드수집용 마케팅 콘텐츠인지, (b) 신뢰도 있는 진단 도구인지에 따라 설계 깊이가 완전히 달라짐. (b)라면 유형 체계(뼈대/내용)를 먼저 잡고, 문항 수·응답 방식(예/아니오, 3지, 4지 등)은 그 다음에 정하는 순서가 맞다는 원칙 제시. |\n| 08:22–09:21 | 콘텐츠 확장 아이디어 | 유튜브 쇼츠/인스타그램 연계용 짧은 스니펫형 진단(\"당신은 꽃무늬 옷만 입는 심리\") 제안 — 앱 본체 외 SNS 유입 콘텐츠로 재활용. |\n| 09:42–09:53 | 타겟 고민 | \"여자를 위한 앱인가 남자를 위한 앱인가\"는 다른 문제이며, 심리 콘텐츠는 여성 선호도가 높다는 전제 하에 \"연애심리\" 버전 아이디어로 연결. |\n| 10:02–11:36 | **\"연애심리\" 콘텐츠 버전(남자 편)** | 오늘 여자친구가 입은 옷(색상 조합, 스커트 라인 등)으로 \"오늘의 심리 상태\"를 알려주는 컨셉. 남성 타겟에게 강한 실용적 동기(호기심+관계 팁) 부여. |\n| 11:36–12:17 | 콘텐츠 소스 전략 | ChatGPT에 물어보면 누구나 얻을 수 있는 범용 정보이므로 차별화 포인트가 아님. **\"책 3~4권 분량 안에서 우리만의 데이터 경계(바운더리)를 정하는 것\"**이 핵심 자산. 원본 텍스트(원형 콘텐츠)를 한 번 만들어두면 여러 버전으로 변주 가능. |\n| 12:25–13:39 | 결정해야 할 두 가지 | ① 제목/타겟(누구에게 무엇을 줄 것인가), ② 콘텐츠 소재(연애심리/육아심리/유년기심리 등). 버전을 여러 개 만들어 비교(A/B)하는 것도 가능. 작업 프로세스: 아이디어 텍스트화 → 공유 → ChatGPT로 구조화. |\n| 13:39–15:38 | 콘텐츠 후보 확장 | **\"유년기 심리\" 버전**(어릴 때 옷 관련 에피소드로 나를 진단), **\"아이 패션으로 보는 엄마의 심리\" 버전**(육아맘 타겟, 바이럴 가능성 높음, \"우리 엄마는 왜 내 옷을 저렇게 입혔을까\" 훅). 니체의 \"위버멘쉬\" 인용, 책 판매 연결 CTA 예시(\"더 알고 싶으면 남박사의 책을 읽어라\") 논의. |\n| 14:56–20:23 | **핵심 인문학적 통찰** | \"옷은 나의 생각과 타인의 생각이 부딪히는 가장 바깥의 접점\"이라는 명제. \"이기적인 패션\"의 정의(지나치게 화려함/지나치게 허름함 모두 포함, 핵심은 \"타인에게 시선을 강요하는가\"). 한국(관계지향·눈치문화)과 서구(개인표현 존중)의 패션 심리 차이에 대한 비교문화적 분석. \"배려패션 vs 이기적패션\" 이분 축을 진단 프레임으로 제안. |\n\n---\n\n## 3. 회의 결론 및 결정 필요 사항 (Action Items)\n\n### 합의된 원칙\n1. **구조(뼈대)와 외형(스킨)을 분리해서 설계한다.** 외형은 자유롭게 우리 브랜드로 새로 만들되, 구조(문항 배치/진행 방식)만 벤치마크에서 참고한다. → 이미 개발지시서 v1에 반영됨.\n2. **콘텐츠(내용)가 형식(질문 수/응답 방식)을 결정한다.** 유형 체계부터 확정 후 문항 설계로 내려간다.\n3. **원본 콘텐츠(원형 텍스트)를 한 벌 만들고, 그로부터 여러 타겟용 버전을 파생시킨다.** (연애심리판/육아심리판/유년기심리판 등)\n\n### 미결 사항 (다음 회의 전 확정 필요)\n1. 서비스의 1차 목적: **(a) 재미+리드수집용 라이트 버전** vs **(b) 신뢰도 있는 진단 도구** — 이 결정에 따라 문항 설계 깊이가 달라짐.\n2. 1차 출시 타겟 세그먼트: 연애심리(남성 대상)/육아심리(엄마 대상)/유년기심리(전연령) 중 우선순위.\n3. 서비스 제목(가칭) — \"패션 심리테스트\" vs \"패션테라피 심리테스트\" 등.\n4. 유형 체계의 최종 형태(사상체질 4유형 기반인지, 독자 유형 체계인지).\n5. 책 콘텐츠와의 연계 지점(어느 챕터를 앱 결과 카피에 인용할지).\n\n---\n\n## 4. 참고: 대화 원문 타임코드 인용은 각 항목 옆 시간대 참조. 전문은 원본 스크립트 파일 참고.\n", "tab-canvas": "# 기획 반영 분류 & 린캔버스(Lean Canvas)\n\n[회의록](01_회의록.md)의 논의 내용을 개발지시서 및 사업 기획에 반영하기 위해 분류하고,\n개발지시서보다 상위 레벨(사업 모델) 문서로 스케일업한다.\n\n---\n\n## 1. 논의 내용 분류\n\n### ① 즉시 적용할 것 (개발지시서에 바로 반영 — v1.1에 반영 완료, [개발지시서](../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md) 참고)\n- 구조(뼈대)와 외형(스킨)을 분리해서 설계 원칙 문서화\n- 설계 순서를 \"유형체계(내용) 확정 → 문항 설계(형식)\"로 명문화\n- \"이기적 패션 vs 배려 패션\" 2분 축을 유형 진단 로직의 후보 축(§3.2 옵션 C)으로 추가\n\n### ② 추가할 것 (기존 지시서에 없던 신규 아이디어)\n- **멀티 버전 콘텐츠 전략**: 앱 하나에 문항을 몰아넣지 않고, 타겟별 \"에디션\"으로 분리\n  - 연애심리 에디션(남성 타겟, \"오늘 여친 패션으로 보는 심리\")\n  - 육아심리 에디션(\"아이 패션으로 보는 엄마의 심리\")\n  - 유년기 심리 에디션(전연령, 회고형)\n- **SNS 스니펫 콘텐츠**: 앱 결과를 유튜브 쇼츠/인스타그램용 1문항짜리 초압축 버전으로 재가공해 유입 채널로 활용\n- **책 연계 CTA**: 결과 화면 하단에 \"더 알고 싶다면 [남박사 저서]를 읽어보세요\" 형태의 소프트 세일즈 문구 슬롯\n- **원형 콘텐츠(Content Master) 관리 방식**: 문항/유형 텍스트를 먼저 원고로 확정하고, 이를 여러 에디션에 재사용하는 콘텐츠 파이프라인\n\n### ③ 부족한 부분 (미결/리스크 — 개발 착수 전 반드시 확정)\n- 1차 목적이 \"라이트 마케팅용\"인지 \"신뢰도 있는 진단 도구\"인지 미정 → 문항 설계 공수가 5배 이상 차이 남\n- 유형 체계(사상체질 4유형 기반 vs 독자 유형)가 아직 미확정 → 데이터 모델(§5) 자체가 확정 불가 상태\n- 여러 에디션을 만들 경우 **개발 리소스/일정이 선형으로 늘어남** — 우선순위 없이 전부 진행 시 아무것도 완성 못 할 위험(대화 중 \"너무 길다\", \"몇 페이지 정도 되네\" 등 스코프 불안 신호 반복 확인됨)\n- 콘텐츠 저작권/근거 문제: \"책 3~4권 분량 안에서 데이터 경계를 정한다\"는 언급은 있으나, 실제 인용/재구성 시 저작권·표절 리스크 검토 프로세스가 없음\n\n### ④ Claude 추가 제안 분류\n\n**(a) 톤앤매너 리스크**\n- \"이기적인 패션\" 같은 개념은 자칫 사용자에게 평가/비난처럼 읽힐 수 있음(대화 속 표현 \"이기적\", \"눈살이 찌푸려지는\" 등은 강연·집필용 표현이지, 앱 UX 카피로 그대로 쓰면 사용자 이탈 유발 가능) → 앱 카피로 옮길 때 \"관계지향형/자기표현형\"처럼 중립적 리네이밍 필요\n\n**(b) 데이터/측정 공백**\n- 회의에서 \"재미로 볼지 진단으로 볼지\"를 사용자 반응으로 검증하자는 언급이 없음 → 출시 후 어떤 지표(완료율, 공유율, 리드 전환율)로 두 방향 중 무엇이 맞았는지 확인할지 정의 필요(§2 린캔버스 Key Metrics에 반영)\n\n**(c) 의사결정 병목**\n- 대화 내내 \"결정을 못 내렸다\"는 표현이 반복(문항 수, 제목, 타겟 등) → 의사결정자가 남박사 단독인지, 총괄과 공동인지 프로세스가 불명확. §3(역할분담)에서 결정권 구조를 명시적으로 분리함.\n\n---\n\n## 2. 린캔버스 (Lean Canvas) — 패션테라피 심리테스트 서비스\n\nBMC(비즈니스모델캔버스) 대신 **린캔버스**를 선택한 이유: 본 프로젝트는 기존 강연/저서 사업에 신규 채널(웹앱)을 얹는 **검증 전 단계의 신규 서비스**이므로, \"문제-솔루션 적합성\"을 먼저 좁히는 린캔버스가 더 적합함. 사업이 검증된 이후(리드가 실제 강연/워크숍 매출로 전환되기 시작하면) 파트너십·비용구조가 복잡해지는 BMC로 확장 권장.\n\n| 블록 | 내용 |\n|---|---|\n| **1. 문제 (Problem)** | ① 잠재 고객이 패션테라피/사상체질 개념을 진지하게 접할 진입장벽이 높음(강연·책은 고관여 채널) ② 재미있게 자기이해를 하고 싶은 니즈는 있으나 기존 컬러/MBTI류 테스트는 \"옷/스타일\"이라는 실행 가능한 축이 없음 ③ 패션테라피진흥원 입장에서는 저관여 잠재고객을 고관여(강연/워크숍/책구매)로 끌어올릴 중간 단계 채널이 없음 |\n| **2. 고객군 (Customer Segments)** | 1순위 후보(택1 우선 출시, 회의 §3 미결): (a) 연애심리 궁금한 2030 남성 (b) 자녀 옷 문제로 고민하는 3040 엄마 (c) 자기이해에 관심 많은 2030 여성(범용) — *조기수용자(Early Adopter)*: 남박사 기존 독자/수강생, SNS 팔로워 |\n| **3. 고유가치제안 (UVP)** | \"당신의 옷장이 곧 당신의 마음이다 — 사상체질 기반 패션테라피가 알려주는 나(또는 상대방)의 진짜 심리\" — 기존 컬러/성격 테스트와 달리 **인문학적 근거(사상체질+철학)** 와 **실행 가능한 스타일링 처방**을 함께 제공 |\n| **4. 솔루션 (Solution)** | 모바일 웹 심리테스트(예/아니오 문항) + 유형별 결과 카드 + (선택)책/강연 CTA. MVP는 에디션 1개만 우선 출시 |\n| **5. 채널 (Channels)** | 인스타그램/유튜브 쇼츠(스니펫 콘텐츠로 유입) → 웹앱(본 진단) → 결과 공유(바이럴 루프) → 이메일/카카오채널(리드) → 책 구매·강연 신청(전환) |\n| **6. 수익원 (Revenue Streams)** | 앱 자체는 무료(리드 제너레이션 목적). 실제 매출은 ① 저서 판매 ② 강연/워크숍 신청 ③ (장기) 유료 심화 리포트/1:1 컨설팅 |\n| **7. 비용구조 (Cost Structure)** | 콘텐츠 원고 집필(남박사 시간), 앱 개발/디자인(총괄+Claude 협업), 배포 인프라(GitHub Pages, 무료), SNS 콘텐츠 제작 |\n| **8. 핵심지표 (Key Metrics)** | 테스트 완료율, 결과 공유율(바이럴계수), 리드 폼 전환율, 리드→강연신청 전환율, 에디션별 완료율 비교(어떤 타겟이 진짜 반응하는지 검증) |\n| **9. 경쟁우위 (Unfair Advantage)** | 남박사의 저서·강연 실적 기반 **검증된 이론 체계(사상체질×패션테라피)** — 일반 재미용 테스트 제작사가 복제 불가능한 인문학적 깊이 |\n\n### 린캔버스 관점에서 본 다음 액션\n- **가장 먼저 검증할 가설**: \"재미(라이트) 콘텐츠\"와 \"진단(딥) 콘텐츠\" 중 무엇이 리드 전환율을 더 높이는지 — 리소스를 갈라 쓰기 전에 **1개 에디션 MVP로 먼저 실험** 권장\n- MVP 후보 1순위 제안: 회의에서 가장 구체적 실행안까지 나온 **\"연애심리(남자 편)\"** — 다만 §3 역할분담에서 남박사·총괄 공동 확정 필요\n", "tab-raci": "# 역할 분담 — 남미화 박사 / 오빠(프로젝트 총괄)\n\n회의 내용을 기준으로, 누가 무엇을 이미 하고 있었고 앞으로 무엇을 맡아야 하는지를 정리한다.\n(화자 추정 근거는 [회의록](01_회의록.md) 상단 참고. 실제 역할과 다르면 정정 요청 바람.)\n\n---\n\n## 남미화 박사 — 콘텐츠·이론 담당\n\n대화에서 이미 확인된 강점: 사상체질×패션테라피의 인문학적 프레임, 문화비교 통찰, 카피라이팅 감각(연애심리·육아심리 훅 아이디어를 즉석에서 다수 제시).\n\n| 구분 | 해야 할 일 |\n|---|---|\n| **이론/콘텐츠 원고** | 문항 텍스트, 유형별 설명 카피, 결과 화면 문구를 텍스트(원고)로 먼저 작성 — 총괄이 반복 요청한 \"스크립트/텍스트부터 써 달라\"는 요청의 핵심 |\n| **유형 체계 확정** | 사상체질 4유형을 그대로 쓸지, 앱 전용 독자 유형을 만들지 결정하고 각 유형의 이름·설명·추천 스타일링 팁 확정 |\n| **소재 우선순위 선택** | 제시된 후보(연애심리/육아심리/유년기심리) 중 1차 MVP로 밀 소재 1개 선택 — 전부 동시 진행 금지 |\n| **책 연계 포인트 지정** | 어느 챕터/개념을 앱 결과 카피와 CTA에 인용할지 지정 |\n| **톤앤매너 검수** | \"이기적 패션\" 등 강연·집필용 표현을 앱 사용자 카피로 옮길 때 평가적으로 읽히지 않는지 최종 검수 |\n\n## 오빠(프로젝트 총괄) — 구조·개발·마케팅 담당\n\n대화에서 이미 확인된 역할: 벤치마크 UX 구조 분석, \"구조 vs 외형\" 프레임 정립, 마케팅 퍼널·타겟 세그먼트 설계, 협업 커뮤니케이션 코칭.\n\n| 구분 | 해야 할 일 |\n|---|---|\n| **UX/데이터 구조 설계** | 문항 수, 페이지당 배치, 응답 방식(예/아니오 등), 채점 로직 — 남박사의 원고가 나오는 대로 구조에 매핑 (이미 [개발지시서 v1](../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md)에서 1차 완료) |\n| **원고 → 데이터 구조화** | 남박사의 텍스트 원고를 `questions.json`/`types.json` 형태로 구조화(직접 또는 ChatGPT/Claude 활용, 회의 중 본인이 제안한 방식) |\n| **MVP 범위 확정 및 일정관리** | 여러 에디션 아이디어가 동시에 나온 상태이므로, 1개 에디션으로 스코프를 좁히고 일정 리드 |\n| **마케팅 퍼널/채널 전략** | SNS 스니펫 콘텐츠 기획, 리드 수집 폼 연동, 공유 루프 설계 |\n| **의사결정 정리 및 확인 요청** | 매 회의 후 미결 사항을 정리해 남박사에게 확인 요청(본 문서 시리즈가 그 역할을 대행) |\n\n## 공동 결정 필요 (둘 다 참여)\n\n- 서비스 목적: 라이트 마케팅용 vs 신뢰도 있는 진단 도구\n- 1차 MVP 타겟 세그먼트 및 제목(가칭)\n- 출시 후 확인할 핵심 지표(§2 린캔버스의 Key Metrics) 합의\n\n## 진행 방식 제안 (대화 중 본인들이 언급한 방식 그대로 채택)\n\n1. 남박사: 아이디어를 텍스트로 정리 → 이메일/공유폴더에 전달\n2. 총괄: 해당 텍스트를 구조화(ChatGPT/Claude 활용) → 개발지시서 업데이트\n3. 매 라운드마다 \"미결 사항\" 리스트를 줄여나가는 방식으로 반복 (현재 문서 세트가 1라운드)\n", "tab-essay": "# 비즈니스·인문학적 인사이트 & 에세이 초안\n\n## 1. 대화에서 도출한 인문학적 인사이트 (요약)\n\n1. **옷은 경계선(接點)이다.** 옷은 몸에 걸치는 가장 바깥의 것이지만, 동시에 \"내 생각\"과 \"타인의 시선\"이 최초로 부딪히는 지점이다. 그래서 옷 선택은 그 어떤 선택보다 \"나의 생각과 직접 맞닿아 있는\" 결정이다.\n2. **\"이기적인 패션\"의 재정의.** 흔히 화려하고 튀는 옷만 \"자기중심적\"이라 여기지만, 대화 속 통찰은 그 반대쪽 — 지나치게 초라하고 무신경한 옷차림 — 도 똑같이 \"이기적\"일 수 있다는 것이다. 기준은 화려함의 정도가 아니라 **\"상대방에게 특정한 반응을 강요하는가\"** 이다. 화려함은 감탄을, 초라함은 동정이나 불편함을 강요할 수 있다는 점에서 구조적으로 같다.\n3. **배려의 패션.** 반대편에는 \"내가 어떻게 보이든, 상대가 나를 어떤 시선으로 볼지\"를 고려해 조율하는 패션이 있다. 이것이 대화에서 제안된 \"이기적 패션 vs 배려 패션\"이라는 진단 축의 철학적 근거다.\n4. **문화 비교 — 관계 사회 vs 개인 사회.** 한국은 서로가 서로를 잘 아는 좁은 공동체(관계지향/눈치 문화)에서 발전해왔기에, \"속을 보여주지 않는 것\"이 신뢰를 해치는 행위로 여겨졌다. 반대로 서구, 특히 미국은 이동이 잦고 낯선 이들과 관계를 맺어온 역사 속에서 \"자기표현\"이 강요가 아닌 개인의 언어로 존중받는 문화를 발전시켰다. 즉 **패션에 대한 사회적 관용의 차이는 도덕성의 차이가 아니라, 공동체가 신뢰를 구축해온 방식의 차이**라는 것이다.\n5. **니체의 위버멘쉬(Übermensch)와의 연결.** \"타인의 기준이 아니라 자기 자신의 기준으로 가치를 창조하는 존재\"라는 위버멘쉬 개념은, 옷을 \"타인의 시선에 대한 방어/전시\"가 아니라 \"자기 확인의 도구\"로 바라보는 패션테라피의 지향점과 정확히 맞닿는다.\n\n이 다섯 가지는 심리테스트 앱의 **카피/브랜드보이스**뿐 아니라, 향후 강연·저서의 핵심 메시지로도 재사용 가능한 자산이다.\n\n---\n\n## 2. 에세이 초안\n\n> 아래 글은 위 인사이트를 대중적인 블로그/에세이 톤으로 재구성한 초안이다. 남미화 박사님의 검수를 거쳐 문체와 사례를 다듬은 뒤 브랜드 채널(블로그, 인스타그램 캡션 롱폼, 앱 인트로 문구 등)에 활용할 수 있다.\n\n### 옷장 앞에서, 우리는 매일 협상한다\n\n아침마다 옷장 문을 열고 잠시 멈춰 서는 순간이 있다. 그 몇 초 동안 우리는 사실 아주 오래된 질문과 마주한다. **\"나는 오늘 무엇을 보여줄 것인가, 그리고 무엇을 감출 것인가.\"**\n\n옷은 몸에 걸치는 것들 중 가장 바깥에 있다. 그래서 가장 하찮게 취급받기도 한다. \"그까짓 게 뭐라고.\" 그러나 조금만 들여다보면, 옷만큼 정직한 것도 없다. 우리 몸에서 가장 바깥에 있다는 것은, 곧 **내 생각과 타인의 생각이 가장 먼저 부딪히는 자리**라는 뜻이기도 하다. 말은 준비할 시간이라도 있지만, 옷은 문을 나서는 순간 이미 평가가 끝나 있다. 그래서 옷을 고르는 일은, 우리가 매일 아침 반복하는 가장 정직하고 가장 무방비한 자기표현이다.\n\n그런데 우리는 흔히 \"패션에 신경 쓰는 사람\"과 \"패션에 신경 쓰지 않는 사람\"을 나누고, 전자를 조금 이기적이라고 생각한다. 화려한 옷, 시선을 사로잡는 스타일링을 보면 \"저 사람은 남들이 봐주길 바라는구나\" 하고 생각하게 되니까. 맞는 말이다. 그런데 여기서 질문을 하나 더 던져보면 어떨까. **그렇다면 지나치게 무신경한 옷차림은 이기적이지 않은가?**\n\n화려한 옷이 \"나를 봐 달라\"는 강요라면, 지나치게 허름하거나 아무렇게나 걸친 옷은 \"나를 신경 쓰지 마라, 대신 그 불편함은 네가 감당해라\"는 또 다른 강요일 수 있다. 감탄을 강요하든 불편함을 떠넘기든, 상대에게 특정한 반응을 요구한다는 점에서 이 둘은 구조적으로 같다. 진짜 기준은 화려함의 정도가 아니라, **내 옷이 상대방에게 어떤 반응을 강요하고 있는가**이다.\n\n그 반대편에 \"배려의 패션\"이 있다. 내가 편한 대로만 입는 것이 아니라, 지금 이 자리에서 상대가 나를 어떻게 받아들일지를 함께 고려하는 옷차림. 이건 나를 지우는 것과는 다르다. 오히려 \"나\"와 \"타인\"이라는 두 개의 좌표를 동시에 쥐고 조율하는, 더 섬세한 자기표현이다.\n\n흥미로운 건, 이 감각이 문화마다 다르게 작동한다는 점이다. 한국 사회는 오랫동안 서로가 서로를 아주 잘 아는 좁은 공동체 속에서 살아왔다. 옆집 숟가락 개수까지 알던 사회에서는, \"속을 드러내지 않는 사람\"이 신뢰를 얻기 어려웠다. 그래서 우리는 유독 서로의 옷차림에, 서로의 \"티가 나는 부분\"에 민감하다. 반면 이동이 잦고 낯선 사람들과 관계를 새로 맺어야 했던 서구 사회에서는, 튀는 옷차림도 \"그의 언어\"로 받아들여지는 문화가 자리 잡았다. 이것은 어느 쪽이 더 개방적이고 어느 쪽이 더 폐쇄적이냐의 문제가 아니다. **공동체가 신뢰를 쌓아온 방식이 다르면, 옷을 읽는 문법도 달라진다**는 뜻일 뿐이다.\n\n니체는 위버멘쉬, 즉 \"넘어서는 인간\"을 이야기하며 타인이 만든 기준이 아니라 자기 자신의 기준으로 가치를 창조하는 존재를 그렸다. 옷을 고르는 일도 결국 이와 다르지 않다. 타인의 시선을 완전히 지우는 것도, 타인의 시선에 완전히 종속되는 것도 아닌, **그 사이 어딘가에서 매일 나만의 기준을 새로 세우는 일.** 그것이 옷장 앞에서 우리가 매일 치르는, 아주 작지만 아주 정직한 협상이다.\n\n당신은 오늘, 무엇을 강요했고 무엇을 배려했는가. 옷장은 이미 그 답을 알고 있다.\n\n---\n\n## 3. 활용 제안\n- 그대로 블로그/브런치 포스팅으로 사용 가능(제목 예시: *\"옷장 앞에서, 우리는 매일 협상한다\"*)\n- 앱 인트로 화면의 온보딩 카피(§4 개발지시서 참고)에 1~2문장 발췌 인용\n- \"이기적 패션 vs 배려 패션\" 축을 실제 진단 문항의 이론적 근거로 인용 가능(문항 예시: \"화려하든 수수하든, 내 옷차림에 상대가 어떻게 반응할지 신경 쓰이지 않는다\" 류)\n"};
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = 'tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition';
+                btn.className = 'tab-btn px-4 py-2.5 rounded-xl font-medium text-indigo-200 hover:text-white hover:bg-white/10 transition';
             });
             const activeBtn = document.getElementById('btn-' + tabId);
             if (activeBtn) {
-                activeBtn.className = 'tab-btn px-4 py-2 rounded-t-lg font-bold bg-white text-indigo-900 transition shadow';
+                activeBtn.className = 'tab-btn px-4 py-2.5 rounded-xl font-bold bg-white text-indigo-900 transition shadow';
             }
             const mdText = rawDocs[tabId] || '# 문서 내용이 없습니다.';
             document.getElementById('content-area').innerHTML = marked.parse(mdText);
