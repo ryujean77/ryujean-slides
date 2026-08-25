@@ -134,9 +134,9 @@
                 <div class="p-4 sm:p-5 rounded-2xl bg-amberGold-50/70 border border-amberGold-200/80 flex items-start gap-3.5">
                     <span class="w-6 h-6 rounded-full bg-amberGold-600 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
                     <div>
-                        <h3 class="font-bold text-amberGold-950 text-sm mb-1">피부 회복 후 샌달우드 & 유칼립투스 순차 복귀</h3>
+                        <h3 class="font-bold text-amberGold-950 text-sm mb-1">피부 회복 후 센다로 & 유칼립투스 순차 복귀</h3>
                         <p class="text-xs text-amberGold-900/90 leading-relaxed">
-                            피부 장벽이 완전히 건강해진 후, 피부 재생을 돕는 샌달우드와 호흡기를 상쾌하게 해주는 유칼립투스를 3~4일 간격으로 천천히 접해보세요.
+                            피부 장벽이 완전히 건강해진 후, 피부 재생을 돕는 센다로와 호흡기를 상쾌하게 해주는 유칼립투스를 3~4일 간격으로 천천히 접해보세요.
                         </p>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div class="bg-white/10 p-4 rounded-2xl border border-white/15 backdrop-blur-sm">
                     <div class="font-bold text-sm text-amberGold-200 mb-1 flex items-center gap-1.5">
-                        <i class="fa-solid fa-feather-pointed"></i> 샌달우드 (Sandalwood)
+                        <i class="fa-solid fa-feather-pointed"></i> 센다로 (Zendocrane)
                     </div>
                     <p class="text-xs text-slate-200 leading-relaxed">
                         피부 장벽의 재생과 진정을 도와주며, 일상의 스트레스를 차분하게 덜어줍니다.

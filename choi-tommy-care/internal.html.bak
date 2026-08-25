@@ -160,8 +160,8 @@
                         <div class="flex items-center gap-2 text-amberGold-800 font-bold text-xs mb-2">
                             <i class="fa-solid fa-box-open"></i> 피부 회복 후 추천
                         </div>
-                        <h4 class="font-bold text-amberGold-950 text-sm mb-1.5">샌달우드 & 유칼립투스</h4>
-                        <p class="text-xs text-amberGold-900/90 leading-relaxed">피부 장벽이 강화된 후, 재생에 탁월한 샌달우드와 호흡을 맑게 하는 유칼립투스로 순차 복귀합니다.</p>
+                        <h4 class="font-bold text-amberGold-950 text-sm mb-1.5">센다로 & 유칼립투스</h4>
+                        <p class="text-xs text-amberGold-900/90 leading-relaxed">피부 장벽이 강화된 후, 재생에 탁월한 센다로와 호흡을 맑게 하는 유칼립투스로 순차 복귀합니다.</p>
                     </div>
                 </div>
             </section>
@@ -228,7 +228,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="bg-white/10 p-5 rounded-2xl backdrop-blur border border-white/15">
                             <div class="flex items-center gap-2 text-amberGold-300 font-bold text-sm mb-1.5">
-                                <i class="fa-solid fa-sparkles"></i> 샌달우드 (Sandalwood)
+                                <i class="fa-solid fa-sparkles"></i> 센다로 (Zendocrane / Sandalo)
                             </div>
                             <p class="text-xs text-slate-200 leading-relaxed">
                                 지친 피부의 재생을 돕고, 심신을 차분하게 이완시키는 고급 힐링 블렌드.
@@ -373,7 +373,7 @@
                     </button>
                     <div x-show="open" class="p-5 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3">
                         <p class="bg-amberGold-50/50 p-3 rounded-xl border border-amberGold-200/60 font-medium text-slate-800">
-                            "갑작스러운 반응에 많이 놀라셨을 마음 충분히 이해합니다, 교수님. 하지만 이는 제품 결함이 아니라 고농축 천연 성분에 피부가 일시적으로 놀란 자연스러운 현상입니다. 특히 다음에 보내드릴 샌달우드 오일은 피부 진정과 장벽 재생에 매우 우수합니다. 피부가 완전히 안정된 후 소량부터 안전하게 쓰실 수 있도록 제가 옆에서 1:1로 꼼꼼히 코칭해 드릴 테니 안심하셔도 괜찮습니다."
+                            "갑작스러운 반응에 많이 놀라셨을 마음 충분히 이해합니다, 교수님. 하지만 이는 제품 결함이 아니라 고농축 천연 성분에 피부가 일시적으로 놀란 자연스러운 현상입니다. 특히 다음에 보내드릴 센다로 오일은 피부 진정과 장벽 재생에 매우 우수합니다. 피부가 완전히 안정된 후 소량부터 안전하게 쓰실 수 있도록 제가 옆에서 1:1로 꼼꼼히 코칭해 드릴 테니 안심하셔도 괜찮습니다."
                         </p>
                     </div>
                 </div>
@@ -435,10 +435,10 @@
                     },
                     {
                         title: '제품제안 & 가입',
-                        longTitle: '[4단계] 샌달우드·유칼립투스 본사 직배송 간편 가입 제안',
+                        longTitle: '[4단계] 센다로·유칼립투스 본사 직배송 간편 가입 제안',
                         objective: '피부 재생과 호흡기 정화 혜택을 안내하고 본사 직배송 3분 간편 가입을 제안합니다.',
-                        scriptHTML: `“피부가 편안해지시면 피부 장벽 재생에 탁월한 <strong>'샌달우드'</strong>와 호흡기를 맑게 하는 <strong>'유칼립투스'</strong>를 꼭 권해드리고 싶어요. <br><br>가장 신선한 본사 정품으로 안전하게 직배송받으실 수 있도록, 제가 지금 전화상으로 3분 만에 간편 가입을 도와드릴까요? 성함과 배송 주소만 확인해 주시면 바로 접수해 드리겠습니다.”`,
-                        scriptText: `피부가 편안해지시면 피부 장벽 재생에 탁월한 '샌달우드'와 호흡기를 맑게 하는 '유칼립투스'를 꼭 권해드리고 싶어요. 가장 신선한 본사 정품으로 안전하게 직배송받으실 수 있도록, 제가 지금 전화상으로 3분 만에 간편 가입을 도와드릴까요? 성함과 배송 주소만 확인해 주시면 바로 접수해 드리겠습니다.`,
+                        scriptHTML: `“피부가 편안해지시면 피부 장벽 재생에 탁월한 <strong>'센다로'</strong>와 호흡기를 맑게 하는 <strong>'유칼립투스'</strong>를 꼭 권해드리고 싶어요. <br><br>가장 신선한 본사 정품으로 안전하게 직배송받으실 수 있도록, 제가 지금 전화상으로 3분 만에 간편 가입을 도와드릴까요? 성함과 배송 주소만 확인해 주시면 바로 접수해 드리겠습니다.”`,
+                        scriptText: `피부가 편안해지시면 피부 장벽 재생에 탁월한 '센다로'와 호흡기를 맑게 하는 '유칼립투스'를 꼭 권해드리고 싶어요. 가장 신선한 본사 정품으로 안전하게 직배송받으실 수 있도록, 제가 지금 전화상으로 3분 만에 간편 가입을 도와드릴까요? 성함과 배송 주소만 확인해 주시면 바로 접수해 드리겠습니다.`,
                         guides: ['피부 치유 및 웰니스 시너지 어필', '민감정보 없는 3분 간편 대리등록 안내']
                     },
                     {
