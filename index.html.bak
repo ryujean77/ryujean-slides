@@ -1,190 +1,411 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>사상체질 융복합 라이프케어 강연 제안서 포털</title>
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <style>
-    :root {
-      --bg: #090d16;
-      --card-bg: rgba(22, 27, 34, 0.8);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --text: #f0f6fc;
-      --muted: #8b949e;
-      --accent-orange: #f97316;
-      --accent-rose: #f43f5e;
-      --accent-blue: #38bdf8;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYUJEAN DOMAIN HQ | 유정근 총괄 마스터 대시보드</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                            950: '#082f49'
+                        },
+                        darkSurface: {
+                            800: '#1e293b',
+                            850: '#151f32',
+                            900: '#0f172a',
+                            950: '#090d16'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(14, 165, 233, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.15);
+        }
+        .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
+        .custom-scroll::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 999px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: rgba(14, 165, 233, 0.7); }
+    </style>
+
+<style id="web-guidelines-enhancement">
+    /* Vercel & W3C Standard Focus & Typography Enhancements */
+    :focus-visible {
+        outline: 2px solid #C5A869 !important;
+        outline-offset: 2px !important;
+        border-radius: 4px;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
-                  radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
-                  var(--bg);
-      color: var(--text);
-      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
     }
-    .container {
-      width: 100%;
-      max-width: 1080px;
+    p, li {
+        text-wrap: pretty;
     }
-    .header {
-      text-align: center;
-      margin-bottom: 50px;
+    @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
     }
-    .badge {
-      display: inline-block;
-      padding: 6px 16px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--accent-orange);
-      background: rgba(249, 115, 22, 0.12);
-      border: 1px solid rgba(249, 115, 22, 0.3);
-      border-radius: 999px;
-      margin-bottom: 16px;
+    button, a, input, select, textarea {
+        touch-action: manipulation;
     }
-    .title {
-      font-size: 38px;
-      font-weight: 900;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #ffffff 40%, #fdba74 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .desc {
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 32px 28px;
-      backdrop-filter: blur(12px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(249, 115, 22, 0.4);
-      box-shadow: 0 20px 40px -15px rgba(249, 115, 22, 0.15);
-    }
-    .card-tag {
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent-orange);
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-    .card-title {
-      font-size: 22px;
-      font-weight: 800;
-      line-height: 1.35;
-      margin-bottom: 12px;
-      color: #ffffff;
-    }
-    .card-desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 24px;
-      flex: 1;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 13px;
-      font-size: 15px;
-      font-weight: 700;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.2s;
-      background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 100%);
-      color: #ffffff;
-    }
-    .btn:hover {
-      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
-    }
-    .footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    @media (max-width: 600px) {
-      body { padding: 40px 16px; }
-      .header { margin-bottom: 30px; }
-      .title { font-size: 25px; line-height: 1.3; }
-      .desc { font-size: 14px; }
-      .grid { grid-template-columns: 1fr; gap: 16px; }
-      .card { padding: 24px 20px; }
-      .card-title { font-size: 19px; }
-    }
-  </style>
+</style>
+
 </head>
-<body>
-  <div class="container">
-    <div class="header">
-      <span class="badge">OFFICIAL LECTURE PROPOSAL SHOWROOM</span>
-      <h1 class="title">사상체질 · 인문학 힐링 특강 제안서</h1>
-      <p class="desc">도서관 및 공공기관 담당자를 위한 인터랙티브 웹 슬라이드 &amp; 제안서 원본(PPTX) 다운로드 포털</p>
-    </div>
+<body class="bg-darkSurface-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
 
-    <div class="grid">
-      <!-- Card 1 -->
-      <div class="card">
-        <div>
-          <span class="card-tag">PUBLIC LIBRARY PROPOSAL</span>
-          <h2 class="card-title">도서관 이용자를 위한 사상체질·유전자 특강</h2>
-          <p class="card-desc">『에이트진』 저자 임동구 박사의 자기이해, 진로, 건강, 자존감 3-Track 공공도서관 맞춤형 힐링 제안서</p>
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-darkSurface-900/90 backdrop-blur-md border-b border-slate-800/80 px-4 sm:px-8 py-3.5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+            <div class="flex items-center space-x-3 w-full md:w-auto justify-between md:justify-start">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-brand-500/20 text-white font-black text-lg">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h1 class="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-2">
+                                RYUJEAN DOMAIN HQ
+                            </h1>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-500/20 text-brand-400 border border-brand-500/30">
+                                ENTERPRISE OS
+                            </span>
+                        </div>
+                        <p class="text-[11px] text-slate-400">
+                            총괄: <strong class="text-slate-200">유정근 디렉터</strong> • 실시간 통합 도메인 & 프로젝트 관제 포털
+                        </p>
+                    </div>
+                </div>
+                <!-- Mobile Actions -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button onclick="openNewDomainModal()" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white text-xs font-bold shadow">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Header Quick Actions -->
+            <div class="flex items-center space-x-2.5 w-full md:w-auto justify-end">
+                <button onclick="openNewDomainModal()" class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-xs font-bold shadow-md shadow-brand-500/20 transition">
+                    <i class="fa-solid fa-plus-circle"></i> 새 도메인/프로젝트 등록
+                </button>
+                <a href="https://github.com/ryujean77/ryujeanWorkSpace" target="_blank" class="px-3 py-2 rounded-xl bg-darkSurface-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 transition inline-flex items-center gap-1.5">
+                    <i class="fa-brands fa-github"></i> Workspace
+                </a>
+                <a href="https://github.com/ryujean77/ryujean-slides" target="_blank" class="px-3 py-2 rounded-xl bg-darkSurface-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 transition inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-globe"></i> Live Slides
+                </a>
+            </div>
         </div>
-        <a class="btn" href="./library-lecture/">
-          <span>🖥️ 인터랙티브 슬라이드 열기</span>
-        </a>
-      </div>
+    </header>
 
-      <!-- Card 2 -->
-      <div class="card">
-        <div>
-          <span class="card-tag">FASHION &amp; AROMA THERAPY</span>
-          <h2 class="card-title">패션테라피 &amp; 아로마 인문학 에디션</h2>
-          <p class="card-desc">임동구 박사 &amp; 남미화 박사의 체질별 의복 심리 치유, 퍼스널 컬러, 아로마 오감 힐링 융복합 특강 제안서</p>
+    <main class="max-w-7xl mx-auto px-4 sm:px-8 py-8 w-full space-y-8 flex-1">
+
+        <!-- 4 KPI Summary Cards -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="glass-card rounded-2xl p-5 relative overflow-hidden group transition">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-400">총 비즈니스 도메인</span>
+                    <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm"><i class="fa-solid fa-layer-group"></i></span>
+                </div>
+                <div class="mt-3 flex items-baseline gap-2">
+                    <span class="text-2xl sm:text-3xl font-black text-white" id="stat-domain-count">4</span>
+                    <span class="text-xs text-emerald-400 font-semibold">+ 1 인프라</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1">아로마 • 패션 • 호모루미누스 • 사상체질</p>
+                <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-emerald-500/5 rounded-full blur-xl group-hover:bg-emerald-500/10 transition"></div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 relative overflow-hidden group transition">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-400">등록 프로젝트 / 산출물</span>
+                    <span class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-sm"><i class="fa-solid fa-folder-tree"></i></span>
+                </div>
+                <div class="mt-3 flex items-baseline gap-2">
+                    <span class="text-2xl sm:text-3xl font-black text-white" id="stat-project-count">12</span>
+                    <span class="text-xs text-indigo-400 font-semibold">100% 자산화</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1">MD + 디자인 HTML 듀얼 산출물</p>
+                <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-indigo-500/5 rounded-full blur-xl group-hover:bg-indigo-500/10 transition"></div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 relative overflow-hidden group transition">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-400">라이브 웹 배포 완료</span>
+                    <span class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center text-sm"><i class="fa-solid fa-satellite-dish"></i></span>
+                </div>
+                <div class="mt-3 flex items-baseline gap-2">
+                    <span class="text-2xl sm:text-3xl font-black text-white" id="stat-live-count">8</span>
+                    <span class="text-xs text-brand-400 font-semibold">GitHub Pages</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1">1초 원클릭 고객/외부 공유 가능</p>
+                <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-brand-500/5 rounded-full blur-xl group-hover:bg-brand-500/10 transition"></div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 relative overflow-hidden group transition">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-400">탑재 자동화 스킬</span>
+                    <span class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-sm"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                </div>
+                <div class="mt-3 flex items-baseline gap-2">
+                    <span class="text-2xl sm:text-3xl font-black text-white">12</span>
+                    <span class="text-xs text-amber-400 font-semibold">스킬 엔진</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1">슬랙봇 • 처방엔진 • 슬라이드빌더</p>
+                <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-amber-500/5 rounded-full blur-xl group-hover:bg-amber-500/10 transition"></div>
+            </div>
+        </section>
+
+        <!-- 4 Core Domains Visual Grid -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <h2 class="text-lg font-black text-white flex items-center gap-2">
+                    <i class="fa-solid fa-shapes text-brand-400"></i> 4대 핵심 비즈니스 도메인 인벤토리
+                </h2>
+                <span class="text-xs text-slate-400 font-mono">Domain Registry Master</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="domain-cards-container">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <!-- Search, Filter & Project List Section -->
+        <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-800">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-5 border-b border-slate-800">
+                <div>
+                    <h2 class="text-lg font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-indigo-400"></i> 세부 프로젝트 & 산출물 통합 관리 리스트
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">모든 프로젝트의 산출물 파일, 라이브 배포 링크 및 작업 현황을 실시간으로 제어합니다.</p>
+                </div>
+
+                <!-- Search Input -->
+                <div class="relative w-full md:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input type="text" id="searchInput" oninput="filterProjects()" placeholder="프로젝트명, 도메인, 키워드 검색…" 
+                        class="w-full bg-darkSurface-900 border border-slate-700 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition">
+                </div>
+            </div>
+
+            <!-- Filter Pills -->
+            <div class="flex flex-wrap items-center gap-2 text-xs">
+                <span class="text-slate-400 font-bold mr-1 text-[11px]"><i class="fa-solid fa-filter"></i> 도메인 필터:</span>
+                <button onclick="setDomainFilter('ALL')" id="filter-btn-ALL" class="domain-filter-btn px-3 py-1.5 rounded-lg font-bold bg-brand-600 text-white shadow-sm transition">전체보기 (12)</button>
+                <button onclick="setDomainFilter('DOM-AROMA')" id="filter-btn-DOM-AROMA" class="domain-filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-300 bg-darkSurface-900 hover:bg-slate-800 border border-slate-800 transition">🌿 아로마테라피</button>
+                <button onclick="setDomainFilter('DOM-FASHION')" id="filter-btn-DOM-FASHION" class="domain-filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-300 bg-darkSurface-900 hover:bg-slate-800 border border-slate-800 transition">👗 패션테라피</button>
+                <button onclick="setDomainFilter('DOM-LUMINUS')" id="filter-btn-DOM-LUMINUS" class="domain-filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-300 bg-darkSurface-900 hover:bg-slate-800 border border-slate-800 transition">🌌 호모루미누스</button>
+                <button onclick="setDomainFilter('DOM-SASANG')" id="filter-btn-DOM-SASANG" class="domain-filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-300 bg-darkSurface-900 hover:bg-slate-800 border border-slate-800 transition">🧬 사상체질</button>
+                <button onclick="setDomainFilter('DOM-INFRA')" id="filter-btn-DOM-INFRA" class="domain-filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-300 bg-darkSurface-900 hover:bg-slate-800 border border-slate-800 transition">⚙️ 중앙 인프라</button>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="project-cards-container">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal for New Domain / Project Registration Guide -->
+    <div id="newDomainModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card bg-darkSurface-900 max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-slate-700 shadow-2xl space-y-5 relative">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-white">새 도메인 / 신규 프로젝트 등록 방법</h3>
+                </div>
+                <button onclick="closeNewDomainModal()" class="text-slate-400 hover:text-white text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <div class="p-4 rounded-xl bg-darkSurface-950 border border-slate-800 space-y-2">
+                    <span class="font-bold text-brand-400 text-xs uppercase tracking-wider">방법 1. 대화창에서 AI에게 바로 요청하기 (가장 간편)</span>
+                    <p class="text-xs text-slate-300">
+                        "<code>새로운 도메인으로 [부동산 웰니스] 추가해줘</code>" 또는 "<code>[도서관 3차 출강] 신규 프로젝트 등록해줘</code>"라고 말씀하시면, AI가 마스터 레지스트리(`domain_master_registry.json`)와 포털 대시보드에 즉시 자동 등록하고 배포합니다.
+                    </p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-darkSurface-950 border border-slate-800 space-y-2">
+                    <span class="font-bold text-indigo-400 text-xs uppercase tracking-wider">방법 2. 산출물 폴더 규칙 (law.md 준수)</span>
+                    <p class="text-xs text-slate-300">
+                        새로운 작업이 시작될 때마다 <code>산출물/YYYYMMDD_HHMM_프로젝트명/</code> 폴더가 생성되며, 작업 완료 시 자동으로 이 대시보드에 연동 및 라이브 링크가 배포됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-2 flex justify-end">
+                <button onclick="closeNewDomainModal()" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow transition">
+                    확인 및 닫기
+                </button>
+            </div>
         </div>
-        <a class="btn" href="./fashion-therapy/">
-          <span>🖥️ 인터랙티브 슬라이드 열기</span>
-        </a>
-      </div>
     </div>
 
-    <div class="footer">
-      Dr. Yim's 체질라이프스타일연구소 &bull; Powered by GitHub Pages &amp; Google Apps Script
-    </div>
-  </div>
+    <!-- Footer -->
+    <footer class="bg-darkSurface-900 border-t border-slate-800/80 px-4 py-6 text-center text-xs text-slate-500">
+        <p class="font-medium text-slate-400">RYUJEAN DOMAIN HQ • 유정근 웰니스 총괄 & 프로젝트 디렉터</p>
+        <p class="mt-1 text-[11px] text-slate-600">Powered by Antigravity AI Engine • Single Source of Truth Architecture</p>
+    </footer>
+
+    <script>
+        const masterDB = {"systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털", "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터)", "lastUpdated": "2026-08-26T09:40:00+09:00", "domains": [{"id": "DOM-AROMA", "name": "아로마테라피 & 웰니스 케어", "icon": "fa-seedling", "color": "emerald", "accentHex": "#059669", "bgGradient": "from-emerald-950 via-slate-900 to-emerald-900", "tag": "🌿 아로마테라피", "partner": "유정근 (전담 테라피스트)", "summary": "도테라 CPTG 30종 마스터 DB, 사상체질 증상별 처방, 1:1 VIP 웹 처방전 및 5단계 온라인 수익 극대화 퍼널 시스템.", "storagePath": "도메인/아로마테라피 & E:\\OneDrive\\drop\\03_susevo\\00_000_도테라contact", "skills": ["aroma-care-engine", "slack-notifier", "email-sender"], "stats": {"projectsCount": 4, "liveUrlsCount": 2, "status": "🟢 활발히 가동중"}}, {"id": "DOM-FASHION", "name": "패션테라피 & 의복심리학", "icon": "fa-shirt", "color": "indigo", "accentHex": "#4f46e5", "bgGradient": "from-indigo-950 via-slate-900 to-indigo-900", "tag": "👗 패션테라피", "partner": "남미화 의복심리학 박사 & 유정근 총괄", "summary": "의복심리학 기반 8대 캐릭터 모바일 심리테스트 웹앱(Inner Styler), 2차 기획회의 분석 대시보드 및 도서관 B2B 출강 제안서.", "storagePath": "산출물/20260821_..., 산출물/20260824_...", "skills": ["designer-slides", "make-slide", "ppt-designer"], "stats": {"projectsCount": 6, "liveUrlsCount": 3, "status": "🟢 기획/개발 진행중"}}, {"id": "DOM-LUMINUS", "name": "호모루미누스 & 빛운영 아카이브", "icon": "fa-sun", "color": "amber", "accentHex": "#d97706", "bgGradient": "from-amber-950 via-slate-900 to-amber-900", "tag": "🌌 호모루미누스", "partner": "백태종 스승님 & 유정근 디렉터", "summary": "CMB 진공 파동 포집(1999) 기반 『빛운영보고서 3부작』 출판 파이프라인(97청크 무손실 윤문) 및 BTS WORLD TOUR 글로벌 아카이브.", "storagePath": "I:\\내 드라이브\\호모루미누스 & ryujean77/BTS_AGY", "skills": ["make-slide", "gitnotion-publisher"], "stats": {"projectsCount": 3, "liveUrlsCount": 1, "status": "🟡 원고 검토/보완"}}, {"id": "DOM-SASANG", "name": "사상체질 인문학 & 기관 출강", "icon": "fa-dna", "color": "rose", "accentHex": "#e11d48", "bgGradient": "from-rose-950 via-slate-900 to-rose-900", "tag": "🧬 사상체질", "partner": "임동구 생체정보학 박사 & 유정근 디렉터", "summary": "사상체질 유전체 기반 전국 도서관, 공공기관, 성동구청 B2B 인문학 강연 제안서 및 슬라이드·포스터 패키지.", "storagePath": "산출물/20260821_0118_..., 산출물/20260821_0156_...", "skills": ["designer-slides", "ppt-designer"], "stats": {"projectsCount": 4, "liveUrlsCount": 2, "status": "🟢 제안서 패키징 완료"}}, {"id": "DOM-INFRA", "name": "GitNotion CMS & 자동화 인프라", "icon": "fa-server", "color": "slate", "accentHex": "#475569", "bgGradient": "from-slate-950 via-slate-900 to-slate-850", "tag": "⚙️ 중앙 인프라", "partner": "유정근 총괄 & Antigravity AI Agent", "summary": "GitHub Pages 1초 자동 웹 배포 파이프라인, 슬랙(Slack) Socket Mode 실시간 AI 비서 데몬 및 12대 전문 스킬 엔진.", "storagePath": "publishing_registry.json, 스킬/, .env.local", "skills": ["slack-notifier", "gitnotion-publisher", "skill-creator"], "stats": {"projectsCount": 3, "liveUrlsCount": 4, "status": "🔵 상시 가동중"}}], "projects": [{"id": "PRJ-AROMA-01", "domainId": "DOM-AROMA", "domainTag": "🌿 아로마테라피", "title": "아로마테라피 온라인 수익 극대화 사업기획서", "folder": "20260825_0109_아로마테라피_온라인_수익극대화_비즈니스_전략_및_실행안", "status": "배포완료", "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30", "date": "2026-08-25", "liveUrl": "https://ryujean77.github.io/ryujean-slides/aroma-biz-plan/", "deliverables": [{"name": "사업기획서 HTML", "type": "html", "path": "아로마테라피_온라인_수익극대화_사업기획서.html"}, {"name": "5대 퍼널 전략 MD", "type": "md", "path": "02_초고수익_온라인_비즈니스_모델_5대_퍼널_전략.md"}, {"name": "30/90일 실행안 MD", "type": "md", "path": "03_단계별_실전_실행_로드맵_및_RACI.md"}, {"name": "3분 자가진단 프로토타입", "type": "html", "path": "04_고객_유입_및_전환_랜딩페이지_설계안.html"}], "description": "5개년 원드라이브 강의 자산을 기반으로 5단계 고수익 온라인 퍼널(무료진단 ➔ 스타터키트 ➔ LRP정기구독 ➔ 자격증 ➔ B2B출강)을 구축한 마스터 비즈니스 플랜."}, {"id": "PRJ-AROMA-02", "domainId": "DOM-AROMA", "domainTag": "🌿 아로마테라피", "title": "최토미 교수 1:1 VIP 아로마 케어 플랜", "folder": "20260825_0040_최토미교수_1대1_아로마케어_퍼블리싱", "status": "배포완료", "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30", "date": "2026-08-25", "liveUrl": "https://ryujean77.github.io/ryujean-slides/choi-tommy-care/client.html", "deliverables": [{"name": "고객 발송용 처방전 (client.html)", "type": "html", "path": "고객발송용_처방전.html"}, {"name": "상담사 콜 스크립트 (internal.html)", "type": "html", "path": "index.html"}, {"name": "1:1 케어 가이드 (MD)", "type": "md", "path": "최토미교수_1대1_아로마케어_가이드.md"}], "description": "목 부위 피부 자극 진정, 3대 안전 수칙 코칭 및 샌달우드(Sandalwood)·유칼립투스 순차 복귀를 안내하는 3중 격리형 1:1 웰니스 처방전."}, {"id": "PRJ-AROMA-03", "domainId": "DOM-AROMA", "domainTag": "🌿 아로마테라피", "title": "아로마테라피 독립 마스터 지식베이스 & 처방엔진", "folder": "20260825_0102_아로마테라피_도메인_구축_및_케어엔진_탑재", "status": "구축완료", "statusBadge": "bg-blue-500/10 text-blue-400 border border-blue-500/30", "date": "2026-08-25", "liveUrl": "", "deliverables": [{"name": "30종 에센셜오일 마스터 DB", "type": "json", "path": "01_에센셜오일_마스터_DB.json"}, {"name": "사상체질 처방 매트릭스", "type": "md", "path": "02_사상체질_증상별_처방_매트릭스.md"}, {"name": "PubMed 논문 검증 아카이브", "type": "md", "path": "03_학술연구_논문_검증_아카이브.md"}, {"name": "도테라 상담 프로토콜", "type": "md", "path": "04_도테라_회원혜택_및_상담_프로토콜.md"}], "description": "도테라 30종 마스터 DB와 사상체질 증상별 매트릭스, 실존 논문 10편을 탑재하여 상담 즉시 웹 처방전을 발행하는 지식 엔진."}, {"id": "PRJ-FASHION-01", "domainId": "DOM-FASHION", "domainTag": "👗 패션테라피", "title": "패션테라피 심리테스트 2차 기획회의 종합 대시보드", "folder": "20260824_0139_패션테라피_심리테스트앱_기획회의_2차", "status": "배포완료", "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30", "date": "2026-08-24", "liveUrl": "https://ryujean77.github.io/ryujean-slides/report-2nd-meeting/", "deliverables": [{"name": "종합 탭 대시보드 (index.html)", "type": "html", "path": "index.html"}, {"name": "핵심 회의록 (01_회의록.md)", "type": "md", "path": "01_회의록.md"}, {"name": "린 캔버스 (02_기획반영.md)", "type": "md", "path": "02_기획반영_및_린캔버스.md"}, {"name": "RACI 역할분담 (03_역할분담.md)", "type": "md", "path": "03_역할분담.md"}, {"name": "인문학 에세이 (04_에세이.md)", "type": "md", "path": "04_인사이트_에세이.md"}, {"name": "남박사님 전용 보고서", "type": "html", "path": "05_남미화박사님께_보내는_보고서.html"}], "description": "남미화 박사와의 2차 기획회의를 5대 탭(개요, 회의록, 린캔버스, RACI, 에세이) 및 전용 뷰어로 체계화한 반응형 대시보드."}, {"id": "PRJ-FASHION-02", "domainId": "DOM-FASHION", "domainTag": "👗 패션테라피", "title": "패션테라피 심리테스트 모바일 웹앱 개발지시서 v1.1", "folder": "20260821_2352_패션테라피_심리테스트앱_개발지시서", "status": "기획완료", "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30", "date": "2026-08-21", "liveUrl": "https://ryujean77.github.io/ryujean-slides/fashion-therapy/", "deliverables": [{"name": "개발지시서 (MD)", "type": "md", "path": "개발지시서.md"}, {"name": "작업지시서 (HTML)", "type": "html", "path": "구체적_작업지시서.html"}, {"name": "남박사님 요청질문지 (Word)", "type": "docx", "path": "남미화박사님_콘텐츠_제작_가이드_및_요청질문지.docx"}], "description": "사상체질과 의복심리학을 융합한 8대 캐릭터 진단 로직, 문항 설계 및 모바일 웹앱 구축을 위한 기술 지시서."}, {"id": "PRJ-FASHION-03", "domainId": "DOM-FASHION", "domainTag": "👗 패션테라피", "title": "임동구 & 남미화 박사 패션테라피 인문학 제안서", "folder": "20260821_0205_임동구_남미화_패션테라피인문학_일러스트에디션", "status": "배포완료", "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30", "date": "2026-08-21", "liveUrl": "https://ryujean77.github.io/ryujean-slides/library-lecture/", "deliverables": [{"name": "프레젠테이션 (HTML)", "type": "html", "path": "presentation.html"}, {"name": "발표 슬라이드 (PPTX)", "type": "pptx", "path": "presentation.pptx"}, {"name": "홍보 포스터 3종", "type": "image", "path": "posters/"}], "description": "전국 도서관 및 문화센터를 대상으로 한 패션테라피 인문학 강연 제안서 일러스트 에디션."}, {"id": "PRJ-LUMINUS-01", "domainId": "DOM-LUMINUS", "domainTag": "🌌 호모루미누스", "title": "빛운영보고서 제2권 『루미누스 오페라』 무손실 윤문", "folder": "I:\\내 드라이브\\호모루미누스\\20260821", "status": "원고검토", "statusBadge": "bg-amber-500/10 text-amber-400 border border-amber-500/30", "date": "2026-08-21", "liveUrl": "", "deliverables": [{"name": "백태종 스승님 보완본 (Word)", "type": "docx", "path": "04_제2권_명아주.docx"}, {"name": "프롤로그 윤문본 (MD)", "type": "md", "path": "04_제2권_명아주_윤문본_프롤로그_AGY.md"}, {"name": "디렉터스 컷 리포트", "type": "docx", "path": "제5부 [디렉터스 컷 Report].docx"}], "description": "백태종 스승님의 CMB 진공 파동 포집 실증 서사를 기록관 겸 도슨트 페르소나로 97개 청크 무손실 윤문 및 조판."}, {"id": "PRJ-LUMINUS-02", "domainId": "DOM-LUMINUS", "domainTag": "🌌 호모루미누스", "title": "BTS WORLD TOUR 'ARIRANG' 사실성 기반 아카이브", "folder": "I:\\내 드라이브\\호모루미누스\\BTS_AGY", "status": "상시가동", "statusBadge": "bg-purple-500/10 text-purple-400 border border-purple-500/30", "date": "2026-08-21", "liveUrl": "https://github.com/ryujean77/BTS_AGY", "deliverables": [{"name": "GitHub Actions 워크플로우", "type": "yml", "path": ".github/workflows/bts_arirang_daily.yml"}, {"name": "CLI 자동 수집 스크립트", "type": "py", "path": "scripts/bts_arirang_cli.py"}, {"name": "업무 지시서 (MD)", "type": "md", "path": "BTS_Arirang_CLI_work_order.md"}], "description": "BTS 월드투어 남은 공연에 대한 공연 전·중·후 지도와 현장 이미지를 자동 검증 수집하는 GitHub Actions 파이프라인."}, {"id": "PRJ-SASANG-01", "domainId": "DOM-SASANG", "domainTag": "🧬 사상체질", "title": "임동구 박사의 체질 인문학 도서관 강연 제안서", "folder": "20260821_0156_임동구박사_통합_도서관_강연제안서", "status": "배포완료", "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30", "date": "2026-08-21", "liveUrl": "", "deliverables": [{"name": "강연 제안 슬라이드 (HTML)", "type": "html", "path": "presentation.html"}, {"name": "공식 제안 PPTX", "type": "pptx", "path": "presentation.pptx"}, {"name": "홍보 포스터", "type": "image", "path": "posters/"}], "description": "생체정보학 기반 사상체질 유전체 강연을 도서관 및 지자체 문화 프로그램에 제안하는 종합 패키지."}, {"id": "PRJ-INFRA-01", "domainId": "DOM-INFRA", "domainTag": "⚙️ 중앙 인프라", "title": "GitNotion CMS 퍼블리싱 허브 & 1초 배포 파이프라인", "folder": "20260824_0412_GitNotion_퍼블리싱_허브_구축_및_파이프라인_연동", "status": "상시가동", "statusBadge": "bg-slate-500/10 text-slate-300 border border-slate-500/30", "date": "2026-08-24", "liveUrl": "https://ryujean77.github.io/ryujean-slides/cms.html", "deliverables": [{"name": "퍼블리싱 허브 CMS", "type": "html", "path": "github_cms.html"}, {"name": "마스터 레지스트리", "type": "json", "path": "publishing_registry.json"}], "description": "로컬에서 생성된 모든 HTML 결과물을 GitHub Pages(ryujean-slides)에 1초 만에 원클릭 라이브 배포하는 중앙 관리 CMS."}, {"id": "PRJ-INFRA-02", "domainId": "DOM-INFRA", "domainTag": "⚙️ 중앙 인프라", "title": "슬랙(Slack) Socket Mode 실시간 AI 양방향 봇", "folder": "스킬/slack-notifier", "status": "상시가동", "statusBadge": "bg-purple-500/10 text-purple-400 border border-purple-500/30", "date": "2026-08-25", "liveUrl": "", "deliverables": [{"name": "슬랙 리스너 데몬", "type": "py", "path": "scripts/slack_bot_listener.py"}, {"name": "슬랙 전송 CLI", "type": "py", "path": "scripts/send_slack.py"}, {"name": "스킬 매뉴얼", "type": "md", "path": "SKILL.md"}], "description": "공인 IP 없이 스마트폰 슬랙 채널(#workspace) 및 1:1 DM에서 유정근 대표님의 지시를 받아 실시간 처리하는 AI 봇 데몬."}, {"id": "PRJ-INFRA-03", "domainId": "DOM-INFRA", "domainTag": "⚙️ 중앙 인프라", "title": "2026년 8월 25일 일일 업무일지 & 시스템 구축 보고서", "folder": "20260825_0143_일일_업무일지_아로마도메인_구축_및_슬랙봇연동", "status": "배포완료", "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30", "date": "2026-08-25", "liveUrl": "https://ryujean77.github.io/ryujean-slides/daily-log-20260825/", "deliverables": [{"name": "업무일지 리포트 (HTML)", "type": "html", "path": "업무일지_20260825.html"}, {"name": "업무일지 원본 (MD)", "type": "md", "path": "업무일지_20260825.md"}], "description": "아로마 도메인 구축, 온라인 수익 극대화 기획서 발행, 양방향 슬랙 봇 연동 완료 일일 종합 업무일지."}]};
+        let currentDomainFilter = 'ALL';
+
+        // Render Domains
+        function renderDomains() {
+            const container = document.getElementById('domain-cards-container');
+            container.innerHTML = masterDB.domains.map(d => `
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden group transition border border-slate-800 hover:border-${d.color}-500/50 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="w-10 h-10 rounded-xl bg-${d.color}-500/20 text-${d.color}-400 flex items-center justify-center text-lg font-bold border border-${d.color}-500/30">
+                                <i class="fa-solid ${d.icon}"></i>
+                            </span>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-darkSurface-900 text-slate-300 border border-slate-700">
+                                ${d.stats.status}
+                            </span>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-black text-white group-hover:text-${d.color}-400 transition">${d.name}</h3>
+                            <p class="text-[11px] text-slate-400 mt-1 font-medium"><i class="fa-solid fa-user-tie mr-1 text-slate-500"></i> ${d.partner}</p>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed line-clamp-2">${d.summary}</p>
+                    </div>
+
+                    <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-mono text-[11px]">${d.stats.projectsCount}개 프로젝트 등록</span>
+                        <button onclick="setDomainFilter('${d.id}')" class="text-${d.color}-400 hover:underline font-bold text-xs inline-flex items-center gap-1">
+                            프로젝트 보기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Projects
+        function renderProjects(projectsToRender) {
+            const container = document.getElementById('project-cards-container');
+            if (projectsToRender.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-2 py-12 text-center text-slate-500 text-sm">
+                        <i class="fa-solid fa-box-open text-3xl mb-2"></i>
+                        <p>해당 조건에 맞는 프로젝트가 없습니다.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = projectsToRender.map(p => `
+                <div class="p-5 rounded-2xl bg-darkSurface-900/90 border border-slate-800 hover:border-slate-700 transition space-y-3.5 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-darkSurface-800 text-slate-300 border border-slate-700">
+                                ${p.domainTag}
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[11px] text-slate-400 font-mono">${p.date}</span>
+                                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${p.statusBadge}">${p.status}</span>
+                            </div>
+                        </div>
+                        <h4 class="text-sm font-bold text-white leading-snug">${p.title}</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed line-clamp-2">${p.description}</p>
+                    </div>
+
+                    <!-- Deliverable Tags & Links -->
+                    <div class="pt-3 border-t border-slate-800 space-y-2">
+                        <div class="flex flex-wrap gap-1.5">
+                            ${p.deliverables.map(d => `
+                                <span class="px-2 py-0.5 rounded bg-darkSurface-800 text-slate-300 text-[10px] border border-slate-700 font-mono">
+                                    <i class="fa-regular fa-file-lines text-slate-500 mr-1"></i>${d.name}
+                                </span>
+                            `).join('')}
+                        </div>
+                        <div class="flex items-center justify-between pt-1">
+                            <span class="text-[10px] text-slate-500 font-mono truncate max-w-[200px]" title="${p.folder}">
+                                📁 ${p.folder}
+                            </span>
+                            ${p.liveUrl ? `
+                                <a href="${p.liveUrl}" target="_blank" class="px-3 py-1 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-sm transition inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> 라이브 열기
+                                </a>
+                            ` : `
+                                <span class="text-[11px] text-slate-500 font-medium italic">내부 저장소 보관</span>
+                            `}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Logic
+        function filterProjects() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = masterDB.projects.filter(p => {
+                const matchDomain = (currentDomainFilter === 'ALL') || (p.domainId === currentDomainFilter);
+                const matchSearch = !query || 
+                    p.title.toLowerCase().includes(query) || 
+                    p.description.toLowerCase().includes(query) || 
+                    p.domainTag.toLowerCase().includes(query) || 
+                    p.folder.toLowerCase().includes(query);
+                return matchDomain && matchSearch;
+            });
+            renderProjects(filtered);
+        }
+
+        function setDomainFilter(domId) {
+            currentDomainFilter = domId;
+            document.querySelectorAll('.domain-filter-btn').forEach(btn => {
+                btn.className = 'domain-filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-300 bg-darkSurface-900 hover:bg-slate-800 border border-slate-800 transition';
+            });
+            const activeBtn = document.getElementById('filter-btn-' + domId);
+            if (activeBtn) {
+                activeBtn.className = 'domain-filter-btn px-3 py-1.5 rounded-lg font-bold bg-brand-600 text-white shadow-sm transition';
+            }
+            filterProjects();
+        }
+
+        function openNewDomainModal() {
+            document.getElementById('newDomainModal').classList.remove('hidden');
+        }
+
+        function closeNewDomainModal() {
+            document.getElementById('newDomainModal').classList.add('hidden');
+        }
+
+        // Init
+        renderDomains();
+        renderProjects(masterDB.projects);
+    </script>
 </body>
 </html>
