@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클라우드 3대장 (OneDrive, GDrive, Notion) MCP 생태계 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-brand-500 selection:text-white">
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border border-blue-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                    <i class="fa-solid fa-cloud mr-1"></i> CLOUD MCP ECOSYSTEM
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                클라우드 3대장 『Google Drive, MS OneDrive, Notion』 MCP 총정리
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                AI 에이전트와 완벽히 결합하는 3대 클라우드/생산성 도구의 공식 및 오픈소스 MCP 서버 현황
+            </p>
+        </header>
+
+        <!-- 3 Big Cloud Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            
+            <!-- 1. Google Drive -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-emerald-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                <div class="space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-brands fa-google-drive"></i>
+                    </div>
+                    <div>
+                        <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-mono border border-emerald-800">공식 표준 MCP</span>
+                        <h3 class="text-base font-black text-white mt-1">Google Drive MCP</h3>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        • <strong>패키지:</strong> <code>@modelcontextprotocol/server-gdrive</code><br>
+                        • <strong>기능:</strong> 구글 드라이브 검색, Docs/Sheets 텍스트 본문 추출 및 AI 컨텍스트 주입
+                    </p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-emerald-300 font-mono">
+                    npx -y @modelcontextprotocol/server-gdrive
+                </div>
+            </div>
+
+            <!-- 2. MS OneDrive -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-blue-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                <div class="space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-brands fa-microsoft"></i>
+                    </div>
+                    <div>
+                        <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 text-[10px] font-mono border border-blue-800">MS Graph API 기반</span>
+                        <h3 class="text-base font-black text-white mt-1">MS OneDrive MCP</h3>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        • <strong>패키지:</strong> <code>office-365-mcp-server</code><br>
+                        • <strong>기능:</strong> OneDrive 및 SharePoint 탐색, Word/Excel/PPT 문서 파싱 및 수정
+                    </p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-blue-300 font-mono">
+                    GitHub: hvkshetry/office-365-mcp
+                </div>
+            </div>
+
+            <!-- 3. Notion -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-purple-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                <div class="space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-n"></i>
+                    </div>
+                    <div>
+                        <span class="px-2 py-0.5 rounded bg-purple-950 text-purple-300 text-[10px] font-mono border border-purple-800">Notion 공식 배포</span>
+                        <h3 class="text-base font-black text-white mt-1">Notion Official MCP</h3>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        • <strong>패키지:</strong> <code>makenotion/notion-mcp-server</code><br>
+                        • <strong>기능:</strong> 노션 페이지/블록 실시간 검색, 데이터베이스 쿼리 및 새 행 자동 생성
+                    </p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-purple-300 font-mono">
+                    GitHub: makenotion/notion-mcp-server
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Strategy Box -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3">
+            <h3 class="font-bold text-white text-base flex items-center gap-2">
+                <i class="fa-solid fa-lightbulb text-amber-400"></i> 유정근 대표님 워크스페이스만의 최적 활용법
+            </h3>
+            <div class="text-xs text-slate-300 space-y-2 leading-relaxed">
+                <p>• <strong>로컬 마운트 드라이브 활용:</strong> 대표님 PC에는 이미 <code>I:\내 드라이브</code>와 <code>E:\OneDrive</code>가 물리 드라이브로 연결되어 있어, 별도의 MCP 설정 없이도 AGY가 0.1초 만에 파일 읽기/쓰기를 즉시 수행할 수 있습니다.</p>
+                <p>• <strong>노션(Notion) 연동 시:</strong> 웹 전용 노션 데이터베이스나 고객 상담 일지를 관리하실 때는 <strong>Notion 공식 MCP</strong>를 연결하시면 카카오톡이나 슬랙처럼 노션 데이터를 실시간으로 읽고 쓸 수 있습니다.</p>
+            </div>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h4 class="text-sm font-bold text-white">RYUJEAN DOMAIN HQ 포털 연동</h4>
+                <p class="text-xs text-slate-400 mt-1">클라우드 3대장 분석 가이드가 포털 대시보드에 실시간 반영되었습니다.</p>
+            </div>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                🏛️ 마스터 포털 열기 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
