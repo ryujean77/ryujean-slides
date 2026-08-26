@@ -1,0 +1,480 @@
+{
+  "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
+  "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터)",
+  "lastUpdated": "2026-08-26T09:40:00+09:00",
+  "domains": [
+    {
+      "id": "DOM-AROMA",
+      "name": "아로마테라피 & 웰니스 케어",
+      "icon": "fa-seedling",
+      "color": "emerald",
+      "accentHex": "#059669",
+      "bgGradient": "from-emerald-950 via-slate-900 to-emerald-900",
+      "tag": "🌿 아로마테라피",
+      "partner": "유정근 (전담 테라피스트)",
+      "summary": "도테라 CPTG 30종 마스터 DB, 사상체질 증상별 처방, 1:1 VIP 웹 처방전 및 5단계 온라인 수익 극대화 퍼널 시스템.",
+      "storagePath": "도메인/아로마테라피 & E:\\OneDrive\\drop\\03_susevo\\00_000_도테라contact",
+      "skills": [
+        "aroma-care-engine",
+        "slack-notifier",
+        "email-sender"
+      ],
+      "stats": {
+        "projectsCount": 4,
+        "liveUrlsCount": 2,
+        "status": "🟢 활발히 가동중"
+      }
+    },
+    {
+      "id": "DOM-FASHION",
+      "name": "패션테라피 & 의복심리학",
+      "icon": "fa-shirt",
+      "color": "indigo",
+      "accentHex": "#4f46e5",
+      "bgGradient": "from-indigo-950 via-slate-900 to-indigo-900",
+      "tag": "👗 패션테라피",
+      "partner": "남미화 의복심리학 박사 & 유정근 총괄",
+      "summary": "의복심리학 기반 8대 캐릭터 모바일 심리테스트 웹앱(Inner Styler), 2차 기획회의 분석 대시보드 및 도서관 B2B 출강 제안서.",
+      "storagePath": "산출물/20260821_..., 산출물/20260824_...",
+      "skills": [
+        "designer-slides",
+        "make-slide",
+        "ppt-designer"
+      ],
+      "stats": {
+        "projectsCount": 6,
+        "liveUrlsCount": 3,
+        "status": "🟢 기획/개발 진행중"
+      }
+    },
+    {
+      "id": "DOM-LUMINUS",
+      "name": "호모루미누스 & 빛운영 아카이브",
+      "icon": "fa-sun",
+      "color": "amber",
+      "accentHex": "#d97706",
+      "bgGradient": "from-amber-950 via-slate-900 to-amber-900",
+      "tag": "🌌 호모루미누스",
+      "partner": "백태종 스승님 & 유정근 디렉터",
+      "summary": "CMB 진공 파동 포집(1999) 기반 『빛운영보고서 3부작』 출판 파이프라인(97청크 무손실 윤문) 및 BTS WORLD TOUR 글로벌 아카이브.",
+      "storagePath": "I:\\내 드라이브\\호모루미누스 & ryujean77/BTS_AGY",
+      "skills": [
+        "make-slide",
+        "gitnotion-publisher"
+      ],
+      "stats": {
+        "projectsCount": 3,
+        "liveUrlsCount": 1,
+        "status": "🟡 원고 검토/보완"
+      }
+    },
+    {
+      "id": "DOM-SASANG",
+      "name": "사상체질 인문학 & 기관 출강",
+      "icon": "fa-dna",
+      "color": "rose",
+      "accentHex": "#e11d48",
+      "bgGradient": "from-rose-950 via-slate-900 to-rose-900",
+      "tag": "🧬 사상체질",
+      "partner": "임동구 생체정보학 박사 & 유정근 디렉터",
+      "summary": "사상체질 유전체 기반 전국 도서관, 공공기관, 성동구청 B2B 인문학 강연 제안서 및 슬라이드·포스터 패키지.",
+      "storagePath": "산출물/20260821_0118_..., 산출물/20260821_0156_...",
+      "skills": [
+        "designer-slides",
+        "ppt-designer"
+      ],
+      "stats": {
+        "projectsCount": 4,
+        "liveUrlsCount": 2,
+        "status": "🟢 제안서 패키징 완료"
+      }
+    },
+    {
+      "id": "DOM-INFRA",
+      "name": "GitNotion CMS & 자동화 인프라",
+      "icon": "fa-server",
+      "color": "slate",
+      "accentHex": "#475569",
+      "bgGradient": "from-slate-950 via-slate-900 to-slate-850",
+      "tag": "⚙️ 중앙 인프라",
+      "partner": "유정근 총괄 & Antigravity AI Agent",
+      "summary": "GitHub Pages 1초 자동 웹 배포 파이프라인, 슬랙(Slack) Socket Mode 실시간 AI 비서 데몬 및 12대 전문 스킬 엔진.",
+      "storagePath": "publishing_registry.json, 스킬/, .env.local",
+      "skills": [
+        "slack-notifier",
+        "gitnotion-publisher",
+        "skill-creator"
+      ],
+      "stats": {
+        "projectsCount": 3,
+        "liveUrlsCount": 4,
+        "status": "🔵 상시 가동중"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "PRJ-AROMA-01",
+      "domainId": "DOM-AROMA",
+      "domainTag": "🌿 아로마테라피",
+      "title": "아로마테라피 온라인 수익 극대화 사업기획서",
+      "folder": "20260825_0109_아로마테라피_온라인_수익극대화_비즈니스_전략_및_실행안",
+      "status": "배포완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-08-25",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/aroma-biz-plan/",
+      "deliverables": [
+        {
+          "name": "사업기획서 HTML",
+          "type": "html",
+          "path": "아로마테라피_온라인_수익극대화_사업기획서.html"
+        },
+        {
+          "name": "5대 퍼널 전략 MD",
+          "type": "md",
+          "path": "02_초고수익_온라인_비즈니스_모델_5대_퍼널_전략.md"
+        },
+        {
+          "name": "30/90일 실행안 MD",
+          "type": "md",
+          "path": "03_단계별_실전_실행_로드맵_및_RACI.md"
+        },
+        {
+          "name": "3분 자가진단 프로토타입",
+          "type": "html",
+          "path": "04_고객_유입_및_전환_랜딩페이지_설계안.html"
+        }
+      ],
+      "description": "5개년 원드라이브 강의 자산을 기반으로 5단계 고수익 온라인 퍼널(무료진단 ➔ 스타터키트 ➔ LRP정기구독 ➔ 자격증 ➔ B2B출강)을 구축한 마스터 비즈니스 플랜."
+    },
+    {
+      "id": "PRJ-AROMA-02",
+      "domainId": "DOM-AROMA",
+      "domainTag": "🌿 아로마테라피",
+      "title": "최토미 교수 1:1 VIP 아로마 케어 플랜",
+      "folder": "20260825_0040_최토미교수_1대1_아로마케어_퍼블리싱",
+      "status": "배포완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-08-25",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/choi-tommy-care/client.html",
+      "deliverables": [
+        {
+          "name": "고객 발송용 처방전 (client.html)",
+          "type": "html",
+          "path": "고객발송용_처방전.html"
+        },
+        {
+          "name": "상담사 콜 스크립트 (internal.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "1:1 케어 가이드 (MD)",
+          "type": "md",
+          "path": "최토미교수_1대1_아로마케어_가이드.md"
+        }
+      ],
+      "description": "목 부위 피부 자극 진정, 3대 안전 수칙 코칭 및 샌달우드(Sandalwood)·유칼립투스 순차 복귀를 안내하는 3중 격리형 1:1 웰니스 처방전."
+    },
+    {
+      "id": "PRJ-AROMA-03",
+      "domainId": "DOM-AROMA",
+      "domainTag": "🌿 아로마테라피",
+      "title": "아로마테라피 독립 마스터 지식베이스 & 처방엔진",
+      "folder": "20260825_0102_아로마테라피_도메인_구축_및_케어엔진_탑재",
+      "status": "구축완료",
+      "statusBadge": "bg-blue-500/10 text-blue-400 border border-blue-500/30",
+      "date": "2026-08-25",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "30종 에센셜오일 마스터 DB",
+          "type": "json",
+          "path": "01_에센셜오일_마스터_DB.json"
+        },
+        {
+          "name": "사상체질 처방 매트릭스",
+          "type": "md",
+          "path": "02_사상체질_증상별_처방_매트릭스.md"
+        },
+        {
+          "name": "PubMed 논문 검증 아카이브",
+          "type": "md",
+          "path": "03_학술연구_논문_검증_아카이브.md"
+        },
+        {
+          "name": "도테라 상담 프로토콜",
+          "type": "md",
+          "path": "04_도테라_회원혜택_및_상담_프로토콜.md"
+        }
+      ],
+      "description": "도테라 30종 마스터 DB와 사상체질 증상별 매트릭스, 실존 논문 10편을 탑재하여 상담 즉시 웹 처방전을 발행하는 지식 엔진."
+    },
+    {
+      "id": "PRJ-FASHION-01",
+      "domainId": "DOM-FASHION",
+      "domainTag": "👗 패션테라피",
+      "title": "패션테라피 심리테스트 2차 기획회의 종합 대시보드",
+      "folder": "20260824_0139_패션테라피_심리테스트앱_기획회의_2차",
+      "status": "배포완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-08-24",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/report-2nd-meeting/",
+      "deliverables": [
+        {
+          "name": "종합 탭 대시보드 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "핵심 회의록 (01_회의록.md)",
+          "type": "md",
+          "path": "01_회의록.md"
+        },
+        {
+          "name": "린 캔버스 (02_기획반영.md)",
+          "type": "md",
+          "path": "02_기획반영_및_린캔버스.md"
+        },
+        {
+          "name": "RACI 역할분담 (03_역할분담.md)",
+          "type": "md",
+          "path": "03_역할분담.md"
+        },
+        {
+          "name": "인문학 에세이 (04_에세이.md)",
+          "type": "md",
+          "path": "04_인사이트_에세이.md"
+        },
+        {
+          "name": "남박사님 전용 보고서",
+          "type": "html",
+          "path": "05_남미화박사님께_보내는_보고서.html"
+        }
+      ],
+      "description": "남미화 박사와의 2차 기획회의를 5대 탭(개요, 회의록, 린캔버스, RACI, 에세이) 및 전용 뷰어로 체계화한 반응형 대시보드."
+    },
+    {
+      "id": "PRJ-FASHION-02",
+      "domainId": "DOM-FASHION",
+      "domainTag": "👗 패션테라피",
+      "title": "패션테라피 심리테스트 모바일 웹앱 개발지시서 v1.1",
+      "folder": "20260821_2352_패션테라피_심리테스트앱_개발지시서",
+      "status": "기획완료",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-08-21",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/fashion-therapy/",
+      "deliverables": [
+        {
+          "name": "개발지시서 (MD)",
+          "type": "md",
+          "path": "개발지시서.md"
+        },
+        {
+          "name": "작업지시서 (HTML)",
+          "type": "html",
+          "path": "구체적_작업지시서.html"
+        },
+        {
+          "name": "남박사님 요청질문지 (Word)",
+          "type": "docx",
+          "path": "남미화박사님_콘텐츠_제작_가이드_및_요청질문지.docx"
+        }
+      ],
+      "description": "사상체질과 의복심리학을 융합한 8대 캐릭터 진단 로직, 문항 설계 및 모바일 웹앱 구축을 위한 기술 지시서."
+    },
+    {
+      "id": "PRJ-FASHION-03",
+      "domainId": "DOM-FASHION",
+      "domainTag": "👗 패션테라피",
+      "title": "임동구 & 남미화 박사 패션테라피 인문학 제안서",
+      "folder": "20260821_0205_임동구_남미화_패션테라피인문학_일러스트에디션",
+      "status": "배포완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-08-21",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/library-lecture/",
+      "deliverables": [
+        {
+          "name": "프레젠테이션 (HTML)",
+          "type": "html",
+          "path": "presentation.html"
+        },
+        {
+          "name": "발표 슬라이드 (PPTX)",
+          "type": "pptx",
+          "path": "presentation.pptx"
+        },
+        {
+          "name": "홍보 포스터 3종",
+          "type": "image",
+          "path": "posters/"
+        }
+      ],
+      "description": "전국 도서관 및 문화센터를 대상으로 한 패션테라피 인문학 강연 제안서 일러스트 에디션."
+    },
+    {
+      "id": "PRJ-LUMINUS-01",
+      "domainId": "DOM-LUMINUS",
+      "domainTag": "🌌 호모루미누스",
+      "title": "빛운영보고서 제2권 『루미누스 오페라』 무손실 윤문",
+      "folder": "I:\\내 드라이브\\호모루미누스\\20260821",
+      "status": "원고검토",
+      "statusBadge": "bg-amber-500/10 text-amber-400 border border-amber-500/30",
+      "date": "2026-08-21",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "백태종 스승님 보완본 (Word)",
+          "type": "docx",
+          "path": "04_제2권_명아주.docx"
+        },
+        {
+          "name": "프롤로그 윤문본 (MD)",
+          "type": "md",
+          "path": "04_제2권_명아주_윤문본_프롤로그_AGY.md"
+        },
+        {
+          "name": "디렉터스 컷 리포트",
+          "type": "docx",
+          "path": "제5부 [디렉터스 컷 Report].docx"
+        }
+      ],
+      "description": "백태종 스승님의 CMB 진공 파동 포집 실증 서사를 기록관 겸 도슨트 페르소나로 97개 청크 무손실 윤문 및 조판."
+    },
+    {
+      "id": "PRJ-LUMINUS-02",
+      "domainId": "DOM-LUMINUS",
+      "domainTag": "🌌 호모루미누스",
+      "title": "BTS WORLD TOUR 'ARIRANG' 사실성 기반 아카이브",
+      "folder": "I:\\내 드라이브\\호모루미누스\\BTS_AGY",
+      "status": "상시가동",
+      "statusBadge": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
+      "date": "2026-08-21",
+      "liveUrl": "https://github.com/ryujean77/BTS_AGY",
+      "deliverables": [
+        {
+          "name": "GitHub Actions 워크플로우",
+          "type": "yml",
+          "path": ".github/workflows/bts_arirang_daily.yml"
+        },
+        {
+          "name": "CLI 자동 수집 스크립트",
+          "type": "py",
+          "path": "scripts/bts_arirang_cli.py"
+        },
+        {
+          "name": "업무 지시서 (MD)",
+          "type": "md",
+          "path": "BTS_Arirang_CLI_work_order.md"
+        }
+      ],
+      "description": "BTS 월드투어 남은 공연에 대한 공연 전·중·후 지도와 현장 이미지를 자동 검증 수집하는 GitHub Actions 파이프라인."
+    },
+    {
+      "id": "PRJ-SASANG-01",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "임동구 박사의 체질 인문학 도서관 강연 제안서",
+      "folder": "20260821_0156_임동구박사_통합_도서관_강연제안서",
+      "status": "배포완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-08-21",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "강연 제안 슬라이드 (HTML)",
+          "type": "html",
+          "path": "presentation.html"
+        },
+        {
+          "name": "공식 제안 PPTX",
+          "type": "pptx",
+          "path": "presentation.pptx"
+        },
+        {
+          "name": "홍보 포스터",
+          "type": "image",
+          "path": "posters/"
+        }
+      ],
+      "description": "생체정보학 기반 사상체질 유전체 강연을 도서관 및 지자체 문화 프로그램에 제안하는 종합 패키지."
+    },
+    {
+      "id": "PRJ-INFRA-01",
+      "domainId": "DOM-INFRA",
+      "domainTag": "⚙️ 중앙 인프라",
+      "title": "GitNotion CMS 퍼블리싱 허브 & 1초 배포 파이프라인",
+      "folder": "20260824_0412_GitNotion_퍼블리싱_허브_구축_및_파이프라인_연동",
+      "status": "상시가동",
+      "statusBadge": "bg-slate-500/10 text-slate-300 border border-slate-500/30",
+      "date": "2026-08-24",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/cms.html",
+      "deliverables": [
+        {
+          "name": "퍼블리싱 허브 CMS",
+          "type": "html",
+          "path": "github_cms.html"
+        },
+        {
+          "name": "마스터 레지스트리",
+          "type": "json",
+          "path": "publishing_registry.json"
+        }
+      ],
+      "description": "로컬에서 생성된 모든 HTML 결과물을 GitHub Pages(ryujean-slides)에 1초 만에 원클릭 라이브 배포하는 중앙 관리 CMS."
+    },
+    {
+      "id": "PRJ-INFRA-02",
+      "domainId": "DOM-INFRA",
+      "domainTag": "⚙️ 중앙 인프라",
+      "title": "슬랙(Slack) Socket Mode 실시간 AI 양방향 봇",
+      "folder": "스킬/slack-notifier",
+      "status": "상시가동",
+      "statusBadge": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
+      "date": "2026-08-25",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "슬랙 리스너 데몬",
+          "type": "py",
+          "path": "scripts/slack_bot_listener.py"
+        },
+        {
+          "name": "슬랙 전송 CLI",
+          "type": "py",
+          "path": "scripts/send_slack.py"
+        },
+        {
+          "name": "스킬 매뉴얼",
+          "type": "md",
+          "path": "SKILL.md"
+        }
+      ],
+      "description": "공인 IP 없이 스마트폰 슬랙 채널(#workspace) 및 1:1 DM에서 유정근 대표님의 지시를 받아 실시간 처리하는 AI 봇 데몬."
+    },
+    {
+      "id": "PRJ-INFRA-03",
+      "domainId": "DOM-INFRA",
+      "domainTag": "⚙️ 중앙 인프라",
+      "title": "2026년 8월 25일 일일 업무일지 & 시스템 구축 보고서",
+      "folder": "20260825_0143_일일_업무일지_아로마도메인_구축_및_슬랙봇연동",
+      "status": "배포완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-08-25",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/daily-log-20260825/",
+      "deliverables": [
+        {
+          "name": "업무일지 리포트 (HTML)",
+          "type": "html",
+          "path": "업무일지_20260825.html"
+        },
+        {
+          "name": "업무일지 원본 (MD)",
+          "type": "md",
+          "path": "업무일지_20260825.md"
+        }
+      ],
+      "description": "아로마 도메인 구축, 온라인 수익 극대화 기획서 발행, 양방향 슬랙 봇 연동 완료 일일 종합 업무일지."
+    }
+  ]
+}
