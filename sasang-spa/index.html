@@ -6,7 +6,25 @@
   <title>사상체질 웰니스 스파 (Sasang Constitution SPA) — 프리미엄 K-Wellness 프로젝트</title>
   
   <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+    // SECRET ADMIN TRIGGER: Key combo (Ctrl + Shift + L) or Logo 5 clicks
+    let logoClickCount = 0;
+    function triggerSecretAdmin() {
+      logoClickCount++;
+      if (logoClickCount >= 5) {
+        logoClickCount = 0;
+        openAdminModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
+        e.preventDefault();
+        openAdminModal();
+      }
+    });
+
+  </script>
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- Google Fonts -->
@@ -44,6 +62,24 @@
         }
       }
     }
+  
+    // SECRET ADMIN TRIGGER: Key combo (Ctrl + Shift + L) or Logo 5 clicks
+    let logoClickCount = 0;
+    function triggerSecretAdmin() {
+      logoClickCount++;
+      if (logoClickCount >= 5) {
+        logoClickCount = 0;
+        openAdminModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
+        e.preventDefault();
+        openAdminModal();
+      }
+    });
+
   </script>
   
   <style>
@@ -129,11 +165,7 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <button type="button" onclick="openAdminModal()" class="px-3 py-2 rounded-lg bg-spa-850 hover:bg-spa-800 text-amber-300 text-xs font-semibold border border-amber-500/30 flex items-center gap-1.5 transition-all shadow-sm" title="총괄 디렉터 전용 리드 관리자 뷰">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span class="hidden sm:inline">디렉터 관리자</span>
-          <span id="navLeadCountBadge" class="bg-amber-500 text-spa-950 font-bold px-1.5 py-0.2 rounded-full text-[10px]">0</span>
-        </button>
+
 
         <button type="button" onclick="openLeadModal()" class="px-4 py-2 rounded-lg bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-spa-950 text-xs sm:text-sm font-bold flex items-center gap-2 shadow-glow-gold transition-all transform hover:scale-105">
           <i class="fa-solid fa-file-arrow-down text-base"></i>
@@ -927,7 +959,7 @@
   <footer class="py-12 px-6 border-t border-amber-500/10 text-center text-xs text-gray-400">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
-        <i class="fa-solid fa-spa text-amber-400 text-xl"></i>
+        <i onclick="triggerSecretAdmin()" class="fa-solid fa-spa text-amber-400 text-xl cursor-pointer select-none" title="RYUJEAN DOMAIN"></i>
         <div class="text-left">
           <span class="font-bold text-white block text-sm">사상체질 웰니스 스파 (Sasang Constitution SPA)</span>
           <div class="mt-2 flex flex-wrap items-center gap-3 text-xs text-gray-300">
@@ -1051,7 +1083,7 @@
       <div id="adminPinScreen" class="text-center py-12 space-y-4">
         <i class="fa-solid fa-lock text-3xl text-amber-400 mb-2"></i>
         <h4 class="text-lg font-bold text-white font-serif">디렉터 보안 인증</h4>
-        <p class="text-xs text-gray-400 max-w-sm mx-auto">총괄 디렉터 보안 핀코드(기본: 7777)를 입력하여 리드 목록을 확인하세요.</p>
+        <p class="text-xs text-gray-400 max-w-sm mx-auto">총괄 디렉터 전용 보안 인가 시스템입니다. 마스터 PIN을 입력하세요.</p>
         <div class="flex items-center justify-center gap-2 max-w-xs mx-auto pt-2">
           <input type="password" id="adminPinInput" maxlength="6" placeholder="PIN 코드 입력" class="w-36 px-4 py-2 rounded-xl bg-spa-900 border border-amber-500/30 text-white text-center text-sm tracking-widest focus:outline-none focus:border-amber-400" />
           <button type="button" onclick="verifyAdminPin()" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-spa-950 font-bold text-sm">
@@ -1478,6 +1510,24 @@
         alert('전체 리드 JSON 데이터가 클립보드에 복사되었습니다.');
       });
     }
+  
+    // SECRET ADMIN TRIGGER: Key combo (Ctrl + Shift + L) or Logo 5 clicks
+    let logoClickCount = 0;
+    function triggerSecretAdmin() {
+      logoClickCount++;
+      if (logoClickCount >= 5) {
+        logoClickCount = 0;
+        openAdminModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
+        e.preventDefault();
+        openAdminModal();
+      }
+    });
+
   </script>
 
 </body>
