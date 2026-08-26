@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패션 이너 테라피 심리테스트 앱 개발지시서</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        :root {
+            --bg-color: #faf8f5;
+            --card-bg: #ffffff;
+            --card-border: #e7e5e4;
+            --text-main: #1c1917;
+            --text-muted: #78716c;
+            --accent: #b45309;
+            --accent-grad: linear-gradient(135deg, #9a3412 0%, #ea580c 100%);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0f19;
+            color: var(--text-main);
+            font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .deck-wrapper {
+            position: relative;
+            width: 96vw;
+            max-width: 1400px;
+            aspect-ratio: 16 / 9;
+            background: var(--bg-color);
+            border-radius: 20px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            inset: 0;
+            padding: 50px 70px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            transform: scale(0.98);
+        }
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .slide-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .category-tag {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .slide-title {
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.25;
+            margin-bottom: 35px;
+        }
+        .title-layout {
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 20px;
+        }
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: var(--accent-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle {
+            font-size: 21px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+        .meta-footer {
+            font-size: 15px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+        .bento-container.grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .bento-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+        }
+        .bento-card.span-1 { grid-column: span 1; }
+        .bento-card.span-2 { grid-column: span 2; }
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        .icon-wrap {
+            width: 36px;
+            height: 36px;
+            background: rgba(180, 83, 9, 0.12);
+            color: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-pill {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--card-border);
+            border-radius: 999px;
+            color: var(--accent);
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 14px;
+        }
+        .card-bullets {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .card-bullets li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 16px;
+        }
+        .card-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            flex: 1;
+            align-items: center;
+        }
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 36px 30px;
+            text-align: left;
+        }
+        .metric-val {
+            font-size: 58px;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 14px;
+            font-feature-settings: "tnum";
+        }
+        .metric-lbl {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+        .metric-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            flex: 1;
+        }
+        .comparison-col {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 32px;
+            position: relative;
+        }
+        .comparison-col.active-col {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px -5px rgba(180, 83, 9, 0.15);
+        }
+        .col-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.05);
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+        .active-col .col-badge {
+            background: var(--accent);
+            color: #ffffff;
+        }
+        .comparison-col h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+        .comparison-col ul {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .comparison-col li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .comparison-col li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .deck-controls {
+            position: absolute;
+            bottom: 24px;
+            right: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10;
+        }
+        .counter {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-feature-settings: "tnum";
+        }
+        .btn {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .btn:hover {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+        .showcase-body {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            align-items: center;
+            flex: 1;
+            min-height: 0;
+        }
+        .showcase-frame {
+            flex: 0 0 42%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .showcase-frame img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .showcase-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .showcase-info .slide-title {
+            margin-bottom: 14px;
+        }
+        .showcase-info .card-pill {
+            width: fit-content;
+            margin-bottom: 18px;
+        }
+        .showcase-bullets {
+            font-size: 16px;
+            line-height: 1.9;
+        }
+        @media print {
+            body { background: transparent; overflow: visible; display: block; }
+            .deck-wrapper { width: 100%; aspect-ratio: auto; box-shadow: none; border-radius: 0; }
+            .slide { position: relative; display: flex !important; page-break-after: always; width: 100vw; height: 100vh; opacity: 1; }
+            .deck-controls { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="deck-wrapper">
+        
+        <section class="slide active" id="slide-1" data-slide="1">
+            
+            <div class="slide-content title-layout">
+                <div class="category-tag">FASHION THERAPY × PSYCHOLOGY TEST</div>
+                <h1 class="hero-title">패션 이너 테라피 심리테스트 앱 개발지시서</h1>
+                <p class="hero-subtitle">사상체질 × 패션테라피 인문학을 웹 심리테스트로 — 리드 확보와 브랜드 자산화를 동시에</p>
+                <div class="meta-footer">
+                    <span>패션테라피진흥원 · 개발 기획팀</span>
+                    <span class="dot">•</span>
+                    <span>2026.08.22</span>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="slide " id="slide-2" data-slide="2">
+            
+            <div class="slide-content">
+                <div class="header-row">
+                    <div class="category-tag">배경 및 목적</div>
+                    <h2 class="slide-title">왜 심리테스트 앱을 만드는가</h2>
+                </div>
+                <div class="bento-container">
+                    
+                <div class="bento-card span-2">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                        <span class="card-pill">GROWTH</span>
+                    </div>
+                    <h3 class="card-title">잠재 고객 리드 확보</h3>
+                    <ul class="card-bullets"><li>재미있는 심리테스트로 방문 유도</li><li>강연·워크숍 리드로 전환</li></ul>
+                </div>
+                
+                <div class="bento-card span-1">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
+                        <span class="card-pill">BRAND</span>
+                    </div>
+                    <h3 class="card-title">브랜드 인지 확산</h3>
+                    <ul class="card-bullets"><li>SNS 공유가 잘 되는 결과 카드 제공</li></ul>
+                </div>
+                
+                <div class="bento-card span-1">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
+                        <span class="card-pill">ASSET</span>
+                    </div>
+                    <h3 class="card-title">콘텐츠 디지털 자산화</h3>
+                    <ul class="card-bullets"><li>강연 유형 분류 체계를 온라인 진단 도구로 재사용</li></ul>
+                </div>
+                
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="slide " id="slide-3" data-slide="3">
+            
+            <div class="slide-content">
+                <div class="header-row">
+                    <div class="category-tag">벤치마크 분석</div>
+                    <h2 class="slide-title">잇컬러 INNER COLOR 벤치마크 vs 패션테라피 차별화</h2>
+                </div>
+                <div class="comparison-grid">
+                    
+                <div class="comparison-col standard-col">
+                    <div class="col-badge">LEGACY</div>
+                    <h3>벤치마크: itcolor INNER COLOR</h3>
+                    <ul><li>챗봇 캐릭터 온보딩으로 몰입도 상승</li><li>9종 캐릭터, 72문항(24p×3), 예/아니오 2지선다</li><li>페이지마다 카드 테두리 색상 변경</li><li>9종 캐릭터 저작권 등록 완료 자산</li></ul>
+                </div>
+                
+                <div class="comparison-col active-col">
+                    <div class="col-badge">NEW MODEL</div>
+                    <h3>패션테라피 버전: 신규 설계</h3>
+                    <ul><li>UX 구조만 차용, 캐릭터·문항·유형은 신규 설계</li><li>24~48문항으로 축소해 모바일 이탈률 개선</li><li>사상체질 × 패션테라피 고유 유형 체계</li><li>패션테라피진흥원 고유 일러스트로 대체</li></ul>
+                </div>
+                
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="slide " id="slide-4" data-slide="4">
+            
+            <div class="slide-content">
+                <div class="header-row">
+                    <div class="category-tag">진단 축 설계</div>
+                    <h2 class="slide-title">사상체질 × 패션테라피 성향을 결합한 유형 체계(제안)</h2>
+                </div>
+                <div class="bento-container">
+                    
+                <div class="bento-card span-2">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <span class="card-pill">RECOMMENDED</span>
+                    </div>
+                    <h3 class="card-title">옵션 A · 심플형 (권장)</h3>
+                    <ul class="card-bullets"><li>문항 응답 누적 점수로 유형 도출</li><li>사상체질 4유형 × 표현강도 2단계 = 8유형 등 벤치마크와 동일 구조</li></ul>
+                </div>
+                
+                <div class="bento-card span-1">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+                        <span class="card-pill">ALT</span>
+                    </div>
+                    <h3 class="card-title">옵션 B · 매트릭스형</h3>
+                    <ul class="card-bullets"><li>내향-외향 × 안정-변화 4분면 후 사상체질 매칭</li></ul>
+                </div>
+                
+                <div class="bento-card span-1">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+                        <span class="card-pill">TBD</span>
+                    </div>
+                    <h3 class="card-title">확정 필요</h3>
+                    <ul class="card-bullets"><li>유형명·카피는 남미화 박사 자문으로 확정</li></ul>
+                </div>
+                
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="slide " id="slide-5" data-slide="5">
+            
+            <div class="slide-content">
+                <div class="header-row">
+                    <div class="category-tag">정보구조 & 화면 흐름</div>
+                    <h2 class="slide-title">인트로 → 문항 → 결과 → 공유, 4단계 사용자 여정</h2>
+                </div>
+                <div class="timeline-container">
+                    <div class="timeline-track"></div>
+                    <div class="timeline-steps">
+                        
+                <div class="timeline-step">
+                    <div class="step-num">1</div>
+                    <div class="step-title">STEP 1 · 인트로</div>
+                    <div class="step-desc">마스코트 채팅 온보딩 + START 버튼</div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-num">2</div>
+                    <div class="step-title">STEP 2 · 문항 진행</div>
+                    <div class="step-desc">N/총페이지 카운터, 진행 점선바, 예/아니오 캡슐 버튼</div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-num">3</div>
+                    <div class="step-title">STEP 3 · 결과 계산</div>
+                    <div class="step-desc">trait별 점수 합산 → matchRule 기반 유형 도출</div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-num">4</div>
+                    <div class="step-title">STEP 4 · 결과 & 공유</div>
+                    <div class="step-desc">유형 카드 + 스타일링 팁 + SNS·리드 CTA</div>
+                </div>
+                
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="slide " id="slide-6" data-slide="6">
+            
+            <div class="slide-content">
+                <div class="header-row">
+                    <div class="category-tag">제품 스펙 요약</div>
+                    <h2 class="slide-title">MVP 범위를 규정하는 핵심 수치</h2>
+                </div>
+                <div class="metrics-grid">
+                    
+                <div class="metric-card">
+                    <div class="metric-val">24~48</div>
+                    <div class="metric-lbl">문항 수</div>
+                    <div class="metric-desc">8~16페이지 × 3문항, 72문항 대비 이탈률 개선</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-val">44px+</div>
+                    <div class="metric-lbl">터치 영역</div>
+                    <div class="metric-desc">WCAG AA 색 대비 + 접근성 기준 준수</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-val">1초</div>
+                    <div class="metric-lbl">초기 로딩 목표</div>
+                    <div class="metric-desc">정적 사이트 + SVG 아이콘 기반 경량 구조</div>
+                </div>
+                
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="slide " id="slide-7" data-slide="7">
+            
+            <div class="slide-content">
+                <div class="header-row">
+                    <div class="category-tag">기술 스택 & 아키텍처</div>
+                    <h2 class="slide-title">별도 백엔드 없이 정적 사이트로 가볍게</h2>
+                </div>
+                <div class="bento-container">
+                    
+                <div class="bento-card span-2">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
+                        <span class="card-pill">STATIC SITE</span>
+                    </div>
+                    <h3 class="card-title">프론트엔드</h3>
+                    <ul class="card-bullets"><li>Vanilla HTML/CSS/JS, Pretendard 폰트</li><li>questions.json / types.json으로 코드-콘텐츠 완전 분리</li></ul>
+                </div>
+                
+                <div class="bento-card span-1">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+                        <span class="card-pill">GITHUB PAGES</span>
+                    </div>
+                    <h3 class="card-title">배포</h3>
+                    <ul class="card-bullets"><li>.nojekyll·트레일링 슬래시 정규화 등 기존 패턴 재사용</li></ul>
+                </div>
+                
+                <div class="bento-card span-1">
+                    <div class="card-top">
+                        <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
+                        <span class="card-pill">OPTIONAL</span>
+                    </div>
+                    <h3 class="card-title">리드 수집 (선택)</h3>
+                    <ul class="card-bullets"><li>lead-capture-publisher 스킬의 GAS 웹훅 구조 재사용</li></ul>
+                </div>
+                
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="slide " id="slide-8" data-slide="8">
+            
+            <div class="slide-content">
+                <div class="header-row">
+                    <div class="category-tag">확인 필요 사항</div>
+                    <h2 class="slide-title">발주처 컨펌 필요 — 임의 추측 없이 확정 후 진행</h2>
+                </div>
+                <div class="bento-container grid-3">
+                    
+                <div class="bento-card">
+                    <div class="card-top"><span class="card-pill">확인 1</span></div>
+                    <h3 class="card-title">서비스명</h3>
+                    <ul class="card-bullets"><li>가칭 '패션 이너 테라피' 확정 여부</li></ul>
+                </div>
+                
+                <div class="bento-card">
+                    <div class="card-top"><span class="card-pill">확인 2</span></div>
+                    <h3 class="card-title">유형 체계</h3>
+                    <ul class="card-bullets"><li>결과 유형 개수·유형명·설명 카피 확정</li></ul>
+                </div>
+                
+                <div class="bento-card">
+                    <div class="card-top"><span class="card-pill">확인 3</span></div>
+                    <h3 class="card-title">문항 수</h3>
+                    <ul class="card-bullets"><li>24~48문항 중 최종 범위 및 실제 문항</li></ul>
+                </div>
+                
+                <div class="bento-card">
+                    <div class="card-top"><span class="card-pill">확인 4</span></div>
+                    <h3 class="card-title">캐릭터 일러스트</h3>
+                    <ul class="card-bullets"><li>신규 제작 vs 기존 강연자료 스타일 재활용</li></ul>
+                </div>
+                
+                <div class="bento-card">
+                    <div class="card-top"><span class="card-pill">확인 5</span></div>
+                    <h3 class="card-title">리드 수집 폼</h3>
+                    <ul class="card-bullets"><li>탑재 여부 및 연동 구글시트 유무</li></ul>
+                </div>
+                
+                <div class="bento-card">
+                    <div class="card-top"><span class="card-pill">확인 6·7</span></div>
+                    <h3 class="card-title">배포·카카오 API</h3>
+                    <ul class="card-bullets"><li>배포 도메인/경로, 카카오 공유 키 발급 필요 여부</li></ul>
+                </div>
+                
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="slide " id="slide-9" data-slide="9">
+            
+            <div class="slide-content title-layout">
+                <div class="category-tag">NEXT STEP</div>
+                <h1 class="hero-title">기획 확정 → 디자인 → 퍼블리싱 → 배포</h1>
+                <p class="hero-subtitle">남미화 박사 자문으로 유형·문항을 확정하는 즉시, 산출물/ 폴더 기준 정적 사이트 개발에 착수할 수 있습니다.</p>
+                <div class="meta-footer">
+                    <span>패션테라피진흥원 · 개발 기획팀</span>
+                    <span class="dot">•</span>
+                    <span>Thank You</span>
+                </div>
+            </div>
+            
+        </section>
+        
+        <div class="deck-controls">
+            <span class="counter" id="slide-counter">1 / 9</span>
+            <button class="btn" id="prev-btn" title="Previous (←)">◀</button>
+            <button class="btn" id="next-btn" title="Next (→)">▶</button>
+            <button class="btn" id="fs-btn" title="Fullscreen (F)">⛶</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 9;
+
+        function updateSlide(newIndex) {
+            if (newIndex < 1 || newIndex > totalSlides) return;
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(`slide-${newIndex}`);
+            if (target) {
+                target.classList.add('active');
+                currentSlide = newIndex;
+                document.getElementById('slide-counter').innerText = `${currentSlide} / ${totalSlides}`;
+            }
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', () => updateSlide(currentSlide - 1));
+        document.getElementById('next-btn').addEventListener('click', () => updateSlide(currentSlide + 1));
+        document.getElementById('fs-btn').addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => console.log(err));
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+                updateSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft') {
+                updateSlide(currentSlide - 1);
+            } else if (e.key === 'f' || e.key === 'F') {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(err => console.log(err));
+                } else {
+                    document.exitFullscreen();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호모루미누스 『빛운영 3부작』 윤문 프로젝트 종합 현황 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-amber-500 selection:text-white">
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-amber-950 via-slate-900 to-indigo-950 border border-amber-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    <i class="fa-solid fa-sun mr-1"></i> THE LIGHT OPERATION TRILOGY
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                호모루미누스 『빛운영 3부작』 윤문(潤文) 프로젝트 종합 현황
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                백태종 스승님의 25년 CMB 진공 파동 포집 실증 원고 & 유정근 총괄 디렉터의 무손실 윤문 체계
+            </p>
+        </header>
+
+        <!-- Status Summary Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <span class="text-xs text-slate-400 font-bold">마스터 원고 규모</span>
+                <div class="text-2xl font-black text-white">400,000+ 자</div>
+                <p class="text-xs text-amber-400">04_제2권_명아주.docx (19.1MB)</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <span class="text-xs text-slate-400 font-bold">분할 윤문 청크</span>
+                <div class="text-2xl font-black text-white">97개 청크</div>
+                <p class="text-xs text-indigo-400">무손실 5단계 파이프라인</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <span class="text-xs text-slate-400 font-bold">최신 정본 업데이트</span>
+                <div class="text-2xl font-black text-white">2026. 08. 24</div>
+                <p class="text-xs text-emerald-400">디렉터스 컷 & 해례본 완성</p>
+            </div>
+        </div>
+
+        <!-- 4 Key Assets Section -->
+        <section class="space-y-4">
+            <h2 class="text-lg font-black text-white flex items-center gap-2">
+                <i class="fa-solid fa-folder-open text-amber-400"></i> 핵심 원고 자산 및 산출물 구성
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- 1. Master Word -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-amber-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-400 text-xs font-bold">
+                            📖 제2권 최신 마스터 원고
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">19.1 MB</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">04_제2권_명아주.docx (백태종 스승님 검토본)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        스승님께서 직접 검토 보완하신 제2권 마스터 원고이며, 마크다운(`04_제2권_명아주.md`) 및 프롤로그 윤문본(`04_..._AGY.md`)으로 변환 완료되어 보존 중입니다.
+                    </p>
+                </div>
+
+                <!-- 2. 97 Chunks Kit -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-indigo-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-indigo-500/20 text-indigo-400 text-xs font-bold">
+                            ⚙️ 무손실 97청크 윤문 키트
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">context/chunks/</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">루미누스 오페라 97청크 파이프라인</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        원문 손실 없이 고유명사와 연도를 100% 보존하며 품격 있는 경전체로 승화하는 자동화 분할 키트(`chunk_01.md` ~ `chunk_97.md`).
+                    </p>
+                </div>
+
+                <!-- 3. Director's Cut & Haeryebon -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-emerald-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-bold">
+                            📜 2026.08.24 최신 완성본
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">20260821/</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">제5장 [디렉터스 컷 백서] & 해례본 정본</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        유정근 총괄 디렉터의 관점에서 정리된 디렉터스 컷 백서와 본문 해례본(2026.08.24)이 Word 파일로 조판 완료되었습니다.
+                    </p>
+                </div>
+
+                <!-- 4. BTS Arirang -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-purple-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-400 text-xs font-bold">
+                            🌐 연계 글로벌 아카이브
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">ryujean77/BTS_AGY</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">BTS WORLD TOUR 'ARIRANG' 아카이브</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        BTS 월드투어의 전 세계 공연 현장을 GitHub Actions와 CLI로 실시간 수집·보존하는 사실성 기반 글로벌 아카이브 시스템.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer Actions -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h4 class="text-sm font-bold text-white">RYUJEAN DOMAIN HQ 포털 연계</h4>
+                <p class="text-xs text-slate-400 mt-1">호모루미누스 도메인이 마스터 포털에 안전하게 등재되어 있습니다.</p>
+            </div>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                🏛️ 마스터 포털에서 확인 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

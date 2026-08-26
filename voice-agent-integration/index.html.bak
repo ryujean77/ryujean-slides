@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통화업무자동화 (Voice Agent) & 4대 도메인 1:1 연계 맵 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-brand-500 selection:text-white">
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border border-blue-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                    <i class="fa-solid fa-phone-volume mr-1"></i> VOICE AGENT INTEGRATION MAP
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                통화업무자동화 (Voice Agent) ➔ 4대 비즈니스 도메인 연계 맵
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                C:\01_Brain의 통화 녹음 Watchdog 시스템과 ryujeanWorkSpace 핵심 프로젝트 간의 1:1 계승 현황
+            </p>
+        </header>
+
+        <!-- Core Insight Banner -->
+        <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-slate-900 to-indigo-950/80 border border-emerald-500/40 shadow-lg space-y-2">
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+                <i class="fa-solid fa-lightbulb text-lg"></i>
+                <span>핵심 분석: "통화업무자동화는 모든 도메인 산출물의 '원천 데이터 생성 엔진'"</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                스마트폰 통화 녹음(남미화 박사, 임동구 박사, 백태종 스승님)이 <strong>01_Inbox_Raw 워치독</strong>에 인입되면, 
+                AI가 초안 기획서를 작성하고 <strong>슬랙(Slack)</strong> 승인을 거쳐 <strong>ryujeanWorkSpace의 마스터 DB 및 웹 대시보드로 배포</strong>되는 유기적 파이프라인으로 연결되어 있습니다.
+            </p>
+        </div>
+
+        <!-- 5 Domain Connection Cards -->
+        <div class="space-y-4">
+            <h2 class="text-lg font-black text-white flex items-center gap-2">
+                <i class="fa-solid fa-link text-brand-400"></i> 5개 영역별 1:1 실데이터 연계 상세
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- 1. Aroma -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-emerald-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-bold">
+                            🌿 아로마테라피 도메인
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">02_Draft_Plans</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">에센셜오일 체질별 완전 가이드 (28KB)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        통화자동화에서 생성된 체질별 오일 처방 초안이 계승되어 <strong>30종 마스터 DB</strong>, <strong>사상체질 매트릭스</strong>, <strong>최토미 교수 VIP 처방전 (샌달우드)</strong> 및 <strong>5대 퍼널 사업기획서</strong>로 완결되었습니다.
+                    </p>
+                </div>
+
+                <!-- 2. Fashion -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-indigo-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-indigo-500/20 text-indigo-400 text-xs font-bold">
+                            👗 패션테라피 도메인
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">01_Inbox_Raw</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">남미화 박사 20분 통화 녹음 (08.23)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        실제 통화 음성 파일이 워치독에 유입되어 <strong>2차 기획회의 5대 탭 대시보드</strong>(`01_회의록`, `02_린캔버스`, `03_RACI`, `04_에세이`, `05_남박사님 보고서`) 및 모바일 심리테스트 개발지시서로 자동 정제되었습니다.
+                    </p>
+                </div>
+
+                <!-- 3. Sasang -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-rose-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-400 text-xs font-bold">
+                            🧬 사상체질 인문학
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">03_Approved_Plans</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">임동구 박사 연구/강연 통화 기획안 (08.07)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        브라질 의대 논문 데이터, 플라즈마 학회 발표, 에너워터+산화질소 연구 및 100세 한의원 강의 To-Do가 <strong>도서관/공공기관 B2B 강연 제안서 패키지</strong>로 발전했습니다.
+                    </p>
+                </div>
+
+                <!-- 4. Homo Luminus -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-amber-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-400 text-xs font-bold">
+                            🌌 호모루미누스
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">호모루미누스/Bts</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">백태종 스승님 통화 녹음 (07.04)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        CMB 진공 파동 포집 서사와 지시사항이 전사되어 <strong>『빛운영 3부작』 97청크 무손실 윤문 파이프라인</strong> 및 <strong>BTS 월드투어 사실성 아카이브</strong>로 연결되었습니다.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- 5. Central Tech -->
+            <div class="p-6 rounded-2xl bg-slate-900/90 border border-purple-500/30 space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-400 text-xs font-bold">
+                        ⚙️ 기술 인프라 승계
+                    </span>
+                    <span class="text-xs text-slate-500 font-mono">multi_agent_slack.py</span>
+                </div>
+                <h3 class="font-bold text-white text-base">슬랙 소켓 모드 & 실시간 의도 분류기 (Intent Classifier)</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    통화자동화에서 개발된 슬랙 소켓 모드 및 자연어 결재 로직(`APPROVE`, `REVISE` 등)이 현재 워크스페이스의 <strong>`스킬/slack-notifier/` AI 비서 데몬</strong>으로 100% 이식되어 스마트폰에서 상시 원격 통제되고 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-slate-400">
+                🏛️ 모든 도메인과 통화자동화 프로젝트가 <strong>RYUJEAN DOMAIN HQ 포털</strong>에 통합 연계되어 있습니다.
+            </p>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                마스터 포털에서 확인 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -56,6 +56,33 @@
             border: 1px solid rgba(229, 237, 229, 0.9);
         }
     </style>
+
+<style id="web-guidelines-enhancement">
+    /* Vercel & W3C Standard Focus & Typography Enhancements */
+    :focus-visible {
+        outline: 2px solid #C5A869 !important;
+        outline-offset: 2px !important;
+        border-radius: 4px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+    p, li {
+        text-wrap: pretty;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    button, a, input, select, textarea {
+        touch-action: manipulation;
+    }
+</style>
+
 </head>
 <body class="text-slate-800 antialiased min-h-screen pb-16">
 

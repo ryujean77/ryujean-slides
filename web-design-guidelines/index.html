@@ -37,6 +37,33 @@
         .vercel-card:hover { border-color: #444444; }
         .badge { background: rgba(0, 112, 243, 0.1); border: 1px solid rgba(0, 112, 243, 0.3); color: #3291FF; }
     </style>
+
+<style id="web-guidelines-enhancement">
+    /* Vercel & W3C Standard Focus & Typography Enhancements */
+    :focus-visible {
+        outline: 2px solid #C5A869 !important;
+        outline-offset: 2px !important;
+        border-radius: 4px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+    p, li {
+        text-wrap: pretty;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    button, a, input, select, textarea {
+        touch-action: manipulation;
+    }
+</style>
+
 </head>
 <body class="min-h-screen pb-20">
 

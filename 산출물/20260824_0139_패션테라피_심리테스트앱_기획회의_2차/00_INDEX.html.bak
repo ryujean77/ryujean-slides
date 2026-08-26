@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패션테라피 심리테스트 2차 기획회의 종합 분석 보고서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; }
+        .markdown-body h1 { font-size: 1.875rem; font-weight: 800; margin-top: 1.5rem; margin-bottom: 1rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .markdown-body h2 { font-size: 1.5rem; font-weight: 700; margin-top: 1.25rem; margin-bottom: 0.75rem; color: #334155; }
+        .markdown-body h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; color: #475569; }
+        .markdown-body p { margin-bottom: 0.875rem; line-height: 1.75; color: #334155; }
+        .markdown-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.925rem; }
+        .markdown-body th, .markdown-body td { border: 1px solid #cbd5e1; padding: 0.625rem 0.875rem; text-align: left; }
+        .markdown-body th { background-color: #f1f5f9; font-weight: 700; color: #1e293b; }
+        .markdown-body tr:nth-child(even) { background-color: #f8fafc; }
+        .markdown-body blockquote { border-left: 4px solid #6366f1; padding-left: 1rem; color: #4f46e5; background-color: #eef2ff; padding-top: 0.5rem; padding-bottom: 0.5rem; border-radius: 0 0.375rem 0.375rem 0; margin: 1rem 0; }
+        .markdown-body ul, .markdown-body ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .markdown-body li { margin-bottom: 0.375rem; list-style-type: disc; }
+        .markdown-body pre { background-color: #1e293b; color: #f8fafc; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; margin: 1rem 0; }
+        .markdown-body code { background-color: #f1f5f9; color: #e11d48; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875em; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
+            <div class="flex items-center space-x-3">
+                <span class="bg-indigo-700 text-indigo-200 text-xs px-2.5 py-1 rounded-full font-bold">2차 기획회의 종합분석</span>
+                <h1 class="text-xl font-bold tracking-tight">패션테라피 심리테스트 산출물 패키지</h1>
+            </div>
+            <div class="flex items-center space-x-2 text-xs text-indigo-200">
+                <span><i class="fa-solid fa-user-tie mr-1"></i>남미화 박사 & 유정근 총괄</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-calendar mr-1"></i>2026.08.24</span>
+            </div>
+        </div>
+        <!-- Tab Navigation -->
+        <div class="max-w-6xl mx-auto px-4 flex overflow-x-auto space-x-2 pb-2 text-sm">
+            <button onclick="switchTab('tab-index')" id="btn-tab-index" class="tab-btn px-4 py-2 rounded-t-lg font-bold bg-white text-indigo-900 transition shadow">📋 개요 & 종합안내</button>
+            <button onclick="switchTab('tab-minutes')" id="btn-tab-minutes" class="tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition">⏱️ 01. 핵심 회의록</button>
+            <button onclick="switchTab('tab-canvas')" id="btn-tab-canvas" class="tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition">📊 02. 린 캔버스</button>
+            <button onclick="switchTab('tab-raci')" id="btn-tab-raci" class="tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition">👥 03. RACI 역할분담</button>
+            <button onclick="switchTab('tab-essay')" id="btn-tab-essay" class="tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition">✍️ 04. 인문학 에세이</button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-10">
+            <div id="content-area" class="markdown-body"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto px-4 py-8 text-center text-xs text-slate-400">
+        <p>패션테라피 심리테스트 프로젝트 — 유정근 총괄 기획 & 남미화 의복심리학 박사 협업</p>
+        <p class="mt-1">Powered by Antigravity AI Engine • GitNotion Automated Publishing</p>
+    </footer>
+
+    <script>
+        const rawDocs = {
+            'tab-index': "# 패션테라피 심리테스트 앱 — 기획회의 2차 산출물 (2026-08-24)\n\n원본: 남미화 박사와 나눈 음성 대화(`I:\\내 드라이브\\01_Inbox_Raw\\음성 260823_200915_original.txt`)를\n프로젝트 매니저 관점에서 분석해 아래 4개 문서로 정리했습니다.\n\n1. [01_회의록.md](01_회의록.md) — 대화 시간대별 요약, 합의 원칙, 미결 사항\n2. [02_기획반영_및_린캔버스.md](02_기획반영_및_린캔버스.md) — 적용/추가/부족/리스크 4분류 + 서비스 린캔버스\n3. [03_역할분담.md](03_역할분담.md) — 남미화 박사 / 오빠(총괄) 담당 업무 분리\n4. [04_인사이트_에세이.md](04_인사이트_에세이.md) — 인문학적 인사이트 정리 + 블로그/에세이 초안\n5. [05_남미화박사님께_보내는_보고서.html](05_남미화박사님께_보내는_보고서.html) — 위 4개 문서를 남박사님이 읽기 편하게 풀어쓴 종합 HTML 보고서 (이메일 발송용)\n\n**개발지시서(살아있는 문서, 계속 업데이트)**: [../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md](../20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md) — 본 회의 내용을 반영해 v1.0 → v1.1로 갱신 완료(§3.4~3.6, §9, §11 개정이력 참고)\n\n## 참고: 원본 음성 스크립트 파일 안내\n원본 `.txt` 파일이 **UTF-16(BE) 인코딩**으로 저장되어 있어 일반 텍스트 뷰어에서 깨져 보일 수 있습니다.\nUTF-8로 변환한 전문이 필요하면 말씀해 주세요.\n",
+            'tab-minutes': "",
+            'tab-canvas': "",
+            'tab-raci': "",
+            'tab-essay': ""
+        };
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = 'tab-btn px-4 py-2 rounded-t-lg font-medium text-indigo-200 hover:text-white transition';
+            });
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.className = 'tab-btn px-4 py-2 rounded-t-lg font-bold bg-white text-indigo-900 transition shadow';
+            }
+            const mdText = rawDocs[tabId] || '# 문서 내용이 없습니다.';
+            document.getElementById('content-area').innerHTML = marked.parse(mdText);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initial Load
+        switchTab('tab-index');
+    </script>
+</body>
+</html>

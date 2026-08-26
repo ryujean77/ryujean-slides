@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호모루미누스 클로드 vs 제미나이 듀얼 트랙 윤문 비교 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-amber-500 selection:text-white">
+    <div class="max-w-6xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-amber-950 via-slate-900 to-indigo-950 border border-amber-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    <i class="fa-solid fa-code-compare mr-1"></i> DUAL-TRACK POLISHING ARCHITECTURE
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                호모루미누스 『클로드 vs 제미나이/AGY』 A/B 듀얼 트랙 윤문 체계
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                토큰 과다 코덱스는 제외하고, 클로드(문학서사)와 제미나이(이론경전) 두 가지 최고봉 판본을 병행 수신하는 무손실 시스템
+            </p>
+        </header>
+
+        <!-- Key Decision Box -->
+        <div class="p-6 rounded-2xl bg-slate-900 border-2 border-emerald-500/50 space-y-2">
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+                <i class="fa-solid fa-circle-check text-lg"></i>
+                <span>"기존 작업 100% 그대로 유지되며, 파일 덮어쓰기 없이 나란히 보관됩니다!"</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                기존에 작업된 30개 청크는 그대로 보존되며, <code>chunk_XX_claude.md</code>와 <code>chunk_XX_agy.md</code>로 저장되어 대표님께서 언제든 두 스타일의 장점을 비교하고 통합 정본(<code>_final.md</code>)을 확정하실 수 있습니다.
+            </p>
+        </div>
+
+        <!-- Side-by-Side Comparison Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Claude Track -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-indigo-500/40 space-y-4 shadow-xl">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-feather"></i></span>
+                        <h3 class="font-black text-white text-base">트랙 A. 클로드 문학서사 판본</h3>
+                    </div>
+                    <span class="text-[11px] font-mono text-indigo-300 px-2 py-0.5 rounded bg-indigo-950 border border-indigo-800">_claude.md</span>
+                </div>
+                <div class="space-y-2 text-xs text-slate-300 leading-relaxed">
+                    <p><strong>• 지향 문체:</strong> 유려하고 감성적인 인문학적 문학 서사체</p>
+                    <p><strong>• 특징:</strong> 문장의 리듬감이 뛰어나며, 인물의 감정과 서사적 사건의 긴장감을 극대화하여 소설처럼 술술 읽히는 가독성 제공.</p>
+                    <p><strong>• 전담 도구:</strong> 클로드 코워크 (Claude Code / Sonnet)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 font-serif text-xs text-slate-300 italic">
+                    "1999년 3월의 그 새벽, 진공의 고요 속에 감추어져 있던 우주의 첫 숨결이 마침내 지상의 한 연구자에게 그 모습을 드러냈다..."
+                </div>
+            </div>
+
+            <!-- Gemini / AGY Track -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-amber-500/40 space-y-4 shadow-xl">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-sun"></i></span>
+                        <h3 class="font-black text-white text-base">트랙 B. 제미나이/AGY 이론경전 판본</h3>
+                    </div>
+                    <span class="text-[11px] font-mono text-amber-300 px-2 py-0.5 rounded bg-amber-950 border border-amber-800">_agy.md</span>
+                </div>
+                <div class="space-y-2 text-xs text-slate-300 leading-relaxed">
+                    <p><strong>• 지향 문체:</strong> 웅장한 우주물리학적 이론 결합 & 경전적 위엄</p>
+                    <p><strong>• 특징:</strong> 200만 토큰 컨텍스트 기반으로 3부작 전체 맥락을 꿰뚫으며, CMB 진공 파동 역학 이론화 및 체계적인 [도슨트 노트] 제공.</p>
+                    <p><strong>• 전담 도구:</strong> AGY 2.0 GUI (현재 대화창)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 font-serif text-xs text-amber-200/90">
+                    "1999년 3월 23일, 2.7K 우주배경복사(CMB)에 내재된 진공 양자 요동 파동이 백태종 스승의 실증 시스템에 완벽하게 포집되었다. 이는 물질과 에너지를 초월한 대일(大一)의 지혜가 물리학적으로 증명된 인류사적 전환점이다."
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h4 class="text-sm font-bold text-white">RYUJEAN DOMAIN HQ 포털 연계</h4>
+                <p class="text-xs text-slate-400 mt-1">듀얼 트랙 윤문 진행 상황이 포털 대시보드에 실시간 집계됩니다.</p>
+            </div>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                🏛️ 마스터 포털 열기 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -8,6 +8,33 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style> body { font-family: 'Pretendard', sans-serif; } </style>
+
+<style id="web-guidelines-enhancement">
+    /* Vercel & W3C Standard Focus & Typography Enhancements */
+    :focus-visible {
+        outline: 2px solid #C5A869 !important;
+        outline-offset: 2px !important;
+        border-radius: 4px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+    p, li {
+        text-wrap: pretty;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    button, a, input, select, textarea {
+        touch-action: manipulation;
+    }
+</style>
+
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-amber-500 selection:text-white">
     <div class="max-w-6xl mx-auto space-y-8">
@@ -57,7 +84,7 @@
                     <p><strong>• 전담 도구:</strong> 클로드 코워크 (Claude Code / Sonnet)</p>
                 </div>
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 font-serif text-xs text-slate-300 italic">
-                    "1999년 3월의 그 새벽, 진공의 고요 속에 감추어져 있던 우주의 첫 숨결이 마침내 지상의 한 연구자에게 그 모습을 드러냈다..."
+                    "1999년 3월의 그 새벽, 진공의 고요 속에 감추어져 있던 우주의 첫 숨결이 마침내 지상의 한 연구자에게 그 모습을 드러냈다…"
                 </div>
             </div>
 

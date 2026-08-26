@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일일 업무일지 | 2026년 8월 25일 (유정근 웰니스 총괄)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Pretendard', 'sans-serif'] },
+                    colors: {
+                        slateTheme: { 850: '#151e2e', 900: '#0f172a' },
+                        sage: { 100: '#e5ede5', 500: '#5e8756', 800: '#2f442b', 900: '#1b2c18' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen pb-16 font-sans">
+
+    <!-- Top Header -->
+    <header class="bg-gradient-to-r from-slate-900 via-sage-900 to-slate-900 text-white py-12 px-4 sm:px-8 shadow-xl">
+        <div class="max-w-4xl mx-auto space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-gold-400 border border-white/15">
+                    <i class="fa-solid fa-clipboard-check"></i> DAILY WORK REPORT
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 25 (화)</span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight">
+                2026년 8월 25일 일일 업무일지 & 시스템 구축 실적
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm font-light">
+                아로마테라피 독립 도메인 구축, 5단계 고수익 온라인 사업기획서 발행 및 양방향 슬랙 봇 연동 완료 보고
+            </p>
+            <div class="pt-2 flex flex-wrap gap-4 text-xs text-slate-400 border-t border-white/10">
+                <div><strong>총괄:</strong> 전담 웰니스 테라피스트 유정근</div>
+                <div><strong>어시스턴트:</strong> Antigravity AI Agent</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-8 -mt-6 relative z-10 space-y-6">
+
+        <!-- 4 Key Highlights -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+                <span class="text-xs font-bold text-sage-600">01. 1:1 케어 플랜</span>
+                <h3 class="font-bold text-slate-900 text-sm">최토미 처방전 배포</h3>
+                <p class="text-xs text-slate-500">고객 발송용 client.html 3중 분리 및 라이브 배포 완료</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+                <span class="text-xs font-bold text-blue-600">02. 헌장 Rule 11</span>
+                <h3 class="font-bold text-slate-900 text-sm">MD+HTML 동시작성</h3>
+                <p class="text-xs text-slate-500">대외 산출물 격리 및 시각적 가독성 극대화 원칙 명문화</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+                <span class="text-xs font-bold text-amber-600">03. 아로마 도메인</span>
+                <h3 class="font-bold text-slate-900 text-sm">지식베이스 & 케어엔진</h3>
+                <p class="text-xs text-slate-500">도테라 30종 마스터 DB, 사상체질 룰, PubMed 논문 10편</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+                <span class="text-xs font-bold text-purple-600">04. 양방향 슬랙</span>
+                <h3 class="font-bold text-slate-900 text-sm">소켓모드 봇 가동</h3>
+                <p class="text-xs text-slate-500">#workspace 채널 멘션 & 1:1 DM 실시간 자동 응답</p>
+            </div>
+        </div>
+
+        <!-- Detailed Work List -->
+        <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+            <h2 class="text-lg font-black text-slate-900 pb-3 border-b border-slate-100 flex items-center gap-2">
+                <i class="fa-solid fa-list-check text-sage-600"></i> 상세 실행 내역 및 산출물 링크
+            </h2>
+
+            <div class="space-y-4 text-xs sm:text-sm">
+                <!-- Item 1 -->
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">🌿 아로마테라피 온라인 수익 극대화 사업기획서 발행</span>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">배포완료</span>
+                    </div>
+                    <p class="text-slate-600">원드라이브 5개년 강의키트 및 임상 자산을 5단계 고수익 온라인 퍼널(무료진단 ➔ 스타터키트 ➔ LRP정기구독 ➔ 자격증 ➔ B2B출강)로 전환하는 30일/90일 실행안 수립.</p>
+                    <div class="pt-1">
+                        <a href="https://ryujean77.github.io/ryujean-slides/aroma-biz-plan/" target="_blank" class="text-xs font-bold text-blue-600 hover:underline">
+                            🔗 라이브 사업기획서 열기 ➔
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">💌 최토미 교수 1:1 VIP 아로마 케어 플랜</span>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">배포완료</span>
+                    </div>
+                    <p class="text-slate-600">전담 웰니스 테라피스트 유정근 서명 반영, 내부 상담 스크립트 격리 및 고객 발송용 전용 웹 처방전 완성.</p>
+                    <div class="pt-1">
+                        <a href="https://ryujean77.github.io/ryujean-slides/choi-tommy-care/" target="_blank" class="text-xs font-bold text-blue-600 hover:underline">
+                            🔗 라이브 1:1 웹 처방전 열기 ➔
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">🤖 슬랙(Slack) 실시간 알림 & Socket Mode 양방향 봇</span>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800">가동중</span>
+                    </div>
+                    <p class="text-slate-600">`스킬/slack-notifier/` 탑재, Bot OAuth Token 및 App Token 연동, 슬랙 채널 및 DM에서 AI 비서 호출 가능.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Actions -->
+        <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <h2 class="text-lg font-black text-slate-900 pb-3 border-b border-slate-100 flex items-center gap-2">
+                <i class="fa-solid fa-forward-step text-gold-600"></i> 명일 주요 추진 계획
+            </h2>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                    <span class="text-gold-500 font-bold">1.</span>
+                    <span><strong>3분 무료 감정 & 사상체질 아로마 자가진단 웹앱(Funnel 1)</strong> 인터랙티브 UI 빌드 및 배포</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-gold-500 font-bold">2.</span>
+                    <span><strong>남미화 박사님 이메일 회신 인입 시</strong> 패션테라피 8대 캐릭터 웹앱 실데이터 반영</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-gold-500 font-bold">3.</span>
+                    <span><strong>도서관 및 공공기관 B2B 출강 표준 제안서 PDF 패키지</strong> 원클릭 생성 자동화</span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="max-w-4xl mx-auto px-4 py-8 text-center text-xs text-slate-400">
+        <p>© 2026 ryujeanWorkSpace. 전담 웰니스 테라피스트 유정근. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아로마테라피 원드라이브 자산 기반 온라인 비즈니스 수익 극대화 사업기획서</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Cinzel:wght@600;700;900&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'sans-serif'],
+                        serif: ['Nanum Myeongjo', 'serif'],
+                        enSerif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e5ede5',
+                            200: '#cdddc9',
+                            500: '#5e8756',
+                            700: '#3a5435',
+                            800: '#2f442b',
+                            900: '#1b2c18',
+                        },
+                        gold: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #faf9f6; }
+        .executive-hero {
+            background: linear-gradient(145deg, #1b2c18 0%, #2f442b 60%, #1b2c18 100%);
+        }
+        .report-card {
+            background: #ffffff;
+            border: 1px solid rgba(229, 237, 229, 0.9);
+            box-shadow: 0 10px 30px -5px rgba(27, 44, 24, 0.05);
+        }
+        .gold-badge {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid rgba(217, 119, 6, 0.25);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen pb-20">
+
+    <!-- Executive Top Header -->
+    <header class="executive-hero text-white py-12 sm:py-16 px-4 sm:px-8 relative overflow-hidden shadow-2xl">
+        <div class="max-w-5xl mx-auto space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 text-gold-200 border border-white/15">
+                    <i class="fa-solid fa-crown text-gold-400"></i> STRATEGIC BUSINESS PROPOSAL
+                </span>
+                <span class="text-xs text-emerald-200/80 font-mono">DOC-ID: ARMA-BIZ-20260825</span>
+            </div>
+            
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+                아로마테라피 원드라이브 자산 기반<br>
+                <span class="text-gold-400 font-serif">온라인 비즈니스 수익 극대화</span> 사업기획서
+            </h1>
+            
+            <p class="text-emerald-100/90 text-sm sm:text-base max-w-3xl leading-relaxed font-light">
+                5년 이상 축적된 강의키트, 감정 오일 해석법, 사상체질 임상 데이터, 아로마터치 테크닉을 자동화된 5단계 고수익 온라인 퍼널로 전환하여 영구적인 현금흐름(Cashflow)을 창출하는 마스터플랜입니다.
+            </p>
+
+            <div class="pt-4 flex flex-wrap items-center gap-4 text-xs text-slate-300 border-t border-white/10">
+                <div><strong>총괄 기획:</strong> 전담 웰니스 테라피스트 유정근</div>
+                <div><strong>기반 데이터:</strong> OneDrive Contact & 강의키트 원본</div>
+                <div><strong>발행일:</strong> 2026. 08. 25</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-8 -mt-6 relative z-20 space-y-10">
+
+        <!-- 1. Executive Summary & Core Opportunity -->
+        <section class="report-card rounded-3xl p-6 sm:p-10 space-y-6">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-100">
+                <span class="w-10 h-10 rounded-2xl bg-gold-100 text-gold-700 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </span>
+                <div>
+                    <h2 class="text-xl font-black text-slate-900">1. 사업화 배경 및 핵심 기회 요인</h2>
+                    <p class="text-xs text-slate-500">방대한 오프라인 자산의 온라인 디지털 전환 전략</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                    <span class="text-xs font-bold text-rose-600 uppercase block mb-1">Current Problem</span>
+                    <h3 class="font-bold text-slate-900 text-sm mb-1.5">자산의 파편화 및 수동 상담</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">수많은 고품질 강의안과 레시피가 로컬/원드라이브에 흩어져 있어 1:1 전화 상담에만 의존하던 한계.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-100">
+                    <span class="text-xs font-bold text-emerald-700 uppercase block mb-1">Transformation</span>
+                    <h3 class="font-bold text-emerald-950 text-sm mb-1.5">디지털 자산화 & 자동화 엔진</h3>
+                    <p class="text-xs text-emerald-800/90 leading-relaxed">무료 자가진단 웹앱 ➔ 모바일 웹 처방전 자동 생성(aroma-care-engine)으로 24시간 고객 유입 체계 확립.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-gold-50/60 border border-gold-100">
+                    <span class="text-xs font-bold text-gold-800 uppercase block mb-1">Financial Outcome</span>
+                    <h3 class="font-bold text-gold-950 text-sm mb-1.5">월 1,000만원+ 복합 수익 파이프라인</h3>
+                    <p class="text-xs text-gold-900/90 leading-relaxed">스타터 키트 판매 + LRP 정기구독(파워오브3) + 자격증 클래스 + 기업 B2B 출강의 다각화된 현금흐름 구축.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The 5-Tier Wealth Funnel Architecture -->
+        <section class="report-card rounded-3xl p-6 sm:p-10 space-y-6">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-100">
+                <span class="w-10 h-10 rounded-2xl bg-sage-100 text-sage-800 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-layer-group"></i>
+                </span>
+                <div>
+                    <h2 class="text-xl font-black text-slate-900">2. 초고수익 온라인 5단계 비즈니스 퍼널</h2>
+                    <p class="text-xs text-slate-500">고객 획득부터 고단가 B2B까지 이어지는 완전 자동화 수익 모델</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Tier 1 -->
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-200 text-slate-800">1단계 : 유입</span>
+                            <h3 class="font-bold text-slate-900 text-base">3분 무료 AI 감정 & 사상체질 아로마 자가진단 (Lead Magnet)</h3>
+                        </div>
+                        <p class="text-xs text-slate-600">SNS 및 바이럴을 통해 월 300~500명의 잠재 고객 카카오톡/이메일 DB 자동 수집.</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <span class="text-xs text-slate-400 block">가격</span>
+                        <span class="text-sm font-black text-emerald-700">무료 (Free)</span>
+                    </div>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="p-5 rounded-2xl bg-emerald-50/40 border border-emerald-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">2단계 : 진입</span>
+                            <h3 class="font-bold text-emerald-950 text-base">7일 감정 리셋 스타터 키트 & 데일리 오디오 명상 (Tripwire)</h3>
+                        </div>
+                        <p class="text-xs text-emerald-800/90">미니 샘플 3종 + 7일간 전송되는 모바일 케어 가이드로 첫 유료 결제 장벽 해소.</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <span class="text-xs text-slate-400 block">가격</span>
+                        <span class="text-sm font-black text-emerald-800">19,000원 ~ 39,000원</span>
+                    </div>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="p-5 rounded-2xl bg-gold-50/50 border border-gold-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-gold-200 text-gold-900">3단계 : 메인 엔진</span>
+                            <h3 class="font-bold text-gold-950 text-base">도테라 본사 직배송 LRP 정기구독 & 1:1 VIP 웹 처방전 (Core Offer)</h3>
+                        </div>
+                        <p class="text-xs text-gold-900/90">유정근 테라피스트의 매월 맞춤형 웹 처방전 + 본사 정품 25% 할인 + 파워오브3 보너스 결합.</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <span class="text-xs text-slate-400 block">월간 구독</span>
+                        <span class="text-sm font-black text-gold-700">월 15~25만원 (100~150 PV)</span>
+                    </div>
+                </div>
+
+                <!-- Tier 4 -->
+                <div class="p-5 rounded-2xl bg-purple-50/40 border border-purple-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800">4단계 : 고단가</span>
+                            <h3 class="font-bold text-purple-950 text-base">아로마터치 테크닉 & 감정 아로마 전문가 자격증 코스 (High-Ticket)</h3>
+                        </div>
+                        <p class="text-xs text-purple-900/90">원드라이브 8단계 테크닉 실습 교재 기반, 에스테틱 원장/강사 양성 유료 클래스.</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <span class="text-xs text-slate-400 block">수강료</span>
+                        <span class="text-sm font-black text-purple-800">500,000원 ~ 1,500,000원</span>
+                    </div>
+                </div>
+
+                <!-- Tier 5 -->
+                <div class="p-5 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-white/20 text-gold-300">5단계 : B2B</span>
+                            <h3 class="font-bold text-white text-base">기업 EAP 웰니스 워크숍 & 도서관/지자체 단체 출강 (Enterprise)</h3>
+                        </div>
+                        <p class="text-xs text-slate-300">동국대/인천자활센터 등 기확보된 레퍼런스를 바탕으로 전국 공공기관 및 대기업 수주.</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <span class="text-xs text-slate-400 block">회당 강사료</span>
+                        <span class="text-sm font-black text-gold-400">500,000원 ~ 2,000,000원</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Financial Projections -->
+        <section class="report-card rounded-3xl p-6 sm:p-10 space-y-6">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-100">
+                <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <div>
+                    <h2 class="text-xl font-black text-slate-900">3. 예상 매출 및 수익 시뮬레이션 (Monthly Run-rate)</h2>
+                    <p class="text-xs text-slate-500">6개월 안정화 단계 기준 월간 추정 손익</p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold">
+                            <th class="p-3">수익 채널</th>
+                            <th class="p-3">목표 모객 / 수량</th>
+                            <th class="p-3">객단가</th>
+                            <th class="p-3 text-right">월간 예상 매출</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-700 font-medium">
+                        <tr>
+                            <td class="p-3 font-bold">🎟️ 7일 스타터 키트</td>
+                            <td class="p-3">월 50세트</td>
+                            <td class="p-3">29,000원</td>
+                            <td class="p-3 text-right font-bold text-slate-900">1,450,000원</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold">📦 도테라 LRP 정기구독 (100명)</td>
+                            <td class="p-3">100명 유지 (파워오브3 3단계)</td>
+                            <td class="p-3">후원수당 + 보너스</td>
+                            <td class="p-3 text-right font-bold text-emerald-700">4,500,000원</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold">💎 아로마터치/감정 전문가 코스</td>
+                            <td class="p-3">월 3명 수강</td>
+                            <td class="p-3">800,000원</td>
+                            <td class="p-3 text-right font-bold text-slate-900">2,400,000원</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold">🏢 기업/도서관 B2B 출강</td>
+                            <td class="p-3">월 2회 출강</td>
+                            <td class="p-3">1,000,000원</td>
+                            <td class="p-3 text-right font-bold text-slate-900">2,000,000원</td>
+                        </tr>
+                        <tr class="bg-gold-50/60 font-black text-sm text-gold-950">
+                            <td class="p-4" colspan="3">합계 예상 월간 매출 (Monthly Recurring Revenue)</td>
+                            <td class="p-4 text-right text-base text-gold-700">10,350,000원 / 월</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. Next Immediate Action Plan -->
+        <section class="report-card rounded-3xl p-6 sm:p-10 space-y-6">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-100">
+                <span class="w-10 h-10 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-rocket"></i>
+                </span>
+                <div>
+                    <h2 class="text-xl font-black text-slate-900">4. 즉시 실행 3대 과제</h2>
+                    <p class="text-xs text-slate-500">오늘부터 가동 가능한 선제적 액션 플랜</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <span class="w-7 h-7 rounded-xl bg-sage-800 text-white flex items-center justify-center text-xs font-bold">1</span>
+                    <h3 class="font-bold text-slate-900 text-sm">3분 자가진단 웹앱 론칭</h3>
+                    <p class="text-xs text-slate-600">원드라이브 감정 오일 10종을 모바일 인터랙티브 테스트로 제작하여 GitHub Pages 배포.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <span class="w-7 h-7 rounded-xl bg-sage-800 text-white flex items-center justify-center text-xs font-bold">2</span>
+                    <h3 class="font-bold text-slate-900 text-sm">스타터 키트 페이지 구성</h3>
+                    <p class="text-xs text-slate-600">7일 감정 회복 키트(1.9만원) 주문 및 카톡 알림톡 결제 연동.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <span class="w-7 h-7 rounded-xl bg-sage-800 text-white flex items-center justify-center text-xs font-bold">3</span>
+                    <h3 class="font-bold text-slate-900 text-sm">B2B 도서관 제안서 패키징</h3>
+                    <p class="text-xs text-slate-600">강의키트 PPTX를 표준 PDF 제안서로 일괄 변환하여 전국 문화강좌 담당자에 발송.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Signature -->
+    <footer class="max-w-5xl mx-auto px-4 py-8 text-center text-xs text-slate-400 space-y-1">
+        <p>본 사업기획서는 전담 웰니스 테라피스트 유정근의 원드라이브 비즈니스 자산을 기반으로 작성된 공식 전략 문서입니다.</p>
+        <p>© 2026 Aroma Wellness Lab. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

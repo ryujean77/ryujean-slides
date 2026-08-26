@@ -59,6 +59,33 @@
             backdrop-filter: blur(8px);
         }
     </style>
+
+<style id="web-guidelines-enhancement">
+    /* Vercel & W3C Standard Focus & Typography Enhancements */
+    :focus-visible {
+        outline: 2px solid #C5A869 !important;
+        outline-offset: 2px !important;
+        border-radius: 4px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+    p, li {
+        text-wrap: pretty;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    button, a, input, select, textarea {
+        touch-action: manipulation;
+    }
+</style>
+
 </head>
 <body class="bg-[#fbfbfa] min-h-screen antialiased flex flex-col">
 
@@ -92,7 +119,7 @@
                     class="px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 flex items-center transition"
                 >
                     <i class="fa-solid fa-rotate mr-1.5" :class="isSyncing ? 'fa-spin text-teal-600' : ''"></i>
-                    {{ isSyncing ? '동기화 중...' : 'GitHub 동기화' }}
+                    {{ isSyncing ? '동기화 중…' : 'GitHub 동기화' }}
                 </button>
 
                 <!-- New Publish Button -->
@@ -162,7 +189,7 @@
                     <input 
                         type="text" 
                         v-model="searchQuery" 
-                        placeholder="고객명, 문서 제목, 키워드 검색..." 
+                        placeholder="고객명, 문서 제목, 키워드 검색…" 
                         class="w-full pl-9 pr-4 py-1.5 text-xs bg-white border border-[#e9e9e7] rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-400 transition"
                     >
                 </div>

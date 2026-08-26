@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호모루미누스 & BTS 아카이브 실시간 통합 관제 센터 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-amber-500 selection:text-white">
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-amber-950 via-slate-900 to-indigo-950 border border-amber-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    <i class="fa-solid fa-satellite-dish mr-1"></i> LIVE GOVERNANCE CENTER
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26 10:20 실시간 집계</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                호모루미누스 & BTS 아카이브 멀티 AI 무간섭 통합 관제 센터
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                코덱스(BTS예약) • 클로드(코워크윤문) • AGY(물리학윤문)의 프로세스를 100% 독립 유지하며 관제만 일원화한 실시간 모니터
+            </p>
+        </header>
+
+        <!-- 3 Tool Status Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <!-- Claude Cowork Status -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-indigo-500/30 space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-0.5 rounded bg-indigo-500/20 text-indigo-400 text-xs font-bold">🎭 클로드 코워크</span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-xl font-black text-white">29 / 97 청크</div>
+                    <p class="text-xs text-slate-400">문학적 서사 윤문 독립 가동</p>
+                </div>
+                <p class="text-[11px] text-indigo-300 font-mono truncate">📂 context/chunks/</p>
+            </div>
+
+            <!-- AGY GUI Status -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-amber-500/30 space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-400 text-xs font-bold">🏛️ AGY 2.0 GUI</span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-xl font-black text-white">프롤로그 & 3부작 총괄</div>
+                    <p class="text-xs text-slate-400">이론물리학 경전체 윤문 및 관제</p>
+                </div>
+                <p class="text-[11px] text-amber-300 font-mono truncate">🌐 RYUJEAN DOMAIN HQ</p>
+            </div>
+
+            <!-- Codex Status -->
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-purple-500/30 space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-400 text-xs font-bold">⚡ 코덱스 (Codex)</span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-xl font-black text-white">BTS 예약작업 정상</div>
+                    <p class="text-xs text-slate-400">GitHub Actions 일일 크롤링</p>
+                </div>
+                <p class="text-[11px] text-purple-300 font-mono truncate">📁 BTS_AGY/scripts/</p>
+            </div>
+
+        </div>
+
+        <!-- Progress Bar Section -->
+        <section class="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="font-bold text-white text-base">제2권 『루미누스 오페라』 97청크 무손실 윤문 진척도</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">백태종 스승님 원고(명아주 40만자) 대비 완료 청크 현황</p>
+                </div>
+                <span class="text-lg font-black text-amber-400">29.9%</span>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-950 rounded-full h-3.5 p-0.5 border border-slate-800">
+                <div class="bg-gradient-to-r from-indigo-500 via-amber-500 to-emerald-500 h-2.5 rounded-full" style="width: 29.9%"></div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-xs text-slate-400 font-mono">
+                <div>• 목표 청크: <strong>97개</strong></div>
+                <div>• 클로드 완료: <strong class="text-indigo-300">29개</strong></div>
+                <div>• 스승님 검토본: <strong class="text-emerald-300">19.1MB</strong></div>
+                <div>• 디렉터스 컷: <strong class="text-amber-300">08.24 완료</strong></div>
+            </div>
+        </section>
+
+        <!-- Footer Actions -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h4 class="text-sm font-bold text-white">RYUJEAN DOMAIN HQ 포털과 완벽 동기화</h4>
+                <p class="text-xs text-slate-400 mt-1">도구 변경 없이 포털 대시보드에서 모든 상태를 실시간 확인하실 수 있습니다.</p>
+            </div>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                🏛️ 마스터 포털 열기 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

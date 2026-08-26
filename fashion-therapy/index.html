@@ -1356,6 +1356,33 @@
     }
 
   </style>
+
+<style id="web-guidelines-enhancement">
+    /* Vercel & W3C Standard Focus & Typography Enhancements */
+    :focus-visible {
+        outline: 2px solid #C5A869 !important;
+        outline-offset: 2px !important;
+        border-radius: 4px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+    p, li {
+        text-wrap: pretty;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    button, a, input, select, textarea {
+        touch-action: manipulation;
+    }
+</style>
+
 </head>
 <body>
 
@@ -2015,7 +2042,7 @@
         }
 
         btnSubmit.disabled = true;
-        btnText.textContent = '⏳ 구글 시트에 등록 중...';
+        btnText.textContent = '⏳ 구글 시트에 등록 중…';
 
         var leadData = {
           name: name,
@@ -2192,7 +2219,7 @@
       }
 
       btn.disabled = true;
-      btn.innerHTML = '<span>⏳ 저장 및 다운로드 준비 중...</span>';
+      btn.innerHTML = '<span>⏳ 저장 및 다운로드 준비 중…</span>';
 
       const payload = {
         name: name,
@@ -2224,7 +2251,7 @@
         console.warn("GAS Sync Warning:", err);
       }
 
-      btn.innerHTML = '<span>✅ 완료! 파일 다운로드 중...</span>';
+      btn.innerHTML = '<span>✅ 완료! 파일 다운로드 중…</span>';
       
       setTimeout(() => {
         const link = document.createElement('a');

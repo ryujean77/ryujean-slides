@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGY 모바일 원격 & NotebookLM MCP 기술 분석 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-brand-500 selection:text-white">
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border border-blue-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                    <i class="fa-solid fa-mobile-screen-button mr-1"></i> MOBILE REMOTE & MCP RESEARCH
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                AGY 모바일 원격 & NotebookLM GitHub MCP 솔루션 분석
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                스마트폰 원격 통제, NotebookLM MCP 오픈소스 및 수동작업 제로(0) 완전 자동화 로드맵
+            </p>
+        </header>
+
+        <!-- 4 Grid Answer Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            
+            <!-- 1. AGY Mobile & Gemini MCP -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-blue-500/30 space-y-3 flex flex-col justify-between">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-blue-500/20 text-blue-400 text-xs font-bold">1. 모바일 & 제미나이 MCP</span>
+                        <span class="text-xs text-emerald-400 font-bold"><i class="fa-solid fa-check mr-1"></i>구축 완료</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">공식 Remote Control & 슬랙 원격</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        • <strong>공식 Remote Control:</strong> 데스크톱 <code>Settings > Enable Remote Control</code> ➔ 스마트폰 브라우저 접속<br>
+                        • <strong>슬랙(Slack) 원격 비서:</strong> <code>스킬/slack-notifier</code> 데몬으로 스마트폰 슬랙에서 24시간 원격 지시 가능<br>
+                        • <strong>Gemini MCP:</strong> <code>google-gemini-mcp</code> 등 API 연동 MCP 다수 존재
+                    </p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-blue-300 font-mono">
+                    📱 스마트폰 슬랙으로 어디서든 명령 가능
+                </div>
+            </div>
+
+            <!-- 2. NotebookLM GitHub MCP -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-purple-500/30 space-y-3 flex flex-col justify-between">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-400 text-xs font-bold">2. NotebookLM MCP 검색결과</span>
+                        <span class="text-xs text-purple-400 font-bold"><i class="fa-brands fa-github mr-1"></i>오픈소스 확인</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">jacob-bd/gemini-notebook-mcp-cli</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        • <strong>GitHub 오픈소스:</strong> Playwright 기반 NotebookLM 자동화 MCP 서버 존재<br>
+                        • <strong>핵심 기능:</strong> AI 에이전트가 NotebookLM의 소스 문서 조회, 인용 Q&A 및 노트 자동 추출 수행
+                    </p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-purple-300 font-mono">
+                    🔗 GitHub: notebooklm-mcp-cli
+                </div>
+            </div>
+
+            <!-- 3. Zero-Toil Auto Ingestion -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-emerald-500/30 space-y-3 flex flex-col justify-between">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-bold">3. 수동작업 0% 자동화</span>
+                        <span class="text-xs text-emerald-400 font-bold"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i>코덱스/스크립트</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">브라우저 자동화 (Playwright) 스킬</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        수동으로 Google Docs 내보내기 할 필요 없이, 백그라운드 브라우저 자동화 스크립트가 NotebookLM/제미나이에 로그인하여 일괄 다운로드 후 워크스페이스에 자동 안착시킵니다.
+                    </p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-emerald-300 font-mono">
+                    ⚡ 코덱스/파이썬 자동화 스킬로 제작 가능
+                </div>
+            </div>
+
+            <!-- 4. Mobile Remote Cockpit -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border border-amber-500/30 space-y-3 flex flex-col justify-between">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-400 text-xs font-bold">4. AGY Mobile Remote</span>
+                        <span class="text-xs text-amber-400 font-bold"><i class="fa-solid fa-tower-broadcast mr-1"></i>3가지 선택지</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">원격 모니터링 & 승인 콕핏</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        • <strong>방법 1 (공식):</strong> Antigravity 2.0 Web Remote Control 대시보드<br>
+                        • <strong>방법 2 (슬랙):</strong> 워크스페이스 양방향 슬랙 봇 (#workspace)<br>
+                        • <strong>방법 3 (앱):</strong> AgentsRoom / Agent Approve 모바일 승인 팝업
+                    </p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-amber-300 font-mono">
+                    🌐 DOMAIN HQ 포털과 완벽 연동
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h4 class="text-sm font-bold text-white">RYUJEAN DOMAIN HQ 포털 연계</h4>
+                <p class="text-xs text-slate-400 mt-1">모든 분석 보고서가 포털 대시보드에 실시간 반영되어 있습니다.</p>
+            </div>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                🏛️ 마스터 포털 열기 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
