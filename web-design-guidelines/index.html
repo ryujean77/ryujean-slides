@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Guidelines 마스터 대시보드 (Vercel & W3C Standard)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amberGold: {
+                            500: '#C5A869',
+                            950: '#2A200B'
+                        },
+                        vercel: {
+                            blue: '#0070F3',
+                            cyan: '#50E3C2',
+                            purple: '#7928CA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #000000; color: #EDEDED; }
+        .vercel-card { background: #0A0A0A; border: 1px solid #222222; transition: all 0.2s ease; }
+        .vercel-card:hover { border-color: #444444; }
+        .badge { background: rgba(0, 112, 243, 0.1); border: 1px solid rgba(0, 112, 243, 0.3); color: #3291FF; }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <!-- Navbar -->
+    <nav class="border-b border-neutral-800 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center font-black text-base shadow-lg">
+                    ▲
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-white flex items-center gap-2">
+                        Web Design Guidelines
+                        <span class="badge text-[10px] px-2 py-0.5 rounded-full font-mono">Vercel & W3C Standard</span>
+                    </h1>
+                    <p class="text-[11px] text-neutral-400">100+ 프로덕션 레벨 UI/UX 품질 검수 엔진</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs text-neutral-400 font-mono hidden md:inline">스킬/web-design-guidelines/SKILL.md</span>
+                <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-white hover:bg-neutral-200 text-black text-xs font-bold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-file-pdf"></i> 가이드 출력
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-8 space-y-10">
+
+        <!-- Hero Section -->
+        <div class="vercel-card rounded-2xl p-8 bg-gradient-to-b from-neutral-900/60 to-black relative overflow-hidden">
+            <div class="max-w-3xl space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono">
+                    <i class="fa-solid fa-circle-check"></i> Quality Gate System Loaded
+                </div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                    주관적 감상이 아닌 객관적 규칙으로 검수하는 <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-300 to-white">
+                        Vercel Web Interface Guidelines 스킬
+                    </span>
+                </h2>
+                <p class="text-sm text-neutral-300 leading-relaxed">
+                    접근성(A11y), 키보드 포커스 링, 폼 UX, GPU 가속 애니메이션, 고아 단어 없는 타이포그래피까지 — 프론트엔드 코드의 결함을 사전에 100% 잡아냅니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- 8대 핵심 영역 그리드 -->
+        <section class="space-y-4">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-list-check text-blue-400"></i> 8대 프로덕션 인터페이스 표준
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                
+                <!-- 1. 접근성 -->
+                <div class="vercel-card p-5 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between text-blue-400 text-base">
+                        <i class="fa-solid fa-universal-access"></i>
+                        <span class="text-[10px] font-mono text-neutral-500">01</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">접근성 (A11y)</h4>
+                    <ul class="space-y-1.5 text-neutral-400 list-disc list-inside">
+                        <li>아이콘 버튼 `aria-label` 필수</li>
+                        <li>`<div onClick>` 금지 (시맨틱 버튼 사용)</li>
+                        <li>장식 아이콘 `aria-hidden="true"`</li>
+                        <li>`<h1>`~`<h6>` 위계 준수</li>
+                    </ul>
+                </div>
+
+                <!-- 2. 포커스 상태 -->
+                <div class="vercel-card p-5 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between text-emerald-400 text-base">
+                        <i class="fa-solid fa-keyboard"></i>
+                        <span class="text-[10px] font-mono text-neutral-500">02</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">포커스 링 (Focus)</h4>
+                    <ul class="space-y-1.5 text-neutral-400 list-disc list-inside">
+                        <li>`outline-none` 단독 사용 엄격 금지</li>
+                        <li>`:focus-visible` 우선 적용</li>
+                        <li>그룹 요소 `:focus-within`</li>
+                        <li>`scroll-margin-top` 요소 가림 방지</li>
+                    </ul>
+                </div>
+
+                <!-- 3. 폼 UX -->
+                <div class="vercel-card p-5 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between text-amber-400 text-base">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span class="text-[10px] font-mono text-neutral-500">03</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">폼 UX (Forms)</h4>
+                    <ul class="space-y-1.5 text-neutral-400 list-disc list-inside">
+                        <li>`autocomplete`, `inputmode` 최적화</li>
+                        <li>붙여넣기(`onPaste`) 차단 절대 금지</li>
+                        <li>체크박스/라벨 44px 터치 영역 확보</li>
+                        <li>인라인 에러 및 1번 필드 자동 포커스</li>
+                    </ul>
+                </div>
+
+                <!-- 4. 애니메이션 -->
+                <div class="vercel-card p-5 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between text-purple-400 text-base">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span class="text-[10px] font-mono text-neutral-500">04</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">애니메이션 (Motion)</h4>
+                    <ul class="space-y-1.5 text-neutral-400 list-disc list-inside">
+                        <li>`prefers-reduced-motion` 미디어쿼리</li>
+                        <li>`transform`/`opacity` 위주 애니메이션</li>
+                        <li>`transition: all` 금지 (속성 명시)</li>
+                        <li>인터럽트(중도 사용자 인터랙션) 지원</li>
+                    </ul>
+                </div>
+
+                <!-- 5. 타이포그래피 -->
+                <div class="vercel-card p-5 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between text-rose-400 text-base">
+                        <i class="fa-solid fa-font"></i>
+                        <span class="text-[10px] font-mono text-neutral-500">05</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">타이포그래피</h4>
+                    <ul class="space-y-1.5 text-neutral-400 list-disc list-inside">
+                        <li>줄임표 `…`, 곡선 따옴표 `“”`</li>
+                        <li>제목 `text-wrap: balance` (고아 방지)</li>
+                        <li>숫자열 `tabular-nums` 정렬</li>
+                        <li>단위 줄바꿈 방지 `10&nbsp;MB`</li>
+                    </ul>
+                </div>
+
+                <!-- 6. 콘텐츠 처리 -->
+                <div class="vercel-card p-5 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between text-cyan-400 text-base">
+                        <i class="fa-solid fa-table-cells"></i>
+                        <span class="text-[10px] font-mono text-neutral-500">06</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">콘텐츠 넘침 방지</h4>
+                    <ul class="space-y-1.5 text-neutral-400 list-disc list-inside">
+                        <li>긴 텍스트 `truncate`, `line-clamp`</li>
+                        <li>Flex 자식 요소 `min-w-0` 필수</li>
+                        <li>데이터 부재 시 빈 상태(Empty) UI</li>
+                        <li>사용자 입력 최대/최소 길이 대응</li>
+                    </ul>
+                </div>
+
+                <!-- 7. 이미지 성능 -->
+                <div class="vercel-card p-5 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between text-yellow-400 text-base">
+                        <i class="fa-solid fa-image"></i>
+                        <span class="text-[10px] font-mono text-neutral-500">07</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">이미지 & CLS</h4>
+                    <ul class="space-y-1.5 text-neutral-400 list-disc list-inside">
+                        <li>명시적 `width`/`height` 지정 (CLS 방지)</li>
+                        <li>스크롤 하단 `loading="lazy"`</li>
+                        <li>히어로 LCP `fetchpriority="high"`</li>
+                        <li>반응형 `srcset` 및 WebP 포맷</li>
+                    </ul>
+                </div>
+
+                <!-- 8. 반응형 & 성능 -->
+                <div class="vercel-card p-5 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between text-sky-400 text-base">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span class="text-[10px] font-mono text-neutral-500">08</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">반응형 & 성능</h4>
+                    <ul class="space-y-1.5 text-neutral-400 list-disc list-inside">
+                        <li>모바일 390px 가로 스크롤 터짐 방지</li>
+                        <li>50개 이상 대량 리스트 가상화</li>
+                        <li>Render 단계 레이아웃 재계산 금지</li>
+                        <li>WCAG AAA급 고대비 컬러 스키마</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CLI 실행 가이드 -->
+        <section class="vercel-card rounded-2xl p-8 space-y-4">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-terminal text-teal-400"></i> 자동 감사 스크립트 실행 명령어
+            </h3>
+            <p class="text-xs text-neutral-400">워크스페이스 내의 모든 웹페이지/컴포넌트 파일을 아래 명령어로 1초 만에 검수할 수 있습니다.</p>
+            <div class="bg-black p-4 rounded-xl border border-neutral-800 font-mono text-xs text-teal-300 flex items-center justify-between">
+                <span>python 스킬/web-design-guidelines/scripts/audit_ui.py &lt;파일경로&gt;</span>
+                <span class="text-neutral-600 text-[11px]">Auto Audit CLI</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-6 mt-16 text-center text-xs text-neutral-600 border-t border-neutral-900 pt-8 font-mono">
+        ryujeanWorkSpace · Web Design Guidelines Engine (Vercel & W3C) · Antigravity AI
+    </footer>
+
+</body>
+</html>
