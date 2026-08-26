@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YU JEONG GEUN MASTER PORTAL | 웰니스 총괄 자율 에이전트 허브</title>
+    <title>YU JEONG GEUN &mdash; Wellness Director &amp; Humanitas Atelier</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,508 +12,359 @@
             theme: {
                 extend: {
                     colors: {
-                        obsidian: {
-                            900: '#0B0F17',
-                            950: '#06090E',
-                            card: '#0E1420',
-                            border: 'rgba(255, 255, 255, 0.08)'
+                        stoneDark: {
+                            950: '#0C0D0E',
+                            900: '#141618',
+                            850: '#1C1F22',
+                            800: '#25292D',
+                            border: '#2E343A'
                         },
-                        amberGold: {
-                            300: '#F0DC9E',
-                            400: '#E2C372',
-                            500: '#C5A869',
-                            600: '#A38446',
-                            900: '#3D2F14',
-                            950: '#1F1706'
+                        sand: {
+                            100: '#F5F2EB',
+                            200: '#E8E2D5',
+                            300: '#D6CCBA',
+                            400: '#BDB199',
+                            500: '#9E9177'
                         },
-                        sage: {
-                            300: '#A9C4A9',
-                            400: '#87AB87',
-                            500: '#688B68',
-                            900: '#1E2D1E',
-                            950: '#0E170E'
+                        amberWood: {
+                            300: '#E6C687',
+                            400: '#D4AF37',
+                            500: '#B89028',
+                            900: '#423108'
                         },
-                        celestial: {
-                            400: '#70B4FF',
-                            500: '#3B82F6',
-                            900: '#14274E'
+                        sageHerb: {
+                            300: '#ADC4B0',
+                            400: '#8BAF8F',
+                            500: '#698E6D',
+                            900: '#1C2E1F'
                         }
                     },
                     fontFamily: {
-                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace']
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Pretendard:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Pretendard', sans-serif;
-            background-color: #06090E;
-            color: #F1F5F9;
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(197, 168, 105, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(104, 139, 104, 0.06) 0%, transparent 40%);
-            background-attachment: fixed;
+            background-color: #0C0D0E;
+            color: #E8E2D5;
+            letter-spacing: -0.015em;
         }
-        .bento-card {
-            background: rgba(14, 20, 32, 0.75);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 1.25rem;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
+        .serif-title {
+            font-family: 'Cormorant Garamond', serif;
         }
-        .bento-card:hover {
-            border-color: rgba(197, 168, 105, 0.35);
-            transform: translateY(-2px);
-            box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.5), 0 0 24px -6px rgba(197, 168, 105, 0.12);
+        .editorial-border {
+            border-color: rgba(232, 226, 213, 0.08);
         }
-        .gold-glow {
-            box-shadow: 0 0 30px rgba(197, 168, 105, 0.18);
+        .hairline-rule {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.4) 0%, rgba(232, 226, 213, 0.1) 50%, transparent 100%);
         }
-        .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 999px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(197, 168, 105, 0.5); }
+        .domain-row {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .domain-row:hover {
+            background-color: rgba(28, 31, 34, 0.6);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateX(4px);
+        }
 
-        /* Vercel & W3C Standard Quality Gate */
+        /* W3C & Vercel Web Interface Standard */
         :focus-visible {
-            outline: 2px solid #C5A869 !important;
-            outline-offset: 2px !important;
-            border-radius: 4px;
+            outline: 1px solid #D4AF37 !important;
+            outline-offset: 3px !important;
         }
         h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
         p, li { text-wrap: pretty; }
         @media (prefers-reduced-motion: reduce) {
             *, ::before, ::after {
                 animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
         }
-        button, a, input, select, textarea { touch-action: manipulation; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-amberGold-500 selection:text-slate-950">
+<body class="min-h-screen flex flex-col selection:bg-amberWood-400 selection:text-stoneDark-950">
 
-    <!-- Top Executive Header Bar -->
-    <header class="sticky top-0 z-50 bg-obsidian-950/85 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8 py-3.5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            
-            <!-- Brand & Director Title -->
-            <div class="flex items-center gap-3.5 w-full md:w-auto justify-between md:justify-start">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amberGold-400 via-amberGold-500 to-amberGold-600 flex items-center justify-center text-slate-950 font-black text-lg shadow-lg gold-glow">
-                        <i class="fa-solid fa-gem"></i>
-                    </div>
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-serif font-bold text-base sm:text-lg tracking-tight text-white">YU JEONG GEUN</span>
-                            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amberGold-500/15 text-amberGold-300 border border-amberGold-500/30">
-                                MASTER HQ v2.5
-                            </span>
-                        </div>
-                        <p class="text-[11px] text-slate-400 font-medium">웰니스 총괄 디렉터 &middot; 전담 테라피스트 &middot; Antigravity AI</p>
-                    </div>
-                </div>
-
-                <!-- Live Status Beacon -->
-                <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span class="hidden sm:inline">SYSTEM ONLINE</span>
-                </div>
+    <!-- Subtle Top Header -->
+    <header class="border-b border-stone-800/60 bg-stoneDark-950/90 backdrop-blur-md sticky top-0 z-50 px-6 sm:px-12 py-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-baseline gap-3">
+                <span class="serif-title font-semibold text-xl tracking-wider text-sand-100 uppercase">YU JEONG GEUN</span>
+                <span class="text-xs font-mono text-amberWood-400 tracking-widest hidden sm:inline">&mdash; ATELIER &amp; DOMAIN ARCHIVE</span>
             </div>
-
-            <!-- Quick Global Search & Action -->
-            <div class="flex items-center gap-3 w-full md:w-auto justify-end">
-                <div class="relative w-full md:w-64">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                    <input 
-                        type="text" 
-                        id="portal-search" 
-                        placeholder="프로젝트, 도메인, 키워드 검색…" 
-                        oninput="filterProjects()"
-                        class="w-full bg-obsidian-card/80 border border-white/10 rounded-xl pl-9 pr-3.5 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:border-amberGold-500 focus:ring-1 focus:ring-amberGold-500 outline-none transition font-sans"
-                    >
-                </div>
-                <a href="https://github.com/ryujean77/ryujeanWorkSpace" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-slate-200 font-medium border border-white/10 transition flex items-center gap-1.5 whitespace-nowrap">
-                    <i class="fa-brands fa-github text-sm"></i> <span class="hidden sm:inline">Workspace</span>
+            
+            <div class="flex items-center gap-6 text-xs font-mono text-sand-400">
+                <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amberWood-400"></span>
+                    <span>35 SYSTEMS LIVE</span>
+                </span>
+                <a href="https://github.com/ryujean77/ryujeanWorkSpace" target="_blank" class="hover:text-amberWood-300 transition underline underline-offset-4 decoration-stone-700 hover:decoration-amberWood-400">
+                    WORKSPACE &nearr;
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 pb-20 space-y-8 flex-1 w-full">
+    <!-- Main Editorial Stage -->
+    <main class="max-w-6xl mx-auto px-6 sm:px-12 pt-16 pb-24 flex-1 w-full space-y-20">
 
-        <!-- Bento Grid: Hero Row -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-            <!-- Hero Master Banner (8 cols) -->
-            <div class="lg:col-span-8 bento-card p-8 bg-gradient-to-br from-obsidian-card via-slate-900/60 to-obsidian-950 flex flex-col justify-between relative overflow-hidden">
-                <div class="relative z-10 space-y-4 max-w-2xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amberGold-500/10 border border-amberGold-500/30 text-amberGold-300 text-xs font-mono font-semibold">
-                        <i class="fa-solid fa-crown text-[10px]"></i> EXECUTIVE WORKSPACE CONSOLE
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                        자율 AI와 웰니스가 결합된 <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberGold-300 via-amberGold-400 to-sage-400 font-serif">
-                            유정근 총괄 마스터 오퍼레이팅 시스템
-                        </span>
-                    </h2>
-                    <p class="text-sm text-slate-300 leading-relaxed font-normal">
-                        아로마테라피 VIP 1:1 처방, 백태종 스승님의 빛운영 3부작 &middot; 호모루미누스 제2권 윤문, 남미화 박사님 협업 패션테라피 심리테스트, 그리고 3대 AI 에이전트(AGY &middot; Claude &middot; Codex) MCP 디자인 툴킷이 완벽하게 통합되어 실시간 가동 중입니다.
-                    </p>
-                </div>
-
-                <!-- Stat Pills -->
-                <div class="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/10 mt-6">
-                    <div class="space-y-0.5">
-                        <span class="text-[11px] text-slate-400 font-medium">배포 웹 시스템</span>
-                        <div class="text-xl font-bold font-mono text-white">35+ <span class="text-xs text-emerald-400 font-sans font-semibold">Live</span></div>
-                    </div>
-                    <div class="space-y-0.5">
-                        <span class="text-[11px] text-slate-400 font-medium">핵심 비즈니스 도메인</span>
-                        <div class="text-xl font-bold font-mono text-amberGold-300">4 <span class="text-xs text-slate-400 font-sans">Domains</span></div>
-                    </div>
-                    <div class="space-y-0.5">
-                        <span class="text-[11px] text-slate-400 font-medium">호모루미누스 윤문</span>
-                        <div class="text-xl font-bold font-mono text-sage-300">97 <span class="text-xs text-slate-400 font-sans">Chunks</span></div>
-                    </div>
-                    <div class="space-y-0.5">
-                        <span class="text-[11px] text-slate-400 font-medium">슬랙 AI 에이전트</span>
-                        <div class="text-xl font-bold font-mono text-celestial-400">100% <span class="text-xs text-emerald-400 font-sans">Active</span></div>
-                    </div>
-                </div>
-
-                <!-- Ambient Decorative Light -->
-                <div class="absolute -right-16 -top-16 w-72 h-72 bg-amberGold-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -left-16 -bottom-16 w-72 h-72 bg-sage-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- Manifest & Executive Introduction (Magazine Style) -->
+        <section class="space-y-8 max-w-4xl">
+            <div class="space-y-2">
+                <p class="text-xs font-mono uppercase tracking-[0.25em] text-amberWood-400">Master Directory &amp; Digital Humanities</p>
+                <h1 class="serif-title text-4xl sm:text-5xl lg:text-6xl font-light text-sand-100 leading-[1.12]">
+                    향기와 빛, 체질과 의복심리가 <br>
+                    <em class="italic font-normal text-amberWood-300">하나의 유기적 지성으로</em> 호흡하는 공간.
+                </h1>
             </div>
+            
+            <div class="hairline-rule w-full my-6"></div>
 
-            <!-- Quick Agent Command Card (4 cols) -->
-            <div class="lg:col-span-4 bento-card p-6 flex flex-col justify-between bg-gradient-to-b from-obsidian-card to-obsidian-950">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold text-amberGold-400 uppercase tracking-wider flex items-center gap-1.5">
-                            <i class="fa-solid fa-robot"></i> Slack Agent Bridge
-                        </span>
-                        <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">task-1245</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">실시간 워크스페이스 제어</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        슬랙에서 멘션하시면 Gemini 3.6 Flash 자율 에이전트가 워크스페이스 파일을 직접 열람하고, 코드를 실행하며, 깃 푸시를 완결합니다.
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 text-sm text-sand-400 leading-relaxed font-light">
+                <div class="md:col-span-7 space-y-3">
+                    <p>
+                        유정근 웰니스 총괄 디렉터의 아로마테라피 임상 처방, 백태종 스승님의 빛운영 3부작 &middot; 호모루미누스 제2권 윤문 자산, 남미화 박사님 협업 패션테라피 심리테스트, 그리고 자율 AI 에이전트 인프라를 총괄 관리하는 공식 아카이브입니다.
                     </p>
-                    <div class="space-y-2 text-xs font-mono bg-obsidian-950/80 p-3.5 rounded-xl border border-white/5 text-slate-300">
-                        <div class="text-amberGold-400/90 truncate">&gt; @bot law.md 핵심 요약해줘</div>
-                        <div class="text-slate-400 truncate">&gt; @bot 아로마 DB 샌달우드 검색</div>
-                        <div class="text-emerald-400/90 truncate">&gt; @bot git status 확인해줘</div>
+                </div>
+                <div class="md:col-span-5 flex flex-col justify-end space-y-1 font-mono text-xs text-sand-500 border-l border-stone-800 pl-6">
+                    <div>DIRECTOR: 유정근 (전담 테라피스트)</div>
+                    <div>PARTNER: 임동구 박사 (사상체질 의학)</div>
+                    <div>COLLABORATOR: 남미화 박사 (의복심리학)</div>
+                    <div>AI ENGINE: Antigravity &middot; Gemini 3.6</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 Core Domains (Bespoke Editorial List / Not cookie-cutter cards) -->
+        <section class="space-y-16">
+
+            <!-- Domain 01: Aromatherapy & VIP Care -->
+            <div class="space-y-6">
+                <div class="flex items-baseline justify-between border-b border-stone-800 pb-3">
+                    <div class="flex items-baseline gap-3">
+                        <span class="font-mono text-xs text-amberWood-400">01</span>
+                        <h2 class="serif-title text-2xl sm:text-3xl font-medium text-sand-100">Aromatherapy &amp; 1:1 Clinical Care</h2>
                     </div>
+                    <span class="text-xs font-mono text-sand-500">웰니스 &middot; VIP 케어 &middot; 온라인 수익화</span>
                 </div>
 
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-                    <span class="text-slate-400 font-medium">슬랙 봇 리스너 가동 중</span>
-                    <a href="https://slack.com" target="_blank" class="text-amberGold-400 hover:text-amberGold-300 font-bold flex items-center gap-1">
-                        Slack 열기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Item 1: 최토미 교수 1:1 케어 -->
+                    <a href="choi-tommy-care/client.html" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>VIP PRESCRIPTION</span>
+                            <span class="text-amberWood-400 group-hover:translate-x-1 transition">&nearr; OPEN WEBAPP</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-sand-100 group-hover:text-amberWood-300 transition">
+                            최토미 교수 맞춤형 1:1 아로마 힐링 케어 가이드
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            목 부위 피부 자극 진정 처방, 3대 안전 수칙, 샌달우드(Santalum album)&middot;유칼립투스 블렌딩 및 VIP 프라이빗 케어 가이드.
+                        </p>
+                        <div class="pt-2 text-[11px] font-mono text-sageHerb-400">
+                            &bull; 샌달우드 정제 완료 &middot; 듀얼 뷰포트 지원
+                        </div>
+                    </a>
+
+                    <!-- Item 2: 아로마테라피 비즈니스 기획서 -->
+                    <a href="aroma-biz-plan/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>BUSINESS FUNNEL</span>
+                            <span class="text-amberWood-400 group-hover:translate-x-1 transition">&nearr; VIEW MASTERPLAN</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-sand-100 group-hover:text-amberWood-300 transition">
+                            원드라이브 자산 기반 온라인 수익 극대화 마스터플랜
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            7대 핵심 강의/임상 자산을 5단계 고수익 온라인 퍼널(무료진단 ➔ 키트 ➔ LRP구독 ➔ 자격증 ➔ B2B출강)로 전환하는 실행 전략.
+                        </p>
+                        <div class="pt-2 text-[11px] font-mono text-sand-500">
+                            &bull; 30일 린 스타트업 로드맵 수록
+                        </div>
                     </a>
                 </div>
             </div>
 
-        </div>
-
-        <!-- Filter Category Tabs -->
-        <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-2 pt-2">
-            <button onclick="setFilter('all')" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-amberGold-500 text-slate-950 active" data-cat="all">
-                전체보기 (35)
-            </button>
-            <button onclick="setFilter('aroma')" class="tab-btn px-4 py-2 rounded-xl text-xs font-medium transition bg-obsidian-card hover:bg-white/10 text-slate-300 border border-white/5" data-cat="aroma">
-                🌿 아로마테라피 & 1:1 케어
-            </button>
-            <button onclick="setFilter('homo')" class="tab-btn px-4 py-2 rounded-xl text-xs font-medium transition bg-obsidian-card hover:bg-white/10 text-slate-300 border border-white/5" data-cat="homo">
-                📖 호모루미누스 (빛운영 3부작)
-            </button>
-            <button onclick="setFilter('fashion')" class="tab-btn px-4 py-2 rounded-xl text-xs font-medium transition bg-obsidian-card hover:bg-white/10 text-slate-300 border border-white/5" data-cat="fashion">
-                👗 패션테라피 심리테스트
-            </button>
-            <button onclick="setFilter('tech')" class="tab-btn px-4 py-2 rounded-xl text-xs font-medium transition bg-obsidian-card hover:bg-white/10 text-slate-300 border border-white/5" data-cat="tech">
-                ⚙️ AI 에이전트 & MCP 시스템
-            </button>
-        </div>
-
-        <!-- Bento Grid: Domain Showcase Cards -->
-        <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <!-- 1. 최토미 교수 1:1 케어 웹앱 -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="aroma" data-keywords="최토미 아로마 케어 샌달우드 유칼립투스 처방전 1:1">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amberGold-500/15 text-amberGold-300 border border-amberGold-500/30">
-                            🌿 1:1 VIP CARE
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">2026-08-25</span>
+            <!-- Domain 02: Homo Luminus (빛운영 3부작) -->
+            <div class="space-y-6">
+                <div class="flex items-baseline justify-between border-b border-stone-800 pb-3">
+                    <div class="flex items-baseline gap-3">
+                        <span class="font-mono text-xs text-sageHerb-400">02</span>
+                        <h2 class="serif-title text-2xl sm:text-3xl font-medium text-sand-100">Homo Luminus Universe</h2>
                     </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-amberGold-300 transition mb-2">
-                        최토미 교수 맞춤형 아로마 케어 플랜
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        목 부위 피부 자극 진정 처방, 3대 안전 수칙 및 샌달우드(Sandalwood)&middot;유칼립투스 연계 1:1 웰니스 가이드 (고객 발송 전용 반응형 웹앱).
-                    </p>
+                    <span class="text-xs font-mono text-sand-500">백태종 스승님 &middot; 빛운영 3부작 &middot; 97청크 윤문</span>
                 </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-circle-check text-[10px]"></i> 샌달우드 정제 완료
-                    </span>
-                    <a href="choi-tommy-care/client.html" target="_blank" class="px-3 py-1.5 rounded-lg bg-amberGold-500/15 hover:bg-amberGold-500 text-amberGold-300 hover:text-slate-950 text-xs font-bold transition flex items-center gap-1.5 border border-amberGold-500/30">
-                        웹앱 실행 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Item 1: 호모루미누스 본부 -->
+                    <a href="homo-luminus-hq/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>DOMAIN HEADQUARTERS</span>
+                            <span class="text-sageHerb-300 group-hover:translate-x-1 transition">&nearr; ENTER HQ</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-sand-100 group-hover:text-sageHerb-300 transition">
+                            호모루미누스 도메인 관리 본부 (HQ)
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            1권 호모 루미누스, 2권 루미누스 오페라(명아주), 3권 인터스텔라 리포트의 빛운영 사상 체계 및 원고 아카이브.
+                        </p>
+                        <div class="pt-2 text-[11px] font-mono text-sageHerb-400">
+                            &bull; 스승님 2차 검토본 및 프롤로그 정제
+                        </div>
+                    </a>
+
+                    <!-- Item 2: 97청크 윤문 감사 허브 -->
+                    <a href="homo-luminus-audit/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>160K WORDS / 97 CHUNKS</span>
+                            <span class="text-sageHerb-300 group-hover:translate-x-1 transition">&nearr; AUDIT HUB</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-sand-100 group-hover:text-sageHerb-300 transition">
+                            제2권 명아주 97개 청크 윤문 및 사진 감사 허브
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            본문 16만 자 및 사진 128장의 97개 청크 분할 구조, 프롬프트 표준화 및 일괄 윤문 실행 상태를 점검하는 컨트롤 타워.
+                        </p>
+                        <div class="pt-2 text-[11px] font-mono text-sand-500">
+                            &bull; 97/97 청크 분할 검증 완료
+                        </div>
                     </a>
                 </div>
             </div>
 
-            <!-- 2. 아로마테라피 온라인 수익 극대화 마스터플랜 -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="aroma" data-keywords="아로마 비즈니스 기획서 수익화 퍼널 lrp 정기구독">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amberGold-500/15 text-amberGold-300 border border-amberGold-500/30">
-                            💼 BIZ MASTERPLAN
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">2026-08-25</span>
+            <!-- Domain 03: Fashion Therapy -->
+            <div class="space-y-6">
+                <div class="flex items-baseline justify-between border-b border-stone-800 pb-3">
+                    <div class="flex items-baseline gap-3">
+                        <span class="font-mono text-xs text-sand-400">03</span>
+                        <h2 class="serif-title text-2xl sm:text-3xl font-medium text-sand-100">Fashion Therapy &amp; Psychology</h2>
                     </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-amberGold-300 transition mb-2">
-                        아로마테라피 온라인 수익 극대화 사업기획서
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        원드라이브 7대 핵심 임상 자산을 5단계 고수익 온라인 퍼널(무료진단 ➔ 키트 ➔ LRP구독 ➔ 자격증 ➔ B2B출강)로 전환하는 실행 전략안.
-                    </p>
+                    <span class="text-xs font-mono text-sand-500">남미화 박사 &middot; 사상체질 융합 &middot; 8대 캐릭터</span>
                 </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-400 font-medium">전략 리포트</span>
-                    <a href="aroma-biz-plan/" target="_blank" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-amberGold-500 hover:text-slate-950 text-slate-200 text-xs font-bold transition flex items-center gap-1.5 border border-white/10">
-                        기획서 열기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Item 1: 강연 제안서 -->
+                    <a href="fashion-therapy/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>LECTURE PROPOSAL</span>
+                            <span class="text-sand-300 group-hover:translate-x-1 transition">&nearr; SLIDES</span>
+                        </div>
+                        <h3 class="text-base font-semibold text-sand-100 group-hover:text-sand-200 transition">
+                            임동구 &amp; 남미화 박사 패션테라피 제안서
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            도서관 및 문화센터를 위한 사상체질 X 의복심리학 융합 힐링 인문학 특강 제안 슬라이드.
+                        </p>
+                    </a>
+
+                    <!-- Item 2: 심리테스트 작업지시서 -->
+                    <a href="fashion-spec/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>TECH SPECIFICATION</span>
+                            <span class="text-sand-300 group-hover:translate-x-1 transition">&nearr; SPEC</span>
+                        </div>
+                        <h3 class="text-base font-semibold text-sand-100 group-hover:text-sand-200 transition">
+                            사상체질 융합 패션테라피 심리테스트 명세서
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            12문항 스코어링 알고리즘, 8대 캐릭터 카드 디자인 시스템 및 실시간 데이터 카피어.
+                        </p>
+                    </a>
+
+                    <!-- Item 3: 2차 회의 분석 보고서 -->
+                    <a href="report-2nd-meeting/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>MEETING &amp; LEAN CANVAS</span>
+                            <span class="text-sand-300 group-hover:translate-x-1 transition">&nearr; REPORT</span>
+                        </div>
+                        <h3 class="text-base font-semibold text-sand-100 group-hover:text-sand-200 transition">
+                            2차 기획회의 분석 및 린캔버스 패키지
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            남미화 박사 음성 대화 분석, 시간대별 회의록, 역할분담표 및 개발지시서 v1.1 개정안.
+                        </p>
                     </a>
                 </div>
             </div>
 
-            <!-- 3. 호모루미누스 본부 (HQ) -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="homo" data-keywords="호모루미누스 백태종 빛운영 3부작 명아주 오페라 인터스텔라 리포트">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sage-500/15 text-sage-300 border border-sage-500/30">
-                            📖 HOMO LUMINUS HQ
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">도메인 허브</span>
+            <!-- Domain 04: Agent Engineering & Quality Standards -->
+            <div class="space-y-6">
+                <div class="flex items-baseline justify-between border-b border-stone-800 pb-3">
+                    <div class="flex items-baseline gap-3">
+                        <span class="font-mono text-xs text-amberWood-400">04</span>
+                        <h2 class="serif-title text-2xl sm:text-3xl font-medium text-sand-100">AI Agent &amp; Quality Engineering</h2>
                     </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-sage-300 transition mb-2">
-                        호모루미누스 도메인 관리 본부
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        백태종 스승님의 빛운영 3부작(1권 호모 루미누스, 2권 루미누스 오페라, 3권 인터스텔라 리포트) 통합 관리 및 저작권 자산 대시보드.
-                    </p>
+                    <span class="text-xs font-mono text-sand-500">AGY &middot; Claude &middot; Codex &middot; Vercel W3C</span>
                 </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-sage-400 font-medium">빛운영 마스터 자산</span>
-                    <a href="homo-luminus-hq/" target="_blank" class="px-3 py-1.5 rounded-lg bg-sage-500/15 hover:bg-sage-500 text-sage-300 hover:text-slate-950 text-xs font-bold transition flex items-center gap-1.5 border border-sage-500/30">
-                        본부 입장 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Item 1: 디자인 MCP 가이드 -->
+                    <a href="design-agent-mcp/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>CROSS-AGENT MCP</span>
+                            <span class="text-amberWood-400 group-hover:translate-x-1 transition">&nearr; GUIDE</span>
+                        </div>
+                        <h3 class="text-base font-semibold text-sand-100 group-hover:text-amberWood-300 transition">
+                            Design Agent &amp; Taste MCP 툴킷
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            Image-to-Code 워크플로우, Puppeteer 헤드리스 브라우저 실시간 QA 및 3대 에이전트 설정.
+                        </p>
+                    </a>
+
+                    <!-- Item 2: Web Design Guidelines -->
+                    <a href="web-design-guidelines/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>QUALITY GATE</span>
+                            <span class="text-amberWood-400 group-hover:translate-x-1 transition">&nearr; DASHBOARD</span>
+                        </div>
+                        <h3 class="text-base font-semibold text-sand-100 group-hover:text-amberWood-300 transition">
+                            Vercel &amp; W3C 웹 디자인 가이드라인
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            접근성(A11y), 포커스 링, 폼 UX, 감속 모션, 타이포그래피 균형 검수 8대 표준 엔진.
+                        </p>
+                    </a>
+
+                    <!-- Item 3: 전수조사 감사 보고서 -->
+                    <a href="full-upgrade-report/" target="_blank" class="domain-row p-6 rounded-2xl bg-stoneDark-900 border border-stone-800/80 block space-y-3 group">
+                        <div class="flex items-center justify-between text-xs font-mono text-sand-500">
+                            <span>35 WEBPAGES AUDIT</span>
+                            <span class="text-amberWood-400 group-hover:translate-x-1 transition">&nearr; REPORT</span>
+                        </div>
+                        <h3 class="text-base font-semibold text-sand-100 group-hover:text-amberWood-300 transition">
+                            배포 웹페이지 전수 업그레이드 리포트
+                        </h3>
+                        <p class="text-xs text-sand-400 leading-relaxed">
+                            35개 배포 웹페이지 백업(.bak) 생성 및 Vercel/W3C 표준 주입 완료 상세 보고서.
+                        </p>
                     </a>
                 </div>
             </div>
 
-            <!-- 4. 호모루미누스 97개 청크 윤문 감사 허브 -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="homo" data-keywords="호모루미누스 윤문 97청크 16만자 명아주 백태종">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sage-500/15 text-sage-300 border border-sage-500/30">
-                            📜 97 CHUNKS AUDIT
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">16만 자 분할</span>
-                    </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-sage-300 transition mb-2">
-                        제2권 명아주 97청크 윤문 감사 허브
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        스승님 2차 검토본 및 프롤로그 윤문 완료. 97개 청크 16만 자 및 128장 사진 전수 분할/감사 통합 허브.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> 97/97 분할 완료
-                    </span>
-                    <a href="homo-luminus-audit/" target="_blank" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-sage-500 hover:text-slate-950 text-slate-200 text-xs font-bold transition flex items-center gap-1.5 border border-white/10">
-                        감사 허브 열기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 5. 패션테라피 강연 제안서 -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="fashion" data-keywords="패션테라피 임동구 남미화 인문학 강연 제안서 도서관">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-rose-500/15 text-rose-300 border border-rose-500/30">
-                            👗 LECTURE PROPOSAL
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">일러스트 에디션</span>
-                    </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-rose-300 transition mb-2">
-                        임동구 & 남미화 박사 패션테라피 제안서
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        사상체질 의학(임동구 박사)과 의복심리학(남미화 박사)이 결합된 힐링 인문학 도서관/기관 제안서 웹 슬라이드.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-400 font-medium">도서관/기관용</span>
-                    <a href="fashion-therapy/" target="_blank" class="px-3 py-1.5 rounded-lg bg-rose-500/15 hover:bg-rose-500 text-rose-300 hover:text-slate-950 text-xs font-bold transition flex items-center gap-1.5 border border-rose-500/30">
-                        슬라이드 보기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 6. 패션테라피 심리테스트 개발지시서 -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="fashion" data-keywords="패션테라피 심리테스트 남미화 작업지시서 8대 캐릭터">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-rose-500/15 text-rose-300 border border-rose-500/30">
-                            🧠 PSYCHOLOGY APP SPEC
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">기술 명세서</span>
-                    </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-rose-300 transition mb-2">
-                        패션테라피 심리테스트 개발 명세서
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        12문항 스코어링 알고리즘, 8대 캐릭터 카드 디자인 시스템 및 실시간 데이터 카피어가 내장된 프론트엔드 작업지시서.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-400 font-medium">JSON 데이터 완비</span>
-                    <a href="fashion-spec/" target="_blank" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-rose-500 hover:text-slate-950 text-slate-200 text-xs font-bold transition flex items-center gap-1.5 border border-white/10">
-                        명세서 열기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 7. 디자인 MCP & Taste 가이드 -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="tech" data-keywords="디자인 mcp taste skill image to code agent browser">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-celestial-500/15 text-celestial-300 border border-celestial-500/30">
-                            🎨 DESIGN MCP TOOLKIT
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">AGY&middot;Claude&middot;Codex</span>
-                    </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-celestial-300 transition mb-2">
-                        Cross-Agent Design MCP & Taste 가이드
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        Anti-Slop 디자인 원칙, Image-to-Code 워크플로우, Puppeteer 헤드리스 브라우저 실시간 QA 통합 환경 구축 가이드.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-celestial-400 font-medium">3대 에이전트 공통</span>
-                    <a href="design-agent-mcp/" target="_blank" class="px-3 py-1.5 rounded-lg bg-celestial-500/15 hover:bg-celestial-500 text-celestial-300 hover:text-slate-950 text-xs font-bold transition flex items-center gap-1.5 border border-celestial-500/30">
-                        가이드 보기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 8. Vercel & W3C 웹 디자인 가이드라인 -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="tech" data-keywords="web design guidelines vercel w3c wcag accessibility focus">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-celestial-500/15 text-celestial-300 border border-celestial-500/30">
-                            🌐 WEB GUIDELINES
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">Vercel 100+ Rules</span>
-                    </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-celestial-300 transition mb-2">
-                        Vercel & W3C 웹 디자인 가이드라인 대시보드
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        접근성(A11y), 키보드 포커스 링, 폼 UX, 감속 모션, 타이포그래피 균형 검수 등 8대 프로덕션 인터페이스 표준 대시보드.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-shield-check"></i> Quality Gate
-                    </span>
-                    <a href="web-design-guidelines/" target="_blank" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-celestial-500 hover:text-slate-950 text-slate-200 text-xs font-bold transition flex items-center gap-1.5 border border-white/10">
-                        대시보드 보기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 9. 전수 업그레이드 감사 보고서 -->
-            <div class="project-item bento-card p-6 flex flex-col justify-between group" data-category="tech" data-keywords="전수조사 감사 보고서 업그레이드 35개 웹페이지">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
-                            📊 FULL AUDIT REPORT
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono">35개 파일 전수</span>
-                    </div>
-                    <h3 class="text-base font-bold text-white group-hover:text-emerald-300 transition mb-2">
-                        전체 배포 웹페이지 전수 업그레이드 보고서
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                        35개 HTML 파일 전수조사, .bak 백업 생성, 포커스링&middot;타이포&middot;모션 표준 일괄 주입 실시간 대시보드.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-[11px] text-emerald-400 font-medium">100% 완료</span>
-                    <a href="full-upgrade-report/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 text-xs font-bold transition flex items-center gap-1.5 border border-emerald-500/30">
-                        보고서 확인 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
+        </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10 bg-obsidian-950/90 py-8 px-4 sm:px-8 text-center text-xs text-slate-500 space-y-2">
-        <p class="font-serif text-slate-400 text-sm">YU JEONG GEUN MASTER PORTAL &middot; WELLNESS EXECUTIVE OPERATING SYSTEM</p>
-        <p class="font-mono text-[11px]">Powered by Antigravity AI &middot; Design Agent Taste &middot; Vercel & W3C Interface Guidelines</p>
+    <!-- Minimalist Editorial Footer -->
+    <footer class="border-t border-stone-800/80 bg-stoneDark-950 py-12 px-6 sm:px-12 text-xs font-mono text-sand-500">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+                <div class="serif-title font-semibold text-sand-300 text-sm tracking-wide">YU JEONG GEUN MASTER ATELIER</div>
+                <p class="text-[11px] text-sand-500">Single Source of Truth &middot; Antigravity Autonomous Agent System</p>
+            </div>
+            <div class="text-right text-[11px] text-sand-500">
+                <span>EST. 2026 &middot; RYUJEAN WORKSPACE</span>
+            </div>
+        </div>
     </footer>
 
-    <!-- Filter & Search Script -->
-    <script>
-        function setFilter(cat) {
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                if(btn.dataset.cat === cat) {
-                    btn.className = 'tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-amberGold-500 text-slate-950 active';
-                } else {
-                    btn.className = 'tab-btn px-4 py-2 rounded-xl text-xs font-medium transition bg-obsidian-card hover:bg-white/10 text-slate-300 border border-white/5';
-                }
-            });
-
-            const items = document.querySelectorAll('.project-item');
-            items.forEach(item => {
-                if(cat === 'all' || item.dataset.category === cat) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        function filterProjects() {
-            const query = document.getElementById('portal-search').value.toLowerCase().trim();
-            const items = document.querySelectorAll('.project-item');
-            items.forEach(item => {
-                const text = (item.innerText + " " + (item.dataset.keywords || '')).toLowerCase();
-                if(text.includes(query)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
