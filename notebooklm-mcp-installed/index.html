@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotebookLM MCP 설치 및 AGY 연동 완료 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-emerald-500 selection:text-white">
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-emerald-950 via-slate-900 to-blue-950 border border-emerald-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    <i class="fa-solid fa-plug-circle-check mr-1"></i> MCP SERVER INSTALLED
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26 11:15</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                NotebookLM MCP 설치 및 AGY 2.0 연동 완료
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                GitHub <code>gemini-notebook-mcp-cli</code> 패키지 설치 및 AGY 전역 설정 등록 완료
+            </p>
+        </header>
+
+        <!-- Success Banner -->
+        <div class="p-6 rounded-2xl bg-slate-900 border-2 border-emerald-500/50 space-y-3">
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-base">
+                <i class="fa-solid fa-circle-check text-xl"></i>
+                <span>"설치 완료! 이제 AGY가 대표님의 제미나이 노트북(NotebookLM)에 직접 접근합니다!"</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                이제 수동으로 문서를 복사할 필요 없이, AGY가 대표님의 NotebookLM 노트북 목록을 조회하고, 연구 문서를 검색하며, RAG 질의응답을 도구(Tool)로 직접 호출할 수 있습니다.
+            </p>
+        </div>
+
+        <!-- 3 Feature Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <div class="text-emerald-400 font-bold text-sm"><i class="fa-solid fa-list-check mr-1"></i> 노트북 전체 조회</div>
+                <p class="text-xs text-slate-400">초기에 작업해두신 모든 노트북 목록과 소스 문서를 원클릭으로 탐색합니다.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <div class="text-blue-400 font-bold text-sm"><i class="fa-solid fa-magnifying-glass-chart mr-1"></i> 실시간 RAG 질의</div>
+                <p class="text-xs text-slate-400">NotebookLM의 인용 기반 Q&A를 AGY 대화창에서 그대로 받아봅니다.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <div class="text-purple-400 font-bold text-sm"><i class="fa-solid fa-file-export mr-1"></i> 일괄 내보내기/다운로드</div>
+                <p class="text-xs text-slate-400"><code>nlm export</code> 및 다운로드 유틸리티로 산출물을 일괄 자동 수집합니다.</p>
+            </div>
+        </div>
+
+        <!-- Initial Auth Step -->
+        <section class="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3">
+            <h3 class="font-bold text-white text-base flex items-center gap-2">
+                <i class="fa-solid fa-key text-amber-400"></i> 최초 1회 브라우저 로그인 인증 안내
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+                대표님의 구글 계정에 안전하게 연결하기 위해 터미널에서 아래 명령어를 1회 실행하여 로그인해 주세요:
+            </p>
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-amber-300 select-all">
+                & "C:\Users\ryuje\AppData\Roaming\Python\Python314\Scripts\nlm.exe" login
+            </div>
+        </section>
+
+        <!-- Footer Actions -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h4 class="text-sm font-bold text-white">RYUJEAN DOMAIN HQ 포털 연동</h4>
+                <p class="text-xs text-slate-400 mt-1">포털 대시보드에서 시스템 상태를 확인하실 수 있습니다.</p>
+            </div>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                🏛️ 마스터 포털 열기 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
