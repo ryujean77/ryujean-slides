@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4회차 · GAS 자동화 및 사후관리 — 인천지역 희망자활센터 AI 교육</title>
+<style>
+:root{
+  --bg:#000000; --bg2:#07080C; --panel:rgba(255,255,255,.055); --panel2:rgba(255,255,255,.085);
+  --line:rgba(255,255,255,.14); --line2:rgba(255,255,255,.22);
+  --tx:#FFFFFF; --tx2:#AEB4C2; --tx3:#7C8494;
+  --n1:#FC00DC; --n2:#731FFF; --n3:#00FFD7; --danger:#FF4D6D; --ok:#3DDC84;
+  --grad:linear-gradient(120deg,var(--n1),var(--n2) 52%,var(--n3));
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font-family:'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+  font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 12% -8%,rgba(115,31,255,.16),transparent 62%),
+                   radial-gradient(900px 520px at 92% 4%,rgba(252,0,220,.11),transparent 60%);
+  background-attachment:fixed;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px 120px}
+header.hero{padding:74px 0 34px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px;letter-spacing:.22em;color:var(--tx3);font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(30px,4.2vw,46px);line-height:1.24;margin:.32em 0 .18em;font-weight:800;letter-spacing:-.02em}
+h1 .g{color:var(--n3)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.sub{color:var(--tx2);font-size:16px;margin:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--tx2)}
+nav.toc{margin:34px 0 10px;border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:20px 24px}
+nav.toc h2{font-size:13px;letter-spacing:.16em;color:var(--tx3);margin:0 0 12px;font-weight:800}
+nav.toc ol{margin:0;padding-left:0;list-style:none;columns:2;column-gap:34px}
+nav.toc li{margin:0 0 7px;break-inside:avoid}
+nav.toc a{color:var(--tx2);text-decoration:none;font-size:14.5px;display:block;padding:3px 0}
+nav.toc a:hover{color:var(--tx)}
+nav.toc .num{display:inline-block;min-width:44px;color:var(--n3);font-weight:700;font-variant-numeric:tabular-nums}
+h2.ch{margin:66px 0 20px;padding-top:22px;font-size:26px;font-weight:800;letter-spacing:-.01em;position:relative}
+h2.ch::before{content:"";position:absolute;top:0;left:0;width:86px;height:4px;border-radius:2px;background:var(--grad)}
+h2.ch .num{color:var(--n3);margin-right:10px}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  h2.ch .num{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+h3{font-size:18.5px;margin:34px 0 12px;font-weight:750;color:var(--tx)}
+p{margin:.85em 0;color:#E9ECF2}
+strong{color:#fff;font-weight:700}
+a{color:var(--n3);text-decoration:none;border-bottom:1px solid rgba(0,255,215,.32)}
+a:hover{border-bottom-color:var(--n3)}
+ul,ol{padding-left:1.35em}li{margin:.34em 0;color:#E4E8EF}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+code{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:6px;
+  padding:2px 7px;font-size:.9em;font-family:ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;color:#F2E6FF}
+pre{background:linear-gradient(180deg,#0C0D13,#08090E);border:1px solid var(--line);
+  border-radius:16px;padding:20px 22px;overflow:auto;position:relative;box-shadow:0 10px 34px rgba(0,0,0,.5)}
+pre code{background:none;border:0;padding:0;color:#D9DEE9;font-size:14px;line-height:1.72}
+pre::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);border-radius:16px 0 0 16px}
+blockquote{margin:20px 0;padding:16px 20px;border:1px solid var(--line);border-left:3px solid var(--n2);
+  background:var(--panel);border-radius:0 14px 14px 0;color:var(--tx2)}
+blockquote strong{color:#fff}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;font-size:15px;
+  border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th{background:rgba(255,255,255,.07);color:#fff;font-weight:700;text-align:left}
+th,td{padding:11px 15px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+td{color:#E4E8EF}
+/* 강사 멘트 / 교재 / 마커 블록 */
+.speak{border:1px solid rgba(252,0,220,.30);background:linear-gradient(180deg,rgba(252,0,220,.09),rgba(252,0,220,.03));
+  border-radius:16px;padding:16px 20px;margin:22px 0}
+.speak .tag{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.1em;color:var(--n1);margin-bottom:6px}
+.marker{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;letter-spacing:.06em;
+  border:1px solid var(--line2);background:var(--panel2);border-radius:999px;padding:5px 13px;color:#fff;margin:26px 0 8px}
+/* 그림 */
+figure{margin:30px 0;text-align:center}
+figure img{width:90%;max-width:90%;height:auto;border-radius:16px;border:1px solid var(--line);
+  box-shadow:0 18px 48px rgba(0,0,0,.6);cursor:zoom-in;transition:transform .18s ease,box-shadow .18s ease;background:#0B0C11}
+figure img:hover{transform:translateY(-3px);box-shadow:0 24px 60px rgba(115,31,255,.28)}
+figcaption{margin-top:12px;font-size:14.5px;color:var(--tx2);font-weight:600}
+figcaption .no{color:var(--n3);font-weight:800}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  figcaption .no{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.guide{width:90%;margin:14px auto 0;text-align:left;border:1px solid var(--line);
+  background:var(--panel);border-radius:14px;padding:14px 18px;font-size:14px;color:var(--tx2)}
+.guide b{color:var(--n3);font-weight:700}
+.guide .t{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--tx3);display:block;margin-bottom:8px}
+/* 개념도 */
+.dia{margin:30px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#05060A;
+  box-shadow:0 16px 44px rgba(0,0,0,.55)}
+.dia svg{display:block;width:100%;height:auto}
+/* 라이트박스 */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;
+  z-index:99;cursor:zoom-out;padding:22px}
+#lb.on{display:flex}
+#lb img{max-width:98vw;max-height:94vh;border-radius:10px;border:1px solid var(--line2)}
+#lb .hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);color:var(--tx3);font-size:13px}
+figure.portrait img{width:45%;max-width:45%}
+figure.portrait .guide{width:70%}
+@media(max-width:820px){nav.toc ol{columns:1}figure img,.guide{width:100%;max-width:100%}
+  figure.portrait img{width:70%;max-width:70%}figure.portrait .guide{width:100%}}
+@media print{
+  body{background:#fff;color:#111}
+  .dia,figure img{box-shadow:none}
+  nav.toc{break-after:page}
+  h2.ch{break-after:avoid;break-inside:avoid}
+  figure{break-inside:avoid}
+}
+</style></head><body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">인천지역 희망자활센터 · 실무자 AI 역량강화 교육</div>
+  <h1>4회차 <span class="g">GAS 자동화 및 사후관리</span></h1>
+  <p class="sub">강사용 마스터 교안 · 개념 → 시연 → 실습 → 검증 → 최적화 5단계</p>
+  <div class="meta"><span class="chip">챕터 11개</span>
+  <span class="chip">개념도 3개</span><span class="chip">교육시간 4시간</span></div>
+</header>
+<nav class="toc"><h2>목차</h2><ol><li><a href="#c4_1"><span class="num">4-1</span>GAS(Google Apps Script) 기초 개념 및 에디터 진입</a></li><li><a href="#c4_2"><span class="num">4-2</span>Google Docs 문서 자동 생성 봇</a></li><li><a href="#c4_3"><span class="num">4-3</span>Google Calendar 연동 기한 알림 봇</a></li><li><a href="#c4_4"><span class="num">4-4</span>보안 클라우드 코드 실행 (Secure Cloud Code Execution) 및 Excel/Sheets 데이터 심층 분석</a></li><li><a href="#c4_5"><span class="num">4-5</span>Gmail 일괄 발송 봇 (자동화)</a></li><li><a href="#c4_6"><span class="num">4-6</span>엑셀 연동 및 자활 맞춤형 업무 템플릿(Gateway) 구축</a></li><li><a href="#c4_7"><span class="num">4-7</span>자체 평가 시스템 (Rubric 활용 피드백)</a></li><li><a href="#c4_8"><span class="num">4-8</span>지속 학습(Continuous Learning) 플랜 (교육 후 행동 유도)</a></li><li><a href="#c4_9"><span class="num">4-9</span>커뮤니티(Community) 구축 방안 (실무자 간 지식 공유)</a></li><li><a href="#c4_10"><span class="num">4-10</span>Q&amp;A 세션 진행 가이드 (심리적 안전감 확보)</a></li><li><a href="#c4_11"><span class="num">4-11</span>수료증 및 사후관리(Follow-up) 체계 (도파민 보상)</a></li></ol></nav>
+<div class="marker">🗣️ <strong>[강사 멘트: 4회차 오프닝 인사말]</strong></div>
+<p>"여러분, 반갑습니다! 어느덧 우리의 4회차 여정이 밝았습니다. 지난 3회차까지 여러분은 AI를 활용해 복잡한 기획안을 단숨에 초안으로 만들고, 흩어진 데이터를 유의미한 정보로 정제하는 주목할 만한 경험을 하셨습니다. 정말 고생 많으셨습니다. 박수 한번 칠까요? (짝짝짝)  자, 그런데 혹시 아직도 '아, 이 문서 매번 이름만 바꿔서 또 만들어야 하네' 혹은 '상담 일정 놓칠까 봐 매일 다이어리 들여다보는 게 일이다' 하시는 분 계신가요?  오늘 우리가 배울 내용은 여러분의 뇌에서 '반복 업무'라는 스트레스를 영원히 지워버릴 강력한 무기, 바로 <strong>GAS(Google Apps Script)</strong>입니다. 코딩을 몰라도 괜찮습니다. AI가 코드를 짜주고, 우리는 그저 복사해서 붙여넣기만 하면 됩니다.  반복 업무를 대신 처리해 주는 도구를 직접 만들어 보게 됩니다. 준비되셨나요? 자, 여러분의 도파민을 깨울 첫 번째 자동화 스크립트, 지금 바로 시작합니다!"</p>
+<h2 class="ch" id="c4_1"><span class="num">4-1</span>GAS(Google Apps Script) 기초 개념 및 에디터 진입</h2>
+<div class="marker">📘 <strong>[교재 내용: 개념 이해]</strong></div>
+<p><strong>GAS(Google Apps Script)란 무엇인가?</strong> 구글 앱스 스크립트(GAS)는 구글 워크스페이스(Docs, Sheets, Calendar, Gmail 등)의 다양한 서비스들을 하나로 연결하고 자동화해주는 클라우드 기반 스크립팅 언어입니다. </p>
+<ul><li><strong>핵심 원리:</strong> 자바스크립트(JavaScript)를 기반으로 작동하지만, 우리는 코드를 직접 짤 필요가 없습니다. ChatGPT나 Gemini 같은 AI에게 '이러이러한 자동화 코드를 짜줘'라고 명령하고, 그 결과물을 GAS 에디터에 붙여넣기만 하면 됩니다.</li></ul>
+<ul><li><strong>왜 중요한가? (인지 부하 최소화 관점):</strong> 인간의 뇌는 반복적이고 기계적인 작업에 에너지를 쏟을 때 쉽게 지치고 창의력을 잃습니다. GAS는 이러한 '단순 반복 작업'을 기계에 위임함으로써, 여러분이 자활 참여자를 상담하고 창의적인 자활 프로그램을 기획하는 '진짜 중요한 업무'에 집중할 수 있도록 돕습니다.</li></ul>
+<div class="marker">🗣️ <strong>[강사 멘트: 💻 시연]</strong></div>
+<p>"화면을 보실까요? 우리가 매일 쓰는 구글 스프레드시트입니다. 보통 메뉴바에는 '파일', '수정', '보기' 이런 것들이 있죠. 그런데 여기에 잘 알려지지 않은 메뉴가 하나 있습니다. [확장 프로그램] -&gt; [Apps Script]를 클릭합니다. 새로운 창이 열렸죠? 바로 이곳이 우리가 AI가 짜준 코드를 붙여넣을 '자동화 공장'의 입구입니다. 아주 단순합니다. 이 하얀 도화지에 코드를 넣고 '실행' 버튼만 누르면, 스프레드시트와 구글 문서, 캘린더가 서로 대화를 나누며 알아서 일을 처리합니다."</p>
+<div class="marker">📘 <strong>[교재 내용: ✍️ 실습]</strong></div>
+<ul><li><strong>목표:</strong> 나의 첫 구글 앱스 스크립트 에디터 열고 빈 프로젝트 생성하기</li><li><strong>가상 샘플데이터 상황 설정:</strong> 자활사업 참여자 관리 대장(구글 스프레드시트)을 열어둔 상태</li><li><strong>실습 프롬프트 (AI에게 물어볼 때):</strong></li></ul>
+<p>  &gt; "나는 코딩을 전혀 모르는 복지센터 실무자야. 구글 스프레드시트에서 Apps Script 에디터를 여는 방법과, 빈 스크립트 파일에 'Hello World'라는 알림창을 띄우는 가장 기초적인 GAS 코드를 작성해줘. 내가 어디에 복사하고 어떻게 실행해야 하는지 3단계로 나눠서 아주 쉽게 설명해줘."</p>
+<ul><li><strong>실습 체크리스트 (Nudge 넛지 설계):</strong></li><li>[ ] 실습용 구글 스프레드시트를 생성하고 이름을 '자활참여자_자동화실습_본인이름'으로 변경했는가?</li><li>[ ] 메뉴에서 [확장 프로그램] -&gt; [Apps Script]를 클릭하여 에디터 창을 띄웠는가?</li></ul>
+<ul><li>[ ] AI가 만들어준 코드(예: <code>Browser.msgBox('Hello World');</code>)를 <code>myFunction</code> 안에 붙여넣고 저장(Ctrl+S)했는가?</li><li>[ ] 상단의 [▷ 실행] 버튼을 누르고 권한 검토(Permission) 창을 무사히 통과했는가?</li></ul>
+<div class="marker">🗣️ <strong>[강사 멘트: 트러블슈팅 Q&amp;A]</strong></div>
+<p>"자, 실행 버튼을 누르시면 갑자기 'Google 확인하지 않은 앱'이라는 무시무시한 빨간색 경고창이 뜨는 분들이 계실 겁니다. (웃음) 당황하지 마세요! 여러분의 뇌가 '위험해! 멈춰!'라고 신호를 보내겠지만, 이건 구글이 '이 코드가 당신의 문서를 건드리려고 하는데, 당신이 짠 게 맞나요?' 하고 묻는 겁니다. </p>
+<p><strong>해결책:</strong> [고급] 글자를 클릭하고, 맨 아래 [~로 이동(안전하지 않음)]을 클릭하신 후 [허용]을 누르시면 됩니다. 이 관문만 넘으면 자동화의 문이 활짝 열립니다!"</p>
+<ul><li>🔗 참고 링크: <a href="https://developers.google.com/apps-script/guides/services/authorization" target="_blank" rel="noopener">Google Apps Script 권한 부여 공식 도움말</a></li></ul>
+<div class="marker">📘 <strong>[교재 내용: ✅ 검증]</strong></div>
+<p><strong>역량 검증 루브릭 (4-1)</strong></p>
+<table><thead><tr><th>평가 항목</th><th>하 (재교육 필요)</th><th>중 (기본 이해)</th><th>상 (마스터)</th></tr></thead><tbody><tr><td>에디터 접근</td><td>확장 프로그램 메뉴를 찾지 못함</td><td>Apps Script 창을 열고 코드를 붙여넣을 수 있음</td><td>단축키나 메뉴를 막힘없이 열고 기존 코드와 새 코드를 구분함</td></tr></tbody></table>
+<p>| 권한 허용 | 경고창에서 막혀서 진행 중단됨 | 강사의 도움을 받아 권한을 허용함 | 권한 경고의 의미를 이해하고 스스로 '고급' 탭을 눌러 허용함 |</p>
+<div class="marker">📘 <strong>[교재 내용: 🚀 최적화 (Before / After)]</strong></div>
+<ul><li><strong>Before:</strong> 구글 시트의 수식이나 매크로에 의존하여 복잡한 로직을 구현하느라 시트가 무거워지고 에러가 잦음.</li><li><strong>After:</strong> GAS 에디터 진입법을 앎으로써, 시트의 한계를 넘어 구글 생태계 전체를 조종할 수 있는 무한한 확장성을 획득함.</li></ul>
+<hr>
+<h2 class="ch" id="c4_2"><span class="num">4-2</span>Google Docs 문서 자동 생성 봇</h2>
+<div class="marker">📘 <strong>[Visual Asset: 교육 시각화 자료]</strong></div>
+<div class="dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1053 416" width="100%" role="img" aria-label="4-2 Google Docs 문서 자동 생성 봇"><defs>
+<linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#FC00DC"/><stop offset="52%" stop-color="#731FFF"/>
+  <stop offset="100%" stop-color="#00FFD7"/></linearGradient>
+<linearGradient id="g_start" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00FFD7"/><stop offset="100%" stop-color="#00B9A0"/></linearGradient>
+<linearGradient id="f_start" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00FFD7" stop-opacity="0.20"/><stop offset="100%" stop-color="#00B9A0" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_process" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#731FFF"/><stop offset="100%" stop-color="#4A0FB8"/></linearGradient>
+<linearGradient id="f_process" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#731FFF" stop-opacity="0.20"/><stop offset="100%" stop-color="#4A0FB8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_decision" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#A8009A"/></linearGradient>
+<linearGradient id="f_decision" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#A8009A" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_circle" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00A8FF"/><stop offset="100%" stop-color="#0069B8"/></linearGradient>
+<linearGradient id="f_circle" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00A8FF" stop-opacity="0.20"/><stop offset="100%" stop-color="#0069B8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_danger" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF4D6D"/><stop offset="100%" stop-color="#B00030"/></linearGradient>
+<linearGradient id="f_danger" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF4D6D" stop-opacity="0.20"/><stop offset="100%" stop-color="#B00030" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_success" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3DDC84"/><stop offset="100%" stop-color="#1E9E58"/></linearGradient>
+<linearGradient id="f_success" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DDC84" stop-opacity="0.20"/><stop offset="100%" stop-color="#1E9E58" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_end" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#731FFF"/></linearGradient>
+<linearGradient id="f_end" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#731FFF" stop-opacity="0.07"/></linearGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/></filter>
+<marker id="ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#6E7488"/></marker>
+</defs><rect width="1053" height="416" rx="18" fill="#05060A"/><text x="34" y="42" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="17" font-weight="800" fill="url(#neon)">4-2 Google Docs 문서 자동 생성 봇</text><rect x="34" y="52" width="72" height="3.5" rx="1.8" fill="url(#neon)"/><path d="M 220.0 203.0 C 266.0 203.0, 266.0 203.0, 312.0 203.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 472.0 203.0 C 518.0 203.0, 518.0 203.0, 564.0 203.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 652.6 174.0 C 783.0 174.0, 783.0 128.0, 913.3 128.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 741.3 203.0 C 787.3 203.0, 787.3 203.0, 833.3 203.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 652.6 232.0 C 783.0 232.0, 783.0 278.0, 913.3 278.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<rect x="60.0" y="174.0" width="160.0" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="60.0" y="174.0" width="160.0" height="58.0" rx="14" fill="url(#f_start)" stroke="url(#g_start)" stroke-width="2"/>
+<rect x="60.0" y="184.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_start)" filter="url(#glow)"/>
+<text x="140.0" y="203.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">엑셀 데이터 표</text>
+<rect x="312.0" y="166.0" width="160.0" height="74.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="312.0" y="166.0" width="160.0" height="74.0" rx="14" fill="url(#f_process)" stroke="url(#g_process)" stroke-width="2"/>
+<rect x="312.0" y="176.0" width="4.5" height="54.0" rx="2.2" fill="url(#g_process)" filter="url(#glow)"/>
+<text x="392.0" y="191.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">Docs 템플릿</text>
+<text x="392.0" y="215.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="500" fill="#AEB4C2">&lt;&lt;이름&gt;&gt; 태그</text>
+<rect x="564.0" y="174.0" width="177.3" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="564.0" y="174.0" width="177.3" height="58.0" rx="14" fill="url(#f_process)" stroke="url(#g_process)" stroke-width="2"/>
+<rect x="564.0" y="184.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_process)" filter="url(#glow)"/>
+<text x="652.6" y="203.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">구글 드라이브 폴더</text>
+<rect x="833.3" y="70.0" width="160.0" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="833.3" y="70.0" width="160.0" height="58.0" rx="14" fill="url(#f_end)" stroke="url(#g_end)" stroke-width="2"/>
+<rect x="833.3" y="80.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_end)" filter="url(#glow)"/>
+<text x="913.3" y="99.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">개인화 문서 1</text>
+<rect x="833.3" y="174.0" width="160.0" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="833.3" y="174.0" width="160.0" height="58.0" rx="14" fill="url(#f_end)" stroke="url(#g_end)" stroke-width="2"/>
+<rect x="833.3" y="184.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_end)" filter="url(#glow)"/>
+<text x="913.3" y="203.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">개인화 문서 2</text>
+<rect x="833.3" y="278.0" width="160.0" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="833.3" y="278.0" width="160.0" height="58.0" rx="14" fill="url(#f_end)" stroke="url(#g_end)" stroke-width="2"/>
+<rect x="833.3" y="288.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_end)" filter="url(#glow)"/>
+<text x="913.3" y="307.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">개인화 문서 3</text></svg></div>
+<div class="marker">📘 <strong>[교재 내용: 개념 이해]</strong></div>
+<p>이번 항목에서는 구글 스프레드시트에 입력된 데이터(예: 자활 참여자 상담 일지, 초기 면접지 등)를 바탕으로, 클릭 한 번에 잘 양식화된 <strong>Google Docs(구글 문서)</strong>가 자동 생성되는 봇을 만듭니다.</p>
+<ul><li><strong>작동 원리 (행동 공학적 접근):</strong> 미리 만들어둔 구글 문서 템플릿(예: <code>{{이름}}</code>, <code>{{상담일자}}</code> 등의 태그를 포함)과 구글 시트를 연동합니다. GAS 코드가 시트의 각 행을 읽어 템플릿의 태그를 실제 데이터로 치환(Replace)한 뒤, 새로운 문서 파일로 저장합니다.</li><li><strong>인지적 이점:</strong> 'Ctrl+C, Ctrl+V'를 수십 번 반복하며 느끼는 지루함과 오타 발생에 대한 불안감을 완벽히 제거합니다. 성취감 회로(도파민)를 자극하여 '클릭 한 번으로 100장의 문서가 생성되는 쾌감'을 경험하게 됩니다.</li></ul>
+<div class="marker">🗣️ <strong>[강사 멘트: 💻 시연]</strong></div>
+<p>"이 시트를 보세요. 10명의 자활 참여자 이름, 연락처, 상담 내용이 적혀 있습니다. 보통이라면 빈 한글 파일이나 워드 파일을 열고 10번을 복붙하셨겠죠? 그리고 꼭 한 두 명은 이름 수정하는 걸 깜빡해서 민망한 상황이 생깁니다.  하지만! 제가 시트 상단에 새로 만든 [자동화 메뉴] -&gt; [상담일지 자동생성] 버튼을 눌러보겠습니다. 3초 후... 자, 제 구글 드라이브 폴더를 보세요. 10명의 이름이 적힌 상담일지 파일이 방금 만들어졌습니다! 열어볼까요? 내용이 정확히 들어가 있습니다. 여러분도 오늘 바로 만들어 보실 수 있습니다."</p>
+<div class="marker">📘 <strong>[교재 내용: ✍️ 실습]</strong></div>
+<ul><li><strong>목표:</strong> 스프레드시트 데이터로 구글 문서 수료증/상담일지 자동 생성기 만들기</li><li><strong>가상 샘플데이터 상황 설정:</strong> </li><li>구글 드라이브에 '템플릿_상담일지' 구글 문서 생성 (문서 내에 <code>&lt;&lt;참여자명&gt;&gt;</code>, <code>&lt;&lt;상담내용&gt;&gt;</code> 텍스트 포함)</li><li>템플릿 문서의 고유 ID (URL에서 <code>/d/</code>와 <code>/edit</code> 사이의 긴 문자열) 복사해두기</li><li>실습용 스프레드시트 A열에 '참여자명', B열에 '상담내용' 작성</li><li><strong>실습 프롬프트 (AI에게 물어볼 때):</strong></li></ul>
+<p>  &gt; "나는 자활센터 실무자야. 구글 스프레드시트의 A열(참여자명)과 B열(상담내용) 데이터를 읽어서, 내가 미리 만들어둔 구글 문서 템플릿(문서ID: [여기에 ID 입력])의 <code>&lt;&lt;참여자명&gt;&gt;</code>과 <code>&lt;&lt;상담내용&gt;&gt;</code>을 실제 데이터로 바꾸고, 새로운 문서로 복사해서 특정 폴더(폴더ID: [여기에 ID 입력])에 저장하는 GAS 코드를 작성해줘. 코드는 초보자도 이해할 수 있게 주석을 꼼꼼히 달아줘."</p>
+<ul><li><strong>실습 체크리스트 (Nudge 넛지 설계):</strong></li><li>[ ] 구글 문서 템플릿을 생성하고 치환용 태그(예: <code>&lt;&lt;이름&gt;&gt;</code>)를 정확히 삽입했는가?</li><li>[ ] 템플릿 문서 ID와 저장할 폴더 ID를 정확히 추출하여 AI에게 프롬프트로 전달했는가?</li><li>[ ] AI가 짜준 코드를 GAS에 넣고 실행했을 때, 대상 폴더에 문서들이 정상적으로 생성되었는가?</li></ul>
+<div class="marker">🗣️ <strong>[강사 멘트: 트러블슈팅 Q&amp;A]</strong></div>
+<p>"선생님, 코드를 실행했는데 '문서를 찾을 수 없습니다' 또는 '접근 권한이 없습니다'라는 에러가 나요! 하시는 분들 손 들어주세요. 네, 99% 확률로 '문서 ID'를 잘못 복사하셨을 겁니다.  URL 주소창을 자세히 보세요. <code>https://docs.google.com/document/d/</code> 바로 뒤부터 시작해서 다음 <code>/edit</code> 가 나오기 전까지의 긴 영문/숫자 조합이 문서 ID입니다. 끝에 슬래시(/)가 들어가지 않도록 주의하세요!"</p>
+<ul><li>🔗 참고 링크: <a href="https://developers.google.com/apps-script/reference/document/body#replaceText(String,String" target="_blank" rel="noopener">Google Docs API 텍스트 치환 도움말</a>)</li></ul>
+<div class="marker">📘 <strong>[교재 내용: ✅ 검증]</strong></div>
+<p><strong>역량 검증 루브릭 (4-2)</strong></p>
+<table><thead><tr><th>평가 항목</th><th>하 (재교육 필요)</th><th>중 (기본 이해)</th><th>상 (마스터)</th></tr></thead><tbody><tr><td>문서 ID 이해</td><td>URL에서 ID를 구분하지 못함</td><td>URL에서 ID를 추출하여 코드에 넣을 수 있음</td><td>파일 ID, 폴더 ID의 개념을 완벽히 이해하고 다양한 파일에 적용 가능</td></tr><tr><td>템플릿 치환</td><td>치환 태그 문법(<code>&lt;&lt; &gt;&gt;</code>)을 일치시키지 못해 에러 발생</td><td>기본 데이터 1~2개를 치환하여 문서 생성 성공</td><td>다수의 열 데이터와 복잡한 치환 태그를 유연하게 연결하여 대량 생성 성공</td></tr></tbody></table>
+<div class="marker">📘 <strong>[교재 내용: 🚀 최적화 (Before / After)]</strong></div>
+<ul><li><strong>Before:</strong> 50명의 참여자 초기 면접지를 일일이 수작업으로 작성. 작업 시간 2시간 소요, 복붙 실수로 인한 오기재 발생.</li><li><strong>After:</strong> 시트에 데이터만 입력 후 봇 실행. 작업 시간 1분으로 단축, 오기재율 0%. 남는 1시간 59분은 참여자와의 심층 라포(Rapport) 형성에 투자!</li></ul>
+<hr>
+<h2 class="ch" id="c4_3"><span class="num">4-3</span>Google Calendar 연동 기한 알림 봇</h2>
+<div class="marker">📘 <strong>[Visual Asset: 교육 시각화 자료]</strong></div>
+<div class="dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 224" width="100%" role="img" aria-label="4-3 Google Calendar 연동 기한 알림 봇"><defs>
+<linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#FC00DC"/><stop offset="52%" stop-color="#731FFF"/>
+  <stop offset="100%" stop-color="#00FFD7"/></linearGradient>
+<linearGradient id="g_start" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00FFD7"/><stop offset="100%" stop-color="#00B9A0"/></linearGradient>
+<linearGradient id="f_start" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00FFD7" stop-opacity="0.20"/><stop offset="100%" stop-color="#00B9A0" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_process" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#731FFF"/><stop offset="100%" stop-color="#4A0FB8"/></linearGradient>
+<linearGradient id="f_process" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#731FFF" stop-opacity="0.20"/><stop offset="100%" stop-color="#4A0FB8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_decision" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#A8009A"/></linearGradient>
+<linearGradient id="f_decision" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#A8009A" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_circle" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00A8FF"/><stop offset="100%" stop-color="#0069B8"/></linearGradient>
+<linearGradient id="f_circle" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00A8FF" stop-opacity="0.20"/><stop offset="100%" stop-color="#0069B8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_danger" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF4D6D"/><stop offset="100%" stop-color="#B00030"/></linearGradient>
+<linearGradient id="f_danger" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF4D6D" stop-opacity="0.20"/><stop offset="100%" stop-color="#B00030" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_success" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3DDC84"/><stop offset="100%" stop-color="#1E9E58"/></linearGradient>
+<linearGradient id="f_success" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DDC84" stop-opacity="0.20"/><stop offset="100%" stop-color="#1E9E58" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_end" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#731FFF"/></linearGradient>
+<linearGradient id="f_end" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#731FFF" stop-opacity="0.07"/></linearGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/></filter>
+<marker id="ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#6E7488"/></marker>
+</defs><rect width="792" height="224" rx="18" fill="#05060A"/><text x="34" y="42" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="17" font-weight="800" fill="url(#neon)">4-3 Google Calendar 연동 기한 알림 봇</text><rect x="34" y="52" width="72" height="3.5" rx="1.8" fill="url(#neon)"/><path d="M 226.4 107.0 C 272.4 107.0, 272.4 107.0, 318.4 107.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 480.2 107.0 C 526.2 107.0, 526.2 107.0, 572.2 107.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<rect x="60.0" y="70.0" width="166.4" height="74.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="60.0" y="70.0" width="166.4" height="74.0" rx="14" fill="url(#f_start)" stroke="url(#g_start)" stroke-width="2"/>
+<rect x="60.0" y="80.0" width="4.5" height="54.0" rx="2.2" fill="url(#g_start)" filter="url(#glow)"/>
+<text x="143.2" y="95.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">구글 시트 날짜 열</text>
+<text x="143.2" y="119.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="500" fill="#AEB4C2">D-3</text>
+<polygon points="399.35,66.0 492.2,107.0 399.35,148.0 306.5,107.0" fill="url(#f_decision)" stroke="url(#g_decision)" stroke-width="2.4" filter="url(#soft)"/>
+<text x="399.4" y="107.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">시계 트리거 감지</text>
+<rect x="572.2" y="70.0" width="160.0" height="74.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="572.2" y="70.0" width="160.0" height="74.0" rx="14" fill="url(#f_end)" stroke="url(#g_end)" stroke-width="2"/>
+<rect x="572.2" y="80.0" width="4.5" height="54.0" rx="2.2" fill="url(#g_end)" filter="url(#glow)"/>
+<text x="652.2" y="95.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">스마트폰 캘린더</text>
+<text x="652.2" y="119.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="500" fill="#AEB4C2">일정 팝업</text></svg></div>
+<div class="marker">📘 <strong>[교재 내용: 개념 이해]</strong></div>
+<p>자활센터 실무자들의 뇌를 가장 피곤하게 만드는 것 중 하나가 바로 '기한 관리'입니다. 지원금 신청 마감일, 참여자 사후관리 도래일, 각종 보고서 제출일 등... </p>
+<ul><li><strong>작동 원리 (행동 공학적 접근):</strong> 스프레드시트에 기재된 '날짜' 데이터를 GAS가 매일 새벽에 스스로 읽어들입니다. 그리고 오늘이 마감일 3일 전이라면? 여러분의 구글 캘린더에 자동으로 일정을 등록하거나, 지정된 이메일로 알림을 보내줍니다. </li><li><strong>트리거(Trigger)의 역할:</strong> 이 봇의 핵심은 '사람이 실행 버튼을 누르지 않아도' 알아서 작동한다는 점입니다. 시간 기반 트리거를 설정하여 시스템이 나의 두 번째 뇌(Second Brain) 역할을 하도록 만듭니다.</li></ul>
+<div class="marker">🗣️ <strong>[강사 멘트: 💻 시연]</strong></div>
+<p>"여러분, 스마트폰 알람 맞추듯 구글 시트에도 알람을 맞출 수 있다는 거 아셨나요? 제 시트에는 '사후관리 대상자 명단과 관리 도래일'이 적혀 있습니다. 저는 이걸 매일 쳐다보지 않아요. 대신 GAS의 시계 아이콘(트리거)을 설정해두었죠.  자, 강제로 트리거를 지금 실행시켜 보겠습니다. 띠링~ 제 스마트폰 구글 캘린더에 '홍길동 참여자 1차 사후관리 (마감 3일전)' 이라는 일정이 방금 자동 등록되었습니다. 내 머릿속에 기억해야 할 짐을 AI와 시스템에 완벽하게 외주화하는 겁니다. 엄청난 해방감이지 않나요?"</p>
+<div class="marker">📘 <strong>[교재 내용: ✍️ 실습]</strong></div>
+<ul><li><strong>목표:</strong> 스프레드시트 날짜를 인식하여 구글 캘린더에 일정 자동 등록 및 트리거 설정하기</li><li><strong>가상 샘플데이터 상황 설정:</strong></li><li>구글 시트 A열 '참여자명', B열 '사후관리 예정일(예: 2026-08-01)' 작성</li><li>C열에 '알림 상태(완료 여부)' 열 추가</li><li><strong>실습 프롬프트 (AI에게 물어볼 때):</strong></li></ul>
+<p>  &gt; "나는 복지센터 실무자야. 구글 시트 B열에 날짜 데이터가 있어. 오늘 날짜를 기준으로 B열의 날짜가 딱 3일 남은 사람을 찾아서, 내 기본 구글 캘린더에 '[사후관리 알림] A열이름' 이라는 제목으로 종일 일정을 추가하는 GAS 코드를 짜줘. 일정이 추가되면 C열에 '캘린더 등록 완료'라고 적어서 중복 등록을 방지해줘."</p>
+<ul><li><strong>실습 체크리스트 (Nudge 넛지 설계):</strong></li><li>[ ] 시트의 B열 날짜 형식을 구글 시트가 날짜로 제대로 인식하도록 포맷팅(YYYY-MM-DD 등) 하였는가?</li><li>[ ] AI가 준 코드를 실행하여 캘린더에 일정이 정상적으로 들어갔는지 내 구글 캘린더 창을 열어 확인했는가?</li><li>[ ] GAS 에디터 왼쪽 메뉴에서 시계 모양(트리거) 아이콘을 눌러, 매일 오전 8시~9시 사이에 이 코드가 자동 실행되도록 스케줄링을 완료했는가?</li></ul>
+<div class="marker">🗣️ <strong>[강사 멘트: 트러블슈팅 Q&amp;A]</strong></div>
+<p>"캘린더 연동을 하다 보면 가장 많이 겪는 문제가 '날짜 포맷' 에러입니다. 화면에 에러 나신 분? 시트를 보니 날짜를 '8월1일' 이나 '26.8.1' 처럼 텍스트 형태로 적으셨네요. 컴퓨터는 이걸 날짜로 계산하지 못합니다. </p>
+<p><strong>해결책:</strong> 반드시 '2026-08-01'처럼 정규화된 날짜 포맷을 사용하고, 셀 서식에서 '날짜'로 지정해주세요. 또 하나, '트리거'를 설정하실 때 실수로 '분 단위'로 실행하게 두시면 캘린더에 똑같은 일정이 수천 개가 쌓이는 대참사가 일어날 수 있으니 반드시 '시간 단위(하루 1번)'로 설정하세요! (웃음)"</p>
+<ul><li>🔗 참고 링크: <a href="https://developers.google.com/apps-script/reference/calendar/calendar-app" target="_blank" rel="noopener">Google Calendar API 및 트리거 공식 가이드</a></li></ul>
+<div class="marker">📘 <strong>[교재 내용: ✅ 검증]</strong></div>
+<p><strong>역량 검증 루브릭 (4-3)</strong></p>
+<table><thead><tr><th>평가 항목</th><th>하 (재교육 필요)</th><th>중 (기본 이해)</th><th>상 (마스터)</th></tr></thead><tbody><tr><td>날짜 데이터 처리</td><td>텍스트와 날짜 서식을 구분하지 못해 에러 발생</td><td>올바른 날짜 포맷을 적용하여 단건 캘린더 등록 성공</td><td>날짜 계산 로직(D-3, D-7 등)을 이해하고 조건부 스크립트 실행 성공</td></tr><tr><td>트리거 스케줄링</td><td>트리거 메뉴를 찾지 못하거나 수동 실행만 함</td><td>시간 기반 트리거를 생성하여 하루 1회 실행 설정 완료</td><td>중복 등록 방지 로직(C열 마킹)의 중요성을 이해하고 완벽한 무인 자동화 구축</td></tr></tbody></table>
+<div class="marker">📘 <strong>[교재 내용: 🚀 최적화 (Before / After)]</strong></div>
+<ul><li><strong>Before:</strong> 다이어리와 달력 앱, 엑셀 파일을 번갈아 보며 데드라인을 체크. 종종 바쁜 업무에 치여 중요한 기한을 하루이틀 놓치는 실수 발생 (심리적 압박감 심화).</li><li><strong>After:</strong> 날짜 데이터만 입력해두면 시스템이 알아서 '적시(Just-in-time)'에 알림을 줌. "내가 기억하지 않아도 시스템이 알려준다"는 강력한 심리적 안정감 확보, 인지 여유(Cognitive Slack) 증가.</li></ul>
+<hr>
+<div class="marker">🗣️ <strong>[강사 멘트: 4회차 파트1 마무리]</strong></div>
+<p>"여러분, 오늘 배운 이 세 가지 기술—GAS 에디터 진입, 문서 자동 생성, 캘린더 알림 봇—은 단순한 IT 스킬이 아닙니다. 여러분의 귀중한 뇌 에너지를 갉아먹는 '반복 노동'으로부터 여러분을 구출하는 동아줄입니다.  처음엔 코드가 낯설어 에러가 나고 당황할 수 있지만, 자전거 타기처럼 한 번만 몸에 익히면 평생 여러분의 업무를 편안하게 해 줄 것입니다. 지금부터 쉬는 시간을 15분 가질 텐데요, 쉬는 동안 방금 여러분의 캘린더에 들어간 그 이런 일정을 보며 커피 한 잔의 도파민을 만끽하시기 바랍니다. 수고하셨습니다!"</p>
+<p>## 파트 2: 반복 업무 줄이기 — 업무 자동화 시스템 구축</p>
+<hr>
+<h2 class="ch" id="c4_4"><span class="num">4-4</span>보안 클라우드 코드 실행 (Secure Cloud Code Execution) 및 Excel/Sheets 데이터 심층 분석</h2>
+<div class="marker">📘 <strong>[Visual Asset: 교육 시각화 자료]</strong></div>
+<div class="dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1103 224" width="100%" role="img" aria-label="4-4 보안 클라우드 코드 실행 (Secure Cloud Code Execution) 및 Excel/Sheets 데이터 심층 분석"><defs>
+<linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#FC00DC"/><stop offset="52%" stop-color="#731FFF"/>
+  <stop offset="100%" stop-color="#00FFD7"/></linearGradient>
+<linearGradient id="g_start" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00FFD7"/><stop offset="100%" stop-color="#00B9A0"/></linearGradient>
+<linearGradient id="f_start" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00FFD7" stop-opacity="0.20"/><stop offset="100%" stop-color="#00B9A0" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_process" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#731FFF"/><stop offset="100%" stop-color="#4A0FB8"/></linearGradient>
+<linearGradient id="f_process" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#731FFF" stop-opacity="0.20"/><stop offset="100%" stop-color="#4A0FB8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_decision" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#A8009A"/></linearGradient>
+<linearGradient id="f_decision" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#A8009A" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_circle" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00A8FF"/><stop offset="100%" stop-color="#0069B8"/></linearGradient>
+<linearGradient id="f_circle" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00A8FF" stop-opacity="0.20"/><stop offset="100%" stop-color="#0069B8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_danger" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF4D6D"/><stop offset="100%" stop-color="#B00030"/></linearGradient>
+<linearGradient id="f_danger" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF4D6D" stop-opacity="0.20"/><stop offset="100%" stop-color="#B00030" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_success" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3DDC84"/><stop offset="100%" stop-color="#1E9E58"/></linearGradient>
+<linearGradient id="f_success" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DDC84" stop-opacity="0.20"/><stop offset="100%" stop-color="#1E9E58" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_end" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#731FFF"/></linearGradient>
+<linearGradient id="f_end" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#731FFF" stop-opacity="0.07"/></linearGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/></filter>
+<marker id="ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#6E7488"/></marker>
+</defs><rect width="1103" height="224" rx="18" fill="#05060A"/><text x="34" y="42" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="17" font-weight="800" fill="url(#neon)">4-4 보안 클라우드 코드 실행 (Secure Cloud Code Execution) 및 Excel/Sheets 데이터 심층 분석</text><rect x="34" y="52" width="72" height="3.5" rx="1.8" fill="url(#neon)"/><rect x="287.8" y="26.0" width="487.8" height="144.0" rx="20" fill="rgba(255,255,255,0.028)" stroke="rgba(255,255,255,0.14)" stroke-width="1.4" stroke-dasharray="6 6"/>
+<text x="305.8" y="52.0" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="13.5" font-weight="700" letter-spacing="0.5" fill="#8F97A8">독립된 격리 공간</text>
+<path d="M 221.8 107.0 C 267.8 107.0, 267.8 107.0, 313.8 107.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 473.8 107.0 C 519.8 107.0, 519.8 107.0, 565.8 107.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 749.6 107.0 C 795.6 107.0, 795.6 107.0, 841.6 107.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<rect x="60.0" y="78.0" width="161.8" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="60.0" y="78.0" width="161.8" height="58.0" rx="14" fill="url(#f_start)" stroke="url(#g_start)" stroke-width="2"/>
+<rect x="60.0" y="88.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_start)" filter="url(#glow)"/>
+<text x="140.9" y="107.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">사용자 엑셀 파일</text>
+<rect x="313.8" y="70.0" width="160.0" height="74.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="313.8" y="70.0" width="160.0" height="74.0" rx="14" fill="url(#f_process)" stroke="url(#g_process)" stroke-width="2"/>
+<rect x="313.8" y="80.0" width="4.5" height="54.0" rx="2.2" fill="url(#g_process)" filter="url(#glow)"/>
+<text x="393.8" y="95.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">자물쇠가 채워진</text>
+<text x="393.8" y="119.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="500" fill="#AEB4C2">보안 컨테이너</text>
+<polygon points="657.7049999999999,66.0 761.6,107.0 657.7049999999999,148.0 553.8,107.0" fill="url(#f_decision)" stroke="url(#g_decision)" stroke-width="2.4" filter="url(#soft)"/>
+<text x="657.7" y="107.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">파이썬 AI 로봇 분석</text>
+<rect x="841.6" y="78.0" width="201.5" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="841.6" y="78.0" width="201.5" height="58.0" rx="14" fill="url(#f_end)" stroke="url(#g_end)" stroke-width="2"/>
+<rect x="841.6" y="88.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_end)" filter="url(#glow)"/>
+<text x="942.3" y="107.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">차트/그래프 결과 배출</text></svg></div>
+<h3>[개념 요약 (Concept)]</h3>
+<p>🎯 <strong>핵심 개념</strong> 데이터 분석 시 외부로 유출되면 안 되는 민감한 실무 데이터(엑셀 등)를 처리할 때 보안은 필수입니다. Gemini Notebooks는 <strong>보안 클라우드 코드 실행(Secure Cloud Code Execution)</strong> 환경을 제공하여, 노트북 내에 할당된 독립적인 클라우드 컴퓨터에서 파이썬(Python) 코드를 직접 실행합니다. 이를 통해 복잡한 엑셀 파일, 수십만 행의 데이터를 외부 유출 걱정 없이 자체적이고 안전하게 분석하고 시각화할 수 있습니다.</p>
+<p>🎤 <strong>시연 멘트</strong></p>
+<blockquote>"엑셀 파일에 담긴 민감한 대상자 데이터나 예산 내역, 함부로 챗GPT에 올리기 찜찜하셨죠? Gemini Notebooks는 여러분 각자에게 완벽하게 격리된 \'개인 클라우드 컴퓨터\'를 하나씩 제공합니다. 엑셀 파일을 올리고 분석을 요청하면, AI가 백그라운드에서 안전하게 파이썬 코드를 작성하고 실행하여 차트와 통계를 뽑아냅니다. 정보 유출의 위험 제로! 보안과 강력한 데이터 분석을 동시에 잡는 이 주목할 만한 기능을 직접 확인해보세요."</blockquote>
+<h3>[시연 (Demonstration)]</h3>
+<ol><li>실무 예산 및 사례관리 샘플 데이터(Excel/CSV) 업로드</li><li>프롬프트 창에 "이 엑셀 데이터의 월별 예산 집행 추이를 분석하고 막대 그래프로 시각화해줘" 입력</li></ol>
+<ol><li>AI가 독립 클라우드 환경에서 파이썬 코드를 실행(Code Execution)하여 결과를 도출하는 과정 및 보안성 강조</li></ol>
+<h3>[실습 (Practice)]</h3>
+<ol><li>배포된 실습용 엑셀 파일을 여러분의 노트북에 업로드하세요.</li><li>보안 클라우드 코드 실행을 유도하기 위해 "데이터를 분석하여 주요 시사점 3가지와 차트를 그려줘"라고 명령하세요.</li><li>생성된 차트와 데이터 분석 결과를 확인하세요.</li></ol>
+<h3>[검증 (Validation)]</h3>
+<ul><li>[ ] 데이터가 안전하게 처리되어 차트 및 분석 결과물로 도출되었는가?</li></ul>
+<ul><li>[ ] 코드 실행 과정(Code snippet)을 클릭하여 어떤 분석이 이루어졌는지 확인할 수 있는가?</li></ul>
+<h3>[최적화 (Optimization)]</h3>
+<ul><li>단순한 텍스트 질문을 넘어, 복잡한 통계나 엑셀 수식이 필요한 분석 작업도 이 기능을 통해 안전하고 신속하게 자동화해 보세요.</li></ul>
+<h2 class="ch" id="c4_5"><span class="num">4-5</span>Gmail 일괄 발송 봇 (자동화)</h2>
+<h3>[개념 이해]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"자활 근로자분들께 안내 문자나 이메일을 보내실 때, 이름만 바꿔서 수십 명에게 복사/붙여넣기로 보내신 적 있죠? 중간에 헷갈려서 김철수 님께 보낼 메일을 이영희 님께 보내서 진땀 뺀 경험, 다들 한 번쯤 있으실 겁니다. 우리의 뇌는 단순 반복 작업을 할 때 주의력이 급격히 떨어지도록 설계되어 있습니다. 인간의 실수는 당연한 겁니다. 이럴 땐 의지력에 기대지 말고 '시스템'에 맡겨야 합니다. 클릭 한 번으로 수백 명에게 각각의 이름이 들어간 개인화된 이메일을 발송하는 방법, 지금부터 배워보겠습니다."</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>학습 목표:</strong> 구글 시트의 명단과 데이터를 바탕으로, Gmail을 통해 각 대상자에게 맞춤형(개인화된) 이메일을 자동 일괄 발송하는 시스템을 구축합니다.</li><li><strong>핵심 개념:</strong></li><li><strong>메일 머지 (Mail Merge):</strong> 하나의 편지 본문 템플릿에 이름, 부서, 실적 등 수신자별로 다른 데이터를 자동으로 끼워 넣어 대량 발송하는 기법입니다.</li><li><strong>MailApp / GmailApp 클래스:</strong> 구글 앱스 스크립트에서 이메일을 발송하기 위해 사용하는 내장 기능입니다.</li><li><strong>행동 유도(Nudge) 기법:</strong> 실수에 대한 두려움을 없애기 위해, 실습 시 실제 메일 발송 대신 임시 보관함에 초안만 생성하는 안전장치(Draft)를 먼저 경험하게 합니다.</li></ul>
+<h3>[💻 시연]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"화면을 봐주세요. 시트에는 5명의 참여자 이름과 이번 달 교육 이수 시간이 적혀있습니다. 제가 스크립트를 실행하면 어떻게 될까요? 제 지메일 보낸편지함을 보겠습니다. 방금 5통의 메일이 동시에 발송되었네요. 내용을 보면 '김철수님, 이번 달 교육 15시간 이수하셨습니다', '이영희님, 이번 달 교육 20시간 이수하셨습니다'. 어떠신가요? 100명이어도, 1000명이어도 소요되는 시간은 같습니다."</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>시연 프로세스 요약:</strong></li><li>이름, 이메일 주소, 개별 안내 내용(예: 교육 시간)이 정리된 구글 시트 확인</li><li>이메일 제목 및 본문 템플릿 확인 (예: <code>{{이름}}님, 안내드립니다.</code>)</li><li>발송 스크립트 실행</li><li>Gmail 보낸편지함에서 개인화된 발송 결과 실시간 확인</li></ul>
+<h3>[✍️ 실습]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"이번엔 실수하면 어쩌나 걱정되시죠? 그래서 우리는 바로 보내지 않고, '임시 보관함'에 예쁘게 저장만 해두는 코드를 쓸 겁니다. 눈으로 확인하고 안심한 뒤에 발송할 수 있도록 안전장치를 마련했으니, 편안한 마음으로 따라오세요."</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>가상 데이터 구조 (샘플 시트):</strong></li><li>시트명: <code>메일발송명단</code></li><li>열 구조: A열(이름), B열(이메일), C열(교육이수시간), D열(발송상태)</li><li><em>주의:</em> 본인 이메일 주소를 2~3개 넣어서 직접 수신 테스트를 해보세요.</li><li><strong>AI 프롬프트 (ChatGPT/Gemini 용):</strong></li></ul>
+<p>    &gt; "구글 시트의 데이터를 기반으로 Gmail을 자동 발송하는 구글 앱스 스크립트를 작성해 줘.     &gt; 조건 1: A열은 이름, B열은 이메일 주소, C열은 교육이수시간이야. 데이터는 2행부터 시작해.     &gt; 조건 2: 이메일 제목은 '[자활센터] {이름}님, 교육 이수 현황 안내'로 해줘.     &gt; 조건 3: 이메일 본문은 '{이름}님, 이번 달 교육 이수 시간은 {교육이수시간}시간입니다. 감사합니다.'로 작성해 줘.     &gt; 조건 4: 바로 발송하지 말고, 일단 Gmail의 임시보관함(Draft)에 초안으로 생성해 줘.     &gt; 조건 5: 코드를 잘 모르는 초보자도 바로 쓸 수 있게 주석을 달아줘."</p>
+<ul><li><strong>샘플 코드 스크립트 (AI 생성 초안 생성용 코드):</strong></li></ul>
+<pre><code class="javascript">    function createDraftEmails() {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&quot;메일발송명단&quot;);
+      var startRow = 2; // 데이터 시작 행
+      var numRows = sheet.getLastRow() - 1; // 처리할 데이터 개수
+
+      if (numRows &lt; 1) return; // 데이터가 없으면 종료
+
+      var dataRange = sheet.getRange(startRow, 1, numRows, 3); // A, B, C열 가져오기
+      var data = dataRange.getValues();
+
+      for (var i = 0; i &lt; data.length; i++) {
+        var row = data[i];
+        var name = row[0];        // A열: 이름
+        var emailAddress = row[1]; // B열: 이메일
+        var hours = row[2];        // C열: 이수시간
+
+        if (!emailAddress) continue; // 이메일이 빈칸이면 건너뜀
+
+        // 이메일 템플릿 설정
+        var subject = &quot;[자활센터] &quot; + name + &quot;님, 교육 이수 현황 안내&quot;;
+        var message = name + &quot;님, 안녕하세요.\n\n&quot; +
+                      &quot;이번 달 선생님의 교육 이수 시간은 총 &quot; + hours + &quot;시간입니다.\n\n&quot; +
+                      &quot;감사합니다.&quot;;
+
+        // Gmail 임시보관함에 초안 생성 (바로 발송되지 않음!)
+        GmailApp.createDraft(emailAddress, subject, message);
+      }
+      SpreadsheetApp.getUi().alert(&#x27;임시보관함에 메일 초안이 생성되었습니다. Gmail을 확인해 보세요!&#x27;);
+    }</code></pre>
+<ul><li><strong>실습 체크리스트:</strong></li><li>[ ] 명단 시트에 테스트용 이메일 주소(본인 메일)를 정확히 입력했나요?</li></ul>
+<ul><li>[ ] 코드를 Apps Script 편집기에 붙여넣고 저장했나요?</li><li>[ ] 코드를 실행한 후, Gmail의 '임시보관함' 메뉴로 이동했나요?</li></ul>
+<ul><li>[ ] 임시보관함에 수신자별로 이름과 이수시간이 맞게 들어간 메일이 생성되었는지 확인했나요?</li></ul>
+<ul><li><strong>트러블슈팅 Q&amp;A:</strong></li><li><strong>Q: 'GmailApp에 대한 액세스 권한' 허용 창이 뜨는데 괜찮나요?</strong></li><li>A: 네, 스크립트가 내 지메일을 통해 메일을 초안으로 만들거나 발송하려면 권한이 필요합니다. 이전 실습처럼 '고급' 옵션을 통해 안전하게 승인해 주세요.</li><li><strong>Q: 이제 초안 말고 진짜로 바로 발송되게 하려면 어떻게 하죠?</strong></li><li>A: 코드의 마지막 줄 <code>GmailApp.createDraft(...)</code> 부분을 <code>GmailApp.sendEmail(...)</code>로 단어 하나만 바꿔주면 즉시 발송 봇으로 진화합니다.</li></ul>
+<ul><li><strong>구글 공식 도움말 링크:</strong></li><li><a href="https://support.google.com/mail/answer/12921167?hl=ko" target="_blank" rel="noopener">Gmail 이메일 대량 발송(메일 머지)</a></li></ul>
+<h3>[✅ 검증]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"지메일 임시보관함을 열어보세요. 여러분이 입력한 이름과 시간이 쏙쏙 들어가 있죠? 이 작은 성취감이 여러분의 뇌에 긍정적인 도파민 회로를 만들고 있습니다. 이제 안내문 발송 때문에 엑셀과 메일창을 수십 번씩 번갈아 보는 고통에서 완전히 벗어나셨습니다!"</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>역량 검증 루브릭:</strong></li><li><strong>초급 (1점):</strong> 코드를 실행하여 Gmail 임시보관함에 정상적으로 맞춤형 메일이 2건 이상 생성된 것을 확인했다.</li><li><strong>중급 (2점):</strong> 메일 본문(message 변수)의 내용을 자활센터의 실제 업무 안내 문구로 스스로 수정하여 초안을 생성할 수 있다.</li><li><strong>고급 (3점):</strong> 이메일 발송이 완료된 후 구글 시트 D열(발송상태)에 '발송완료'라는 텍스트가 자동으로 찍히도록 AI에게 코드를 수정해 달라고 요청하고 적용할 수 있다.</li></ul>
+<h3>[🚀 최적화]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"오늘 배운 기능을 자활 업무에 어떻게 적용할 수 있을까요? 매월 초 참여자분들께 급여 명세나 교육 안내를 보낼 때, 혹은 사업단별 실적 통계를 담당자에게 개별 통보할 때 이 봇을 활용해보세요. 업무의 질이 완전히 달라질 것입니다."</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>도입 전 (Before):</strong></li><li>단체 메일 발송 시 수신자 이름을 넣지 못해 기계적인 어투 사용.</li><li>개별 발송 시 복사/붙여넣기 실수로 인한 개인정보 유출 및 클레임 발생 위험.</li><li>수십 명 발송 시 최소 1시간 이상 소요.</li><li><strong>도입 후 (After):</strong></li><li>클릭 한 번으로 수백 명에게 각각 이름을 부르는 다정하고 개인화된 안내 메일 발송.</li><li>수기 입력 과정이 사라져 오기(誤記) 위험이 줄고 신뢰도가 올라감.</li><li>소요 시간: 1분 이내. 수작업으로 반복하던 과정을 한 번의 실행으로 대체.</li></ul>
+<hr>
+<h2 class="ch" id="c4_6"><span class="num">4-6</span>엑셀 연동 및 자활 맞춤형 업무 템플릿(Gateway) 구축</h2>
+<h3>[개념 이해]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"지금까지 배운 챗GPT, 구글 시트 봇, 메일 봇... 너무 좋긴 한데 '이걸 다 언제 하나하나 열어서 쓰나' 싶으시죠? 인간의 뇌는 접근하기 복잡하고 경로가 길어지면 실행을 포기해 버립니다(마찰 비용, Friction Cost). 그래서 오늘은 이 모든 도구를 한 화면에 모아두는 '나만의 업무 관제탑(Gateway)'을 만들 겁니다. 아침에 출근해서 이 화면 하나만 띄우면 모든 업무가 일사천리로 진행되는 주목할 만한 경험을 하시게 될 겁니다."</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>학습 목표:</strong> 구글 시트를 대시보드로 활용하여, 기존의 엑셀 데이터 연동은 물론 앞서 배운 AI 툴과 자동화 스크립트를 한곳에서 제어할 수 있는 '자활 맞춤형 통합 업무 템플릿(Gateway)'을 설계합니다.</li><li><strong>핵심 개념:</strong></li><li><strong>대시보드(Dashboard) / 게이트웨이(Gateway):</strong> 흩어진 정보와 도구들을 시각적으로 한곳에 모아, 최소한의 클릭으로 업무를 수행할 수 있게 만든 중앙 통제소입니다.</li><li><strong>인지적 마찰(Cognitive Friction) 최소화:</strong> 자주 쓰는 프롬프트, 시트 링크, 자동화 버튼을 단일 화면에 배치하여 도구 간 전환에 드는 뇌의 에너지 소모를 줄입니다.</li></ul>
+<h3>[💻 시연]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"자, 제 화면을 띄워보겠습니다. 어떠신가요? 엑셀처럼 빽빽한 숫자만 있는 게 아니죠? 좌측에는 '자주 쓰는 AI 프롬프트 복사 버튼', 중앙에는 '각 사업단 엑셀 데이터 현황(자동 연동)', 우측에는 방금 배운 '데이터 추출 봇 실행 버튼'과 '메일 발송 버튼'이 예쁜 아이콘으로 정리되어 있습니다. 이것이 바로 앞으로 여러분이 매일 아침 마주할 여러분만의 '무기 창고'입니다."</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>시연 프로세스 요약:</strong></li><li>강사가 미리 제작한 '자활 통합 업무 Gateway' 시트 시연.</li><li>로컬 환경의 엑셀 파일 데이터가 구글 시트로 연동(Google Drive 데스크톱 앱 활용)되는 과정 설명.</li><li>대시보드 내 버튼(그림 삽입 후 스크립트 연결)을 클릭하여 메일 봇이 작동하는 모습 시연.</li></ul>
+<h3>[✍️ 실습]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"이제 여러분만의 게이트웨이를 설계할 시간입니다. 기술적인 완벽함보다 중요한 것은 '내 업무 동선에 맞게' 버튼과 링크를 배치하는 것입니다. 제가 뼈대를 만들어 둔 템플릿을 복사해서, 여러분의 입맛에 맞게 꾸며보세요. 레고 블록을 조립하듯 즐겁게 해봅시다!"</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>실습 미션: 나만의 업무 Gateway 구축하기</strong></li><li><strong>템플릿 복사:</strong> 제공된 <code>[Gateway 템플릿]</code> 시트를 내 드라이브로 사본 저장.</li><li><strong>레이아웃 구성:</strong></li><li><strong>영역 A (참고자료 링크):</strong> 자주 가는 자활정보시스템, 보건복지부 지침서 웹링크 삽입.</li><li><strong>영역 B (프롬프트 저장소):</strong> 3회차에서 만든 '우수 프롬프트'들을 적어두고 필요할 때 복사해서 쓸 수 있게 세팅.</li><li><strong>영역 C (자동화 버튼):</strong> '삽입 &gt; 이미지 &gt; 셀 위에 이미지 삽입'으로 예쁜 버튼 모양 이미지를 넣습니다.</li></ul>
+<ol><li><strong>버튼에 스크립트 연결하기:</strong></li></ol>
+<ul><li>삽입한 이미지 우측 상단의 점 3개(메뉴) 클릭 &gt; <code>스크립트 할당</code> 선택.</li></ul>
+<ul><li>앞서 4-4에서 만든 함수 이름(예: <code>consolidateData</code>)을 입력하고 확인.</li></ul>
+<ul><li>이제 이 그림을 클릭하면 데이터 취합 매크로가 실행됩니다!</li></ul>
+<ul><li><strong>엑셀 연동 팁 (Google Drive 데스크톱 활용):</strong></li><li>로컬 PC의 특정 폴더(예: <code>C:\자활데이터</code>)를 구글 드라이브 데스크톱 앱을 통해 동기화 폴더로 설정합니다.</li><li>해당 폴더에 엑셀 파일을 저장하면 자동으로 구글 드라이브에 업로드되며, 구글 시트 포맷으로 열어 Gateway와 데이터를 연결할 수 있습니다. (<code>IMPORTRANGE</code> 함수 활용)</li></ul>
+<ul><li><strong>실습 체크리스트 (행동 유도):</strong></li><li>[ ] Gateway 시트를 사본 저장하고 내 이름을 넣어 제목을 변경했나요? (예: 김자활의 업무 관제탑)</li><li>[ ] 자주 쓰는 프롬프트를 시트 한편에 붙여넣기 해두었나요?</li><li>[ ] 버튼 이미지를 삽입하고, 이전에 만든 스크립트 이름을 정확히 할당했나요?</li></ul>
+<ul><li>[ ] 버튼을 클릭했을 때 스크립트가 정상적으로 실행되나요?</li></ul>
+<ul><li><strong>트러블슈팅 Q&amp;A:</strong></li><li><strong>Q: 버튼을 눌렀는데 '스크립트 함수를 찾을 수 없습니다'라고 나옵니다.</strong></li></ul>
+<ul><li>A: 스크립트 할당 시 함수 이름에 오타가 있거나, 괄호 <code>()</code>를 포함해서 적었기 때문입니다. <code>consolidateData()</code>가 아니라 <code>consolidateData</code> 까지만 적어주세요.</li><li><strong>Q: 엑셀 파일과 구글 시트를 연동하려면 꼭 드라이브 데스크톱 앱을 깔아야 하나요?</strong></li><li>A: 실시간 동기화를 원한다면 설치하는 것이 가장 편리합니다. 설치가 어려운 환경이라면 매번 엑셀 파일을 구글 드라이브 웹에 수동으로 드래그 앤 드롭해서 업로드해도 기능은 동일하게 작동합니다.</li></ul>
+<ul><li><strong>구글 공식 도움말 링크:</strong></li><li><a href="https://developers.google.com/apps-script/guides/menus?hl=ko#clickable_images_and_drawings_in_google_sheets" target="_blank" rel="noopener">Google 스프레드시트의 버튼에 스크립트 할당하기</a></li></ul>
+<h3>[✅ 검증]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"여러분이 만든 게이트웨이를 화면에 띄워주세요. 멋진 관제탑들이 만들어졌네요! 버튼 하나 클릭하는 것만으로 복잡한 코드가 뒤에서 알아서 돌아가는 이 시스템. 이것이 바로 우리가 그토록 원했던 '스마트 워크'의 완성입니다. 스스로에게 큰 박수를 쳐주시기 바랍니다!"</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>역량 검증 루브릭:</strong></li><li><strong>초급 (1점):</strong> Gateway 템플릿에 링크 및 프롬프트를 정리하고 시각적으로 레이아웃을 구성했다.</li><li><strong>중급 (2점):</strong> 이미지 버튼을 생성하고 스크립트 할당을 완료하여 대시보드 내에서 자동화 기능을 원클릭으로 구동할 수 대시보드 내에서 자동화 기능을 원클릭으로 구동할 수 있다.</li><li><strong>고급 (3점):</strong> <code>IMPORTRANGE</code> 함수를 사용하여 다른 시트(또는 동기화된 엑셀)의 실시간 데이터를 Gateway 시트에 대시보드 형태로 연동하여 시각화(차트 등)를 구현했다.</li></ul>
+<h3>[🚀 최적화]</h3>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<blockquote>"오늘 만드신 이 Gateway 시트를 브라우저의 '시작 페이지'로 설정해두세요. 출근 후 엑셀 열고, 메일 열고, 카톡 여는 대신 이 창 하나만 열면 됩니다. 여러분의 뇌는 불필요한 탐색을 줄이고, 자활 사업 기획과 참여자 분들과의 소통이라는 '진짜 가치 있는 일'에 오롯이 집중할 수 있게 될 것입니다."</blockquote>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ul><li><strong>도입 전 (Before):</strong></li><li>업무 수행을 위해 윈도우 탐색기, 여러 개의 엑셀 파일, 웹 브라우저 탭, 이메일 클라이언트를 어지럽게 오감.</li><li>자료를 찾고 도구를 전환하는 데 인지적 마찰과 피로도 발생 (컨텍스트 스위칭 비용).</li><li><strong>도입 후 (After):</strong></li><li>모든 핵심 정보와 자동화 실행 버튼이 단일 'Gateway' 시트에 통합됨.</li><li>업무 시작 시 1개의 탭만 띄우면 됨. 인지 부하 감소.</li><li>반복 업무는 원클릭 봇에게 맡기고, 실무자는 최종 검토 및 고부가가치 의사결정에 집중.</li></ul>
+<div class="marker">🗣️ <strong>강사 멘트 (도파민 유도 오프닝):</strong> </div>
+<p>"선생님들, 우리가 하루 일과 중 가장 많은 에너지를 쏟는 곳이 어디일까요? 끊임없는 서류 작업과 감정 노동이 동반되는 상담 현장일 것입니다. 뇌과학적으로 우리의 전두엽은 하루에 내릴 수 있는 결정과 집중력의 총량이 정해져 있습니다. 이를 '인지 자원'이라고 하죠. 오늘 우리가 배울 AI 기술은 여러분의 고갈된 인지 자원을 보존해 줄 '디지털 보조 뇌(Digital Second Brain)'를 구축하는 과정입니다. 지금부터 여러분은 단순 반복 업무에서 해방되어, 사람과 눈을 맞추고 공감하는 '진짜 사회복지 전문가'로서의 핵심 가치에 온전히 에너지를 집중하시게 될 것입니다. 자, 우리의 뇌에 새로운 시냅스를 연결해 볼까요?"</p>
+<hr>
+<h2 class="ch" id="c4_7"><span class="num">4-7</span>자체 평가 시스템 (Rubric 활용 피드백)</h2>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"자, 여러분! 지난 4주간의 치열했던, 그러나 경이로운 여정을 뚫고 드디어 마지막 관문에 도달하셨습니다. 우리 뇌의 보상 회로(Reward Circuit)는 스스로 얼마나 성장했는지 눈으로 확인하고 구체적이고 즉각적인 피드백을 받을 때 가장 강력한 도파민(Dopamine)을 분비합니다. 막연히 '수고했다', '잘했다'가 아니라 '어느 부분을 얼마나 정교하게 잘해냈는지' 아는 것이 핵심이죠. 지금부터 우리는 AI를 활용해 여러분 스스로의 업무 역량과 자활 참여자의 성장을 객관적으로 증명하고 피드백할 '자체 평가 루브릭(Rubric)' 시스템을 구축해 볼 것입니다. 이는 단순한 평가가 아닙니다. 여러분의 전문성을 가시화하는 승리의 기록이자, 참여자들을 긍정적 행동으로 유도(Nudge)하는 강력한 넛지 설계입니다. 여러분의 전두엽(Prefrontal Cortex)이 가장 편안하게 결정을 내릴 수 있도록, 인지 부하를 최대한 낮춰 봅시다."</p>
+<div class="marker">📘 <strong>[교재 내용]</strong></div>
+<h3>[개념 이해]</h3>
+<p><strong>루브릭(Rubric)을 활용한 인지 부하 감소</strong></p>
+<ul><li>존 스웰러(John Sweller)의 인지 부하 이론에 따르면, 인간의 작업 기억(Working Memory) 용량은 한계가 있습니다. 실무자가 참여자의 태도, 직무 능력, 대인 관계 등을 백지상태에서 주관적으로 서술하여 평가하려 하면 '외재적 인지 부하(Extraneous Cognitive Load)'가 극도로 상승하여 엄청난 피로감을 느낍니다.</li><li>루브릭은 수행 목표에 도달했는지를 판단하기 위해 명확한 기준(Criteria)과 수준(Levels)을 제시하는 다차원적 평가 척도입니다. </li><li>AI(ChatGPT, Gemini)를 활용하면 상황과 직무(예: 바리스타, 청소, 자원순환, 세차 등)에 맞는 맞춤형 행동 지표 루브릭을 즉시 생성할 수 있습니다. 피평가자(참여자)는 모호한 지적이 아닌 '구체적 행동 지침'을 받게 되어 심리적 저항감이 낮아지고 성취 동기가 유발됩니다.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li><strong>기존 방식의 한계 노출</strong>: 강사가 화면을 통해 빈 엑셀 시트를 엽니다. "자, 참여자 10명의 이번 달 근태와 직무 태도를 적어봅시다"라고 말하며, 커서만 깜빡이는 막막한 화면(높은 인지 부하 상태)을 보여줍니다.</li><li><strong>AI 프롬프트 매직 시연</strong>: ChatGPT 또는 Gemini를 열고 고도화된 프롬프트를 입력합니다.</li></ol>
+<ul><li><em>입력창 시연</em>: "자활근로 바리스타 사업단 참여자를 위한 4단계 루브릭 표를 작성해줘. 평가 항목은 [위생 관리, 고객 응대, 레시피 숙지도, 팀워크]이며, 각 단계(우수/보통/미흡/개선필요)별 구체적인 행동 지표를 포함해줘."</li></ul>
+<ol><li><strong>결과물 리뷰 및 Nudge 적용</strong>: 도출된 결과물에서 부정적인 단어(예: '불성실함', '못함')를 AI에게 요청하여 긍정적이고 중립적인 행동 교정 언어(예: '위생 지침에 대한 추가 안내가 필요함')로 즉시 변환하는 과정을 시연합니다.</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정</strong>: 여러분은 '내일어스(가상)' 친환경 자원순환 사업단의 실무자입니다. 최근 참여자들이 분리수거 작업 속도와 정확도가 널뛰기를 하고, 팀원 간 사소한 다툼이 발생하고 있습니다. 주관적 감정을 배제하고, 객관적이고 발전적인 피드백을 주기 위해 '행동 기반 평가 루브릭'을 만드세요.</p>
+<p><strong>구체적인 프롬프트 (Copy &amp; Paste 용)</strong>:</p>
+<pre><code class="text">역할: 15년 차 자활사업단 직무 훈련 전문가이자 산업 심리 상담사
+작업: 친환경 자원순환 사업단 참여자들을 위한 360도 다면 평가 및 피드백 루브릭 생성
+목표 대상: 자활근로 참여자 (다양한 연령대 및 심리적 취약성 고려)
+평가 항목: 
+ 1) 작업 정확도 (분리수거 기준 숙지 및 적용)
+ 2) 작업 효율 (안전 수칙을 준수하며 속도 유지)
+ 3) 동료와의 협업 및 갈등 관리
+ 4) 긍정적 작업 태도 및 출결
+형식: Markdown 테이블 형식
+단계: 1단계(집중 지도 필요) ~ 4단계(모범적 수행 및 동료 리드)
+제약 조건(중요): 
+ - 각 단계별 평가는 부정적인 형용사(예: 나쁘다, 게으르다, 불친절하다)를 절대 사용하지 마.
+ - 대신 구체적으로 관찰 가능한 &#x27;행동 지표&#x27;를 서술해. (예: &quot;플라스틱과 비닐 분류 기준을 주 3회 이상 혼동하여 재교육이 필요한 상태&quot;)
+ - 평가가 끝난 후 참여자에게 전달할 수 있는 &#x27;칭찬 샌드위치(강점-개선점-격려)&#x27; 형태의 피드백 스크립트 예시도 1개 작성해 줘.</code></pre>
+<p><strong>가상 샘플데이터 적용 연습</strong>: 루브릭이 생성되면, 다음 데이터를 AI에게 추가로 던져서 맞춤형 피드백을 받아보세요.</p>
+<blockquote><em>추가 프롬프트</em>: "우리 사업단의 '김철수' 참여자는 작업 속도는 4단계 수준으로 빠르지만, 플라스틱/비닐 분류 기준을 자주 헷갈려서 정확도는 2단계야. 그리고 동료와 대화가 거의 없어 협업은 2단계야. 이 분을 위한 1:1 상담용 스크립트를 부드럽고 동기부여되는 톤으로 작성해줘."</blockquote>
+<p><strong>실습 체크리스트</strong>:</p>
+<ul><li>[ ] 프롬프트에 역할, 작업, 항목, 형식, 단계, 조건이 누락 없이 포함되었는가?</li><li>[ ] 생성된 표가 부정적 꼬리표(Labeling)가 아닌, 눈에 보이는 관찰 가능한 '행동 기반 지표'로 구성되었는가?</li><li>[ ] 가상 샘플데이터(김철수)를 AI에 입력하여, 참여자의 자존감을 지켜주면서 행동 수정을 유도하는(Nudge) 상담 스크립트를 성공적으로 도출했는가?</li></ul>
+<p><strong>트러블슈팅 Q&amp;A</strong>:</p>
+<ul><li><strong>Q</strong>: 표가 너무 길고 복잡해서 오히려 보기가 힘듭니다. </li><li><strong>A</strong>: 프롬프트의 묘미는 대화에 있습니다. 당황하지 마시고 이어서 <em>"표의 각 셀당 내용을 핵심 키워드 중심의 2문장 이내로 요약해줘"</em> 라고 추가로 요청하세요. AI는 완벽한 첫인상을 주지 않을 수 있지만, 가장 말 잘 듣는 수정 작업자입니다.</li><li><strong>도움말 링크</strong>: <a href="https://support.google.com/gemini/answer/14184041?hl=ko" target="_blank" rel="noopener">Gemini 앱 대답 내보내기(스프레드시트 포함)</a></li></ul>
+<h3>[✅ 검증]</h3>
+<p><strong>역량 검증 루브릭 (강사 및 상호 평가용)</strong></p>
+<table><thead><tr><th>평가 항목 (핵심 지표)</th><th>마스터 (4단계) - 🚀 도파민 폭발</th><th>프로 (3단계)</th><th>루키 (2단계)</th><th>니즈 개선 (1단계)</th></tr></thead><tbody><tr><td><strong>프롬프트 통제력</strong></td><td>역할, 조건, 제약사항을 완벽히 통제하여 한 번에 원하는 톤앤매너의 루브릭과 피드백 스크립트를 추출함.</td><td>기본 프롬프트를 작성하고 1~2회 수정을 통해 원하는 결과를 얻어냄.</td><td>단순 지시어만 입력하여 결과물의 실용성이 다소 떨어짐.</td><td>AI의 엉뚱한 답변에 당황하여 실습을 중단함.</td></tr></tbody></table>
+<p>| <strong>행동 유도(Nudge) 적용</strong> | 결과물에 참여자의 자존감을 지켜주는 긍정적 언어 및 명확한 넛지 설계가 포함되어 상담에 즉시 투입 가능함. | 객관적 지표는 명확하게 나왔으나, 피드백 텍스트가 다소 기계적임. | 평가 지표에 여전히 주관적이거나 부정적인 라벨링 표현이 일부 남아 있음. | 참여자를 질책하는 듯한 전통적인 평가 언어가 그대로 도출됨. |</p>
+<h3>[🚀 최적화]</h3>
+<ul><li>🔴 <strong>Before (도입 전)</strong>: 연말이나 월말 평가 때마다 실무자가 엑셀을 열고 "이 참여자는 태도가 불량함, 개선 의지 없음"이라고 감정적이고 주관적으로 텍스트를 타이핑하느라 1명당 30분씩 소요. 평가 후 참여자는 상처를 받고 실무자에게 반발하며 갈등 발생. (높은 스트레스와 코르티솔 분비)</li><li>🟢 <strong>After (도입 후)</strong>: AI 프롬프트 10초 입력 후 직무별 '행동 기반 루브릭' 획득. 객관적 행동 지표를 체크리스트처럼 활용하고, AI가 생성한 '칭찬 샌드위치 스크립트'를 통해 피드백함. 상담 준비 시간이 50% 이상 단축되고, 참여자는 "내가 구체적으로 무엇을 고치면 되는지" 명확히 알게 되어 스스로 행동을 교정함. (낮은 인지 부하, 높은 성취감)</li></ul>
+<hr>
+<h2 class="ch" id="c4_8"><span class="num">4-8</span>지속 학습(Continuous Learning) 플랜 (교육 후 행동 유도)</h2>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"우리의 뇌는 '에너지 보존 법칙'을 아주 충실히 따릅니다. 인간의 뇌는 몸 전체 에너지의 20%를 넘게 쓰는 엄청난 먹보죠. 그래서 늘 하던 익숙한 방식, 에너지가 덜 드는 과거의 방식을 좋아합니다. 교육장을 나서는 순간, 여러분의 뇌는 다시 '엑셀 노가다'와 '맨땅에 헤딩하는 기안서 작성'으로 돌아가려 할 겁니다. 이것은 여러분의 의지 부족이 아닙니다. 극히 자연스러운 뇌과학적 현상입니다. 그렇다면 어떻게 해야 할까요? 나약한 의지에 기대지 말고, 완벽한 '시스템'에 기대야 합니다. 오늘 배운 방대한 내용을 아주 작고 가벼운, 실패하기가 더 힘든 마이크로 단위의 행동으로 쪼개어 여러분의 일상에 찰싹 붙여두는 것. 이것이 바로 마이크로 루틴(Micro-routine)이자 최고의 넛지 설계입니다. 앞으로 한 달, 여러분의 업무용 PC와 스마트폰이 여러분을 자동으로 훈련시키는 가장 훌륭한 AI 코치가 되도록 강제 세팅해 보겠습니다!"</p>
+<div class="marker">📘 <strong>[교재 내용]</strong></div>
+<h3>[개념 이해]</h3>
+<p><strong>행동 유도(Nudge)와 뇌과학적 습관 형성의 법칙 (The Habit Loop)</strong></p>
+<ul><li>찰스 두히그(Charles Duhigg)와 제임스 클리어(James Clear)의 이론에 따르면, 모든 습관은 [신호(Cue) → 열망(Craving) → 반응(Response) → 보상(Reward)]의 루프를 거칩니다.</li><li>AI를 실무에 적용하는 것도 마찬가지입니다. "내일 당장 거대한 사업계획서를 AI로 써야지"라는 목표는 너무 큰 마찰력(Friction)을 발생시켜 뇌가 실행을 포기하게 만듭니다.</li><li>대신 환경을 조작해야 합니다(신호 조작). 출근해서 크롬을 켜면 무조건 AI 화면이 뜨게 만들고, '매일 아침 이메일 요약을 AI에게 시켜보기'처럼 아주 사소한 행동(반응)으로 쪼갠 뒤, 5분 만에 끝난 업무로 커피 한 잔의 여유(보상)를 즐기는 사이클을 만들어야 합니다.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li><strong>신호(Cue) 설계</strong>: 크롬 브라우저 설정(Settings) &gt; 시작 그룹(On startup)에서 특정 페이지 열기로 <code>chatgpt.com</code> 또는 <code>gemini.google.com</code>을 고정하는 방법을 시연합니다. (마찰력 제로 만들기)</li><li><strong>반응(Response) 설계</strong>: 자주 쓰는 '기본 뼈대 프롬프트'를 윈도우 스티커 메모(Sticky Notes)나 노션, 바탕화면 메모장에 템플릿화하여 복사-붙여넣기 1초 컷으로 만드는 과정을 시연합니다.</li><li><strong>넛지(Nudge) 알림</strong>: 구글 캘린더를 열어 매주 금요일 오후 4시에 "이번 주 업무 중 AI로 10분 아낀 사례 1개 찾기"라는 반복 일정을 등록하고, 10분 전 스마트폰 푸시 알림이 오도록 세팅하는 넛지 기법을 보여줍니다.</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정</strong>: 교육이 끝난 다음 날 아침, 여러분은 바쁜 센터로 출근했습니다. 정신없는 업무 속에서도 AI를 잊지 않고 활용하여 점진적으로 퇴근 시간을 앞당길 수 있는 자신만의 '4주 환경 설계 플랜'을 인공지능에게 직접 짜달라고 요청합니다.</p>
+<p><strong>실천 과제 및 프롬프트 (AI를 나의 개인 코치로 만들기)</strong>:</p>
+<pre><code class="text">역할: 세계 최고 수준의 행동경제학 기반 습관 형성 코치 및 업무 생산성 전문가
+상황: 나는 방금 4주간의 &#x27;생성형 AI 자활 실무 활용&#x27; 교육을 수료한 사회복지사/직업상담사야.
+목표: 교육 내용을 까먹지 않고 실무에 자연스럽게 녹여내기 위해, 매일 딱 &#x27;하루 3분~5분&#x27;만 투자하는 4주짜리 &lt;AI 활용 마이크로 루틴 플랜&gt;을 표로 짜줘.
+조건:
+1. 나의 의지력을 절대 믿지 마. 무조건 아주 쉽고, 사소하고, 실패할 수 없는 미션이어야 해. (예: 하루 1번 무조건 AI에게 날씨 묻기 등 워밍업 포함)
+2. 매일 미션을 달성할 때마다 작은 성취감을 느낄 수 있도록 도파민을 뿜뿜하게 만드는 위트 있는 응원 멘트(한 줄)를 표의 우측 비고란에 포함해 줘.
+3. 1~4주차까지 난이도가 아주 미세하게 계단식으로 올라가게 설계해 줘.
+4. 월~금까지만 미션을 주고, 주말은 철저히 쉬게 해. 금요일 미션은 항상 &#x27;한 주간의 소소한 회고&#x27;로 고정해 줘.
+출력 형식: 주차별, 요일별 미션과 응원 멘트가 담긴 깔끔한 마크다운 표
+</code></pre>
+<p><strong>실습 체크리스트</strong>:</p>
+<ul><li>[ ] 내 크롬/엣지 브라우저의 시작페이지를 AI 챗봇 사이트로 변경(또는 북마크바 맨 앞 첫 번째에 배치)했는가?</li><li>[ ] 나만의 '프롬프트 보관함' 파일(메모장, 한글, 노션 등 무엇이든)을 만들고, 방금 전 실습했던 루브릭 프롬프트를 저장했는가?</li><li>[ ] AI가 짜준 4주 마이크로 루틴 플랜 중 당장 내일 해야 할 '1주차 1일 미션'을 내 구글/네이버 스마트폰 캘린더에 알림과 함께 등록했는가?</li></ul>
+<p><strong>트러블슈팅 Q&amp;A</strong>:</p>
+<ul><li><strong>Q</strong>: 캘린더 알림이 와도, 업무 전화가 오면 자꾸 무시하게 되고 나중엔 쌓여서 안 봅니다.</li><li><strong>A</strong>: 알림 제목의 텍스트가 뇌를 찌르지 못해서 그렇습니다. "AI 실습하기"라는 지루한 제목 대신, "지금 AI한테 메일 초안 안 맡기면 오늘 야근 확정 😱" 같이 행동 경제학에서 말하는 '손실 회피(Loss Aversion)' 성향을 자극하는 강렬한 제목으로 변경해 보세요. 훨씬 클릭률이 높아집니다.</li></ul>
+<ul><li><strong>도움말 링크</strong>: <a href="https://support.google.com/calendar/answer/37242" target="_blank" rel="noopener">Google 캘린더 알림 설정 및 맞춤설정, 행동 유도 디자인</a></li></ul>
+<h3>[✅ 검증]</h3>
+<p><strong>역량 검증 루브릭</strong></p>
+<table><thead><tr><th>평가 항목</th><th>마스터 (4단계)</th><th>프로 (3단계)</th><th>루키 (2단계)</th><th>니즈 개선 (1단계)</th></tr></thead><tbody><tr><td><strong>물리적/디지털 환경 설계</strong></td><td>브라우저 시작페이지 등록, 단축키 세팅, 프롬프트 템플릿 바탕화면 보관함 생성을 완벽히 완료하여 마찰력을 0으로 만듦.</td><td>북마크 등록 및 캘린더 알림 설정을 1개 이상 완료하여 최소한의 진입점은 만듦.</td><td>계획만 짜고 실제 디지털 환경 설정을 완료하지 않음.</td><td>PC 세팅 변경법을 몰라 기존 환경을 그대로 유지함.</td></tr><tr><td><strong>행동 플랜의 현실성</strong></td><td>AI가 제시한 플랜을 무비판적으로 수용하지 않고, 자신의 실제 자활 업무(상담, 행정 등) 사이클에 맞게 구체적으로 수정하여 캘린더에 등록함.</td><td>AI가 제시한 플랜의 내용을 복사하여 캘린더에 그대로 등록함.</td><td>플랜 자체가 하루 30분 이상 소요되는 거창한 내용이라 3일 내 포기가 예상됨.</td><td>미션 등록을 전혀 하지 않음.</td></tr></tbody></table>
+<h3>[🚀 최적화]</h3>
+<ul><li>🔴 <strong>Before (도입 전)</strong>: "강의 정말 좋았다! 다음 달에 여유 생기면 본격적으로 써봐야지"라며 다짐하지만, 일상에 치여 1년 뒤에도 비밀번호를 잊어버려 접속조차 안 함 (의지력 고갈 및 실행력 0%).</li><li>🟢 <strong>After (도입 후)</strong>: 출근해서 웹 브라우저를 열면 무조건 AI 화면이 대문짝만 하게 나옴. 모니터 옆에는 프롬프트 컨닝 페이퍼가 붙어 있음. 점심 식단부터 민원인 답변까지 무의식적으로 매일 3번 이상 AI와 대화하는 것이 숨 쉬듯 자연스러운 '루틴'이 됨 (시스템화 완료 및 지속 성장 보장).</li></ul>
+<hr>
+<h2 class="ch" id="c4_9"><span class="num">4-9</span>커뮤니티(Community) 구축 방안 (실무자 간 지식 공유)</h2>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"여러분, 아프리카 마사이족 속담에 '빨리 가려면 혼자 가고, 멀리 가려면 함께 가라'는 말이 있죠? AI 시대, 초가속의 시대에는 이 말이 이렇게 바뀝니다. <strong>'빨리 가려면 AI랑 가고, 멀리 지치지 않고 가려면 커뮤니티(동료)와 함께 가라!'</strong> 혼자서 조직의 혁신을 주도하고 공부하는 것은 매우 고독하고 스트레스받는 일입니다. 하지만 상상해 보세요. 내가 잠시 짬을 내어 짠 '상담일지 요약 프롬프트' 하나를 단톡방에 무심코 올렸는데, 옆 센터 동료의 퇴근 시간을 무려 1시간이나 앞당겼다면요? 그 동료가 카톡으로 감동의 눈물을 흘리며 기프티콘을 보내올 때, 여러분의 뇌에서는 사회적 유대감을 강화하는 '옥시토신(Oxytocin)'과 엄청난 쾌감을 주는 '도파민'이 동시에 폭발합니다. 오늘 우리는 서로의 삽질을 줄여주고 퇴근을 앞당겨 줄, 인천 자활 실무자들만의 가장 강력하고 든든한 'AI 지식 공유 연대'를 런칭할 것입니다."</p>
+<div class="marker">📘 <strong>[교재 내용]</strong></div>
+<h3>[개념 이해]</h3>
+<p><strong>지식 공유의 네트워크 효과와 심리적/사회적 보상</strong></p>
+<ul><li>NTL(National Training Laboratories)의 학습 피라미드에 따르면, 단순히 강의를 듣는 것(5%)보다 학습한 내용을 '타인에게 가르치거나 공유할 때' 기억 지속률이 무려 90%까지 치솟습니다. 프롬프트를 공유하는 행위 자체가 스스로를 전문가로 만드는 가장 빠른 지름길입니다.</li><li>실무자 간의 프롬프트 공유 커뮤니티(카카오톡 오픈채팅방, 구글 공유 스프레드시트, 노션 워크스페이스 등)를 구축하면, 개개인의 노력이 복리로 쌓이는 네트워크 효과(Network Effect)가 발생합니다.</li><li>핵심 성공 요인은 완벽하게 다듬어진 결과물만 공유하는 엄숙주의를 탈피하는 것입니다. "AI가 이상한 대답을 했어요ㅋㅋ" 같은 실패 사례나 에러 화면도 농담처럼 공유할 수 있는 유쾌한 연대감이 필요합니다.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li><strong>지식 저장소(KMS) 생성 시연</strong>: 강사가 구글 스프레드시트를 활용해 빠르고 직관적인 『인천 자활 AI 프롬프트 도서관』 공유 문서를 생성하고 실시간으로 편집 권한 링크를 배포하는 시연. (컬럼 예: 작성자, 업무 분류, 프롬프트 원문, 깨알 팁, 사용 후기)</li><li><strong>공유 포맷팅 시연</strong>: 카카오톡 단체방이나 밴드에 가독성 좋게 성공 사례 1개를 양식화(이모지 팍팍 넣어서)하여 공유하는 시연.</li><li><strong>게이미피케이션(Gamification) 넛지</strong>: 공유 문서에 가장 많이 프롬프트를 올린 사람의 이름 옆에 자동으로 왕관(👑)이나 불꽃(🔥) 이모지가 달리도록 스프레드시트 조건부 서식을 세팅하는 소소한 재미 요소 시연.</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정</strong>: 동료들에게 내가 개발한 강력한 무기(프롬프트)를 아낌없이 나누어주고, 우리 네트워크의 영웅이 되어봅시다. 동시에 삭막한 단톡방을 온기 넘치는 놀이터로 만들 커뮤니티 규칙을 세웁니다.</p>
+<p><strong>구체적인 프롬프트 (AI에게 커뮤니티 빌딩 전략 자문 구하기)</strong>:</p>
+<pre><code class="text">역할: 실리콘밸리식 유연한 조직 문화 디자이너이자 커뮤니티 빌더
+상황: 인천지역 자활센터 실무자(사회복지사 등) 30명이 모인 카카오톡 톡방을 &#x27;AI 실무 활용 공유방&#x27;으로 운영하려고 해. 다들 업무가 바쁘고 처음엔 눈치를 많이 보는 성향이야.
+목표: 사람들이 눈치 보지 않고 아주 사소한 질문이나, 실패한 프롬프트라도 유쾌하게 공유할 수 있도록 심리적 장벽을 낮춰주는 &#x27;커뮤니티 그라운드 룰(Ground Rules)&#x27; 5가지를 작성해 줘.
+조건:
+1. 너무 관공서처럼 엄숙하지 않고, 센스 있고 위트 있는 톤앤매너 유지.
+2. 매주 수요일 오후 3시는 무조건 &#x27;내 프롬프트 자랑 타임&#x27;으로 지정하는 룰을 포함해 줘.
+3. 누군가 작은 내용이라도 공유했을 때, 나머지 사람들이 의무적으로 쏟아내야 하는 격렬한 리액션(이모지, 칭찬 등)에 대한 행동 지침도 반드시 넣어 줘.</code></pre>
+<p><strong>실습 체크리스트</strong>:</p>
+<ul><li>[ ] 강사가 개설한 '인천 자활 AI 네트워크' 구글 스프레드시트(또는 밴드/카톡방) 링크를 클릭하여 정상적으로 입장하였는가?</li></ul>
+<ul><li>[ ] 오늘 또는 지난 4주간 실습하면서 나에게 가장 유용했던 '인생 프롬프트' 1개를 복사하여 공유 문서에 업로드했는가? (제목, 프롬프트 전문, 활용 팁 포함)</li><li>[ ] 동료가 방금 올린 프롬프트 문서 우측 비고란이나 단톡방에 '최고예요👍', '당장 써먹을게요!' 등 긍정적 텍스트나 이모지를 1개 이상 남겼는가? (옥시토신 분비 액션)</li></ul>
+<p><strong>트러블슈팅 Q&amp;A</strong>:</p>
+<ul><li><strong>Q</strong>: 제가 만든 프롬프트가 너무 짧고 허접해서 공유하기가 민망합니다. 남들은 엄청 길게 잘 쓰던데요?</li><li><strong>A</strong>: "허접한 프롬프트가 세상을 구한다!" 이것이 우리 커뮤니티의 모토입니다. 짧은 단문 프롬프트를 공유하면, 다른 동료들이 그 위에 살을 붙여서 개선된 버전으로 돌려주는 선순환이 생깁니다. 처음 공유할 때의 부담보다 얻는 것이 훨씬 큽니다.</li><li><strong>도움말 링크</strong>: <a href="https://support.google.com/docs/answer/2494822" target="_blank" rel="noopener">Google 스프레드시트 링크 공유 및 권한 설정 가이드</a></li></ul>
+<h3>[✅ 검증]</h3>
+<p><strong>역량 검증 루브릭</strong></p>
+<table><thead><tr><th>평가 항목</th><th>마스터 (4단계)</th><th>프로 (3단계)</th><th>루키 (2단계)</th><th>니즈 개선 (1단계)</th></tr></thead><tbody><tr><td><strong>지식 자산화 및 기여</strong></td><td>자신만의 실무 프롬프트를 구조화하여 공유 저장소에 명확한 설명(변수 포함)과 함께 완벽히 등재함.</td><td>프롬프트를 공유했으나, 설명이 부족하여 타인이 즉각 복사해서 쓰기에 다소 무리가 있음.</td><td>남이 올린 자료를 읽기만 하고(눈팅), 아직 공유 저장소에 본인의 자료를 기여하지 못함.</td><td>공유 채널 접속 자체를 시도하지 않음.</td></tr><tr><td><strong>리액션 및 연대 형성</strong></td><td>동료의 공유물에 즉각적이고 구체적인 피드백/찬사를 남기며 커뮤니티의 따뜻한 분위기를 적극적으로 주도함.</td><td>기계적인 이모지(하트, 따봉 1개)만 가볍게 남김.</td><td>남의 자료를 가져가기만 하고 어떠한 상호작용이나 감사 표시도 하지 않음.</td><td>커뮤니티 활동에 일절 무관심함.</td></tr></tbody></table>
+<h3>[🚀 최적화]</h3>
+<ul><li>🔴 <strong>Before (도입 전)</strong>: A센터 김대리도, B센터 박주임도, C센터 이팀장도 각자 자기 모니터 앞에서 똑같은 '2025년 자활 사업계획서' 양식을 펴놓고 3시간씩 맨땅에 헤딩하며 중복 노동을 함. (막대한 자원 및 시간 낭비)</li><li>🟢 <strong>After (도입 후)</strong>: A센터 김대리가 만든 '사업계획서 초안 생성 특화 프롬프트' 하나가 구글 시트에 올라오는 순간, B, C, D 센터 실무자 30명의 문서 작업 시간이 일시에 사라짐. "김대리님 짱!"이라는 환호 속에 서로의 노하우가 눈덩이처럼 불어나는 집단 지성의 시너지가 폭발함.</li></ul>
+<hr>
+<h2 class="ch" id="c4_10"><span class="num">4-10</span>Q&amp;A 세션 진행 가이드 (심리적 안전감 확보)</h2>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"어릴 적 학창 시절을 떠올려 볼까요? 선생님이 '자, 질문 있는 사람?' 하면 교실이 얼음장이 되고 아무도 손을 들지 않았던 기억, 다들 있으시죠? 우리는 오랫동안 질문을 하면 '내가 무식하다는 것을 들킬까 봐', '남들 시간을 뺏을까 봐' 두려워하도록 학습되어 왔습니다. 하지만 여러분, AI 앞에서는 박사학위 소지자나 이제 막 입사한 신입이나 모두가 평등한 '초보자'입니다. 천하의 챗GPT도 환각(Hallucination)으로 천연덕스럽게 거짓말을 밥 먹듯이 하는데, 우리 인간이 완벽할 필요가 어디 있겠습니까? 오늘 이 시간, 이 공간은 세상에서 가장 안전한 랩(Lab, 실험실)입니다. 여러분의 뇌가 '어떤 엉뚱하고 바보 같은 질문을 해도 절대 비웃음당하지 않고 안전하다'고 완벽하게 느끼도록, 제가 심리적 안전감(Psychological Safety)의 방어막을 든든하게 치겠습니다. 자, 어떤 기상천외한 질문, 하소연, 불만이라도 좋습니다. 마구 던져주세요!"</p>
+<div class="marker">📘 <strong>[교재 내용]</strong></div>
+<h3>[개념 이해]</h3>
+<p><strong>심리적 안전감(Psychological Safety)과 혁신의 상관관계</strong></p>
+<ul><li>하버드 비즈니스 스쿨 에이미 에드먼슨(Amy Edmondson) 교수와 구글의 아리스토텔레스 프로젝트(Project Aristotle)에 따르면, 지속적으로 고성과를 내는 팀의 단 한 가지 공통점은 바로 '심리적 안전감'이었습니다. 이는 구성원들이 업무와 관련해 실수하거나 자신의 무지를 드러내도 결코 처벌받거나 조롱받지 않을 것이라는 굳건한 믿음입니다.</li><li>AI와 같은 파괴적 신기술을 도입할 때 실무자들의 뇌를 지배하는 가장 큰 장벽은 '테크 포비아(기술 공포증)'와 '남들은 저만치 앞서가는데 나만 뒤처진다는 막연한 불안감(코르티솔 분비)'입니다. Q&amp;A 세션의 핵심은 지식을 전달하는 것이 아니라 이 불안감의 허들을 산산조각 내는 데 있습니다.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li><strong>익명 질문 도구 세팅 시연</strong>: 강사가 화면에 Slido(슬라이도) 또는 Padlet(패들릿)을 띄우고 스마트폰 QR코드를 통해 로그인 없이 3초 만에 익명으로 접속하는 방법을 시연합니다.</li><li><strong>강사의 취약성(Vulnerability) 노출 시연</strong>: 강사 스스로가 경험했던 가장 '어이없었던 AI 실수담이나 흑역사' (예: "저번에 AI한테 기안서 써달라고 했다가 AI가 대표님을 '귀하' 대신 '마왕님'이라고 써놔서 결재 올라갈 뻔했습니다")를 먼저 공유하여 사람들의 폭소를 유발하고 긴장도를 확 낮춥니다.</li><li><strong>Co-pilot 문제 해결 시연</strong>: 참가자의 예리하거나 난해한 질문이 나오면, 강사가 억지로 답을 짜내지 않고 "와, 이건 저도 진짜 모르겠네요. 우리 같이 AI한테 물어볼까요?"라며 즉석에서 ChatGPT에 화면을 띄워 질문을 던집니다. 강사와 교육생, AI가 삼위일체가 되어 문제를 해결하는 과정을 라이브로 보여줍니다.</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정</strong>: 평소 실무를 하면서 AI에 대해 궁금했지만 '너무 사소해서', 혹은 '내 업무 능력이 부족해 보일까 봐' 차마 묻지 못하고 꾹꾹 눌러 담았던 질문이나 고충 1가지를 익명 게시판에 솔직하게 털어놓습니다.</p>
+<p><strong>Q&amp;A 분위기 메이킹 프롬프트 (강사가 화면에 미리 띄워두는 재미있는 예시)</strong>:</p>
+<pre><code class="text">(강사가 화면에 띄워 참가자들의 질문 트리거를 당기는 유쾌한 예시들)
+
+- &quot;AI가 똑똑해지면 제 일자리를 진짜 뺏을까요? 원장님한테 저보다 챗GPT가 일 잘한다고 소문나면 어쩌죠? ㅠㅠ&quot;
+- &quot;프롬프트 쓰다가 AI가 말을 너무 안 들어서 키보드 부술 뻔했는데, AI한테 찰지게 화내는 명령어 있나요?&quot;
+- &quot;자활 참여자 어르신들이 스마트폰 켜는 법도 모르시는데, AI 앱을 어떻게 깔아드리고 가르쳐야 할지 막막합니다.&quot;
+- &quot;ChatGPT 유료 결제하려는데, 이거 센터 법인 카드로 결제 올려도 안 혼날까요?&quot;</code></pre>
+<p><strong>실습 체크리스트</strong>:</p>
+<ul><li>[ ] 강사가 제공한 패들릿(Padlet) 또는 슬라이도(Slido) QR/링크에 접속하여 철저히 '익명'으로 질문이나 소감을 1개 이상 등록했는가?</li><li>[ ] 다른 동료가 올린 질문들을 훑어보고 공감되는 게시물에 '좋아요(❤️)' 하트를 2개 이상 팍팍 눌러주었는가?</li><li>[ ] (심화) 내가 대답해 줄 수 있거나, AI를 활용해 검색해 낸 '답변 힌트'를 다른 사람의 질문 밑에 익명 댓글로 달아보았는가?</li></ul>
+<p><strong>트러블슈팅 Q&amp;A</strong>:</p>
+<ul><li><strong>Q</strong>: 질문 내용이 특정 인물(상사나 진상 클라이언트)을 노골적으로 험담하거나 신세 한탄하는 부정적 내용으로만 흐릅니다. 분위기가 가라앉아요.</li><li><strong>A</strong>: 매우 흔한 현상입니다. 이때 강사가 당황하거나 지적하지 말고 유연하게 개입하여 리프레이밍(Reframing) 해야 합니다. "아, 이 글 쓰신 분 정말 스트레스 많이 받으셨겠어요. 저도 백번 공감합니다. 그럼 우리 이 분노의 에너지를 건설적으로 바꿔볼까요? '상사의 앞뒤 안 맞는 모호한 지시를 깔끔하게 번역해 주는 요약 프롬프트'를 우리 같이 만들어서 이분께 선물해 드립시다!" 라며 솔루션 방향으로 유쾌하게 전환합니다.</li><li><strong>도움말 링크</strong>: <a href="https://support.google.com/docs/answer/2839588?hl=ko" target="_blank" rel="noopener">Google Forms로 설문지 만들기 및 수정하기</a></li></ul>
+<h3>[✅ 검증]</h3>
+<p><strong>역량 검증 루브릭</strong></p>
+<table><thead><tr><th>평가 항목</th><th>마스터 (4단계)</th><th>프로 (3단계)</th><th>루키 (2단계)</th><th>니즈 개선 (1단계)</th></tr></thead><tbody><tr><td><strong>안전감 기여 및 참여도</strong></td><td>자신의 솔직한 취약점(고충)을 재치 있게 질문하고, 타인의 질문에 적극적으로 공감(하트/댓글)하여 폭발적인 호응을 이끌어냄.</td><td>익명 게시판에 기능과 관련된 일반적인 질문 1개와 하트 1개를 무난하게 남김.</td><td>질문을 올리지 않고 눈치만 보며 남의 글에 하트만 누름.</td><td>휴대폰을 만지지 않고 세션에 아예 참여하지 않음.</td></tr><tr><td><strong>집단 문제 해결(Co-creation)</strong></td><td>타인의 고충 섞인 질문을 보고 즉석에서 프롬프트를 활용해 창의적이고 실질적인 해결책을 익명 댓글로 제안함.</td><td>문제 해결에 직접 참여하진 않으나, 강사와 AI가 푸는 과정을 보며 적극적으로 필기하고 끄덕임.</td><td>흥미로운 질문에만 잠깐 웃고 다시 수동적 태도로 돌아감.</td><td>딴청을 피우거나 세션에 집중하지 않음.</td></tr></tbody></table>
+<h3>[🚀 최적화]</h3>
+<ul><li>🔴 <strong>Before (도입 전)</strong>: 4주간의 딱딱한 주입식 강의가 끝나고 강사가 "질문 있나요?" 하면 쥐죽은 듯 고요함. 서로 눈치만 보다 찜찜함을 안고 각자 집으로 돌아감. 남은 건 두꺼운 교재뿐.</li><li>🟢 <strong>After (도입 후)</strong>: 익명 게시판에 "저장 버튼 어딨어요?" 같은 초보적 질문부터 "진상 민원인 대처 멘트 좀 짜주세요" 같은 실무 고충, 심지어 강사에 대한 유쾌한 피드백까지 폭포수처럼 쏟아짐. 모두가 서로의 고민에 깊이 공감하며, 강사와 참가자, 그리고 AI가 실시간으로 집단 지성을 발휘해 해결책을 도출하는 진정한 '축제의 장'으로 변모함.</li></ul>
+<hr>
+<h2 class="ch" id="c4_11"><span class="num">4-11</span>수료증 및 사후관리(Follow-up) 체계 (도파민 보상)</h2>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"여러분, 4주간의 길고 험난했던, 하지만 너무나 눈부셨던 여정을 끝까지 완주하신 것을 진심으로 축하드립니다! 인간의 뇌는 장기적이고 고된 노력을 기울인 후, 눈에 보이는 시각적이고 물질적인 '보상(Reward)'을 획득하는 순간, 지금까지의 모든 피로와 스트레스를 '기분 좋은 성취감'으로 리프레이밍(Reframing)하는 기적을 일으킵니다. 지금 화면을 보세요. 그리고 여러분의 스마트폰 알림을 확인해 보세요. 여러분의 고귀한 이름이 선명하게 새겨진 『인천 자활 AI 혁신 마스터』 수료증이 방금 여러분의 이메일과 톡으로 자동 전송되었습니다! 하지만, 여러분. 이것은 끝이 아닙니다. 배트맨에게 알프레드가 있고 아이언맨에게 자비스가 있듯, 이제 여러분의 곁에는 24시간 지치지 않고 불평도 하지 않는 천재 AI 비서가 자리하고 있습니다. 여러분은 이제 더 이상 잡무와 서류 작업에 시달리며 소진(Burn-out)되는 단순 실무자가 아닙니다. 여유를 가지고 참여자의 삶을 긍정적으로 변화시키는 '가치 창출자(Value Creator)'이자 든든한 지휘관으로 다시 태어났습니다!"</p>
+<div class="marker">📘 <strong>[교재 내용]</strong></div>
+<h3>[개념 이해]</h3>
+<p><strong>행동 강화(Behavioral Reinforcement)와 보상 예측 오류(Reward Prediction Error)</strong></p>
+<ul><li>교육의 진짜 효과는 수료증을 받고 교육장 문을 나선 후 '1주일 안'에 결정됩니다. 뇌과학에서 말하는 '보상 예측 오류'에 따르면, 기대했던 것보다 더 멋진, 예상치 못한 즉각적 보상(화려한 디자인의 수료증, 디지털 배지 등)을 받을 때 도파민 분비가 극대화되어 해당 행동을 긍정적으로 각인시킵니다.</li><li>하지만 일회성 보상만으로는 부족합니다. 학습이 단절되지 않도록 '넛지 기반의 사후관리(Follow-up) 체계'가 촘촘히 짜여 있어야 합니다. 주기적인 우수 활용 사례 뉴스레터 발송, 사내 AI 프롬프트 공모전, '한 달 후 나의 변화 회고' 자동 예약 리마인더 메일 등은 실무자들이 과거의 낡은 습관으로 회귀하지 않도록 꽉 잡아주는 강력한 밧줄(Safety Net) 역할을 합니다.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li><strong>이런 자동화 시연</strong>: 캔바(Canva)의 '일괄 들이기(Bulk Create)' 기능과 구글 스프레드시트 명단을 연동하여, 30명의 이름이 각각 다르게 적힌 수료증 30장을 한 번에 생성하는 시연.</li><li><strong>동선 연결 시연</strong>: 발급된 수료증 하단에 인쇄된 QR코드를 스마트폰으로 스캔하면, 앞서 만든 '인천 자활 AI 실무자 펠로우십' 노션 공유 페이지로 바로 접속되어 학습이 지속되는 매끄러운 동선 시연.</li><li><strong>타임캡슐 메일 시연</strong>: ChatGPT에게 '한 달 뒤 나에게 뼈 때리는 질문을 던지는 편지'를 작성하게 하고, Gmail에서 정확히 30일 뒤 오전 9시에 나에게 도착하도록 예약 전송(Schedule Send)을 세팅하는 과정 시연.</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정</strong>: 모든 훈련을 마친 나 스스로에게 수여하는 멋진 칭호(Title)를 하나 정하고, 현업에 치여 열정이 식어갈 무렵인 '한 달 뒤의 나'를 번쩍 깨워줄 강력한 리마인더 편지(넛지)를 세팅합니다.</p>
+<p><strong>미래의 나에게 보내는 편지 프롬프트 (감정 극대화 버전)</strong>:</p>
+<pre><code class="text">역할: 전 세계에서 가장 열정적이고 뼈 때리는 조언을 잘하는 동기부여 연설가 (토니 로빈스 스타일)
+상황: 나는 방금 인천 자활센터에서 4주간의 빡센 &#x27;AI 마스터리&#x27; 교육을 수료하고 엄청난 열정에 차 있는 사회복지사야. 하지만 내일 당장 현업으로 돌아가면 또다시 쏟아지는 잡무와 민원에 치여 AI를 잊어버리고 예전의 고단한 엑셀 노가다로 돌아갈지 몰라.
+작업: 정확히 한 달 뒤, 지쳐있을 나에게 도착할 강력한 이메일 본문을 작성해 줘.
+조건:
+1. 제목: 한 달 뒤의 내가 스팸인 줄 알고 지우려다가도 무조건 클릭할 수밖에 없는 엄청나게 도발적이고 매력적인 제목으로 뽑아줘.
+
+2. 서론: 내가 4주간 포기하지 않고 AI를 배운 노력과 당시의 뜨거웠던 성취감을 생생하게 상기시키며 폭풍 칭찬해 줘.
+3. 본론: &quot;너 혹시 지금 또 AI 안 쓰고 맨땅에 헤딩하면서 야근하고 있는 거 아니지?&quot;라며 정신 번쩍 들게 하는 뼈 때리는 질문 3가지를 던져 줘. (예: 마이크로 루틴 잘 지키고 있는지 점검 등)
+4. 결론: 나 스스로가 자활 참여자들의 삶을 변화시키는 위대한 사람이라는 걸 상기시키는, 가슴이 벅차오르는 따뜻한 응원의 메시지로 마무리해 줘.
+출력 형식: 즉시 이메일에 복사 붙여넣기 할 수 있는 완벽한 텍스트
+</code></pre>
+<p><strong>실습 체크리스트</strong>:</p>
+<ul><li>[ ] 강사가 실시간 발송한(또는 자신이 캔바로 직접 생성해 본) 나만의 '자활 AI 마스터 수료증'을 확인하고 폰에 다운로드하여 바탕화면으로 설정해 보았는가?</li></ul>
+<ul><li>[ ] AI가 눈물 쏙 빠지게 작성해 준 '미래의 나에게 보내는 편지' 텍스트를 구글 이메일(Gmail)의 '전송 예약(Schedule Send)' 기능을 이용해 정확히 30일 뒤 날짜로 나 자신에게 발송 예약 완료했는가?</li><li>[ ] 옆에 앉은 동료와 찐하게 하이파이브를 하며 서로가 정한 새로운 직함("박 마스터님 고생하셨습니다!", "김 코치님 훌륭합니다!")을 큰 소리로 부르며 수료의 기쁨을 나눴는가? (도파민 파티)</li></ul>
+<p><strong>트러블슈팅 Q&amp;A</strong>:</p>
+<ul><li><strong>Q</strong>: Gmail 예약 전송 기능은 도대체 어디에 숨어 있나요? 버튼을 못 찾겠어요.</li></ul>
+<ul><li><strong>A</strong>: PC버전 Gmail에서는 파란색 '보내기(Send)' 버튼 바로 오른쪽에 있는 쪼그만 '아래쪽 화살표(▼)'를 누르면 '전송 예약(Schedule send)' 메뉴가 나타납니다. 모바일 앱에서는 우측 상단의 '점 3개(⋮)' 메뉴를 누르면 가장 위에 있습니다. 거기서 날짜와 시간을 직접 지정하시면 됩니다. 타임머신을 타는 것과 같습니다!</li></ul>
+<ul><li><strong>도움말 링크</strong>: <a href="https://support.google.com/mail/answer/9214606?hl=ko" target="_blank" rel="noopener">Gmail 이메일 전송 예약하기</a></li></ul>
+<h3>[✅ 검증]</h3>
+<p><strong>역량 검증 루브릭</strong></p>
+<table><thead><tr><th>평가 항목</th><th>마스터 (4단계)</th><th>프로 (3단계)</th><th>루키 (2단계)</th><th>니즈 개선 (1단계)</th></tr></thead><tbody><tr><td><strong>셀프 리마인드 시스템 구축</strong></td><td>조건이 완벽히 반영된 동기부여 프롬프트를 도출하고, 정확히 30일 뒤 자동 발송되도록 이메일 예약 세팅까지 오차 없이 완료함.</td><td>AI 편지 텍스트는 성공적으로 추출했으나, 이메일 예약 발송 세팅에서 헤매어 완료하지 못함.</td><td>짧은 다짐 몇 줄만 직접 쓰고 메일 예약 등 시스템적인 넛지는 활용하지 않음.</td><td>귀찮아하며 실습에 동참하지 않음.</td></tr><tr><td><strong>자아 효능감(Self-Efficacy) 변화</strong></td><td>실습 및 수료식 종료 후 "나는 이제 내 업무를 완벽히 통제하고, AI로 시간을 지배할 수 있다"는 확신과 자부심을 적극적으로 표출함.</td><td>AI가 유용하다는 사실은 인지하나 실무 적용 시 발생할 변수에 대한 두려움이 아직 남아있어 조심스러움.</td><td>여전히 과거의 아날로그 방식이 더 익숙하고 편하다고 느낌.</td><td>교육 후에도 업무 부담감이 전혀 줄어들지 않음.</td></tr></tbody></table>
+<h3>[🚀 최적화]</h3>
+<ul><li>🔴 <strong>Before (도입 전)</strong>: 4주 교육 수료 후 대충 박수 치고 단체 기념사진 한 장 찍고 허무하게 끝. 일주일 뒤, 언제 교육을 받았냐는 듯 30명 모두가 예전의 엑셀 노가다와 악성 민원 스트레스가 가득한 일상으로 완전히 복귀함 (망각 곡선의 승리).</li><li>🟢 <strong>After (도입 후)</strong>: 개인화된 수료증이라는 즉각적 시각적 보상 + 커뮤니티의 끈끈한 소속감 + 30일 뒤 타임캡슐처럼 도착하는 완벽히 자동화된 동기부여 편지(Nudge)가 환상적으로 결합됨. 교육이 끝난 후에도 실무자들의 AI 활용률이 우상향하며, 업무 효율 극대화로 자활 참여자 대면 상담에 집중할 수 있는 시간이 늘어나 직무 만족도가 최고조에 달함.</li></ul>
+<hr>
+<div class="marker">🗣️ <strong>[강사 클로징 멘트]</strong></div>
+<p>"사랑하고 존경하는 인천 지역 자활 실무자 여러분! 진정한 자활(自活)은 스스로 살아가는 힘을 기르는 것입니다. 그리고 그 힘은 여러분이 먼저 건강하고 행복할 때 비로소 참여자들에게 전이됩니다. 지난 4주간 우리는 단순히 챗GPT 버튼 누르는 법을 배운 것이 결코 아닙니다. 무섭게 밀려오는 기술의 거대한 파도를 두려워하지 않고 당당히 서핑보드를 타고 올라타는 법을 배웠습니다. 끝없는 서류 작업의 압박에서 벗어나 여러분의 삶에 '여유'를 되찾는 법을 배웠고, 그 귀중한 여유를 우리 자활 참여자들의 진정한 변화와 자립을 위해 온전히 쏟아부을 수 있는 <strong>'마음의 공간(Cognitive Space)'</strong>을 확보하는 법을 터득했습니다.</p>
+<p>여러분은 이제 더 이상 기계처럼 일하는 사람이 아닙니다. 기계를 부리며, 사람의 얼어붙은 마음을 어루만지고 변화시키는 가장 존귀한 '휴먼 서비스 스페셜리스트'입니다. 스스로를 자랑스러워하십시오! 여러분이 만들어갈 인천 자활의 눈부신 내일, 그 위대한 비상을 언제나 뜨겁게 응원하겠습니다. 대단히 수고 많으셨습니다! 감사합니다!"</p>
+</div>
+<div id="lb"><img id="lbimg" alt=""><div class="hint">아무 곳이나 클릭하거나 ESC 키를 누르면 닫힙니다</div></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'), im=document.getElementById('lbimg');
+  document.querySelectorAll('figure img').forEach(function(g){
+    g.addEventListener('click',function(){ im.src=g.getAttribute('src'); lb.classList.add('on'); });
+  });
+  lb.addEventListener('click',function(){ lb.classList.remove('on'); im.src=''; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('on'); });
+})();
+</script></body></html>

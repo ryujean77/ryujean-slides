@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2회차 · Gemini Notebooks 지식 관리 시스템 — 인천지역 희망자활센터 AI 교육</title>
+<style>
+:root{
+  --bg:#000000; --bg2:#07080C; --panel:rgba(255,255,255,.055); --panel2:rgba(255,255,255,.085);
+  --line:rgba(255,255,255,.14); --line2:rgba(255,255,255,.22);
+  --tx:#FFFFFF; --tx2:#AEB4C2; --tx3:#7C8494;
+  --n1:#FC00DC; --n2:#731FFF; --n3:#00FFD7; --danger:#FF4D6D; --ok:#3DDC84;
+  --grad:linear-gradient(120deg,var(--n1),var(--n2) 52%,var(--n3));
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font-family:'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+  font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 12% -8%,rgba(115,31,255,.16),transparent 62%),
+                   radial-gradient(900px 520px at 92% 4%,rgba(252,0,220,.11),transparent 60%);
+  background-attachment:fixed;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px 120px}
+header.hero{padding:74px 0 34px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px;letter-spacing:.22em;color:var(--tx3);font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(30px,4.2vw,46px);line-height:1.24;margin:.32em 0 .18em;font-weight:800;letter-spacing:-.02em}
+h1 .g{color:var(--n3)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.sub{color:var(--tx2);font-size:16px;margin:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--tx2)}
+nav.toc{margin:34px 0 10px;border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:20px 24px}
+nav.toc h2{font-size:13px;letter-spacing:.16em;color:var(--tx3);margin:0 0 12px;font-weight:800}
+nav.toc ol{margin:0;padding-left:0;list-style:none;columns:2;column-gap:34px}
+nav.toc li{margin:0 0 7px;break-inside:avoid}
+nav.toc a{color:var(--tx2);text-decoration:none;font-size:14.5px;display:block;padding:3px 0}
+nav.toc a:hover{color:var(--tx)}
+nav.toc .num{display:inline-block;min-width:44px;color:var(--n3);font-weight:700;font-variant-numeric:tabular-nums}
+h2.ch{margin:66px 0 20px;padding-top:22px;font-size:26px;font-weight:800;letter-spacing:-.01em;position:relative}
+h2.ch::before{content:"";position:absolute;top:0;left:0;width:86px;height:4px;border-radius:2px;background:var(--grad)}
+h2.ch .num{color:var(--n3);margin-right:10px}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  h2.ch .num{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+h3{font-size:18.5px;margin:34px 0 12px;font-weight:750;color:var(--tx)}
+p{margin:.85em 0;color:#E9ECF2}
+strong{color:#fff;font-weight:700}
+a{color:var(--n3);text-decoration:none;border-bottom:1px solid rgba(0,255,215,.32)}
+a:hover{border-bottom-color:var(--n3)}
+ul,ol{padding-left:1.35em}li{margin:.34em 0;color:#E4E8EF}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+code{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:6px;
+  padding:2px 7px;font-size:.9em;font-family:ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;color:#F2E6FF}
+pre{background:linear-gradient(180deg,#0C0D13,#08090E);border:1px solid var(--line);
+  border-radius:16px;padding:20px 22px;overflow:auto;position:relative;box-shadow:0 10px 34px rgba(0,0,0,.5)}
+pre code{background:none;border:0;padding:0;color:#D9DEE9;font-size:14px;line-height:1.72}
+pre::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);border-radius:16px 0 0 16px}
+blockquote{margin:20px 0;padding:16px 20px;border:1px solid var(--line);border-left:3px solid var(--n2);
+  background:var(--panel);border-radius:0 14px 14px 0;color:var(--tx2)}
+blockquote strong{color:#fff}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;font-size:15px;
+  border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th{background:rgba(255,255,255,.07);color:#fff;font-weight:700;text-align:left}
+th,td{padding:11px 15px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+td{color:#E4E8EF}
+/* 강사 멘트 / 교재 / 마커 블록 */
+.speak{border:1px solid rgba(252,0,220,.30);background:linear-gradient(180deg,rgba(252,0,220,.09),rgba(252,0,220,.03));
+  border-radius:16px;padding:16px 20px;margin:22px 0}
+.speak .tag{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.1em;color:var(--n1);margin-bottom:6px}
+.marker{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;letter-spacing:.06em;
+  border:1px solid var(--line2);background:var(--panel2);border-radius:999px;padding:5px 13px;color:#fff;margin:26px 0 8px}
+/* 그림 */
+figure{margin:30px 0;text-align:center}
+figure img{width:90%;max-width:90%;height:auto;border-radius:16px;border:1px solid var(--line);
+  box-shadow:0 18px 48px rgba(0,0,0,.6);cursor:zoom-in;transition:transform .18s ease,box-shadow .18s ease;background:#0B0C11}
+figure img:hover{transform:translateY(-3px);box-shadow:0 24px 60px rgba(115,31,255,.28)}
+figcaption{margin-top:12px;font-size:14.5px;color:var(--tx2);font-weight:600}
+figcaption .no{color:var(--n3);font-weight:800}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  figcaption .no{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.guide{width:90%;margin:14px auto 0;text-align:left;border:1px solid var(--line);
+  background:var(--panel);border-radius:14px;padding:14px 18px;font-size:14px;color:var(--tx2)}
+.guide b{color:var(--n3);font-weight:700}
+.guide .t{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--tx3);display:block;margin-bottom:8px}
+/* 개념도 */
+.dia{margin:30px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#05060A;
+  box-shadow:0 16px 44px rgba(0,0,0,.55)}
+.dia svg{display:block;width:100%;height:auto}
+/* 라이트박스 */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;
+  z-index:99;cursor:zoom-out;padding:22px}
+#lb.on{display:flex}
+#lb img{max-width:98vw;max-height:94vh;border-radius:10px;border:1px solid var(--line2)}
+#lb .hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);color:var(--tx3);font-size:13px}
+figure.portrait img{width:45%;max-width:45%}
+figure.portrait .guide{width:70%}
+@media(max-width:820px){nav.toc ol{columns:1}figure img,.guide{width:100%;max-width:100%}
+  figure.portrait img{width:70%;max-width:70%}figure.portrait .guide{width:100%}}
+@media print{
+  body{background:#fff;color:#111}
+  .dia,figure img{box-shadow:none}
+  nav.toc{break-after:page}
+  h2.ch{break-after:avoid;break-inside:avoid}
+  figure{break-inside:avoid}
+}
+</style></head><body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">인천지역 희망자활센터 · 실무자 AI 역량강화 교육</div>
+  <h1>2회차 <span class="g">Gemini Notebooks 지식 관리 시스템</span></h1>
+  <p class="sub">강사용 마스터 교안 · 개념 → 시연 → 실습 → 검증 → 최적화 5단계</p>
+  <div class="meta"><span class="chip">챕터 16개</span>
+  <span class="chip">개념도 3개</span><span class="chip">교육시간 4시간</span></div>
+</header>
+<nav class="toc"><h2>목차</h2><ol><li><a href="#c2_1"><span class="num">2-1</span>Gemini Notebooks 인터페이스 및 기초 환경설정</a></li><li><a href="#c2_2"><span class="num">2-2</span>딥리서치(Deep Research) 기능 연동</a></li><li><a href="#c2_3"><span class="num">2-3</span>소스(Source) 관리 체계화 (PDF, 웹사이트 등 데이터 주입)</a></li><li><a href="#c2_4"><span class="num">2-4</span>프롬프트 전략 고도화 (Notebooks 맞춤형)</a></li><li><a href="#c2_5"><span class="num">2-5</span>노트북(Notebooks) 구성 (페르소나/길이 조절)</a></li><li><a href="#c2_6"><span class="num">2-6</span>멀티미디어 아티팩트 생성 (오디오 브리핑 및 시각화)</a></li><li><a href="#c2_7"><span class="num">2-7</span>채팅-메모-소스 순환 워크플로우</a></li><li><a href="#c2_8"><span class="num">2-8</span>모바일 기기와의 연동</a></li><li><a href="#c2_9"><span class="num">2-9</span>아티팩트(Artifacts) 및 프롬프트 라이브러리 활용</a></li><li><a href="#c2_10"><span class="num">2-10</span>데이터표 일괄생성 처리 기법</a></li><li><a href="#c2_11"><span class="num">2-11</span>제미나이 스튜디오(Studio) 핵심 도구 활용</a></li><li><a href="#c2_12"><span class="num">2-12</span>템플릿 슬라이드 연동 기법</a></li><li><a href="#c2_13"><span class="num">2-13</span>노트북 기반 협업/공유 체계 구축</a></li><li><a href="#c2_14"><span class="num">2-14</span>버전관리 및 대화 히스토리 관리</a></li><li><a href="#c2_15"><span class="num">2-15</span>데이터 프라이버시 및 보안 설정</a></li><li><a href="#c2_16"><span class="num">2-16</span>멀티소스 교차 검색 및 필터링 기법</a></li></ol></nav>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"안녕하십니까, 실무자 여러분! 지난 1회차에서는 AI와 친해지는 시간을 가졌다면, 오늘은 여러분의 '제2의 뇌'를 만들어드릴 시간입니다. 매일 쏟아지는 자활 사업 지침서, 복잡한 사례 관리 기록, 끝도 없는 규정집들... 이제 다 외우거나 찾으려고 스트레스 받지 마세요. 오늘 우리가 다룰 <strong>'Google Gemini Notebooks(구 Gemini Notebooks)'</strong>이 여러분의 모든 지식을 완벽하게 기억하고, 필요할 때마다 찰떡같이 찾아주는 개인 비서가 될 것입니다. 오늘 배운 내용을 업무에 적용하시면 자료를 찾는 데 쓰던 시간을 눈에 띄게 줄이실 수 있습니다. 그럼 시작하겠습니다."</blockquote>
+<div class="marker">📘 <strong>교재 내용 (Textbook Content):</strong></div>
+<ul><li><strong>오늘의 목표:</strong> 흩어진 업무 자료를 하나로 모으고, AI를 활용해 순식간에 분석하여 실무에 즉시 적용하는 '초효율화 시스템' 구축.</li><li><strong>핵심 키워드:</strong> 인지 부하 감소, 지식 관리 자동화, 검색 시간 단축.</li></ul>
+<hr>
+<h2 class="ch" id="c2_1"><span class="num">2-1</span>Gemini Notebooks 인터페이스 및 기초 환경설정</h2>
+<div class="marker">📘 <strong>교재 내용 (Textbook Content):</strong></div>
+<h3>[개념 이해]</h3>
+<p>Gemini Notebooks은 구글의 최신 AI 언어 모델(Gemini 3.1 Pro)을 기반으로 한 맞춤형 지식 어시스턴트입니다. 일반 챗봇과 달리, '내가 제공한 자료(Source)' 안에서만 정답을 찾기 때문에 <strong>환각(Hallucination) 현상이 거의 없으며, 보안과 정확성이 매우 뛰어납니다.</strong> </p>
+<ul><li><strong>작동 원리:</strong> 자료 업로드 ➡️ AI의 문서 이해 및 인덱싱 ➡️ 사용자 질문 ➡️ 출처(인용구)와 함께 정확한 답변 제공.</li></ul>
+<figure><img src="./assets/s2_02_create_notebook.png" alt="+ 새 노트북 클릭 → 소스 업로드 모달 (Drive/PDF/웹URL 선택창)" loading="lazy"><figcaption><span class="no">그림 1.</span> + 새 노트북 클릭 → 소스 업로드 모달 (Drive/PDF/웹URL 선택창)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — Gemini Notebooks 인터페이스 및 기초 환경설정 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — + 새 노트북 클릭 → 소스 업로드 모달 (Drive/PDF/웹URL 선택창)</div><div><strong>활용 방법</strong> — 주소창에 직접 입력해 바로 접근할 수도 있습니다. · 확대 1.29배 인셋 포함</div></div></figure>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"우리의 뇌는 한 번에 4개 이상의 정보를 처리하기 힘듭니다. 이를 '인지 부하'라고 하죠. Gemini Notebooks은 이 부하를 완전히 덜어줍니다. 여러분은 이제 '어디에 있는지' 찾을 필요 없이, '무엇을 물어볼지'만 고민하시면 됩니다."</blockquote>
+<figure><img src="./assets/s2_30b_notebooklm_delete_chat_warning.png" alt="NotebookLM 채팅 패널 3점(...) 메뉴 클릭 ➔ 채팅 기록 삭제 경고 토글 (복구 불가 주의사항)" loading="lazy"><figcaption><span class="no">그림 2.</span> NotebookLM 채팅 패널 3점(...) 메뉴 클릭 ➔ 채팅 기록 삭제 경고 토글 (복구 불가 주의사항)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — Gemini Notebooks 인터페이스 및 기초 환경설정 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 채팅 패널 3점(...) 메뉴 클릭 ➔ 채팅 기록 삭제 경고 토글 (복구 불가 주의사항)</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.38배 인셋 포함</div></div></figure>
+<h3>[💻 시연]</h3>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"화면을 봐주세요. 구글에 'Gemini Notebooks'을 검색해서 들어갑니다. (클릭) 자, 여기 '새 노트북 만들기' 버튼이 보이죠? 클릭 한 번이면 빈 공간이 생깁니다. 화면 왼쪽은 자료를 넣는 '소스' 창, 오른쪽은 AI와 대화하는 '채팅' 창입니다. 아주 직관적이죠? 복잡한 설정은 없습니다."</blockquote>
+<figure><img src="./assets/s2_30_notebooklm_new_chat.png" alt="NotebookLM 상단 + 노트북 만들기 버튼 클릭 ➔ 완전히 새로운 깨끗한 노트북 워크스페이스 화면" loading="lazy"><figcaption><span class="no">그림 3.</span> NotebookLM 상단 + 노트북 만들기 버튼 클릭 ➔ 완전히 새로운 깨끗한 노트북 워크스페이스 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 강사 시연 화면입니다. 설명하는 동안 수강생이 같은 화면을 찾을 수 있도록 배치했습니다.</div><div><strong>기능 설명</strong> — NotebookLM 상단 + 노트북 만들기 버튼 클릭 ➔ 완전히 새로운 깨끗한 노트북 워크스페이스 화면</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.29배 인셋 포함</div></div></figure>
+<h3>[✍️ 실습] 나만의 첫 번째 워크스페이스 만들기</h3>
+<ul><li><strong>상황 설정:</strong> 여러분은 2026년도 신규 자활근로사업 지침을 분석해야 하는 실무자입니다.</li><li><strong>가상 샘플데이터:</strong> (바탕화면의 <code>2026_자활사업지침_가이드.pdf</code> 사용)</li></ul>
+<ul><li><strong>체크리스트:</strong></li><li>[ ] Google 계정 로그인 및 Gemini Notebooks 접속</li><li>[ ] '새 노트북 만들기' 클릭 및 이름 설정 (예: '2026 자활사업 지침 분석')</li></ul>
+<figure><img src="./assets/s2_26_notebooklm_rename.png" alt="노트북 제목 클릭 → 이름 변경 인라인 에디터" loading="lazy"><figcaption><span class="no">그림 4.</span> 노트북 제목 클릭 → 이름 변경 인라인 에디터</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — Gemini Notebooks 인터페이스 및 기초 환경설정 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — 노트북 제목 클릭 → 이름 변경 인라인 에디터</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다.</div></div></figure>
+<ul><li>[ ] 좌측 '소스' 패널 및 우측 '채팅' 패널 위치 확인</li></ul>
+<figure><img src="./assets/s2_03_workspace_layout.png" alt="노트북 워크스페이스 (좌측 소스 3개 + 중앙 대화 + 우측 스튜디오)" loading="lazy"><figcaption><span class="no">그림 5.</span> 노트북 워크스페이스 (좌측 소스 3개 + 중앙 대화 + 우측 스튜디오)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 실습 결과가 제대로 나왔는지 대조하는 기준 화면입니다.</div><div><strong>기능 설명</strong> — 노트북 워크스페이스 (좌측 소스 3개 + 중앙 대화 + 우측 스튜디오)</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다.</div></div></figure>
+<div class="marker">📘 <strong>트러블슈팅 Q&amp;A:</strong></div>
+<ul><li><strong>Q:</strong> "회사 계정(Google Workspace)으로 접속이 안 돼요."</li><li><strong>A:</strong> 관리자가 Gemini Notebooks 접근 권한을 허용해야 합니다. 실습은 개인 구글 계정 사용을 권장합니다.</li><li><strong>참고:</strong> <a href="https://support.google.com/notebooklm/answer/16164461?hl=ko" target="_blank" rel="noopener">Gemini Notebook 알아보기</a></li></ul>
+<figure><img src="./assets/s2_01_notebooklm_main.png" alt="NotebookLM 메인 화면 (생성된 노트북 카드 목록)" loading="lazy"><figcaption><span class="no">그림 6.</span> NotebookLM 메인 화면 (생성된 노트북 카드 목록)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 수강생이 직접 따라 해야 하는 실습 구간입니다. 화면과 대조하며 같은 상태를 만들어 봅니다.</div><div><strong>기능 설명</strong> — NotebookLM 메인 화면 (생성된 노트북 카드 목록)</div><div><strong>활용 방법</strong> — 출력 형식이 기대와 다르면 프롬프트의 과업(T)·제약(C) 항목을 조정한 뒤 다시 실행합니다.</div></div></figure>
+<h3>[✅ 검증]</h3>
+<ul><li><strong>역량 검증 루브릭:</strong></li><li><strong>우수:</strong> 3분 이내에 노트북을 생성하고 인터페이스 구조를 타인에게 설명할 수 있다.</li><li><strong>보통:</strong> 강사의 지시에 따라 노트북을 생성하고 화면 구성을 파악했다.</li></ul>
+<ul><li><strong>미흡:</strong> 접속 및 생성 과정에서 도움이 필요하다.</li></ul>
+<h3>[🚀 최적화]</h3>
+<ul><li><strong>Before:</strong> 새로운 프로젝트를 시작할 때마다 폴더를 만들고 흩어진 파일들을 일일이 열어둔다. (인지적 피로도 최상)</li><li><strong>After:</strong> 하나의 노트북 창만 열어두면 관련된 모든 자료가 AI의 머릿속에 세팅된다. (도입 준비 시간 10분 ➡️ 10초)</li></ul>
+<hr>
+<h2 class="ch" id="c2_2"><span class="num">2-2</span>딥리서치(Deep Research) 기능 연동</h2>
+<div class="marker">📘 <strong>교재 내용 (Textbook Content):</strong></div>
+<h3>[개념 이해]</h3>
+<p>단순히 문서를 읽는 것을 넘어, 여러 문서에 흩어진 파편화된 정보를 연결하여 <strong>통찰(Insight)</strong>을 도출하는 과정입니다. Gemini Notebooks은 여러 소스를 교차 분석하여 공통점, 차이점, 숨겨진 패턴을 찾아냅니다.</p>
+<figure><img src="./assets/s2_05b_notebook_layout_toggle.png" alt="NotebookLM 3단 레이아웃 (출처/채팅/스튜디오) 및 소스 보기 닫기/열기 토글 버튼" loading="lazy"><figcaption><span class="no">그림 7.</span> NotebookLM 3단 레이아웃 (출처/채팅/스튜디오) 및 소스 보기 닫기/열기 토글 버튼</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 딥리서치(Deep Research) 기능 연동 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 3단 레이아웃 (출처/채팅/스튜디오) 및 소스 보기 닫기/열기 토글 버튼</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다.</div></div></figure>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"자활 참여자 상담 기록, 복지부 지침, 지자체 조례... 이 세 가지를 동시에 펴놓고 비교하려면 머리가 지끈거리죠? 딥리서치는 이 세 가지를 믹서기에 넣고 여러분이 원하는 '정수'만 뽑아내는 기능입니다. 도파민이 솟구치는 경험을 하실 겁니다. 엔터 키 한 번에 며칠 치 야근이 사라지니까요!"</blockquote>
+<figure><img src="./assets/s2_16_notebooklm_source_summary.png" alt="좌측 소스 클릭 시 상단에 뜨는 소스 요약 텍스트 카드" loading="lazy"><figcaption><span class="no">그림 8.</span> 좌측 소스 클릭 시 상단에 뜨는 소스 요약 텍스트 카드</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 딥리서치(Deep Research) 기능 연동 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — 좌측 소스 클릭 시 상단에 뜨는 소스 요약 텍스트 카드</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다.</div></div></figure>
+<h3>[💻 시연]</h3>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"제가 방금 '2025년 지침'과 '2026년 지침' 두 개를 넣었습니다. 채팅창에 이렇게 쳐볼게요. <strong>'두 지침을 비교해서 2026년에 자활 참여자 대상 지원금 산정 방식이 어떻게 달라졌는지 표로 정리해 줘.'</strong> (엔터) 자, 보십시오. AI가 두 문서를 비교 분석해서 10초 만에 완벽한 표를 만들어냈고, 어떤 문서의 몇 페이지에서 가져왔는지 주석(인용)까지 달아줍니다."</blockquote>
+<h3>[✍️ 실습] 크로스 체크(Cross-Check) 리서치</h3>
+<ul><li><strong>상황 설정:</strong> 과거 3년간의 우수 자활 사례집을 분석하여 공통된 성공 요인을 추출해야 합니다.</li><li><strong>가상 샘플데이터:</strong> 바탕화면의 <code>사례A.txt</code>, <code>사례B.txt</code>, <code>사례C.txt</code> 업로드</li></ul>
+<figure><img src="./assets/s2_02a_notebook_add_source_btn.png" alt="NotebookLM 좌측 출처 패널 상단 + 소스 추가 버튼 및 데이터 업로드 기능" loading="lazy"><figcaption><span class="no">그림 9.</span> NotebookLM 좌측 출처 패널 상단 + 소스 추가 버튼 및 데이터 업로드 기능</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 딥리서치(Deep Research) 기능 연동 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 좌측 출처 패널 상단 + 소스 추가 버튼 및 데이터 업로드 기능</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.7배 인셋 포함</div></div></figure>
+<ul><li><strong>실습 프롬프트:</strong></li></ul>
+<p>  &gt; "업로드된 3개의 사례에서 공통으로 나타나는 '참여자 동기부여 성공 요인' 3가지를 추출하고, 각 요인별로 어떤 사례에서 어떻게 적용되었는지 구체적인 예시를 들어 설명해줘."</p>
+<ul><li><strong>체크리스트:</strong></li><li>[ ] 3개의 문서가 모두 소스로 선택되어 있는지 확인</li></ul>
+<figure><img src="./assets/s2_27_notebooklm_delete_source.png" alt="소스 항목 3점 메뉴 → 소스 삭제 확인 대화상자" loading="lazy"><figcaption><span class="no">그림 10.</span> 소스 항목 3점 메뉴 → 소스 삭제 확인 대화상자</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 수강생이 직접 따라 해야 하는 실습 구간입니다. 화면과 대조하며 같은 상태를 만들어 봅니다.</div><div><strong>기능 설명</strong> — 소스 항목 3점 메뉴 → 소스 삭제 확인 대화상자</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.38배 인셋 포함</div></div></figure>
+<ul><li>[ ] 프롬프트 입력 후 결과물 도출 확인</li></ul>
+<ul><li>[ ] 결과물에 달린 [1], [2] 번호표(인용구)를 클릭하여 원문과 대조 확인</li></ul>
+<div class="marker">📘 <strong>트러블슈팅 Q&amp;A:</strong></div>
+<ul><li><strong>Q:</strong> "AI가 '문서에 해당 내용이 없습니다'라고 합니다."</li><li><strong>A:</strong> 소스 패널에서 문서들이 체크박스로 선택되어 있는지 확인하세요. 선택이 해제되어 있으면 AI가 읽지 않습니다.</li></ul>
+<figure><img src="./assets/s2_04_source_checkboxes.png" alt="좌측 소스 패널의 체크박스 클릭 (전체 선택/일부 선택 상태)" loading="lazy"><figcaption><span class="no">그림 11.</span> 좌측 소스 패널의 체크박스 클릭 (전체 선택/일부 선택 상태)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 실습 결과가 제대로 나왔는지 대조하는 기준 화면입니다.</div><div><strong>기능 설명</strong> — 좌측 소스 패널의 체크박스 클릭 (전체 선택/일부 선택 상태)</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다.</div></div></figure>
+<h3>[✅ 검증]</h3>
+<ul><li><strong>역량 검증 루브릭:</strong></li><li><strong>우수:</strong> 다중 문서를 바탕으로 비교/대조 프롬프트를 작성하고, 인용구 추적 기능을 능숙하게 활용한다.</li><li><strong>보통:</strong> 제공된 프롬프트로 다중 문서 분석을 수행할 수 있다.</li><li><strong>미흡:</strong> 인용구(Citation) 클릭을 통한 원문 확인 방법을 모른다.</li></ul>
+<figure><img src="./assets/s2_05_citation_highlight.png" alt="답변 속 [1]번 인용구 클릭 → 좌측 소스 창 스크롤 및 원문 하이라이트" loading="lazy"><figcaption><span class="no">그림 12.</span> 답변 속 [1]번 인용구 클릭 → 좌측 소스 창 스크롤 및 원문 하이라이트</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 실습 결과가 제대로 나왔는지 대조하는 기준 화면입니다.</div><div><strong>기능 설명</strong> — 답변 속 [1]번 인용구 클릭 → 좌측 소스 창 스크롤 및 원문 하이라이트</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.7배 인셋 포함</div></div></figure>
+<h3>[🚀 최적화]</h3>
+<ul><li><strong>Before:</strong> 여러 문서를 듀얼 모니터로 띄워놓고 Ctrl+F를 연타하며 내용을 복사/붙여넣기 한다. (소요시간: 3시간)</li><li><strong>After:</strong> 프롬프트 1줄 입력 후 AI가 분석한 요약본과 출처를 검토만 한다. (소요시간: 5분)</li></ul>
+<hr>
+<h2 class="ch" id="c2_3"><span class="num">2-3</span>소스(Source) 관리 체계화 (PDF, 웹사이트 등 데이터 주입)</h2>
+<div class="marker">📘 <strong>교재 내용 (Textbook Content):</strong></div>
+<h3>[개념 이해]</h3>
+<p>Gemini Notebooks의 핵심은 <strong>'가비지 인, 가비지 아웃(Garbage In, Garbage Out)'</strong>을 방지하는 소스 관리입니다. 양질의 데이터를 정돈된 형태로 주입해야 AI의 분석력도 극대화됩니다. PDF, 텍스트 복사, Google Docs, 심지어 특정 웹사이트의 링크나 YouTube 동영상 URL(자막 분석)까지 소스로 추가할 수 있습니다.</p>
+<figure><img src="./assets/s2_17_audio_overview_speed_control.png" alt="NotebookLM AI 오디오 개요 재생 속도(0.5x~2.0x 배속) 조절 옵션 화면" loading="lazy"><figcaption><span class="no">그림 13.</span> NotebookLM AI 오디오 개요 재생 속도(0.5x~2.0x 배속) 조절 옵션 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 소스(Source) 관리 체계화 (PDF, 웹사이트 등 데이터 주입) 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM AI 오디오 개요 재생 속도(0.5x~2.0x 배속) 조절 옵션 화면</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.38배 인셋 포함</div></div></figure>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"요리에 비유해 볼까요? 최고급 셰프(AI)가 있어도, 상한 재료나 정체불명의 재료를 주면 요리를 망칩니다. 우리는 셰프에게 '이건 소고기(PDF 지침서)', '이건 신선한 채소(최신 복지부 웹사이트 기사)'라고 명확히 이름표를 붙여서 줘야 합니다. 이게 바로 소스 관리의 핵심입니다."</blockquote>
+<figure><img src="./assets/s2_07_audio_overview_btn.png" alt="NotebookLM AI 오디오 개요 생성 완료 후 플레이어 바 (재생/속도조절/다운로드)" loading="lazy"><figcaption><span class="no">그림 14.</span> NotebookLM AI 오디오 개요 생성 완료 후 플레이어 바 (재생/속도조절/다운로드)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 소스(Source) 관리 체계화 (PDF, 웹사이트 등 데이터 주입) 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM AI 오디오 개요 생성 완료 후 플레이어 바 (재생/속도조절/다운로드)</div><div><strong>활용 방법</strong> — 출력 형식이 기대와 다르면 프롬프트의 과업(T)·제약(C) 항목을 조정한 뒤 다시 실행합니다.</div></div></figure>
+<h3>[💻 시연]</h3>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"소스 추가 버튼을 누르면 다양한 옵션이 나옵니다. 첫째, 내 컴퓨터의 PDF 파일을 올릴 수 있고요. 둘째, 유용한 복지 관련 기사 링크를 바로 붙여넣을 수도 있습니다. 셋째, 텍스트를 바로 복사해서 넣을 수도 있죠. 저는 방금 올린 PDF 파일의 이름을 클릭해서 '2026_지침_원본'으로 직관적으로 바꿔주겠습니다. 이렇게 해야 나중에 인용구를 볼 때 헷갈리지 않습니다."</blockquote>
+<figure><img src="./assets/s2_06_add_source_menu.png" alt="좌측 소스 패널 + 소스 추가 버튼 클릭 → 포맷 선택 팝업" loading="lazy"><figcaption><span class="no">그림 15.</span> 좌측 소스 패널 + 소스 추가 버튼 클릭 → 포맷 선택 팝업</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 소스(Source) 관리 체계화 (PDF, 웹사이트 등 데이터 주입) 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — 좌측 소스 패널 + 소스 추가 버튼 클릭 → 포맷 선택 팝업</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.29배 인셋 포함</div></div></figure>
+<h3>[✍️ 실습] 멀티모달 소스 구축하기</h3>
+<ul><li><strong>상황 설정:</strong> 지역 자활 네트워크 회의를 위해 관련 자료들을 하나의 노트북에 모으기.</li><li><strong>가상 샘플데이터:</strong> </li><li>PDF 파일 업로드 (<code>회의록_초안.pdf</code>)</li><li>웹사이트 링크 추가 (보건복지부 자활사업 보도자료 URL)</li><li>Google Docs 연동 (기존에 작성 중이던 '아이디어 노트')</li><li><strong>실습 프롬프트 (소스 구성 후):</strong></li></ul>
+<p>  &gt; "현재 업로드된 소스들을 바탕으로, 이번 지역 자활 네트워크 회의에서 논의해야 할 핵심 안건 3가지를 우선순위대로 제안해줘. 보도자료의 최신 정책 동향을 반드시 반영할 것."</p>
+<ul><li><strong>체크리스트:</strong></li><li>[ ] PDF, 웹사이트, Google Docs 3가지 형태의 소스를 모두 추가했는가?</li><li>[ ] 각 소스의 이름을 식별하기 쉽게 변경(Rename)했는가?</li><li>[ ] 스튜디오의 [AI 오디오 오버뷰] 버튼을 눌러보았는가?</li></ul>
+<figure><img src="./assets/s2_17b_audio_overview_download_menu.png" alt="NotebookLM AI 오디오 개요 3점(...) 메뉴 클릭 ➔ MP3 오디오 파일 다운로드 팝업 화면" loading="lazy"><figcaption><span class="no">그림 16.</span> NotebookLM AI 오디오 개요 3점(...) 메뉴 클릭 ➔ MP3 오디오 파일 다운로드 팝업 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 수강생이 직접 따라 해야 하는 실습 구간입니다. 화면과 대조하며 같은 상태를 만들어 봅니다.</div><div><strong>기능 설명</strong> — NotebookLM AI 오디오 개요 3점(...) 메뉴 클릭 ➔ MP3 오디오 파일 다운로드 팝업 화면</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.35배 인셋 포함</div></div></figure>
+<div class="marker">📘 <strong>트러블슈팅 Q&amp;A:</strong></div>
+<ul><li><strong>Q:</strong> "웹사이트 링크를 넣었는데 추가가 안 됩니다."</li><li><strong>A:</strong> 보안이 걸려 있거나 로그인이 필요한 페이지, 동적으로 로딩되는 페이지는 스크래핑이 안 될 수 있습니다. 이럴 때는 화면을 PDF로 인쇄(저장)하거나 텍스트를 직접 복사해서 넣으세요.</li></ul>
+<h3>[✅ 검증]</h3>
+<ul><li><strong>역량 검증 루브릭:</strong></li><li><strong>우수:</strong> 3가지 이상의 다양한 포맷(PDF, 링크, Docs)을 에러 없이 추가하고 소스명을 체계적으로 정리한다.</li><li><strong>보통:</strong> 파일 업로드 및 링크 추가 기능을 수행할 수 있다.</li><li><strong>미흡:</strong> 소스의 이름을 변경하거나 불필요한 소스를 삭제하지 못한다.</li></ul>
+<h3>[🚀 최적화]</h3>
+<ul><li><strong>Before:</strong> 카카오톡, 이메일, 다운로드 폴더에 자료가 산재되어 있어, 막상 회의 때 필요한 자료를 찾지 못함. (스트레스 유발)</li><li><strong>After:</strong> 단일 워크스페이스에 모든 형태의 자료가 영구 저장되며, 언제든 대화형으로 호출 가능. (통제감 상승, 불안감 해소)</li></ul>
+<hr>
+<h2 class="ch" id="c2_4"><span class="num">2-4</span>프롬프트 전략 고도화 (Notebooks 맞춤형)</h2>
+<div class="marker">📘 <strong>교재 내용 (Textbook Content):</strong></div>
+<h3>[개념 이해]</h3>
+<p>일반적인 챗GPT에 쓰는 프롬프트와 Gemini Notebooks에 쓰는 프롬프트는 결이 다릅니다. Gemini Notebooks은 '창작'보다는 <strong>'추출, 요약, 비교, 재구성'</strong>에 특화되어 있습니다. 따라서 프롬프트도 "업로드된 소스 내에서 ~을 찾아라", "소스 A와 B를 비교하라"는 식의 명확한 제약(Constraint)을 주어야 가장 훌륭한 결과가 나옵니다.</p>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"가장 흔한 실수가 Gemini Notebooks에 대고 '자활 사업 아이디어 좀 참신하게 내봐'라고 하는 겁니다. 이 친구는 발명가가 아니라 도서관 사서입니다. '내가 준 자료 안에서, 유사한 성공 사례를 찾아 내 사업 계획서 양식에 맞게 초안을 작성해'라고 해야 완벽한 성과를 냅니다. 제약을 걸어줄수록 AI는 더 날카로워집니다."</blockquote>
+<h3>[💻 시연]</h3>
+<div class="marker">🗣️ <strong>강사 멘트 (Instructor Speech):</strong></div>
+<blockquote>"나쁜 예시와 좋은 예시를 보여드릴게요.<br>❌ 나쁜 프롬프트: '이 문서들 요약해 줘.' (결과: 뻔하고 평이한 두루뭉술한 요약)<br>⭕ 좋은 프롬프트: '이 문서들에서 <strong>[대상자 발굴 ➡️ 초기 상담 ➡️ 사후 관리]</strong> 프로세스별로 실무자가 주의해야 할 리스크를 1. 2. 3. 번호 매겨서 요약하고, 각 리스크별 대처 방안을 표로 제시해 줘.'<br>결과의 깊이가 완전히 다르죠? 구체적인 구조를 잡아주는 것이 핵심입니다."</blockquote>
+<h3>[✍️ 실습] '맥락-제약-출력' 3단 프롬프트 설계</h3>
+<ul><li><strong>상황 설정:</strong> 방대한 매뉴얼에서 신규 입사자 교육용 1장짜리 요약본을 만들어야 합니다.</li><li><strong>가상 샘플데이터:</strong> 모든 소스 선택 (지침서, 사례 등)</li></ul>
+<ul><li><strong>실습 프롬프트 (빈칸 채우기 형식으로 스스로 작성):</strong></li></ul>
+<p>  &gt; <strong>[맥락]</strong> 너는 10년 차 우수 자활 실무자야. 신규 입사자를 위한 오리엔테이션 자료를 만들려고 해.   &gt; <strong>[제약]</strong> 반드시 업로드된 '2026 자활사업 지침' 문서의 내용만 사용할 것. 외부 정보는 가져오지 마.   &gt; <strong>[출력]</strong> 신규 입사자가 반드시 알아야 할 '핵심 행정 절차 5가지'를 뽑아서, 초보자도 이해하기 쉬운 친절한 말투로 설명해 줘. 마지막에는 확인 퀴즈 3문제를 만들어 줘.</p>
+<ul><li><strong>체크리스트:</strong></li><li>[ ] 프롬프트에 역할(Persona)이 부여되었는가?</li><li>[ ] 소스 기반의 명확한 제약 조건이 포함되었는가?</li><li>[ ] 출력 형태(어조, 포맷, 추가 요소)가 구체적인가?</li></ul>
+<div class="marker">📘 <strong>트러블슈팅 Q&amp;A:</strong></div>
+<ul><li><strong>Q:</strong> "답변이 너무 길어서 읽기 힘듭니다."</li><li><strong>A:</strong> 프롬프트 끝에 "최대 500자 이내로 요약해", "불릿 포인트(-)를 사용해서 핵심만 3줄로 적어" 같은 출력 길이 제한을 추가하세요.</li></ul>
+<h3>[✅ 검증]</h3>
+<ul><li><strong>역량 검증 루브릭:</strong></li><li><strong>우수:</strong> 맥락, 제약, 출력 구조를 모두 갖춘 프롬프트를 스스로 작성하여 원하는 형태의 결과를 1회 만에 얻어낸다.</li></ul>
+<ul><li><strong>보통:</strong> 강사가 제공한 템플릿을 수정하여 프롬프트를 작성할 수 있다.</li><li><strong>미흡:</strong> 프롬프트가 모호하여 AI가 원치 않는 답변을 출력한다.</li></ul>
+<h3>[🚀 최적화]</h3>
+<ul><li><strong>Before:</strong> AI가 엉뚱한 대답을 하면 짜증을 내며 "이거 못 쓰겠네"하고 포기한다. (행동 편향)</li><li><strong>After:</strong> 내가 질문을 잘못했음을 인지하고, 프롬프트 엔지니어링 공식을 적용해 AI를 완벽하게 통제한다. (자기효능감 폭발)</li></ul>
+<hr>
+<h2 class="ch" id="c2_5"><span class="num">2-5</span>노트북(Notebooks) 구성 (페르소나/길이 조절)</h2>
+<h3>[개념 이해]</h3>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<p>Gemini Notebooks의 핵심 기능 중 하나인 '노트북(Notebook)'은 단일 작업이나 프로젝트를 위해 관련된 모든 소스(문서, 웹사이트, 파일)를 모아두는 독립된 작업 공간(Workspace)입니다. 우리의 뇌는 한 번에 처리할 수 있는 정보의 양(인지 부하)에 한계가 있습니다. 노트북을 주제별로 구성하면, 불필요한 정보의 간섭을 막고 당면한 과제에만 집중할 수 있어 인지적 과부하를 예방합니다. 특히 Gemini Notebooks은 각 노트북마다 AI의 <strong>페르소나(역할)</strong>와 출력물의 <strong>길이</strong>를 조절할 수 있어, 실무자의 의도에 완벽하게 부합하는 결과물을 도출합니다.</p>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"선생님들, 우리가 서류 작업을 할 때 책상 위에 온갖 서류가 널브러져 있으면 어떠신가요? 어디서부터 시작해야 할지 막막하고 머리부터 아파옵니다. 우리 뇌의 '작업 기억(Working Memory)'은 한 번에 3~4개의 정보만 처리할 수 있기 때문이죠. Gemini Notebooks의 '노트북' 기능은 바로 이 책상 정리를 완벽하게 해주는 디지털 비서입니다. 자활 사업기획, 상담 일지, 기관 홍보 등 각각의 서랍장(노트북)을 만들어 관련 서류만 쏙쏙 넣어두는 겁니다. 그러면 뇌는 쓸데없는 에너지를 낭비하지 않고 핵심 업무에만 100% 집중할 수 있습니다. 이 작은 '분리'의 행동이 선생님들의 업무 스트레스를 절반으로 줄여줄 첫 번째 Nudge(행동 유도)입니다. 자, 이제 나만의 맞춤형 비서를 설정하러 가볼까요?"</p>
+<h3>[💻 시연]</h3>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ol><li>Gemini Notebooks 메인 화면에서 <code>새 노트북 만들기</code> 클릭</li></ol>
+<ol><li>노트북 제목을 직관적으로 설정 (예: '2024년 2분기 자활근로 사업계획')</li><li>소스 업로드 (PDF, 구글 문서, 텍스트 복사 등)</li><li>프롬프트 창에 페르소나 및 길이 조절 지시어 입력 시연</li></ol>
+<ul><li>예시: "너는 10년 차 사회복지사야. 이 문서를 300자 이내의 요약본으로 만들어줘."</li></ul>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"화면을 보실까요? 새 노트북을 만드는 버튼이 아주 직관적이죠. 클릭 한 번이면 새로운 작업 공간이 열립니다. 여기에 제가 미리 준비한 '자활사업 지침서'를 넣어보겠습니다. 그리고 다음과 같이 지시해 보겠습니다. '너는 10년 차 사회복지사야. 이 문서를 300자 이내로 핵심만 요약해.' 어떠신가요? AI가 제 지시를 찰떡같이 알아듣고, 현장 용어를 사용해서 딱 알맞은 길이로 요약해 냅니다. 우리가 원하는 결과를 얻으려면, AI에게 '네가 누구인지(페르소나)', '얼마나 길게 쓸 것인지(길이)'를 명확히 정해주는 것, 이것이 프롬프팅의 핵심입니다."</p>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정 (가상 샘플데이터)</strong> 선생님은 현재 '게이트웨이 과정 참여자 상담 일지'를 분석하여 월간 보고서를 작성해야 합니다. 5명의 참여자 상담 기록(텍스트)이 주어집니다.</p>
+<p><strong>실습 단계</strong></p>
+<ol><li><code>새 노트북 만들기</code>를 클릭하고 제목을 '월간 상담 일지 분석_000(본인이름)'으로 지정하세요.</li></ol>
+<ol><li>강사가 제공한 '상담일지_샘플.txt' 파일을 소스로 업로드하세요.</li><li>아래의 구체적인 프롬프트를 입력하여 결과를 확인하세요.</li></ol>
+<p><strong>구체적인 프롬프트</strong></p>
+<blockquote>"너는 따뜻하지만 객관적인 시각을 가진 베테랑 자활 사례관리자야. (페르소나 부여) 업로드된 5명의 상담 일지를 분석해서, 참여자들의 공통된 애로사항 3가지를 도출하고, 이를 바탕으로 다음 달 프로그램 개선 방안을 500자 이내의 보고서 형식으로 작성해 줘. (역할, 길이, 형식 지정)"</blockquote>
+<p><strong>실습 체크리스트</strong></p>
+<ul><li>[ ] 새로운 노트북을 생성하고 적절한 제목을 달았는가?</li><li>[ ] 샘플 소스 파일을 정상적으로 업로드했는가?</li><li>[ ] 페르소나(역할)와 길이를 명시한 프롬프트를 작성하여 실행했는가?</li><li>[ ] 결과물이 지정된 글자 수(500자 내외)와 톤앤매너에 맞게 출력되었는가?</li></ul>
+<h3>[✅ 검증]</h3>
+<p><strong>역량 검증 루브릭 (Self-Check)</strong></p>
+<ul><li>⭐️⭐️⭐️ (우수): 페르소나와 길이를 완벽하게 통제하여 현장에 즉시 사용 가능한 수준의 결과물을 도출함.</li></ul>
+<ul><li>⭐️⭐️ (보통): 프롬프트를 입력했으나, 페르소나 설정이 모호하거나 길이가 약간 초과/미달됨. 추가 수정이 필요함.</li></ul>
+<ul><li>⭐️ (미흡): 소스 업로드만 수행하고, 구체적인 조건(페르소나/길이)을 부여한 프롬프트 작성에 어려움을 느낌.</li></ul>
+<h3>[🚀 최적화]</h3>
+<div class="marker">📘 <strong>Before / After 비교</strong></div>
+<ul><li><strong>Before (도입 전):</strong> 수십 페이지의 문서를 띄워놓고 이리저리 창을 옮겨 다니며 복사/붙여넣기를 반복함. 보고서 톤앤매너를 맞추기 위해 썼다 지웠다를 수십 번 반복하여 퇴근이 늦어짐. (인지 부하 폭발, 동기 저하)</li><li><strong>After (도입 후):</strong> 노트북 하나에 문서를 몰아넣고, AI 비서에게 "전문가 톤으로 3줄 요약해"라고 지시함. 3초 만에 초안이 완성되며, 즉시 검토 후 제출 가능. (스트레스 감소, 성취감에 의한 도파민 분비)</li></ul>
+<p><strong>💡 트러블슈팅 Q&amp;A</strong> <strong>Q:</strong> AI가 자꾸 제가 원하는 '전문가 톤'이 아니라 너무 딱딱한 '기계 톤'으로 답변해요. <strong>A:</strong> 페르소나를 더 구체적으로 묘사해 보세요. "너는 공감 능력이 뛰어난 사회복지사야"처럼 감정적 형용사를 추가하거나, "이 보고서는 우리 센터장님(전문가)이 읽을 거야"라고 독자를 명시해주면 톤이 확 바뀝니다.</p>
+<p>🔗 <strong><a href="https://support.google.com/notebooklm/answer/16164461?hl=ko" target="_blank" rel="noopener">구글 공식 도움말: Gemini Notebook 알아보기</a></strong></p>
+<hr>
+<h2 class="ch" id="c2_6"><span class="num">2-6</span>멀티미디어 아티팩트 생성 (오디오 브리핑 및 시각화)</h2>
+<div class="marker">📘 <strong>[Visual Asset: 교육 시각화 자료]</strong></div>
+<figure><img src="./assets/s2_20_studio_timeline_modal.png" alt="NotebookLM 스튜디오 마인드맵(Mind Map) 인터랙티브 시각화 모달 - 계층적 주제 가지(Branch) 생성 &amp; 노드별 AI 질의응답 기능" loading="lazy"><figcaption><span class="no">그림 17.</span> NotebookLM 스튜디오 마인드맵(Mind Map) 인터랙티브 시각화 모달 - 계층적 주제 가지(Branch) 생성 &amp; 노드별 AI 질의응답 기능</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 멀티미디어 아티팩트 생성 (오디오 브리핑 및 시각화) 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 스튜디오 마인드맵(Mind Map) 인터랙티브 시각화 모달 - 계층적 주제 가지(Branch) 생성 &amp; 노드별 AI 질의응답 기능</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.26배 인셋 포함</div></div></figure>
+<div class="dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 468" width="100%" role="img" aria-label="2-6 멀티미디어 아티팩트 생성 (오디오 브리핑 및 시각화)"><defs>
+<linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#FC00DC"/><stop offset="52%" stop-color="#731FFF"/>
+  <stop offset="100%" stop-color="#00FFD7"/></linearGradient>
+<linearGradient id="g_start" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00FFD7"/><stop offset="100%" stop-color="#00B9A0"/></linearGradient>
+<linearGradient id="f_start" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00FFD7" stop-opacity="0.20"/><stop offset="100%" stop-color="#00B9A0" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_process" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#731FFF"/><stop offset="100%" stop-color="#4A0FB8"/></linearGradient>
+<linearGradient id="f_process" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#731FFF" stop-opacity="0.20"/><stop offset="100%" stop-color="#4A0FB8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_decision" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#A8009A"/></linearGradient>
+<linearGradient id="f_decision" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#A8009A" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_circle" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00A8FF"/><stop offset="100%" stop-color="#0069B8"/></linearGradient>
+<linearGradient id="f_circle" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00A8FF" stop-opacity="0.20"/><stop offset="100%" stop-color="#0069B8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_danger" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF4D6D"/><stop offset="100%" stop-color="#B00030"/></linearGradient>
+<linearGradient id="f_danger" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF4D6D" stop-opacity="0.20"/><stop offset="100%" stop-color="#B00030" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_success" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3DDC84"/><stop offset="100%" stop-color="#1E9E58"/></linearGradient>
+<linearGradient id="f_success" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DDC84" stop-opacity="0.20"/><stop offset="100%" stop-color="#1E9E58" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_end" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#731FFF"/></linearGradient>
+<linearGradient id="f_end" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#731FFF" stop-opacity="0.07"/></linearGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/></filter>
+<marker id="ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#6E7488"/></marker>
+</defs><rect width="536" height="468" rx="18" fill="#05060A"/><text x="34" y="42" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="17" font-weight="800" fill="url(#neon)">2-6 멀티미디어 아티팩트 생성 (오디오 브리핑 및 시각화)</text><rect x="34" y="52" width="72" height="3.5" rx="1.8" fill="url(#neon)"/><path d="M 267.8 128.0 C 267.8 160.0, 267.8 160.0, 267.8 192.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 267.8 250.0 C 267.8 282.0, 141.8 282.0, 141.8 314.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 267.8 250.0 C 267.8 282.0, 395.7 282.0, 395.7 314.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<rect x="179.2" y="70.0" width="177.3" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="179.2" y="70.0" width="177.3" height="58.0" rx="14" fill="url(#f_start)" stroke="url(#g_start)" stroke-width="2"/>
+<rect x="179.2" y="80.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_start)" filter="url(#glow)"/>
+<text x="267.8" y="99.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">텍스트 매뉴얼 문서</text>
+<polygon points="267.83,180.0 361.7,221.0 267.83,262.0 174.0,221.0" fill="url(#f_decision)" stroke="url(#g_decision)" stroke-width="2.4" filter="url(#soft)"/>
+<text x="267.8" y="221.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">AI 톱니바퀴 처리</text>
+<rect x="60.0" y="314.0" width="163.7" height="74.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="60.0" y="314.0" width="163.7" height="74.0" rx="14" fill="url(#f_end)" stroke="url(#g_end)" stroke-width="2"/>
+<rect x="60.0" y="324.0" width="4.5" height="54.0" rx="2.2" fill="url(#g_end)" filter="url(#glow)"/>
+<text x="141.8" y="339.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">오디오 파형</text>
+<text x="141.8" y="363.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="500" fill="#AEB4C2">AI 오디오 오버뷰</text>
+<rect x="315.7" y="314.0" width="160.0" height="74.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="315.7" y="314.0" width="160.0" height="74.0" rx="14" fill="url(#f_end)" stroke="url(#g_end)" stroke-width="2"/>
+<rect x="315.7" y="324.0" width="4.5" height="54.0" rx="2.2" fill="url(#g_end)" filter="url(#glow)"/>
+<text x="395.7" y="339.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">PPT 화면</text>
+<text x="395.7" y="363.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="500" fill="#AEB4C2">슬라이드 덱</text></svg></div>
+<h3>[개념 요약 (Concept)]</h3>
+<p>🎯 <strong>핵심 개념</strong> 사람마다 정보를 흡수하는 최적의 방식(시각, 청각, 텍스트 등)이 다릅니다. Gemini Notebooks는 <strong>스튜디오(Studio) 패널</strong>을 통해 텍스트 요약을 넘어, 소스 문서를 기반으로 <strong>AI 오디오 오버뷰 · 슬라이드 자료 · 동영상 개요 · 마인드 맵 · 보고서 · 플래시카드 · 퀴즈 · 인포그래픽 · 데이터 표</strong> 등 9종의 산출물을 자동 생성합니다. 각 버튼은 꺾쇠(∨)를 눌러 형식·언어·길이·소스 선택·프롬프트를 맞춤설정할 수 있습니다. 다중 감각을 자극하여 정보의 기억 유지율을 비약적으로 높여주며, 복잡한 실무 지침을 동료들에게 빠르고 직관적으로 전파하는 데 핵심적인 역할을 합니다.</p>
+<figure><img src="./assets/s2_18_studio_briefing_doc_modal.png" alt="NotebookLM 스튜디오 보고서 생성 모달 가이드 - 기본 형식 4종(직접 만들기, 브리핑 문서, 학습 가이드, 블로그 게시물) &amp; 자활 실무 추천 형식 4종(전략 보고서, 운영 프로토콜, 개념 입문서, 사례 분" loading="lazy"><figcaption><span class="no">그림 18.</span> NotebookLM 스튜디오 보고서 생성 모달 가이드 - 기본 형식 4종(직접 만들기, 브리핑 문서, 학습 가이드, 블로그 게시물) &amp; 자활 실무 추천 형식 4종(전략 보고서, 운영 프로토콜, 개념 입문서, 사례 분석서)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 멀티미디어 아티팩트 생성 (오디오 브리핑 및 시각화) 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 스튜디오 보고서 생성 모달 가이드 - 기본 형식 4종(직접 만들기, 브리핑 문서, 학습 가이드, 블로그 게시물) &amp; 자활 실무 추천 형식 4종(전략 보고서, 운영 프로토콜, 개념 입문서, 사례 분석서)</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.26배 인셋 포함</div></div></figure>
+<p>🎤 <strong>시연 멘트</strong></p>
+<blockquote>"선생님들, 두꺼운 지침서 읽다가 스르르 잠든 경험 있으시죠? 이제 그 지침서를 진행자 두 명이 대화하듯 설명해주는 [AI 오디오 오버뷰]로 만들거나, 상사에게 바로 보고할 수 있는 [슬라이드 자료]로 바꿀 수 있습니다. 이것이 스튜디오 패널의 역할입니다. 텍스트 문서가 오디오와 [인포그래픽]으로 바뀌는 과정을 함께 보겠습니다."</blockquote>
+<figure><img src="./assets/s2_07a_audio_overview_hover.png" alt="NotebookLM 우측 스튜디오 오디오 오버뷰 버튼 마우스 호버/클릭 선택 화면" loading="lazy"><figcaption><span class="no">그림 19.</span> NotebookLM 우측 스튜디오 오디오 오버뷰 버튼 마우스 호버/클릭 선택 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 강사 시연 화면입니다. 설명하는 동안 수강생이 같은 화면을 찾을 수 있도록 배치했습니다.</div><div><strong>기능 설명</strong> — NotebookLM 우측 스튜디오 오디오 오버뷰 버튼 마우스 호버/클릭 선택 화면</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.72배 인셋 포함</div></div></figure>
+<h3>[시연 (Demonstration)]</h3>
+<ol><li>업로드된 문서 소스 패널에서 <code>아티팩트 생성</code> 버튼 클릭</li></ol>
+<figure><img src="./assets/s2_08_artifact_format.png" alt="NotebookLM 스튜디오 상단 생성 버튼 클릭 → 9종 통합 아티팩트 생성 제어 모달" loading="lazy"><figcaption><span class="no">그림 20.</span> NotebookLM 스튜디오 상단 생성 버튼 클릭 → 9종 통합 아티팩트 생성 제어 모달</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 강사 시연 화면입니다. 설명하는 동안 수강생이 같은 화면을 찾을 수 있도록 배치했습니다.</div><div><strong>기능 설명</strong> — NotebookLM 스튜디오 상단 생성 버튼 클릭 → 9종 통합 아티팩트 생성 제어 모달</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.0배 인셋 포함</div></div></figure>
+<ol><li>생성할 산출물 선택 — AI 오디오 오버뷰 · 슬라이드 자료 · 동영상 개요 · 마인드 맵 · 보고서 · 플래시카드 · 퀴즈 · 인포그래픽 · 데이터 표 중 목적에 맞는 버튼 클릭</li></ol>
+<p>   (버튼 우측 꺾쇠(∨) → 형식 · 언어 · 길이 · 사용할 소스 · 추천 프롬프트/직접 입력 맞춤설정)</p>
+<figure><img src="./assets/s2_07b_audio_overview_customization_modal.png" alt="NotebookLM AI 오디오 오버뷰 5대 맞춤설정 모달 (형식/언어/길이/소스선택/프롬프트)" loading="lazy"><figcaption><span class="no">그림 21.</span> NotebookLM AI 오디오 오버뷰 5대 맞춤설정 모달 (형식/언어/길이/소스선택/프롬프트)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 멀티미디어 아티팩트 생성 (오디오 브리핑 및 시각화) 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM AI 오디오 오버뷰 5대 맞춤설정 모달 (형식/언어/길이/소스선택/프롬프트)</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.24배 인셋 포함</div></div></figure>
+<ol><li>10초 만에 전문적인 형태의 멀티미디어 자료가 생성되는 과정 확인</li></ol>
+<figure><img src="./assets/s2_19b_flashcards_modal.png" alt="NotebookLM 스튜디오 플래시카드(Flashcards) 생성 모달 가이드 - 전면 질문 &amp; 후면 근거 답변 양면 자습 도구" loading="lazy"><figcaption><span class="no">그림 22.</span> NotebookLM 스튜디오 플래시카드(Flashcards) 생성 모달 가이드 - 전면 질문 &amp; 후면 근거 답변 양면 자습 도구</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 실습 결과가 제대로 나왔는지 대조하는 기준 화면입니다.</div><div><strong>기능 설명</strong> — NotebookLM 스튜디오 플래시카드(Flashcards) 생성 모달 가이드 - 전면 질문 &amp; 후면 근거 답변 양면 자습 도구</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.26배 인셋 포함</div></div></figure>
+<h3>[실습 (Practice)]</h3>
+<ol><li>본인의 노트북 공간에서 실습용 PDF 문서를 선택하세요.</li></ol>
+<ol><li><code>오디오 브리핑 생성</code> 및 <code>슬라이드 생성</code> 버튼을 차례로 눌러 아티팩트를 완성하세요.</li></ol>
+<figure><img src="./assets/s2_19_studio_faq_format_modal.png" alt="NotebookLM 스튜디오 퀴즈(Quiz) 생성 모달 가이드 - 주요 자활 지침 객관식/단답형 평가 문항 및 점검 기능" loading="lazy"><figcaption><span class="no">그림 23.</span> NotebookLM 스튜디오 퀴즈(Quiz) 생성 모달 가이드 - 주요 자활 지침 객관식/단답형 평가 문항 및 점검 기능</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 멀티미디어 아티팩트 생성 (오디오 브리핑 및 시각화) 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 스튜디오 퀴즈(Quiz) 생성 모달 가이드 - 주요 자활 지침 객관식/단답형 평가 문항 및 점검 기능</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.26배 인셋 포함</div></div></figure>
+<h3>[검증 (Validation)]</h3>
+<ul><li>[ ] [AI 오디오 오버뷰]로 생성한 오디오가 정상적으로 재생되는가? (재생 속도 0.5x~2.0x 조절, 점 세 개(⋯) 메뉴로 MP3 다운로드 가능)</li><li>[ ] 슬라이드 덱의 내용이 문서의 핵심을 잘 요약하고 있는가?</li></ul>
+<figure><img src="./assets/s2_07c_audio_generating_progress.png" alt="NotebookLM AI 오디오 개요 실시간 생성중 진행 프로그레스바" loading="lazy"><figcaption><span class="no">그림 24.</span> NotebookLM AI 오디오 개요 실시간 생성중 진행 프로그레스바</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 실습 결과가 제대로 나왔는지 대조하는 기준 화면입니다.</div><div><strong>기능 설명</strong> — NotebookLM AI 오디오 개요 실시간 생성중 진행 프로그레스바</div><div><strong>활용 방법</strong> — 출력 형식이 기대와 다르면 프롬프트의 과업(T)·제약(C) 항목을 조정한 뒤 다시 실행합니다. · 확대 1.38배 인셋 포함</div></div></figure>
+<h3>[최적화 (Optimization)]</h3>
+<ul><li>생성된 아티팩트를 부서원들과 공유하여, 복잡한 텍스트 문서를 읽지 않고도 빠르고 직관적인 업무 파악이 가능하도록 활용해보세요.</li></ul>
+<h2 class="ch" id="c2_7"><span class="num">2-7</span>채팅-메모-소스 순환 워크플로우</h2>
+<div class="marker">📘 <strong>[Visual Asset: 교육 시각화 자료]</strong></div>
+<div class="dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1053 208" width="100%" role="img" aria-label="2-7 채팅-메모-소스 순환 워크플로우"><defs>
+<linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#FC00DC"/><stop offset="52%" stop-color="#731FFF"/>
+  <stop offset="100%" stop-color="#00FFD7"/></linearGradient>
+<linearGradient id="g_start" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00FFD7"/><stop offset="100%" stop-color="#00B9A0"/></linearGradient>
+<linearGradient id="f_start" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00FFD7" stop-opacity="0.20"/><stop offset="100%" stop-color="#00B9A0" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_process" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#731FFF"/><stop offset="100%" stop-color="#4A0FB8"/></linearGradient>
+<linearGradient id="f_process" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#731FFF" stop-opacity="0.20"/><stop offset="100%" stop-color="#4A0FB8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_decision" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#A8009A"/></linearGradient>
+<linearGradient id="f_decision" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#A8009A" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_circle" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00A8FF"/><stop offset="100%" stop-color="#0069B8"/></linearGradient>
+<linearGradient id="f_circle" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00A8FF" stop-opacity="0.20"/><stop offset="100%" stop-color="#0069B8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_danger" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF4D6D"/><stop offset="100%" stop-color="#B00030"/></linearGradient>
+<linearGradient id="f_danger" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF4D6D" stop-opacity="0.20"/><stop offset="100%" stop-color="#B00030" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_success" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3DDC84"/><stop offset="100%" stop-color="#1E9E58"/></linearGradient>
+<linearGradient id="f_success" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DDC84" stop-opacity="0.20"/><stop offset="100%" stop-color="#1E9E58" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_end" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#731FFF"/></linearGradient>
+<linearGradient id="f_end" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#731FFF" stop-opacity="0.07"/></linearGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/></filter>
+<marker id="ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#6E7488"/></marker>
+</defs><rect width="1053" height="208" rx="18" fill="#05060A"/><text x="34" y="42" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="17" font-weight="800" fill="url(#neon)">2-7 채팅-메모-소스 순환 워크플로우</text><rect x="34" y="52" width="72" height="3.5" rx="1.8" fill="url(#neon)"/><path d="M 832.6 99.0 C 528.1 99.0, 528.1 99.0, 223.7 99.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 223.7 99.0 C 269.7 99.0, 269.7 99.0, 315.7 99.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 488.6 99.0 C 534.6 99.0, 534.6 99.0, 580.6 99.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 740.6 99.0 C 786.6 99.0, 786.6 99.0, 832.6 99.0" fill="none" stroke="#6E7488" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ah)" opacity="0.9"/>
+<rect x="764.1" y="86.0" width="45.0" height="24" rx="12" fill="#14151C" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+<text x="786.6" y="99.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="12.5" font-weight="600" fill="#C9CFDD">순환</text>
+<rect x="832.6" y="70.0" width="160.0" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="832.6" y="70.0" width="160.0" height="58.0" rx="14" fill="url(#f_process)" stroke="url(#g_process)" stroke-width="2"/>
+<rect x="832.6" y="80.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_process)" filter="url(#glow)"/>
+<text x="912.6" y="99.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">1. 소스 업로드</text>
+<rect x="60.0" y="70.0" width="163.7" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="60.0" y="70.0" width="163.7" height="58.0" rx="14" fill="url(#f_process)" stroke="url(#g_process)" stroke-width="2"/>
+<rect x="60.0" y="80.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_process)" filter="url(#glow)"/>
+<text x="141.8" y="99.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">2. 채팅 질의응답</text>
+<rect x="315.7" y="70.0" width="173.0" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="315.7" y="70.0" width="173.0" height="58.0" rx="14" fill="url(#f_process)" stroke="url(#g_process)" stroke-width="2"/>
+<rect x="315.7" y="80.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_process)" filter="url(#glow)"/>
+<text x="402.1" y="99.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">3. 핀 고정 및 메모</text>
+<rect x="580.6" y="70.0" width="160.0" height="58.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="580.6" y="70.0" width="160.0" height="58.0" rx="14" fill="url(#f_process)" stroke="url(#g_process)" stroke-width="2"/>
+<rect x="580.6" y="80.0" width="4.5" height="38.0" rx="2.2" fill="url(#g_process)" filter="url(#glow)"/>
+<text x="660.6" y="99.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">4. 보고서 생성</text></svg></div>
+<h3>[개념 이해]</h3>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<p>Gemini Notebooks의 진정한 힘은 '소스(Source)' ↔ '채팅(Chat)' ↔ '메모(Note)'가 유기적으로 연결되는 순환 워크플로우에 있습니다. </p>
+<ol><li><strong>소스:</strong> 믿을 수 있는 근거 자료(Grounding)</li><li><strong>채팅:</strong> 소스와 대화하며 아이디어 발산 및 정보 추출</li><li><strong>메모:</strong> 의미 있는 채팅 결과를 영구 저장하고 조립(수렴)</li></ol>
+<figure><img src="./assets/s2_09a_pin_to_note_hover.png" alt="NotebookLM 채팅 답변 우측 하단 📌 메모에 저장 (Pin to Note) 버튼 마우스 호버 화면" loading="lazy"><figcaption><span class="no">그림 25.</span> NotebookLM 채팅 답변 우측 하단 📌 메모에 저장 (Pin to Note) 버튼 마우스 호버 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 채팅-메모-소스 순환 워크플로우 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 채팅 답변 우측 하단 📌 메모에 저장 (Pin to Note) 버튼 마우스 호버 화면</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.73배 인셋 포함</div></div></figure>
+<p>이 과정은 인간의 뇌가 정보를 '탐색(발산)'하고 '구조화(수렴)'하는 자연스러운 인지 과정을 완벽하게 모방한 설계입니다. 메모들을 결합하여 하나의 완성된 보고서를 만들어내는 경험은 즉각적인 성취감(도파민)을 제공합니다.</p>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"여러분, 구슬이 서 말이라도 꿰어야 보배라는 말이 있죠? 아무리 AI가 좋은 답을 채팅창에 내놓아도, 그걸 복사해서 한글 파일에 옮기고 정리하다 보면 맥이 빠집니다. Gemini Notebooks는 이 과정을 도구 안에서 끝낼 수 있습니다. 채팅하다가 쓸 만한 답이 나오면 핀(📌) 아이콘을 누르세요. '메모'로 저장됩니다.</p>
+<p>한 가지 주의할 점이 있습니다. 메모를 하나로 합쳐주는 '결합' 버튼은 <strong>없습니다</strong>. 스튜디오 패널 하단의 [메모 추가]로 새 메모를 만들고, 기존 메모를 열어 내용을 마우스로 복사해 새 메모에 붙여넣는 방식으로 직접 합쳐야 합니다. 그리고 <strong>스튜디오에 저장된 메모는 보기 전용이라 나중에 편집할 수 없습니다.</strong> 그래서 합칠 계획이 있다면 처음부터 새 메모에 모아두시는 편이 낫습니다.</p>
+<figure><img src="./assets/s2_10_combine_notes.png" alt="NotebookLM 스튜디오 메모 통합 안내 - 📌 저장된 메모는 보기 전용이며, 하단 &#x27;+ 메모 추가&#x27;로 새 메모 생성 후 기존 내용 복사/붙여넣기로 종합 작성" loading="lazy"><figcaption><span class="no">그림 26.</span> NotebookLM 스튜디오 메모 통합 안내 - 📌 저장된 메모는 보기 전용이며, 하단 &#x27;+ 메모 추가&#x27;로 새 메모 생성 후 기존 내용 복사/붙여넣기로 종합 작성</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 채팅-메모-소스 순환 워크플로우 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 스튜디오 메모 통합 안내 - 📌 저장된 메모는 보기 전용이며, 하단 '+ 메모 추가'로 새 메모 생성 후 기존 내용 복사/붙여넣기로 종합 작성</div><div><strong>활용 방법</strong> — 출력 형식이 기대와 다르면 프롬프트의 과업(T)·제약(C) 항목을 조정한 뒤 다시 실행합니다.</div></div></figure>
+<p>내 자료(소스)에서 묻고(채팅), 쓸 만한 답을 모아(메모), 하나의 문서로 조립하는 흐름 — 이 순환을 익히시면 작업 속도가 확실히 달라집니다."</p>
+<h3>[💻 시연]</h3>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ol><li>업로드된 소스를 바탕으로 채팅창에서 질문 진행</li><li>만족스러운 답변이 나오면 채팅 상단의 핀(📌 '메모에 저장') 아이콘 클릭</li></ol>
+<figure><img src="./assets/s2_09_pin_to_note.png" alt="채팅 답변 우측 📌 메모에 저장 클릭 → 생성된 메모 카드" loading="lazy"><figcaption><span class="no">그림 27.</span> 채팅 답변 우측 📌 메모에 저장 클릭 → 생성된 메모 카드</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 강사 시연 화면입니다. 설명하는 동안 수강생이 같은 화면을 찾을 수 있도록 배치했습니다.</div><div><strong>기능 설명</strong> — 채팅 답변 우측 📌 메모에 저장 클릭 → 생성된 메모 카드</div><div><strong>활용 방법</strong> — 출력 형식이 기대와 다르면 프롬프트의 과업(T)·제약(C) 항목을 조정한 뒤 다시 실행합니다. · 확대 1.18배 인셋 포함</div></div></figure>
+<ol><li>좌측 패널에 생성된 '메모' 확인 및 더블클릭하여 내용 수정 시연</li></ol>
+<ol><li>2~3개의 메모를 체크박스로 선택 후 <code>새로운 메모로 결합</code> 혹은 <code>개요 만들기</code> 기능 시연</li></ol>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"잘 보세요. 제가 소스 문서에서 '2024년 지원금 변경 사항'을 물어봤습니다. 훌륭한 답변이 나왔네요. 복사할 필요 없이 여기 핀 모양 버튼을 누릅니다. 찰칵! 좌측 메모장에 예쁘게 붙었죠? 하나 더, '참여자 유의사항'도 물어보고 핀으로 고정합니다. 이제 이 두 개의 메모를 선택하고, 위에 있는 '선택한 메모 결합'을 눌러볼게요. 흩어져 있던 두 가지 정보가 하나의 깔끔한 문서로 합쳐졌습니다. 이 워크플로우가 손에 익으면 보고서 작성 속도가 10배는 빨라집니다."</p>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정 (가상 샘플데이터)</strong> 지역사회 연계 사업(예: 다회용기 세척 사업) 제안서를 작성해야 합니다. 강사가 제공한 2개의 소스('타 지역 우수사례.pdf', '우리 지역 환경분석.docx')를 사용합니다.</p>
+<p><strong>실습 단계</strong></p>
+<ol><li>두 개의 소스를 노트북에 업로드합니다.</li><li>채팅창을 통해 타 지역 우수사례의 핵심 성공 요인 3가지를 찾아 메모로 저장하세요(📌).</li><li>우리 지역에 적용할 때 예상되는 문제점 2가지를 채팅으로 물어보고 메모로 저장하세요(📌).</li><li>저장된 2개의 메모를 선택하여 하나의 새로운 메모로 [결합]하고, 제목을 '사업 제안서 초안'으로 수정하세요.</li></ol>
+<p><strong>구체적인 프롬프트</strong></p>
+<blockquote>프롬프트 1: "타 지역 우수사례 문서(소스 1)를 기반으로, 다회용기 사업의 핵심 성공 요인 3가지를 개조식으로 요약해 줘." -&gt; 📌 핀 고정<br>프롬프트 2: "우리 지역 환경분석(소스 2)을 고려할 때, 이 사업을 도입할 경우 예상되는 가장 큰 문제점 2가지를 찾아줘." -&gt; 📌 핀 고정</blockquote>
+<p><strong>실습 체크리스트</strong></p>
+<ul><li>[ ] 채팅 결과물을 핀(📌)을 눌러 성공적으로 메모 패널에 저장했는가?</li></ul>
+<ul><li>[ ] 다수의 메모를 선택(체크)하여 결합(Combine) 기능을 실행했는가?</li></ul>
+<ul><li>[ ] 메모의 제목과 내용을 직접 클릭하여 편집할 수 있는가?</li></ul>
+<h3>[✅ 검증]</h3>
+<p><strong>역량 검증 루브릭 (Self-Check)</strong></p>
+<ul><li>⭐️⭐️⭐️ (우수): 소스-채팅-메모 간의 순환 과정을 완벽히 이해하고, 파편화된 정보를 모아 논리적인 하나의 글로 결합해 냄.</li><li>⭐️⭐️ (보통): 메모 저장은 할 수 있으나, 여러 메모를 결합하거나 재구성하는 과정에서 약간의 머뭇거림이 있음. 연습 필요.</li><li>⭐️ (미흡): 채팅창에서 정보를 얻는 것에 그치고, 이를 메모로 저장하여 자산화하는 시스템(워크플로우)을 활용하지 못함.</li></ul>
+<h3>[🚀 최적화]</h3>
+<div class="marker">📘 <strong>Before / After 비교</strong></div>
+<ul><li><strong>Before (도입 전):</strong> 챗GPT에서 나온 답변을 아래아한글이나 워드 창에 일일이 복사+붙여넣기 함. 맥락이 끊기고, 어떤 자료에서 나온 정보인지 출처(Source)를 잃어버려 나중에 검증하느라 고생함.</li><li><strong>After (도입 후):</strong> Gemini Notebooks 안에서 모든 작업이 완결됨. 정보의 출처(주석)가 명확하게 달린 메모들을 조립식으로 결합하여 완벽한 초안을 완성함. 무결점 보고서 완성에 따른 도파민 폭발.</li></ul>
+<p><strong>💡 트러블슈팅 Q&amp;A</strong> <strong>Q:</strong> 메모를 결합했더니 내용이 그냥 단순하게 이어붙여지기만 해요. 조금 다듬을 순 없나요? <strong>A:</strong> 결합할 메모들을 선택한 후, 상단의 입력창에 "이 메모들을 활용해서 서론-본론-결론 구조의 보고서로 다시 써줘"라고 명령을 내릴 수 있습니다. Gemini Notebooks은 단순 병합뿐만 아니라 선택된 메모들을 기반으로 새로운 창작도 해내는 훌륭한 에디터입니다.</p>
+<p>🔗 <strong><a href="https://support.google.com/notebooklm/answer/16262519?hl=ko" target="_blank" rel="noopener">구글 공식 도움말: 메모 만들기 및 추가</a></strong></p>
+<hr>
+<h2 class="ch" id="c2_8"><span class="num">2-8</span>모바일 기기와의 연동</h2>
+<h3>[개념 이해]</h3>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<p>현대 실무자들은 데스크톱 앞에만 앉아 있지 않습니다. 외부 미팅, 출장, 출퇴근 등 이동 시간이 상당합니다. Gemini Notebooks은 클라우드 기반 웹 서비스로, 구글 계정만 연동되어 있으면 스마트폰, 태블릿 등 모바일 기기에서도 동일한 작업 환경에 접속할 수 있습니다. </p>
+<p>'장소의 제약'을 허무는 것은 행동주의 심리학에서 말하는 '접근성(Accessibility)'을 극대화하여 툴 사용 빈도를 높이는 가장 확실한 넛지입니다. 갑자기 떠오른 아이디어나 현장에서 찍은 사진/메모를 모바일로 즉시 업로드하고, 사무실에 돌아와 PC로 이어서 작업하는 하이브리드 워크플로우를 구축할 수 있습니다.</p>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"선생님들, 훌륭한 아이디어는 꼭 책상 앞에서 모니터를 뚫어져라 쳐다볼 때 나오지 않습니다. 오히려 퇴근길 버스 안에서, 혹은 현장 실사를 마치고 돌아오는 길에 번뜩 떠오르죠. 그때 어떻게 하시나요? 카카오톡 '나에게 보내기'에 대충 적어두시나요? 이제는 스마트폰 브라우저를 열고 Gemini Notebooks에 접속하세요. 이동 중에 음성으로 텍스트를 입력해 메모로 남기거나, 방금 받은 자료를 업로드해 보세요. 사무실 PC를 켜면 모든 내용이 동기화되어 여러분을 기다리고 있을 겁니다. 일과 장소의 경계를 허무는 것, 이것이 스마트 워킹의 완성입니다."</p>
+<h3>[💻 시연]</h3>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<ol><li>스마트폰(또는 강사의 태블릿 미러링)에서 웹 브라우저(크롬, 사파리 등)를 열고 notebooklm.google.com 접속 시연</li><li>구글 계정 로그인 후, 앞서 PC에서 작업했던 노트북이 그대로 보이는지 확인(동기화 입증)</li><li>모바일 환경에서 텍스트 노트를 하나 작성하여 저장</li><li>다시 PC 화면으로 돌아와 해당 메모가 실시간으로 반영되어 있는지 확인</li></ol>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"제 스마트폰 화면을 스크린에 띄워보겠습니다. 사파리를 열고 Gemini Notebooks에 들어갑니다. 아까 우리가 함께 만들었던 '월간 상담 일지' 노트북이 그대로 있죠? 터치해서 들어가 볼게요. 현장에서 갑자기 떠오른 아이디어가 있다고 칠게요. '메모 추가'를 누르고 음성인식 마이크를 켭니다. (음성으로) '다음 달 다회용기 사업 홍보 시, 맘카페를 적극 활용할 것.' 자, 저장이 되었습니다. 이제 제 PC 화면을 볼까요? 방금 폰에서 단 메모가 1초의 지연도 없이 PC에 짠 하고 나타납니다. 어떠신가요? 소름 돋지 않으시나요?"</p>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정 (가상 샘플데이터)</strong> 여러분은 현재 외부 출장 중입니다. 현장에서 급한 보고를 위해 모바일로 Gemini Notebooks에 접속하여 간단한 메모를 남겨야 합니다.</p>
+<p><strong>실습 단계</strong></p>
+<ol><li>본인의 스마트폰 브라우저를 엽니다.</li><li><code>notebooklm.google.com</code>에 접속하여 현재 PC와 동일한 구글 계정으로 로그인합니다.</li><li>방금 전 실습했던 노트북(예: 사업 제안서 초안)에 들어갑니다.</li><li>새로운 메모를 생성하고, 스마트폰의 <strong>'음성 인식(받아쓰기)'</strong> 기능을 이용하여 "현장 실사 결과, 참여자들의 만족도가 매우 높음. 추가 예산 확보 필요."라고 입력한 뒤 저장합니다.</li></ol>
+<ol><li>본인의 PC 모니터를 확인하여 해당 메모가 동기화되었는지 확인합니다.</li></ol>
+<p><strong>실습 체크리스트</strong></p>
+<ul><li>[ ] 모바일 기기에서 Gemini Notebooks 접속 및 로그인을 성공적으로 마쳤는가?</li><li>[ ] 모바일 환경에서 기존 노트북에 접근하여 새 메모를 생성했는가?</li><li>[ ] 스마트폰 음성 입력 등을 활용하여 간편하게 정보를 기록했는가?</li></ul>
+<ul><li>[ ] PC와 모바일 간의 실시간 동기화를 눈으로 확인했는가?</li></ul>
+<h3>[✅ 검증]</h3>
+<p><strong>역량 검증 루브릭 (Self-Check)</strong></p>
+<ul><li>⭐️⭐️⭐️ (우수): 모바일과 PC의 연동 개념을 완벽히 체화하여, 이동 중에도 언제든 AI 비서를 호출하고 정보를 축적할 수 있는 준비가 됨.</li></ul>
+<ul><li>⭐️⭐️ (보통): 모바일 접속과 동기화 확인은 했으나, 모바일 브라우저 환경에서의 UI 조작(핀 고정, 메뉴 찾기 등)에 다소 어색함을 느낌.</li></ul>
+<ul><li>⭐️ (미흡): 모바일 기기에서 계정 로그인에 실패하거나, PC와 다른 계정으로 로그인하여 동기화 확인에 실패함.</li></ul>
+<h3>[🚀 최적화]</h3>
+<div class="marker">📘 <strong>Before / After 비교</strong></div>
+<ul><li><strong>Before (도입 전):</strong> 현장에서 얻은 영감이나 자료를 카카오톡 내게 쓰기, 수첩, 이메일 등 파편화된 도구에 중구난방으로 기록함. 막상 사무실에 오면 어디에 적었는지 찾느라 시간을 허비함. (정보의 유실, 작업 흐름 단절)</li><li><strong>After (도입 후):</strong> 생각나는 즉시 모바일 Gemini Notebooks 해당 '서랍(노트북)'에 바로 꽂아 넣음. 사무실에 복귀하면 책상 정리가 이미 끝난 상태에서 본 작업(결합 및 편집)만 우아하게 시작함. (매끄러운 작업 흐름, 높은 생산성 유지)</li></ul>
+<p><strong>💡 트러블슈팅 Q&amp;A</strong> <strong>Q:</strong> 전용 모바일 앱(App)은 없나요? 매번 브라우저로 들어가기 귀찮아요. <strong>A:</strong> 현재(2024년 기준) 구글에서 공식 Gemini Notebooks 전용 앱을 출시하지는 않았습니다. 하지만 스마트폰 브라우저에서 '홈 화면에 추가' 기능을 사용하면, 마치 앱 아이콘처럼 바탕화면에 빼놓고 원클릭으로 접속할 수 있습니다. (강사가 안드로이드/아이폰별 홈 화면 추가 방법 안내)</p>
+<p>🔗 <strong><a href="https://support.google.com/accounts/answer/15277265?hl=ko" target="_blank" rel="noopener">구글 공식 도움말: Google 계정 소개</a></strong></p>
+<p>본 교안은 인천지역 희망자활센터 실무자들의 인지 부하를 최소화하고, 즉각적인 성취감을 통해 도파민 기반의 학습 동기를 부여하도록 설계된 마스터 교안입니다. 각 실무자는 반복되고 소모적인 행정 업무에서 벗어나, 자활 참여자들과의 정서적 교감 및 사례 관리에 집중할 수 있는 '시간과 에너지'를 확보하는 것을 궁극적인 목표로 합니다.</p>
+<hr>
+<h2 class="ch" id="c2_9"><span class="num">2-9</span>아티팩트(Artifacts) 및 프롬프트 라이브러리 활용</h2>
+<div class="marker">📘 <strong>[개념 이해]</strong></div>
+<p><strong>아티팩트(Artifacts)란 무엇인가?</strong> AI와의 대화(채팅) 과정에서 생성되는 중요한 산출물을 의미합니다. 긴 분량의 사업 기획서, 복잡한 데이터가 담긴 표, 코드 스니펫 또는 마크다운 문서 등이 생성될 때, 채팅창 내에 섞여서 스크롤을 올려야만 볼 수 있는 것이 아니라 우측에 독립된 패널이나 별도의 파일 형태로 분리되어 표시되는 기능입니다. 이를 통해 사용자는 생성된 결과물을 실시간 확인하고, AI에게 수정을 지시함과 동시에 직접 텍스트를 편집할 수도 있습니다.</p>
+<p><strong>프롬프트 라이브러리(Prompt Library)란?</strong> 자활센터 실무에서 반복적으로 발생하는 업무(예: 상담 일지 요약, 보도자료 초안 작성, 월간 보고서 목차 구성 등)를 처리하기 위해, 최적화된 프롬프트를 템플릿 형태로 저장하고 분류해 둔 개인화된 데이터베이스입니다. 변수(예: <code>[사업단명]</code>, <code>[참여자이름]</code>)만 바꾸어 재사용할 수 있도록 시스템화하는 것이 핵심입니다.</p>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"선생님들, 우리가 하루 종일 모니터를 보며 수많은 창을 띄워놓고 일할 때 우리 뇌에서는 어떤 일이 벌어질까요? 뇌과학에서는 이를 '인지적 과부하(Cognitive Overload)'라고 합니다. 새로운 기획안을 쓸 때마다 '어떻게 시작해야 하지?', '지난번에 어떻게 지시했더라?' 고민하는 과정은 뇌의 전두엽 에너지를 심각하게 고갈시킵니다.  여러분의 뇌는 창의적인 기획과 참여자를 향한 따뜻한 공감에 쓰여야 합니다. '아티팩트'와 '프롬프트 라이브러리'는 바로 여러분의 뇌를 위한 '외장 하드디스크'입니다.  자, 행동경제학의 '넛지(Nudge)'를 우리 스스로에게 적용해 봅시다. 완벽한 지시어를 라이브러리에 저장해 두는 작은 행동 하나가, 내일 아침 출근했을 때 백지상태에서 오는 두려움을 완전히 없애줍니다. 버튼 한 번으로 완성된 기획안 초안이 독립된 아티팩트 창에 하고 나타날 때의 그 짜릿함. 바로 그 순간 분비되는 도파민이 여러분의 업무 스트레스를 날려버릴 것입니다. 한 번 만들어둔 라이브러리가 여러분의 퇴근 시간을 매일 30분, 1년이면 무려 120시간을 앞당길 수 있습니다!"</p>
+<div class="marker">📘 <strong>[💻 시연]</strong></div>
+<p><strong>[시나리오: 자활근로사업 연간 계획서 초안 작성 및 저장]</strong></p>
+<ol><li><strong>아티팩트 생성</strong>: 강사가 메인 화면에 프롬프트를 입력합니다. "2025년도 신규 다회용기 세척 자활사업 연간 운영 계획서를 마크다운 형식의 문서로 작성해줘."</li></ol>
+<ol><li><strong>독립 패널 확인</strong>: 결과물이 대화창에서 분리되어 우측에 깔끔한 문서 형태(아티팩트)로 나타나는 것을 보여줍니다.</li></ol>
+<ol><li><strong>실시간 편집</strong>: 강사가 아티팩트 창 내에서 직접 마우스를 클릭해 특정 문구('지역 사회 기여' -&gt; '인천시 관내 취약계층 지원')를 키보드로 바로 수정하는 모습을 시연합니다. "여러분, 복사해서 한글을 따로 열 필요가 없습니다. 여기서 바로 퇴고가 가능합니다."</li></ol>
+<ol><li><strong>라이브러리화</strong>: 오늘 사용한 성공적인 프롬프트를 복사하여 메모장이나 노션(Notion)을 열고, <code>[신규사업 기획 프롬프트 템플릿]</code>이라는 제목으로 저장합니다. 괄호 <code>[ ]</code>를 활용해 다음번엔 단어만 끼워 넣을 수 있도록 구조화하는 과정을 보여줍니다.</li></ol>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"결과물이 대화창 밖으로 독립되는 순간, 여러분의 뇌는 이 텍스트를 '휘발성 대화'가 아닌 '내가 소유한 자산'으로 인식하게 됩니다. 심리학에서는 이를 '소유 효과(Endowment Effect)'라고 부르죠. 여러분이 직접 다듬은 프롬프트가 라이브러리에 하나둘 쌓일수록, 여러분은 마치 든든한 무기고를 가진 장군처럼 든든해질 것입니다."</p>
+<div class="marker">📘 <strong>[✍️ 실습]</strong></div>
+<ul><li><strong>상황 설정</strong>: 선생님은 다음 주 센터장님께 보고할 '신규 자활사업(친환경 다회용기 세척 사업)' 제안서를 작성해야 합니다. 초기 기획의 막막함을 AI 아티팩트로 해결해 보겠습니다.</li><li><strong>프롬프트 템플릿 (아래 내용을 복사해서 사용하세요)</strong>:</li></ul>
+<pre><code class="text">    당신은 10년 차 자활사업 기획 및 공공행정 전문가입니다.
+    다음 조건에 맞춰 &#x27;[사업명]&#x27; 기획안 초안을 작성해주세요.
+    반드시 &#x27;아티팩트(Artifact)&#x27; 형태나 마크다운 문서 포맷으로 생성하여 내가 쉽게 읽고 수정할 수 있도록 분리해주세요.
+
+    [기본 정보]
+    - 사업명: 친환경 다회용기 세척 사업 (에코워싱)
+    - 목적: 저소득층 일자리 창출 및 인천지역 탄소중립 실천 기여
+    - 타겟 고객: 인천 관내 배달 음식점, 공공기관 카페, 장례식장
+
+    [포함해야 할 목차]
+    1. 사업 개요 (추진 배경 및 필요성)
+    2. SWOT 분석 (강점, 약점, 기회, 위협)
+    3. 참여자 직무 훈련 계획
+    4. 연간 추진 일정 (분기별 표 형태로 작성)</code></pre>
+<ul><li><strong>실습 체크리스트 (행동 유도)</strong>:</li><li>[ ] 입력 후 AI가 생성한 기획안이 일반 대화 텍스트가 아닌, 별도의 아티팩트(문서/코드 뷰어 창)로 분리되어 나타났는가?</li></ul>
+<ul><li>[ ] 아티팩트 창에 마우스를 올리고 직접 텍스트 일부를 추가하거나 삭제하는 등 편집(Edit) 기능을 사용해 보았는가?</li><li>[ ] 사용한 위 프롬프트를 복사하여 본인의 PC 바탕화면 메모장이나 업무 노트에 '자활사업 기획안 마스터 템플릿'이라는 이름으로 저장(Save) 하였는가?</li></ul>
+<div class="marker">📘 <strong>[✅ 검증]</strong></div>
+<p><strong>역량 검증 루브릭 (관찰 평가)</strong></p>
+<ul><li>🌟 <strong>우수</strong>: 아티팩트를 활용하여 결과물을 성공적으로 생성하고 실시간 편집 기능을 능숙하게 다루며, 본인만의 프롬프트를 변수(예: <code>[사업명]</code>, <code>[타겟 고객]</code>) 단위로 완벽하게 모듈화하여 라이브러리에 저장함. 동료에게 저장 방식을 설명할 수 있음.</li></ul>
+<ul><li>🟢 <strong>보통</strong>: 아티팩트 창을 생성하고 내용을 복사할 수 있으며, 강사가 준 프롬프트를 원형 그대로 저장함. 편집 기능의 존재는 인지함.</li><li>🔺 <strong>노력 요망</strong>: 아티팩트와 일반 대화창의 차이를 이해하지 못하여 채팅창 안에서만 내용을 스크롤하며 찾음. 프롬프트를 매번 새로 타이핑하려고 함.</li></ul>
+<div class="marker">📘 <strong>[🚀 최적화]</strong></div>
+<ul><li><strong>Before (도입 전)</strong>: 매번 백지상태의 한글 파일을 띄워놓고 "서론을 어떻게 시작하지?"라며 커서만 깜빡이는 모니터를 30분째 쳐다봄. 스트레스 호르몬인 코르티솔 분비 증가. 인지적 병목 현상 발생.</li><li><strong>After (도입 후)</strong>: 저장된 '마스터 템플릿'을 라이브러리에서 불러와 변수만 3개 변경 후 즉시 실행. 아티팩트 창에서 1차 퇴고를 마친 후 완벽한 상태로 한글 문서에 붙여넣음. 백지에서 시작하던 작업이 템플릿 수정으로 바뀌어, 착수까지 걸리는 시간과 부담이 크게 줄어듦.</li></ul>
+<p><strong>💡 트러블슈팅 Q&amp;A</strong> <strong>Q:</strong> "아티팩트 창이 안 뜨고 그냥 채팅창에 길게 글씨만 나옵니다." <strong>A:</strong> 사용자 환경(Gemini Advanced 여부, 랩스 기능 활성화 등)에 따라 다를 수 있습니다. 프롬프트 마지막에 "반드시 코딩 블록(```)이나 마크다운 형식으로 감싸서 출력해줘"라고 지시하면 시각적으로 분리된 형태로 받아보기 훨씬 수월해집니다.</p>
+<p>🔗 <a href="https://support.google.com/gemini/answer/16047321?hl=ko" target="_blank" rel="noopener">Google Gemini 도움말: Canvas로 문서·앱 만들기</a></p>
+<hr>
+<hr>
+<h2 class="ch" id="c2_10"><span class="num">2-10</span>데이터표 일괄생성 처리 기법</h2>
+<div class="marker">📘 <strong>[Visual Asset: 교육 시각화 자료]</strong></div>
+<div class="dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784 310" width="100%" role="img" aria-label="2-10 데이터표 일괄생성 처리 기법"><defs>
+<linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#FC00DC"/><stop offset="52%" stop-color="#731FFF"/>
+  <stop offset="100%" stop-color="#00FFD7"/></linearGradient>
+<linearGradient id="g_start" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00FFD7"/><stop offset="100%" stop-color="#00B9A0"/></linearGradient>
+<linearGradient id="f_start" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00FFD7" stop-opacity="0.20"/><stop offset="100%" stop-color="#00B9A0" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_process" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#731FFF"/><stop offset="100%" stop-color="#4A0FB8"/></linearGradient>
+<linearGradient id="f_process" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#731FFF" stop-opacity="0.20"/><stop offset="100%" stop-color="#4A0FB8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_decision" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#A8009A"/></linearGradient>
+<linearGradient id="f_decision" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#A8009A" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_circle" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00A8FF"/><stop offset="100%" stop-color="#0069B8"/></linearGradient>
+<linearGradient id="f_circle" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00A8FF" stop-opacity="0.20"/><stop offset="100%" stop-color="#0069B8" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_danger" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF4D6D"/><stop offset="100%" stop-color="#B00030"/></linearGradient>
+<linearGradient id="f_danger" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF4D6D" stop-opacity="0.20"/><stop offset="100%" stop-color="#B00030" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_success" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3DDC84"/><stop offset="100%" stop-color="#1E9E58"/></linearGradient>
+<linearGradient id="f_success" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DDC84" stop-opacity="0.20"/><stop offset="100%" stop-color="#1E9E58" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="g_end" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FC00DC"/><stop offset="100%" stop-color="#731FFF"/></linearGradient>
+<linearGradient id="f_end" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FC00DC" stop-opacity="0.20"/><stop offset="100%" stop-color="#731FFF" stop-opacity="0.07"/></linearGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/></filter>
+<marker id="ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#6E7488"/></marker>
+</defs><rect width="784" height="310" rx="18" fill="#05060A"/><text x="34" y="42" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="17" font-weight="800" fill="url(#neon)">2-10 데이터표 일괄생성 처리 기법</text><rect x="34" y="52" width="72" height="3.5" rx="1.8" fill="url(#neon)"/><path d="M 220.0 150.0 C 266.0 150.0, 266.0 150.0, 312.0 150.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<path d="M 472.0 150.0 C 518.0 150.0, 518.0 150.0, 564.0 150.0" fill="none" stroke="#6E7488" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+<rect x="60.0" y="113.0" width="160.0" height="74.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="60.0" y="113.0" width="160.0" height="74.0" rx="14" fill="url(#f_start)" stroke="url(#g_start)" stroke-width="2"/>
+<rect x="60.0" y="123.0" width="4.5" height="54.0" rx="2.2" fill="url(#g_start)" filter="url(#glow)"/>
+<text x="140.0" y="138.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">비정형 텍스트</text>
+<text x="140.0" y="162.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="500" fill="#AEB4C2">상담 메모</text>
+<circle cx="392.0" cy="150.0" r="80.0" fill="url(#f_circle)" stroke="url(#g_circle)" stroke-width="2.4" filter="url(#soft)"/>
+<circle cx="392.0" cy="150.0" r="80.0" fill="none" stroke="#00A8FF" stroke-width="1" opacity="0.55" filter="url(#glow)"/>
+<text x="392.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">AI 정제 깔때기</text>
+<rect x="564.0" y="113.0" width="160.0" height="74.0" rx="14" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="564.0" y="113.0" width="160.0" height="74.0" rx="14" fill="url(#f_end)" stroke="url(#g_end)" stroke-width="2"/>
+<rect x="564.0" y="123.0" width="4.5" height="54.0" rx="2.2" fill="url(#g_end)" filter="url(#glow)"/>
+<text x="644.0" y="138.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">정형 데이터</text>
+<text x="644.0" y="162.0" text-anchor="middle" dominant-baseline="middle" font-family="'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Noto Sans CJK KR',sans-serif" font-size="15.5" font-weight="500" fill="#AEB4C2">스프레드시트 표</text></svg></div>
+<div class="marker">📘 <strong>[개념 이해]</strong></div>
+<p><strong>데이터 구조화(Data Structuring) 기술</strong> 현장 실무에서 발생하는 대부분의 기록(설문조사 주관식 응답, 회의록, 상담 메모, 일일 업무일지)은 '비정형 데이터(줄글)' 형태입니다. 이를 통계나 보고에 활용하기 위해서는 엑셀이나 스프레드시트와 같은 일정한 규격의 '정형 데이터표'로 변환해야 합니다. 이 기법은 자연어 처리 능력을 활용해 중구난방인 텍스트 더미를 단 몇 초 만에 완벽한 열(Column)과 행(Row)을 갖춘 표로 추출하고 재구성하는 이런 자동화 기법입니다.</p>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"센터에서 가장 고통스러운 업무 중 하나가 무엇입니까? 바로 수십 명의 상담 일지나 만족도 조사 결과를 보고서에 넣기 위해 엑셀 셀마다 하나하나 옮겨 적는 단순 반복 작업일 겁니다. 심리학에서 '자이가르닉 효과(Zeigarnik Effect)'라고 들어보셨나요? 끝나지 않은 단순 업무는 우리 뇌리에 계속 남아 인지적 리소스를 갉아먹습니다. 단순 '복붙' 작업은 우리 뇌의 보상 회로를 전혀 자극하지 못해 극도의 피로와 번아웃을 유발하죠.</p>
+<p>이제 이 복붙의 지옥에서 우리 스스로를 구출합시다. 데이터를 덩어리째 던져주고 완벽한 표로 뱉어내게 만드는 경험을 하는 순간, 막힌 체증이 뻥 뚫리는 듯한 강력한 쾌감과 도파민 분출을 느끼실 겁니다. 여러분의 귀중한 에너지는 엑셀 칸을 채우는 데 쓰일 것이 아니라, 도움이 필요한 참여자와 따뜻하게 눈을 맞추고 그들의 이야기에 귀 기울이는 데 쓰여야 합니다. AI가 엑셀을 하고, 여러분은 사람을 향하십시오!"</p>
+<div class="marker">📘 <strong>[💻 시연]</strong></div>
+<p><strong>[시나리오: 난장판 상담 메모를 깔끔한 엑셀 표로 변환]</strong></p>
+<ol><li><strong>원시 데이터 제시</strong>: 강사가 화면에 참여자 10명 분량의 정리가 전혀 안 된, 오타와 약어가 섞인 메모장 텍스트를 띄웁니다. "나이도 숫자로 안 적혀 있고, 내용 순서도 뒤죽박죽입니다."</li></ol>
+<ol><li><strong>구조화 프롬프트 실행</strong>: 준비된 구조화 프롬프트에 메모를 복사해 붙여넣고 실행버튼을 누릅니다.</li></ol>
+<ol><li><strong>즉각적 피드백</strong>: 화면에 완벽하게 정렬된 마크다운 표가 순식간에 생성되는 것을 보여줍니다. 참여자들의 탄성을 유도합니다.</li></ol>
+<ol><li><strong>시트 연동</strong>: 표 우측 하단에 나타나는 'Google Sheets로 내보내기' 아이콘을 클릭하여, 구글 스프레드시트로 그대로 옮겨진 화면을 보여줍니다. "더 이상 엑셀에 타자를 칠 필요가 없습니다."</li></ol>
+<figure><img src="./assets/s2_11_export_to_sheets.png" alt="생성된 표 우측 하단 Sheets로 내보내기 아이콘 클릭 토스트 알림" loading="lazy"><figcaption><span class="no">그림 28.</span> 생성된 표 우측 하단 Sheets로 내보내기 아이콘 클릭 토스트 알림</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 강사 시연 화면입니다. 설명하는 동안 수강생이 같은 화면을 찾을 수 있도록 배치했습니다.</div><div><strong>기능 설명</strong> — 생성된 표 우측 하단 Sheets로 내보내기 아이콘 클릭 토스트 알림</div><div><strong>활용 방법</strong> — 출력 형식이 기대와 다르면 프롬프트의 과업(T)·제약(C) 항목을 조정한 뒤 다시 실행합니다. · 확대 1.49배 인셋 포함</div></div></figure>
+<div class="marker">📘 <strong>[✍️ 실습]</strong></div>
+<ul><li><strong>상황 설정</strong>: 선생님은 바리스타 자활사업단(카페) 참여자 5명의 주간 면담을 마쳤습니다. 다음 상담 일정을 잡기 위해 수첩에 중구난방으로 적힌 면담 내용을 구글 스프레드시트로 깔끔하게 정리해 DB화해야 합니다.</li><li><strong>가상 샘플데이터 (드래그해서 복사하세요)</strong>:</li></ul>
+<pre><code class="text">    김철수, 마흔다섯살. 요새 지각이 잦은 편이다. 에스프레소 머신 추출은 아주 잘함. 디스크 때문에 허리 통증을 자주 호소함. 
+    이영희 52세. 라떼아트에 관심이 아주 많아서 연습을 열심히 함. 출석률 100% 완벽. 고객 응대가 친절하다는 칭찬을 받음.
+    박민준, 삼십대 초반(32). 새로운 레시피 암기를 너무 어려워함. 태도는 성실하지만 본인 스스로 자신감이 많이 부족해 보임.
+    최지은 48세, 매장 위생 관리를 정말 철저하게 함. 바리스타 2급 자격증 취득을 희망한다고 함. 필기시험 지원 필요.
+    정호석 55 체력이 많이 떨어져서 오후 근무를 힘들어함. 동료들과의 관계는 매우 원만하고 분위기 메이커 역할을 함.</code></pre>
+<ul><li><strong>프롬프트 (복사해서 사용하세요)</strong>:</li></ul>
+<pre><code class="text">    아래 제공된 &#x27;비정형 참여자 면담 메모&#x27;를 꼼꼼히 분석하여, 구조화된 데이터 표 형식으로 완벽하게 정리해주세요.
+
+    [열(Column) 구성 및 처리 조건]
+    1. 성명
+    2. 연령 (반드시 숫자 &#x27;OO&#x27; 형태로만 통일할 것. 예: 45)
+    3. 주요 강점 (문장에서 긍정적인 요소를 추출하여 명사형으로 요약)
+    4. 보완점 및 애로사항 (어려움을 겪는 부분을 명확히 추출)
+    5. 향후 지원 필요사항 (네가 위 내용을 분석하여 실무자 입장에서 어떤 조치나 교육이 필요한지 10자 이내로 제안해줄 것)
+
+    [참여자 면담 메모]
+    (여기에 복사한 샘플데이터를 붙여넣으세요)</code></pre>
+<ul><li><strong>실습 체크리스트 (행동 유도)</strong>:</li><li>[ ] '마흔다섯살', '삼십대 초반(32)' 등의 불규칙한 데이터가 지시한 대로 '45', '32' 등 숫자로 일관되게 정제되었는가?</li><li>[ ] 메모에 없던 내용인 '향후 지원 필요사항'을 AI가 논리적으로 추론하여 유용한 제안(예: '허리 보호대 지원', '레시피 요약본 제공')을 표에 추가했는가?</li><li>[ ] 생성된 표 우측 하단의 <strong>'Sheets로 내보내기'</strong> 버튼을 클릭하여, 실제 구글 스프레드시트 화면에서 데이터베이스화된 것을 눈으로 확인했는가?</li></ul>
+<div class="marker">📘 <strong>[✅ 검증]</strong></div>
+<p><strong>역량 검증 루브릭 (관찰 평가)</strong></p>
+<ul><li>🌟 <strong>우수</strong>: 누락된 정보나 불규칙한 텍스트를 AI가 적절히 추론 및 정제하도록 조건(프롬프트)을 정교하게 설정하며, 표 생성 후 즉시 스프레드시트로 내보내어 실무에 바로 사용할 수 있는 DB를 구축함. 추가적으로 '결석 횟수' 등의 새로운 열을 스스로 추가해보는 응용력을 보임.</li><li>🟢 <strong>보통</strong>: 강사가 제공한 프롬프트와 샘플 데이터를 활용해 텍스트를 표로 변환하는 데 성공하고, 내보내기 버튼의 위치를 확인함.</li></ul>
+<ul><li>🔺 <strong>노력 요망</strong>: 열(Column) 조건을 명확히 설정하지 못하거나, 줄글 형태로 답변을 받아 데이터를 한눈에 파악하지 못함.</li></ul>
+<div class="marker">📘 <strong>[🚀 최적화]</strong></div>
+<ul><li><strong>Before (도입 전)</strong>: 모니터 두 개를 띄워놓고 왼쪽 창의 텍스트를 읽으며 오른쪽 엑셀 창 셀마다 일일이 타이핑하거나 복붙함. 오타 발생 확률이 높고 극심한 안구 피로 유발. (데이터 100명 기준 약 2시간 소요)</li><li><strong>After (도입 후)</strong>: 원시 텍스트 데이터를 프롬프트와 함께 통째로 입력하여 AI에게 던짐. 규칙에 맞춰 정제하고 추론까지 더해 5초 만에 구조화 완료. 스프레드시트 연동까지 원클릭. (데이터 100명 기준 약 3분 소요). 시간 단축률 97%, 실무자의 데이터 가공 생산성 폭발적 증가.</li></ul>
+<p><strong>💡 트러블슈팅 Q&amp;A</strong> <strong>Q:</strong> "데이터가 너무 많아서 그런지 표 내용이 중간에 쓰다 말고 멈춰버립니다." <strong>A:</strong> 대형 언어 모델(LLM)은 한 번에 출력할 수 있는 글자 수(토큰) 제한이 있습니다. 데이터가 50명이 넘어갈 경우, 프롬프트 끝에 "표가 끊기면 '이어서 작성'해라고 말할게"라는 조건을 달아두거나, 안전하게 20명 단위로 나누어 복붙 처리하는 것이 좋습니다.</p>
+<p>🔗 <a href="https://support.google.com/gemini/answer/14184041?hl=ko" target="_blank" rel="noopener">Google Gemini 도움말: Gemini 앱 대답 내보내기</a></p>
+<hr>
+<hr>
+<h2 class="ch" id="c2_11"><span class="num">2-11</span>제미나이 스튜디오(Studio) 핵심 도구 활용</h2>
+<div class="marker">📘 <strong>[개념 이해]</strong></div>
+<p><strong>구글 AI 스튜디오(Google AI Studio)란?</strong> 우리가 흔히 쓰는 일반적인 Gemini 챗봇 인터페이스(B2C 버전)를 넘어서, 개발자 및 고급 사용자를 위해 구글이 제공하는 전문적인 웹 기반 프롬프트 프로토타이핑 환경입니다. 일반 챗봇에서는 불가능한 세밀한 통제 기능들을 제공합니다. 특히 AI의 본질적인 성격과 역할을 규정하는 <strong>System Instruction(시스템 지침)</strong>과, AI 답변의 창의성과 무작위성을 제어하는 <strong>Temperature(온도)</strong> 파라미터를 직접 조작할 수 있어, 우리 자활센터 업무 특성에 딱 맞는 '초개인화된 맞춤형 AI 비서'를 설계하는 데 필수적인 도구입니다.</p>
+<figure><img src="./assets/s2_12_aistudio_layout.png" alt="Google AI Studio 메인 레이아웃 (System Instruction 입력란 + 파라미터 제어 패널)" loading="lazy"><figcaption><span class="no">그림 29.</span> Google AI Studio 메인 레이아웃 (System Instruction 입력란 + 파라미터 제어 패널)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 제미나이 스튜디오(Studio) 핵심 도구 활용 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — Google AI Studio 메인 레이아웃 (System Instruction 입력란 + 파라미터 제어 패널)</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다.</div></div></figure>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"선생님들, 지금까지 우리는 AI라는 뛰어난 직원을 '카카오톡' 메신저로만 지시하며 써왔습니다. 때로는 말을 안 듣기도 하고, 지시를 까먹기도 했죠. 이제는 그 직원의 '뇌 구조와 성격'을 직접 프로그래밍하는 관리자 제어판으로 들어갈 차례입니다. 인간은 자신이 처한 환경과 도구를 완벽히 통제할 수 있다고 느낄 때 강력한 내적 동기와 만족감을 얻습니다. AI 스튜디오는 여러분에게 바로 그 완벽한 '통제감(Sense of Control)'을 줍니다.  Temperature(온도)를 0으로 설정해 한 치의 오차도, 헛소리(환각)도 허용하지 않는 깐깐한 '감사관'을 만들 수도 있고, 온도를 0.9로 올려 톡톡 튀는 아이디어를 쏟아내는 '크리에이티브 카피라이터'를 만들 수도 있습니다. 이 미세조정(Fine-Tuning)의 감각을 손끝으로 익히는 순간, 여러분은 더 이상 단순한 AI 챗봇 사용자가 아닌, AI를 부리는 'AI 지휘자'로 거듭나게 될 것입니다. 한 차원 높은 전문가의 세계로 들어오신 것을 환영합니다!"</p>
+<figure><img src="./assets/s2_28_aistudio_get_code.png" alt="AI Studio 상단 Get code 버튼 → Python/cURL 코드 추출 모달" loading="lazy"><figcaption><span class="no">그림 30.</span> AI Studio 상단 Get code 버튼 → Python/cURL 코드 추출 모달</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 제미나이 스튜디오(Studio) 핵심 도구 활용 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — AI Studio 상단 Get code 버튼 → Python/cURL 코드 추출 모달</div><div><strong>활용 방법</strong> — 주소창에 직접 입력해 바로 접근할 수도 있습니다. · 확대 1.18배 인셋 포함</div></div></figure>
+<div class="marker">📘 <strong>[💻 시연]</strong></div>
+<p><strong>[시나리오: 시스템 지침과 온도 조절에 따른 극적인 결과 비교]</strong></p>
+<figure><img src="./assets/s2_12b_chrome_ask_gemini.png" alt="크롬 한국어 자동 번역 및 크롬 상단 탭 &#x27;제미나이에게 물어보기&#x27; 사이드바 연동 화면" loading="lazy"><figcaption><span class="no">그림 31.</span> 크롬 한국어 자동 번역 및 크롬 상단 탭 &#x27;제미나이에게 물어보기&#x27; 사이드바 연동 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 강사 시연 화면입니다. 설명하는 동안 수강생이 같은 화면을 찾을 수 있도록 배치했습니다.</div><div><strong>기능 설명</strong> — 크롬 한국어 자동 번역 및 크롬 상단 탭 '제미나이에게 물어보기' 사이드바 연동 화면</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.92배 인셋 포함</div></div></figure>
+<ol><li><strong>접속 및 UI 안내</strong>: 강사가 브라우저에서 <code>aistudio.google.com</code>에 접속하여 로그인합니다. 좌측의 System Instruction 창과 우측의 파라미터 패널(Temperature, Max output tokens 등)을 레이저 포인터로 짚어가며 설명합니다.</li><li><strong>System Instruction의 위력 시연</strong>: </li><li>좌측에 <em>"너는 지금부터 20년 경력의 까다롭고 원리원칙을 중시하는 정부기관 공문서 검토관이야. 모든 문장을 극도로 건조하고 명확한 공공기관 어투(명사형 종결)로 바꿔."</em> 라고 뼈대를 주입합니다.</li><li>중앙 프롬프트에 "우리 자활센터에서 이번에 바자회를 하는데 물건 많이 팔아서 수익금 내면 좋겠어요. 구청에서 지원 좀 팍팍 해주세요."라고 대충 쓴 문장을 넣습니다.</li><li>Run 버튼을 눌러, 구청장에게 보고해도 손색없는 완벽하고 엄격한 공문서 형태("~관련하여 바자회 개최를 통한 수익금 창출 및 자립 기반 조성을 목적으로 하오니, 귀 청의 적극적인 예산 지원을 요청드림.")로 극적으로 변환되는 것을 보여줍니다.</li></ol>
+<figure><img src="./assets/s2_23_aistudio_system_instruction.png" alt="Google AI Studio 우측 Run Settings 패널 아래 System Instructions 위치 안내 및 페르소나 지침 주입 화면" loading="lazy"><figcaption><span class="no">그림 32.</span> Google AI Studio 우측 Run Settings 패널 아래 System Instructions 위치 안내 및 페르소나 지침 주입 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 강사 시연 화면입니다. 설명하는 동안 수강생이 같은 화면을 찾을 수 있도록 배치했습니다.</div><div><strong>기능 설명</strong> — Google AI Studio 우측 Run Settings 패널 아래 System Instructions 위치 안내 및 페르소나 지침 주입 화면</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.92배 인셋 포함</div></div></figure>
+<ol><li><strong>온도(Temperature) 조절 시연</strong>: 동일한 프롬프트(예: "자활사업단 이름 추천해줘")에 대해 온도 바(Bar)를 <strong>0.0</strong>으로 내렸을 때(뻔하고 정형적인 이름만 출력)와 온도 바를 <strong>1.0</strong>으로 끝까지 올렸을 때(기발하고 독특하며 감성적인 이름 출력)의 결과값 차이를 실시간으로 비교 시연합니다.</li></ol>
+<div class="marker">📘 <strong>[✍️ 실습]</strong></div>
+<ul><li><strong>상황 설정</strong>: 선생님은 다음 주 지역 축제에 참여하여 우리 센터의 '수제 누룽지 사업단' 제품을 판매할 예정입니다. 주민들의 눈길을 사로잡을 감성적인 홍보 전단지 문구를 작성해야 합니다. AI 스튜디오를 이용해 평범한 AI를 '감성 100% 카피라이터'로 세팅해 봅니다.</li><li><strong>실습 단계 (Nudge - 순서대로 따라 하세요)</strong>:</li><li>크롬 브라우저를 열고 주소창에 <code>aistudio.google.com</code> 입력 후 구글 계정으로 로그인 (필요시 약관 동의).</li></ul>
+<figure><img src="./assets/s2_22_aistudio_model_picker.png" alt="Google AI Studio 우측 Run Settings 아래 Gemini 모델 라운드 스퀘어 버튼 클릭 ➔ 우측에서 슬라이드 인(Slide-in)되어 펼쳐지는 모델 선택 패널 (Gemini 3.1 Pro / 3." loading="lazy"><figcaption><span class="no">그림 33.</span> Google AI Studio 우측 Run Settings 아래 Gemini 모델 라운드 스퀘어 버튼 클릭 ➔ 우측에서 슬라이드 인(Slide-in)되어 펼쳐지는 모델 선택 패널 (Gemini 3.1 Pro / 3.6 Flash)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 수강생이 직접 따라 해야 하는 실습 구간입니다. 화면과 대조하며 같은 상태를 만들어 봅니다.</div><div><strong>기능 설명</strong> — Google AI Studio 우측 Run Settings 아래 Gemini 모델 라운드 스퀘어 버튼 클릭 ➔ 우측에서 슬라이드 인(Slide-in)되어 펼쳐지는 모델 선택 패널 (Gemini 3.1 Pro / 3.6 Flash)</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.92배 인셋 포함</div></div></figure>
+<ol><li>화면 좌측 상단의 <strong>System Instruction</strong> 입력창(또는 톱니바퀴 아이콘 안)을 찾아 아래 지침을 복사해 넣습니다:</li></ol>
+<p>       &gt; "당신은 사람들의 심금을 울리는 따뜻하고 희망적인 어조를 가진 대한민국 최고의 카피라이터입니다. 제품의 기능적 설명보다는, 이웃의 정과 희망을 강조하는 공감형 단어를 주로 사용하십시오."</p>
+<ol><li>화면 우측 설정 패널에서 <strong>Temperature(온도)</strong> 슬라이더 바를 마우스로 드래그하여 <code>0.85</code> 이상으로 높게 설정합니다. (창의성 극대화)</li></ol>
+<figure><img src="./assets/s2_13_temperature_slider.png" alt="AI Studio 우측 Temperature 슬라이더 조절 화면 및 일반 Gemini vs AI Studio 핵심 차이점 비교 가이드" loading="lazy"><figcaption><span class="no">그림 34.</span> AI Studio 우측 Temperature 슬라이더 조절 화면 및 일반 Gemini vs AI Studio 핵심 차이점 비교 가이드</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 제미나이 스튜디오(Studio) 핵심 도구 활용 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — AI Studio 우측 Temperature 슬라이더 조절 화면 및 일반 Gemini vs AI Studio 핵심 차이점 비교 가이드</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.92배 인셋 포함</div></div></figure>
+<ol><li>화면 하단 <strong>Prompt</strong> 입력창에 아래 내용을 입력 후 <code>Run</code> 파란색 버튼을 클릭합니다:</li></ol>
+<p>       &gt; "우리 지역 저소득층 이웃들이 매일 아침 정성껏 구워내는 '가마솥 수제 누룽지' 판매를 홍보하는 전단지 문구를 3가지 버전으로 제안해줘. (시선을 끄는 제목 1줄, 감동적인 본문 3줄 이내)"</p>
+<ul><li><strong>실습 체크리스트</strong>:</li><li>[ ] AI Studio 환경에 성공적으로 진입하였는가?</li><li>[ ] System Instruction(시스템 지침) 영역과 일반 프롬프트 영역을 구분하여 알맞게 입력했는가?</li></ul>
+<figure><img src="./assets/s2_24b_aistudio_advanced_settings.png" alt="Google AI Studio 우측 사이드바 최하단 Advanced Settings v 토글 메뉴 접근 및 펼침 화면" loading="lazy"><figcaption><span class="no">그림 35.</span> Google AI Studio 우측 사이드바 최하단 Advanced Settings v 토글 메뉴 접근 및 펼침 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 수강생이 직접 따라 해야 하는 실습 구간입니다. 화면과 대조하며 같은 상태를 만들어 봅니다.</div><div><strong>기능 설명</strong> — Google AI Studio 우측 사이드바 최하단 Advanced Settings v 토글 메뉴 접근 및 펼침 화면</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.92배 인셋 포함</div></div></figure>
+<ul><li>[ ] Temperature 값을 인위적으로 조절해보았으며, 출력된 결과물이 일반적인 기계적 답변을 넘어 감성적이고 창의적인 어조를 띠고 있는 것을 체감했는가?</li></ul>
+<div class="marker">📘 <strong>[✅ 검증]</strong></div>
+<p><strong>역량 검증 루브릭 (관찰 평가)</strong></p>
+<ul><li>🌟 <strong>우수</strong>: System Instruction의 역할 부여 개념을 완벽히 이해하고, 업무 목적(창의성이 필요한 홍보물 vs 엄격한 사실관계가 중요한 공문서/예산서)에 따라 Temperature 값을 자유자재로 변경하며 최적의 결과물을 스스로 유도해냄. 동료의 결과물과 자신의 것을 비교 분석함.</li></ul>
+<ul><li>🟢 <strong>보통</strong>: AI Studio 인터페이스에 무사히 접속하여, 강사가 제시한 세팅값(지침 및 온도)을 그대로 입력하고 결과를 도출해 내는 데 성공함.</li></ul>
+<figure><img src="./assets/s2_24_aistudio_safety_settings.png" alt="Google AI Studio 우측 Advanced Settings ➔ Safety Settings 안전성 필터 차단 레벨 슬라이더 조절 화면" loading="lazy"><figcaption><span class="no">그림 36.</span> Google AI Studio 우측 Advanced Settings ➔ Safety Settings 안전성 필터 차단 레벨 슬라이더 조절 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 제미나이 스튜디오(Studio) 핵심 도구 활용 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — Google AI Studio 우측 Advanced Settings ➔ Safety Settings 안전성 필터 차단 레벨 슬라이더 조절 화면</div><div><strong>활용 방법</strong> — 자활 업무에 적용할 때는 이 화면에서 확인한 경로를 그대로 반복하면 됩니다. · 확대 1.92배 인셋 포함</div></div></figure>
+<ul><li>🔺 <strong>노력 요망</strong>: System Instruction 영역을 찾지 못해 일반 채팅창에 모든 지시사항을 몰아넣거나, Temperature 기능의 목적(창의성 vs 정확성)을 반대로 이해함.</li></ul>
+<div class="marker">📘 <strong>[🚀 최적화]</strong></div>
+<ul><li><strong>Before (도입 전)</strong>: 일반 챗봇에서 매번 새로운 채팅을 시작할 때마다 "너는 자활 전문가야, 이런 어투로 말해, 이러이러한 규칙을 지켜"라고 긴 서론을 반복해서 지시해야 함. 대화가 길어지면 AI가 페르소나를 까먹고 엉뚱한 어투로 대답함 (프롬프트 드리프트 현상).</li><li><strong>After (도입 후)</strong>: AI Studio의 System Instruction에 자활센터 맞춤형 역할을 한 번 강력하게 '하드코딩' 해두면, 아무리 대화가 길어져도 절대 일관된 페르소나와 어투를 잃지 않음. 반복 지시 시간이 사라지고 고품질의 안정적인 산출물을 지속적으로 확보 가능.</li></ul>
+<p><strong>💡 심화 팁 &amp; 트러블슈팅 Q&amp;A</strong> <strong>Q:</strong> "온도를 끝까지(1.0 이상) 높였더니 AI가 말도 안 되는 소리를 지어냅니다." <strong>A:</strong> 온도가 높아질수록 AI는 다음 단어를 예측할 때 확률이 낮은 엉뚱한 단어를 선택할 가능성(무작위성)을 열어둡니다. 즉, 창의성은 최고조에 달하지만 없는 사실을 지어내는 '환각(Hallucination)' 현상도 급증합니다. 따라서 규정, 팩트 체크, 예산 계산이 중요한 '공문서 및 기획서' 작성 시에는 반드시 온도를 <strong>0.0 ~ 0.2</strong> 사이로 극도로 낮게 설정하여 정확성을 담보해야 합니다.</p>
+<p>🔗 <a href="https://ai.google.dev/gemini-api/docs/prompting-strategies" target="_blank" rel="noopener">Google AI 공식 가이드: 프롬프트 설계 전략</a></p>
+<figure><img src="./assets/s2_29_aistudio_save_prompt.png" alt="Google AI Studio 프롬프트 입력 후 Run(실행) 클릭 ➔ AI 가이드 및 요약 결과물이 렌더링된 화면" loading="lazy"><figcaption><span class="no">그림 37.</span> Google AI Studio 프롬프트 입력 후 Run(실행) 클릭 ➔ AI 가이드 및 요약 결과물이 렌더링된 화면</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 제미나이 스튜디오(Studio) 핵심 도구 활용 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — Google AI Studio 프롬프트 입력 후 Run(실행) 클릭 ➔ AI 가이드 및 요약 결과물이 렌더링된 화면</div><div><strong>활용 방법</strong> — 출력 형식이 기대와 다르면 프롬프트의 과업(T)·제약(C) 항목을 조정한 뒤 다시 실행합니다. · 확대 1.12배 인셋 포함</div></div></figure>
+<hr>
+<hr>
+<h2 class="ch" id="c2_12"><span class="num">2-12</span>템플릿 슬라이드 연동 기법</h2>
+<div class="marker">📘 <strong>[개념 이해]</strong></div>
+<p><strong>워크스페이스 확장(Workspace Extensions) 기반 슬라이드 자동화</strong> 생성형 AI로 완벽하게 다듬어진 텍스트 기획안이나 구조화된 데이터를, 복사-붙여넣기 하는 수고로움 없이 Google Slides(또는 파워포인트)의 프레젠테이션 템플릿으로 실시간 연동하여 변환하는 최첨단 워크플로우입니다. Gemini 생태계 내에서 Google Workspace 앱(Docs, Slides, Drive 등) 간의 원활한 통합(Extensions) 기능을 활용하여, 텍스트가 시각적 슬라이드로 옷을 갈아입는 과정을 자동화합니다.</p>
+<div class="marker">🗣️ <strong>[강사 멘트]</strong></div>
+<p>"여러분, 보고서 텍스트를 기가 막히게 썼다고 퇴근할 수 있나요? 아니죠. 내일 아침 센터장님께, 혹은 지자체 주무관님께 브리핑을 하려면 이걸 다시 파워포인트로 예쁘게 옮겨야 합니다. 텍스트를 복사하고, 슬라이드 새로 만들어서 붙여넣고, 글꼴 크기 줄이고, 줄 맞추고... 이 지루한 포맷팅 작업은 여러분의 뇌에 '인지적 마찰(Cognitive Friction)'을 일으켜 엄청난 스트레스를 유발합니다. 내용에 집중해야 할 에너지가 글자 간격 맞추는 데 소모되는 거죠. 자, 이제 이 인지적 마찰을 크게 줄이는 방법을 알려드리겠습니다. 정리하기 까다롭던 텍스트가 몇 번의 클릭으로 PPT 슬라이드에 들어가 제목과 본문으로 자리 잡는 것을 눈으로 확인해 보세요. 이 장면을 보는 순간, 여러분은 오늘 교육 중 가장 큰 환희를 느끼실 겁니다. 여러분의 내일 퇴근길 발걸음이 깃털처럼 가벼워질 수 있도록, 지금 바로 시연을 시작하겠습니다!"</p>
+<div class="marker">📘 <strong>[💻 시연]</strong></div>
+<p><strong>[시나리오: 텍스트 기획안을 5장짜리 발표 자료로 10초 만에 변환]</strong></p>
+<ol><li><strong>준비</strong>: 강사가 이전 실습에서 만든 '친환경 다회용기 세척 사업 기획안' 텍스트를 화면에 띄웁니다.</li></ol>
+<ol><li><strong>익스텐션 호출</strong>: Gemini 프롬프트 창에 <code>@</code> (골뱅이) 기호를 입력하여 메뉴를 띄우고, <code>Google Workspace</code> (또는 Google Slides) 아이콘을 선택하여 연동 기능을 활성화하는 모습을 보여줍니다.</li></ol>
+<ol><li><strong>변환 지시</strong>: "이 기획안 내용을 바탕으로 5장짜리 Google Slides 프레젠테이션 초안을 당장 생성해줘."라고 지시하고 엔터를 칩니다.</li><li><strong>생성 완료</strong>: 잠시 후 Gemini가 "프레젠테이션이 생성되었습니다"라며 슬라이드 위젯 링크를 제공합니다. 링크를 클릭하면 브라우저 새 탭에서 Google Slides가 열리며, 텍스트가 각 장의 제목과 개조식 본문으로 예쁘게 쪼개져 들어가 있는 이런 모습을 시연합니다. 참여자들의 감탄을 유도합니다.</li></ol>
+<div class="marker">📘 <strong>[✍️ 실습]</strong></div>
+<ul><li><strong>상황 설정</strong>: 선생님은 앞서 [2-9]에서 작성한 훌륭한 '다회용기 세척 사업' 기획안을 손에 쥐었습니다. 갑자기 오늘 오후 3시에 지자체 공무원이 센터를 방문한다고 합니다. 이 기획안을 바탕으로 5분 브리핑용 프레젠테이션 슬라이드 초안을 급히 만들어야 합니다.</li><li><strong>프롬프트 (복사해서 사용하세요)</strong>:</li></ul>
+<pre><code class="text">    @Google Workspace
+    (위 프롬프트 창에서 @를 입력하고 Google Workspace 또는 Slides를 꼭 선택해주세요!)
+
+    이전에 우리가 논의했던 &#x27;친환경 다회용기 세척 사업&#x27; 기획안의 핵심 내용을 바탕으로 
+    외부 보고용 Google Slides 프레젠테이션 초안을 즉시 생성해줘.
+
+    [슬라이드 구성 가이드라인 - 총 5장]
+    1장: 프레젠테이션 제목 및 도입
+    2장: 사업 추진 배경 (왜 이 사업이 필요한가?)
+    3장: 주요 사업 내용 및 타겟 (누구를 대상으로 무엇을 하는가?)
+    4장: SWOT 분석 요약 (핵심만)
+    5장: 기대 효과 및 향후 비전
+
+    [디자인 규칙]
+    각 슬라이드 본문에는 너무 많은 글이 들어가지 않도록, 개조식(Bullet point)으로 핵심만 3줄 이내로 매우 간결하게 요약해서 작성해줘.</code></pre>
+<ul><li><strong>실습 체크리스트 (행동 유도)</strong>:</li><li>[ ] 프롬프트 입력창에서 <code>@</code>를 치고 Google Workspace 익스텐션을 활성화했는가? (최초 사용 시 권한 허용 팝업이 뜰 수 있음)</li></ul>
+<ul><li>[ ] 지시한 대로 총 5장의 슬라이드 구성에 맞춰 프레젠테이션 위젯이 성공적으로 렌더링되었는가?</li><li>[ ] 생성된 링크를 클릭하여 Google Slides로 이동한 후, 상단의 '테마(Theme)' 버튼을 눌러 디자인을 적용하고 시각적으로 다듬어 보았는가?</li></ul>
+<div class="marker">📘 <strong>[✅ 검증]</strong></div>
+<p><strong>역량 검증 루브릭 (관찰 평가)</strong></p>
+<ul><li>🌟 <strong>우수</strong>: 확장 프로그램(Extensions)의 연동 개념을 완벽히 이해하고, 텍스트를 슬라이드로 매끄럽게 넘김. 생성된 슬라이드 화면에서 불필요한 텍스트를 과감히 쳐내고, 센터 로고를 삽입하거나 레이아웃을 스스로 다듬어 실무에 즉각 투입할 수준으로 완성함.</li></ul>
+<ul><li>🟢 <strong>보통</strong>: 강사의 지시대로 프롬프트에 <code>@</code>를 입력하여 슬라이드 초안 파일을 생성하고 여는 데까지 성공함.</li></ul>
+<ul><li>🔺 <strong>노력 요망</strong>: Google Workspace 연동 권한 승인 단계를 헤매거나, 프롬프트에서 확장 프로그램 호출(<code>@</code>)을 누락하여 AI가 슬라이드 파일 대신 텍스트로만 슬라이드 내용(시나리오)을 답변함.</li></ul>
+<div class="marker">📘 <strong>[🚀 최적화]</strong></div>
+<ul><li><strong>Before (도입 전)</strong>: 텍스트 기획안이 완성되었음에도 불구하고, 파워포인트 프로그램을 새로 열어 슬라이드를 하나씩 추가하며 복사-붙여넣기, 글씨체 변경, 텍스트 상자 크기 조절 등 단순 노동(포맷팅 노가다)을 수행함. (최소 1~2시간 소요, 극심한 에너지 소진)</li><li><strong>After (도입 후)</strong>: AI가 텍스트의 논리 구조를 스스로 분석하여, 최적의 슬라이드 배치로 목차와 본문을 나눈 초안 파일을 자동 생성함. 사용자는 클릭하여 연 뒤, 마음에 드는 디자인 테마를 클릭하고 약간의 미세 조정만 수행하면 끝남. (10분 이내 초안 완성). 시각화 작업의 진입 장벽 완전 붕괴.</li></ul>
+<p><strong>💡 트러블슈팅 Q&amp;A</strong> <strong>Q:</strong> "분명히 시키는 대로 했는데, 슬라이드 파일 링크는 안 주고 화면에 글씨로 '1장: 제목...' 이렇게 텍스트만 적어줍니다."</p>
+<p><strong>A:</strong> Gemini가 Google 계정의 다른 앱(Workspace)에 접근할 권한이 없거나 익스텐션 호출에 실패한 경우입니다.  1) 입력창에 <code>@</code>를 쳤을 때 나타나는 팝업에서 정확히 Workspace를 선택했는지 확인하세요. </p>
+<p>2) 회사/기관 계정(Workspace 계정)의 경우 관리자가 보안상의 이유로 익스텐션 기능을 막아두었을 수 있습니다. 이 경우 일반 개인 Gmail 계정으로 로그인하여 테스트해 보시기 바랍니다. 🔗 <a href="https://support.google.com/gemini/answer/13695044?hl=ko" target="_blank" rel="noopener">Google Gemini 도움말: 연결된 앱 사용 및 관리</a></p>
+<hr>
+<h2 class="ch" id="c2_13"><span class="num">2-13</span>노트북 기반 협업/공유 체계 구축</h2>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"여러분, 우리의 뇌는 새로운 정보를 혼자 처리할 때보다 타인과 교류하며 처리할 때 전두엽의 활성도가 급격히 상승합니다. 즉, '협업'은 단순한 업무 효율성을 넘어 우리의 뇌를 더 똑똑하게 만드는 강력한 촉매제죠. 지금부터 배울 노트북 기반 협업 체계는 여러분의 뇌에 '사회적 보상(Social Reward)'을 제공하여 도파민 분비를 촉진할 것입니다. 혼자서 끙끙 앓던 자활 사례 관리 아이디어를 동료와 클릭 한 번으로 공유하고, 피드백을 주고받는 짜릿함을 경험해 보세요. 자, 준비되셨나요?"</p>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<p>노트북(Gemini Notebooks 또는 유사 AI 협업 툴) 기반 협업은 분절된 데이터를 하나의 유기적인 지식망으로 연결하는 과정입니다. 기존의 단순 파일 공유(USB, 이메일) 방식에서 벗어나, AI가 맥락을 이해하고 요약해주는 작업 공간 자체를 동료와 공유함으로써 커뮤니케이션 비용(인지 부하)을 혁신적으로 낮춥니다.</p>
+<h3>[개념 이해]</h3>
+<ul><li><strong>노트북 공유의 본질:</strong> 단순한 '문서 열람 권한' 부여가 아닙니다. AI가 학습한 데이터 소스와 생성된 인사이트, 대화 맥락 전체를 팀원과 공유하는 '지식 워크스페이스'의 공유입니다.</li><li><strong>인지 부하 최소화 효과:</strong> 새로운 실무자가 프로젝트에 투입될 때, 과거 히스토리를 파악하기 위해 수십 개의 폴더를 뒤질 필요 없이, 공유된 노트북에서 AI에게 질문하는 것만으로 즉시 온보딩이 가능합니다.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li>노트북 우측 상단의 [공유(Share)] 버튼 클릭</li></ol>
+<figure><img src="./assets/s2_14_share_permissions.png" alt="우측 상단 공유(Share) 클릭 → 사용자 초대 및 뷰어/편집자 권한 모달" loading="lazy"><figcaption><span class="no">그림 38.</span> 우측 상단 공유(Share) 클릭 → 사용자 초대 및 뷰어/편집자 권한 모달</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 강사 시연 화면입니다. 설명하는 동안 수강생이 같은 화면을 찾을 수 있도록 배치했습니다.</div><div><strong>기능 설명</strong> — 우측 상단 공유(Share) 클릭 → 사용자 초대 및 뷰어/편집자 권한 모달</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.7배 인셋 포함</div></div></figure>
+<ol><li>동료의 이메일(자활센터 내부 계정) 입력 및 권한(뷰어/편집자) 설정</li></ol>
+<figure><img src="./assets/s2_25_notebook_share_link_copy.png" alt="NotebookLM 우측 상단 공유 모달 내 링크 복사 및 접근 권한 설정 (뷰어/편집자)" loading="lazy"><figcaption><span class="no">그림 39.</span> NotebookLM 우측 상단 공유 모달 내 링크 복사 및 접근 권한 설정 (뷰어/편집자)</figcaption><div class="guide"><span class="t">화면 캡처 활용 가이드</span><div><strong>삽입 의미</strong> — 노트북 기반 협업/공유 체계 구축 설명 중 화면 조작이 필요한 지점입니다. 글로만 읽으면 위치를 찾기 어려운 부분을 눈으로 확인합니다.</div><div><strong>기능 설명</strong> — NotebookLM 우측 상단 공유 모달 내 링크 복사 및 접근 권한 설정 (뷰어/편집자)</div><div><strong>활용 방법</strong> — 이 메뉴는 화면 다른 곳을 클릭하면 닫히므로, 필요한 항목을 먼저 확인한 뒤 선택하세요. · 확대 1.7배 인셋 포함</div></div></figure>
+<ol><li>초대받은 동료가 링크를 클릭하여 동일한 AI 노트북 환경에 접속하는 과정 시연</li></ol>
+<ol><li>동료가 노트북 내에서 AI에게 질문하여 "어제까지 작업한 주요 자활 프로그램 기획안 요약해줘"라고 질문하는 모습 시연</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정:</strong> 여러분은 '2026년 하반기 인천지역 청년 자활 촉진 프로젝트'를 기획하는 TF팀입니다. 각자 조사한 자료를 하나의 노트북에 모으고 동료를 초대해야 합니다. <strong>가상 샘플데이터:</strong> '청년_자활_우수사례.pdf', '2026_예산가이드라인.txt' (미리 제공된 샘플 파일 업로드)</p>
+<p><strong>구체적인 프롬프트 및 행동 유도(Nudge):</strong></p>
+<ol><li>새로운 노트북을 생성하고 위 샘플 파일 2개를 소스로 업로드하세요.</li><li>짝꿍(옆자리 동료)의 이메일을 '편집자(Editor)' 권한으로 초대하세요.</li><li>짝꿍은 초대 링크를 수락한 후, 해당 노트북에 들어가서 다음 프롬프트를 입력하세요:</li></ol>
+<p>   &gt; "현재 업로드된 소스를 바탕으로, 청년 자활 프로젝트 기획안의 핵심 목표 3가지를 정리해서 노트로 저장해줘."</p>
+<ol><li>원본 작성자는 짝꿍이 저장한 노트를 확인하고 댓글(혹은 추가 노트)을 남겨보세요.</li></ol>
+<p><strong>실습 체크리스트:</strong></p>
+<ul><li>[ ] 노트북 생성 및 소스 업로드 완료</li><li>[ ] 동료 이메일 초대 및 권한 부여 성공</li><li>[ ] 초대받은 동료가 정상적으로 접속하여 AI와 대화 성공</li><li>[ ] 생성된 답변을 '노트(Note)'로 저장하여 상호 확인 성공</li></ul>
+<h3>[✅ 검증]</h3>
+<table><thead><tr><th>평가 항목</th><th>하 (초보)</th><th>중 (숙련)</th><th>상 (마스터)</th></tr></thead><tbody><tr><td><strong>공유 기능 이해</strong></td><td>공유 버튼을 찾지 못하거나 권한 설정을 헷갈려 함</td><td>뷰어 권한으로 초대는 가능하나 편집자 권한 설정에 어려움을 느낌</td><td>용도에 맞게 뷰어/편집자 권한을 정확히 부여하고 공유함</td></tr></tbody></table>
+<p>| <strong>협업 시너지</strong> | 공유 후 각자 따로 AI를 사용함 | 동료의 질문 결과를 확인하나 추가적인 연계 작업을 하지 못함 | 동료가 저장한 노트를 바탕으로 추가 질문을 던져 발전된 기획안을 도출함 |</p>
+<h3>[🚀 최적화]</h3>
+<ul><li><strong>Before:</strong> 자료 취합을 위해 이메일로 파일을 주고받으며 최신 버전 확인에 시간 낭비 (높은 인지 부하).</li><li><strong>After:</strong> 하나의 공유된 AI 노트북 안에서 실시간으로 지식을 융합하고, AI의 요약을 통해 즉각적인 맥락 파악 가능 (인지 부하 최소화 및 업무 몰입도 상승).</li></ul>
+<p><strong>🛠️ 트러블슈팅 Q&amp;A</strong></p>
+<ul><li><strong>Q:</strong> 초대를 보냈는데 동료가 메일을 받지 못했다고 합니다.</li><li><strong>A:</strong> 스팸 메일함을 확인하게 하거나, [링크 복사] 기능을 통해 메신저로 직접 공유 링크를 전달해 보세요. 단, 접근 권한이 '링크가 있는 모든 사용자'로 설정되지 않도록 주의해야 합니다.</li><li><strong>[Google 공식 도움말 링크]</strong> <a href="https://support.google.com/drive/answer/2494822" target="_blank" rel="noopener">Google Drive 및 문서 공유 방법 (노트북 공유 원리와 동일)</a></li></ul>
+<hr>
+<h2 class="ch" id="c2_14"><span class="num">2-14</span>버전관리 및 대화 히스토리 관리</h2>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"작업하다가 '아, 아까 AI가 해준 대답이 훨씬 좋았는데!' 하고 후회한 적 있으신가요? 우리 뇌는 단기 기억의 한계(한 번에 4~7개의 정보만 기억)를 있습니다. 이 한계를 극복해주는 완벽한 외장 하드가 바로 '대화 히스토리 관리'입니다. 과거의 성공적인 대화 맥락을 쉽게 찾아 재사용할 때, 여러분은 불확실성이 해소되는 깊은 안도감과 통제감을 느끼게 됩니다. 이는 뇌의 스트레스 호르몬(코르티솔)을 낮추고 더 창의적인 생각에 집중할 수 있게 해줍니다."</p>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<p>AI와의 대화는 일회성 검색이 아니라 '연속적인 사고의 과정'입니다. 훌륭한 결과물은 한 번의 질문이 아니라 꼬리를 무는 대화(Chain of Thought)에서 나옵니다. 따라서 과거의 대화(히스토리)를 체계적으로 관리하고 필요한 시점(버전)으로 돌아갈 수 있는 능력은 고급 AI 활용의 필수 요건입니다.</p>
+<h3>[개념 이해]</h3>
+<ul><li><strong>대화 스레드(Thread) 분리:</strong> 한 채팅창에서 모든 주제를 다루면 AI의 맥락이 섞여 할루시네이션(환각)이 발생하기 쉽습니다. 주제별로 새 대화를 생성하여 독립된 히스토리를 유지해야 합니다.</li><li><strong>핀셋 저장 (Pinning &amp; Saving):</strong> 중요한 답변은 흘려보내지 않고 즉각적으로 '노트'나 '문서' 형태로 고정(Save)하여 특정 버전의 결과물을 박제해 두어야 합니다.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li>주제가 섞인 혼란스러운 대화창 보여주기 (예: 자활 사업 기획을 묻다가 갑자기 엑셀 함수를 물어보는 상황) -&gt; AI 답변 품질 저하 시연</li><li>주제를 분리하는 올바른 방법 시연 — 채팅창에는 '새 대화(New Chat)' 버튼이 <strong>없습니다.</strong></li><li>① 남겨야 할 답변은 핀(📌)으로 메모에 저장한다.</li><li>② 같은 소스로 다른 관점의 대화를 하려면 <strong>노트북을 복제</strong>해 소스를 재활용한다.</li><li>③ 주제가 완전히 다르면 상단 [+ 노트북 만들기]로 <strong>새 노트북</strong>을 생성한다.</li><li>⚠️ 채팅 섹션의 점 세 개(⋯) → [채팅 기록 삭제]는 <strong>복구가 불가능</strong>하다. 지우기 전에 반드시 메모로 저장할 것.</li></ol>
+<ol><li>이전 대화 히스토리 목록에서 제목을 직관적으로 변경(Rename)하는 방법 시연 (예: "Untitled" -&gt; "26년 하반기 예산안 초안")</li><li>마음에 드는 답변을 복사하는 대신, [노트에 저장] 버튼을 눌러 스냅샷을 남기는 시연</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정:</strong> 여러 가지 업무가 동시다발적으로 주어졌습니다. 하나는 '자활 근로자 안전 교육 기획', 다른 하나는 '월간 실적 보고서 작성'입니다. <strong>가상 샘플데이터:</strong> 각 업무에 대한 기초 개요 텍스트 (강사가 화면에 띄워줌)</p>
+<p><strong>구체적인 프롬프트 및 행동 유도(Nudge):</strong></p>
+<ol><li><strong>[넛지 포인트]</strong> 지금 바로 좌측 상단의 '새 대화' 버튼을 2번 누르세요!</li></ol>
+<ol><li>첫 번째 대화방의 제목을 <code>[기획] 안전 교육 프로그램</code>으로 변경하고, 안전 교육 관련 프롬프트를 입력하세요.</li></ol>
+<p>   &gt; "자활 근로자 대상 산업안전보건 교육 1시간짜리 식순을 표로 짜줘."</p>
+<ol><li>두 번째 대화방의 제목을 <code>[보고] 5월 실적 요약</code>으로 변경하고, 실적 관련 프롬프트를 입력하세요.</li></ol>
+<p>   &gt; "방문 상담 50건, 취업 연계 12건의 실적을 바탕으로 성과 보고서 서론을 3줄로 써줘."</p>
+<ol><li>첫 번째 대화방으로 다시 돌아가서, 이전 대화 맥락이 그대로 유지되는지 확인하기 위해 이어지는 질문을 하세요.</li></ol>
+<p>   &gt; "위 표에서 '휴식 시간'을 10분 추가해서 다시 작성해줘."</p>
+<p><strong>실습 체크리스트:</strong></p>
+<ul><li>[ ] 대화방 2개 생성 및 목적에 맞는 제목(Title) 변경 완료</li><li>[ ] 각 대화방에 맞는 프롬프트 입력 완료</li></ul>
+<ul><li>[ ] 대화방 이동 후에도 이전 맥락을 이어가는 추가 질문 성공</li></ul>
+<h3>[✅ 검증]</h3>
+<table><thead><tr><th>평가 항목</th><th>하 (초보)</th><th>중 (숙련)</th><th>상 (마스터)</th></tr></thead><tbody><tr><td><strong>스레드 분리</strong></td><td>하나의 대화창에서 여러 주제를 섞어서 질문함</td><td>주제별로 방을 나누지만, 제목을 정리하지 않아 나중에 찾기 어려워함</td><td>주제별 생성 및 직관적인 네이밍 컨벤션(예: [태그] 제목)을 적용하여 관리함</td></tr><tr><td><strong>맥락 유지</strong></td><td>이전 대화를 무시하고 처음부터 다시 길게 질문함</td><td>대화 히스토리를 찾아가서 확인은 하나 텍스트를 복사해서 새 방에서 씀</td><td>기존 스레드로 돌아가 "방금 말한 내용에서 이어서~" 형식의 맥락 기반 질문을 능숙하게 구사함</td></tr></tbody></table>
+<h3>[🚀 최적화]</h3>
+<ul><li><strong>Before:</strong> "어제 AI가 잘 써준 글이 있었는데..." 하며 스크롤을 한참 올리거나 결국 포기하고 다시 질문하여 시간을 낭비함.</li><li><strong>After:</strong> 잘 정돈된 서랍장처럼 대화 히스토리가 관리되어, 필요한 업무 맥락을 곧바로 불러오고 즉각적인 후속 작업 착수 가능.</li></ul>
+<p><strong>🛠️ 트러블슈팅 Q&amp;A</strong></p>
+<ul><li><strong>Q:</strong> 대화 기록이 갑자기 사라졌어요!</li><li><strong>A:</strong> 일시적인 네트워크 오류이거나, 브라우저 캐시 문제일 수 있습니다. 새로고침(F5)을 누르거나 로그아웃 후 재로그인해 보세요. 그래도 안 보인다면, '임시 대화(History Off)' 모드가 켜져 있지 않은지 확인해야 합니다.</li><li><strong>[Google 공식 도움말 링크]</strong> <a href="https://support.google.com/gemini/answer/13278892?hl=ko" target="_blank" rel="noopener">Gemini 앱 활동 관리 및 삭제 (히스토리 관리 개념)</a></li></ul>
+<hr>
+<h2 class="ch" id="c2_15"><span class="num">2-15</span>데이터 프라이버시 및 보안 설정</h2>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"우리가 일하는 자활센터는 민감한 개인정보(주민등록번호, 의료 기록, 경제 상황 등)를 다루는 최전선입니다. 여러분, 보안 사고는 거창한 해킹이 아니라 아주 사소한 복사-붙여넣기 실수에서 시작됩니다. 뇌의 '자동화(System 1)' 사고 패턴이 무심코 민감 정보를 AI에게 넘겨버릴 수 있죠. 우리는 이를 방지하기 위해 '의도적 멈춤(System 2 개입)'이라는 인지적 브레이크를 만들 것입니다. 오늘 배울 비식별화와 보안 설정은 여러분을 법적 위험으로부터 완벽히 보호해 줄 강력한 방패입니다."</p>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<p>상용 AI 모델(무료 버전 등)에 입력된 데이터는 때로 AI의 학습 목적으로 사용될 위험이 존재합니다. 실무자는 정보의 민감도를 스스로 판단하고, AI에게 데이터를 넘기기 전 반드시 '비식별화(De-identification)' 과정을 거쳐야 합니다. 또한 기업용/기관용 워크스페이스 환경에서는 데이터가 학습에 사용되지 않도록 설정하는 옵션을 숙지해야 합니다.</p>
+<h3>[개념 이해]</h3>
+<ul><li><strong>비식별화 처리:</strong> 이름, 연락처, 상세 주소, 주민번호 등 개인을 특정할 수 있는 정보를 가명 처리(예: 홍길동 -&gt; A씨, 010-1234-****)하는 작업.</li><li><strong>AI 학습 동의 옵션 (Opt-out):</strong> 내가 입력한 프롬프트와 소스 데이터가 AI 모델 개선(학습)에 사용되지 않도록 계정 설정에서 제어하는 기능.</li></ul>
+<ul><li><strong>폐쇄형 환경 활용:</strong> 중요 문서는 퍼블릭 AI 챗봇(웹)에 텍스트로 붙여넣지 않고, 데이터 유출이 차단된 로컬 환경이나 보안이 보장된 기관용 온프레미스/엔터프라이즈 환경에서만 다루는 원칙.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li>민감 정보가 포함된 원본 사례관리 기록 샘플 화면(가짜 데이터) 띄우기</li></ol>
+<ol><li>AI에게 넘기기 전 메모장이나 한글 파일에서 [찾아 바꾸기(Ctrl+H)] 기능을 통해 이름과 전화번호를 일괄 마스킹하는 과정 시연</li><li>AI 설정(Settings) 메뉴 진입 -&gt; '데이터 프라이버시' 또는 '학습에 내 데이터 사용' 토글 버튼을 끄는(Opt-out) 시연</li></ol>
+<ol><li>비식별화된 데이터를 바탕으로 AI에게 요약을 요청하여, 개인정보 유출 없이 완벽한 결과물을 얻는 모습 시연</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정:</strong> 자활 참여자 '김철수(55세, 010-9999-8888, 인천 부평구 거주, 채무 3천만원)'의 심층 상담 기록을 AI를 통해 요약해야 합니다. <strong>가상 샘플데이터:</strong> 위 괄호 안의 정보가 포함된 4줄짜리 상담 텍스트.</p>
+<p><strong>구체적인 프롬프트 및 행동 유도(Nudge):</strong></p>
+<ol><li><strong>[멈춤 넛지!]</strong> 복사하기 전에 손을 떼세요! 텍스트 편집기에 샘플 데이터를 복사합니다.</li><li>개인을 특정할 수 있는 정보(이름, 연락처, 상세 주소)를 <strong>'참여자 A', '010-XXXX-XXXX', '인천 O구'</strong> 등으로 직접 수정(비식별화) 하세요.</li><li>설정 창으로 이동하여 본인 계정의 '데이터 및 개인정보 보호' 메뉴에서 <strong>학습 모델 기여 끄기</strong>를 실행하세요. (실제 환경에 맞춰 옵션 확인)</li></ol>
+<ol><li>비식별화가 완료된 텍스트만 AI에 붙여넣고 다음 프롬프트를 입력하세요.</li></ol>
+<p>   &gt; "아래 비식별화된 상담 기록을 바탕으로, 참여자의 주요 당면 과제 2가지를 객관적 어조로 요약해줘."</p>
+<p><strong>실습 체크리스트:</strong></p>
+<ul><li>[ ] 텍스트 편집기에서 완벽하게 비식별화 처리(마스킹) 완료</li><li>[ ] AI 계정 설정에서 프라이버시(학습 동의 해제) 설정 확인</li><li>[ ] 비식별화된 데이터를 활용하여 안전하게 요약 결과 도출 성공</li></ul>
+<h3>[✅ 검증]</h3>
+<table><thead><tr><th>평가 항목</th><th>하 (초보)</th><th>중 (숙련)</th><th>상 (마스터)</th></tr></thead><tbody><tr><td><strong>비식별화 인지</strong></td><td>민감 정보를 그대로 복사하여 AI 창에 붙여넣으려 함</td><td>이름은 가렸으나 전화번호나 특정 가능한 세부 지역명 등을 놓침</td><td>모든 식별 가능 정보를 완벽히 A, B, C 등의 기호나 마스킹 문자로 치환함</td></tr><tr><td><strong>보안 설정 조작</strong></td><td>개인정보 보호 설정 메뉴의 위치를 찾지 못함</td><td>강사의 안내를 받아 설정을 변경할 수 있음</td><td>스스로 Opt-out 기능을 설정하고, 왜 이 과정이 필수적인지 타인에게 설명할 수 있음</td></tr></tbody></table>
+<h3>[🚀 최적화]</h3>
+<ul><li><strong>Before:</strong> "이거 AI에 넣어도 되나?" 하는 불안감에 사로잡혀 아예 AI 활용을 포기하거나(비효율), 무심코 개인정보를 유출하는 치명적 위험(리스크)에 노출됨.</li><li><strong>After:</strong> 시스템적인 비식별화 루틴(System 2)이 습관화되어, 100% 안전한 상태에서 AI의 강력한 문서 요약/분석 기능을 마음껏 활용할 수 있는 심리적 안전감 확보.</li></ul>
+<p><strong>🛠️ 트러블슈팅 Q&amp;A</strong></p>
+<ul><li><strong>Q:</strong> 이미 민감한 정보를 입력해서 엔터를 쳐버렸어요! 어떡하죠?</li></ul>
+<ul><li><strong>A:</strong> 즉시 해당 대화(프롬프트) 기록을 삭제(Delete)하십시오. 대부분의 플랫폼에서 사용자가 대화를 삭제하면 해당 데이터는 모델 학습 큐에서 즉각 제외되거나 일정 기간 후 완전히 폐기됩니다. 앞으로는 '선 마스킹, 후 복사' 습관을 꼭 들이세요.</li><li><strong>[Google 공식 도움말 링크]</strong> <a href="https://support.google.com/gemini/answer/13594961?hl=ko" target="_blank" rel="noopener">Gemini 앱 개인정보 보호 허브</a></li></ul>
+<hr>
+<h2 class="ch" id="c2_16"><span class="num">2-16</span>멀티소스 교차 검색 및 필터링 기법</h2>
+<div class="marker">🗣️ <strong>강사 멘트</strong></div>
+<p>"정보가 너무 많아서 오히려 결정하기 힘든 현상을 '정보 과부하(Information Overload)'라고 합니다. 이때 우리 뇌는 피로를 느끼고 결정을 미루는 '인지적 회피'를 선택하게 되죠. 하지만 걱정 마세요. AI에게 '단일 소스'가 아닌 '멀티 소스'를 주고 교차 분석을 시키면, AI가 여러분의 뇌를 대신해 엄청난 양의 데이터를 체로 걸러줍니다. 파편화된 문서들 사이에서 공통점과 모순점을 찾아내는 AI의 모습을 보면, 마치 수십 명의 연구원을 거느린 센터장이 된 듯한 지적 도파민이 솟구칠 것입니다!"</p>
+<div class="marker">📘 <strong>교재 내용</strong></div>
+<p>현업에서는 한 가지 문서만 보고 판단하는 경우가 드뭅니다. '작년 결과보고서', '올해 지침서', '최신 보도자료' 등 다수의 문서(멀티소스)를 동시에 업로드하여 정보를 교차 검증(Cross-validation)하고, 원하는 조건(필터)에 맞는 핵심 내용만 추출해내는 기법은 AI 활용의 백미입니다.</p>
+<h3>[개념 이해]</h3>
+<ul><li><strong>멀티소스 교차 분석:</strong> A문서와 B문서를 동시에 참조하게 하여, 두 문서 간의 공통된 트렌드나 상충되는 규칙을 찾아내는 프롬프팅 기법.</li><li><strong>동적 필터링(Dynamic Filtering):</strong> "2025년 자료 중", "예산이 언급된 부분만", "부정적 피드백만" 등 명확한 제약 조건을 주어 노이즈 데이터를 걸러내는 기법.</li><li><strong>할루시네이션 통제:</strong> "반드시 내가 업로드한 소스 문서 3개 안에서만 답변해. 문서에 없는 내용은 '알 수 없음'이라고 해."라는 통제 프롬프트를 통해 신뢰성을 극대화함.</li></ul>
+<h3>[💻 시연]</h3>
+<ol><li>서로 다른 3개의 파일 업로드 시연 (예: 2024년 자활지침.pdf, 2025년 변경사항안내.hwp, 우수사례집.txt)</li><li><strong>나쁜 예시 시연:</strong> "자활 사업에 대해 요약해줘." -&gt; 너무 광범위하고 인터넷 정보를 섞어버리는 결과 확인.</li></ol>
+<ol><li><strong>좋은 예시 시연:</strong> "업로드된 [24년 지침]과 [25년 변경사항]을 교차 분석하여, '참여자 수당' 항목이 작년 대비 어떻게 변경되었는지 표로 비교해서 필터링해 줘. 출처 문서명도 표기해."</li><li>AI가 두 문서를 비교하여 정확히 변경점만 짚어내고 출처를 명시하는 경이로운 결과물(도파민 폭발 포인트) 확인.</li></ol>
+<h3>[✍️ 실습]</h3>
+<p><strong>상황 설정:</strong> 올해 센터 평가를 준비하며, 과거 2년 치 실적 자료와 올해의 평가 지표 가이드라인을 비교 분석해야 합니다. <strong>가상 샘플데이터:</strong> '2024_실적.txt', '2025_실적.txt', '2026_평가지표.pdf' (미리 준비된 가벼운 텍스트 파일 3개)</p>
+<p><strong>구체적인 프롬프트 및 행동 유도(Nudge):</strong></p>
+<ol><li>제공된 샘플 파일 3개를 모두 하나의 채팅창(또는 노트북 소스)에 업로드하세요.</li><li>아래의 교차 검색 프롬프트를 정확히 복사해서 붙여넣고 실행하세요.</li></ol>
+<p>   &gt; <strong>[프롬프트 입력]</strong>    &gt; "너는 전문 데이터 분석가야. 내가 업로드한 3개의 문서를 교차 분석해줘.    &gt; 조건 1: [2024_실적]과 [2025_실적]을 비교하여 '취업 성공률'이 상승했는지 하락했는지 수치와 함께 서술할 것.    &gt; 조건 2: 그 수치를 [2026_평가지표]의 '만점 기준'과 비교하여, 올해 우리가 목표를 달성했는지 평가할 것.    &gt; 조건 3: 반드시 업로드된 문서의 데이터만 사용하고, 외부 정보는 차단할 것."</p>
+<ol><li>생성된 답변에서 출처가 명확히 명시되었는지, 세 가지 문서의 맥락이 모두 반영되었는지 확인하세요.</li></ol>
+<p><strong>실습 체크리스트:</strong></p>
+<ul><li>[ ] 3개 이상의 멀티 소스 동시 업로드 성공</li><li>[ ] 제약 조건(필터)이 포함된 구조화된 프롬프트 작성 및 실행 완료</li><li>[ ] 외부 정보가 개입되지 않고 오직 문서 내의 데이터만 교차 분석된 결과물 확인</li></ul>
+<h3>[✅ 검증]</h3>
+<table><thead><tr><th>평가 항목</th><th>하 (초보)</th><th>중 (숙련)</th><th>상 (마스터)</th></tr></thead><tbody><tr><td><strong>다중 문서 이해</strong></td><td>파일 1개씩 따로따로 업로드하여 각각 질문함</td><td>여러 개를 올리지만, 질문이 모호하여 한 문서의 내용에만 치우친 답변을 받음</td><td>3개 문서를 명확히 지칭(인덱싱)하여 각 문서의 역할을 지정하는 프롬프트를 구사함</td></tr><tr><td><strong>필터링 및 통제</strong></td><td>AI가 외부 지식을 섞어서 대답해도 눈치채지 못함</td><td>조건부 프롬프트를 주어 출처 기반 답변을 유도함</td><td>"문서에 없으면 모른다고 답해라"는 통제 프롬프트로 할루시네이션을 완벽히 차단하고 정제된 표/데이터를 추출함</td></tr></tbody></table>
+<h3>[🚀 최적화]</h3>
+<ul><li><strong>Before:</strong> 모니터 양쪽에 PDF와 엑셀을 띄워놓고 눈이 빠지게 번갈아 보며 차이점을 수동으로 밑줄 치며 찾음 (엄청난 안구 피로도 및 인지적 한계 도달).</li><li><strong>After:</strong> 다중 문서를 AI의 거대한 처리 공간에 던져넣고, 내가 원하는 '조건식'만 명령하여 수 초 만에 비교 분석 표를 얻어내는 '마에스트로(지휘자)' 역할로 격상.</li></ul>
+<p><strong>🛠️ 트러블슈팅 Q&amp;A</strong></p>
+<ul><li><strong>Q:</strong> 3개를 올렸는데 AI가 자꾸 1번 문서 내용만 요약해 줘요.</li><li><strong>A:</strong> 프롬프트가 구체적이지 않아서 그렇습니다. AI는 기본적으로 가장 먼저 인식한(또는 가장 용량이 큰) 문서에 가중치를 두는 경향이 있습니다. 프롬프트에 <code>[문서A]와 [문서B]를 반드시 각각 참조하여 비교하라</code>는 식으로 명시적인 지시(Explicit Instruction)를 내려야 시야를 넒힐 수 있습니다.</li><li><strong>[Google 공식 도움말 링크]</strong> <a href="https://support.google.com/notebooklm/answer/16179559?hl=ko" target="_blank" rel="noopener">Gemini Notebook - 채팅 사용하기</a></li></ul>
+<hr>
+<p><em>※ 강의 종료 후 실무자들에게 '마스터 수료증' 발급 요건(루브릭 '상' 3개 이상 달성)을 안내하며 내적 동기를 한 번 더 자극합니다.</em></p>
+</div>
+<div id="lb"><img id="lbimg" alt=""><div class="hint">아무 곳이나 클릭하거나 ESC 키를 누르면 닫힙니다</div></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'), im=document.getElementById('lbimg');
+  document.querySelectorAll('figure img').forEach(function(g){
+    g.addEventListener('click',function(){ im.src=g.getAttribute('src'); lb.classList.add('on'); });
+  });
+  lb.addEventListener('click',function(){ lb.classList.remove('on'); im.src=''; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('on'); });
+})();
+</script></body></html>
