@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티 AI 파편화 통합 운영 가이드 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-brand-500 selection:text-white">
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-indigo-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                    <i class="fa-solid fa-network-wired mr-1"></i> MULTI-AI ORCHESTRATION FRAMEWORK
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                AGY 2.0 • 클로드 • 코덱스 멀티 AI 통합 운영 가이드
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                호모루미누스 윤문(97청크)과 BTS 이미징 아카이브 파편화를 종결하는 단일 진실 공급원(SSOT) 체계
+            </p>
+        </header>
+
+        <!-- 3 Core Rules -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-folder-tree"></i></div>
+                <h3 class="font-bold text-white text-sm">1. 저장소 단일화 (SSOT)</h3>
+                <p class="text-xs text-slate-400">대화창은 달라도 파일 저장은 무조건 구글드라이브 고정 1곳에만 저장</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-people-arrows"></i></div>
+                <h3 class="font-bold text-white text-sm">2. 특화 역할 분담 (RACI)</h3>
+                <p class="text-xs text-slate-400">클로드는 윤문 집필, 코덱스는 크롤러 개발, AGY는 전체 오케스트레이션</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-desktop"></i></div>
+                <h3 class="font-bold text-white text-sm">3. 통합 관제 포털</h3>
+                <p class="text-xs text-slate-400">RYUJEAN DOMAIN HQ 포털에서 최종 결과를 실시간 원클릭 확인</p>
+            </div>
+        </div>
+
+        <!-- RACI Role Cards -->
+        <section class="space-y-4">
+            <h2 class="text-lg font-black text-white flex items-center gap-2">
+                <i class="fa-solid fa-users-gear text-indigo-400"></i> 3대 AI 도구별 특화 역할 분담
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                
+                <!-- Claude -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-amber-500/30 space-y-3 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-400 text-xs font-bold">
+                            🎭 클로드 코워크 (Claude)
+                        </span>
+                        <h3 class="font-black text-white text-base">호모루미누스 97청크 윤문 전담</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Sonnet의 압도적인 문학적 어휘력과 맥락 유지력을 활용해 스승님 구술 원고를 품격 있는 경전체로 승화.
+                        </p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-amber-300 font-mono">
+                        📁 저장: context/chunks/
+                    </div>
+                </div>
+
+                <!-- Codex -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-purple-500/30 space-y-3 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-400 text-xs font-bold">
+                            ⚡ 코덱스 (OpenAI Codex)
+                        </span>
+                        <h3 class="font-black text-white text-base">BTS 이미징 아카이브 개발 전담</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Python 크롤러, 이미지 다운로더, 좌표 매핑 및 GitHub Actions 자동 수집 스크립트 작성 전담.
+                        </p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-purple-300 font-mono">
+                        📁 저장: BTS_AGY/scripts/
+                    </div>
+                </div>
+
+                <!-- AGY -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-brand-500/30 space-y-3 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-brand-500/20 text-brand-400 text-xs font-bold">
+                            🏛️ AGY 2.0 (Antigravity)
+                        </span>
+                        <h3 class="font-black text-white text-base">총괄 오케스트레이터 & 포털 배포</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            클로드와 코덱스의 결과물을 통합 검수하고, GitHub 커밋 및 DOMAIN HQ 마스터 포털에 1초 라이브 배포.
+                        </p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-brand-300 font-mono">
+                        🌐 배포: DOMAIN HQ 포털
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer Actions -->
+        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h4 class="text-sm font-bold text-white">RYUJEAN DOMAIN HQ에서 통합 관제</h4>
+                <p class="text-xs text-slate-400 mt-1">모든 도구의 산출물이 포털 한 곳으로 모여 안전하게 제어됩니다.</p>
+            </div>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                🏛️ 마스터 포털 열기 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
