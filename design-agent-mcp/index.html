@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGY · Claude · Codex 공통 디자인 MCP & Taste Image-to-Code 마스터 가이드</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amberGold: {
+                            50: '#FDFBF7',
+                            100: '#F7F2E7',
+                            200: '#EBDDC0',
+                            500: '#C5A869',
+                            700: '#8E7036',
+                            900: '#4A3B1C',
+                            950: '#2A200B'
+                        },
+                        sage: {
+                            50: '#F4F7F4',
+                            100: '#E5EDE5',
+                            500: '#688B68',
+                            800: '#2D442D'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #0F172A; color: #E2E8F0; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .tab-btn.active { background: #C5A869; color: #2A200B; font-weight: 700; }
+        .gradient-border { border-image: linear-gradient(to right, #C5A869, #688B68) 1; }
+    </style>
+</head>
+<body class="min-h-screen pb-16">
+
+    <!-- Hero Header -->
+    <header class="border-b border-slate-800 bg-slate-900/80 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-emerald-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-slate-100 flex items-center gap-2">
+                        Cross-Agent Design MCP & Taste Toolkit
+                        <span class="text-[11px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-semibold border border-amber-500/30">AGY · Claude · Codex</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Anti-Slop 프론트엔드 디자인 · Image-to-Code · Agent Browser 통합 환경</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="#config-section" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 font-medium border border-slate-700 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-code"></i> MCP 설정 복사
+                </a>
+                <button onclick="window.print()" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition flex items-center gap-1.5 shadow-md shadow-amber-500/20">
+                    <i class="fa-solid fa-file-pdf"></i> 가이드 인쇄
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pt-8 space-y-10">
+
+        <!-- Banner Card -->
+        <div class="glass-card rounded-2xl p-8 bg-gradient-to-br from-slate-900 via-slate-800/80 to-slate-900 relative overflow-hidden shadow-2xl">
+            <div class="relative z-10 max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-medium mb-3">
+                    <i class="fa-solid fa-shield-halved"></i> 100% Anti-Slop (저품질 AI 템플릿 박멸)
+                </div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-3">
+                    디자인을 먼저 보고 코드로 정밀 구현하는 <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">Image-to-Code 자율 에이전트 시스템</span>
+                </h2>
+                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                    보라색 그라데이션과 뻔한 3단 카드는 이제 그만. <strong>Taste-Skill</strong>의 심미성 원칙과 <strong>Agent Browser</strong>의 실시간 검증을 통해, AGY·Claude·Codex 3대 에이전트 어디서든 최고급 에이전시 퀄리티의 웹과 UI를 즉시 제작합니다.
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs">
+                    <div class="flex items-center gap-2 bg-slate-800/90 px-3.5 py-2 rounded-xl border border-slate-700">
+                        <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                        <span class="text-slate-300">Image-to-Code 선행 시각화</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-slate-800/90 px-3.5 py-2 rounded-xl border border-slate-700">
+                        <i class="fa-solid fa-sliders text-emerald-400"></i>
+                        <span class="text-slate-300">DESIGN_VARIANCE (1~10) 튜닝</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-slate-800/90 px-3.5 py-2 rounded-xl border border-slate-700">
+                        <i class="fa-solid fa-laptop-code text-cyan-400"></i>
+                        <span class="text-slate-300">Puppeteer 브라우저 실시간 QA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        </div>
+
+        <!-- 3대 에이전트 연동 아키텍처 -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
+                    <i class="fa-solid fa-network-wired text-amber-400"></i> 3대 AI 에이전트 통합 연동 아키텍처
+                </h3>
+                <span class="text-xs text-slate-400">동일한 지식과 MCP 도구를 100% 공유</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- AGY -->
+                <div class="glass-card rounded-xl p-6 border-t-2 border-t-amber-400 hover:border-amber-400/50 transition">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold px-2.5 py-1 rounded bg-amber-400/10 text-amber-400 border border-amber-400/30">AGY (Antigravity)</span>
+                        <i class="fa-solid fa-bolt text-amber-400 text-lg"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-100 mb-2">Google DeepMind 최상위 에이전트</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        `스킬/design-agent-taste/SKILL.md`가 자동 탑재되어, 자연어 명령 시 `generate_image`와 터미널 도구를 결합하여 디자인부터 배포까지 완결합니다.
+                    </p>
+                    <div class="text-[11px] bg-slate-900 p-2.5 rounded-lg text-slate-300 font-mono">
+                        "디자인 에이전트 스킬로 랜딩페이지 짜줘"
+                    </div>
+                </div>
+
+                <!-- Claude Code -->
+                <div class="glass-card rounded-xl p-6 border-t-2 border-t-orange-400 hover:border-orange-400/50 transition">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold px-2.5 py-1 rounded bg-orange-400/10 text-orange-400 border border-orange-400/30">Claude Code / Desktop</span>
+                        <i class="fa-solid fa-brain text-orange-400 text-lg"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-100 mb-2">Anthropic CLI & Desktop</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        `claude_desktop_config.json`에 `agent-browser`와 `filesystem` MCP를 등록하여, 코딩 중 브라우저 캡처 검수를 동시에 수행합니다.
+                    </p>
+                    <div class="text-[11px] bg-slate-900 p-2.5 rounded-lg text-slate-300 font-mono">
+                        claude_desktop_config.json 연동 완료
+                    </div>
+                </div>
+
+                <!-- Codex / Cursor -->
+                <div class="glass-card rounded-xl p-6 border-t-2 border-t-emerald-400 hover:border-emerald-400/50 transition">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold px-2.5 py-1 rounded bg-emerald-400/10 text-emerald-400 border border-emerald-400/30">OpenAI Codex / Cursor</span>
+                        <i class="fa-solid fa-code text-emerald-400 text-lg"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-100 mb-2">VS Code & Cursor IDE</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        `.cursor/mcp.json`에 MCP 도구가 등록되어 에디터 내에서 실시간 브라우저 렌더링 검수와 프론트엔드 리팩토링을 수행합니다.
+                    </p>
+                    <div class="text-[11px] bg-slate-900 p-2.5 rounded-lg text-slate-300 font-mono">
+                        .cursor/mcp.json 자동 배포 완료
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7대 안티 슬롭 금지 규칙 vs 적용 규칙 -->
+        <section class="glass-card rounded-2xl p-8 space-y-6">
+            <div>
+                <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
+                    <i class="fa-solid fa-ban text-rose-400"></i> 안티 슬롭(Anti-Slop) 7대 엄격 금지 규칙
+                </h3>
+                <p class="text-xs text-slate-400 mt-1">AI가 쉽게 빠지는 흔한 저품질 디자인 패턴을 철저하게 방지합니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-2">
+                    <div class="font-bold text-rose-300 flex items-center gap-2">
+                        <i class="fa-solid fa-xmark"></i> ❌ 절대 금지 (AI Slop)
+                    </div>
+                    <ul class="space-y-1.5 text-slate-300 list-disc list-inside">
+                        <li>보라/네온 그라데이션 남발 (`from-purple-500 to-indigo-600`)</li>
+                        <li>무의미한 3단 복제 카드 (아이콘 + 볼드 제목 + 2줄 설명)</li>
+                        <li>카드 속에 카드를 또 넣는 불필요한 테두리 중첩 (Padding Hell)</li>
+                        <li>흐리멍덩한 회색 텍스트 (`text-gray-400`)로 인한 가독성 저하</li>
+                        <li>모든 버튼이 똑같은 무개성 라운드 버튼 일색</li>
+                        <li>"Lorem ipsum" 더미 텍스트 방치</li>
+                        <li>모바일에서 가로 스크롤이 터지는 무성의한 레이아웃</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 space-y-2">
+                    <div class="font-bold text-emerald-300 flex items-center gap-2">
+                        <i class="fa-solid fa-check"></i> ✅ 권장 적용 (High-Craft Standard)
+                    </div>
+                    <ul class="space-y-1.5 text-slate-300 list-disc list-inside">
+                        <li>도메인 맞춤형 컬러 팔레트 (샌달우드 웜앰버, 세이지 그린 등)</li>
+                        <li>비대칭 벤토 그리드(Bento Grid) 및 기능별 차별화 레이아웃</li>
+                        <li>여백(Negative Space)과 마이크로 보더(1px border)의 정밀 조화</li>
+                        <li>WCAG AAA 기준의 선명하고 또렷한 타이포그래피 대비</li>
+                        <li>브랜드 아이덴티티에 맞는 셰이프, 마이크로 섀도우, 호버 이펙트</li>
+                        <li>100% 실제 비즈니스 도메인 데이터와 스토리텔링 삽입</li>
+                        <li>모바일(390px) · 태블릿(768px) · 데스크톱(1440px) 3단 반응형 완비</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MCP 설정 코드 섹션 -->
+        <section id="config-section" class="glass-card rounded-2xl p-8 space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
+                        <i class="fa-solid fa-code text-cyan-400"></i> 통합 MCP 설정 (mcp.json)
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Claude, Cursor, Codex 환경설정에 즉시 붙여넣어 사용할 수 있습니다.</p>
+                </div>
+                <button onclick="navigator.clipboard.writeText(document.getElementById('mcp-code').innerText); alert('MCP JSON 설정이 클립보드에 복사되었습니다!');" class="px-3 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-copy"></i> JSON 복사
+                </button>
+            </div>
+
+            <pre id="mcp-code" class="bg-slate-950 p-5 rounded-xl text-xs font-mono text-cyan-300 overflow-x-auto border border-slate-800 leading-relaxed">
+{
+  "mcpServers": {
+    "agent-browser": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "description": "AI 에이전트 전용 헤드리스 브라우저. 화면 캡처, 반응형 레이아웃 검증, 실시간 웹 UI 검수 수행",
+      "env": {
+        "PUPPETEER_HEADLESS": "true"
+      }
+    },
+    "design-taste-toolkit": {
+      "command": "npx",
+      "args": ["-y", "skills", "add", "https://github.com/Leonxlnx/taste-skill"],
+      "description": "Taste-Skill 안티 슬롭 디자인 시스템 및 Image-to-Code 프레임워크"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\Users\\ryuje\\ryujeanWorkSpace"],
+      "description": "워크스페이스 로컬 파일시스템 읽기/쓰기/탐색 MCP"
+    }
+  }
+}</pre>
+        </section>
+
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-6 mt-16 text-center text-xs text-slate-500 border-t border-slate-800 pt-8">
+        ryujeanWorkSpace · 유정근 총괄 전담 Antigravity AI 시스템 · Design Agent & Taste MCP Toolkit
+    </footer>
+
+</body>
+</html>
