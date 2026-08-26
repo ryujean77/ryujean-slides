@@ -6,25 +6,7 @@
   <title>사상체질 웰니스 스파 (Sasang Constitution SPA) — 프리미엄 K-Wellness 프로젝트</title>
   
   <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com">
-    // SECRET ADMIN TRIGGER: Key combo (Ctrl + Shift + L) or Logo 5 clicks
-    let logoClickCount = 0;
-    function triggerSecretAdmin() {
-      logoClickCount++;
-      if (logoClickCount >= 5) {
-        logoClickCount = 0;
-        openAdminModal();
-      }
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
-        e.preventDefault();
-        openAdminModal();
-      }
-    });
-
-  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- Google Fonts -->
@@ -62,24 +44,6 @@
         }
       }
     }
-  
-    // SECRET ADMIN TRIGGER: Key combo (Ctrl + Shift + L) or Logo 5 clicks
-    let logoClickCount = 0;
-    function triggerSecretAdmin() {
-      logoClickCount++;
-      if (logoClickCount >= 5) {
-        logoClickCount = 0;
-        openAdminModal();
-      }
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
-        e.preventDefault();
-        openAdminModal();
-      }
-    });
-
   </script>
   
   <style>
@@ -101,11 +65,12 @@
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(143, 168, 155, 0.18);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
     }
     .glass-card:hover {
-      border-color: rgba(212, 175, 55, 0.5);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.5), 0 0 20px -3px rgba(212, 175, 55, 0.25);
+      border-color: rgba(212, 175, 55, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6), 0 0 24px -2px rgba(212, 175, 55, 0.3);
     }
     .gold-gradient-text {
       background: linear-gradient(135deg, #fff2cc 0%, #e5c07b 50%, #d4af37 100%);
@@ -141,7 +106,7 @@
   <div class="hero-glow top-0 left-1/4 -translate-x-1/2"></div>
   <div class="hero-glow top-1/3 right-0 translate-x-1/3"></div>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar (Clean & Professional) -->
   <header class="sticky top-0 z-40 w-full glass-panel border-b border-amber-500/15 px-6 py-4 transition-all duration-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -157,7 +122,7 @@
       </div>
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-        <a href="#philosophy" class="hover:text-amber-300 transition-colors">스파 철학 & 강점</a>
+        <a href="#philosophy" class="hover:text-amber-300 transition-colors">스파 철학 & 글로벌 트렌드</a>
         <a href="#programs" class="hover:text-amber-300 transition-colors">4대 VIP 프로그램</a>
         <a href="#diagnosis" class="hover:text-amber-300 transition-colors">정밀 진단 체계</a>
         <a href="#therapies" class="hover:text-amber-300 transition-colors">10대 핵심 테라피</a>
@@ -165,11 +130,9 @@
       </nav>
 
       <div class="flex items-center gap-3">
-
-
-        <button type="button" onclick="openLeadModal()" class="px-4 py-2 rounded-lg bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-spa-950 text-xs sm:text-sm font-bold flex items-center gap-2 shadow-glow-gold transition-all transform hover:scale-105">
+        <button type="button" onclick="openLeadModal()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-spa-950 text-xs sm:text-sm font-bold flex items-center gap-2 shadow-glow-gold transition-all transform hover:scale-105">
           <i class="fa-solid fa-file-arrow-down text-base"></i>
-          <span>공식 제안서 (PDF)</span>
+          <span>공식 제안서 (PDF 18MB)</span>
         </button>
       </div>
     </div>
@@ -190,7 +153,7 @@
       </h2>
 
       <p class="text-base sm:text-lg text-gray-300 font-light max-w-3xl mx-auto leading-relaxed mb-10">
-        아유르베다를 넘어선 한국 정통 장부대소(臟腑大小) 의학 원리와 도테라 CPTG 100% 순수 에센셜 오일, 
+        아유르베다를 넘어선 한국 정통 장부대소(臟腑大小) 의학 원리와 <span class="text-amber-300 font-semibold">최고급 100% 순수 에센셜 오일</span>, 
         그리고 첨단 생체 데이터가 결합된 <span class="text-amber-200 font-medium">‘부작용 0%의 1:1 완벽한 신체 리셋(Reset)’</span> 경험.
       </p>
 
@@ -199,9 +162,9 @@
           <i class="fa-solid fa-file-pdf text-xl"></i>
           <span>체질스파 프로젝트 제안서 (PDF 18MB) 다운로드</span>
         </button>
-        <a href="#programs" class="w-full sm:w-auto px-6 py-4 rounded-xl glass-card hover:bg-spa-800 text-gray-200 font-semibold text-base flex items-center justify-center gap-2 border border-gray-700 transition-all">
-          <i class="fa-solid fa-compass text-amber-400"></i>
-          <span>서비스 프로그램 살펴보기</span>
+        <a href="#therapies" class="w-full sm:w-auto px-6 py-4 rounded-xl glass-card hover:bg-spa-800 text-gray-200 font-semibold text-base flex items-center justify-center gap-2 border border-gray-700 transition-all">
+          <i class="fa-solid fa-sparkles text-amber-400"></i>
+          <span>10대 시그니처 테라피 둘러보기</span>
         </a>
       </div>
 
@@ -232,18 +195,18 @@
     </div>
   </section>
 
-  <!-- Section 1: Philosophy & Why Sasang SPA -->
+  <!-- Section 1: Philosophy & Why Sasang SPA (Enhanced with GWI Market Data) -->
   <section id="philosophy" class="py-20 px-6 bg-spa-900/60 border-t border-b border-amber-500/10">
     <div class="max-w-7xl mx-auto">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Philosophy & Differentiation</span>
+        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Global Trend & Philosophy</span>
         <h3 class="text-3xl sm:text-4xl font-bold text-white font-serif mt-2 mb-4">
           왜 전 세계는 ‘사상체질 스파’에 열광하는가?
         </h3>
         <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-          현대 VIP는 단순한 힐링을 넘어 내 몸에 오롯이 최적화된 <strong class="text-amber-300">‘처방형 웰니스(Prescriptive Wellness)’</strong>를 원합니다. 
-          사상체질 스파는 모든 사람에게 일률적으로 적용되는 스파의 위험성을 배제하고 완벽한 개인 맞춤을 실현합니다.
+          글로벌 웰니스 연구소(GWI)에 따르면 2026년 글로벌 웰니스 시장은 <strong>7조 달러(약 9,500조 원)</strong> 규모에 달합니다. 
+          1세대 단순 휴식 스파와 2세대 메디컬 스파를 넘어, 현대 글로벌 VIP는 내 몸의 유전적 균형을 찾는 <strong class="text-amber-300">‘3세대 초개인화 처방형 웰니스(Prescriptive Wellness)’</strong>에 열광하고 있습니다.
         </p>
       </div>
 
@@ -274,7 +237,7 @@
             '모두에게 좋은 것'이 아닌 <strong>'당신에게만 좋은 것'</strong>을 엄격히 선별 처방합니다. 체질에 맞지 않는 오일과 입욕이 초래하는 부작용을 사전에 원천 차단합니다.
           </p>
           <ul class="mt-6 space-y-2 text-xs text-gray-400 border-t border-spa-800 pt-4">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 도테라 CPTG 100% 순수 에센셜 오일 매칭</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 최고급 100% 순수 에센셜 오일 매칭</li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 산화질소(NO) 혈압 맞춤 안전 가이드</li>
           </ul>
         </div>
@@ -299,13 +262,13 @@
     </div>
   </section>
 
-  <!-- Section 2: 4 VIP Stay Programs (Interactive Tabs) -->
+  <!-- Section 2: 4 VIP Stay Programs -->
   <section id="programs" class="py-20 px-6">
     <div class="max-w-7xl mx-auto">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">VIP Programs (1-Depth & 2-Depth)</span>
+          <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">VIP Programs</span>
           <h3 class="text-3xl sm:text-4xl font-bold text-white font-serif mt-2">
             VIP 맞춤형 4대 기간별 체류 프로그램
           </h3>
@@ -360,7 +323,7 @@
                   • 07:30 체질 맞춤 영양 미역국 조식<br>
                   • 09:00 태극선법 기체조 (호흡 & 기혈 이완)<br>
                   • 10:30 산화질소 나노 미스트 전신 세포 충전<br>
-                  • 11:30 1:1 홈케어 CPTG 오일 처방전 발행
+                  • 11:30 1:1 홈케어 순수 오일 처방전 발행
                 </span>
               </div>
             </div>
@@ -394,7 +357,7 @@
                 <span class="badge-2depth mb-2 inline-block">2-Depth 세부 디톡스 프로토콜 (Day 1~3)</span>
                 <span class="text-xs text-gray-300 mt-1 block leading-relaxed">
                   • 뇌파(EEG) 스트레스 지수 측정 & 림프 배농<br>
-                  • 체질 약재 온열 스팀 + CPTG 에센셜 오일 도포<br>
+                  • 체질 약재 온열 스팀 + 최고급 순수 에센셜 오일<br>
                   • 1시간 심부 온열 챔버 (체온 1℃ 상승 유지)<br>
                   • 세포 독소 배출 산화질소수 1.5L 순환 음용
                 </span>
@@ -405,7 +368,7 @@
                   • 매일 아침 40분 태극선법 심신 호흡 체조<br>
                   • 장내 미생물(마이크로바이옴) 키트 검사 옵션<br>
                   • 30분 티 다도 침묵 명상 & 오감 테라피<br>
-                  • 일상 복귀용 체질 식습관 및 CPTG 홈케어 키트
+                  • 일상 복귀용 체질 식습관 및 홈케어 키트
                 </span>
               </div>
             </div>
@@ -438,7 +401,7 @@
               <div class="p-4 rounded-xl bg-spa-900/90 border border-spa-800">
                 <span class="badge-2depth mb-2 inline-block">2-Depth 1~2주차 집중 교정</span>
                 <span class="text-xs text-gray-300 mt-1 block leading-relaxed">
-                  • DTC 유전자 분석을 통한 취약 질환군 확정<br>
+                  • DTC 유전자 분석을 통한 취약 유전자군 확인<br>
                   • 10대 시그니처 테마 매일 3단계 순환 처방<br>
                   • 심부 체온 체계적 상승 & 자율신경계 교정<br>
                   • 장부 대소 편차 맞춤 한방 약선 식단 100% 공급
@@ -450,7 +413,7 @@
                   • 체질 맞춤 1:1 라이프스타일 매뉴얼북 발행<br>
                   • 식품공학 기반 평생 식음 가이드라인 전수<br>
                   • 1년 전담 케어 & 스마트 CRM 모바일 연동<br>
-                  • 월간 맞춤 CPTG 아로마 LRP 정기 구독 세팅
+                  • 월간 맞춤 순수 에센셜 오일 LRP 정기 구독 세팅
                 </span>
               </div>
             </div>
@@ -515,7 +478,7 @@
     </div>
   </section>
 
-  <!-- Section 3: Precision Diagnosis (Base Program) -->
+  <!-- Section 3: Precision Diagnosis (Interactive Clickable Step Cards) -->
   <section id="diagnosis" class="py-20 px-6 bg-spa-900/40 border-t border-b border-amber-500/10">
     <div class="max-w-7xl mx-auto">
       
@@ -526,53 +489,65 @@
         </h3>
         <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
           단순 문진을 넘어선 VIP 서비스의 신뢰도는 과학적 데이터에서 출발합니다. 
-          고객의 주관적 진술과 객관적 생체 수치를 융합하여 1:1 완벽한 테라피 처방전을 발행합니다.
+          <span class="text-amber-300 font-semibold underline">아래 각 STEP 카드를 클릭하시면 실제 고객 판독 리포트와 처방전 예시를 확인</span>하실 수 있습니다.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
         
-        <div class="glass-card p-6 rounded-2xl border-spa-700 relative">
-          <div class="text-amber-400 text-sm font-bold font-display mb-2">STEP 01</div>
-          <h4 class="text-lg font-bold text-white mb-2 font-serif">기초 생체 & 병력 문진</h4>
+        <div onclick="openDiagnosisModal(1)" class="glass-card p-6 rounded-2xl border-spa-700 relative hover:border-amber-400 group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-amber-400 text-xs font-bold font-display">STEP 01</span>
+            <span class="text-[10px] text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">클릭하여 실전 예시 보기 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 font-serif group-hover:text-amber-300 transition-colors">기초 생체 & 병력 문진</h4>
           <p class="text-xs text-gray-300 leading-relaxed mb-4">
             혈압, 공복 혈당, 가족력(심혈관/암), 주요 수술 이력(자궁 적출 등) 및 개인별 알레르기 인자 전방위 기록.
           </p>
           <div class="text-[11px] text-amber-300/80 bg-spa-950/60 p-2 rounded-lg border border-spa-800">
-            <i class="fa-solid fa-notes-medical text-amber-400 mr-1"></i> 전방위 심층 문진표
+            <i class="fa-solid fa-notes-medical text-amber-400 mr-1"></i> 전방위 심층 문진표 샘플
           </div>
         </div>
 
-        <div class="glass-card p-6 rounded-2xl border-spa-700 relative">
-          <div class="text-emerald-400 text-sm font-bold font-display mb-2">STEP 02</div>
-          <h4 class="text-lg font-bold text-white mb-2 font-serif">인바디 & 양자/뇌파 분석</h4>
+        <div onclick="openDiagnosisModal(2)" class="glass-card p-6 rounded-2xl border-spa-700 relative hover:border-emerald-400 group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-emerald-400 text-xs font-bold font-display">STEP 02</span>
+            <span class="text-[10px] text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-spa-950 transition-colors">클릭하여 실전 예시 보기 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 font-serif group-hover:text-emerald-300 transition-colors">인바디 & 양자/뇌파 분석</h4>
           <p class="text-xs text-gray-300 leading-relaxed mb-4">
             체수분 균형, 체지방/근육량 및 장부 에너지 활성도, 뇌파(EEG) 스트레스 지수를 다각도 측정하여 처방 지표 활용.
           </p>
           <div class="text-[11px] text-emerald-300/80 bg-spa-950/60 p-2 rounded-lg border border-spa-800">
-            <i class="fa-solid fa-chart-pie text-emerald-400 mr-1"></i> 세포 활성 & 기혈 흐름
+            <i class="fa-solid fa-chart-pie text-emerald-400 mr-1"></i> 세포 활성 & 뇌파 지표 판독
           </div>
         </div>
 
-        <div class="glass-card p-6 rounded-2xl border-spa-700 relative">
-          <div class="text-cyan-400 text-sm font-bold font-display mb-2">STEP 03</div>
-          <h4 class="text-lg font-bold text-white mb-2 font-serif">산화질소(NO) 관리</h4>
+        <div onclick="openDiagnosisModal(3)" class="glass-card p-6 rounded-2xl border-spa-700 relative hover:border-cyan-400 group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-cyan-400 text-xs font-bold font-display">STEP 03</span>
+            <span class="text-[10px] text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-spa-950 transition-colors">클릭하여 실전 예시 보기 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 font-serif group-hover:text-cyan-300 transition-colors">산화질소(NO) 관리</h4>
           <p class="text-xs text-gray-300 leading-relaxed mb-4">
             혈관 탄력도와 혈압 상태를 반영하여 산화질소수 음용량 및 나노 미스트 농도를 안전하게 최적화.
           </p>
           <div class="text-[11px] text-cyan-300/80 bg-spa-950/60 p-2 rounded-lg border border-spa-800">
-            <i class="fa-solid fa-droplet text-cyan-400 mr-1"></i> 저혈압 안전 매뉴얼 적용
+            <i class="fa-solid fa-droplet text-cyan-400 mr-1"></i> NO 타액 스트립 판독 & 처방
           </div>
         </div>
 
-        <div class="glass-card p-6 rounded-2xl border-amber-500/40 relative bg-spa-900/90 shadow-glow-gold">
-          <div class="text-amber-300 text-sm font-bold font-display mb-2">STEP 04</div>
-          <h4 class="text-lg font-bold text-white mb-2 font-serif">사상체질 최종 확정</h4>
+        <div onclick="openDiagnosisModal(4)" class="glass-card p-6 rounded-2xl border-amber-500/40 relative bg-spa-900/90 shadow-glow-gold hover:border-amber-300 group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-amber-300 text-xs font-bold font-display">STEP 04</span>
+            <span class="text-[10px] text-amber-200 bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30 group-hover:bg-amber-400 group-hover:text-spa-950 transition-colors">클릭하여 처방전 보기 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 font-serif group-hover:text-amber-200 transition-colors">사상체질 최종 확정</h4>
           <p class="text-xs text-gray-300 leading-relaxed mb-4">
             장부 대소(간/폐/비/신) 구조 확정 후 10대 테라피 및 체질별 은반지·팔찌 비언어 의전 즉시 활성화.
           </p>
           <div class="text-[11px] text-amber-200 bg-amber-500/20 p-2 rounded-lg border border-amber-500/30 font-semibold">
-            <i class="fa-solid fa-ring text-amber-300 mr-1"></i> 1:1 VIP 웹 처방전 발행
+            <i class="fa-solid fa-ring text-amber-300 mr-1"></i> 1:1 VIP 웹 처방전 발급
           </div>
         </div>
 
@@ -581,217 +556,216 @@
     </div>
   </section>
 
-  <!-- Section 4: 10 Core Theme Therapies (1-Depth & 2-Depth Details) -->
+  <!-- Section 4: 10 Core Theme Therapies (Interactive Clickable Theme Cards) -->
   <section id="therapies" class="py-20 px-6">
     <div class="max-w-7xl mx-auto">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Signature 10 Themes (1-Depth & 2-Depth)</span>
+        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Signature 10 Themes (Interactive 2-Depth)</span>
         <h3 class="text-3xl sm:text-4xl font-bold text-white font-serif mt-2 mb-4">
           사상체질 10대 시그니처 테라피
         </h3>
         <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-          한국적 미학과 자연 치유의 정수를 담아 신체와 정신의 완전한 조화를 이끄는 10가지 시그니처 세션의 세부 운영 기준입니다.
+          한국적 미학과 자연 치유의 정수를 담은 10가지 시그니처 세션입니다. 
+          <span class="text-amber-300 font-semibold underline">각 테라피 박스를 클릭하시면 2-Depth 상세 운영 매뉴얼, 약재 배합비, 수온, 오일 처방을 확인</span>하실 수 있습니다.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Theme 01 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">01</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 웰컴 서비스</h4>
-              <span class="text-xs text-amber-400/80">Welcome Orientation</span>
+        <div onclick="openTherapyModal(1)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">01</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">웰컴 서비스</h4>
+                <span class="text-xs text-amber-400/80">Welcome Orientation</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
             프라이빗 다실에서 체질별 웰컴 티를 음용하며 전담 테라피스트와의 1:1 심층 상담을 통해 맞춤 일정을 확정합니다.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 세부 실행 기준:</div>
-            <div>• 소음인: 따뜻한 대추계피차 (38℃) 제공</div>
-            <div>• 소양인: 쿨링 구기자산수유차 (상온) 제공</div>
-            <div>• 태음인: 기관지 진정 오미자차 제공</div>
-            <div>• 태양인: 청량 모과솔잎차 제공</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-mug-hot text-amber-400"></i> 소음(대추계피 38℃) · 소양(구기자 상온) · 태음(오미자)
           </div>
         </div>
 
         <!-- Theme 02 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">02</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 족욕 테라피</h4>
-              <span class="text-xs text-amber-400/80">Foot Bath Therapy</span>
+        <div onclick="openTherapyModal(2)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">02</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">족욕 테라피</h4>
+                <span class="text-xs text-amber-400/80">Foot Bath Therapy</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
             본 테라피 전 신체 하부의 온도를 올려주는 20분간의 체질 맞춤 약재 족욕으로 상기된 열을 내리고 순환을 엽니다.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 세부 실행 기준:</div>
-            <div>• 소음인/태음인: 40~42℃ 한방 온열 약재 (생강, 당귀, 천궁)</div>
-            <div>• 소양인/태양인: 38~39℃ 진정 쿨링 약재 (박하, 결명자, 모과)</div>
-            <div>• CPTG 에센셜 오일 2~3방울 유화 족욕수 투입</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-soap text-amber-400"></i> 20분 온열탕(41℃ 당귀/생강) vs 쿨링탕(38.5℃ 박하)
           </div>
         </div>
 
         <!-- Theme 03 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">03</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 에너지 테라피</h4>
-              <span class="text-xs text-amber-400/80">Energy & Nonverbal Care</span>
+        <div onclick="openTherapyModal(3)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">03</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">에너지 테라피</h4>
+                <span class="text-xs text-amber-400/80">Energy & Nonverbal Care</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
             체질별 조화 컬러 가운과 은반지(Eun-banji)·체질 팔찌를 착용하여, 스태프가 묻지 않고도 맞춤 의전을 제공합니다.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 세부 실행 기준:</div>
-            <div>• 은반지(Eun-banji) 착용: 체질 경락별 특정 손가락 매칭</div>
-            <div>• 컬러 의전 가운: 황(태음), 청(소양), 백(소음), 적(태양)</div>
-            <div>• 스태프 비언어 맞춤 서빙 & 체질 맞춤 수온/조도 자동 세팅</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-ring text-amber-400"></i> 경락별 은반지 배정 & 4대 컬러 가운 비언어 의전
           </div>
         </div>
 
         <!-- Theme 04 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">04</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 푸드 테라피</h4>
-              <span class="text-xs text-amber-400/80">12h Fasting & Custom Soup</span>
+        <div onclick="openTherapyModal(4)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">04</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">푸드 테라피</h4>
+                <span class="text-xs text-amber-400/80">12h Fasting & Custom Soup</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
             저녁 6시~익일 오전 6시 12시간 단식으로 장을 비우고, 체질 맞춤 미역국(소고기/돼지고기/닭고기/해물)을 제공합니다.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 4대 체질 미역국 레시피:</div>
-            <div>• 태음인: 소고기 양지 들깨 미역국 + 율무밥</div>
-            <div>• 소양인: 돼지고기 수육 미역국 or 조개 미역국 + 보리밥</div>
-            <div>• 소음인: 닭가슴살 황기 보양 미역국 + 찹쌀밥</div>
-            <div>• 태양인: 완도산 전복 홍합 맑은 해물 미역국 + 메밀죽</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-bowl-rice text-amber-400"></i> 12h 단식(자가포식) + 4대 체질 맞춤 영양 미역국
           </div>
         </div>
 
         <!-- Theme 05 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">05</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 바디 테라피</h4>
-              <span class="text-xs text-amber-400/80">Meridian & CPTG Aroma</span>
+        <div onclick="openTherapyModal(5)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">05</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">바디 테라피</h4>
+                <span class="text-xs text-amber-400/80">Meridian & Pure Essential Oil</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
-            폐경락 수기 지압 마사지와 도테라 CPTG 100% 순수 에센셜 오일을 결합한 이원화 프리미엄 바디 테라피.
+            한의 경락 수기 지압 마사지와 최고급 100% 순수 에센셜 오일을 결합한 80분 이원화 프리미엄 바디 테라피.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 이원화 프로토콜:</div>
-            <div>• 1단계: 한의학 기반 폐/간/비/신 경락 수기 지압 (30분)</div>
-            <div>• 2단계: CPTG 오일 맞춤 블렌딩 림프 드레나쥐 (50분)</div>
-            <div>• FCO(코코넛 캐리어 오일) 10:1 안전 희석 처방</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-hand-holding-heart text-amber-400"></i> 1단계 한의 수기(30분) + 2단계 순수 오일 림프(50분)
           </div>
         </div>
 
         <!-- Theme 06 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">06</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 티 테라피 & 명상</h4>
-              <span class="text-xs text-amber-400/80">Tea Ceremony & Meditation</span>
+        <div onclick="openTherapyModal(6)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">06</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">티 테라피 & 명상</h4>
+                <span class="text-xs text-amber-400/80">Tea Ceremony & Meditation</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
             전담 다도 마스터의 최고급 전통 다기 우림 시연과 함께 30분간 진행되는 깊은 침묵의 티 명상 세션.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 세부 명상 절차:</div>
-            <div>• 도자기 전통 다기 시연 및 오감 자극 (향·색·온도)</div>
-            <div>• 30분 무언 침묵 명상 (전자기기 100% 차단)</div>
-            <div>• 심박 변이도(HRV) 부교감 신경 활성화 유도</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-leaf text-amber-400"></i> 무형문화재 도자기 시연 & 30분 침묵 무언 명상
           </div>
         </div>
 
         <!-- Theme 07 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">07</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 수(水) 테라피</h4>
-              <span class="text-xs text-amber-400/80">Nitric Oxide (NO) Water</span>
+        <div onclick="openTherapyModal(7)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">07</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">수(水) 테라피</h4>
+                <span class="text-xs text-amber-400/80">Nitric Oxide (NO) Water</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
             고농도 산화질소수(NO Water) 음용으로 혈관 탄력을 높이고, 고압 나노 미스트로 피부 깊숙이 수분을 충전합니다.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 세부 실행 기준:</div>
-            <div>• 음용: 고농도 산화질소수 500ml 1일 3회 공급</div>
-            <div>• 외용: 나노 입자 분사 챔버에서 15분 전신 흡수</div>
-            <div>• 저혈압 고객 맞춤 농도 조절 안전 매뉴얼 엄수</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-spray-can-sparkles text-amber-400"></i> NO수 1.5L 세포 수화 & 15분 전신 나노 미스트 챔버
           </div>
         </div>
 
         <!-- Theme 08 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">08</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 온열 테라피</h4>
-              <span class="text-xs text-amber-400/80">1-Hour Deep Thermal Care</span>
+        <div onclick="openTherapyModal(8)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">08</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">온열 테라피</h4>
+                <span class="text-xs text-amber-400/80">1-Hour Deep Thermal Care</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
-            체질 맞춤 전용 온열 아로마를 도포하고 1시간 동안 심부 체온을 1℃ 올려 면역력을 극대화하는 온열 세션.
+            체질 맞춤 전용 온열 오일을 도포하고 1시간 동안 심부 체온을 1℃ 올려 면역력을 극대화하는 온열 세션.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 심부 체온 상승 원리:</div>
-            <div>• 진저, 시나몬 등 체질별 온열 에센셜 오일 척추 도포</div>
-            <div>• 42~45℃ 원적외선 세라믹 챔버 60분 입실</div>
-            <div>• 심부 체온 1℃ 상승 시 면역력 5배 증대 효과 유도</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-temperature-arrow-up text-amber-400"></i> 42~45℃ 60분 챔버 (심부 체온 1℃ 상승 유지)
           </div>
         </div>
 
         <!-- Theme 09 -->
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm">09</div>
-            <div>
-              <h4 class="text-base font-bold text-white">[1-Depth] 전통 기체조</h4>
-              <span class="text-xs text-amber-400/80">Taeguk Sun-beop</span>
+        <div onclick="openTherapyModal(9)" class="glass-card p-6 rounded-2xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">09</div>
+              <div>
+                <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">전통 기체조: 태극선법</h4>
+                <span class="text-xs text-amber-400/80">Taeguk Sun-beop</span>
+              </div>
             </div>
+            <span class="text-[11px] text-amber-300/80 bg-spa-900 px-2 py-1 rounded border border-spa-700 group-hover:border-amber-400">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-3">
             서양 필라테스를 배제하고 기(氣)의 자연스러운 흐름을 체득하는 한국 전통 동적 명상 기체조.
           </p>
-          <div class="bg-spa-950/80 p-3 rounded-xl border border-spa-800 text-[11px] text-gray-300 space-y-1">
-            <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 세부 수련 과정:</div>
-            <div>• 1단계: 단전 호흡을 통한 탁기(濁氣) 배출</div>
-            <div>• 2단계: 태극선법 기본 8초식 동적 기체조</div>
-            <div>• 3단계: 장부 경락 이완 및 기혈 순환 정착</div>
+          <div class="text-[11px] text-gray-400 border-t border-spa-800 pt-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-yin-yang text-amber-400"></i> 단전 호흡 탁기 배출 & 태극선법 8초식 동적 수련
           </div>
         </div>
 
         <!-- Theme 10 -->
-        <div class="glass-card p-6 rounded-2xl md:col-span-2 lg:col-span-3 bg-gradient-to-r from-spa-900 via-spa-850 to-spa-900 border-amber-500/30">
+        <div onclick="openTherapyModal(10)" class="glass-card p-6 rounded-2xl md:col-span-2 lg:col-span-3 bg-gradient-to-r from-spa-900 via-spa-850 to-spa-900 border-amber-500/30 group">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-300 font-bold font-display text-sm">10</div>
+              <div class="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-300 font-bold font-display text-sm group-hover:bg-amber-500 group-hover:text-spa-950 transition-colors">10</div>
               <div>
-                <h4 class="text-lg font-bold text-white font-serif">[1-Depth] 멘탈 관리: 한국 정통 명상</h4>
+                <h4 class="text-lg font-bold text-white font-serif group-hover:text-amber-300 transition-colors">멘탈 관리: 한국 정통 명상</h4>
                 <span class="text-xs text-amber-400/80">Traditional Korean Mindful Meditation</span>
               </div>
             </div>
-            <div class="bg-spa-950/80 p-4 rounded-xl border border-spa-800 text-xs text-gray-300 max-w-xl space-y-1">
-              <div class="text-amber-300 font-semibold"><i class="fa-solid fa-angles-right text-[9px] mr-1"></i>2-Depth 멘탈 케어 철학:</div>
-              <div>서양식 싱잉볼을 넘어 한국 전통 사찰과 선도(仙道)의 고요한 침묵 명상을 도입하여 <strong>K-Wellness의 진정성과 내면의 평온</strong>을 완성합니다.</div>
+            <div class="text-xs text-gray-300 max-w-xl flex items-center justify-between gap-4">
+              <span>서양식 싱잉볼을 넘어 한국 전통 사찰과 선도(仙道)의 고요한 침묵 명상으로 뇌 피로도 70%를 해소합니다.</span>
+              <span class="text-[11px] text-amber-300 bg-spa-950 px-3 py-1.5 rounded-lg border border-amber-500/30 whitespace-nowrap group-hover:bg-amber-400 group-hover:text-spa-950 transition-colors">상세보기 <i class="fa-solid fa-arrow-right text-[9px] ml-1"></i></span>
             </div>
           </div>
         </div>
@@ -801,17 +775,17 @@
     </div>
   </section>
 
-  <!-- Section 5: Interactive 4 Sasang Constitutions Matrix (Fixed JS) -->
+  <!-- Section 5: Interactive 4 Sasang Constitutions Matrix -->
   <section id="chejil-matrix" class="py-20 px-6 bg-spa-900/60 border-t border-b border-amber-500/10">
     <div class="max-w-7xl mx-auto">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Constitution Matrix (1-Depth & 2-Depth)</span>
+        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Constitution Matrix</span>
         <h3 class="text-3xl sm:text-4xl font-bold text-white font-serif mt-2 mb-4">
           4대 사상체질별 맞춤 처방 매트릭스
         </h3>
         <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-          아래 체질 버튼을 클릭하면 장부 특성, 취약 증상, 100% CPTG 오일 처방, 식단 레시피가 즉시 전환됩니다.
+          체질 버튼을 클릭하면 장부 특성, 취약 증상, 최고급 100% 순수 에센셜 오일 처방 및 식단 가이드가 즉시 전환됩니다.
         </p>
 
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 max-w-2xl mx-auto">
@@ -834,7 +808,6 @@
         
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          <!-- Column 1 -->
           <div class="space-y-4">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-300 text-xs font-bold">
               <i class="fa-solid fa-tree"></i> <span id="cj-badge">간대폐소 (肝大肺小) — 간 기능 강함, 폐/기관지 허약</span>
@@ -849,9 +822,8 @@
             </div>
           </div>
 
-          <!-- Column 2 -->
           <div class="space-y-4">
-            <h5 class="text-xs font-bold text-amber-400 uppercase tracking-wider">시그니처 스파 & 2-Depth 아로마 처방</h5>
+            <h5 class="text-xs font-bold text-amber-400 uppercase tracking-wider">시그니처 스파 & 2-Depth 오일 처방</h5>
             
             <div class="p-4 rounded-xl bg-spa-900 border border-spa-800">
               <span class="text-xs text-gray-400 block">추천 스파 코스</span>
@@ -859,12 +831,11 @@
             </div>
 
             <div class="p-4 rounded-xl bg-spa-900 border border-spa-800">
-              <span class="text-xs text-gray-400 block">도테라 CPTG 100% 에센셜 오일</span>
+              <span class="text-xs text-gray-400 block">최고급 100% 순수 에센셜 오일</span>
               <p id="cj-aroma" class="text-sm font-semibold text-amber-200 mt-1">유칼립투스, 이지에어, 티트리, 샌달우드, 미르</p>
             </div>
           </div>
 
-          <!-- Column 3 -->
           <div class="space-y-4">
             <h5 class="text-xs font-bold text-amber-400 uppercase tracking-wider">2-Depth 체질 맞춤 약선 식음 & 의전</h5>
             
@@ -902,7 +873,7 @@
             <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
               체질스파 방문은 1회성 휴식으로 끝나지 않습니다. 
               첫 방문 시 타액 및 장내 미생물 키트를 채취하여 7일 후 <strong>초개인화 바이오 리포트</strong>를 제공하고, 
-              일상 복귀 후 맞춤 아로마와 영양 섭생을 정기 구독(LRP)하게 함으로써 <strong>고수익 VIP 생태계</strong>를 완성합니다.
+              일상 복귀 후 맞춤 순수 에센셜 오일과 영양 섭생을 정기 구독(LRP)하게 함으로써 <strong>고수익 VIP 생태계</strong>를 완성합니다.
             </p>
 
             <div class="grid grid-cols-2 gap-4 pt-2">
@@ -912,7 +883,7 @@
               </div>
               <div class="p-4 rounded-xl bg-spa-950/70 border border-spa-800">
                 <div class="text-emerald-400 font-bold text-lg font-display">02. Smart LRP</div>
-                <div class="text-xs text-gray-400 mt-1">1:1 맞춤 아로마 정기 구독</div>
+                <div class="text-xs text-gray-400 mt-1">1:1 맞춤 순수 오일 정기 구독</div>
               </div>
             </div>
 
@@ -936,7 +907,7 @@
               </li>
               <li class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-                <span><strong>테라피스트 아카데미:</strong> 사상체질 장부대소 이론 및 CPTG 아로마 처방 마스터 과정 이수</span>
+                <span><strong>테라피스트 아카데미:</strong> 사상체질 장부대소 이론 및 순수 오일 처방 마스터 과정 이수</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
@@ -959,7 +930,7 @@
   <footer class="py-12 px-6 border-t border-amber-500/10 text-center text-xs text-gray-400">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
-        <i onclick="triggerSecretAdmin()" class="fa-solid fa-spa text-amber-400 text-xl cursor-pointer select-none" title="RYUJEAN DOMAIN"></i>
+        <i onclick="triggerSecretAdmin()" class="fa-solid fa-spa text-amber-400 text-xl cursor-pointer select-none" title="RYUJEAN DOMAIN HQ"></i>
         <div class="text-left">
           <span class="font-bold text-white block text-sm">사상체질 웰니스 스파 (Sasang Constitution SPA)</span>
           <div class="mt-2 flex flex-wrap items-center gap-3 text-xs text-gray-300">
@@ -983,12 +954,12 @@
       
       <div class="text-gray-400 text-center md:text-right">
         <p>© 2026 RYUJEAN DOMAIN HQ. All rights reserved.</p>
-        <p class="mt-1 text-gray-400">한국 고유 사상체질 의학 × CPTG 아로마테라피 융합 웰니스 허브</p>
+        <p class="mt-1 text-gray-400">한국 고유 사상체질 의학 × 최고급 100% 순수 에센셜 오일 융합 웰니스 허브</p>
       </div>
     </div>
   </footer>
 
-  <!-- MODAL 1: Lead Capture Download Modal -->
+  <!-- MODAL 1: Lead Capture Download Modal (With Google Sheets Webhook) -->
   <div id="leadModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden transition-all duration-300">
     <div class="relative w-full max-w-lg glass-panel p-8 sm:p-10 rounded-3xl border border-amber-500/40 shadow-2xl animate-scaleUp">
       
@@ -1059,7 +1030,69 @@
     </div>
   </div>
 
-  <!-- MODAL 2: Director Admin Lead Dashboard -->
+  <!-- MODAL 2: 10 Core Theme Therapies 2-Depth Detail Modal -->
+  <div id="therapyModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden transition-all duration-300">
+    <div class="relative w-full max-w-3xl glass-panel p-6 sm:p-10 rounded-3xl border border-amber-500/50 shadow-2xl max-h-[90vh] flex flex-col animate-scaleUp">
+      
+      <div class="flex items-center justify-between border-b border-amber-500/20 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div id="tModalNum" class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center font-bold text-xl border border-amber-500/40">01</div>
+          <div>
+            <span class="text-[11px] text-amber-400 uppercase tracking-widest font-bold block">2-Depth Signature Therapy Detail</span>
+            <h3 id="tModalTitle" class="text-2xl font-bold text-white font-serif">웰컴 서비스 상세 매뉴얼</h3>
+          </div>
+        </div>
+
+        <button type="button" onclick="closeTherapyModal()" class="w-8 h-8 rounded-full bg-spa-850 hover:bg-spa-800 text-gray-400 hover:text-white flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div id="tModalBody" class="flex-1 overflow-y-auto space-y-6 text-sm text-gray-300 leading-relaxed pr-2">
+        <!-- Content will be injected dynamically -->
+      </div>
+
+      <div class="pt-6 border-t border-spa-800 flex justify-end">
+        <button type="button" onclick="closeTherapyModal()" class="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-spa-950 font-bold text-xs sm:text-sm">
+          확인 완료
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL 3: 4-Step Diagnosis System Detail Modal -->
+  <div id="diagnosisModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden transition-all duration-300">
+    <div class="relative w-full max-w-3xl glass-panel p-6 sm:p-10 rounded-3xl border border-amber-500/50 shadow-2xl max-h-[90vh] flex flex-col animate-scaleUp">
+      
+      <div class="flex items-center justify-between border-b border-amber-500/20 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div id="dModalStep" class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-sm border border-emerald-500/40">STEP 1</div>
+          <div>
+            <span class="text-[11px] text-emerald-400 uppercase tracking-widest font-bold block">Scientific Diagnosis System Sample Report</span>
+            <h3 id="dModalTitle" class="text-2xl font-bold text-white font-serif">기초 생체 & 병력 문진표 실전 예시</h3>
+          </div>
+        </div>
+
+        <button type="button" onclick="closeDiagnosisModal()" class="w-8 h-8 rounded-full bg-spa-850 hover:bg-spa-800 text-gray-400 hover:text-white flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div id="dModalBody" class="flex-1 overflow-y-auto space-y-6 text-sm text-gray-300 leading-relaxed pr-2">
+        <!-- Content will be injected dynamically -->
+      </div>
+
+      <div class="pt-6 border-t border-spa-800 flex justify-end">
+        <button type="button" onclick="closeDiagnosisModal()" class="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-spa-950 font-bold text-xs sm:text-sm">
+          확인 완료
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL 4: Secret Director Admin Dashboard -->
   <div id="adminModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden transition-all duration-300">
     <div class="relative w-full max-w-4xl glass-panel p-6 sm:p-8 rounded-3xl border border-amber-500/50 shadow-2xl max-h-[90vh] flex flex-col">
       
@@ -1109,9 +1142,9 @@
             <div id="statOrgLeads" class="text-xl font-bold text-cyan-300 font-display mt-0.5">0건</div>
           </div>
           <div class="p-3 rounded-xl bg-spa-900/90 border border-spa-800">
-            <span class="text-[11px] text-gray-400">데이터 동기화</span>
+            <span class="text-[11px] text-gray-400">구글 시트 연동</span>
             <div class="text-xs font-semibold text-emerald-400 mt-1 flex items-center gap-1">
-              <i class="fa-solid fa-circle text-[8px] animate-pulse"></i> 로컬 DB 연동중
+              <i class="fa-solid fa-circle text-[8px] animate-pulse"></i> GAS 웹훅 준비완료
             </div>
           </div>
         </div>
@@ -1164,6 +1197,320 @@
   </div>
 
   <script>
+    // =========================================================================
+    // 1. GOOGLE APPS SCRIPT WEBHOOK CONFIGURATION
+    // =========================================================================
+    // 구글 시트 배포 후 얻은 웹앱 URL을 여기에 입력하면 고객이 제출할 때마다 구글 시트에 실시간 자동 행 추가됩니다!
+    const GAS_WEBHOOK_URL = ""; 
+
+    // =========================================================================
+    // 2. 10 CORE THEME THERAPIES 2-DEPTH DATA
+    // =========================================================================
+    const therapyDetailData = {
+      1: {
+        num: "01",
+        title: "웰컴 서비스 & 다실 오리엔테이션 (Welcome Orientation)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">🌿 운영 목적 및 공간 세팅</h5>
+              <p class="text-xs text-gray-300">프라이빗 다실(조도 50 lux, 차분한 가야금 선율)에서 전담 테라피스트가 1:1로 영접하여 당일 및 체류 기간 동안의 일정을 고객의 컨디션에 맞춰 100% 커스터마이징합니다.</p>
+            </div>
+            <div class="space-y-2">
+              <h5 class="font-bold text-white text-xs uppercase tracking-wider text-amber-400">4대 체질별 맞춤 웰컴 티 처방</h5>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-emerald-300">소음인:</strong> 대추계피차 (온도 38~40℃) — 복부 온열 및 긴장 완화</div>
+                <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-cyan-300">소양인:</strong> 구기자산수유차 (상온 20℃) — 상체 열감 하강 및 진정</div>
+                <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-amber-300">태음인:</strong> 오미자도라지차 (온도 35℃) — 건조한 폐/기관지 윤활</div>
+                <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-purple-300">태양인:</strong> 모과솔잎차 (상온 20℃) — 기운 하강 및 간 해독 지원</div>
+              </div>
+            </div>
+            <div class="p-3 rounded-lg bg-spa-950/80 border border-spa-800 text-xs text-gray-400">
+              ⏱️ <strong>소요 시간:</strong> 15~20분 | 👤 <strong>담당:</strong> 전담 테라피스트 1:1 배정
+            </div>
+          </div>
+        `
+      },
+      2: {
+        num: "02",
+        title: "20분 체질 맞춤 족욕 테라피 (Foot Bath Therapy)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">👣 두한족열(頭寒足熱)의 기혈 순환 개방</h5>
+              <p class="text-xs text-gray-300">본 테라피에 들어가기 전 신체 하부의 온도를 올려 상기된 열을 내리고 전신 순환의 문을 엽니다. 족욕 중 어깨에 허브 온열 팩을 올려 순환을 2배 가속화합니다.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="p-4 rounded-xl bg-spa-950 border border-amber-500/20">
+                <strong class="text-amber-300 block mb-1">소음인 · 태음인 [온열 족욕탕]</strong>
+                <p class="text-gray-300">• 수온: 40~42℃ 한방 온열 탕<br>• 한방 약재: 당귀, 천궁, 생강, 계피 추출액<br>• 오일 처방: 최고급 100% 순수 진저/오렌지 에센셜 오일 2방울</p>
+              </div>
+              <div class="p-4 rounded-xl bg-spa-950 border border-cyan-500/20">
+                <strong class="text-cyan-300 block mb-1">소양인 · 태양인 [진정 족욕탕]</strong>
+                <p class="text-gray-300">• 수온: 38~39℃ 미온 진정 탕<br>• 한방 약재: 박하, 결명자, 모과, 감초 추출액<br>• 오일 처방: 최고급 100% 순수 라벤더/페퍼민트 에센셜 오일 2방울</p>
+              </div>
+            </div>
+            <div class="p-3 rounded-lg bg-spa-950/80 border border-spa-800 text-xs text-gray-400">
+              ⏱️ <strong>소요 시간:</strong> 20분 정밀 타이머 | 🌡️ <strong>수온 관리:</strong> 자동 순환 항온 족욕기
+            </div>
+          </div>
+        `
+      },
+      3: {
+        num: "03",
+        title: "에너지 테라피 & 은반지 비언어 의전 (Energy & Nonverbal Care)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">👑 고객이 말하지 않아도 알아서 모시는 최고급 비언어 의전</h5>
+              <p class="text-xs text-gray-300">스파 내 모든 스태프는 고객이 착용한 은반지와 가운 색상만 보고 체질별 전용 음수 온도(미온수/냉수), 수건 온도, 조도, 향기를 자동으로 세팅하여 응대합니다.</p>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800">
+                <strong class="text-amber-300">은반지(Eun-banji) 경락 배정:</strong>
+                <div class="text-gray-300 mt-1">태음인(오른손 넷째 손가락) | 소양인(왼손 둘째 손가락) | 소음인(오른손 셋째 손가락) | 태양인(왼손 넷째 손가락)</div>
+              </div>
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800">
+                <strong class="text-emerald-300">체질 조화 컬러 가운:</strong>
+                <div class="text-gray-300 mt-1">황색(태음인 - 간 안정) | 청색(소양인 - 신장 보음) | 백색(소음인 - 비위 보온) | 적색(태양인 - 기운 그라운딩)</div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      4: {
+        num: "04",
+        title: "푸드 테라피 (12시간 단식 & 4대 체질 미역국)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">🥣 자가포식(Autophagy) 활성화와 1:1 맞춤 영양 재건</h5>
+              <p class="text-xs text-gray-300">저녁 18:00부터 익일 06:00까지 12시간 단식을 통해 장내 독소를 배출하고 세포를 청소한 후, 기상 직후 체질에 완벽히 최적화된 영양 미역국 조식을 공급합니다.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-amber-300">태음인:</strong> 소고기 양지 들깨 미역국 + 율무밥 (폐/기관지 보양)</div>
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-cyan-300">소양인:</strong> 돼지고기 수육 미역국 or 맑은 조개 미역국 + 보리밥 (소화기 열 해독)</div>
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-emerald-300">소음인:</strong> 닭가슴살 황기 보양 미역국 + 찹쌀밥 (위장 보온 및 기력 증진)</div>
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-purple-300">태양인:</strong> 완도산 전복 홍합 맑은 해물 미역국 + 메밀죽 (간 해독 및 하체 강화)</div>
+            </div>
+          </div>
+        `
+      },
+      5: {
+        num: "05",
+        title: "바디 테라피 (80분 이원화 프리미엄 관리)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">💆 한의 수기 지압 + 최고급 순수 오일 림프 드레나쥐</h5>
+              <p class="text-xs text-gray-300">단순 오일 도포를 넘어, 1단계에서 한의학 경락 수기 지압으로 기혈 순환로를 개방하고, 2단계에서 최고급 100% 순수 에센셜 오일로 림프 배농을 완성하는 80분 집중 코스입니다.</p>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-white">1단계 (30분):</strong> 척추 기립근 및 폐/간/비/신 경락 결절 수기 지압</div>
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-white">2단계 (50분):</strong> 체질 맞춤 순수 에센셜 오일 (유칼립투스/페퍼민트/온가드/베티버) 전신 림프 드레나쥐</div>
+            </div>
+          </div>
+        `
+      },
+      6: {
+        num: "06",
+        title: "티 테라피 & 30분 침묵 명상 (Tea & Meditation)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">🍵 오감 자극과 부교감 신경의 완전한 회복</h5>
+              <p class="text-xs text-gray-300">무형문화재 장인의 전통 도자기 다기를 사용하여 전담 다도 마스터가 1:1 시연을 진행하며, 30분간 전자기기를 100% 차단한 상태에서 무언 침묵 명상을 진행합니다.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-spa-950 border border-spa-800 text-xs text-gray-300">
+              🧠 <strong>생체 데이터 효과:</strong> 심박변이도(HRV) 분석 결과 부교감 신경 활성도 40% 이상 상승, 뇌파 알파(α)파 전환 입증.
+            </div>
+          </div>
+        `
+      },
+      7: {
+        num: "07",
+        title: "수(水) 테라피 (산화질소 NO Water & 나노 미스트)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">💧 고농도 산화질소수 세포 수화 & 나노 미스트</h5>
+              <p class="text-xs text-gray-300">노벨생리의학상으로 입증된 혈관 확장 물질인 산화질소(NO)를 풍부하게 함유한 물을 음용하고, 초미세 나노 미스트 챔버에서 피부 깊숙이 수분을 충전합니다.</p>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-cyan-300">음용:</strong> 1일 500ml씩 3회 (기상 직후, 온열 전, 취침 전) 정량 공급</div>
+              <div class="p-3 rounded-lg bg-spa-950 border border-spa-800"><strong class="text-cyan-300">외용:</strong> 15분 고압 나노 미스트 분사 챔버 입실</div>
+            </div>
+          </div>
+        `
+      },
+      8: {
+        num: "08",
+        title: "온열 테라피 (1시간 심부 체온 1℃ 상승)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">🔥 심부 체온 1℃ 상승을 통한 면역 세포(NK세포) 5배 활성화</h5>
+              <p class="text-xs text-gray-300">척추 라인에 체질 맞춤 온열 순수 에센셜 오일(진저, 시나몬 등)을 도포하고, 42~45℃ 원적외선 세라믹 온열 챔버에서 1시간 동안 심부 체온을 상승시킵니다.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-spa-950 border border-spa-800 text-xs text-gray-300">
+              ⏱️ <strong>안전 가이드:</strong> 20분 간격으로 혈압 체크 및 산화질소 미온수를 공급하여 수분 균형 유지.
+            </div>
+          </div>
+        `
+      },
+      9: {
+        num: "09",
+        title: "전통 동적 기체조: 태극선법 (Taeguk Sun-beop)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">🥋 한국 고유의 동적 명상 기체조 8초식</h5>
+              <p class="text-xs text-gray-300">서양식 격렬한 유산소 운동 대신, 기(氣)의 자연스러운 흐름을 복원하는 단전 호흡과 태극선법 8초식을 수련하여 전신 기혈 순환을 완성합니다.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-spa-950 border border-spa-800 text-xs text-gray-300">
+              • 1단계: 단전 호흡을 통한 탁기(濁氣) 배출 (10분)<br>
+              • 2단계: 태극선법 기본 8초식 동적 동작 수련 (20분)<br>
+              • 3단계: 장부 경락 이완 및 기혈 정착 (10분)
+            </div>
+          </div>
+        `
+      },
+      10: {
+        num: "10",
+        title: "멘탈 관리: 한국 정통 고요 명상 (Traditional Meditation)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-1">🧘 사찰과 선도(仙道)의 정통 침묵 명상</h5>
+              <p class="text-xs text-gray-300">서양식 싱잉볼을 배제하고, 한국 전통 사찰과 선도의 깊은 정적과 침묵을 통해 뇌 피로도를 70% 이상 감소시키고 진정한 내면의 평온을 이끌어냅니다.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-spa-950 border border-spa-800 text-xs text-gray-300">
+              ⏱️ <strong>소요 시간:</strong> 40분 | 🧠 <strong>기대 효과:</strong> 코르티솔(스트레스 호르몬) 65% 감소, 숙면 뇌파 복원
+            </div>
+          </div>
+        `
+      }
+    };
+
+    // =========================================================================
+    // 3. 4-STEP DIAGNOSIS SYSTEM 2-DEPTH DATA
+    // =========================================================================
+    const diagnosisDetailData = {
+      1: {
+        step: "STEP 01",
+        title: "기초 생체 & 심층 문진표 (실전 예시)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/30">
+              <h5 class="font-bold text-amber-300 mb-2">📋 실제 VIP 고객 문진 기록 예시</h5>
+              <div class="space-y-1 text-xs text-gray-300 font-mono">
+                <div>• 성명: 박○○ (남성, 52세, 대기업 대표이사)</div>
+                <div>• 혈압: 138 / 88 mmHg (경계성 고혈압)</div>
+                <div>• 공복 혈당: 108 mg/dL (주의군)</div>
+                <div>• 주요 병력: 3년 전 담낭 절제술 시행, 만성 지방간</div>
+                <div>• 가족력: 부친 뇌졸중, 모친 당뇨병</div>
+                <div>• 주 증상: 만성 목덜미 뻐근함, 상체 열감, 잦은 안구 충혈, 수면 시간 5시간 미만</div>
+              </div>
+            </div>
+            <div class="text-xs text-gray-400">
+              💡 <strong>진단 포인트:</strong> 상기된 열과 수면 부족, 담낭 절제에 따른 소화기 부담을 감안하여 무자극 섭생과 림프 배농 플랜 수립.
+            </div>
+          </div>
+        `
+      },
+      2: {
+        step: "STEP 02",
+        title: "인바디 & 양자/뇌파(EEG) 분석 (실전 예시)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-emerald-500/30">
+              <h5 class="font-bold text-emerald-300 mb-2">📊 정밀 생체 데이터 판독 결과</h5>
+              <div class="space-y-2 text-xs text-gray-300">
+                <div class="p-2.5 rounded-lg bg-spa-950 border border-spa-800">
+                  <strong class="text-white block font-mono">InBody 770 결과:</strong>
+                  신장 176cm / 체중 82.4kg | 체수분율 52.1% (세포외수분비율 0.392 - 상하체 림프 정체 및 부종) | 내장지방 레벨 13
+                </div>
+                <div class="p-2.5 rounded-lg bg-spa-950 border border-spa-800">
+                  <strong class="text-white block font-mono">양자 및 뇌파(EEG) 결과:</strong>
+                  간(肝) 에너지 과부하 | 폐/기관지 결핍 | High-Beta파 68% (극도의 뇌 피로 및 교감신경 긴장 상태)
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      3: {
+        step: "STEP 03",
+        title: "산화질소(NO) 혈관 탄성도 관리 (실전 예시)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-cyan-500/30">
+              <h5 class="font-bold text-cyan-300 mb-2">🧪 타액 NO 산화질소 스트립 판독</h5>
+              <div class="space-y-2 text-xs text-gray-300">
+                <div class="p-2.5 rounded-lg bg-spa-950 border border-spa-800">
+                  • 측정 수치: 15 µM 미만 (연한 핑크 - <strong>산화질소 결핍 단계</strong>)<br>
+                  • 혈관 탄성도: 4등급 (혈관 노화 및 탄력 저하 경향)
+                </div>
+                <div class="p-2.5 rounded-lg bg-spa-950 border border-spa-800">
+                  <strong class="text-cyan-300 block mb-1">스파 맞춤 처방:</strong>
+                  1. 고농도 산화질소수 500ml 1일 3회 공급<br>
+                  2. 나노 미스트 챔버 15분 세션 (1일 1회)<br>
+                  3. 온열 테라피 시 20분마다 혈압 모니터링
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      4: {
+        step: "STEP 04",
+        title: "사상체질 최종 확정 & 1:1 웹 처방전 (실전 예시)",
+        html: `
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-spa-900 border border-amber-500/40 shadow-glow-gold">
+              <div class="inline-block px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-bold mb-2">최종 판정: 태음인 (肝大肺小)</div>
+              <h5 class="font-bold text-white text-sm mb-2">📜 1:1 VIP 웹 처방전 발행 리포트</h5>
+              <div class="space-y-2 text-xs text-gray-300">
+                <div class="p-2.5 rounded bg-spa-950 border border-spa-800">• <strong>추천 코스:</strong> 5박 6일 중기 디톡스 (Deep Detox & Align)</div>
+                <div class="p-2.5 rounded bg-spa-950 border border-spa-800">• <strong>전용 오일:</strong> 최고급 100% 순수 에센셜 오일 (유칼립투스, 이지에어, 샌달우드)</div>
+                <div class="p-2.5 rounded bg-spa-950 border border-spa-800">• <strong>맞춤 식단:</strong> 소고기 양지 들깨 미역국 + 율무밥 (18:00~06:00 12h 단식)</div>
+                <div class="p-2.5 rounded bg-spa-950 border border-spa-800">• <strong>의전 세팅:</strong> 황색 가운 + 오른손 넷째 손가락 은반지(Eun-banji) 배정</div>
+              </div>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    // MODAL OPEN / CLOSE FUNCTIONS
+    function openTherapyModal(id) {
+      const data = therapyDetailData[id];
+      if (data) {
+        document.getElementById('tModalNum').innerText = data.num;
+        document.getElementById('tModalTitle').innerText = data.title;
+        document.getElementById('tModalBody').innerHTML = data.html;
+        document.getElementById('therapyModal').classList.remove('hidden');
+      }
+    }
+
+    function closeTherapyModal() {
+      document.getElementById('therapyModal').classList.add('hidden');
+    }
+
+    function openDiagnosisModal(step) {
+      const data = diagnosisDetailData[step];
+      if (data) {
+        document.getElementById('dModalStep').innerText = data.step;
+        document.getElementById('dModalTitle').innerText = data.title;
+        document.getElementById('dModalBody').innerHTML = data.html;
+        document.getElementById('diagnosisModal').classList.remove('hidden');
+      }
+    }
+
+    function closeDiagnosisModal() {
+      document.getElementById('diagnosisModal').classList.add('hidden');
+    }
+
     // 4 SASANG CONSTITUTIONS DATA OBJECT
     const chejilData = {
       taeeum: {
@@ -1192,7 +1539,7 @@
         desc: '몸이 차고 소화기가 약하며 신경이 예민하여 만성 피로를 쉽게 느낍니다. 심부 체온을 높이는 온열 스톤 테라피와 소화기 보온이 필수입니다.',
         symptom: '수족냉증 및 복부 냉증, 만성 소화불량, 무기력증, 면역력 저하',
         course: '온열 스톤 테라피 & 코어 웜업 서멀 스파',
-        aroma: '온가드 (On Guard), 진저 (Ginger), 시나몬, 다이제스트젠, 오렌지',
+        aroma: '온가드, 진저 (Ginger), 시나몬, 다이제스트젠, 오렌지',
         tea: '대추차, 생강계피차, 인삼차, 당귀차',
         food: '닭가슴살 황기 보양 미역국, 찹쌀황기죽, 삼계탕'
       },
@@ -1208,9 +1555,7 @@
       }
     };
 
-    // CHEJIL SELECTOR FUNCTION
     function selectChejil(key) {
-      console.log('Switching Chejil to:', key);
       const keys = ['taeeum', 'soyang', 'soeum', 'taeyang'];
       keys.forEach(k => {
         const btn = document.getElementById('c-btn-' + k);
@@ -1237,9 +1582,7 @@
       }
     }
 
-    // PROGRAM TAB SWITCHER FUNCTION
     function switchProgram(id) {
-      console.log('Switching Program Tab to:', id);
       const progIds = ['p1', 'p2', 'p3', 'p4'];
       progIds.forEach(p => {
         const btn = document.getElementById('tab-btn-' + p);
@@ -1263,7 +1606,7 @@
       }
     }
 
-    // LEAD CAPTURE SYSTEM
+    // LEAD CAPTURE SYSTEM (LocalStorage + Google Sheets Webhook Integration)
     const STORAGE_KEY = 'sasang_spa_lead_records_2026';
 
     function getLeads() {
@@ -1277,15 +1620,6 @@
 
     function saveLeads(leads) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
-      updateNavBadge();
-    }
-
-    function updateNavBadge() {
-      const leads = getLeads();
-      const badge = document.getElementById('navLeadCountBadge');
-      if (badge) {
-        badge.innerText = leads.length;
-      }
     }
 
     function openLeadModal() {
@@ -1324,11 +1658,22 @@
         file: 'spa_proposal_chejil.pdf'
       };
 
+      // 1. LocalStorage Backup
       const leads = getLeads();
       leads.unshift(newLead);
       saveLeads(leads);
 
-      // Trigger automatic PDF download
+      // 2. Google Apps Script Webhook Push (if configured)
+      if (GAS_WEBHOOK_URL && GAS_WEBHOOK_URL.startsWith('http')) {
+        fetch(GAS_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newLead)
+        }).catch(err => console.log('GAS Push error:', err));
+      }
+
+      // 3. Trigger automatic PDF download
       const link = document.createElement('a');
       link.href = 'spa_proposal_chejil.pdf';
       link.download = 'spa_proposal_chejil.pdf';
@@ -1340,7 +1685,7 @@
       document.getElementById('leadSuccessMsg').classList.remove('hidden');
     }
 
-    // DIRECTOR ADMIN DASHBOARD
+    // DIRECTOR ADMIN DASHBOARD (Secret Trigger)
     const MASTER_PIN = '7777';
     let isAdminUnlocked = false;
 
@@ -1368,9 +1713,26 @@
         document.getElementById('adminMainContent').classList.remove('hidden');
         renderAdminDashboard();
       } else {
-        alert('비밀번호(PIN)가 일치하지 않습니다. (기본: 7777)');
+        alert('비밀번호(PIN)가 일치하지 않습니다.');
       }
     }
+
+    // SECRET ADMIN TRIGGER: Key combo (Ctrl + Shift + L) or Logo 5 clicks
+    let logoClickCount = 0;
+    function triggerSecretAdmin() {
+      logoClickCount++;
+      if (logoClickCount >= 5) {
+        logoClickCount = 0;
+        openAdminModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
+        e.preventDefault();
+        openAdminModal();
+      }
+    });
 
     document.addEventListener('DOMContentLoaded', () => {
       const pinInput = document.getElementById('adminPinInput');
@@ -1394,7 +1756,6 @@
           }
         ]);
       }
-      updateNavBadge();
     });
 
     function renderAdminDashboard() {
@@ -1510,24 +1871,6 @@
         alert('전체 리드 JSON 데이터가 클립보드에 복사되었습니다.');
       });
     }
-  
-    // SECRET ADMIN TRIGGER: Key combo (Ctrl + Shift + L) or Logo 5 clicks
-    let logoClickCount = 0;
-    function triggerSecretAdmin() {
-      logoClickCount++;
-      if (logoClickCount >= 5) {
-        logoClickCount = 0;
-        openAdminModal();
-      }
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
-        e.preventDefault();
-        openAdminModal();
-      }
-    });
-
   </script>
 
 </body>
