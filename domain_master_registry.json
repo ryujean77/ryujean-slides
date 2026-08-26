@@ -4,6 +4,27 @@
   "lastUpdated": "2026-08-26T09:40:00+09:00",
   "domains": [
     {
+      "id": "DOM-BRAIN",
+      "name": "옵시디언 제2의 뇌 & 로컬 AI 위키",
+      "icon": "fa-brain",
+      "color": "purple",
+      "accentHex": "#a855f7",
+      "bgGradient": "from-purple-950 via-slate-900 to-purple-900",
+      "tag": "🧠 제2의 뇌",
+      "partner": "유정근 (지식 총괄) & 로컬 LLM (Gemma/Qwen)",
+      "summary": "PARA 체계 기반 5.2만 건의 원시 지식 인박스, 음성 녹취 자동 분석, Dataview 및 Obsigravity 연동 로컬 지식 위키 Vault.",
+      "storagePath": "C:\\01_Brain (독립 Obsidian Vault)",
+      "skills": [
+        "obsigravity",
+        "ai-curriculum-builder"
+      ],
+      "stats": {
+        "projectsCount": 2,
+        "liveUrlsCount": 1,
+        "status": "🔵 5.2만건 독립 가동"
+      }
+    },
+    {
       "id": "DOM-AROMA",
       "name": "아로마테라피 & 웰니스 케어",
       "icon": "fa-seedling",
@@ -113,6 +134,35 @@
     }
   ],
   "projects": [
+    {
+      "id": "PRJ-BRAIN-01",
+      "domainId": "DOM-BRAIN",
+      "domainTag": "🧠 제2의 뇌",
+      "title": "옵시디언 제2의 뇌 구축: 로컬 자동화 가이드-대화분기",
+      "folder": "C:\\01_Brain",
+      "status": "상시가동",
+      "statusBadge": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
+      "date": "2026-08-26",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/obsidian-brain-architecture/",
+      "deliverables": [
+        {
+          "name": "5.2만건 지식 Inbox",
+          "type": "md",
+          "path": "00_Inbox/"
+        },
+        {
+          "name": "아키텍처 분석 리포트",
+          "type": "html",
+          "path": "산출물/20260826_0949_.../index.html"
+        },
+        {
+          "name": "자동화 배치 및 스크립트",
+          "type": "bat",
+          "path": "_Automation/"
+        }
+      ],
+      "description": "5.2만 건의 지식을 보관하는 옵시디언 볼트로, 물리적 독립을 유지하면서 HQ 포털과 유기적으로 연계된 개인 지식 위키."
+    },
     {
       "id": "PRJ-AROMA-01",
       "domainId": "DOM-AROMA",

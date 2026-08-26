@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C:\01_Brain 옵시디언 제2의 뇌 아키텍처 분석 보고서 | 유정근 디렉터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased">
+    <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="p-8 rounded-3xl bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 border border-purple-800/40 shadow-2xl space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                    <i class="fa-solid fa-brain mr-1"></i> ARCHITECTURE AUDIT
+                </span>
+                <span class="text-xs text-slate-400 font-mono">2026. 08. 26</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white">
+                C:\01_Brain (옵시디언 제2의 뇌) 아키텍처 통합 vs 독립 분석
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300">
+                유정근 대표님의 개인 지식 위키(5.2만 건)와 비즈니스 실행 워크스페이스 간 최적 연계 전략
+            </p>
+        </header>
+
+        <!-- Key Decision Box -->
+        <div class="p-6 rounded-2xl bg-slate-800/90 border-2 border-emerald-500/50 shadow-lg space-y-3">
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+                <i class="fa-solid fa-circle-check text-lg"></i>
+                <span>최종 권고: "물리적 독립 저장소 + 논리적 포털 허브 연계 (Hub & Spoke)"</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                대표님께서 판단하신 대로 <strong>C:\01_Brain은 물리적으로 독립된 별도 옵시디언 볼트로 유지</strong>하는 것이 절대적으로 안전하고 효율적입니다. 
+                5.2만 건의 방대한 지식 볼트는 독립 운영하면서, <strong>RYUJEAN DOMAIN HQ 포털</strong>을 통해 한 화면에서 유기적으로 관제하는 하이브리드 아키텍처를 적용합니다.
+            </p>
+        </div>
+
+        <!-- 3 Reasons Why Independent -->
+        <section class="space-y-4">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-purple-400"></i> 물리적 독립 유지가 필수적인 3대 이유
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700 space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-gauge-simple-high"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">5.2만 건 대용량 Git 부하 방지</h3>
+                    <p class="text-xs text-slate-400">5만 개가 넘는 인박스 노트를 합칠 경우 Git commit/push 및 파일 검색 속도가 극도로 느려집니다.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700 space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-plug"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">옵시디언 전용 환경 보호</h3>
+                    <p class="text-xs text-slate-400">Dataview, Copilot, Obsigravity 등 옵시디언 전용 플러그인과 테마 설정의 충돌을 원천 차단합니다.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700 space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">명확한 역할 분리 (지식 vs 실행)</h3>
+                    <p class="text-xs text-slate-400">01_Brain은 원천 지식 축적소, ryujeanWorkSpace는 고객 전달용 웹 산출물 발행소로 분업화됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Comparison Table -->
+        <section class="p-6 rounded-3xl bg-slate-800/80 border border-slate-700 space-y-4">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-table-columns text-brand-400"></i> 두 환경의 역할 비교
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs sm:text-sm text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-700 text-slate-400 font-bold">
+                            <th class="py-3 px-4">구분</th>
+                            <th class="py-3 px-4 text-purple-400">C:\01_Brain (옵시디언 제2의 뇌)</th>
+                            <th class="py-3 px-4 text-brand-400">ryujeanWorkSpace (비즈니스 HQ)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700/60 text-slate-300">
+                        <tr>
+                            <td class="py-3 px-4 font-bold text-slate-400">핵심 성격</td>
+                            <td class="py-3 px-4">개인 지식 저장소 (Knowledge Lake / Wiki)</td>
+                            <td class="py-3 px-4">비즈니스 실행 및 산출물 발행 (Execution HQ)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-bold text-slate-400">주요 데이터</td>
+                            <td class="py-3 px-4">음성 녹취 파싱, 5.2만 건 Inbox, 로컬 LLM 태깅</td>
+                            <td class="py-3 px-4">도테라 아로마 DB, 1:1 처방전, 기획서, 웹앱</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-bold text-slate-400">핵심 도구</td>
+                            <td class="py-3 px-4">Obsidian, Dataview, Gemma, Qwen</td>
+                            <td class="py-3 px-4">Antigravity AI, Python, GitHub Pages, Slack Bot</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-bold text-slate-400">보안 및 공유</td>
+                            <td class="py-3 px-4">100% 로컬 프라이빗 보관</td>
+                            <td class="py-3 px-4">GitHub Pages 원클릭 라이브 배포 및 고객 공유</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Portal Link -->
+        <div class="p-6 rounded-3xl bg-gradient-to-r from-brand-950 to-slate-900 border border-brand-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h3 class="font-bold text-white text-base">RYUJEAN DOMAIN HQ 포털에서 제2의 뇌 연계 완료</h3>
+                <p class="text-xs text-slate-400 mt-1">5대 핵심 도메인으로 등록되어 한 화면에서 언제든 현황을 확인하실 수 있습니다.</p>
+            </div>
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+                🏛️ 마스터 포털 열기 ➔
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
