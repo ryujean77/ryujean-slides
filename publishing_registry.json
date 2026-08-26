@@ -24,6 +24,20 @@
   ],
   "items": [
     {
+      "id": "PUB-20260826-SPA",
+      "title": "사상체질 기반 프리미엄 체질스파 프로젝트 포털 & 제안서 리드캡처",
+      "client": "글로벌 VIP 및 호텔/리조트 파트너사",
+      "category": "스파/웰니스 제안",
+      "date": "2026-08-26",
+      "status": "배포완료",
+      "folderName": "sasang-spa",
+      "htmlPath": "https://ryujean77.github.io/ryujean-slides/sasang-spa/",
+      "githubUrl": "https://ryujean77.github.io/ryujean-slides/sasang-spa/",
+      "summary": "한국 고유의 사상체질 의학 기반 4대 VIP 체류 프로그램, 10대 시그니처 테라피 및 공식 제안서(PDF 18MB) 다운로드 리드 수집/디렉터 관리자 뷰 웹 포털.",
+      "deliveryChannel": "GitHub Pages + 카카오톡/이메일",
+      "shareMessageTemplate": "안녕하세요! 사상체질 기반 프리미엄 체질스파(Sasang Constitution SPA) 공식 웹 포털 및 프로젝트 제안서 다운로드 링크를 전달드립니다.\nhttps://ryujean77.github.io/ryujean-slides/sasang-spa/\n- 총괄 디렉터 유정근 (010-4728-9917) -"
+    },
+    {
       "id": "PUB-20260825-01",
       "title": "최토미 교수 맞춤형 아로마 케어 플랜 & 1:1 웰니스 가이드",
       "client": "최토미 교수",
