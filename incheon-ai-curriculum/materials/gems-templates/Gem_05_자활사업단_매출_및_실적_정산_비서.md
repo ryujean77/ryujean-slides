@@ -17,6 +17,18 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 한국자활복지개발원 (kdissw.or.kr) 지침 안내
+* **다운로드 경로:**
+```text
+1. 한국자활복지개발원(https://www.kdissw.or.kr) 접속
+2. [소통·참여] ➔ [자활지침 안내] 또는 [기관자료] 게시판 이동
+3. 자활사업 회계 및 수익금 정산 관련 편람 파일 다운로드
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -77,7 +89,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`05_자활사업단_월간_매출정산_결과보고서_서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/05_%EC%9E%90%ED%99%9C%EC%82%AC%EC%97%85%EB%8B%A8_%EC%9B%94%EA%B0%84_%EB%A7%A4%EC%B6%9C%EC%A0%95%EC%82%B0_%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C_%EC%84%9C%EC%8B%9D.docx)
 

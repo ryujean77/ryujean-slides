@@ -17,6 +17,17 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 지자체(시·군·구청) 고시공고/보도자료 게시판 및 센터 배포자료
+* **다운로드 경로:**
+```text
+1. 지자체(시·군·구청) [고시공고 / 보도자료] 게시판에서 '자활' 키워드 검색
+2. 타 기관이 배포한 우수 자활생산품 보도자료 원본(HWP/PDF) 참고 다운로드
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -57,7 +68,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`10_자활생산품_언론보도자료_배포_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/10_%EC%9E%90%ED%99%9C%EC%83%9D%EC%82%B0%ED%92%88_%EC%96%B8%EB%A1%A0%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C_%EB%B0%B0%ED%8F%AC_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 

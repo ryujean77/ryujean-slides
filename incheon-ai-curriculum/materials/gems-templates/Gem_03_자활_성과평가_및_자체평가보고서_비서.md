@@ -17,6 +17,18 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 한국지역자활센터협회 (kactc.or.kr) 및 자활정보시스템
+* **다운로드 경로:**
+```text
+1. 한국지역자활센터협회(https://www.kactc.or.kr) 접속
+2. [알림마당] 또는 [자료실] 검색창에 '성과평가' 또는 '자체평가' 입력
+3. 복건복지부/협회 배포 평가 매뉴얼 및 평가지표별 배점표 다운로드
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -64,7 +76,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`03_지역자활센터_사업단_자체성과평가서_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/03_%EC%A7%80%EC%97%AD%EC%9E%90%ED%99%9C%EC%84%BC%ED%84%B0_%EC%82%AC%EC%97%85%EB%8B%A8_%EC%9E%90%EC%B2%B4%EC%84%B1%EA%B3%BC%ED%8F%89%EA%B0%80%EC%84%9C_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 

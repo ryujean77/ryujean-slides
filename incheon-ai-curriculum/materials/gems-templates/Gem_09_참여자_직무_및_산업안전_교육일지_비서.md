@@ -17,6 +17,17 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 중앙사회서비스원, 한국보건복지인재원, 안전보건공단
+* **다운로드 경로:**
+```text
+1. 중앙사회서비스원(https://www.kcis.or.kr) 또는 한국보건복지인재원(https://www.kohi.or.kr) 교육포털 접속 (법정의무교육 안내)
+2. 안전보건공단(https://www.kosha.or.kr) 자료실 '소방·안전점검 체크리스트' 검색 및 다운로드
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -63,7 +74,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`09_참여자_직무안전교육일지_및_안전점검표.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/09_%EC%B0%B8%EC%97%AC%EC%9E%90_%EC%A7%81%EB%AC%B4%EC%95%88%EC%A0%84%EA%B5%90%EC%9C%A1%EC%9D%BC%EC%A7%80_%EB%B0%8F_%EC%95%88%EC%A0%84%EC%A0%90%EA%B2%80%ED%91%9C.docx)
 

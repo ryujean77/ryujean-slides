@@ -17,6 +17,18 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 복지로 (bokjiro.go.kr) 및 자산형성포털 (happysaver.welfareinfo.or.kr)
+* **다운로드 경로:**
+```text
+1. 복지로(https://www.bokjiro.go.kr) 또는 자산형성포털 접속
+2. '자산형성지원사업(희망저축계좌)' 안내문 및 신청 서식 다운로드
+3. IAP 서식은 한국자활복지개발원 사례관리 지침 부록 서식 활용
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -65,7 +77,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`07_개인별_자립지원계획서(IAP)_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/07_%EA%B0%9C%EC%9D%B8%EB%B3%84_%EC%9E%90%EB%A6%BD%EC%A7%80%EC%9B%90%EA%B3%84%ED%9A%8D%EC%84%9C%28IAP%29_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 

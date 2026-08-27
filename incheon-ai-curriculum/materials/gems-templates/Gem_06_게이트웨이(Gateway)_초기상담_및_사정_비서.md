@@ -17,6 +17,18 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 한국자활복지개발원 (kdissw.or.kr) 자활사례관리 지침
+* **다운로드 경로:**
+```text
+1. 한국자활복지개발원(https://www.kdissw.or.kr) 접속
+2. [소통·참여] ➔ [자활지침 안내] 게시판 이동
+3. '자활사례관리 지침서' 또는 '게이트웨이 운영 매뉴얼' 검색 후 첨부파일 다운로드
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -71,7 +83,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`06_게이트웨이_초기상담기록지_및_욕구사정표.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/06_%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4_%EC%B4%88%EA%B8%B0%EC%83%81%EB%8B%B4%EA%B8%B0%EB%A1%9D%EC%A7%80_%EB%B0%8F_%EC%9A%95%EA%B5%AC%EC%82%AC%EC%A0%95%ED%91%9C.docx)
 

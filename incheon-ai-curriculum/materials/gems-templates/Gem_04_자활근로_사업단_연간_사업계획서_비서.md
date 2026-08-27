@@ -17,6 +17,18 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 보건복지부 (mohw.go.kr) 법령/지침 자료실
+* **다운로드 경로:**
+```text
+1. 보건복지부(https://www.mohw.go.kr) 접속
+2. [정보] ➔ [법령] ➔ [지침] (또는 알림/공지 게시판) 이동
+3. 검색창에 '자활사업안내' 검색 후 최신 연도 『자활사업안내』(Ⅰ, Ⅱ권) PDF 다운로드
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -67,7 +79,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`04_자활근로_사업단_사업계획서_표준양식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/04_%EC%9E%90%ED%99%9C%EA%B7%BC%EB%A1%9C_%EC%82%AC%EC%97%85%EB%8B%A8_%EC%82%AC%EC%97%85%EA%B3%84%ED%9A%8D%EC%84%9C_%ED%91%9C%EC%A4%80%EC%96%91%EC%8B%9D.docx)
 

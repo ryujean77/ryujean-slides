@@ -17,6 +17,18 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 사랑의열매 나눔넷 (proposal.chest.or.kr)
+* **다운로드 경로:**
+```text
+1. 사랑의열매 나눔넷(https://proposal.chest.or.kr) 접속
+2. 상단 메뉴 [배분신청] ➔ [신청가이드 / 서식자료실] 이동
+3. 당해 연도 '지원사업 안내서' 및 '프로포절 표준 서식(HWP)' 다운로드
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -57,7 +69,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`02_사회복지공동모금회_배분신청서_및_프로포절_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/02_%EC%82%AC%ED%9A%8C%EB%B3%B5%EC%A7%80%EA%B3%B5%EB%8F%99%EB%AA%A8%EA%B8%88%ED%9A%8C_%EB%B0%B0%EB%B6%84%EC%8B%A0%EC%B2%AD%EC%84%9C_%EB%B0%8F_%ED%94%84%EB%A1%9C%ED%8F%AC%EC%A0%88_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 

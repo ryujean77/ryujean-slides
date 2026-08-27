@@ -17,6 +17,17 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 보건복지부 (mohw.go.kr) 『사회복지시설 관리안내』
+* **다운로드 경로:**
+```text
+1. 보건복지부 대표홈페이지 법령/지침 코너 또는 지자체 복지정책과
+2. 『사회복지시설 관리안내』 내 '운영위원회 설치·운영 규정' 참조 및 자체 센터 회의록 서식 활용
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -71,7 +82,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`08_지역자활센터_운영위원회_회의록_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/08_%EC%A7%80%EC%97%AD%EC%9E%90%ED%99%9C%EC%84%BC%ED%84%B0_%EC%9A%B4%EC%98%81%EC%9C%84%EC%9B%90%ED%9A%8C_%ED%9A%8C%EC%9D%98%EB%A1%9D_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 

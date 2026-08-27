@@ -17,6 +17,17 @@
 
 ---
 
+## 🏛️ 공식 기관 서식 및 지식 파일 다운로드 경로
+
+* **공식 출처:** 한국자활복지개발원(kdissw.or.kr) 및 각 시·도 광역자활센터 공지사항
+* **다운로드 경로:**
+```text
+1. 광역자활센터 공식 홈페이지 접속 ➔ [알림마당/공지사항]
+2. '자활기업 사업개발비 지원사업 모집 공고' 첨부파일 다운로드
+```
+
+---
+
 ## 📋 3. 요청사항 (Instructions / 시스템 프롬프트)
 
 ```markdown
@@ -56,7 +67,7 @@
 
 ---
 
-## 📁 5. 지식(Knowledge) 파일 다운로드 및 설정 가이드
+## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
 * **표준 서식 다운로드:** [`01_자활기업_사업개발비_세부사업계획서_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/01_%EC%9E%90%ED%99%9C%EA%B8%B0%EC%97%85_%EC%82%AC%EC%97%85%EA%B0%9C%EB%B0%9C%EB%B9%84_%EC%84%B8%EB%B6%80%EC%82%AC%EC%97%85%EA%B3%84%ED%9A%8D%EC%84%9C_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 
