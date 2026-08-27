@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자활사업 10대 문서 Gems 프롬프트 및 실습 서식 자료실</title>
+<style>
+  :root {
+    --primary: #8b5cf6;
+    --primary-dark: #7c3aed;
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --accent: #38bdf8;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 32px 16px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1000px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+  h1 { font-size: 2.2rem; color: #a78bfa; margin-bottom: 8px; }
+  p.subtitle { color: var(--text-muted); font-size: 1.1rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 20px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card:hover { border-color: #a78bfa; }
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    background-color: rgba(167, 139, 250, 0.15);
+    color: #a78bfa;
+    margin-bottom: 12px;
+  }
+  .card h3 { font-size: 1.2rem; margin: 0 0 10px 0; color: #f1f5f9; }
+  .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 16px; }
+  .btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  .btn-primary { background-color: var(--primary); color: white; }
+  .btn-outline { border: 1px solid var(--border); color: #cbd5e1; }
+  .btn-outline:hover { background-color: rgba(255,255,255,0.05); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <span class="badge">인천자활 AI 교육 실습 자료실</span>
+    <h1>자활사업 10대 문서 Gems 프롬프트 & 실습 지식 서식</h1>
+    <p class="subtitle">Gemini Custom Gems 설정용 프롬프트 및 지식(Knowledge) 업로드용 표준 서식 다운로드</p>
+  </header>
+  
+  <div class="grid">
+    <div class="card">
+      <div>
+        <span class="badge">Gem 01</span>
+        <h3>자활기업 사업개발비 지원사업 전용 Gem</h3>
+        <p>엄격한 예산 한도 및 심사 배점 기준에 최적화된 사업계획서 자동 생성 봇</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_01_자활기업_사업개발비_지원사업_전용_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="01_자활기업_사업개발비_세부사업계획서_표준서식.md" class="btn btn-outline">📄 표준서식 다운로드</a>
+        <a href="2026_사업개발비+서식.zip" class="btn btn-outline">📦 공모전체서식.zip</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 02</span>
+        <h3>외부 공모 프로포절 (사랑의열매 등) 전용 Gem</h3>
+        <p>사회복지공동모금회 및 지자체 복지 공모사업 통과를 위한 맞춤형 프로포절</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_02_외부_공모_프로포절(사회복지공동모금회_사랑의열매_등)_전용_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="02_사회복지공동모금회_배분신청서_및_프로포절_표준서식.md" class="btn btn-outline">📄 배분신청서 서식</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 03</span>
+        <h3>센터/사업단 성과평가 및 자체평가서 Gem</h3>
+        <p>보건복지부 자활 평가 지표에 맞춘 정량·정성 성과 분석 및 결과보고서</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_03_센터_사업단_성과평가_및_자체평가서_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="03_지역자활센터_사업단_자체성과평가서_표준서식.md" class="btn btn-outline">📄 성과평가서 서식</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 04</span>
+        <h3>시장진입형/사회서비스형 사업단 사업계획서 Gem</h3>
+        <p>원가/판가 산출, 참여자 직무배치, 3개년 자활기업 전환 로드맵 기획</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_04_시장진입형_사회서비스형_사업단_사업계획서_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="04_자활근로_사업단_사업계획서_표준양식.md" class="btn btn-outline">📄 운영계획서 서식</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 05</span>
+        <h3>사업단 실적 및 매출 정산 보고서 Gem</h3>
+        <p>매출 달성률, 원가율 분석 및 자활기업 창업적립금/자립성과급 정산</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_05_사업단_실적_및_매출_정산_보고서_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="05_자활사업단_월간_매출정산_결과보고서_서식.md" class="btn btn-outline">📄 매출정산서 서식</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 06</span>
+        <h3>게이트웨이(Gateway) 초기상담 Gem</h3>
+        <p>단편 메모를 전문가 수준의 다차원 역량 사정(Assessment) 및 배치 의견으로 변환</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_06_게이트웨이(Gateway)_초기상담_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="06_게이트웨이_초기상담기록지_및_욕구사정표.md" class="btn btn-outline">📄 초기상담기록지 서식</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 07</span>
+        <h3>개인별 자립지원계획서(IAP) 설계 Gem</h3>
+        <p>참여자별 강점 분석 및 단기/중기/장기 단계별 자립 경로 및 자산형성 설계</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_07_개인별_자립지원계획서(IAP)_설계_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="07_개인별_자립지원계획서(IAP)_표준서식.md" class="btn btn-outline">📄 IAP 표준서식</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 08</span>
+        <h3>운영위원회 안건 및 회의록 Gem</h3>
+        <p>발언 메모를 의결·보고·토의사항으로 분류하여 공식 행정 회의록 완성</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_08_운영위원회_안건_및_회의록_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="08_지역자활센터_운영위원회_회의록_표준서식.md" class="btn btn-outline">📄 회의록 표준서식</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 09</span>
+        <h3>종사자 및 참여자 교육/안전 일지 Gem</h3>
+        <p>안전 수칙, 점검 결과 및 필수 직무 교육 1페이지 완성형 결과보고서</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_09_종사자_및_참여자_교육_안전_일지_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="09_참여자_직무안전교육일지_및_안전점검표.md" class="btn btn-outline">📄 안전교육일지 서식</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="badge">Gem 10</span>
+        <h3>자활생산품 보도자료 및 SNS 홍보 Gem</h3>
+        <p>정통 언론사 배포용 보도자료 및 맘카페/인스타그램 맞춤 홍보 콘텐츠</p>
+      </div>
+      <div class="btn-group">
+        <a href="Gem_10_자활생산품_보도자료_및_SNS_홍보_Gem.md" class="btn btn-primary">📋 프롬프트 보기</a>
+        <a href="10_자활생산품_언론보도자료_및_SNS홍보가이드.md" class="btn btn-outline">📄 보도자료 서식</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
