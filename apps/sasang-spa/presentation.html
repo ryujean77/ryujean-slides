@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사상체질 프리미엄 스파 기획제안서 — Interactive Slide Deck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Pretendard', sans-serif; background: #1a1714; color: #241e19; }
+    .slide-viewport { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .slide-frame { width: 96vw; max-width: 1440px; aspect-ratio: 16/9; max-height: 94vh; background: #fdfbf7; border-radius: 20px; box-shadow: 0 25px 60px rgba(0,0,0,0.5); overflow: hidden; position: relative; border: 1px solid rgba(201,168,118,0.4); display: none; }
+    .slide-frame.active { display: flex; flex-direction: column; }
+    .gold-gradient-text { background: linear-gradient(135deg, #a37f48 0%, #c9a876 50%, #85622c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .card-luxury { background: #ffffff; border: 1px solid rgba(201, 168, 118, 0.35); box-shadow: 0 10px 25px -3px rgba(60, 45, 30, 0.06); }
+  </style>
+</head>
+<body class="select-none">
+
+  <div class="slide-viewport">
+
+    <!-- SLIDE 1: Cover -->
+    <div class="slide-frame active bg-[#0e1f18] text-white p-12 justify-between" id="slide-1">
+      <div class="flex justify-between items-center text-xs tracking-widest text-[#c9a876] font-bold border-b border-[#c9a876]/30 pb-4">
+        <span>SASANG CONSTITUTION WELLNESS MASTER PLAN</span>
+        <span>SLIDE 01 / 07</span>
+      </div>
+      <div class="my-auto space-y-6 max-w-4xl">
+        <span class="px-4 py-1 rounded-full bg-[#1a3328] border border-[#c9a876]/50 text-[#c9a876] text-xs font-bold uppercase tracking-widest">
+          The Wisdom of Sasang Constitution
+        </span>
+        <h1 class="text-5xl font-serif font-bold text-white leading-tight">
+          사상체질 기반 프리미엄 웰니스 스파
+        </h1>
+        <p class="text-[#e4d3b8] text-xl font-light leading-relaxed">
+          한국 고유의 사상체질 의학 × 최고급 100% 순수 에센셜 오일 × 현대 바이오 데이터 융합<br>
+          <strong class="text-white font-semibold">현대인의 고질적 불균형을 해결하는 1:1 맞춤 신체 리셋 솔루션</strong>
+        </p>
+      </div>
+      <div class="flex justify-between items-center text-xs text-gray-400 border-t border-[#c9a876]/30 pt-4">
+        <span>총괄 디렉터 유정근 (010-4728-9917) · 식품공학박사 임동구 (010-2323-4662)</span>
+        <span class="text-[#c9a876]">https://ryujean77.github.io/ryujean-slides/sasang-spa/</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Problem Statement -->
+    <div class="slide-frame p-10 justify-between" id="slide-2">
+      <div class="flex justify-between items-center text-xs font-bold border-b border-[#c9a876]/30 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-[11px] font-bold">THE PROBLEM</span>
+          <h2 class="text-xl font-serif font-bold text-[#241e19]">기존 일반 스파 & 디톡스의 3대 치명적 한계</h2>
+        </div>
+        <span class="text-gray-400">SLIDE 02 / 07</span>
+      </div>
+      <div class="grid grid-cols-3 gap-6 my-auto">
+        <div class="card-luxury p-6 rounded-2xl bg-rose-50/30 border-rose-200">
+          <span class="text-xs font-bold text-rose-600">PROBLEM 01</span>
+          <h3 class="text-lg font-serif font-bold text-[#241e19] mt-1 mb-3">획일적 처방의 부작용</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            기존 스파는 만인에게 동일한 라벤더, 온열 사우나를 적용합니다. 열이 많은 소양인에게 고온 사우나나 진저 오일을 쓰면 두통·안구충혈·불면이 악화되고, 몸이 찬 소음인에게 찬 탄산스파나 페퍼민트를 쓰면 극심한 냉증과 복통이 유발됩니다.
+          </p>
+        </div>
+        <div class="card-luxury p-6 rounded-2xl bg-rose-50/30 border-rose-200">
+          <span class="text-xs font-bold text-rose-600">PROBLEM 02</span>
+          <h3 class="text-lg font-serif font-bold text-[#241e19] mt-1 mb-3">1회성 마사지의 한계</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            단순 마사지는 표층 근육만 일시적으로 만져줄 뿐, 체내 장부(간·폐·비·신)의 불균형과 심부 노폐물 정체를 해결하지 못합니다. 스파 당일 밤만 잠시 편안할 뿐 다음 날 아침이면 피로가 100% 원상복귀됩니다.
+          </p>
+        </div>
+        <div class="card-luxury p-6 rounded-2xl bg-rose-50/30 border-rose-200">
+          <span class="text-xs font-bold text-rose-600">PROBLEM 03</span>
+          <h3 class="text-lg font-serif font-bold text-[#241e19] mt-1 mb-3">무분별한 디톡스 역효과</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            체질을 무시한 유행성 디톡스 주스(케일/오이 등 찬 성질)나 무작정 굶는 단식은 소화기를 심각하게 훼손합니다. 비위가 약한 소음인에게 찬 녹즙은 위장 마비를 일으키고, 고단백 육류 과다는 태양인의 간을 손상시킵니다.
+          </p>
+        </div>
+      </div>
+      <div class="text-[11px] text-gray-400 border-t border-[#c9a876]/30 pt-3">
+        * 결론: "만인에게 좋은 것은 누구에게도 맞지 않는다" ➔ 장부대소 기반 초개인화 처방의 절대적 필요성
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Our Solution -->
+    <div class="slide-frame p-10 justify-between" id="slide-3">
+      <div class="flex justify-between items-center text-xs font-bold border-b border-[#c9a876]/30 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">THE SOLUTION</span>
+          <h2 class="text-xl font-serif font-bold text-[#241e19]">사상체질 스파가 제시하는 3대 근본 해결 솔루션</h2>
+        </div>
+        <span class="text-gray-400">SLIDE 03 / 07</span>
+      </div>
+      <div class="grid grid-cols-3 gap-6 my-auto">
+        <div class="card-luxury p-6 rounded-2xl bg-emerald-50/30 border-emerald-300">
+          <span class="text-xs font-bold text-emerald-700">SOLUTION 01</span>
+          <h3 class="text-lg font-serif font-bold text-[#241e19] mt-1 mb-3">장부대소 기반 0% 부작용</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            1894년 이제마의 해부생리학과 생체 데이터를 결합하여 간·폐·비·신의 장부 용량을 정밀 진단합니다. 오직 내 몸의 장부 편차에만 유효한 <strong>최고급 100% 순수 에센셜 오일과 맞춤 수온(41℃ 온열 vs 38.5℃ 쿨링)</strong>을 처방합니다.
+          </p>
+        </div>
+        <div class="card-luxury p-6 rounded-2xl bg-emerald-50/30 border-emerald-300">
+          <span class="text-xs font-bold text-emerald-700">SOLUTION 02</span>
+          <h3 class="text-lg font-serif font-bold text-[#241e19] mt-1 mb-3">3중 융합 신체 리셋 (스파+단식)</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            80분 이원화 바디(수기 지압+순수 오일 림프 드레나쥐)와 저녁 18:00~익일 06:00 <strong>12시간 단식(자가포식)</strong>으로 세포 찌꺼기를 청소하고, 기상 후 <strong>4대 체질 맞춤 영양 미역국 조식</strong>으로 장부를 영양 재건합니다.
+          </p>
+        </div>
+        <div class="card-luxury p-6 rounded-2xl bg-emerald-50/30 border-emerald-300">
+          <span class="text-xs font-bold text-emerald-700">SOLUTION 03</span>
+          <h3 class="text-lg font-serif font-bold text-[#241e19] mt-1 mb-3">평생 지속 바이오 LTV</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            DTC 유전자 분석 및 마이크로바이옴 키트를 연동하여 1:1 모바일 바이오 리포트를 발행합니다. 일상 복귀 후에도 <strong>모바일 웹 처방전과 월간 맞춤 오일 정기구독(LRP)</strong>을 통해 체질 섭생을 평생 습관화합니다.
+          </p>
+        </div>
+      </div>
+      <div class="text-[11px] text-gray-400 border-t border-[#c9a876]/30 pt-3">
+        * 성과 지표: 부교감 신경 활성도 40% 상승, 뇌 피로도 70% 감소, 심부 체온 1℃ 상승(면역 NK세포 5배 증대) 입증
+      </div>
+    </div>
+
+    <!-- SLIDE 4: 4 Constitutions Matrix -->
+    <div class="slide-frame p-10 justify-between" id="slide-4">
+      <div class="flex justify-between items-center text-xs font-bold border-b border-[#c9a876]/30 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-[#f8f5ee] border border-[#c9a876] text-[#a37f48] text-[11px] font-bold">CONSTITUTIONS</span>
+          <h2 class="text-xl font-serif font-bold text-[#241e19]">4대 사상체질 심층 처방 매트릭스</h2>
+        </div>
+        <span class="text-gray-400">SLIDE 04 / 07</span>
+      </div>
+      <div class="grid grid-cols-4 gap-4 my-auto">
+        <div class="card-luxury p-5 rounded-2xl border-[#c9a876]">
+          <span class="text-xs font-bold text-[#a37f48]">태음인 (肝大肺小)</span>
+          <div class="text-[11px] text-gray-500 mb-2">간 기능 강함 / 폐·기관지 허약</div>
+          <div class="text-[11px] text-gray-700 space-y-1.5 border-t border-gray-100 pt-2">
+            <p><strong>취약:</strong> 림프 정체, 비만, 건조</p>
+            <p><strong>오일:</strong> 유칼립투스, 샌달우드</p>
+            <p><strong>식단:</strong> 소고기 양지 들깨 미역국</p>
+            <p><strong>의전:</strong> 황색 가운 / 우측 4지 은반지</p>
+          </div>
+        </div>
+        <div class="card-luxury p-5 rounded-2xl border-emerald-400">
+          <span class="text-xs font-bold text-emerald-700">소양인 (脾大腎小)</span>
+          <div class="text-[11px] text-gray-500 mb-2">소화기 열 많음 / 신장 음기 허약</div>
+          <div class="text-[11px] text-gray-700 space-y-1.5 border-t border-gray-100 pt-2">
+            <p><strong>취약:</strong> 상열감, 두통, 불면증</p>
+            <p><strong>오일:</strong> 페퍼민트, 라벤더</p>
+            <p><strong>식단:</strong> 돼지고기 수육 / 조개 미역국</p>
+            <p><strong>의전:</strong> 청색 가운 / 좌측 2지 은반지</p>
+          </div>
+        </div>
+        <div class="card-luxury p-5 rounded-2xl border-[#c9a876]">
+          <span class="text-xs font-bold text-[#a37f48]">소음인 (腎大脾小)</span>
+          <div class="text-[11px] text-gray-500 mb-2">신장 튼튼 / 비위 차고 약함</div>
+          <div class="text-[11px] text-gray-700 space-y-1.5 border-t border-gray-100 pt-2">
+            <p><strong>취약:</strong> 수족냉증, 만성 소화장애</p>
+            <p><strong>오일:</strong> 진저, 온가드, 시나몬</p>
+            <p><strong>식단:</strong> 닭가슴살 황기 보양 미역국</p>
+            <p><strong>의전:</strong> 백색 가운 / 우측 3지 은반지</p>
+          </div>
+        </div>
+        <div class="card-luxury p-5 rounded-2xl border-emerald-400">
+          <span class="text-xs font-bold text-emerald-700">태양인 (肺大肝小)</span>
+          <div class="text-[11px] text-gray-500 mb-2">폐 기능 강함 / 간 해독·하체 약함</div>
+          <div class="text-[11px] text-gray-700 space-y-1.5 border-t border-gray-100 pt-2">
+            <p><strong>취약:</strong> 기운 상기, 하지 무력</p>
+            <p><strong>오일:</strong> 베티버, 프랑킨센스</p>
+            <p><strong>식단:</strong> 완도산 전복 홍합 해물 미역국</p>
+            <p><strong>의전:</strong> 적색 가운 / 좌측 4지 은반지</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-[11px] text-gray-400 border-t border-[#c9a876]/30 pt-3">
+        * 체질별 장부 용량에 맞춘 100% 순수 에센셜 오일 및 식단 매칭
+      </div>
+    </div>
+
+    <!-- SLIDE 5: 10 Signature Treatments -->
+    <div class="slide-frame p-10 justify-between" id="slide-5">
+      <div class="flex justify-between items-center text-xs font-bold border-b border-[#c9a876]/30 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-[#f8f5ee] border border-[#c9a876] text-[#a37f48] text-[11px] font-bold">10 THEMES</span>
+          <h2 class="text-xl font-serif font-bold text-[#241e19]">사상체질 10대 시그니처 테라피 카탈로그</h2>
+        </div>
+        <span class="text-gray-400">SLIDE 05 / 07</span>
+      </div>
+      <div class="grid grid-cols-5 gap-3 my-auto text-xs">
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">01. 웰컴 오리엔테이션</strong>다실 1:1 상담 & 체질 맞춤 웰컴 티</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">02. 20분 맞춤 족욕</strong>41℃ 온열탕 vs 38.5℃ 쿨링탕</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">03. 은반지 비언어 의전</strong>경락별 은반지 & 컬러 가운 의전</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">04. 12h 단식 & 미역국</strong>자가포식 해독 & 4대 맞춤 미역국</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">05. 80분 이원화 바디</strong>한의 수기(30m) + 순수 오일(50m)</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">06. 30분 침묵 명상</strong>장인 다기 시연 & 부교감 40% 활성</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">07. 산화질소(NO) 수</strong>NO 수 1.5L 음용 & 나노 미스트</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">08. 심부 온열 챔버</strong>42~45℃ 1h 입실 (체온 1℃ 상승)</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">09. 전통 기체조</strong>단전 호흡 & 태극선법 8초식 수련</div>
+        <div class="card-luxury p-3.5 rounded-xl"><strong class="text-[#a37f48] block mb-1">10. 정통 고요 명상</strong>사찰 침묵 명상 (뇌 피로 70% 감소)</div>
+      </div>
+      <div class="text-[11px] text-gray-400 border-t border-[#c9a876]/30 pt-3">
+        * 10대 시그니처 세션은 2박3일 ~ 1개월 VIP 체류 코스에 정밀 결합되어 운영됩니다.
+      </div>
+    </div>
+
+    <!-- SLIDE 6: Directors & Business Model -->
+    <div class="slide-frame p-10 justify-between" id="slide-6">
+      <div class="flex justify-between items-center text-xs font-bold border-b border-[#c9a876]/30 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-[#f8f5ee] border border-[#c9a876] text-[#a37f48] text-[11px] font-bold">DIRECTORS & BIZ</span>
+          <h2 class="text-xl font-serif font-bold text-[#241e19]">총괄 연구진 및 호텔·리조트 파트너십</h2>
+        </div>
+        <span class="text-gray-400">SLIDE 06 / 07</span>
+      </div>
+      <div class="grid grid-cols-2 gap-8 my-auto">
+        <div class="card-luxury p-6 rounded-2xl space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-[#1a3328] text-[#c9a876] flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-user-tie"></i></div>
+            <div>
+              <span class="text-xs text-[#a37f48] font-bold">웰니스 총괄 디렉터</span>
+              <h3 class="text-xl font-serif font-bold text-[#241e19]">유정근 (Ryu Jean)</h3>
+            </div>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            • 웰니스 비즈니스 총괄 / 전담 테라피스트<br>
+            • 10대 시그니처 테라피 의전 및 1:1 VIP 프로토콜 설계<br>
+            • 📞 010-4728-9917 | ✉️ ryujean77@gmail.com
+          </p>
+        </div>
+        <div class="card-luxury p-6 rounded-2xl space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-[#c9a876] text-[#241e19] flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-flask-vial"></i></div>
+            <div>
+              <span class="text-xs text-[#a37f48] font-bold">학술 & 의학 총괄</span>
+              <h3 class="text-xl font-serif font-bold text-[#241e19]">임동구 박사 (Dr. Yim)</h3>
+            </div>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            • 식품공학박사 / Dr.Yim's 체질라이프스타일 연구소 소장<br>
+            • 사상체질 섭생 권위자 (4대 미역국 레시피 및 알고리즘 감수)<br>
+            • 📞 010-2323-4662 | ✉️ ydoko@daum.net
+          </p>
+        </div>
+      </div>
+      <div class="text-[11px] text-gray-400 border-t border-[#c9a876]/30 pt-3">
+        * 공간 컨설팅, 테라피스트 아카데미, 스마트 CRM, 굿즈 커머스 턴키(Turn-Key) 파트너십 제공
+      </div>
+    </div>
+
+    <!-- SLIDE 7: Closing -->
+    <div class="slide-frame bg-[#0e1f18] text-white p-12 justify-between" id="slide-7">
+      <div class="flex justify-between items-center text-xs tracking-widest text-[#c9a876] font-bold border-b border-[#c9a876]/30 pb-4">
+        <span>THANK YOU & PARTNERSHIP</span>
+        <span>SLIDE 07 / 07</span>
+      </div>
+      <div class="my-auto text-center space-y-6 max-w-3xl mx-auto">
+        <span class="text-xs font-bold text-[#c9a876] tracking-widest uppercase">Global K-Wellness Leadership</span>
+        <h2 class="text-4xl sm:text-5xl font-serif font-bold text-white leading-tight">
+          가장 한국적인 사상체질 의학이<br>
+          <span class="text-[#c9a876]">가장 세계적인 럭셔리 스파</span>가 됩니다
+        </h2>
+        <p class="text-[#e4d3b8] text-sm leading-relaxed">
+          공식 웹 포털 실시간 확인: https://ryujean77.github.io/ryujean-slides/sasang-spa/<br>
+          제휴 및 컨설팅 문의: 유정근 총괄 디렉터 (010-4728-9917 | ryujean77@gmail.com)
+        </p>
+      </div>
+      <div class="text-center text-xs text-gray-400 border-t border-[#c9a876]/30 pt-4">
+        키보드 좌우 방향키(← / →) 또는 스페이스바로 슬라이드를 전환할 수 있습니다.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 7;
+
+    function showSlide(n) {
+      document.querySelectorAll('.slide-frame').forEach(el => el.classList.remove('active'));
+      const target = document.getElementById('slide-' + n);
+      if (target) target.classList.add('active');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') {
+        currentSlide = (currentSlide < totalSlides) ? currentSlide + 1 : 1;
+        showSlide(currentSlide);
+      } else if (e.key === 'ArrowLeft') {
+        currentSlide = (currentSlide > 1) ? currentSlide - 1 : totalSlides;
+        showSlide(currentSlide);
+      } else if (e.key === 'f' || e.key === 'F') {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      }
+    });
+  </script>
+
+</body>
+</html>

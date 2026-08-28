@@ -1,0 +1,956 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사상체질 버크만형 진단 마스터피스 (Sasang-Birkman Masterpiece)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Pretendard', sans-serif; }
+    .glass { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); }
+    .option-card:hover { transform: translateY(-2px); }
+    .quadrant-grid {
+      background-size: 20px 20px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- Top Navigation Header -->
+  <header class="border-b border-slate-800/80 bg-slate-900/70 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-blue-500 flex items-center justify-center text-white shadow-lg shadow-amber-500/20">
+          <i class="fa-solid fa-shapes text-lg"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">BIRKMAN × SASANG</span>
+            <span class="text-xs text-slate-400">사상체질 다차원 진단 마스터피스</span>
+          </div>
+          <h1 class="text-base font-bold text-white tracking-tight">나의 본성·욕구·스트레스·식이 4분면 프로파일링</h1>
+        </div>
+      </div>
+      <div class="text-xs text-right hidden sm:block">
+        <p class="text-slate-300 font-medium">유정근 디렉터 & 임동구 박사</p>
+        <p class="text-slate-500">가천대학교 석사논문 실증 알고리즘</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="max-w-4xl mx-auto px-6 py-8 w-full flex-1">
+
+    <!-- Screen 1: Intro Hero & Mode Selection -->
+    <div id="screen-intro" class="space-y-8 py-4">
+      <div class="text-center space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs text-amber-400 font-medium shadow-inner">
+          <i class="fa-solid fa-sparkles"></i> 원시 설문 마커 포함 다차원 고정밀 진단 엔진
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          단순한 체질 분류를 넘어,<br>
+          <span class="bg-gradient-to-r from-amber-400 via-rose-400 to-blue-400 bg-clip-text text-transparent">행동·내면욕구·스트레스·미각</span>을 입체 진단합니다
+        </h2>
+        <p class="text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+          버크만 메소드의 4분면 다차원 매트릭스 원리와 사상체질의학의 102개 실증 문항(원시 설문 포함)을 결합하여, 나의 진정한 본성과 맞춤 라이프스타일 처방을 찾아드립니다.
+        </p>
+      </div>
+
+      <!-- Mode Selector -->
+      <div class="space-y-3 pt-2">
+        <div class="text-center text-xs font-semibold text-slate-400">진단 모드를 선택해 주세요</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+          
+          <!-- Mode A: Speed (24 items) -->
+          <div onclick="selectMode('speed')" id="mode-card-speed" class="p-5 rounded-2xl border transition cursor-pointer bg-slate-900/80 border-slate-700 hover:border-amber-500/50 space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">스피드 모드</span>
+              <span class="text-xs text-slate-400">약 3분 소요</span>
+            </div>
+            <h4 class="text-base font-bold text-white">24문항 핵심 진단</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              4대 차원의 핵심 대표 문항만으로 신속하게 4분면 좌표와 주체질을 파악합니다.
+            </p>
+          </div>
+
+          <!-- Mode B: Standard (30 items) -->
+          <div onclick="selectMode('standard')" id="mode-card-standard" class="p-5 rounded-2xl border transition cursor-pointer bg-amber-500/10 border-amber-500 text-white shadow-lg shadow-amber-500/10 space-y-2 relative">
+            <div class="absolute -top-2.5 right-4 px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 text-slate-950 text-[10px] font-black">
+              ★ 추천 / 최고 정확도
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">정밀 심층 모드</span>
+              <span class="text-xs text-slate-300">약 5분 소요</span>
+            </div>
+            <h4 class="text-base font-bold text-white">30문항 원시 마커 종합 진단</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              원시 설문 데이터(신체계측·땀·체형·식습관)를 모두 반영하여 변별력을 극대화합니다.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4 Quadrant Preview Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+        <div class="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-center space-y-2">
+          <div class="w-8 h-8 mx-auto rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center text-sm font-bold">Red</div>
+          <div class="font-bold text-rose-300 text-sm">태양인 (太陽人)</div>
+          <div class="text-[11px] text-slate-400">개척 혁신형<br>과단성 & 카리스마</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-center space-y-2">
+          <div class="w-8 h-8 mx-auto rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm font-bold">Yellow</div>
+          <div class="font-bold text-amber-300 text-sm">소양인 (少陽人)</div>
+          <div class="text-[11px] text-slate-400">열정 소통형<br>순발력 & 빠른 실행</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-center space-y-2">
+          <div class="w-8 h-8 mx-auto rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm font-bold">Blue</div>
+          <div class="font-bold text-blue-300 text-sm">소음인 (少陰人)</div>
+          <div class="text-[11px] text-slate-400">정밀 분석형<br>치밀함 & 논리 계획</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-center space-y-2">
+          <div class="w-8 h-8 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">Green</div>
+          <div class="font-bold text-emerald-300 text-sm">태음인 (太陰人)</div>
+          <div class="text-[11px] text-slate-400">포용 수호형<br>지구력 & 신뢰감</div>
+        </div>
+      </div>
+
+      <div class="text-center pt-4">
+        <button onclick="startSurvey()" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-rose-500 text-slate-950 font-extrabold text-base shadow-xl shadow-amber-500/20 hover:scale-105 transition-all duration-200 inline-flex items-center gap-3">
+          <span id="btn-start-label">30문항 정밀 심층 진단 시작하기</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Screen 2: Questionnaire Wizard -->
+    <div id="screen-quiz" class="hidden space-y-6">
+      
+      <!-- Progress Bar & Dimension Badge -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-xs">
+          <span id="dimension-badge" class="px-2.5 py-1 rounded-md bg-indigo-500/20 text-indigo-300 font-semibold border border-indigo-500/30">
+            평상시 행동 스타일 (Usual)
+          </span>
+          <span class="text-slate-400 font-medium">
+            <span id="current-q-num" class="text-white font-bold text-sm">1</span> / <span id="total-q-num">30</span> 문항 (<span id="progress-percent">3%</span>)
+          </span>
+        </div>
+        <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+          <div id="progress-bar" class="h-full bg-gradient-to-r from-amber-500 to-rose-500 transition-all duration-300" style="width: 3.33%;"></div>
+        </div>
+      </div>
+
+      <!-- Question Card -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-2xl">
+        <div class="space-y-2">
+          <span id="question-category" class="text-xs text-amber-400 font-semibold uppercase tracking-wider">카테고리</span>
+          <h3 id="question-text" class="text-xl sm:text-2xl font-bold text-white leading-snug">
+            문항 로딩 중...
+          </h3>
+          <p class="text-xs text-slate-400">가장 자신과 가깝다고 느끼는 보기를 1개 선택해 주세요.</p>
+        </div>
+
+        <!-- 4 Options -->
+        <div id="options-container" class="space-y-3">
+          <!-- Dynamic Buttons -->
+        </div>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="flex justify-between items-center text-xs pt-2">
+        <button id="btn-prev" onclick="prevQuestion()" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition disabled:opacity-30" disabled>
+          <i class="fa-solid fa-chevron-left mr-1"></i> 이전 문항
+        </button>
+        <span class="text-slate-500">보기를 선택하면 자동으로 다음 문항으로 이동합니다</span>
+      </div>
+    </div>
+
+    <!-- Screen 3: Comprehensive Result Report -->
+    <div id="screen-result" class="hidden space-y-8">
+      
+      <!-- Result Header Card -->
+      <div id="result-hero" class="p-8 rounded-3xl border text-center space-y-4 shadow-2xl relative overflow-hidden">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold border" id="result-type-badge">
+          MY CONSTITUTION PROFILE
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white" id="result-title">
+          당신의 사상체질 버크만 유형
+        </h2>
+        <p class="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed" id="result-summary">
+          로딩 중...
+        </p>
+      </div>
+
+      <!-- Visual Analytics Grid: 2D Matrix Map & 4-Axis Radar -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- 2D 4-Quadrant Matrix Map -->
+        <div class="p-6 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-4">
+          <div class="flex justify-between items-center">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-crosshairs text-amber-400"></i> 사상체질 버크만 4분면 맵
+            </h3>
+            <span class="text-[11px] text-slate-400">X: 내향-외향 | Y: 신중-과단</span>
+          </div>
+
+          <div class="relative w-full aspect-square rounded-2xl bg-slate-950 border border-slate-800/80 quadrant-grid flex items-center justify-center p-4">
+            <!-- Axis lines -->
+            <div class="absolute inset-x-4 top-1/2 h-[1px] bg-slate-700/60"></div>
+            <div class="absolute inset-y-4 left-1/2 w-[1px] bg-slate-700/60"></div>
+
+            <!-- Quadrant Labels -->
+            <div class="absolute top-3 left-4 text-[10px] font-bold text-emerald-400">태음인 (Green)</div>
+            <div class="absolute top-3 right-4 text-[10px] font-bold text-rose-400">태양인 (Red)</div>
+            <div class="absolute bottom-3 left-4 text-[10px] font-bold text-blue-400">소음인 (Blue)</div>
+            <div class="absolute bottom-3 right-4 text-[10px] font-bold text-amber-400">소양인 (Yellow)</div>
+
+            <!-- Plot Target Point -->
+            <div id="plot-point" class="absolute w-7 h-7 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] flex items-center justify-center shadow-lg shadow-amber-400/50 border-2 border-white transition-all duration-700 -translate-x-1/2 -translate-y-1/2" style="left: 50%; top: 50%;">
+              ME
+            </div>
+          </div>
+          <p class="text-[11px] text-center text-slate-400">
+            중심에서 좌표 (<span id="coord-x" class="text-white font-semibold">0</span>, <span id="coord-y" class="text-white font-semibold">0</span>) 에 나의 고유 에너지점이 위치합니다.
+          </p>
+        </div>
+
+        <!-- 4-Axis Radar Chart -->
+        <div class="p-6 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-4">
+          <div class="flex justify-between items-center">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-chart-radar text-rose-400"></i> 4대 체질 성향 레이더 지수
+            </h3>
+            <span class="text-[11px] text-slate-400">소양·태양·태음·소음</span>
+          </div>
+          <div class="relative w-full aspect-square flex items-center justify-center p-2">
+            <canvas id="radarChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Deep Dive 4 Cards: Superpower, Blindspot, Diet, Aroma -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        
+        <!-- Superpower Card -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2">
+          <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
+            <i class="fa-solid fa-crown"></i> 핵심 강점 (Superpower)
+          </div>
+          <p id="card-superpower" class="text-xs text-slate-300 leading-relaxed">
+            로딩 중...
+          </p>
+        </div>
+
+        <!-- Blindspot Card -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2">
+          <div class="flex items-center gap-2 text-rose-400 font-bold text-sm">
+            <i class="fa-solid fa-triangle-exclamation"></i> 스트레스 취약점 (Blindspot)
+          </div>
+          <p id="card-blindspot" class="text-xs text-slate-300 leading-relaxed">
+            로딩 중...
+          </p>
+        </div>
+
+        <!-- Dietary Prescription Card -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+            <i class="fa-solid fa-utensils"></i> 맞춤 체질식이 처방
+          </div>
+          <div class="space-y-1.5 text-xs">
+            <div><span class="text-emerald-400 font-semibold">✓ 유익한 식품:</span> <span id="card-food-good" class="text-slate-300">...</span></div>
+            <div><span class="text-rose-400 font-semibold">✕ 주의할 식품:</span> <span id="card-food-avoid" class="text-slate-400">...</span></div>
+          </div>
+        </div>
+
+        <!-- Aroma Prescription Card -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2">
+          <div class="flex items-center gap-2 text-purple-400 font-bold text-sm">
+            <i class="fa-solid fa-spa"></i> 힐링 아로마 & 라이프스타일
+          </div>
+          <p id="card-aroma" class="text-xs text-slate-300 leading-relaxed">
+            로딩 중...
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4 justify-center pt-4">
+        <button onclick="window.print()" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-700 transition flex items-center gap-2">
+          <i class="fa-solid fa-print"></i> 리포트 인쇄 / PDF 저장
+        </button>
+        <button onclick="restartSurvey()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 text-slate-950 text-xs font-extrabold shadow-lg shadow-amber-500/20 hover:scale-105 transition flex items-center gap-2">
+          <i class="fa-solid fa-rotate-right"></i> 다시 진단하기
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+    <p>사상체질 버크만형 진단 마스터피스 (DOM-THESIS-SASANG) · 유정근 총괄 디렉터 & 임동구 박사</p>
+  </footer>
+
+  <!-- Survey Application Logic -->
+  <script>
+    const EMBEDDED_A_DATA = {
+  "systemTitle": "Sasang-Birkman Multidimensional Masterpiece Diagnostic Engine",
+  "version": "2.0.0",
+  "modes": [
+    { "id": "speed", "name": "스피드 모드 (24문항)", "desc": "3분 신속 프로파일링 (워크숍 및 약식 상담용)", "count": 24 },
+    { "id": "standard", "name": "정밀 표준 모드 (48문항)", "desc": "7분 균형 진단 (102개 대표 문항 핵심 추출)", "count": 48 },
+    { "id": "master", "name": "마스터 심층 모드 (96문항)", "desc": "12분 최고 정확도 (원시 231문항 전 영역 심층 분석)", "count": 96 }
+  ],
+  "dimensions": [
+    { "id": "DIM_USUAL", "name": "평상시 행동 스타일 (Usual Behavior)" },
+    { "id": "DIM_NEEDS", "name": "내적 욕구 및 심리 (Internal Needs)" },
+    { "id": "DIM_STRESS", "name": "스트레스 및 생리 반응 (Stress & Physiology)" },
+    { "id": "DIM_DIET", "name": "미각 및 식이 라이프스타일 (Taste & Diet)" }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "dimension": "DIM_USUAL",
+      "category": "일 처리 및 업무 스타일",
+      "question": "새로운 프로젝트나 업무를 시작할 때 당신의 가장 전형적인 모습은?",
+      "options": [
+        { "type": "Soyang", "text": "아이디어가 떠오르면 즉시 실행에 옮기며 빠르게 추진한다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "발생 가능한 리스크를 면밀히 분석하고 구체적인 계획을 먼저 세운다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "기존의 검증된 방식과 조화를 고려하며 차분하고 묵직하게 진행한다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "남들이 시도하지 않은 독창적이고 과감한 비전을 제시하며 주도한다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 2,
+      "dimension": "DIM_USUAL",
+      "category": "대인관계 및 대화 방식",
+      "question": "사람들과 대화를 나누거나 회의를 할 때 당신의 커뮤니케이션 스타일은?",
+      "options": [
+        { "type": "Soyang", "text": "솔직하고 직설적이며 유쾌한 분위기를 주도하며 빠르게 결론을 낸다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "상대방의 감정을 세심하게 살피며 조용하고 조리 있게 의견을 전달한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "말하기보다는 주로 경청하며, 다양한 사람들의 입장을 묵묵히 조율한다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "거침없는 직관과 카리스마로 핵심을 찌르며 대화를 이끈다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 3,
+      "dimension": "DIM_USUAL",
+      "category": "의사결정 속도 및 기준",
+      "question": "중요한 결정을 내려야 할 때 가장 의존하는 기준은?",
+      "options": [
+        { "type": "Soyang", "text": "순간적인 직관과 현장의 실시간 타이밍", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "정확한 데이터, 논리적 인과관계, 안전성", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "풍부한 과거 경험, 축적된 신뢰, 전체적인 균형", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "미래지향적 통찰력과 대의명분", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 4,
+      "dimension": "DIM_USUAL",
+      "category": "일과 삶의 에너지 방향",
+      "question": "평소 여가 시간이나 휴식을 취할 때 에너지가 재충전되는 방식은?",
+      "options": [
+        { "type": "Soyang", "text": "새로운 장소 탐방, 액티비티, 지인들과의 활발한 모임", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "나만의 아늑한 공간에서 독서, 사색, 조용한 취미 생활", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "편안한 사람들과의 넉넉한 식사, 자연 속에서의 휴식", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "새로운 아이디어 구상, 거대한 비전을 설계하는 몰입 시간", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 5,
+      "dimension": "DIM_USUAL",
+      "category": "갈등 상황 대처",
+      "question": "타인과 의견 충돌이나 갈등이 발생했을 때 나타나는 주된 모습은?",
+      "options": [
+        { "type": "Soyang", "text": "그 자리에서 즉시 솔직하게 털어놓고 빠르게 풀려고 한다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "갈등을 피하며 속으로 상처를 삭이고 혼자 논리적으로 정리한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "일단 묵묵히 인내하며 시간이 지나면서 자연스럽게 봉합되길 기다린다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "원칙과 당위성을 강조하며 상대방을 설득하거나 밀어붙인다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 6,
+      "dimension": "DIM_USUAL",
+      "category": "환경 적응력",
+      "question": "낯선 환경이나 새로운 조직에 들어갔을 때의 내 행동은?",
+      "options": [
+        { "type": "Soyang", "text": "빠르게 주변 사람들과 어울리며 분위기에 즉각 적응한다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "신중하게 관찰하며 익숙해질 때까지 조심스럽게 행동한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "티 내지 않고 꾸준히 자기 자리를 지키며 서서히 신뢰를 얻는다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "새로운 환경의 판도를 파악하고 리더십을 발휘하려 한다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 7,
+      "dimension": "DIM_USUAL",
+      "category": "업무 착수 방식 (원시문항)",
+      "question": "해야 할 일이 여러 가지 주어졌을 때 당신의 우선순위 설정 방식은?",
+      "options": [
+        { "type": "Soyang", "text": "머릿속에 떠오르는 대로 그때그때 흥미가 당기는 것부터 신속하게 처리한다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "전체 순서와 맥락이 머릿속에 완벽히 정리되고 이해되어야 착수한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "가장 비중이 크고 책임이 무거운 일부터 진득하게 하나씩 끝낸다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "가장 파급력이 크고 남들이 못 푸는 핵심 난제부터 직접 돌파한다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 8,
+      "dimension": "DIM_USUAL",
+      "category": "새로운 시도 선호도 (원시문항)",
+      "question": "출퇴근길이나 여행지에서 길을 선택할 때 나의 본능적인 행동은?",
+      "options": [
+        { "type": "Soyang", "text": "매번 가던 익숙한 길보다는 항상 새로운 길이나 지름길로 가보고 싶다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "가장 안전하고 검증되었으며 오차가 없는 익숙한 길을 선호한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "편안하고 복잡하지 않으며 여유를 즐길 수 있는 넓은 길을 간다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "남들이 가지 않은 미지의 루트를 개척하거나 최단거리 직진을 택한다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 9,
+      "dimension": "DIM_USUAL",
+      "category": "정리정돈 및 공간 관리 (원시문항)",
+      "question": "자신의 책상이나 집안 공간을 관리하는 평소 패턴은?",
+      "options": [
+        { "type": "Soyang", "text": "늘 손이 닿기 쉬운 곳에 펼쳐놓고 작업하다가 한 번에 정리한다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "물건마다 제자리가 정해져 있어 매일 깔끔하고 반듯하게 정돈한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "물건이 풍성하게 쌓여 있어도 나만의 기준에 따라 편안하게 유지한다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "사소한 정리보다는 큰 도구와 핵심 시스템 위주로 간결하게 배치한다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 10,
+      "dimension": "DIM_USUAL",
+      "category": "패션 및 옷차림 스타일 (원시문항)",
+      "question": "외출할 때 옷이나 액세서리를 고르는 나의 기준은?",
+      "options": [
+        { "type": "Soyang", "text": "화려하고 트렌디하며 개성을 돋보이게 하는 스타일", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "심플하고 단정하며 흠잡을 데 없이 깔끔하고 정돈된 스타일", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "체형을 편안하게 감싸주고 품질이 좋으며 넉넉한 클래식 스타일", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "독창적이고 당당하며 카리스마를 드러내는 개성 있는 스타일", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 11,
+      "dimension": "DIM_USUAL",
+      "category": "마무리 및 지속력 (원시문항)",
+      "question": "일을 추진할 때 시작과 마무리에 대한 나의 솔직한 특성은?",
+      "options": [
+        { "type": "Soyang", "text": "시작은 열정적으로 빠르게 하지만, 후반부 마무리는 다소 집중력이 떨어진다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "시작은 조심스럽지만, 한번 맡은 일은 끝까지 완벽하게 매듭짓는다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "초반에는 느긋해 보여도 시간이 갈수록 끈기 있게 끝까지 완주한다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "큰 물꼬를 트고 판을 짠 뒤, 세부적인 실무는 팀원에게 위임한다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 12,
+      "dimension": "DIM_USUAL",
+      "category": "모임 분위기 메이커 (원시문항)",
+      "question": "서먹서먹한 낯선 모임에서 분위기가 가라앉아 있을 때 당신은?",
+      "options": [
+        { "type": "Soyang", "text": "먼저 유머를 던지거나 화제를 꺼내며 적극적으로 분위기를 띄운다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "옆 사람과 조용히 일대일로 대화를 나누며 서서히 신뢰를 쌓는다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "편안하게 미소를 지으며 다른 사람들의 이야기를 넉넉하게 들어준다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "모임의 목적을 명확히 제시하며 사람들의 이목을 집중시킨다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 13,
+      "dimension": "DIM_NEEDS",
+      "category": "인정 욕구 및 동기부여",
+      "question": "내가 일을 할 때 가장 큰 동기부여를 받고 뿌듯함을 느끼는 순간은?",
+      "options": [
+        { "type": "Soyang", "text": "나의 빠른 실행력과 센스가 사람들에게 즉각적인 찬사를 받을 때", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "나의 세심한 분석과 완벽한 정확성이 인정받을 때", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "나의 묵묵한 헌신으로 조직과 결과물이 안정적으로 결실을 맺을 때", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "아무도 하지 못한 독창적인 길을 개척하고 큰 그림을 완성했을 때", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 14,
+      "dimension": "DIM_NEEDS",
+      "category": "이상적인 근무 환경",
+      "question": "내가 가장 몰입해서 최고의 성과를 낼 수 있는 환경은?",
+      "options": [
+        { "type": "Soyang", "text": "역동적이고 변화가 빠르며 자유롭게 소통할 수 있는 환경", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "조용하고 정돈되어 있으며 명확한 규칙과 예측 가능성이 있는 환경", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "안정적인 지원과 상호 신뢰가 탄탄하게 깔려 있는 지속 가능한 환경", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "자율권이 전적으로 보장되고 도전적 과제가 주어지는 환경", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 15,
+      "dimension": "DIM_NEEDS",
+      "category": "타인에게 바라는 태도",
+      "question": "동료나 파트너에게 가장 기대하는 바람직한 태도는?",
+      "options": [
+        { "type": "Soyang", "text": "답답하지 않고 시원시원하며 센스 있는 빠른 피드백", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "약속을 철저히 지키고 실수가 없는 꼼꼼함과 배려", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "변덕 부리지 않고 진득하게 자리를 지켜주는 듬직함과 의리", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "비전을 공유하고 과감하게 뒤를 받쳐주는 결단력", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 16,
+      "dimension": "DIM_NEEDS",
+      "category": "심리적 안정 조건",
+      "question": "마음이 가장 평온하고 안도감을 느끼는 조건은?",
+      "options": [
+        { "type": "Soyang", "text": "답답한 제약 없이 내 뜻대로 발 빠르게 움직일 수 있을 때", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "모든 일정과 변수가 내 통제 범위 안에서 완벽히 정리되어 있을 때", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "충분한 물질적·정서적 여유와 넉넉함이 확보되어 있을 때", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "내 주도하에 명확한 목표를 향해 나아갈 때", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 17,
+      "dimension": "DIM_NEEDS",
+      "category": "피드백 수용 방식",
+      "question": "비판이나 피드백을 받을 때 가장 거부감 없이 수용되는 방식은?",
+      "options": [
+        { "type": "Soyang", "text": "돌려 말하지 않고 깔끔하게 핵심만 유쾌하게 짚어줄 때", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "감정을 배제하고 구체적인 근거와 논리적 대안을 제시해 줄 때", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "나의 노고를 먼저 인정해주고 부드럽게 조언해 줄 때", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "큰 틀의 방향성과 논리적 당위성을 기반으로 직언할 때", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 18,
+      "dimension": "DIM_NEEDS",
+      "category": "성취 가치관",
+      "question": "인생에서 가장 중요하게 추구하는 내적 핵심 가치는?",
+      "options": [
+        { "type": "Soyang", "text": "열정과 흥미, 자유로운 도전, 다채로운 경험", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "안전과 완벽함, 내적 평온, 깊이 있는 전문성", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "신뢰와 풍요, 지속 가능한 번영, 조화로운 삶", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "독창적 혁신, 대의를 향한 개척, 압도적 영향력", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 19,
+      "dimension": "DIM_STRESS",
+      "category": "스트레스 시 신체 반응",
+      "question": "극심한 스트레스를 받을 때 몸에서 가장 먼저 나타나는 신체적 반응은?",
+      "options": [
+        { "type": "Soyang", "text": "가슴이 답답하고 열이 위로 솟구치며 입이 마르거나 잠이 오지 않는다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "명치가 얹힌 듯 소화가 안 되고 손발이 차가워지며 속이 쓰리다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "어깨와 목이 뻐근하게 굳고 온몸이 무거우며 숨이 찬다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "목덜미가 뻣뻣해지고 다리에 힘이 빠지거나 구역감이 든다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 20,
+      "dimension": "DIM_STRESS",
+      "category": "스트레스 시 감정/행동 변화",
+      "question": "한계에 다다르면 겉으로 표출되는 나의 부정적인 감정 형태는?",
+      "options": [
+        { "type": "Soyang", "text": "조급해지며 쉽게 화를 내거나 욱하고 감정 기복이 심해진다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "불안과 걱정이 꼬리를 물고 의심이 많아지며 혼자 갇혀버린다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "속마음을 굳게 닫고 고집을 부리며 만사를 귀찮아한다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "타인을 독단적으로 무시하거나 과격하게 비판한다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 21,
+      "dimension": "DIM_STRESS",
+      "category": "수면 및 피로 패턴",
+      "question": "피로하거나 컨디션이 저하되었을 때의 수면 양상은?",
+      "options": [
+        { "type": "Soyang", "text": "생각이 많아 잠들기 어렵고 자주 깨며 꿈을 많이 꾼다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "잠귀가 밝아 작은 소리에도 깨며 자고 일어나도 개운치 않다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "잠이 쏟아져 과하게 많이 자며, 아침에 몸이 붓고 무겁다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "신경이 예민해져 깊은 잠을 자지 못하고 쉽게 지친다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 22,
+      "dimension": "DIM_STRESS",
+      "category": "소화 및 대사 상태",
+      "question": "평소 나의 소화기 및 배변 특성은?",
+      "options": [
+        { "type": "Soyang", "text": "소화는 왕성하여 금방 배고프나 대변이 굳거나 변비가 생기기 쉽다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "조금만 찬 음식이나 과식을 하면 체하거나 묽은 변/설사를 한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "대체로 무엇이든 잘 먹고 소화하며 변비가 있어도 크게 고통스럽지 않다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "담백한 음식은 편하나 기름진 음식을 먹으면 구역질이 난다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 23,
+      "dimension": "DIM_STRESS",
+      "category": "한출(땀)과 체온 조절",
+      "question": "땀을 흘릴 때의 신체 컨디션 변화는?",
+      "options": [
+        { "type": "Soyang", "text": "땀이 별로 없거나 상체 위주로 나며, 땀을 흘리면 지치기 쉽다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "땀을 많이 흘리면 기운이 쑥 빠지고 어지러워 땀 흘리는 것을 싫어한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "운동이나 사우나로 전신에 땀을 흠뻑 흘리고 나면 몸이 날아갈 듯 상쾌하다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "땀이 적은 편이며 기운이 위로 치솟을 때 식은땀이 난다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 24,
+      "dimension": "DIM_STRESS",
+      "category": "체형 및 살찌는 경향 (원시문항)",
+      "question": "평소 나의 체형 변화 및 체중 관리 특성은?",
+      "options": [
+        { "type": "Soyang", "text": "상체(가슴/어깨)가 발달하고 하체가 날씬하여 살이 쪄도 배나 상체로 찐다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "하체(엉덩이/허벅지)가 안정적이나 상체가 가냘프며, 살이 잘 찌지 않고 빠지기 쉽다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "체격이 건장하고 허리둘레가 굵으며, 조금만 방심해도 전신에 살이 쉽게 찐다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "목덜미가 굵고 당당하나 허리와 다리가 가늘어 오래 서 있으면 힘이 든다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 25,
+      "dimension": "DIM_DIET",
+      "category": "미각 선호도 (5미)",
+      "question": "자연스럽게 손이 가고 입맛을 돋우는 가장 선호하는 맛은?",
+      "options": [
+        { "type": "Soyang", "text": "시원하고 쌉싸름한 쓴맛(Bitter)이나 담백하고 찬 성질의 맛", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "따뜻하고 칼칼하게 속을 데워주는 매운맛(Pungent)이나 적당한 단맛", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "구수하고 달착지근한 맛(Sweet)이나 입맛을 정리해주는 신맛(Sour)", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "자극적이지 않고 새콤하고 산뜻한 신맛(Sour)과 담백한 맛", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 26,
+      "dimension": "DIM_DIET",
+      "category": "육류 및 단백질 선호",
+      "question": "먹었을 때 속이 편하고 기운이 나는 육류/단백질 식품은?",
+      "options": [
+        { "type": "Soyang", "text": "돼지고기, 오리고기, 신선한 해산물(굴, 새우, 게)", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "닭고기(삼계탕), 닭가슴살, 염소고기, 흰살 생선", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "소고기, 장어, 콩/두부 요리, 견과류", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "담백한 조개류(전복, 굴), 해물탕, 문어/낙지", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 27,
+      "dimension": "DIM_DIET",
+      "category": "음료 및 음용 습관",
+      "question": "물을 마실 때 선호하는 온도와 평소 마시는 차 종류는?",
+      "options": [
+        { "type": "Soyang", "text": "얼음물이나 시원한 냉수, 보리차, 녹차, 페퍼민트차", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "미온수나 따뜻한 물, 생강차, 계피차, 대추차", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "적당한 온도의 물, 율무차, 칡차, 오미자차", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "시원한 생수, 모과차, 감잎차, 솔잎차", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 28,
+      "dimension": "DIM_DIET",
+      "category": "과일 및 디저트 선호",
+      "question": "먹었을 때 소화가 잘되고 기분이 좋아지는 과일은?",
+      "options": [
+        { "type": "Soyang", "text": "수박, 참외, 딸기, 바나나, 파인애플 (열을 식히는 과일)", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "사과, 복숭아, 귤, 오렌지, 망고 (따뜻한 성질의 과일)", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "배, 밤, 호두, 잣, 매실, 자두 (폐를 윤택하게 하는 과일/견과)", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "포도, 키위, 감, 다래, 모과 (서늘하고 간을 보하는 과일)", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 29,
+      "dimension": "DIM_DIET",
+      "category": "식사 속도 및 식사량",
+      "question": "평소 식사를 할 때의 식습관 패턴은?",
+      "options": [
+        { "type": "Soyang", "text": "식사 속도가 매우 빠르고, 새로운 퓨전 음식이나 외식을 즐긴다.", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "적은 양을 꼭꼭 씹어 천천히 먹으며, 익숙하고 정갈한 집밥을 선호한다.", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "식욕이 좋고 푸짐하게 먹는 편이며, 식사 시간이 여유롭고 든든하다.", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "음식에 까다로운 편이며 기름진 것보다는 담백하고 깔끔한 소식을 즐긴다.", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    },
+    {
+      "id": 30,
+      "dimension": "DIM_DIET",
+      "category": "부작용 및 기피 음식",
+      "question": "먹었을 때 탈이 잘 나거나 몸에 부담을 주는 음식은?",
+      "options": [
+        { "type": "Soyang", "text": "매운 고추/마늘, 인삼/홍삼, 닭고기 (열이 올라 두통/발진)", "score": { "Soyang": 3, "X": 2, "Y": -1 } },
+        { "type": "Soeum", "text": "차가운 맥주/빙수, 기름진 돼지고기, 날채소 (복통/설사 유발)", "score": { "Soeum": 3, "X": -2, "Y": -2 } },
+        { "type": "Taeum", "text": "자극적인 조미료, 과식 후의 닭고기/돼지고기 기름 (체중증가/담음)", "score": { "Taeum": 3, "X": -1, "Y": 2 } },
+        { "type": "Taeyang", "text": "맵고 뜨거운 보양식, 기름진 육류 (구역질/상기증 유발)", "score": { "Taeyang": 3, "X": 2, "Y": 2 } }
+      ]
+    }
+  ],
+  "profiles": {
+    "Soyang": {
+      "colorName": "Yellow (열정 촉진형 / The Dynamic Energizer)",
+      "badgeClass": "bg-amber-500 text-slate-950",
+      "bgGradient": "from-amber-500/20 to-orange-500/10",
+      "accentColor": "#f59e0b",
+      "superpower": "탁월한 순발력, 거침없는 솔직함, 빠른 실행력과 친화력",
+      "blindspot": "조급함으로 인한 뒷마무리 부족, 감정 기복, 상열감 번아웃",
+      "lifestylePrescription": "가슴의 화(火)를 내리는 쿨링 라이프, 차분한 명상과 하체 근력 운동",
+      "dietRecommendation": {
+        "good": "돼지고기, 오리고기, 해산물(굴/전복), 보리, 팥, 수박, 참외, 녹차",
+        "avoid": "닭고기, 인삼/홍삼, 고추, 생강, 자극적인 매운 음식"
+      },
+      "aromaTherapy": "페퍼민트 (쿨링·진정), 라벤더 (상열감 완화), 베르가못 (화기 분산)"
+    },
+    "Soeum": {
+      "colorName": "Blue (정밀 분석형 / The Thoughtful Analyst)",
+      "badgeClass": "bg-blue-500 text-white",
+      "bgGradient": "from-blue-500/20 to-cyan-500/10",
+      "accentColor": "#3b82f6",
+      "superpower": "정밀한 분석력, 완벽한 계획성, 깊은 배려심과 침착함",
+      "blindspot": "과도한 걱정과 의심, 우유부단함, 냉증과 소화기 허약",
+      "lifestylePrescription": "아랫배와 손발을 따뜻하게 유지하는 온열 요법, 규칙적인 소식(小食)",
+      "dietRecommendation": {
+        "good": "닭고기(삼계탕), 찹쌀, 사과, 생강, 계피, 파, 마늘, 따뜻한 꿀물",
+        "avoid": "차가운 음료/빙수, 돼지고기, 참외, 수박, 메밀, 밀가루"
+      },
+      "aromaTherapy": "진저 (온열·비위강화), 로즈마리 (순환촉진), 온가드 (면역력 강화)"
+    },
+    "Taeum": {
+      "colorName": "Green (포용 수호형 / The Resilient Anchor)",
+      "badgeClass": "bg-emerald-500 text-white",
+      "bgGradient": "from-emerald-500/20 to-teal-500/10",
+      "accentColor": "#10b981",
+      "superpower": "흔들리지 않는 묵직한 신뢰감, 뛰어난 지구력, 포용력과 성취력",
+      "blindspot": "속마음 숨김, 과도한 식탐/게으름, 혈액순환 저하 및 비만 위험",
+      "lifestylePrescription": "전신 땀을 흘리는 유산소 운동과 사우나, 호흡기 폐활량 증진",
+      "dietRecommendation": {
+        "good": "소고기, 율무, 콩, 두부, 도라지, 더덕, 무, 배, 밤, 견과류",
+        "avoid": "닭고기, 삼계탕, 인삼, 자극적인 조미료, 과도한 기름진 음식"
+      },
+      "aromaTherapy": "유칼립투스 (폐·기관지 정화), 시더우드 (순환·접지), 프랑킨센스 (심폐 활력)"
+    },
+    "Taeyang": {
+      "colorName": "Red (개척 혁신형 / The Visionary Pioneer)",
+      "badgeClass": "bg-rose-500 text-white",
+      "bgGradient": "from-rose-500/20 to-pink-500/10",
+      "accentColor": "#f43f5e",
+      "superpower": "압도적인 통찰력, 대범한 결단력, 독창적인 비전과 카리스마",
+      "blindspot": "독선적인 태도, 타인에 대한 배려 부족, 하지 무력감",
+      "lifestylePrescription": "마음을 낮추는 겸손과 분노 다스리기, 하체 강화 및 담백한 절제 생활",
+      "dietRecommendation": {
+        "good": "조개류, 전복, 메밀, 포도, 키위, 감, 모과차, 솔잎차",
+        "avoid": "맵고 뜨거운 음식, 기름진 육류, 고칼로리 보양식"
+      },
+      "aromaTherapy": "샌달우드 (분노 진정·평정심), 클라리세이지 (신경안정), 모과/시트러스"
+    }
+  }
+}
+;
+    let selectedMode = 'standard';
+    let allQuestions = EMBEDDED_A_DATA.questions;
+    let activeQuestions = EMBEDDED_A_DATA.questions;
+    let profilesData = EMBEDDED_A_DATA.profiles;
+    let currentIndex = 0;
+    let userAnswers = [];
+    let radarChartInstance = null;
+
+    function selectMode(mode) {
+      selectedMode = mode;
+      const cardSpeed = document.getElementById('mode-card-speed');
+      const cardStd = document.getElementById('mode-card-standard');
+      const btnLabel = document.getElementById('btn-start-label');
+
+      if (mode === 'speed') {
+        cardSpeed.className = "p-5 rounded-2xl border transition cursor-pointer bg-amber-500/10 border-amber-500 text-white shadow-lg shadow-amber-500/10 space-y-2";
+        cardStd.className = "p-5 rounded-2xl border transition cursor-pointer bg-slate-900/80 border-slate-700 hover:border-amber-500/50 space-y-2";
+        btnLabel.innerText = "24문항 스피드 진단 시작하기";
+      } else {
+        cardStd.className = "p-5 rounded-2xl border transition cursor-pointer bg-amber-500/10 border-amber-500 text-white shadow-lg shadow-amber-500/10 space-y-2 relative";
+        cardSpeed.className = "p-5 rounded-2xl border transition cursor-pointer bg-slate-900/80 border-slate-700 hover:border-amber-500/50 space-y-2";
+        btnLabel.innerText = "30문항 정밀 심층 진단 시작하기";
+      }
+    }
+
+    function startSurvey() {
+      if (selectedMode === 'speed') {
+        activeQuestions = allQuestions.slice(0, 24);
+      } else {
+        activeQuestions = allQuestions; // All 30 items
+      }
+
+      currentIndex = 0;
+      userAnswers = new Array(activeQuestions.length).fill(null);
+      document.getElementById('total-q-num').innerText = activeQuestions.length;
+
+      document.getElementById('screen-intro').classList.add('hidden');
+      document.getElementById('screen-result').classList.add('hidden');
+      document.getElementById('screen-quiz').classList.remove('hidden');
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = activeQuestions[currentIndex];
+      if (!q) return;
+
+      document.getElementById('current-q-num').innerText = currentIndex + 1;
+      const pct = Math.round(((currentIndex + 1) / activeQuestions.length) * 100);
+      document.getElementById('progress-percent').innerText = pct + '%';
+      document.getElementById('progress-bar').style.width = pct + '%';
+
+      const dimMap = {
+        "DIM_USUAL": "평상시 행동 스타일 (Usual)",
+        "DIM_NEEDS": "내적 욕구 및 심리 (Internal Needs)",
+        "DIM_STRESS": "스트레스 및 생리 반응 (Stress)",
+        "DIM_DIET": "미각 및 식이 라이프스타일 (Dietary)"
+      };
+      document.getElementById('dimension-badge').innerText = dimMap[q.dimension] || q.dimension;
+      document.getElementById('question-category').innerText = q.category;
+      document.getElementById('question-text').innerText = q.question;
+
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+
+      q.options.forEach((opt, idx) => {
+        const isSelected = userAnswers[currentIndex] === idx;
+        const btn = document.createElement('button');
+        btn.className = `w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 option-card flex items-start gap-4 ${
+          isSelected 
+            ? 'bg-amber-500/20 border-amber-500 text-white shadow-lg shadow-amber-500/10' 
+            : 'bg-slate-800/50 border-slate-700/60 text-slate-300 hover:bg-slate-800 hover:border-slate-600'
+        }`;
+        
+        btn.innerHTML = `
+          <div class="w-7 h-7 rounded-xl flex-shrink-0 flex items-center justify-center font-bold text-xs ${
+            isSelected ? 'bg-amber-500 text-slate-950' : 'bg-slate-700 text-slate-400'
+          }">
+            ${String.fromCharCode(65 + idx)}
+          </div>
+          <div class="text-sm font-medium leading-relaxed pt-0.5">${opt.text}</div>
+        `;
+
+        btn.onclick = () => selectOption(idx);
+        container.appendChild(btn);
+      });
+
+      document.getElementById('btn-prev').disabled = currentIndex === 0;
+    }
+
+    function selectOption(optionIndex) {
+      userAnswers[currentIndex] = optionIndex;
+      renderQuestion();
+
+      setTimeout(() => {
+        if (currentIndex < activeQuestions.length - 1) {
+          currentIndex++;
+          renderQuestion();
+        } else {
+          calculateResults();
+        }
+      }, 180);
+    }
+
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    }
+
+    function calculateResults() {
+      let typeScores = { Soyang: 0, Soeum: 0, Taeum: 0, Taeyang: 0 };
+      let coordX = 0;
+      let coordY = 0;
+
+      activeQuestions.forEach((q, qIdx) => {
+        const ansIdx = userAnswers[qIdx];
+        if (ansIdx !== null && ansIdx !== undefined) {
+          const opt = q.options[ansIdx];
+          typeScores[opt.type] += opt.score[opt.type] || 3;
+          coordX += opt.score.X || 0;
+          coordY += opt.score.Y || 0;
+        }
+      });
+
+      const sortedTypes = Object.entries(typeScores).sort((a, b) => b[1] - a[1]);
+      const primaryType = sortedTypes[0][0];
+      const secondaryType = sortedTypes[1][0];
+
+      const normX = Math.min(Math.max(coordX * 2, -80), 80);
+      const normY = Math.min(Math.max(coordY * 2, -80), 80);
+
+      renderResults(primaryType, secondaryType, normX, normY, typeScores);
+    }
+
+    function renderResults(primary, secondary, x, y, scores) {
+      document.getElementById('screen-quiz').classList.add('hidden');
+      document.getElementById('screen-result').classList.remove('hidden');
+
+      const profile = profilesData[primary] || {};
+      const hero = document.getElementById('result-hero');
+      hero.className = `p-8 rounded-3xl border text-center space-y-4 shadow-2xl relative overflow-hidden bg-gradient-to-b ${profile.bgGradient} border-slate-700`;
+
+      document.getElementById('result-type-badge').className = `inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold ${profile.badgeClass}`;
+      document.getElementById('result-type-badge').innerText = profile.colorName || primary;
+
+      document.getElementById('result-title').innerText = `${profile.colorName.split(' ')[0]} ${profile.colorName.split(' ')[1]}`;
+      document.getElementById('result-summary').innerText = `당신의 핵심 본성은 ${profile.colorName} 유형입니다. ${profile.superpower}의 탁월한 강점을 지니고 있습니다.`;
+
+      const posX = 50 + (x / 100) * 40;
+      const posY = 50 - (y / 100) * 40;
+      const point = document.getElementById('plot-point');
+      point.style.left = `${posX}%`;
+      point.style.top = `${posY}%`;
+      document.getElementById('coord-x').innerText = x;
+      document.getElementById('coord-y').innerText = y;
+
+      document.getElementById('card-superpower').innerText = profile.superpower || '';
+      document.getElementById('card-blindspot').innerText = `${profile.blindspot} | ${profile.lifestylePrescription}`;
+      document.getElementById('card-food-good').innerText = profile.dietRecommendation?.good || '';
+      document.getElementById('card-food-avoid').innerText = profile.dietRecommendation?.avoid || '';
+      document.getElementById('card-aroma').innerText = profile.aromaTherapy || '';
+
+      renderRadarChart(scores);
+    }
+
+    function renderRadarChart(scores) {
+      const ctx = document.getElementById('radarChart').getContext('2d');
+      if (radarChartInstance) {
+        radarChartInstance.destroy();
+      }
+
+      radarChartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['소양인 (Yellow)', '태양인 (Red)', '태음인 (Green)', '소음인 (Blue)'],
+          datasets: [{
+            label: '체질별 성향 강도',
+            data: [scores.Soyang, scores.Taeyang, scores.Taeum, scores.Soeum],
+            backgroundColor: 'rgba(245, 158, 11, 0.25)',
+            borderColor: '#f59e0b',
+            pointBackgroundColor: '#f43f5e',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: '#f43f5e',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          scales: {
+            r: {
+              angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' },
+              pointLabels: {
+                color: '#cbd5e1',
+                font: { size: 11, weight: '600' }
+              },
+              ticks: { display: false }
+            }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+    }
+
+    function restartSurvey() {
+      document.getElementById('screen-result').classList.add('hidden');
+      document.getElementById('screen-intro').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
+
