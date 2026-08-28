@@ -52,9 +52,9 @@ ul,ol{padding-left:1.35em}li{margin:.34em 0;color:#E4E8EF}
 hr{border:0;border-top:1px solid var(--line);margin:44px 0}
 code{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:6px;
   padding:2px 7px;font-size:.9em;font-family:ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;color:#F2E6FF}
-pre{background:linear-gradient(180deg,#0C0D13,#08090E);border:1px solid var(--line);
+pre{background:linear-gradient(180deg,#0C0D13,#08090E);border:1px solid var(--line);white-space:pre-wrap !important;word-break:break-word !important;overflow-x:hidden !important;overflow-y:auto !important;white-space:pre-wrap !important;word-break:break-word !important;overflow-x:hidden !important;overflow-y:auto !important;
   border-radius:16px;padding:20px 22px;overflow:auto;position:relative;box-shadow:0 10px 34px rgba(0,0,0,.5)}
-pre code{background:none;border:0;padding:0;color:#D9DEE9;font-size:14px;line-height:1.72}
+pre code{background:none;border:0;padding:0;color:#D9DEE9;font-size:14px;line-height:1.72;white-space:pre-wrap !important;word-break:break-word !important;}
 pre::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);border-radius:16px 0 0 16px}
 blockquote{margin:20px 0;padding:16px 20px;border:1px solid var(--line);border-left:3px solid var(--n2);
   background:var(--panel);border-radius:0 14px 14px 0;color:var(--tx2)}
@@ -139,7 +139,7 @@ figure.portrait .guide{width:70%}
 <h3>[✍️ 실습] 지역사회 연계 다회용기 세척 사업 제안서 초안 작성</h3>
 <ul><li><strong>상황 설정 (가상 샘플데이터):</strong> 지역사회 연계 사업(예: 다회용기 세척 사업) 제안서를 작성해야 합니다. 강사가 제공한 2개의 소스('2025년_타지역_우수사례_에코워시_다회용기_세척사업.pdf', '인천희망지역자활센터_다회용기세척사업_지역환경분석보고서.pdf')를 사용합니다.</li></ul>
 <ul><li><strong>실습 단계:</strong></li><li>두 개의 소스 파일을 노트북에 업로드합니다.</li><li>채팅창을 통해 타 지역 우수사례의 핵심 성공 요인 3가지를 찾아 메모로 저장하세요(📌).</li><li>우리 지역에 적용할 때 예상되는 문제점 2가지를 채팅으로 물어보고 메모로 저장하세요(📌).</li><li>저장된 2개의 메모를 선택하여 하나의 새로운 메모로 [결합]하고, 제목을 '사업 제안서 초안'으로 수정하세요.</li></ul>
-<ul><li><strong>📥 실습 소스 파일 다운로드:</strong></li><li>📄 <a href="https://tinyurl.com/22bt5jct" target="_blank" rel="noopener"><code>타_지역_우수사례.pdf</code> (2025년 경기 에코워시 다회용기 세척사업)</a></li><li>📄 <a href="https://tinyurl.com/2azcudtr" target="_blank" rel="noopener"><code>우리_지역_환경분석.pdf</code> (인천희망지역자활센터 다회용기 사업 타당성 및 지역 환경분석)</a></li><li>📦 <a href="https://tinyurl.com/2yv5fbwc" target="_blank" rel="noopener"><code>2-7_실습용_자료_모음_다회용기세척사업_제안서.zip</code> (전체 PDF/DOCX/TXT 패키지)</a></li></ul>
+<ul><li><strong>📥 실습 소스 파일 다운로드:</strong></li><li>📄 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>타_지역_우수사례.pdf</code> (2025년 경기 에코워시 다회용기 세척사업)</a></li><li>📄 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>우리_지역_환경분석.pdf</code> (인천희망지역자활센터 다회용기 사업 타당성 및 지역 환경분석)</a></li><li>📦 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2-7_실습용_자료_모음_다회용기세척사업_제안서.zip</code> (전체 PDF/DOCX/TXT 패키지)</a></li></ul>
 <ul><li><strong>실습 프롬프트 1 (타 지역 성공 요인 도출 ➔ 📌 핀 고정):</strong></li></ul>
 <pre><code class="text">타 지역 우수사례 문서(소스 1)를 기반으로, 다회용기 사업의 핵심 성공 요인 3가지를 개조식으로 요약해 줘.</code></pre>
 <ul><li><strong>실습 프롬프트 2 (우리 지역 위협 및 문제점 도출 ➔ 📌 핀 고정):</strong></li></ul>
@@ -165,7 +165,7 @@ figure.portrait .guide{width:70%}
 <pre><code class="text">2025년 지침과 2026년 지침 두 문서를 비교하여, 2026년에 자활 참여자 대상 지원금 산정 방식이 어떻게 달라졌는지 핵심 변경점을 비교표로 정리해 줘.</code></pre>
 <h3>[✍️ 실습] 3개년 우수 자활 사례집 심층 교차분석</h3>
 <ul><li><strong>상황 설정:</strong> 최근 3개년(2023~2025년) 자활 우수사례집을 바탕으로 우리 센터의 내년도 주력 사업단 선정 및 탈수급률 향상 방안을 수립해야 합니다.</li></ul>
-<ul><li><strong>📥 실습 소스 파일 다운로드:</strong></li><li>📑 <a href="https://tinyurl.com/28zqe8cl" target="_blank" rel="noopener"><code>2023년 우수사례집.pdf</code></a></li><li>📑 <a href="https://tinyurl.com/29k36ade" target="_blank" rel="noopener"><code>2024년 우수사례집.pdf</code></a></li><li>📑 <a href="https://tinyurl.com/28xq8h79" target="_blank" rel="noopener"><code>2025년 우수사례집.pdf</code></a></li><li>📦 <a href="https://tinyurl.com/26zpq7pw" target="_blank" rel="noopener"><code>3개년 우수사례집 전체 ZIP</code></a></li></ul>
+<ul><li><strong>📥 실습 소스 파일 다운로드:</strong></li><li>📑 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2023년 우수사례집.pdf</code></a></li><li>📑 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2024년 우수사례집.pdf</code></a></li><li>📑 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2025년 우수사례집.pdf</code></a></li><li>📦 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>3개년 우수사례집 전체 ZIP</code></a></li></ul>
 <ul><li><strong>실습 프롬프트 (원클릭 복사용):</strong></li></ul>
 <pre><code class="text">업로드된 2023~2025년 3개년 우수 자활 사례집을 교차 분석하여, 가장 높은 참여자 탈수급 및 자립 성과를 거둔 사업 유형 2가지와 공통 성공 요인 3가지를 출처 연도와 함께 도출해 줘.</code></pre>
 <ul><li><strong>실습 체크리스트:</strong></li><li>[ ] 3개년 우수사례집이 모두 정상 업로드되었는가?</li><li>[ ] AI가 다중 문서를 교차 참조하여 답변을 생성했는가?</li><li>[ ] 각 답변에 달린 [1], [2] 인용구 번호를 클릭하여 원본 페이지를 확인했는가?</li></ul>
@@ -209,7 +209,7 @@ figure.portrait .guide{width:70%}
 <div class="marker">📘 <strong>교재 내용 (Textbook Content):</strong></div>
 <h3>[개념 이해]</h3>
 <p>노트북의 채팅창에 질문할 때 '페르소나(역할)'와 '출력 분량(길이)'을 명시하면, 불필요한 사족 없이 실무 결재선에 바로 올릴 수 있는 고품질 보고서를 얻을 수 있습니다.</p>
-<ul><li><strong>📥 실습 소스 파일 다운로드:</strong></li><li>📄 <a href="https://tinyurl.com/26t2aljk" target="_blank" rel="noopener"><code>상담일지_샘플.txt</code> (5인 통합본)</a></li><li>📦 <a href="https://tinyurl.com/27uc2nkd" target="_blank" rel="noopener"><code>2-5_상담일지_샘플_5인_전체.zip</code></a></li></ul>
+<ul><li><strong>📥 실습 소스 파일 다운로드:</strong></li><li>📄 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>상담일지_샘플.txt</code> (5인 통합본)</a></li><li>📦 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2-5_상담일지_샘플_5인_전체.zip</code></a></li></ul>
 <h3>[💻 시연]</h3>
 <ul><li><strong>시연 프롬프트 예시 (원클릭 복사용):</strong></li></ul>
 <pre><code class="text">너는 자활센터 사례관리 전담 팀장이야. 업로드된 5명의 상담일지 텍스트를 분석하여 참여자들의 3대 핵심 애로사항(신체 피로, 경제적 어려움, 대인 갈등)을 도출하고, 다음 달 개선 방안을 정확히 500자 내외로 요약해 줘.</code></pre>
@@ -236,7 +236,7 @@ figure.portrait .guide{width:70%}
 <div class="marker">📘 <strong>교재 내용 (Textbook Content):</strong></div>
 <h3>[개념 이해]</h3>
 <p>NotebookLM의 가장 핵심적인 생산성 루프입니다. [소스 업로드 ➔ 채팅 질문 ➔ 핵심 답변 핀 고정(📌) ➔ 스튜디오 메모 편집]의 순환 워크플로우를 익히면 보고서 초안이 5분 만에 완성됩니다.</p>
-<ul><li><strong>📥 실습 소스 파일 다운로드:</strong></li><li>📄 <a href="https://tinyurl.com/22bt5jct" target="_blank" rel="noopener"><code>타_지역_우수사례.pdf</code></a></li><li>📄 <a href="https://tinyurl.com/2azcudtr" target="_blank" rel="noopener"><code>우리_지역_환경분석.pdf</code></a></li><li>📦 <a href="https://tinyurl.com/2yv5fbwc" target="_blank" rel="noopener"><code>2-7_실습용_전체_패키지.zip</code></a></li></ul>
+<ul><li><strong>📥 실습 소스 파일 다운로드:</strong></li><li>📄 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>타_지역_우수사례.pdf</code></a></li><li>📄 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>우리_지역_환경분석.pdf</code></a></li><li>📦 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2-7_실습용_전체_패키지.zip</code></a></li></ul>
 <h3>[💻 시연]</h3>
 <ul><li><strong>시연 프롬프트 1 (원클릭 복사용):</strong></li></ul>
 <pre><code class="text">소스 문서에서 &#x27;2025년 다회용기 사업단 지원금 변경 사항&#x27;의 핵심 내용을 요약해 줘.</code></pre>
@@ -372,7 +372,7 @@ figure.portrait .guide{width:70%}
 <div class="marker">📘 <strong>교재 내용 (Textbook Content):</strong></div>
 <h3>[개념 이해]</h3>
 <p>다수의 실적 보고서('2024 실적', '2025 실적')와 최신 '2026 평가지표 가이드라인'을 동시에 주입하여 기관 평가 대비 강점과 보완점을 10초 만에 도출합니다.</p>
-<ul><li><strong>📥 실습 소스 파일 다운로드 (3종 파일):</strong></li><li>📄 <a href="https://tinyurl.com/2buxw8ga" target="_blank" rel="noopener"><code>2024_실적.txt</code> (인천희망자활 2024 사업실적 총괄)</a></li><li>📄 <a href="https://tinyurl.com/28cqcbas" target="_blank" rel="noopener"><code>2025_실적.txt</code> (인천희망자활 2025 사업실적 총괄)</a></li><li>📄 <a href="https://tinyurl.com/2dcdry8y" target="_blank" rel="noopener"><code>2026_평가지표.pdf</code> (보건복지부 2026 성과평가 가이드라인 핵심 요약)</a></li><li>📦 <a href="https://tinyurl.com/28qh2zoc" target="_blank" rel="noopener"><code>2-16_실습용_전체_패키지.zip</code></a></li></ul>
+<ul><li><strong>📥 실습 소스 파일 다운로드 (3종 파일):</strong></li><li>📄 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2024_실적.txt</code> (인천희망자활 2024 사업실적 총괄)</a></li><li>📄 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2025_실적.txt</code> (인천희망자활 2025 사업실적 총괄)</a></li><li>📄 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2026_평가지표.pdf</code> (보건복지부 2026 성과평가 가이드라인 핵심 요약)</a></li><li>📦 <a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/1회차_강사용마스터.html" target="_blank" rel="noopener"><code>2-16_실습용_전체_패키지.zip</code></a></li></ul>
 <h3>[💻 시연]</h3>
 <ul><li><strong>시연 프롬프트 예시 (원클릭 복사용):</strong></li></ul>
 <pre><code class="text">업로드된 3개 문서를 교차 분석하여, 2026년 강화된 평가지표 기준으로 우리 센터의 강점 2가지와 보완해야 할 취약점 2가지를 출처 문서명과 함께 표로 정리해 줘.</code></pre>
