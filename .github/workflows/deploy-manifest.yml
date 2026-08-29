@@ -1,0 +1,65 @@
+name: Generate Deploy Manifest
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "deploy-manifest.json"
+
+permissions:
+  contents: write
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Generate manifest
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const { execSync } = require('child_process');
+
+          const SKIP = new Set(['.git', '.github', 'deploy-manifest.json']);
+
+          function walk(dir, base, out) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (SKIP.has(entry.name)) continue;
+              const full = path.join(dir, entry.name);
+              const rel = (base ? base + '/' : '') + entry.name;
+              if (entry.isDirectory()) {
+                walk(full, rel, out);
+              } else {
+                const stat = fs.statSync(full);
+                out.push({ path: rel, size: stat.size });
+              }
+            }
+          }
+
+          const files = [];
+          walk('.', '', files);
+          files.sort((a, b) => a.path.localeCompare(b.path));
+
+          const commit = execSync('git rev-parse HEAD').toString().trim();
+          const manifest = {
+            generatedAt: new Date().toISOString(),
+            commit,
+            fileCount: files.length,
+            files,
+          };
+
+          fs.writeFileSync('deploy-manifest.json', JSON.stringify(manifest, null, 2) + '\n');
+          "
+
+      - name: Commit manifest if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add deploy-manifest.json
+          git diff --cached --quiet || git commit -m "chore: auto-update deploy-manifest.json"
+          git push

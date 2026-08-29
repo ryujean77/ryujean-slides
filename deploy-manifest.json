@@ -1,0 +1,2287 @@
+{
+  "generatedAt": "2026-08-29T09:15:48.214Z",
+  "commit": "1b14ebfc82ab3a4b49e168b2510e167fd6007940",
+  "fileCount": 570,
+  "files": [
+    {
+      "path": ".nojekyll",
+      "size": 0
+    },
+    {
+      "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md",
+      "size": 13393
+    },
+    {
+      "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/구체적_작업지시서.html",
+      "size": 50298
+    },
+    {
+      "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/구체적_작업지시서.html.bak",
+      "size": 49528
+    },
+    {
+      "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/남미화박사님_콘텐츠_제작_가이드_및_요청질문지.docx",
+      "size": 17459
+    },
+    {
+      "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/발표자료.html",
+      "size": 31521
+    },
+    {
+      "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/발표자료.html.bak",
+      "size": 30751
+    },
+    {
+      "path": "산출물/20260822_0203_순수패션테라피_심리테스트앱_개발지시서/개발지시서.md",
+      "size": 6151
+    },
+    {
+      "path": "산출물/20260822_0203_순수패션테라피_심리테스트앱_개발지시서/남미화박사님_순수패션테라피_콘텐츠_제작요청서_및_질문지.docx",
+      "size": 39730
+    },
+    {
+      "path": "산출물/20260822_0203_순수패션테라피_심리테스트앱_개발지시서/작업지시서.html",
+      "size": 25956
+    },
+    {
+      "path": "산출물/20260822_0203_순수패션테라피_심리테스트앱_개발지시서/작업지시서.html.bak",
+      "size": 25186
+    },
+    {
+      "path": "산출물/20260824_0139_패션테라피_심리테스트앱_기획회의_2차/00_INDEX.html",
+      "size": 8482
+    },
+    {
+      "path": "산출물/20260824_0139_패션테라피_심리테스트앱_기획회의_2차/00_INDEX.html.bak",
+      "size": 7712
+    },
+    {
+      "path": "산출물/20260824_0139_패션테라피_심리테스트앱_기획회의_2차/00_INDEX.md",
+      "size": 1607
+    },
+    {
+      "path": "산출물/20260824_0139_패션테라피_심리테스트앱_기획회의_2차/index.html",
+      "size": 8482
+    },
+    {
+      "path": "산출물/20260824_0139_패션테라피_심리테스트앱_기획회의_2차/index.html.bak",
+      "size": 7712
+    },
+    {
+      "path": "agy-mobile-notebooklm-mcp/index.html",
+      "size": 9141
+    },
+    {
+      "path": "agy-mobile-notebooklm-mcp/index.html.bak",
+      "size": 8371
+    },
+    {
+      "path": "apps/birkman-sasang-a/index.html",
+      "size": 58544
+    },
+    {
+      "path": "apps/birkman-sasang-b/index.html",
+      "size": 71328
+    },
+    {
+      "path": "apps/fashion-therapy/appsscript.json",
+      "size": 211
+    },
+    {
+      "path": "apps/fashion-therapy/assets/book_eight_genes.png",
+      "size": 3873
+    },
+    {
+      "path": "apps/fashion-therapy/assets/dir_yu_photo.jpeg",
+      "size": 87095
+    },
+    {
+      "path": "apps/fashion-therapy/assets/dr_nam_photo.jpeg",
+      "size": 126427
+    },
+    {
+      "path": "apps/fashion-therapy/assets/dr_yim_cover_photo.png",
+      "size": 508852
+    },
+    {
+      "path": "apps/fashion-therapy/assets/dr_yim_photo.jpeg",
+      "size": 95159
+    },
+    {
+      "path": "apps/fashion-therapy/assets/dr_yim_profile_lib.png",
+      "size": 508852
+    },
+    {
+      "path": "apps/fashion-therapy/assets/ill_aroma_therapy.jpg",
+      "size": 806091
+    },
+    {
+      "path": "apps/fashion-therapy/assets/ill_dna_wellness.jpg",
+      "size": 1034744
+    },
+    {
+      "path": "apps/fashion-therapy/assets/ill_fashion_therapy.jpg",
+      "size": 648788
+    },
+    {
+      "path": "apps/fashion-therapy/assets/ill_library_humanities.jpg",
+      "size": 924825
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_1.svg",
+      "size": 17241
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_10.png",
+      "size": 3873
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_11.png",
+      "size": 2858
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_12.png",
+      "size": 5879
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_13.png",
+      "size": 3130
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_14.png",
+      "size": 6894
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_15.png",
+      "size": 4644
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_16.png",
+      "size": 4807
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_17.png",
+      "size": 5235
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_18.png",
+      "size": 4307
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_19.png",
+      "size": 5235
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_2.jpeg",
+      "size": 95159
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_20.png",
+      "size": 4307
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_21.png",
+      "size": 3130
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_22.png",
+      "size": 3604
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_23.png",
+      "size": 4644
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_24.png",
+      "size": 1878
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_25.png",
+      "size": 2874
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_26.png",
+      "size": 3529
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_3.jpeg",
+      "size": 87095
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_4.jpeg",
+      "size": 126427
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_5.png",
+      "size": 709849
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_6",
+      "size": 0
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_7.png",
+      "size": 508852
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_8.png",
+      "size": 508852
+    },
+    {
+      "path": "apps/fashion-therapy/assets/orig_img_9.png",
+      "size": 1971
+    },
+    {
+      "path": "apps/fashion-therapy/assets/pen_aroma_botanical.jpg",
+      "size": 1195822
+    },
+    {
+      "path": "apps/fashion-therapy/assets/pen_fashion_therapy.jpg",
+      "size": 805226
+    },
+    {
+      "path": "apps/fashion-therapy/assets/pen_library_humanities.jpg",
+      "size": 576086
+    },
+    {
+      "path": "apps/fashion-therapy/assets/pen_sasang_constitution.jpg",
+      "size": 1208196
+    },
+    {
+      "path": "apps/fashion-therapy/Code.js",
+      "size": 3184
+    },
+    {
+      "path": "apps/fashion-therapy/index.html",
+      "size": 82163
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-42-01.jpeg",
+      "size": 276909
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-42-18.jpeg",
+      "size": 296260
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-42-33.jpeg",
+      "size": 353514
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-42-49.jpeg",
+      "size": 363973
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-03.png",
+      "size": 2162373
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-15.jpeg",
+      "size": 104327
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-28.png",
+      "size": 2109848
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-38.png",
+      "size": 1560638
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-49.png",
+      "size": 2474454
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-44-03.jpeg",
+      "size": 316091
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-44-14.jpeg",
+      "size": 103742
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-44-40.jpeg",
+      "size": 409629
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-44-51.jpeg",
+      "size": 2016750
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-01.png",
+      "size": 1877656
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-15.png",
+      "size": 2017103
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-25.png",
+      "size": 1600721
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-38.png",
+      "size": 1922185
+    },
+    {
+      "path": "apps/fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-55.jpeg",
+      "size": 239352
+    },
+    {
+      "path": "apps/fashion-therapy/presentation.html",
+      "size": 73905
+    },
+    {
+      "path": "apps/fashion-therapy/presentation.pptx",
+      "size": 7115607
+    },
+    {
+      "path": "apps/git-collab-guide/git_workspace_guide.md",
+      "size": 8270
+    },
+    {
+      "path": "apps/git-collab-guide/presentation.html",
+      "size": 45575
+    },
+    {
+      "path": "apps/library-lecture/질문서.docx",
+      "size": 37457
+    },
+    {
+      "path": "apps/library-lecture/appsscript.json",
+      "size": 211
+    },
+    {
+      "path": "apps/library-lecture/Code.js",
+      "size": 3184
+    },
+    {
+      "path": "apps/library-lecture/deck.json",
+      "size": 14363
+    },
+    {
+      "path": "apps/library-lecture/images/brand_mood_closing.jpg",
+      "size": 63012
+    },
+    {
+      "path": "apps/library-lecture/images/brand_mood_opening.jpg",
+      "size": 50395
+    },
+    {
+      "path": "apps/library-lecture/images/speaker_photo.png",
+      "size": 709849
+    },
+    {
+      "path": "apps/library-lecture/images/track_a_sasang_dna.jpeg",
+      "size": 95159
+    },
+    {
+      "path": "apps/library-lecture/images/track_b_aromatherapy.jpeg",
+      "size": 87095
+    },
+    {
+      "path": "apps/library-lecture/images/track_c_fashion_therapy.jpeg",
+      "size": 126427
+    },
+    {
+      "path": "apps/library-lecture/index.html",
+      "size": 89106
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-42-01.jpeg",
+      "size": 276909
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-42-18.jpeg",
+      "size": 296260
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-42-33.jpeg",
+      "size": 353514
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-42-49.jpeg",
+      "size": 363973
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-03.png",
+      "size": 2162373
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-15.jpeg",
+      "size": 104327
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-28.png",
+      "size": 2109848
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-38.png",
+      "size": 1560638
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-49.png",
+      "size": 2474454
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-44-03.jpeg",
+      "size": 316091
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-44-14.jpeg",
+      "size": 103742
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-44-40.jpeg",
+      "size": 409629
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-44-51.jpeg",
+      "size": 2016750
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-01.png",
+      "size": 1877656
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-15.png",
+      "size": 2017103
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-25.png",
+      "size": 1600721
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-38.png",
+      "size": 1922185
+    },
+    {
+      "path": "apps/library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-55.jpeg",
+      "size": 239352
+    },
+    {
+      "path": "apps/library-lecture/presentation.html",
+      "size": 80935
+    },
+    {
+      "path": "apps/library-lecture/presentation.pptx",
+      "size": 1193216
+    },
+    {
+      "path": "apps/pure-sasang/index.html",
+      "size": 68685
+    },
+    {
+      "path": "apps/sasang-spa/01_사상체질_프리미엄_체질스파_프로젝트_기획서.md",
+      "size": 21112
+    },
+    {
+      "path": "apps/sasang-spa/02_10대_시그니처_테라피_상세_운영매뉴얼.md",
+      "size": 8463
+    },
+    {
+      "path": "apps/sasang-spa/03_데이터기반_정밀분석_및_체질확정_스텝별_실전예시.md",
+      "size": 3290
+    },
+    {
+      "path": "apps/sasang-spa/04_사상체질_프리미엄_체질스파_발표자료_풀버전.md",
+      "size": 7376
+    },
+    {
+      "path": "apps/sasang-spa/사상체질_프리미엄_스파_프로젝트_제안서_발표자료.pptx",
+      "size": 62260
+    },
+    {
+      "path": "apps/sasang-spa/gas_backend/appsscript.json",
+      "size": 201
+    },
+    {
+      "path": "apps/sasang-spa/gas_backend/Code.js",
+      "size": 3642
+    },
+    {
+      "path": "apps/sasang-spa/google_sheets_lead_collector.gs",
+      "size": 3024
+    },
+    {
+      "path": "apps/sasang-spa/index.html",
+      "size": 119942
+    },
+    {
+      "path": "apps/sasang-spa/presentation.html",
+      "size": 20297
+    },
+    {
+      "path": "apps/sasang-spa/spa_proposal_chejil_bak_v1.pdf",
+      "size": 18454064
+    },
+    {
+      "path": "apps/sasang-spa/spa_proposal_chejil.pdf",
+      "size": 22543547
+    },
+    {
+      "path": "apps/thesis-portal/index.html",
+      "size": 14342
+    },
+    {
+      "path": "aroma-biz-plan/index.html",
+      "size": 20439
+    },
+    {
+      "path": "aroma-biz-plan/index.html.bak",
+      "size": 19669
+    },
+    {
+      "path": "assets/diag_s1_06_model_matrix.png",
+      "size": 279097
+    },
+    {
+      "path": "assets/Gemini_Generated_Image_artlier.png",
+      "size": 10039294
+    },
+    {
+      "path": "assets/Gemini_Generated_Image_artlier1.png",
+      "size": 10108141
+    },
+    {
+      "path": "assets/Gemini_Generated_Image_carwash.png",
+      "size": 11104335
+    },
+    {
+      "path": "assets/Gemini_Generated_Image_reciet_1.png",
+      "size": 6344565
+    },
+    {
+      "path": "assets/Gemini_Generated_Image_reciet_2.png",
+      "size": 8960831
+    },
+    {
+      "path": "birkman-sasang-a/index.html",
+      "size": 58544
+    },
+    {
+      "path": "birkman-sasang-b/index.html",
+      "size": 71328
+    },
+    {
+      "path": "choi-tommy-care/client.html",
+      "size": 14576
+    },
+    {
+      "path": "choi-tommy-care/client.html.bak",
+      "size": 13797
+    },
+    {
+      "path": "choi-tommy-care/index.html",
+      "size": 14576
+    },
+    {
+      "path": "choi-tommy-care/index.html.bak",
+      "size": 13797
+    },
+    {
+      "path": "choi-tommy-care/internal.html",
+      "size": 36698
+    },
+    {
+      "path": "choi-tommy-care/internal.html.bak",
+      "size": 35917
+    },
+    {
+      "path": "cloud-mcp-ecosystem/index.html",
+      "size": 8668
+    },
+    {
+      "path": "cloud-mcp-ecosystem/index.html.bak",
+      "size": 7898
+    },
+    {
+      "path": "cms.html",
+      "size": 51110
+    },
+    {
+      "path": "cms.html.bak",
+      "size": 50340
+    },
+    {
+      "path": "daily-log-20260825/index.html",
+      "size": 10206
+    },
+    {
+      "path": "daily-log-20260825/index.html.bak",
+      "size": 9436
+    },
+    {
+      "path": "deploy_to_github.sh",
+      "size": 877
+    },
+    {
+      "path": "design-agent-mcp/index.html",
+      "size": 16846
+    },
+    {
+      "path": "design-agent-mcp/index.html.bak",
+      "size": 16076
+    },
+    {
+      "path": "domain_master_registry.json",
+      "size": 20933
+    },
+    {
+      "path": "dual-track-polishing/index.html",
+      "size": 7975
+    },
+    {
+      "path": "dual-track-polishing/index.html.bak",
+      "size": 7205
+    },
+    {
+      "path": "fashion-spec/index.html",
+      "size": 50298
+    },
+    {
+      "path": "fashion-spec/index.html.bak",
+      "size": 49528
+    },
+    {
+      "path": "fashion-therapy/appsscript.json",
+      "size": 211
+    },
+    {
+      "path": "fashion-therapy/assets/book_eight_genes.png",
+      "size": 3873
+    },
+    {
+      "path": "fashion-therapy/assets/dir_yu_photo.jpeg",
+      "size": 87095
+    },
+    {
+      "path": "fashion-therapy/assets/dr_nam_photo.jpeg",
+      "size": 126427
+    },
+    {
+      "path": "fashion-therapy/assets/dr_yim_cover_photo.png",
+      "size": 508852
+    },
+    {
+      "path": "fashion-therapy/assets/dr_yim_photo.jpeg",
+      "size": 95159
+    },
+    {
+      "path": "fashion-therapy/assets/dr_yim_profile_lib.png",
+      "size": 508852
+    },
+    {
+      "path": "fashion-therapy/assets/ill_aroma_therapy.jpg",
+      "size": 806091
+    },
+    {
+      "path": "fashion-therapy/assets/ill_dna_wellness.jpg",
+      "size": 1034744
+    },
+    {
+      "path": "fashion-therapy/assets/ill_fashion_therapy.jpg",
+      "size": 648788
+    },
+    {
+      "path": "fashion-therapy/assets/ill_library_humanities.jpg",
+      "size": 924825
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_1.svg",
+      "size": 17241
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_10.png",
+      "size": 3873
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_11.png",
+      "size": 2858
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_12.png",
+      "size": 5879
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_13.png",
+      "size": 3130
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_14.png",
+      "size": 6894
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_15.png",
+      "size": 4644
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_16.png",
+      "size": 4807
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_17.png",
+      "size": 5235
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_18.png",
+      "size": 4307
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_19.png",
+      "size": 5235
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_2.jpeg",
+      "size": 95159
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_20.png",
+      "size": 4307
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_21.png",
+      "size": 3130
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_22.png",
+      "size": 3604
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_23.png",
+      "size": 4644
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_24.png",
+      "size": 1878
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_25.png",
+      "size": 2874
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_26.png",
+      "size": 3529
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_3.jpeg",
+      "size": 87095
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_4.jpeg",
+      "size": 126427
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_5.png",
+      "size": 709849
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_6",
+      "size": 0
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_7.png",
+      "size": 508852
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_8.png",
+      "size": 508852
+    },
+    {
+      "path": "fashion-therapy/assets/orig_img_9.png",
+      "size": 1971
+    },
+    {
+      "path": "fashion-therapy/assets/pen_aroma_botanical.jpg",
+      "size": 1195822
+    },
+    {
+      "path": "fashion-therapy/assets/pen_fashion_therapy.jpg",
+      "size": 805226
+    },
+    {
+      "path": "fashion-therapy/assets/pen_library_humanities.jpg",
+      "size": 576086
+    },
+    {
+      "path": "fashion-therapy/assets/pen_sasang_constitution.jpg",
+      "size": 1208196
+    },
+    {
+      "path": "fashion-therapy/Code.js",
+      "size": 3184
+    },
+    {
+      "path": "fashion-therapy/index.html",
+      "size": 82163
+    },
+    {
+      "path": "fashion-therapy/index.html.bak",
+      "size": 82163
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-42-01.jpeg",
+      "size": 276909
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-42-18.jpeg",
+      "size": 296260
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-42-33.jpeg",
+      "size": 353514
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-42-49.jpeg",
+      "size": 363973
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-03.png",
+      "size": 2162373
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-15.jpeg",
+      "size": 104327
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-28.png",
+      "size": 2109848
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-38.png",
+      "size": 1560638
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-43-49.png",
+      "size": 2474454
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-44-03.jpeg",
+      "size": 316091
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-44-14.jpeg",
+      "size": 103742
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-44-40.jpeg",
+      "size": 409629
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-44-51.jpeg",
+      "size": 2016750
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-01.png",
+      "size": 1877656
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-15.png",
+      "size": 2017103
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-25.png",
+      "size": 1600721
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-38.png",
+      "size": 1922185
+    },
+    {
+      "path": "fashion-therapy/posters/KakaoTalk_Photo_2026-08-21-01-45-55.jpeg",
+      "size": 239352
+    },
+    {
+      "path": "fashion-therapy/presentation.html",
+      "size": 73905
+    },
+    {
+      "path": "fashion-therapy/presentation.pptx",
+      "size": 7115607
+    },
+    {
+      "path": "full-upgrade-report/index.html",
+      "size": 35773
+    },
+    {
+      "path": "gemini-lecture/index.html",
+      "size": 21429
+    },
+    {
+      "path": "gemini-lecture/internal.html",
+      "size": 4435
+    },
+    {
+      "path": "git-collab-guide/git_workspace_guide.md",
+      "size": 8270
+    },
+    {
+      "path": "git-collab-guide/presentation.html",
+      "size": 45575
+    },
+    {
+      "path": "github_cms.html",
+      "size": 51110
+    },
+    {
+      "path": "github_cms.html.bak",
+      "size": 50340
+    },
+    {
+      "path": "homo-luminus-audit/index.html",
+      "size": 9048
+    },
+    {
+      "path": "homo-luminus-audit/index.html.bak",
+      "size": 8278
+    },
+    {
+      "path": "homo-luminus-hq/index.html",
+      "size": 7592
+    },
+    {
+      "path": "homo-luminus-hq/index.html.bak",
+      "size": 6822
+    },
+    {
+      "path": "incheon-ai-curriculum/00_INDEX.html",
+      "size": 9489
+    },
+    {
+      "path": "incheon-ai-curriculum/00_INDEX.md",
+      "size": 476
+    },
+    {
+      "path": "incheon-ai-curriculum/1회차_강사용마스터.html",
+      "size": 167653
+    },
+    {
+      "path": "incheon-ai-curriculum/2회차_강사용마스터.html",
+      "size": 54541
+    },
+    {
+      "path": "incheon-ai-curriculum/3회차_강사용마스터.html",
+      "size": 151562
+    },
+    {
+      "path": "incheon-ai-curriculum/4회차_강사용마스터.html",
+      "size": 120420
+    },
+    {
+      "path": "incheon-ai-curriculum/강의계획서.docx",
+      "size": 39427
+    },
+    {
+      "path": "incheon-ai-curriculum/강의계획서.html",
+      "size": 18861
+    },
+    {
+      "path": "incheon-ai-curriculum/강의계획서.md",
+      "size": 8410
+    },
+    {
+      "path": "incheon-ai-curriculum/자활사업_10대문서_Gems_5단계제작매뉴얼.html",
+      "size": 87638
+    },
+    {
+      "path": "incheon-ai-curriculum/자활센터_AX_사업계획서_12종.html",
+      "size": 67293
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/2-5_그림 새 노트북 만들기 버튼_스크린샷 2026-08-28 092210.png",
+      "size": 497419
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/2-5_그림_파일업로드 창_스크린샷 2026-08-28 092433.png",
+      "size": 449851
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/2-5_그림_프롬프트입력_스크린샷 2026-08-28 092951.png",
+      "size": 483895
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/2-그림3 2026-08-27 221307.png",
+      "size": 415586
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/2-그림3-1 2026-08-27 221307.png",
+      "size": 360630
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/2-그림5 2026-08-27 222135.png",
+      "size": 550374
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/diag_s1_03_workspace_ext.png",
+      "size": 359650
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/diag_s1_06_model_matrix.png",
+      "size": 279097
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/diag_s1_07_temp_chat_security.png",
+      "size": 176425
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/Gemini_Generated_Image_artlier.png",
+      "size": 10039294
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/Gemini_Generated_Image_artlier1.png",
+      "size": 10108141
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/Gemini_Generated_Image_carwash.png",
+      "size": 11104335
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/Gemini_Generated_Image_reciet_1.png",
+      "size": 6344565
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/Gemini_Generated_Image_reciet_2.png",
+      "size": 8960831
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_01_gemini_main.png",
+      "size": 361634
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_02_profile_account.png",
+      "size": 263688
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_03_recent_chats.png",
+      "size": 277371
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_04_prompt_table_result.png",
+      "size": 223750
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_05_export_to_docs.png",
+      "size": 211093
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_06_apps.png",
+      "size": 378563
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_06_personalization-settings.png",
+      "size": 227690
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_07_at_popup_menu.png",
+      "size": 486220
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_08_model_selector.png",
+      "size": 461664
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_09_temp_chat_toggle.png",
+      "size": 483661
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_10_temp_chat_badge.png",
+      "size": 448873
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_11_myactivity_gemini.png",
+      "size": 291131
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_12_custom_instructions_add.png",
+      "size": 150189
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_12_custom_instructions.png",
+      "size": 76661
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_13_new_gem_create.png",
+      "size": 395188
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_14_gem_settings.png",
+      "size": 405768
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_15_extensions_youtube_maps.png",
+      "size": 381151
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_15b_image_create_preset_menu.png",
+      "size": 1953313
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_16_image_generation_plus_menu.png",
+      "size": 893911
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_16_image_generation_results.png",
+      "size": 1712426
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_17_gemini_mobile_view.png",
+      "size": 178792
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_18_gemini_voice_live_btn.png",
+      "size": 381253
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_18a_mic_permission.png",
+      "size": 555188
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_19_gemini_voice_live_active.png",
+      "size": 372871
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_20_docs_export_success_toast.png",
+      "size": 370908
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_20a_export_menu.png",
+      "size": 311798
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_20b_export_creating_toast.png",
+      "size": 282299
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_21_docs_opened_view.png",
+      "size": 387084
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_22_at_mention_drive_search.png",
+      "size": 423977
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_23_at_mention_gmail_search.png",
+      "size": 331235
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_23_workspace_drive_analysis_result.png",
+      "size": 525171
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_25_gem_starter_prompts.png",
+      "size": 227344
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_26_imagen3_single_download.png",
+      "size": 233906
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_28_gemini_delete_chat.png",
+      "size": 267789
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_28a_pin_chat_modal.png",
+      "size": 267631
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_29_gemini_pin_chat.png",
+      "size": 281691
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s1_30_gemini_copy_response.png",
+      "size": 337110
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_01_notebooklm_main.png",
+      "size": 507634
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_02_create_notebook.png",
+      "size": 108256
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_02a_notebook_add_source_btn.png",
+      "size": 492398
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_03_workspace_layout.png",
+      "size": 159015
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_04_source_checkboxes.png",
+      "size": 613000
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_05_citation_highlight.png",
+      "size": 636122
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_05b_notebook_layout_toggle.png",
+      "size": 641586
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_06_add_source_menu.png",
+      "size": 122993
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_07_audio_overview_btn.png",
+      "size": 454220
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_07a_audio_overview_hover.png",
+      "size": 121409
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_07b_audio_overview_customization_modal.png",
+      "size": 136043
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_07c_audio_generating_progress.png",
+      "size": 125276
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_08_artifact_format.png",
+      "size": 103875
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_09_pin_to_note.png",
+      "size": 786550
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_09a_pin_to_note_hover.png",
+      "size": 506880
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_10_combine_notes.png",
+      "size": 1068019
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_11_export_to_sheets.png",
+      "size": 567200
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_12_aistudio_layout.png",
+      "size": 519795
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_12b_chrome_ask_gemini.png",
+      "size": 349857
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_13_temperature_slider.png",
+      "size": 298125
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_14_share_permissions.png",
+      "size": 577477
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_16_notebooklm_source_summary.png",
+      "size": 507239
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_17_audio_overview_speed_control.png",
+      "size": 596053
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_17b_audio_overview_download_menu.png",
+      "size": 534531
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_18_studio_briefing_doc_modal.png",
+      "size": 112649
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_19_studio_faq_format_modal.png",
+      "size": 88057
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_19b_flashcards_modal.png",
+      "size": 79281
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_20_studio_timeline_modal.png",
+      "size": 67484
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_22_aistudio_model_picker.png",
+      "size": 539361
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_23_aistudio_system_instruction.png",
+      "size": 191278
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_24_aistudio_safety_settings.png",
+      "size": 347778
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_24b_aistudio_advanced_settings.png",
+      "size": 293863
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_25_notebook_share_link_copy.png",
+      "size": 569236
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_26_notebooklm_rename.png",
+      "size": 550312
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_27_notebooklm_delete_source.png",
+      "size": 512469
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_28_aistudio_get_code.png",
+      "size": 267505
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_29_aistudio_save_prompt.png",
+      "size": 329326
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_30_notebooklm_new_chat.png",
+      "size": 104624
+    },
+    {
+      "path": "incheon-ai-curriculum/assets/s2_30b_notebooklm_delete_chat_warning.png",
+      "size": 570030
+    },
+    {
+      "path": "incheon-ai-curriculum/index.html",
+      "size": 9489
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/01_자활센터_제미나이_노트북_자동화_AX전환_사업계획서.md",
+      "size": 6697
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/02_자활센터_안티그래비티_제미나이노트북_AI에이전트비서_구축사업계획서.md",
+      "size": 5636
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/03_AX진단_사업계획서_01_자활근로_사업단_관리_(생산_경영_및_매출_관리).md",
+      "size": 3358
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/04_AX진단_사업계획서_02_참여자_맞춤형_상담_및_케어플랜_수립.md",
+      "size": 3358
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/05_AX진단_사업계획서_03_자활기업_창업_및_육성_지원.md",
+      "size": 3287
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/06_AX진단_사업계획서_04_자율적_지침·규정_검색_및_행정_복지_Q&A.md",
+      "size": 3264
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/07_AX진단_사업계획서_05_교육_훈련_프로그램_운영_및_이력_관리.md",
+      "size": 3284
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/08_AX진단_사업계획서_06_사례관리_및_복지_자원_연동.md",
+      "size": 3230
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/09_AX진단_사업계획서_07_홍보,_마케팅_및_디자인_콘텐츠_자동_제작.md",
+      "size": 3281
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/10_AX진단_사업계획서_08_공문서·기안·보고서_작성_및_승인_프로세스.md",
+      "size": 3278
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/11_AX진단_사업계획서_09_만족도_조사_및_성과_측정_분석.md",
+      "size": 3233
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/12_AX진단_사업계획서_10_회계·결산_및_보조금_정산_관리.md",
+      "size": 3258
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/ax-plans/index.html",
+      "size": 12914
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/case-studies/2023_2025_3개년_우수자활사례집_모음.zip",
+      "size": 441532
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/case-studies/2023년_자활사업_우수사례집_희망을_만드는_사람들.docx",
+      "size": 37359
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/case-studies/2023년_자활사업_우수사례집_희망을_만드는_사람들.pdf",
+      "size": 109828
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/case-studies/2024년_자활사업_우수사례집_자립을_향한_동행.docx",
+      "size": 37237
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/case-studies/2024년_자활사업_우수사례집_자립을_향한_동행.pdf",
+      "size": 106811
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/case-studies/2025년_자활사업_우수사례집_내일을_여는_희망.docx",
+      "size": 37348
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/case-studies/2025년_자활사업_우수사례집_내일을_여는_희망.pdf",
+      "size": 111673
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/counseling-samples/2-5_참여자_상담일지_샘플_5인_모음.zip",
+      "size": 49170
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/counseling-samples/상담일지_01_김철수_30대남_희망도시락사업단.txt",
+      "size": 3261
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/counseling-samples/상담일지_02_이영희_40대여_카페드림사업단.txt",
+      "size": 3129
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/counseling-samples/상담일지_03_박진호_50대남_클린모빌리티세차사업단.txt",
+      "size": 3074
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/counseling-samples/상담일지_04_최정순_50대여_자원순환재활용사업단.txt",
+      "size": 2971
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/counseling-samples/상담일지_05_정성남_60대남_희망나르미배송사업단.txt",
+      "size": 2959
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/counseling-samples/상담일지_샘플.txt",
+      "size": 16221
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/counseling-samples/상담일지_통합샘플_5인.txt",
+      "size": 16221
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/(공고문)+「2026년+자활기업+사업개발비+지원사업」+모집+공고.hwp",
+      "size": 98816
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/(공고문)+「2026년+자활기업+사업개발비+지원사업」+모집+공고.pdf",
+      "size": 405025
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/01_자활기업_사업개발비_세부사업계획서_표준서식.docx",
+      "size": 36828
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/01_자활기업_사업개발비_세부사업계획서_표준서식.md",
+      "size": 2164
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/02_사회복지공동모금회_배분신청서_및_프로포절_표준서식.docx",
+      "size": 36693
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/02_사회복지공동모금회_배분신청서_및_프로포절_표준서식.md",
+      "size": 1696
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/03_지역자활센터_사업단_자체성과평가서_표준서식.docx",
+      "size": 36337
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/03_지역자활센터_사업단_자체성과평가서_표준서식.md",
+      "size": 1130
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/04_자활근로_사업단_사업계획서_표준양식.docx",
+      "size": 36254
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/04_자활근로_사업단_사업계획서_표준양식.md",
+      "size": 845
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/05_자활사업단_월간_매출정산_결과보고서_서식.docx",
+      "size": 36287
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/05_자활사업단_월간_매출정산_결과보고서_서식.md",
+      "size": 802
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/06_게이트웨이_초기상담기록지_및_욕구사정표.docx",
+      "size": 36296
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/06_게이트웨이_초기상담기록지_및_욕구사정표.md",
+      "size": 989
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/07_개인별_자립지원계획서(IAP)_표준서식.docx",
+      "size": 36321
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/07_개인별_자립지원계획서(IAP)_표준서식.md",
+      "size": 833
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/08_지역자활센터_운영위원회_회의록_표준서식.docx",
+      "size": 36176
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/08_지역자활센터_운영위원회_회의록_표준서식.md",
+      "size": 905
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/09_참여자_직무안전교육일지_및_안전점검표.docx",
+      "size": 36037
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/09_참여자_직무안전교육일지_및_안전점검표.md",
+      "size": 935
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/10_자활생산품_언론보도자료_및_SNS홍보가이드.md",
+      "size": 1184
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/10_자활생산품_언론보도자료_배포_표준서식.docx",
+      "size": 36103
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/2026_사업개발비+서식.zip",
+      "size": 760698
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발1. 접수대장.xlsx",
+      "size": 14838
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발10. 현장 모니터링 일지(광역용).xlsx",
+      "size": 28066
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발11. 중간보고서.hwpx",
+      "size": 63620
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발12. 집행정산보고서.xlsx",
+      "size": 42127
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발13. 중간보고 현황표(광역용).xlsx",
+      "size": 19910
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발14. 정기 자산조사 서식.xlsx",
+      "size": 51224
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발15. 최종보고서(기업용).hwpx",
+      "size": 70013
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발16. 결과보고서(광역용).hwpx",
+      "size": 65672
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발17. 최종보고 현황표(광역용).xlsx",
+      "size": 25179
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발18. 사후모니터링.hwpx",
+      "size": 55763
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발19. 자산관리대장(사후관리용).xlsx",
+      "size": 18108
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발2. 지원사업신청서.hwpx",
+      "size": 65552
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발3. 사업계획서.hwpx",
+      "size": 79575
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발4. 심사표.xlsx",
+      "size": 1073642
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발5. 협약추진목록.xlsx",
+      "size": 13648
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발6. 예산변경신청서.hwpx",
+      "size": 41181
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발7. 예산변경 신구대조표.xlsx",
+      "size": 19955
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/개발8. 공모사업 참여포기 각서.hwp",
+      "size": 41984
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/공고문+「2024년+자활기업+사업개발비+지원사업」+1차+모집+공고.pdf",
+      "size": 434099
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/별첨+신청+서식+모음.zip",
+      "size": 291442
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/붙임1.-공고문-「2024년-자활기업-사업개발비-지원사업」-1차-모집-공고.pdf",
+      "size": 434099
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/붙임2.-별첨-신청-서식-모음.zip",
+      "size": 291442
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/서식1. 제출서류 체크리스트.hwp",
+      "size": 45056
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/서식2. 접수대장.xlsx",
+      "size": 14798
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/서식3. 사업신청서.hwp",
+      "size": 69632
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/서식4. 사업계획서.hwp",
+      "size": 148992
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/서식5. 개인정보 수집 및 이용 동의서.hwp",
+      "size": 52736
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/서식6. 청렴이행각서.hwp",
+      "size": 58880
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/자활사업_10대문서_공식_서식모음_HWP_PDF_DOCX.zip",
+      "size": 2549195
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_01_자활기업_사업개발비_지원사업_전용_비서.md",
+      "size": 6167
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_01_자활기업_사업개발비_지원사업_전용_Gem.md",
+      "size": 4744
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_02_외부_공모_프로포절_기획_비서_(사랑의열매_재단).md",
+      "size": 6315
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_02_외부_공모_프로포절(사회복지공동모금회_사랑의열매_등)_전용_Gem.md",
+      "size": 4842
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_03_센터_사업단_성과평가_및_자체평가서_Gem.md",
+      "size": 5513
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_03_자활_성과평가_및_자체평가보고서_비서.md",
+      "size": 6967
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_04_시장진입형_사회서비스형_사업단_사업계획서_Gem.md",
+      "size": 5435
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_04_자활근로_사업단_연간_사업계획서_비서.md",
+      "size": 6830
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_05_사업단_실적_및_매출_정산_보고서_Gem.md",
+      "size": 6477
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_05_자활사업단_매출_및_실적_정산_비서.md",
+      "size": 7847
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_06_게이트웨이(Gateway)_초기상담_및_사정_비서.md",
+      "size": 7783
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_06_게이트웨이(Gateway)_초기상담_Gem.md",
+      "size": 6379
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_07_개인별_자립지원계획서(IAP)_설계_비서.md",
+      "size": 6946
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_07_개인별_자립지원계획서(IAP)_설계_Gem.md",
+      "size": 5595
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_08_운영위원회_안건_및_회의록_Gem.md",
+      "size": 5880
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_08_운영위원회_회의록_및_안건의결_비서.md",
+      "size": 7251
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_09_종사자_및_참여자_교육_안전_일지_Gem.md",
+      "size": 5792
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_09_참여자_직무_및_산업안전_교육일지_비서.md",
+      "size": 7213
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_10_자활생산품_보도자료_및_SNS_마케팅_비서.md",
+      "size": 7073
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/Gem_10_자활생산품_보도자료_및_SNS_홍보_Gem.md",
+      "size": 5628
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/gems-templates/index.html",
+      "size": 8898
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2-16_실습용_자료_모음_다중문서교차검색.zip",
+      "size": 142909
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2024_실적.txt",
+      "size": 1558
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2024년_인천희망자활_사업실적보고서.txt",
+      "size": 1558
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2025_실적.txt",
+      "size": 1673
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2025년_인천희망자활_사업실적보고서.txt",
+      "size": 1673
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2026_평가지표.docx",
+      "size": 36696
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2026_평가지표.pdf",
+      "size": 94441
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2026_평가지표.txt",
+      "size": 2077
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-16/2026년_지역자활센터_성과평가지표_가이드라인.txt",
+      "size": 2077
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/2-7_실습용_자료_모음_다회용기세척사업_제안서.zip",
+      "size": 577477
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/2025년_타지역_우수사례_에코워시_다회용기_세척사업.docx",
+      "size": 37272
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/2025년_타지역_우수사례_에코워시_다회용기_세척사업.pdf",
+      "size": 115902
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/2025년_타지역_우수사례_에코워시_다회용기_세척사업.txt",
+      "size": 2952
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/우리_지역_환경분석.docx",
+      "size": 37416
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/우리_지역_환경분석.pdf",
+      "size": 112731
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/인천희망지역자활센터_다회용기세척사업_지역환경분석보고서.docx",
+      "size": 37416
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/인천희망지역자활센터_다회용기세척사업_지역환경분석보고서.pdf",
+      "size": 112731
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/인천희망지역자활센터_다회용기세척사업_지역환경분석보고서.txt",
+      "size": 3309
+    },
+    {
+      "path": "incheon-ai-curriculum/materials/practice-2-7/타_지역_우수사례.pdf",
+      "size": 115902
+    },
+    {
+      "path": "incheon-ai-curriculum/r/ax12/index.html",
+      "size": 828
+    },
+    {
+      "path": "incheon-ai-curriculum/r/c_01/index.html",
+      "size": 1305
+    },
+    {
+      "path": "incheon-ai-curriculum/r/c_02/index.html",
+      "size": 1314
+    },
+    {
+      "path": "incheon-ai-curriculum/r/c_03/index.html",
+      "size": 1386
+    },
+    {
+      "path": "incheon-ai-curriculum/r/c_04/index.html",
+      "size": 1377
+    },
+    {
+      "path": "incheon-ai-curriculum/r/c_05/index.html",
+      "size": 1359
+    },
+    {
+      "path": "incheon-ai-curriculum/r/c_dir/index.html",
+      "size": 803
+    },
+    {
+      "path": "incheon-ai-curriculum/r/counsel_txt/index.html",
+      "size": 1001
+    },
+    {
+      "path": "incheon-ai-curriculum/r/counsel_zip/index.html",
+      "size": 1197
+    },
+    {
+      "path": "incheon-ai-curriculum/r/cs_dir/index.html",
+      "size": 793
+    },
+    {
+      "path": "incheon-ai-curriculum/r/cs_zip/index.html",
+      "size": 1176
+    },
+    {
+      "path": "incheon-ai-curriculum/r/cs23/index.html",
+      "size": 1366
+    },
+    {
+      "path": "incheon-ai-curriculum/r/cs24/index.html",
+      "size": 1312
+    },
+    {
+      "path": "incheon-ai-curriculum/r/cs25/index.html",
+      "size": 1312
+    },
+    {
+      "path": "incheon-ai-curriculum/r/gems10/index.html",
+      "size": 879
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p216_24/index.html",
+      "size": 874
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p216_25/index.html",
+      "size": 874
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p216_26/index.html",
+      "size": 940
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p216_dir/index.html",
+      "size": 790
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p216_zip/index.html",
+      "size": 1263
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p27_case/index.html",
+      "size": 1393
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p27_dir/index.html",
+      "size": 791
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p27_env/index.html",
+      "size": 1567
+    },
+    {
+      "path": "incheon-ai-curriculum/r/p27_zip/index.html",
+      "size": 1348
+    },
+    {
+      "path": "incheon-ai-curriculum/r/s1/index.html",
+      "size": 789
+    },
+    {
+      "path": "incheon-ai-curriculum/r/s2/index.html",
+      "size": 789
+    },
+    {
+      "path": "incheon-ai-curriculum/session2.html",
+      "size": 54541
+    },
+    {
+      "path": "index.html",
+      "size": 12807
+    },
+    {
+      "path": "index.html.bak",
+      "size": 40576
+    },
+    {
+      "path": "library-lecture/질문서.docx",
+      "size": 37457
+    },
+    {
+      "path": "library-lecture/appsscript.json",
+      "size": 211
+    },
+    {
+      "path": "library-lecture/Code.js",
+      "size": 3184
+    },
+    {
+      "path": "library-lecture/deck.json",
+      "size": 14363
+    },
+    {
+      "path": "library-lecture/images/brand_mood_closing.jpg",
+      "size": 63012
+    },
+    {
+      "path": "library-lecture/images/brand_mood_opening.jpg",
+      "size": 50395
+    },
+    {
+      "path": "library-lecture/images/speaker_photo.png",
+      "size": 709849
+    },
+    {
+      "path": "library-lecture/images/track_a_sasang_dna.jpeg",
+      "size": 95159
+    },
+    {
+      "path": "library-lecture/images/track_b_aromatherapy.jpeg",
+      "size": 87095
+    },
+    {
+      "path": "library-lecture/images/track_c_fashion_therapy.jpeg",
+      "size": 126427
+    },
+    {
+      "path": "library-lecture/index.html",
+      "size": 89106
+    },
+    {
+      "path": "library-lecture/index.html.bak",
+      "size": 89106
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-42-01.jpeg",
+      "size": 276909
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-42-18.jpeg",
+      "size": 296260
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-42-33.jpeg",
+      "size": 353514
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-42-49.jpeg",
+      "size": 363973
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-03.png",
+      "size": 2162373
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-15.jpeg",
+      "size": 104327
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-28.png",
+      "size": 2109848
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-38.png",
+      "size": 1560638
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-43-49.png",
+      "size": 2474454
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-44-03.jpeg",
+      "size": 316091
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-44-14.jpeg",
+      "size": 103742
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-44-40.jpeg",
+      "size": 409629
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-44-51.jpeg",
+      "size": 2016750
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-01.png",
+      "size": 1877656
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-15.png",
+      "size": 2017103
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-25.png",
+      "size": 1600721
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-38.png",
+      "size": 1922185
+    },
+    {
+      "path": "library-lecture/posters/KakaoTalk_Photo_2026-08-21-01-45-55.jpeg",
+      "size": 239352
+    },
+    {
+      "path": "library-lecture/presentation.html",
+      "size": 80935
+    },
+    {
+      "path": "library-lecture/presentation.pptx",
+      "size": 1193216
+    },
+    {
+      "path": "multi-ai-orchestration/index.html",
+      "size": 8668
+    },
+    {
+      "path": "multi-ai-orchestration/index.html.bak",
+      "size": 7898
+    },
+    {
+      "path": "n/index.html",
+      "size": 1588
+    },
+    {
+      "path": "notebooklm-gemini-pipeline/index.html",
+      "size": 8005
+    },
+    {
+      "path": "notebooklm-gemini-pipeline/index.html.bak",
+      "size": 7235
+    },
+    {
+      "path": "notebooklm-mcp-installed/index.html",
+      "size": 6300
+    },
+    {
+      "path": "notebooklm-mcp-installed/index.html.bak",
+      "size": 5530
+    },
+    {
+      "path": "notebooklm-synced-inventory/index.html",
+      "size": 105033
+    },
+    {
+      "path": "notebooklm-synced-inventory/index.html.bak",
+      "size": 104263
+    },
+    {
+      "path": "notion-connected/index.html",
+      "size": 5553
+    },
+    {
+      "path": "notion-mcp-setup/index.html",
+      "size": 6460
+    },
+    {
+      "path": "notion/index.html",
+      "size": 1588
+    },
+    {
+      "path": "obsidian-brain-architecture/index.html",
+      "size": 9346
+    },
+    {
+      "path": "obsidian-brain-architecture/index.html.bak",
+      "size": 8576
+    },
+    {
+      "path": "portal/domain_master_registry.json",
+      "size": 20933
+    },
+    {
+      "path": "portal/index.html",
+      "size": 31112
+    },
+    {
+      "path": "portal/index.html.bak",
+      "size": 39806
+    },
+    {
+      "path": "publishing_registry.json",
+      "size": 7512
+    },
+    {
+      "path": "publishing_registry.json.bak",
+      "size": 6387
+    },
+    {
+      "path": "pure-fashion-spec/index.html",
+      "size": 25956
+    },
+    {
+      "path": "pure-fashion-spec/index.html.bak",
+      "size": 25186
+    },
+    {
+      "path": "pure-sasang/index.html",
+      "size": 68685
+    },
+    {
+      "path": "report-2nd-meeting/00_INDEX.md",
+      "size": 1607
+    },
+    {
+      "path": "report-2nd-meeting/01_회의록.md",
+      "size": 6790
+    },
+    {
+      "path": "report-2nd-meeting/02_기획반영_및_린캔버스.md",
+      "size": 7062
+    },
+    {
+      "path": "report-2nd-meeting/03_역할분담.md",
+      "size": 3434
+    },
+    {
+      "path": "report-2nd-meeting/04_인사이트_에세이.md",
+      "size": 6840
+    },
+    {
+      "path": "report-2nd-meeting/05_남미화박사님께_보내는_보고서_backup_20260825_2145.html",
+      "size": 26157
+    },
+    {
+      "path": "report-2nd-meeting/05_남미화박사님께_보내는_보고서_backup_20260825_2145.html.bak",
+      "size": 25387
+    },
+    {
+      "path": "report-2nd-meeting/05_남미화박사님께_보내는_보고서.html",
+      "size": 26157
+    },
+    {
+      "path": "report-2nd-meeting/05_남미화박사님께_보내는_보고서.html.bak",
+      "size": 25387
+    },
+    {
+      "path": "report-2nd-meeting/index_backup_20260825_2145.html",
+      "size": 26157
+    },
+    {
+      "path": "report-2nd-meeting/index_backup_20260825_2145.html.bak",
+      "size": 25387
+    },
+    {
+      "path": "report-2nd-meeting/index.html",
+      "size": 35787
+    },
+    {
+      "path": "report-2nd-meeting/index.html.bak",
+      "size": 25387
+    },
+    {
+      "path": "sasang-spa/01_사상체질_프리미엄_체질스파_프로젝트_기획서.md",
+      "size": 21112
+    },
+    {
+      "path": "sasang-spa/02_10대_시그니처_테라피_상세_운영매뉴얼.md",
+      "size": 8463
+    },
+    {
+      "path": "sasang-spa/03_데이터기반_정밀분석_및_체질확정_스텝별_실전예시.md",
+      "size": 3290
+    },
+    {
+      "path": "sasang-spa/04_사상체질_프리미엄_체질스파_발표자료_풀버전.md",
+      "size": 7376
+    },
+    {
+      "path": "sasang-spa/사상체질_프리미엄_스파_프로젝트_제안서_발표자료.pptx",
+      "size": 62260
+    },
+    {
+      "path": "sasang-spa/gas_backend/appsscript.json",
+      "size": 201
+    },
+    {
+      "path": "sasang-spa/gas_backend/Code.js",
+      "size": 3642
+    },
+    {
+      "path": "sasang-spa/google_sheets_lead_collector.gs",
+      "size": 3024
+    },
+    {
+      "path": "sasang-spa/index.html",
+      "size": 119942
+    },
+    {
+      "path": "sasang-spa/presentation.html",
+      "size": 20297
+    },
+    {
+      "path": "sasang-spa/spa_proposal_chejil_bak_v1.pdf",
+      "size": 18454064
+    },
+    {
+      "path": "sasang-spa/spa_proposal_chejil.pdf",
+      "size": 22543547
+    },
+    {
+      "path": "thesis-portal/index.html",
+      "size": 14342
+    },
+    {
+      "path": "voice-agent-integration/index.html",
+      "size": 10090
+    },
+    {
+      "path": "voice-agent-integration/index.html.bak",
+      "size": 9320
+    },
+    {
+      "path": "web-design-guidelines/index.html",
+      "size": 14205
+    },
+    {
+      "path": "web-design-guidelines/index.html.bak",
+      "size": 13435
+    }
+  ]
+}
