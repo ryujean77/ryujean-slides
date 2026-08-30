@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-30T15:47:47.899Z",
-  "commit": "4ae9bc5e3a7152c28cce50818e601e8a3e5cc04b",
-  "fileCount": 571,
+  "generatedAt": "2026-08-30T15:54:59.455Z",
+  "commit": "64157e8691c5f826bd2f909c19ab87cfe8e5fb61",
+  "fileCount": 572,
   "files": [
     {
       "path": ".nojekyll",
@@ -2092,6 +2092,10 @@
       "size": 6277
     },
     {
+      "path": "publishing-masterplan.html",
+      "size": 11275
+    },
+    {
       "path": "pure-fashion-spec/index.html",
       "size": 25285
     },
@@ -2225,7 +2229,7 @@
     },
     {
       "path": "worklog.html",
-      "size": 10508
+      "size": 7123
     },
     {
       "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md",
