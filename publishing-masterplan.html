@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 EGLS Lab 듀얼 도서 출판 마스터플랜 관제 대시보드</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-hover: #1e293b;
+      --primary: #38bdf8;
+      --ai-accent: #6366f1;
+      --aroma-accent: #10b981;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #1f2937;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+    .badge-top {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .header p {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .book-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 35px 30px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .book-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.6);
+      transform: translateY(-4px);
+    }
+    .book-card.ai-card {
+      border-top: 4px solid var(--ai-accent);
+    }
+    .book-card.aroma-card {
+      border-top: 4px solid var(--aroma-accent);
+    }
+    .book-type {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .ai-card .book-type { color: #818cf8; }
+    .aroma-card .book-type { color: #34d399; }
+    .book-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .book-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    .spec-list {
+      list-style: none;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+    .spec-list li {
+      margin-bottom: 8px;
+      display: flex;
+      gap: 8px;
+    }
+    .spec-list strong {
+      color: #94a3b8;
+      width: 80px;
+      flex-shrink: 0;
+    }
+    .spec-list span {
+      color: #e2e8f0;
+    }
+    .chapter-preview {
+      background: #0b0f19;
+      border: 1px solid #1f2937;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 25px;
+      font-size: 13.5px;
+    }
+    .chapter-preview h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .chapter-preview ul {
+      padding-left: 18px;
+      color: #cbd5e1;
+    }
+    .chapter-preview li {
+      margin-bottom: 6px;
+    }
+    .timeline-box {
+      background: rgba(30, 41, 59, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: auto;
+    }
+    .timeline-box strong {
+      color: #38bdf8;
+    }
+    .btn-view {
+      display: inline-block;
+      text-align: center;
+      background: #1f2937;
+      color: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 15px;
+      border: 1px solid #374151;
+      transition: all 0.2s ease;
+    }
+    .btn-view:hover {
+      background: var(--primary);
+      color: #0b0f19;
+      border-color: var(--primary);
+    }
+    .roadmap-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 35px 40px;
+    }
+    .roadmap-section h3 {
+      font-size: 20px;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+    @media (max-width: 768px) {
+      .roadmap-grid { grid-template-columns: 1fr; }
+    }
+    .step-card {
+      background: #0b0f19;
+      border: 1px solid #1f2937;
+      padding: 18px;
+      border-radius: 10px;
+    }
+    .step-num {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .step-desc {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="badge-top">EGLS Lab Publishing HQ 2026</span>
+      <h1>📚 듀얼 도서 출판 마스터플랜 관제 대시보드</h1>
+      <p>AI 행정 실무 핸드북과 사상체질 아로마테라피 임상 가이드북 2대 핵심 지식 자산 출판 계획서</p>
+    </div>
+
+    <div class="grid">
+      <!-- Book 1: AI Master -->
+      <div class="book-card ai-card">
+        <div class="book-type">📘 AI 교육 & 비즈니스 AX 실무서</div>
+        <h2 class="book-title">《생성형 AI 실무 마스터: Gemini × NotebookLM으로 완성하는 공공·행정 AX 혁신》</h2>
+        <div class="book-subtitle">기안문 작성부터 10대 문서 Gems, 데이터 분석, 노코드 GAS 자동화까지</div>
+
+        <ul class="spec-list">
+          <li><strong>저 자</strong> <span>유정근 (EGLS Lab 대표 / AI 교육 전문위원)</span></li>
+          <li><strong>판 형</strong> <span>4×6배판 (188×257mm) 올컬러 실습 핸드북 (320p)</span></li>
+          <li><strong>타 깃</strong> <span>공공기관, 자활센터, 복지시설 실무자 및 스타트업</span></li>
+          <li><strong>핵심 무기</strong> <span>S-O-T-C 프롬프트 공식, Gems 10종, 노코드 GAS 봇</span></li>
+        </ul>
+
+        <div class="chapter-preview">
+          <h4>📑 핵심 목차 하이라이트</h4>
+          <ul>
+            <li>Part 1. 제미나이 생태계와 멀티디바이스 연속성</li>
+            <li>Part 2. 환각 0% 출처 인용 NotebookLM 지식베이스</li>
+            <li>Part 3. 실무형 S-O-T-C 프롬프트 엔지니어링</li>
+            <li>Part 4. 자활 10대 문서 맞춤형 Gems 5단계 제작</li>
+            <li>Part 5. 코딩 없는 GAS 업무 자동화 봇 4종</li>
+          </ul>
+        </div>
+
+        <div class="timeline-box">
+          📅 <strong>목표 출간일:</strong> 2026년 4분기 (인천자활 강의 및 B2B 교재 공급)
+        </div>
+        <a href="./01_AI강의안_1-4회차_실무서_도서출판_마스터플랜.md" class="btn-view">📄 상세 출판 기획서 (MD) 보기</a>
+      </div>
+
+      <!-- Book 2: Aromatherapy Master -->
+      <div class="book-card aroma-card">
+        <div class="book-type">🌿 사상체질 & 자연치유 임상 가이드북</div>
+        <h2 class="book-title">《사상체질과 에센셜 오일의 만남: 1:1 맞춤 웰니스 아로마테라피 임상 처방》</h2>
+        <div class="book-subtitle">동양의 사상의학과 서양의 파이토케미컬 약리작용의 완벽한 융합</div>
+
+        <ul class="spec-list">
+          <li><strong>저 자</strong> <span>유정근 (웰니스 총괄) & 감수: 임동구 박사</span></li>
+          <li><strong>판 형</strong> <span>신국판 (152×225mm) 프리미엄 양장본 올컬러 (280p)</span></li>
+          <li><strong>타 깃</strong> <span>테라피스트, 스파 원장, 도테라 WA, 웰빙 관심인</span></li>
+          <li><strong>핵심 무기</strong> <span>30종 오일 DB, 5대 증상 매트릭스, PubMed 10편 검증</span></li>
+        </ul>
+
+        <div class="chapter-preview">
+          <h4>📑 핵심 목차 하이라이트</h4>
+          <ul>
+            <li>Part 1. 사상체질 장부대소(臟腑大小)와 기혈 순환</li>
+            <li>Part 2. 에센셜 오일 30종 마스터 DB & 파이토케미컬</li>
+            <li>Part 3. 5대 증상(수면·피로·스트레스 등) 체질별 처방</li>
+            <li>Part 4. PubMed DOI 교차검증 학술 연구 아카이브</li>
+            <li>Part 5. 1:1 VIP 문진 및 유럽식 스파 10대 테라피 SOP</li>
+          </ul>
+        </div>
+
+        <div class="timeline-box">
+          📅 <strong>목표 출간일:</strong> 2026년 4분기 (스파 아카데미 전문 교재 연계)
+        </div>
+        <a href="./02_사상체질_아로마테라피_임상가이드북_도서출판_마스터플랜.md" class="btn-view">📄 상세 출판 기획서 (MD) 보기</a>
+      </div>
+    </div>
+
+    <!-- Overall Publishing Roadmap -->
+    <div class="roadmap-section">
+      <h3>🚀 4단계 통합 출판 실행 로드맵 (Execution Roadmap)</h3>
+      <div class="roadmap-grid">
+        <div class="step-card">
+          <div class="step-num">STAGE 01</div>
+          <div class="step-title">원고 집필 & 캡처 보강</div>
+          <div class="step-desc">기구축된 1~4회차 교안 및 아로마 DB를 도서 챕터별 본문 원고로 전면 텍스트화 및 고해상도 그래픽 제작.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">STAGE 02</div>
+          <div class="step-title">전문가 감수 & 베타리딩</div>
+          <div class="step-desc">임동구 박사(사상체질) 처방 감수 및 인천자활 실무자 파일럿 베타리딩을 통한 실무 적합성 100% 검증.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">STAGE 03</div>
+          <div class="step-title">출판사 계약 & 디자인 조판</div>
+          <div class="step-desc">실용서 전문 출판사 기획 투고 또는 EGLS Lab 자체 출판 등록을 통한 표지/내지 디자인 및 교열.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">STAGE 04</div>
+          <div class="step-title">정식 출간 & B2B/B2C 유통</div>
+          <div class="step-desc">온·오프라인 대형서점 유통, 전국 자활센터/공공기관 단체 교재 공급 및 스파 VIP 고객 양장본 증정.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
