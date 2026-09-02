@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="패션을 통해 자기 이해와 일상의 변화를 돕는 패션테라피 콘텐츠 IP 사업 퍼블릭 브리프">
+  <title>패션테라피 콘텐츠 IP | Public Brief</title>
+  <style>
+    :root {
+      --ink: #262320;
+      --muted: #6e6861;
+      --paper: #f8f5ef;
+      --white: #fffdf9;
+      --rose: #a44f5f;
+      --rose-deep: #763442;
+      --rose-soft: #f3e4e5;
+      --sage: #617367;
+      --sage-soft: #e7ece7;
+      --gold: #b58b4f;
+      --line: #ddd5ca;
+      --shadow: 0 20px 60px rgba(57, 42, 32, .09);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(164,79,95,.09), transparent 28rem),
+        radial-gradient(circle at 95% 25%, rgba(97,115,103,.08), transparent 26rem),
+        var(--paper);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .skip {
+      position: fixed; left: 16px; top: -80px; z-index: 100;
+      padding: 10px 14px; border-radius: 10px; color: #fff; background: var(--rose-deep);
+    }
+    .skip:focus { top: 16px; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(221,213,202,.8);
+      background: rgba(248,245,239,.9);
+      backdrop-filter: blur(14px);
+    }
+    .topbar-inner {
+      min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .brand { font-size: .9rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 20px; }
+    nav a { color: var(--muted); font-size: .86rem; text-decoration: none; }
+    nav a:hover, nav a:focus-visible { color: var(--rose-deep); }
+    .print-btn {
+      border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px;
+      color: var(--ink); background: var(--white); cursor: pointer;
+    }
+
+    .hero { padding: 92px 0 76px; }
+    .hero-grid { display: grid; grid-template-columns: 1.22fr .78fr; gap: 56px; align-items: end; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; margin: 0 0 24px;
+      color: var(--rose-deep); font-size: .78rem; font-weight: 850; letter-spacing: .14em;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.2; letter-spacing: -.035em; }
+    h1 { margin-bottom: 26px; font-family: Georgia, "Noto Serif KR", serif; font-size: clamp(3rem, 7vw, 6.6rem); font-weight: 500; }
+    h1 em { display: block; color: var(--rose); font-style: normal; }
+    .lead { max-width: 710px; margin: 0; color: #4e4944; font-size: clamp(1.05rem, 1.8vw, 1.32rem); }
+    .hero-card {
+      position: relative; overflow: hidden; min-height: 390px; padding: 34px;
+      border: 1px solid rgba(255,255,255,.45); border-radius: 32px;
+      color: #fff; background: linear-gradient(150deg, var(--rose-deep), #9a5c62 56%, #caa178);
+      box-shadow: var(--shadow);
+    }
+    .hero-card::after {
+      content: ""; position: absolute; right: -75px; bottom: -95px;
+      width: 260px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.35); border-radius: 50%;
+      box-shadow: 0 0 0 36px rgba(255,255,255,.06), 0 0 0 72px rgba(255,255,255,.04);
+    }
+    .hero-card small { position: relative; z-index: 1; letter-spacing: .13em; opacity: .8; }
+    .hero-card blockquote {
+      position: relative; z-index: 1; margin: 78px 0 0; font-family: Georgia, "Noto Serif KR", serif;
+      font-size: clamp(1.7rem, 3vw, 2.55rem); line-height: 1.4;
+    }
+    .hero-card p { position: relative; z-index: 1; max-width: 270px; margin: 24px 0 0; color: rgba(255,255,255,.82); }
+
+    section { padding: 88px 0; }
+    .section-head { display: grid; grid-template-columns: 180px 1fr; gap: 34px; margin-bottom: 42px; }
+    .section-num { color: var(--rose); font-weight: 800; letter-spacing: .12em; }
+    h2 { max-width: 760px; margin-bottom: 16px; font-family: Georgia, "Noto Serif KR", serif; font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 500; }
+    .section-desc { max-width: 760px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+    .statement {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden;
+      border: 1px solid var(--line); border-radius: var(--radius); background: var(--line);
+    }
+    .statement > div { padding: 34px; background: var(--white); }
+    .statement strong { display: block; margin-bottom: 10px; color: var(--rose-deep); font-size: .82rem; letter-spacing: .08em; }
+    .statement p { margin: 0; font-size: 1.12rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,253,249,.76);
+      box-shadow: 0 10px 35px rgba(57,42,32,.045);
+    }
+    .card-tag { display: block; margin-bottom: 44px; color: var(--rose); font-size: .75rem; font-weight: 800; letter-spacing: .12em; }
+    .card h3 { margin-bottom: 12px; font-size: 1.34rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .layers { display: grid; gap: 16px; }
+    .layer {
+      display: grid; grid-template-columns: 92px 1fr 1fr; gap: 30px; align-items: center;
+      padding: 28px 32px; border: 1px solid var(--line); border-radius: 18px; background: var(--white);
+    }
+    .layer-index { color: var(--rose); font-family: Georgia, serif; font-size: 2.3rem; }
+    .layer h3 { margin: 0; font-size: 1.32rem; }
+    .layer p { margin: 0; color: var(--muted); }
+
+    .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .flow-step { position: relative; padding: 28px 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .flow-step:first-child { border-left: 1px solid var(--line); border-radius: 18px 0 0 18px; }
+    .flow-step:last-child { border-right: 1px solid var(--line); border-radius: 0 18px 18px 0; }
+    .flow-step:not(:last-child)::after {
+      content: "→"; position: absolute; right: -10px; top: 50%; z-index: 2; transform: translateY(-50%);
+      width: 20px; color: var(--gold); background: var(--paper); text-align: center;
+    }
+    .flow-step b { display: block; margin-bottom: 7px; color: var(--rose-deep); }
+    .flow-step span { color: var(--muted); font-size: .92rem; }
+
+    .series-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .series {
+      display: grid; grid-template-columns: 64px 1fr; gap: 20px; min-height: 200px; padding: 28px;
+      border: 1px solid var(--line); border-radius: var(--radius); background: var(--white);
+    }
+    .series-no { color: var(--gold); font-family: Georgia, serif; font-size: 2rem; }
+    .series h3 { margin: 3px 0 10px; font-size: 1.25rem; }
+    .series p { margin: 0; color: var(--muted); }
+    .series small { display: inline-block; margin-top: 16px; color: var(--sage); font-weight: 750; }
+
+    .audience { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 18px; }
+    .audience-card { padding: 30px; border-radius: var(--radius); color: #fff; background: var(--rose-deep); }
+    .audience-card:nth-child(2) { background: var(--sage); }
+    .audience-card:nth-child(3) { color: var(--ink); background: #dcc7a5; }
+    .audience-card small { display: block; margin-bottom: 54px; letter-spacing: .1em; opacity: .76; }
+    .audience-card h3 { margin-bottom: 10px; font-size: 1.45rem; }
+    .audience-card p { margin: 0; opacity: .82; }
+
+    .ecosystem {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px;
+      padding: 42px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white);
+    }
+    .eco-node { padding: 13px 18px; border-radius: 999px; color: var(--rose-deep); background: var(--rose-soft); font-weight: 800; }
+    .eco-arrow { color: var(--gold); }
+
+    .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--ink); }
+    .phase { padding: 26px 22px 0; border-left: 1px solid var(--line); }
+    .phase:last-child { border-right: 1px solid var(--line); }
+    .phase small { color: var(--rose); font-weight: 800; letter-spacing: .08em; }
+    .phase h3 { margin: 14px 0 10px; }
+    .phase p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+    .partner {
+      display: grid; grid-template-columns: 1fr .9fr; gap: 48px; align-items: center;
+      padding: 48px; border-radius: 28px; color: #fff; background: #292725;
+    }
+    .partner h2 { margin-bottom: 16px; color: #fff; }
+    .partner p { margin: 0; color: rgba(255,255,255,.7); }
+    .partner-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .partner-list span { padding: 14px 16px; border: 1px solid rgba(255,255,255,.16); border-radius: 14px; color: rgba(255,255,255,.86); }
+
+    .note {
+      margin-top: 24px; padding: 20px 24px; border-left: 3px solid var(--sage); color: var(--muted); background: var(--sage-soft);
+      font-size: .9rem;
+    }
+    footer { padding: 44px 0 58px; border-top: 1px solid var(--line); color: var(--muted); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 900px) {
+      nav a { display: none; }
+      .hero-grid, .section-head, .statement, .partner { grid-template-columns: 1fr; }
+      .hero-card { min-height: 330px; }
+      .cards, .audience { grid-template-columns: 1fr; }
+      .layer { grid-template-columns: 60px 1fr; }
+      .layer p { grid-column: 2; }
+      .flow, .roadmap { grid-template-columns: 1fr 1fr; }
+      .flow-step { border: 1px solid var(--line); border-radius: 14px !important; }
+      .flow-step::after { display: none; }
+      .phase { padding: 24px; border-bottom: 1px solid var(--line); }
+      .partner-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .topbar-inner { min-height: 62px; }
+      .brand { font-size: .78rem; }
+      .print-btn { padding: 7px 11px; font-size: .78rem; }
+      .hero { padding: 62px 0 44px; }
+      h1 { font-size: clamp(2.75rem, 15vw, 4.6rem); }
+      section { padding: 64px 0; }
+      .section-head { gap: 12px; }
+      .cards, .series-grid, .flow, .roadmap { grid-template-columns: 1fr; }
+      .layer { grid-template-columns: 44px 1fr; gap: 16px; padding: 24px 20px; }
+      .layer-index { font-size: 1.7rem; }
+      .series { grid-template-columns: 48px 1fr; padding: 22px; }
+      .ecosystem { justify-content: flex-start; padding: 24px; }
+      .eco-arrow { transform: rotate(90deg); }
+      .partner { padding: 30px 24px; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .topbar { position: static; }
+      nav, .print-btn { display: none; }
+      .hero, section { padding: 42px 0; }
+      .card, .series, .hero-card, .partner { break-inside: avoid; box-shadow: none; }
+      @page { margin: 14mm; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">본문 바로가기</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">Fashion Therapy IP</div>
+      <nav aria-label="주요 섹션">
+        <a href="#vision">비전</a>
+        <a href="#solution">솔루션</a>
+        <a href="#series">콘텐츠</a>
+        <a href="#roadmap">로드맵</a>
+        <button class="print-btn" type="button" onclick="window.print()" aria-label="문서 인쇄하기">인쇄</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">PUBLIC BRIEF · 외부 공유용</p>
+          <h1>마음을 읽고,<em>일상을 입히다.</em></h1>
+          <p class="lead">패션테라피는 옷을 잘 입는 법을 넘어, 내가 누구인지 발견하고 나다운 선택을 일상에서 실천하도록 돕는 콘텐츠 IP입니다.</p>
+        </div>
+        <aside class="hero-card" aria-label="브랜드 핵심 메시지">
+          <small>BRAND PROMISE</small>
+          <blockquote>“옷장을 바꾸는 일이<br>삶의 감각을 바꾸도록.”</blockquote>
+          <p>자기 이해에서 시작해 안목, 실천, 관계로 확장되는 변화의 여정</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="vision">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">01 · VISION</div>
+          <div>
+            <h2>패션을 ‘보여주기’가 아닌 ‘자기 이해의 언어’로</h2>
+            <p class="section-desc">유행과 정답을 전달하는 대신, 각자의 삶과 감정에 맞는 기준을 발견하도록 돕습니다. 콘텐츠는 그 발견이 한 번의 영감에 머물지 않고 실제 일상의 선택으로 이어지게 합니다.</p>
+          </div>
+        </div>
+        <div class="statement">
+          <div>
+            <strong>WHY NOW</strong>
+            <p>정보는 넘치지만 “나에게 무엇이 맞는가”를 판단할 자기 기준은 여전히 부족합니다.</p>
+          </div>
+          <div>
+            <strong>OUR ROLE</strong>
+            <p>심리적 자기 탐색과 패션의 실용성을 연결해, 선택의 부담을 자신감으로 바꿉니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">02 · PROBLEM</div>
+          <div>
+            <h2>옷장 앞의 문제는 취향보다 기준의 문제입니다</h2>
+            <p class="section-desc">사람들은 무엇을 사야 할지보다, 무엇이 나다운지 알기 어려워합니다. 패션테라피는 이 막막함을 세 가지 관점으로 풀어냅니다.</p>
+          </div>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="card-tag">CONTEXT</span>
+            <h3>삶의 변화</h3>
+            <p>나이, 역할, 관계가 달라졌지만 옷의 기준은 과거에 머물러 생기는 어색함을 다룹니다.</p>
+          </article>
+          <article class="card">
+            <span class="card-tag">EMOTION</span>
+            <h3>선택의 불안</h3>
+            <p>비교와 평가 속에서 커진 망설임을 줄이고, 자신의 감각을 신뢰하는 힘을 기릅니다.</p>
+          </article>
+          <article class="card">
+            <span class="card-tag">PRACTICE</span>
+            <h3>실천의 간극</h3>
+            <p>좋은 정보를 아는 것과 매일 입는 것은 다릅니다. 작은 행동으로 연결되는 방법을 만듭니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">03 · SOLUTION</div>
+          <div>
+            <h2>내면에서 시작해 일상에 닿는 3층 구조</h2>
+            <p class="section-desc">자기 이해, 안목, 실천이 하나의 경험으로 연결될 때 패션은 소비를 넘어 삶을 정돈하는 도구가 됩니다.</p>
+          </div>
+        </div>
+        <div class="layers">
+          <article class="layer">
+            <div class="layer-index">01</div>
+            <h3>Inner Discovery · 자기 발견</h3>
+            <p>감정, 삶의 장면, 역할을 돌아보며 지금의 나에게 필요한 표현을 찾습니다.</p>
+          </article>
+          <article class="layer">
+            <div class="layer-index">02</div>
+            <h3>Style Sense · 안목 형성</h3>
+            <p>색, 실루엣, 소재, 균형을 읽으며 타인의 정답이 아닌 나만의 선택 기준을 세웁니다.</p>
+          </article>
+          <article class="layer">
+            <div class="layer-index">03</div>
+            <h3>Daily Curation · 일상 큐레이션</h3>
+            <p>가지고 있는 옷과 실제 생활을 기반으로 오늘 바로 적용할 조합과 루틴을 만듭니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">04 · CHANGE</div>
+          <div>
+            <h2>콘텐츠가 변화가 되는 네 단계</h2>
+            <p class="section-desc">‘알게 됨’에서 끝나지 않고, 자신의 기준을 만들고 반복해서 실천하며 다른 사람과 나누는 흐름을 설계합니다.</p>
+          </div>
+        </div>
+        <div class="flow" aria-label="변화의 네 단계">
+          <div class="flow-step"><b>발견</b><span>나의 감정과 삶의 장면 읽기</span></div>
+          <div class="flow-step"><b>기준</b><span>나다움을 설명하는 언어 만들기</span></div>
+          <div class="flow-step"><b>실천</b><span>옷장과 일상에서 작은 변화 반복하기</span></div>
+          <div class="flow-step"><b>확장</b><span>경험을 관계와 커뮤니티로 연결하기</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="series">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">05 · IP SERIES</div>
+          <div>
+            <h2>서로 연결되는 여섯 개의 콘텐츠 시리즈</h2>
+            <p class="section-desc">각 시리즈는 독립적으로 즐길 수 있고, 함께 경험하면 자기 발견에서 스타일 실천까지 하나의 세계관을 이룹니다.</p>
+          </div>
+        </div>
+        <div class="series-grid">
+          <article class="series">
+            <div class="series-no">01</div>
+            <div><h3>옷장 앞의 마음</h3><p>옷을 고르는 순간 드러나는 감정과 관계, 삶의 변화를 이야기로 풀어냅니다.</p><small>공감형 스토리 콘텐츠</small></div>
+          </article>
+          <article class="series">
+            <div class="series-no">02</div>
+            <div><h3>한 끗 안목 연구소</h3><p>같아 보이는 선택의 차이를 관찰하며 색과 비율, 소재를 보는 눈을 키웁니다.</p><small>지식형 비주얼 콘텐츠</small></div>
+          </article>
+          <article class="series">
+            <div class="series-no">03</div>
+            <div><h3>한 벌, 세 개의 삶</h3><p>하나의 옷을 서로 다른 장면과 역할에 연결해 활용의 폭을 보여줍니다.</p><small>실천형 스타일 콘텐츠</small></div>
+          </article>
+          <article class="series">
+            <div class="series-no">04</div>
+            <div><h3>한 사람, 한 스타일 아카이브</h3><p>한 사람의 시간과 취향을 기록해 ‘나다움’이 만들어지는 과정을 담습니다.</p><small>인물형 다큐 콘텐츠</small></div>
+          </article>
+          <article class="series">
+            <div class="series-no">05</div>
+            <div><h3>체질×스타일 랩</h3><p>몸의 특성과 생활 습관을 관찰하고 편안함과 표현의 균형을 탐색합니다.</p><small>탐구형 워크숍 콘텐츠</small></div>
+          </article>
+          <article class="series">
+            <div class="series-no">06</div>
+            <div><h3>입는 K-스토리</h3><p>한국의 색, 소재, 생활문화에서 오늘의 옷으로 이어질 이야기를 발굴합니다.</p><small>문화형 글로벌 콘텐츠</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">06 · AUDIENCE</div>
+          <div>
+            <h2>삶의 전환기에 새로운 기준이 필요한 사람들</h2>
+            <p class="section-desc">초기에는 자기표현을 다시 설계하려는 중년 여성을 중심으로 시작하고, 세대와 기관으로 확장합니다.</p>
+          </div>
+        </div>
+        <div class="audience">
+          <article class="audience-card"><small>CORE</small><h3>40대 라이프 전환층</h3><p>일과 가족, 관계의 변화 속에서 지금의 자신과 어울리는 스타일을 찾는 사람</p></article>
+          <article class="audience-card"><small>EXTENSION</small><h3>50–60대 자기표현층</h3><p>편안함을 지키면서도 새로운 감각과 사회적 연결을 원하는 사람</p></article>
+          <article class="audience-card"><small>PARTNER</small><h3>기관과 브랜드</h3><p>고객·구성원에게 자기돌봄과 라이프스타일 경험을 제공하려는 조직</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">07 · ECOSYSTEM</div>
+          <div>
+            <h2>보는 콘텐츠에서 함께하는 경험으로</h2>
+            <p class="section-desc">콘텐츠가 관심을 만들고, 현장 경험과 자기 탐색이 기준을 세우며, 프로그램과 커뮤니티가 변화를 지속시킵니다.</p>
+          </div>
+        </div>
+        <div class="ecosystem" aria-label="패션테라피 경험 생태계">
+          <span class="eco-node">콘텐츠</span><span class="eco-arrow">→</span>
+          <span class="eco-node">라이브 경험</span><span class="eco-arrow">→</span>
+          <span class="eco-node">자기 탐색</span><span class="eco-arrow">→</span>
+          <span class="eco-node">큐레이션·프로그램</span><span class="eco-arrow">→</span>
+          <span class="eco-node">커뮤니티</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">08 · 180 DAYS</div>
+          <div>
+            <h2>작게 검증하고, 단단하게 확장합니다</h2>
+            <p class="section-desc">처음부터 큰 형식을 고정하기보다 콘텐츠와 현장의 반응을 관찰하며 패션테라피만의 언어와 경험 구조를 정교하게 만듭니다.</p>
+          </div>
+        </div>
+        <div class="roadmap">
+          <article class="phase"><small>PHASE 01</small><h3>준비</h3><p>브랜드 언어, 파일럿 콘텐츠, 참여자 경험의 기본 틀을 설계합니다.</p></article>
+          <article class="phase"><small>PHASE 02</small><h3>현장 검증</h3><p>작은 라이브와 워크숍을 통해 공감 지점과 실제 변화를 관찰합니다.</p></article>
+          <article class="phase"><small>PHASE 03</small><h3>독립 IP</h3><p>반복 가능한 시리즈와 프로그램을 구축하고 일관된 세계관을 강화합니다.</p></article>
+          <article class="phase"><small>PHASE 04</small><h3>확장</h3><p>브랜드, 기관, 지역, 문화 파트너십으로 접점과 활용 범위를 넓힙니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="partner">
+          <div>
+            <p class="eyebrow" style="color:#e0b9bd">PARTNERSHIP</p>
+            <h2>콘텐츠와 현장을 함께 설계할 파트너를 찾습니다</h2>
+            <p>패션테라피의 관점에 공감하고, 더 많은 사람이 자기다운 일상을 발견하도록 함께할 협업을 제안합니다.</p>
+          </div>
+          <div class="partner-list" aria-label="협업 분야">
+            <span>콘텐츠 제작·유통</span>
+            <span>강연·워크숍</span>
+            <span>브랜드 공동기획</span>
+            <span>문화·지역 프로그램</span>
+          </div>
+        </div>
+        <p class="note">패션테라피는 교육과 자기 탐색을 위한 콘텐츠·프로그램입니다. 의료행위, 심리치료 또는 임상적 진단을 제공하지 않습니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><strong>FASHION THERAPY CONTENT IP</strong><br>Public Brief · 2026</div>
+      <div>유정근 · Ryu JeongKun<br>Wellness &amp; AI Business Director</div>
+    </div>
+  </footer>
+</body>
+</html>
