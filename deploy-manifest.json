@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-03T22:44:16.439Z",
-  "commit": "4936f39e6ccf9e2c0af2678a3569f5dfe1e6eed6",
-  "fileCount": 1897,
+  "generatedAt": "2026-09-03T23:22:34.193Z",
+  "commit": "190fce7b889bfb7fa07365be803566a10b9cd9bc",
+  "fileCount": 1900,
   "files": [
     {
       "path": ".nojekyll",
@@ -506,6 +506,14 @@
     {
       "path": "chejilhub/assets/app.js",
       "size": 3516
+    },
+    {
+      "path": "chejilhub/assets/downloads/chejilhub_proposal_portfolio.pdf",
+      "size": 9182266
+    },
+    {
+      "path": "chejilhub/assets/downloads/chejilhub_proposal_portfolio.pptx",
+      "size": 6529954
     },
     {
       "path": "chejilhub/assets/originals/genecode-career-poster.png",
@@ -5790,6 +5798,10 @@
     {
       "path": "chejilhub/programs/36-수상-선정-실적.html",
       "size": 15594
+    },
+    {
+      "path": "chejilhub/proposal.html",
+      "size": 2352
     },
     {
       "path": "chejilhub/sasang.html",
