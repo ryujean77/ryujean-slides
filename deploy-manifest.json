@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-04T00:16:30.192Z",
-  "commit": "4c76156cca535acbe9bf8c0eb243e36b9353d137",
-  "fileCount": 1909,
+  "generatedAt": "2026-09-04T03:21:35.319Z",
+  "commit": "a42f7df820f1761438970742a186fce811280fca",
+  "fileCount": 1942,
   "files": [
     {
       "path": ".nojekyll",
@@ -508,14 +508,6 @@
       "size": 3516
     },
     {
-      "path": "chejilhub/assets/downloads/chejilhub_proposal_portfolio.pdf",
-      "size": 9182266
-    },
-    {
-      "path": "chejilhub/assets/downloads/chejilhub_proposal_portfolio.pptx",
-      "size": 6529954
-    },
-    {
       "path": "chejilhub/assets/originals/genecode-career-poster.png",
       "size": 464708
     },
@@ -597,7 +589,7 @@
     },
     {
       "path": "chejilhub/assets/originals/KB-02766.png",
-      "size": 998678
+      "size": 36581989
     },
     {
       "path": "chejilhub/assets/originals/KB-02799.png",
@@ -717,7 +709,151 @@
     },
     {
       "path": "chejilhub/en/portfolio.html",
-      "size": 2744
+      "size": 13079
+    },
+    {
+      "path": "chejilhub/en/programs/01-origin-knowledge-constitution.html",
+      "size": 3461
+    },
+    {
+      "path": "chejilhub/en/programs/02-constitution-assessment-analysis-tools.html",
+      "size": 3543
+    },
+    {
+      "path": "chejilhub/en/programs/03-genecode-career-aptitude.html",
+      "size": 3461
+    },
+    {
+      "path": "chejilhub/en/programs/04-youth-learning-reading.html",
+      "size": 3459
+    },
+    {
+      "path": "chejilhub/en/programs/05-ceo-leadership-organizations.html",
+      "size": 3466
+    },
+    {
+      "path": "chejilhub/en/programs/06-life-coaching.html",
+      "size": 3342
+    },
+    {
+      "path": "chejilhub/en/programs/07-family-couples-relationships.html",
+      "size": 3476
+    },
+    {
+      "path": "chejilhub/en/programs/08-senior-retirement-design.html",
+      "size": 3427
+    },
+    {
+      "path": "chejilhub/en/programs/09-constitution-opera.html",
+      "size": 3346
+    },
+    {
+      "path": "chejilhub/en/programs/10-corporate-public-lectures.html",
+      "size": 3435
+    },
+    {
+      "path": "chejilhub/en/programs/11-constitution-curator-trainer-course.html",
+      "size": 3509
+    },
+    {
+      "path": "chejilhub/en/programs/12-health-nutrition-metabolism.html",
+      "size": 3466
+    },
+    {
+      "path": "chejilhub/en/programs/13-constitution-food-recipes.html",
+      "size": 3445
+    },
+    {
+      "path": "chejilhub/en/programs/14-red-ginseng-functional-ingredients.html",
+      "size": 3509
+    },
+    {
+      "path": "chejilhub/en/programs/15-beauty-personalized-cosmetics.html",
+      "size": 3443
+    },
+    {
+      "path": "chejilhub/en/programs/16-aroma-fragrance.html",
+      "size": 3337
+    },
+    {
+      "path": "chejilhub/en/programs/17-fashion-color-jewelry.html",
+      "size": 3426
+    },
+    {
+      "path": "chejilhub/en/programs/18-constitution-spa.html",
+      "size": 3362
+    },
+    {
+      "path": "chejilhub/en/programs/19-integrated-constitution-therapy.html",
+      "size": 3446
+    },
+    {
+      "path": "chejilhub/en/programs/20-healing-fair-experience-center.html",
+      "size": 3473
+    },
+    {
+      "path": "chejilhub/en/programs/21-expos-exhibitions-fairs.html",
+      "size": 3422
+    },
+    {
+      "path": "chejilhub/en/programs/22-wellness-tourism-healing-tours.html",
+      "size": 3465
+    },
+    {
+      "path": "chejilhub/en/programs/23-vip-cruise.html",
+      "size": 3302
+    },
+    {
+      "path": "chejilhub/en/programs/24-books-manuscripts-publishing.html",
+      "size": 3432
+    },
+    {
+      "path": "chejilhub/en/programs/25-media-articles-video.html",
+      "size": 3420
+    },
+    {
+      "path": "chejilhub/en/programs/26-research-papers-conferences.html",
+      "size": 3448
+    },
+    {
+      "path": "chejilhub/en/programs/27-ai-machine-learning-analysis.html",
+      "size": 3453
+    },
+    {
+      "path": "chejilhub/en/programs/28-hyper-personalized-data-platform.html",
+      "size": 3490
+    },
+    {
+      "path": "chejilhub/en/programs/29-genetics-genomics-integration.html",
+      "size": 3525
+    },
+    {
+      "path": "chejilhub/en/programs/30-microbiome-gut-brain-axis.html",
+      "size": 3479
+    },
+    {
+      "path": "chejilhub/en/programs/31-nitric-oxide-vascular.html",
+      "size": 3447
+    },
+    {
+      "path": "chejilhub/en/programs/32-brainwaves-psychology-behavior.html",
+      "size": 3500
+    },
+    {
+      "path": "chejilhub/en/programs/33-thermal-near-infrared-mitochondria.html",
+      "size": 3564
+    },
+    {
+      "path": "chejilhub/en/programs/34-global-translation-localization.html",
+      "size": 3463
+    },
+    {
+      "path": "chejilhub/en/programs/35-organizations-cooperatives-partnerships.html",
+      "size": 3556
+    },
+    {
+      "path": "chejilhub/en/programs/36-awards-selection-results.html",
+      "size": 3436
     },
     {
       "path": "chejilhub/en/sasang.html",
@@ -5834,10 +5970,6 @@
     {
       "path": "chejilhub/programs/36-수상-선정-실적.html",
       "size": 15729
-    },
-    {
-      "path": "chejilhub/proposal.html",
-      "size": 2352
     },
     {
       "path": "chejilhub/sasang.html",
