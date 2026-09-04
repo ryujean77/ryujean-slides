@@ -192,3 +192,10 @@ body{font-family:var(--sans);font-weight:450;letter-spacing:-.012em}
 }
 @media(max-width:620px){.author-evidence-grid,.domestic-grid,.principle-grid,.history-line,.constitution-set{grid-template-columns:1fr}.contact-form{grid-template-columns:1fr}.form-field{grid-column:1/-1}.domestic-gallery figure,.domestic-gallery figure:nth-child(1),.domestic-gallery figure:nth-child(5){grid-column:span 12}.nav .brand{font-size:1.05rem!important}.brand small{display:none}}
 @media(max-width:390px){.hero h1 .headline-line--nowrap{font-size:.68em}.section h2 .headline-line--nowrap{font-size:.69em}.nav .brand{font-size:.95rem!important}.nav-toggle{width:46px;height:46px}}
+
+/* Contrast treatment for transparent white-on-transparent source visual KB-02448 */
+.figure--dark{background:var(--deep);color:var(--white)}
+.figure--dark figcaption{color:#d9e0dc}
+.gallery figure.gallery--dark{background:var(--deep);color:var(--white)}
+.gallery figure.gallery--dark img{background:var(--deep)}
+.gallery figure.gallery--dark figcaption{color:#d9e0dc}
