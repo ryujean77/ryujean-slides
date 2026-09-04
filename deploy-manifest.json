@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-04T06:38:14.768Z",
-  "commit": "2a77091c941975491c9f7df993e50be2f28652e5",
-  "fileCount": 1945,
+  "generatedAt": "2026-09-04T07:46:21.951Z",
+  "commit": "81567eb278f1bf400c4e4533ff7c2793d7c6dcd9",
+  "fileCount": 1949,
   "files": [
     {
       "path": ".nojekyll",
@@ -6376,6 +6376,22 @@
       "size": 6711
     },
     {
+      "path": "homo-luminus/homo_luminus_appendix_directors_cut.pdf",
+      "size": 325892
+    },
+    {
+      "path": "homo-luminus/index.html",
+      "size": 43247
+    },
+    {
+      "path": "homoluminus/homo_luminus_appendix_directors_cut.pdf",
+      "size": 325892
+    },
+    {
+      "path": "homoluminus/index.html",
+      "size": 43247
+    },
+    {
       "path": "incheon-ai-curriculum/00_INDEX.html",
       "size": 9344
     },
@@ -7577,7 +7593,7 @@
     },
     {
       "path": "publishing_registry.json",
-      "size": 7388
+      "size": 8544
     },
     {
       "path": "publishing_registry.json.bak",
