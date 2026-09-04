@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-04T03:22:15.691Z",
-  "commit": "67c078413423f820b4682b6fb323c87e7fee2d57",
+  "generatedAt": "2026-09-04T03:28:20.096Z",
+  "commit": "603005bd2b50b728db406ad4f7eccd073cc953cc",
   "fileCount": 1945,
   "files": [
     {
@@ -596,8 +596,8 @@
       "size": 109224
     },
     {
-      "path": "chejilhub/assets/originals/KB-02766.png",
-      "size": 36581989
+      "path": "chejilhub/assets/originals/KB-02766.jpg",
+      "size": 109224
     },
     {
       "path": "chejilhub/assets/originals/KB-02799.png",
