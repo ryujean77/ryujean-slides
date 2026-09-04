@@ -100,7 +100,7 @@ body{font-family:var(--sans);font-weight:450;letter-spacing:-.012em}
 .nav .brand{display:grid;gap:.18rem;min-width:max-content;font-size:clamp(1.15rem,1.5vw,1.36rem)!important;line-height:1.05}
 .brand small{font-size:.58rem;letter-spacing:.18em;color:var(--red)}
 .nav__menu{display:flex;align-items:center;justify-content:flex-end;gap:clamp(.9rem,1.55vw,1.65rem)}
-.nav__menu a{font-size:clamp(1.2rem,1.55vw,1.45rem)!important;font-weight:720!important;white-space:nowrap}
+.nav__menu a{font-size:clamp(1.2rem,1.55vw,1.45rem)!important;font-weight:720!important;white-space:nowrap}.language-switch{display:inline-flex;align-items:center;gap:.35rem;margin-left:.25rem;padding-left:.8rem;border-left:1px solid var(--line)}.language-switch a{font-size:.78rem!important;letter-spacing:.03em}.language-switch a+ a:before{content:"/";margin-right:.35rem;color:var(--sage)}
 .nav-toggle{display:none;width:52px;height:52px;margin-left:auto;padding:0;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 .nav-toggle span{display:block;width:24px;height:2px;margin:5px auto;background:currentColor;transition:transform .2s ease,opacity .2s ease}
 .headline-line{white-space:normal}
