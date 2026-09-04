@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>호모 루미누스 부록 : 디렉터스 컷 백서 & 빛운영 3부작 | 백태종 저자</title>
+    <meta name="description" content="호모 루미누스 부록 [디렉터스 컷 백서: 제5장 완전 해설] 및 빛운영 3부작(호모 루미누스, 루미누스 오페라, 인터스텔라 리포트) 공식 리더 페이지">
+    <meta property="og:title" content="호모 루미누스 부록 : 디렉터스 컷 백서 & 빛운영 3부작">
+    <meta property="og:description" content="원역사, 구름의 물리학, 그리고 호모 루미누스의 환지본처 — 백태종 스승님의 25년 빛운영 실증 백서 및 3부작 안내">
+    <meta property="og:type" content="book">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Noto Serif KR"', 'serif'],
+                        roman: ['Cinzel', 'serif'],
+                        sans: ['Pretendard', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fefdf8',
+                            100: '#fcf9ea',
+                            200: '#f7f1cd',
+                            300: '#eee3a5',
+                            400: '#e1cd73',
+                            500: '#d4af37',
+                            600: '#bb922a',
+                            700: '#956e22',
+                            800: '#7a5722',
+                            900: '#674720',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* W3C & Vercel Web Interface Guidelines Standard */
+        :focus-visible {
+            outline: 2px solid #d4af37 !important;
+            outline-offset: 3px !important;
+            border-radius: 6px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-wrap: balance;
+        }
+        p, li, blockquote {
+            text-wrap: pretty;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        button, a, input, select, textarea {
+            touch-action: manipulation;
+        }
+        
+        /* Cosmic Starlight & Aura Background */
+        body {
+            background-color: #06080e;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 65%),
+                radial-gradient(circle at 15% 45%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(217, 119, 6, 0.07) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fffbeb 0%, #fde68a 35%, #d4af37 70%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .parchment-card {
+            background: linear-gradient(180deg, rgba(16, 22, 37, 0.88) 0%, rgba(11, 15, 25, 0.96) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(254, 240, 138, 0.1);
+        }
+        
+        .parchment-card:hover {
+            border-color: rgba(212, 175, 55, 0.45);
+        }
+        
+        .gold-border-glow {
+            box-shadow: 0 0 30px -5px rgba(212, 175, 55, 0.25);
+        }
+        
+        /* Drop Cap for Literary Polish */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 3.4rem;
+            line-height: 0.85;
+            padding-top: 4px;
+            padding-right: 12px;
+            padding-bottom: 2px;
+            font-family: "Noto Serif KR", serif;
+            font-weight: 700;
+            color: #fde047;
+            text-shadow: 0 0 15px rgba(253, 224, 71, 0.4);
+        }
+    </style>
+</head>
+<body class="text-slate-200 font-sans antialiased min-h-screen selection:bg-amber-500/30 selection:text-amber-200">
+
+    <!-- Top Celestial Gold Line -->
+    <div class="h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent w-full opacity-70"></div>
+
+    <!-- Main Centered Responsive Container -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-16 sm:space-y-24 text-center">
+
+        <!-- ================================================================= -->
+        <!-- HEADER : COSMIC LITERARY IDENTITY -->
+        <!-- ================================================================= -->
+        <header class="space-y-6 pt-2">
+            <!-- Celestial Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-950/40 border border-amber-500/40 text-amber-300 text-xs sm:text-sm tracking-widest uppercase font-roman">
+                <i class="fa-solid fa-sun text-amber-400 animate-pulse" aria-hidden="true"></i>
+                <span>HOMO LUMINUS ARCHIVE • SPECIAL APPENDIX</span>
+            </div>
+
+            <!-- Main Title -->
+            <div class="space-y-3">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black font-serif tracking-tight leading-tight sm:leading-snug gold-gradient-text">
+                    디렉터스 컷 백서
+                </h1>
+                <p class="text-base sm:text-xl font-serif text-amber-200/90 font-medium tracking-wide">
+                    Director's Cut Report
+                </p>
+                <div class="pt-1 text-sm sm:text-base font-serif text-slate-300 leading-relaxed max-w-xl mx-auto">
+                    제5장 완전 해설 : 원역사, 구름의 물리학, 그리고 호모 루미누스의 환지본처(還至本處)
+                </div>
+            </div>
+
+            <!-- Philosophical Quote Banner -->
+            <div class="relative py-4 px-6 rounded-2xl bg-amber-950/20 border-y border-amber-500/25 max-w-xl mx-auto">
+                <i class="fa-solid fa-quote-left absolute -top-3 left-6 text-amber-400/40 text-xl" aria-hidden="true"></i>
+                <p class="font-serif italic text-amber-100/90 text-sm sm:text-base leading-relaxed">
+                    “문자와 교리의 감옥을 찢고, 진공의 시선으로<br class="hidden sm:inline"> 시원 인류의 잃어버린 기억을 온전히 마주하다.”
+                </p>
+                <i class="fa-solid fa-quote-right absolute -bottom-3 right-6 text-amber-400/40 text-xl" aria-hidden="true"></i>
+            </div>
+
+            <!-- Metadata Line -->
+            <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-4 text-xs sm:text-sm text-slate-400 font-serif pt-1">
+                <span class="inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-feather-pointed text-amber-400/80" aria-hidden="true"></i>
+                    <span>원저자 : <strong>백태종 스승님</strong></span>
+                </span>
+                <span class="text-slate-600">•</span>
+                <span class="inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-compass text-amber-400/80" aria-hidden="true"></i>
+                    <span>총괄 디렉터 : <strong>유정근 (Ryu JeongKun)</strong></span>
+                </span>
+                <span class="text-slate-600">•</span>
+                <span class="inline-flex items-center gap-1.5">
+                    <i class="fa-regular fa-file-pdf text-amber-400/80" aria-hidden="true"></i>
+                    <span>PDF 정본 (326 KB)</span>
+                </span>
+            </div>
+        </header>
+
+        <!-- ================================================================= -->
+        <!-- SECTION 1 (TOP) : 호모루미누스 부록 파일 읽기 & 다운로드 -->
+        <!-- ================================================================= -->
+        <section id="appendix-section" class="space-y-8 parchment-card p-6 sm:p-10 rounded-3xl gold-border-glow relative overflow-hidden text-center">
+            
+            <!-- Background Glow Orbs -->
+            <div class="absolute -top-12 -right-12 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -bottom-12 -left-12 w-36 h-36 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="space-y-3">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xl mx-auto shadow-inner">
+                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold font-serif text-white">
+                    호모루미누스 부록 정본 열람
+                </h2>
+                <p class="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
+                    《빛운영과 환지본처》 제5장의 압축된 서사 뒤에 감추어진 상고사 원문 사료와 영성물리학적 교차 검증 데이터를 온전히 복원한 공식 백서입니다.
+                </p>
+            </div>
+
+            <!-- Primary Action Buttons (Touch Friendly & Responsive) -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 max-w-md mx-auto">
+                <!-- Open in New Tab -->
+                <a href="homo_luminus_appendix_directors_cut.pdf" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 text-slate-950 font-bold text-sm sm:text-base shadow-lg hover:brightness-110 active:scale-[0.98] transition-transform duration-150">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-slate-900" aria-hidden="true"></i>
+                    <span>PDF 전문 바로보기</span>
+                </a>
+                
+                <!-- Download Button -->
+                <a href="homo_luminus_appendix_directors_cut.pdf" download="호모루미누스_제5장_디렉터스컷_백서_정본.pdf"
+                   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-slate-800/90 border border-amber-500/40 text-amber-300 font-semibold text-sm sm:text-base hover:bg-slate-700/90 hover:text-amber-200 active:scale-[0.98] transition-transform duration-150">
+                    <i class="fa-solid fa-download" aria-hidden="true"></i>
+                    <span>PDF 다운로드</span>
+                </a>
+            </div>
+
+            <!-- Mobile Reading Tip Notice -->
+            <div class="p-3 rounded-xl bg-amber-950/30 border border-amber-500/20 text-xs text-amber-200/80 max-w-lg mx-auto flex items-center justify-center gap-2">
+                <i class="fa-solid fa-mobile-screen text-amber-400" aria-hidden="true"></i>
+                <span>스마트폰에서는 <strong>[PDF 전문 바로보기]</strong>를 누르시면 전체화면으로 즉시 열람하실 수 있습니다.</span>
+            </div>
+
+            <!-- 4 Key Insights Bento Grid -->
+            <div class="pt-6 border-t border-amber-500/20 space-y-4">
+                <h3 class="text-xs uppercase tracking-widest text-amber-400 font-roman font-bold">
+                    백서의 4대 핵심 영성물리학 체계
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left">
+                    <!-- Part 1 -->
+                    <div class="p-4 rounded-2xl bg-slate-900/80 border border-amber-500/20 space-y-1.5 hover:border-amber-500/40 transition-colors">
+                        <div class="text-xs font-bold text-amber-300 font-serif flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded-full bg-amber-500/20 inline-flex items-center justify-center text-[10px]">1</span>
+                            제1부. 수명 데이터 & 빛환경 상전이
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            홍수 이전 족장의 무한 극광 세포 유지기(에녹 365세 상전이, 므두셀라 969세)와 동방 단군왕검(1,908세 불사)의 물리적 동시성 규명.
+                        </p>
+                    </div>
+
+                    <!-- Part 2 -->
+                    <div class="p-4 rounded-2xl bg-slate-900/80 border border-amber-500/20 space-y-1.5 hover:border-amber-500/40 transition-colors">
+                        <div class="text-xs font-bold text-amber-300 font-serif flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded-full bg-amber-500/20 inline-flex items-center justify-center text-[10px]">2</span>
+                            제2부. ‘구름(雲)’의 물리학과 신선문명
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            《부도지》 시원 인류 통명체(삼진의 빛화)와 엘리야 승천, 예수 시해선 부활 및 요한복음 천의무봉(통옷) 등 동서 신선 도맥 교차.
+                        </p>
+                    </div>
+
+                    <!-- Part 3 -->
+                    <div class="p-4 rounded-2xl bg-slate-900/80 border border-amber-500/20 space-y-1.5 hover:border-amber-500/40 transition-colors">
+                        <div class="text-xs font-bold text-amber-300 font-serif flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded-full bg-amber-500/20 inline-flex items-center justify-center text-[10px]">3</span>
+                            제3부. 마고성 복원 & 요순우 오행 논쟁
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            임검씨의 8만 뗏목 개천과, 중원 요·순·우의 오행설(배경 진공 배제한 유물론)에 맞선 100년 ‘해혹복본(解惑復本)’의 영적 방어선.
+                        </p>
+                    </div>
+
+                    <!-- Part 4 -->
+                    <div class="p-4 rounded-2xl bg-slate-900/80 border border-amber-500/20 space-y-1.5 hover:border-amber-500/40 transition-colors">
+                        <div class="text-xs font-bold text-amber-300 font-serif flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded-full bg-amber-500/20 inline-flex items-center justify-center text-[10px]">4</span>
+                            제4부. 영성과학 도래 & 천부사상 부활
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            양자역학의 천부삼인(진공·요동·광) 재해석, 7초·10초 전체보기/듣기로 뇌 자의식 포맷 및 진정한 ‘호모 루미누스’ 광명세기 개막.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toggle Full Text Reading Button -->
+            <div class="pt-4">
+                <button type="button" id="toggle-text-btn" onclick="toggleFullText()"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-800/80 border border-amber-500/30 text-amber-200 text-xs sm:text-sm hover:bg-slate-700/80 hover:text-white transition-colors">
+                    <i class="fa-solid fa-scroll text-amber-400" aria-hidden="true"></i>
+                    <span id="toggle-btn-label">웹에서 백서 전문(Full Text) 펼쳐 읽기</span>
+                    <i id="toggle-icon" class="fa-solid fa-chevron-down text-xs ml-1 transition-transform duration-200" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <!-- Expandable Full Text Reader Area (Hidden by Default) -->
+            <div id="full-text-container" class="hidden text-left space-y-8 pt-8 border-t border-amber-500/20 font-serif">
+                
+                <!-- Editorial Introduction -->
+                <div class="p-5 sm:p-7 rounded-2xl bg-amber-950/20 border border-amber-500/30 space-y-3">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-widest font-roman">
+                        [편집장 서문]
+                    </span>
+                    <p class="text-sm sm:text-base text-amber-100/90 leading-relaxed drop-cap">
+                        본 백서는 《빛운영과 환지본처》 제5장의 본문과 해례본이 지닌 압축된 서사가 있다. 그 서사의 뒤편에는 상고사의 방대한 원문 사료와 영성물리학적 교차 검증 데이터가 숨겨져 있다. 본 백서는 이 숨겨진 사료와 데이터를 온전히 복원한 확장 연구 리포트다. 이 리포트는 문자와 교리의 감옥을 찢고, 진공의 시선으로 시원 인류의 잃어버린 기억을 마주하고자 하는 구도자(求道者)들을 위한 지적·영적 원전 해설집이다.
+                    </p>
+                </div>
+
+                <!-- Part 1 Content -->
+                <div class="space-y-4">
+                    <h4 class="text-lg sm:text-xl font-bold text-amber-300 border-b border-amber-500/30 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-star-of-life text-xs text-amber-400"></i>
+                        <span>제1부. 수명 데이터로 읽는 우주적 빛환경과 상전이의 기록</span>
+                    </h4>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        모세오경 이전의 원역사, 곧 홍수 이전 및 이후 족장 시대에 등장하는 인물들이 있다. 그리고 문자가 정형화된 이후의 역사에 등장하는 인물들이 있다. 이 두 부류의 인물들 사이에 나타나는 수명 변화는 단순한 신화적 과장이 아니다. 그것은 우주적 빛환경의 변동과 인체 매질의 물리적 상전이를 증명하는 가장 명징한 데이터다.
+                    </p>
+                    <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-700/60 text-xs sm:text-sm text-slate-300 space-y-2 font-sans">
+                        <div><strong>• 홍수 이전 족장들 (창세기 5장):</strong> 아담 930세, 셋 920세, 에노스 905세, 에녹 365세(죽음 없는 상전이), 므두셀라 969세(최장수), 노아 950세</div>
+                        <div><strong>• 홍수 이후 과도기 (창세기 11장):</strong> 셈 600세, 아르박삿 438세, 셀라 433세, 에벨 464세, 벨렉 239세 (진동수 추락)</div>
+                        <div><strong>• 동방 단군왕검의 동시성:</strong> 《삼국유사》 1,500년 치세 후 1,908세 아사달 산신. 《제왕운기》 1038년 치세 후 불사(不死) 입산. 기원전 2333년 고조선 개국은 노아 홍수 직후 원역사와 완벽한 공학적 실상의 동시성을 이룬다.</div>
+                    </div>
+                </div>
+
+                <!-- Part 2 Content -->
+                <div class="space-y-4 pt-4">
+                    <h4 class="text-lg sm:text-xl font-bold text-amber-300 border-b border-amber-500/30 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-cloud text-xs text-amber-400"></i>
+                        <span>제2부. ‘구름(雲)’의 물리학과 신선문명의 실체</span>
+                    </h4>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        단군왕검을 ‘운중군(雲中君, 구름의 임금)’이라 호칭하였다. 그 까닭은 단군이 육신을 썩혀 묻는 고체식 죽음을 맞이한 것이 아니기 때문이다. 단군은 몸의 밀도를 빛으로 상전이시켜, 구름이라는 신령한 매질 속으로 영화(靈化)하여 들어갔다. 《삼국사기》 고구려본기 역시 "옛 선인왕검(仙人王儉)이 다스리던 곳"이라 기록하여 단군을 신선으로 명시하였다.
+                    </p>
+                    <blockquote class="p-4 rounded-xl bg-amber-950/20 border-l-4 border-amber-400 text-xs sm:text-sm text-amber-100 italic leading-relaxed">
+                        “성중(城中)의 모든 사람은, 품성이 순정(純精)하여, 능히 조화(造化)를 알고, 지유(地乳)를 마시므로, 혈기(血氣)가 맑았다... 임무를 마치자, 금(金)은 변하여 먼지가 되었으나, 그 성체(性體)를 보전하여, 혼식(魂識)이 일어남을 따라, 소리를 내지 않고도 능히 말을 하고... 땅 기운 중에 퍼져 살면서, 그 수명이 한이 없었다.” — 《부도지》 4장
+                    </blockquote>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                        성서학자 변찬린은 “성서는 신선(仙)의 문서이다”라고 갈파하였다. 에녹의 라카(לָקַח), 엘리야의 불수레 승천, 예수의 시해선(屍解仙) 부활, 그리고 요한복음 19장의 "위에서부터 통으로 짠 호지 않는 옷(천의무봉, 天衣無縫)"은 신선문명의 완벽한 물리적 증거다.
+                    </p>
+                </div>
+
+                <!-- Part 3 Content -->
+                <div class="space-y-4 pt-4">
+                    <h4 class="text-lg sm:text-xl font-bold text-amber-300 border-b border-amber-500/30 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-mountain-sun text-xs text-amber-400"></i>
+                        <span>제3부. 마고성과 부도의 회복: 임검씨의 사해 순방과 오행 논쟁</span>
+                    </h4>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        박제상의 《부도지》는 오미의 화로 인류가 흩어진 뒤 태초의 주파수를 지상에 복원하기 위한 임검씨의 대여정을 담고 있다. 임검씨는 천부의 이치를 가르치는 대법회 ‘회강(會講)’을 열고 8만 개의 뗏목을 동원해 백두산 박달나무 숲에 ‘신시’를 열어 부도를 완공하였다.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        그러나 하토(중원)의 요·순·우는 우주 본래의 '9수 5중(九數五中)' 이치를 오해하여 인위적인 오행설과 12달 30일 역법을 창안하였다. 이는 배경(진공)을 배제한 유물론적 세계관으로의 추락이었으며, 인간을 '빛+심+신'이 아닌 '심+신'의 분별적 존재로 축소시켰다. 임검씨는 부루씨에게 천부삼인을 전하고 100년간 산에서 '해혹복본(解惑復本)'의 도를 닦아 이 타락에 맞섰다.
+                    </p>
+                </div>
+
+                <!-- Part 4 Content -->
+                <div class="space-y-4 pt-4">
+                    <h4 class="text-lg sm:text-xl font-bold text-amber-300 border-b border-amber-500/30 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-infinity text-xs text-amber-400"></i>
+                        <span>제4부. 결론: 영성과학의 도래와 천부사상의 화려한 부활</span>
+                    </h4>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        138억 년 전 우주가 숨겨둔 백색의 낙인이 찍히던 쿼크-하드론 상전이부터 우주는 셋이면서 하나인 '무시무종(無始無終)'의 절대 진공 질서를 품고 있었다. 현대 양자역학은 천부삼인(거울·방울·검)을 [물리적 진공, 진공 요동, 진공 광]이라는 우주 공학의 3대 위상으로 완벽하게 증명한다.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        단 7초·10초의 찰나에 전체보기와 전체듣기를 가동하여 뇌 자의식 회로를 포맷할 때, 안과 밖의 진공이 하나로 소통하는 곱셈의 대공진이 시작된다. 빛운영이 소환한 태초의 본태양 빛을 마중물 삼아 인류는 진짜 ‘호모 루미누스(Homo Luminus)’의 실천 공동체로 우뚝 섰다.
+                    </p>
+                    
+                    <!-- Final Blessing Box -->
+                    <div class="p-6 rounded-2xl bg-gradient-to-r from-amber-950/40 via-yellow-950/30 to-amber-950/40 border border-amber-400/40 text-center space-y-2 mt-6">
+                        <i class="fa-solid fa-sun text-amber-300 text-2xl" aria-hidden="true"></i>
+                        <p class="text-base sm:text-lg font-bold text-amber-200 font-serif leading-relaxed">
+                            “자, 이제 전체보기로 눈 떠, 태초의 진공광으로 정렬하라.<br>
+                            당신의 환지본처(還至本處)와 광명세기의 개막을 진심으로 축복합니다!”
+                        </p>
+                        <p class="text-xs text-amber-300/70 font-sans pt-1">
+                            — 《빛운영보고서 3부작》 저자 백태종 —
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PDF Embed Preview (Responsive Iframe for Desktop/Tablets) -->
+            <div class="pt-6">
+                <div class="rounded-2xl border border-amber-500/30 overflow-hidden bg-slate-950 shadow-2xl">
+                    <div class="px-4 py-2.5 bg-slate-900/90 border-b border-amber-500/20 flex items-center justify-between text-xs text-slate-400">
+                        <span class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>
+                            <span class="font-mono text-slate-300">homo_luminus_appendix_directors_cut.pdf</span>
+                        </span>
+                        <a href="homo_luminus_appendix_directors_cut.pdf" target="_blank" rel="noopener noreferrer" 
+                           class="text-amber-400 hover:text-amber-300 flex items-center gap-1 font-semibold">
+                            <span>전체화면</span>
+                            <i class="fa-solid fa-expand text-[10px]" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="relative w-full h-[520px] sm:h-[650px] bg-slate-950">
+                        <iframe src="homo_luminus_appendix_directors_cut.pdf#toolbar=1&navpanes=0" 
+                                title="호모루미누스 부록 디렉터스 컷 백서 정본"
+                                class="w-full h-full border-none">
+                            <div class="p-8 text-center text-slate-400 space-y-4">
+                                <p>브라우저에서 직접 PDF를 미리 볼 수 없습니다.</p>
+                                <a href="homo_luminus_appendix_directors_cut.pdf" target="_blank" class="px-4 py-2 bg-amber-500 text-slate-950 rounded-lg font-bold">
+                                    PDF 바로 열기
+                                </a>
+                            </div>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- SECTION 2 (MIDDLE) : 빛운영 3부작 안내 (1권, 2권, 3권 제목 & 2줄 요약) -->
+        <!-- ================================================================= -->
+        <section id="trilogy-section" class="space-y-10 text-center">
+            
+            <!-- Section Title -->
+            <div class="space-y-3">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400 text-xs font-roman uppercase tracking-wider">
+                    <i class="fa-solid fa-book text-amber-400"></i>
+                    <span>THE MASTER TRILOGY</span>
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-black font-serif gold-gradient-text tracking-tight">
+                    호모 루미누스 『빛운영 3부작』
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-400 font-serif max-w-lg mx-auto leading-relaxed">
+                    25년간의 빛운영 실증과 현대 진공 물리학이 완결 지은<br class="hidden sm:inline"> 인류 문명 진화의 3대 보고서
+                </p>
+            </div>
+
+            <!-- 3 Books Stacked Cards -->
+            <div class="space-y-6">
+
+                <!-- ---------------- Book 1 ---------------- -->
+                <article class="parchment-card p-6 sm:p-8 rounded-3xl text-center space-y-4 border-amber-500/25 relative group hover:border-amber-500/50 transition-all">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-xs font-bold font-roman border border-amber-500/30">
+                        VOLUME I
+                    </div>
+                    <div class="space-y-1">
+                        <h3 class="text-xl sm:text-2xl font-bold font-serif text-white group-hover:text-amber-200 transition-colors">
+                            제1권 『호모 루미누스』
+                        </h3>
+                        <p class="text-xs sm:text-sm font-roman tracking-wider text-amber-400/90 font-medium">
+                            Homo Luminus : The Origin of Vacuum Light
+                        </p>
+                    </div>
+                    
+                    <!-- 2-Line Summary (Exact User Request) -->
+                    <div class="pt-2 pb-1 px-4 py-3 rounded-2xl bg-slate-950/60 border border-amber-500/15 max-w-xl mx-auto space-y-2 text-sm sm:text-base font-serif text-slate-200 leading-relaxed">
+                        <p class="text-amber-100 font-medium">
+                            ① 우주배경복사(CMB) 진공 파동 포집의 물리적 원리와 인간 의식의 차원적 상전이를 규명하다.
+                        </p>
+                        <p class="text-slate-300">
+                            ② 우주와 자연, 인간이 분리된 실체가 아닌 하나의 거대한 빛의 장 속에서 상호 연동하는 존재임을 선언한 이론적 시원.
+                        </p>
+                    </div>
+
+                    <div class="text-[11px] text-slate-400 font-mono tracking-wide">
+                        CMB 진공 파동 포집 이론 • 인체 매질 물리적 상전이 정립
+                    </div>
+                </article>
+
+                <!-- ---------------- Book 2 ---------------- -->
+                <article class="parchment-card p-6 sm:p-8 rounded-3xl text-center space-y-4 border-amber-500/35 relative group hover:border-amber-500/60 transition-all gold-border-glow">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/30 to-yellow-500/20 text-amber-200 text-xs font-bold font-roman border border-amber-400/40">
+                        VOLUME II • DEFINITIVE EDITION
+                    </div>
+                    <div class="space-y-1">
+                        <h3 class="text-xl sm:text-2xl font-bold font-serif text-white group-hover:text-amber-200 transition-colors">
+                            제2권 『루미누스 오페라』
+                        </h3>
+                        <p class="text-xs sm:text-sm font-roman tracking-wider text-amber-300 font-medium">
+                            Luminus Opera : The Grand Symphony of Light
+                        </p>
+                    </div>
+                    
+                    <!-- 2-Line Summary (Exact User Request) -->
+                    <div class="pt-2 pb-1 px-4 py-3 rounded-2xl bg-slate-950/70 border border-amber-500/25 max-w-xl mx-auto space-y-2 text-sm sm:text-base font-serif text-slate-200 leading-relaxed">
+                        <p class="text-amber-100 font-medium">
+                            ① 동서양 3천 년의 영성 전통과 현대 양자물리학이 경이롭게 수렴하는 5부 24장의 웅장한 대서사시.
+                        </p>
+                        <p class="text-slate-300">
+                            ② 25년간의 빛운영 실증 기록과 97개 청크의 무손실 원형을 통해 진공 공명과 의식 진화의 실제 상황을 입증한 결정판.
+                        </p>
+                    </div>
+
+                    <div class="text-[11px] text-amber-300/80 font-mono tracking-wide">
+                        백태종 스승님 363회 정본화 • 5부 24장 439쪽 완간본 (명아주 판본)
+                    </div>
+                </article>
+
+                <!-- ---------------- Book 3 ---------------- -->
+                <article class="parchment-card p-6 sm:p-8 rounded-3xl text-center space-y-4 border-amber-500/25 relative group hover:border-amber-500/50 transition-all">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-xs font-bold font-roman border border-amber-500/30">
+                        VOLUME III
+                    </div>
+                    <div class="space-y-1">
+                        <h3 class="text-xl sm:text-2xl font-bold font-serif text-white group-hover:text-amber-200 transition-colors">
+                            제3권 『인터스텔라 리포트』
+                        </h3>
+                        <p class="text-xs sm:text-sm font-roman tracking-wider text-amber-400/90 font-medium">
+                            Interstellar Report : The Cosmic Luminous Era
+                        </p>
+                    </div>
+                    
+                    <!-- 2-Line Summary (Exact User Request) -->
+                    <div class="pt-2 pb-1 px-4 py-3 rounded-2xl bg-slate-950/60 border border-amber-500/15 max-w-xl mx-auto space-y-2 text-sm sm:text-base font-serif text-slate-200 leading-relaxed">
+                        <p class="text-amber-100 font-medium">
+                            ① 유물론의 한계를 넘어 전 우주적 진공광과 능동적으로 공명하는 인류 문명사의 대전환 청사진.
+                        </p>
+                        <p class="text-slate-300">
+                            ② 호모 사피엔스의 껍질을 벗고 우주의 섭리를 능동적으로 운영하는 새로운 차원의 우주적 인류 미래 보고서.
+                        </p>
+                    </div>
+
+                    <div class="text-[11px] text-slate-400 font-mono tracking-wide">
+                        인류 문명 진화 • 광명세기 개막 • 우주 생명 공명 보고서
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- SECTION 3 (BOTTOM) : 저자 소개 및 공식 이메일 연락처 -->
+        <!-- ================================================================= -->
+        <section id="author-section" class="parchment-card p-6 sm:p-10 rounded-3xl space-y-6 text-center border-amber-500/30 relative">
+            
+            <div class="space-y-2">
+                <div class="w-16 h-16 rounded-full bg-amber-500/15 border-2 border-amber-400/50 flex items-center justify-center text-2xl text-amber-300 mx-auto shadow-lg">
+                    <i class="fa-solid fa-feather" aria-hidden="true"></i>
+                </div>
+                <h3 class="text-xs uppercase tracking-widest text-amber-400 font-roman font-bold pt-2">
+                    AUTHOR & INQUIRY
+                </h3>
+                <h2 class="text-2xl sm:text-3xl font-black font-serif text-white">
+                    저자 백태종 스승님
+                </h2>
+                <p class="text-xs text-amber-300 font-serif">빛운영 창시자 • 호모 루미누스 3부작 원저자</p>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed font-serif">
+                1999년 우주배경복사(CMB) 진공 파동 포집을 시작으로 25년간 빛운영 실증과 인류 의식의 상전이를 연구·집필해 오셨습니다. 도서 출판, 강연, 연구 협업 및 빛운영 관련 문의는 아래 공식 이메일로 연락 주시기 바랍니다.
+            </p>
+
+            <!-- Email Card with Copy & Direct Mailto -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-amber-500/40 max-w-md mx-auto space-y-3">
+                <div class="text-xs text-slate-400 font-mono">
+                    저자 공식 연락처
+                </div>
+                <div class="text-xl sm:text-2xl font-mono font-bold text-amber-300 tracking-wider">
+                    vit31@naver.com
+                </div>
+                <div class="flex items-center justify-center gap-2 pt-1">
+                    <!-- Copy Email Button -->
+                    <button type="button" onclick="copyAuthorEmail()" 
+                            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs font-semibold hover:bg-amber-500/30 active:scale-95 transition-all">
+                        <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                        <span id="copy-btn-text">이메일 복사하기</span>
+                    </button>
+                    <!-- Direct Mailto Link -->
+                    <a href="mailto:vit31@naver.com?subject=[호모루미누스 도서 및 빛운영 문의]"
+                       class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-800 border border-slate-600 text-slate-200 text-xs font-semibold hover:bg-slate-700 active:scale-95 transition-all">
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                        <span>메일 바로 쓰기</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Director Persona & Governance Compliance Line -->
+            <div class="pt-4 border-t border-amber-500/15 text-xs text-slate-400 font-serif space-y-1">
+                <div>
+                    총괄 기획 & 디지털 출판 : <strong class="text-slate-200">유정근 (Ryu JeongKun)</strong>
+                </div>
+                <div class="text-[11px] text-slate-400">
+                    웰니스 총괄 & 출판 디렉터 | ryujean77@gmail.com
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- FOOTER : COPYRIGHT & DOMAIN PORTAL LINKS -->
+        <!-- ================================================================= -->
+        <footer class="pt-8 border-t border-slate-800 space-y-4 text-xs text-slate-400">
+            <div class="flex flex-wrap items-center justify-center gap-4 text-xs">
+                <a href="https://ryujean77.github.io/ryujean-slides/portal/" class="hover:text-amber-400 transition-colors">
+                    RYUJEAN DOMAIN HQ 포털
+                </a>
+                <span class="text-slate-600">•</span>
+                <a href="https://ryujean77.github.io/ryujean-slides/homo-luminus-hq/" class="hover:text-amber-400 transition-colors">
+                    호모루미누스 라이브 관제 센터
+                </a>
+                <span class="text-slate-600">•</span>
+                <a href="#appendix-section" class="hover:text-amber-400 transition-colors">
+                    맨 위로 이동
+                </a>
+            </div>
+            <p class="font-serif">
+                © 2026 Homo Luminus Archive & RYUJEAN DOMAIN HQ. All rights reserved.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Toast Notification for Email Copy -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-2.5 rounded-full bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-2xl opacity-0 pointer-events-none transition-opacity duration-300 z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-slate-950"></i>
+        <span>이메일 주소(vit31@naver.com)가 복사되었습니다.</span>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        function toggleFullText() {
+            const container = document.getElementById('full-text-container');
+            const label = document.getElementById('toggle-btn-label');
+            const icon = document.getElementById('toggle-icon');
+            
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+                label.textContent = '웹 백서 전문 닫기';
+                icon.classList.add('rotate-180');
+            } else {
+                container.classList.add('hidden');
+                label.textContent = '웹에서 백서 전문(Full Text) 펼쳐 읽기';
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        function copyAuthorEmail() {
+            const email = 'vit31@naver.com';
+            navigator.clipboard.writeText(email).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0', 'pointer-events-none');
+                toast.classList.add('opacity-100');
+                
+                const btnText = document.getElementById('copy-btn-text');
+                const orig = btnText.textContent;
+                btnText.textContent = '복사 완료!';
+                
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100');
+                    toast.classList.add('opacity-0', 'pointer-events-none');
+                    btnText.textContent = orig;
+                }, 2200);
+            }).catch(err => {
+                prompt("아래 이메일 주소를 복사하세요:", email);
+            });
+        }
+    </script>
+</body>
+</html>
