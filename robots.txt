@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /ryujean-slides/*internal*
+Disallow: /ryujean-slides/choi-tommy-care/
+Disallow: /ryujean-slides/cms.html
+Disallow: /ryujean-slides/github_cms.html
+Disallow: /ryujean-slides/publishing_registry.json
