@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-08T16:19:12.112Z",
-  "commit": "3d695317595b874edbe38f81e5e15a9a5c5aeb90",
-  "fileCount": 1949,
+  "generatedAt": "2026-09-08T16:40:48.220Z",
+  "commit": "76a126772978e668442e9589068d988fdb4e0a03",
+  "fileCount": 1952,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -414,6 +414,18 @@
     {
       "path": "apps/pure-sasang/index.html",
       "size": 67718
+    },
+    {
+      "path": "apps/sasang-diagnosis/index.html",
+      "size": 27149
+    },
+    {
+      "path": "apps/sasang-diagnosis/item_selection_rationale.html",
+      "size": 32470
+    },
+    {
+      "path": "apps/sasang-diagnosis/item_selection_rationale.md",
+      "size": 20617
     },
     {
       "path": "apps/sasang-spa/01_사상체질_프리미엄_체질스파_프로젝트_기획서.md",
@@ -6053,7 +6065,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 33640
+      "size": 33268
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -7577,11 +7589,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 33640
+      "size": 33268
     },
     {
       "path": "portal/index.html",
-      "size": 43603
+      "size": 43383
     },
     {
       "path": "portal/index.html.bak",
