@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-09 01:18:48 (KST)",
+  "lastUpdated": "2026-09-09 01:40:33 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -130,7 +130,7 @@
       ],
       "stats": {
         "projectsCount": 2,
-        "liveUrlsCount": 1,
+        "liveUrlsCount": 0,
         "status": "🟡 원고 검토/보완"
       }
     },
@@ -541,25 +541,9 @@
       "status": "상시가동",
       "statusBadge": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
       "date": "2026-08-21",
-      "liveUrl": "https://github.com/ryujean77/BTS_AGY",
-      "deliverables": [
-        {
-          "name": "GitHub Actions 워크플로우",
-          "type": "yml",
-          "path": ".github/workflows/bts_arirang_daily.yml"
-        },
-        {
-          "name": "CLI 자동 수집 스크립트",
-          "type": "py",
-          "path": "scripts/bts_arirang_cli.py"
-        },
-        {
-          "name": "업무 지시서 (MD)",
-          "type": "md",
-          "path": "BTS_Arirang_CLI_work_order.md"
-        }
-      ],
-      "description": "BTS 월드투어 남은 공연에 대한 공연 전·중·후 지도와 현장 이미지를 자동 검증 수집하는 GitHub Actions 파이프라인."
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "BTS 월드투어 남은 공연에 대한 공연 전·중·후 지도와 현장 이미지를 자동 검증 수집하는 GitHub Actions 파이프라인. (저장소가 Private 이므로 대외 공개 링크는 제공하지 않는다.)"
     },
     {
       "id": "PRJ-SASANG-01",
@@ -723,14 +707,14 @@
           "path": "index.html"
         },
         {
-          "name": "문항 선별 근거 및 개발 명세서 (MD)",
-          "type": "md",
-          "path": "README.md"
+          "name": "문항 선별 근거 리포트 (HTML)",
+          "type": "html",
+          "path": "item_selection_rationale.html"
         },
         {
-          "name": "진단 결과 리포트 (HTML)",
-          "type": "html",
-          "path": "report.html"
+          "name": "문항 선별 근거 원문 (MD)",
+          "type": "md",
+          "path": "item_selection_rationale.md"
         }
       ],
       "description": "397명 실측 임상 데이터를 바탕으로 선별된 20문항 인터랙티브 체질 자가진단 및 맞춤 솔루션 반응형 모바일 웹앱."

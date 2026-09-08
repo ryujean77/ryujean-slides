@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사상체질 20문항 자가진단 | 체질로 나를 이해하기</title>
+<meta name="description" content="IRB 승인 연구(N=397) 방법론을 계승한 20문항 사상체질 자가진단. 4영역 균형 설계.">
+<style>
+:root{
+  --bg:#faf8f5; --card:#fff; --ink:#1c1a17; --muted:#6b645c; --line:#e6e0d8;
+  --accent:#8a6a3f; --accent-soft:#f2ebe1; --shadow:0 1px 3px rgba(28,26,23,.06),0 8px 24px rgba(28,26,23,.05);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  line-height:1.7;-webkit-text-size-adjust:100%}
+.wrap{max-width:680px;margin:0 auto;padding:24px 20px 80px}
+header{text-align:center;padding:36px 0 28px}
+.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(24px,5.5vw,34px);margin:12px 0 10px;letter-spacing:-.02em;line-height:1.35}
+.sub{color:var(--muted);font-size:15px;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.card + .card{margin-top:16px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px}
+.btn{display:block;width:100%;padding:15px 18px;border-radius:12px;border:1px solid var(--accent);
+  background:var(--accent);color:#fff;font-size:16px;font-weight:700;cursor:pointer;
+  font-family:inherit;transition:opacity .15s}
+.btn:hover{opacity:.88}
+.btn.ghost{background:transparent;color:var(--accent)}
+.progress{height:5px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:6px}
+.progress > i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s ease}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:20px}
+.qcat{font-size:12px;color:var(--accent);font-weight:700;margin-bottom:8px}
+.qtext{font-size:19px;font-weight:700;line-height:1.5;margin:0 0 20px;letter-spacing:-.01em}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:15px 17px;font-size:15px;line-height:1.6;cursor:pointer;
+  font-family:inherit;color:var(--ink);transition:border-color .15s,background .15s}
+.opt + .opt{margin-top:10px}
+.opt:hover{border-color:var(--accent);background:var(--accent-soft)}
+.nav{margin-top:18px;display:flex;gap:10px}
+.nav button{flex:1;padding:12px;border-radius:10px;border:1px solid var(--line);background:#fff;
+  color:var(--muted);font-size:14px;cursor:pointer;font-family:inherit}
+.nav button:disabled{opacity:.4;cursor:default}
+.result-type{font-size:clamp(30px,8vw,44px);font-weight:800;letter-spacing:-.03em;margin:10px 0 4px}
+.result-organ{color:var(--accent);font-weight:700;font-size:15px}
+.bar{margin-top:8px}
+.bar-row{display:flex;align-items:center;gap:10px;font-size:14px;margin-bottom:9px}
+.bar-row span:first-child{width:56px;flex:none;color:var(--muted)}
+.bar-track{flex:1;height:8px;background:var(--line);border-radius:999px;overflow:hidden}
+.bar-track > i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.bar-row b{width:34px;text-align:right;font-variant-numeric:tabular-nums;font-size:13px}
+dl{margin:0}
+dt{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.04em;margin-top:18px}
+dt:first-child{margin-top:0}
+dd{margin:5px 0 0;font-size:15px}
+h2{font-size:17px;margin:0 0 14px;letter-spacing:-.01em}
+.notice{background:#fff8ee;border:1px solid #f0e2c8;border-radius:12px;padding:15px 17px;font-size:14px;color:#7a5f2e}
+.disclaimer{margin-top:28px;font-size:12.5px;color:var(--muted);line-height:1.75;
+  border-top:1px solid var(--line);padding-top:18px}
+.cta{background:var(--ink);color:#fff;border-color:var(--ink);margin-top:8px}
+.hide{display:none}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#141210;--card:#1d1a17;--ink:#f0ebe4;--muted:#a49a8e;--line:#332e29;
+    --accent:#d4ab6f;--accent-soft:#2a231a;--shadow:0 1px 3px rgba(0,0,0,.4)}
+  .opt{background:#1d1a17}
+  .nav button{background:#1d1a17}
+  .notice{background:#241d12;border-color:#3d3120;color:#d9c193}
+  .cta{background:var(--accent);color:#141210;border-color:var(--accent)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Sasang Constitution · Free 20</div>
+  <h1>왜 같은 건강법이<br>나에게만 안 들을까</h1>
+  <p class="sub">20문항으로 내 몸의 기본 설정값을 확인합니다</p>
+</header>
+
+<!-- 시작 -->
+<section id="intro">
+  <div class="card">
+    <span class="badge">약 3분 · 20문항</span>
+    <h2 style="margin-top:16px">시작하기 전에</h2>
+    <p style="font-size:15px;margin:0 0 14px">
+      정답을 고르는 시험이 아닙니다. <b>지금의 나에게 가장 가까운 쪽</b>을 고르시면 됩니다.
+      고민이 길어지면 오히려 정확도가 떨어집니다. 첫 느낌으로 답해 주세요.
+    </p>
+    <p style="font-size:15px;color:var(--muted);margin:0 0 20px">
+      심성·체형·생리·식이 네 영역을 각 5문항씩 균형 있게 묻습니다.
+      한 영역만으로는 체질이 갈리지 않기 때문입니다.
+    </p>
+    <button class="btn" id="start">진단 시작하기</button>
+  </div>
+</section>
+
+<!-- 문항 -->
+<section id="quiz" class="hide">
+  <div class="progress"><i id="bar"></i></div>
+  <div class="meta"><span id="secname"></span><span id="counter"></span></div>
+  <div class="card">
+    <div class="qcat" id="qcat"></div>
+    <p class="qtext" id="qtext"></p>
+    <div id="opts"></div>
+    <div class="nav">
+      <button id="prev">← 이전 문항</button>
+    </div>
+  </div>
+</section>
+
+<!-- 결과 -->
+<section id="result" class="hide">
+  <div class="card" style="text-align:center">
+    <span class="badge" id="confBadge"></span>
+    <div class="result-type" id="typeName"></div>
+    <div class="result-organ" id="typeOrgan"></div>
+    <p style="font-size:15.5px;margin:16px 0 0;text-align:left" id="typeEssence"></p>
+  </div>
+
+  <div class="card">
+    <h2>응답 분포</h2>
+    <div class="bar" id="bars"></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:14px 0 0" id="gapNote"></p>
+  </div>
+
+  <div class="card" id="cautionCard">
+    <div class="notice" id="cautionText"></div>
+  </div>
+
+  <div class="card">
+    <h2>내 체질의 실행 설계</h2>
+    <dl>
+      <dt>주의할 취약점</dt><dd id="pWeak"></dd>
+      <dt>맞는 아로마 오일</dt><dd id="pOil"></dd>
+      <dt>맞는 차</dt><dd id="pTea"></dd>
+      <dt>맞는 스파 코스</dt><dd id="pSpa"></dd>
+    </dl>
+  </div>
+
+  <div class="card">
+    <h2>여기서 끝내면 아무것도 바뀌지 않습니다</h2>
+    <p style="font-size:15px;margin:0 0 6px">
+      체질을 아는 것과, 체질대로 사는 것은 다른 일입니다.
+      20문항은 입구일 뿐이고, <b>102문항 정밀 진단</b>과 30일 실행 설계는
+      정규 과정에서 다룹니다.
+    </p>
+    <button class="btn cta" id="ctaBtn">「체질로 나를 이해하기」 8강 안내받기</button>
+    <button class="btn ghost" id="again" style="margin-top:10px">다시 진단하기</button>
+  </div>
+
+  <p class="disclaimer">
+    본 자가진단은 <b>라이프스타일 설계를 위한 참고 도구</b>이며, 의학적 진단·치료 행위가 아닙니다.
+    질병의 진단이나 치료를 대체할 수 없으며, 건강상의 문제는 반드시 의료 전문가와 상담하시기 바랍니다.
+    응답 내용은 이 기기 밖으로 전송되거나 저장되지 않으며, 결과 확인 즉시 사라집니다.<br><br>
+    문항 출처: 사상체질 정밀 진단 시스템(40문항) 중 4영역 균형 선별 20문항.
+    선별 기준은 석사학위 연구(가천대학교 IRB 1044396-201808-HR-171-01, N=397)의
+    문항 축약 방법론을 준용했습니다. 정밀판 102문항은 정규 과정 자산입니다.
+  </p>
+</section>
+
+</div>
+
+<script>
+const ITEMS = [{"no": 1, "srcId": 1, "section": "SEC_MIND", "category": "일 처리 및 행동 속도", "question": "새로운 과제나 일에 착수할 때 나의 가장 두드러진 성향은?", "options": [{"type": "Soyang", "text": "아이디어가 떠오르면 즉시 실행에 옮기며 빠르게 판을 벌린다."}, {"type": "Soeum", "text": "발생 가능한 오차와 위험을 면밀히 분석하고 구체적인 계획을 먼저 세운다."}, {"type": "Taeum", "text": "기존의 검증된 방식과 전체 조화를 고려하며 차분하고 묵직하게 진행한다."}, {"type": "Taeyang", "text": "남들이 시도하지 않은 독창적이고 과감한 비전을 제시하며 주도한다."}]}, {"no": 2, "srcId": 2, "section": "SEC_MIND", "category": "대인 소통 및 대화 스타일", "question": "사람들과 대화를 나누거나 모임에서 소통할 때 나의 주된 모습은?", "options": [{"type": "Soyang", "text": "솔직하고 직설적이며 유쾌한 분위기를 주도하고 결론을 빠르게 낸다."}, {"type": "Soeum", "text": "상대방의 마음을 세심하게 배려하며 조용하고 조리 있게 의견을 전달한다."}, {"type": "Taeum", "text": "말하기보다는 주로 경청하며, 다양한 사람들의 입장을 묵묵히 포용한다."}, {"type": "Taeyang", "text": "거침없는 직관과 당당한 기상으로 핵심을 찌르며 대화를 이끈다."}]}, {"no": 3, "srcId": 3, "section": "SEC_MIND", "category": "의사결정 기준", "question": "중요한 결정을 내려야 할 때 가장 의존하는 기준은?", "options": [{"type": "Soyang", "text": "순간적인 직관과 현장의 실시간 타이밍"}, {"type": "Soeum", "text": "정확한 데이터, 논리적 인과관계, 안전성"}, {"type": "Taeum", "text": "풍부한 과거 경험, 축적된 신뢰, 전체적인 균형"}, {"type": "Taeyang", "text": "미래지향적 통찰력과 대의명분"}]}, {"no": 4, "srcId": 7, "section": "SEC_MIND", "category": "시작과 마무리 성향", "question": "일을 추진할 때 시작과 마무리에 대한 나의 솔직한 특성은?", "options": [{"type": "Soyang", "text": "시작은 열정적으로 빠르게 하지만, 후반부 마무리는 다소 집중력이 떨어진다."}, {"type": "Soeum", "text": "시작은 조심스럽지만, 한번 맡은 일은 끝까지 완벽하게 매듭짓는다."}, {"type": "Taeum", "text": "초반에는 느긋해 보여도 시간이 갈수록 끈기 있게 끝까지 완주한다."}, {"type": "Taeyang", "text": "큰 물꼬를 트고 판을 짠 뒤, 세부적인 실무는 팀원에게 위임한다."}]}, {"no": 5, "srcId": 8, "section": "SEC_MIND", "category": "갈등 상황 대처", "question": "타인과 의견 충돌이나 갈등이 발생했을 때 나타나는 주된 모습은?", "options": [{"type": "Soyang", "text": "그 자리에서 즉시 솔직하게 털어놓고 빠르게 풀려고 한다."}, {"type": "Soeum", "text": "갈등을 피하며 속으로 상처를 삭이고 혼자 논리적으로 정리한다."}, {"type": "Taeum", "text": "일단 묵묵히 인내하며 시간이 지나면서 자연스럽게 봉합되길 기다린다."}, {"type": "Taeyang", "text": "원칙과 당위성을 강조하며 상대방을 설득하거나 밀어붙인다."}]}, {"no": 6, "srcId": 11, "section": "SEC_BODY", "category": "상하체 골격 발달", "question": "자신의 전반적인 체형과 골격 발달 특징은?", "options": [{"type": "Soyang", "text": "가슴과 어깨 부위(상체)가 발달하고 엉덩이와 하체가 날씬한 편이다."}, {"type": "Soeum", "text": "상체는 가냘프고 좁으나 엉덩이와 골반 부위(하체)가 안정적으로 발달했다."}, {"type": "Taeum", "text": "허리와 복부 부위가 굵고 건장하며 전체적으로 체격이 크고 듬직하다."}, {"type": "Taeyang", "text": "목덜미와 머리가 굵고 당당하나 허리와 하체가 가늘고 약하다."}]}, {"no": 7, "srcId": 13, "section": "SEC_BODY", "category": "살찌는 부위 및 체중 변화", "question": "체중이 증가할 때 살이 주로 붙는 신체 부위는?", "options": [{"type": "Soyang", "text": "팔뚝, 어깨, 윗배 등 상체 위주로 살이 붙고 다리는 여전히 날씬하다."}, {"type": "Soeum", "text": "살이 잘 찌지 않는 편이나, 찌더라도 아랫배나 허벅지/엉덩이에 붙는다."}, {"type": "Taeum", "text": "조금만 과식해도 허리둘레와 복부, 전신에 골고루 살이 쉽게 찐다."}, {"type": "Taeyang", "text": "살이 잘 찌지 않는 체질이며, 몸이 마르고 근육질인 편이다."}]}, {"no": 8, "srcId": 14, "section": "SEC_BODY", "category": "얼굴형 및 인상", "question": "거울을 보았을 때의 이목구비와 얼굴형 특징은?", "options": [{"type": "Soyang", "text": "턱이 뾰족하거나 역삼각형 형태이며, 눈매가 날카롭고 입술이 얇다."}, {"type": "Soeum", "text": "오밀조밀하고 갸름한 달걀형이며, 눈매가 부드럽고 다정하다."}, {"type": "Taeum", "text": "이목구비가 큼직하고 둥글넙적하며, 입술이 두툼하고 인상이 중후하다."}, {"type": "Taeyang", "text": "이마가 넓고 광채가 나며, 눈빛이 강렬하고 카리스마가 느껴진다."}]}, {"no": 9, "srcId": 15, "section": "SEC_BODY", "category": "음성 및 목소리 성향", "question": "평소 나의 목소리 톤과 발성 특징은?", "options": [{"type": "Soyang", "text": "말의 속도가 빠르고 톤이 약간 높으며, 낭랑하고 맑다."}, {"type": "Soeum", "text": "목소리가 조용하고 차분하며, 크지 않고 조근조근하다."}, {"type": "Taeum", "text": "음성이 묵직하고 울림이 있으며, 성량이 풍부하다."}, {"type": "Taeyang", "text": "발성이 또렷하고 우렁차며, 청중을 압도하는 힘이 있다."}]}, {"no": 10, "srcId": 18, "section": "SEC_BODY", "category": "하체 및 관절 지구력", "question": "오래 서 있거나 걸었을 때 하체의 반응은?", "options": [{"type": "Soyang", "text": "허리와 무릎이 시큰거리거나 피로해지기 쉽다."}, {"type": "Soeum", "text": "다리 근육은 피로하나 하체 균형은 안정적이다."}, {"type": "Taeum", "text": "하체가 튼튼하여 오래 걷거나 서 있어도 잘 버틴다."}, {"type": "Taeyang", "text": "다리에 힘이 쉽게 빠져 오래 서 있는 것을 몹시 힘들어한다."}]}, {"no": 11, "srcId": 21, "section": "SEC_PHYSIOLOGY", "category": "소화 및 비위 기능", "question": "평소 나의 소화기 상태 및 식욕은?", "options": [{"type": "Soyang", "text": "소화력이 매우 왕성하여 금방 배고프고 잘 먹는다."}, {"type": "Soeum", "text": "조금만 과식하거나 찬 것을 먹으면 체하고 소화가 더디다."}, {"type": "Taeum", "text": "무엇이든 가리지 않고 잘 먹으며 대식가 성향이 있다."}, {"type": "Taeyang", "text": "담백한 음식은 편하나 기름진 것을 먹으면 속이 메스껍다."}]}, {"no": 12, "srcId": 22, "section": "SEC_PHYSIOLOGY", "category": "한출(땀)과 건강 지표", "question": "땀을 흘릴 때 신체 컨디션의 변화는?", "options": [{"type": "Soyang", "text": "땀이 별로 없거나 상체 위주로 나며, 땀을 흘리면 지친다."}, {"type": "Soeum", "text": "땀을 많이 흘리면 기운이 쑥 빠지고 어지러워 땀 흘리기를 싫어한다."}, {"type": "Taeum", "text": "운동이나 사우나로 전신에 땀을 흠뻑 흘리고 나면 몸이 날아갈 듯 상쾌하다."}, {"type": "Taeyang", "text": "땀이 적은 편이며 가슴 위로 열이 오를 때 식은땀이 난다."}]}, {"no": 13, "srcId": 23, "section": "SEC_PHYSIOLOGY", "category": "체온 및 한열(寒熱)", "question": "평소 몸의 체온 및 더위/추위 민감도는?", "options": [{"type": "Soyang", "text": "몸에 열이 많아 겨울에도 찬물을 찾고 더위를 몹시 탄다."}, {"type": "Soeum", "text": "몸이 차가워 여름에도 찬 음식을 피하고 따뜻한 것을 좋아한다."}, {"type": "Taeum", "text": "추위와 더위를 무난히 견디나 무덥고 습한 날씨에 힘들어한다."}, {"type": "Taeyang", "text": "서늘한 기운을 좋아하며 상체로 열이 치솟으면 피로가 극심하다."}]}, {"no": 14, "srcId": 25, "section": "SEC_PHYSIOLOGY", "category": "대변 양상 (소증)", "question": "평소 대변의 횟수 및 굳기 상태는?", "options": [{"type": "Soyang", "text": "대변이 하루만 안 나와도 가슴이 답답하고 열이 차며 변비가 생기기 쉽다."}, {"type": "Soeum", "text": "대변이 무르거나 설사를 자주 하며, 대변이 굳어야 건강한 상태이다."}, {"type": "Taeum", "text": "대변이 굵고 든든하며 며칠 안 나와도 큰 불편함이 없다."}, {"type": "Taeyang", "text": "대변이 건조하고 딱딱해지기 쉽다."}]}, {"no": 15, "srcId": 30, "section": "SEC_PHYSIOLOGY", "category": "피로 회복 조건", "question": "몸이 극도로 피로할 때 가장 효과적인 회복 요법은?", "options": [{"type": "Soyang", "text": "시원한 환경에서 휴식하고 가슴의 화기를 내리는 명상"}, {"type": "Soeum", "text": "따뜻한 아랫목에서 족욕을 하고 속을 덥히는 보양식 섭취"}, {"type": "Taeum", "text": "사우나나 유산소 운동으로 땀을 흘리고 푹 쉬기"}, {"type": "Taeyang", "text": "마음을 비우고 솔잎차나 모과차를 마시며 안정을 취하기"}]}, {"no": 16, "srcId": 31, "section": "SEC_DIET", "category": "5미(五味) 선호도", "question": "자연스럽게 입맛을 돋우고 속이 편안한 맛은?", "options": [{"type": "Soyang", "text": "시원하고 쌉싸름한 쓴맛(苦味)이나 담백하고 서늘한 맛"}, {"type": "Soeum", "text": "따뜻하고 칼칼하게 속을 데워주는 매운맛(辛味)이나 적당한 단맛"}, {"type": "Taeum", "text": "구수하고 달착지근한 맛(甘味)이나 수렴해주는 신맛(酸味)"}, {"type": "Taeyang", "text": "자극적이지 않고 새콤하고 산뜻한 신맛(酸味)과 담백한 맛"}]}, {"no": 17, "srcId": 32, "section": "SEC_DIET", "category": "육류 및 단백질 식품", "question": "섭취했을 때 기운이 나고 소화가 가장 편안한 육류는?", "options": [{"type": "Soyang", "text": "돼지고기, 오리고기, 신선한 해산물(굴, 새우, 전복)"}, {"type": "Soeum", "text": "닭고기(삼계탕), 닭가슴살, 염소고기, 흰살 생선"}, {"type": "Taeum", "text": "소고기, 장어, 콩/두부 요리, 견과류"}, {"type": "Taeyang", "text": "담백한 조개류, 문어, 낙지, 해물탕"}]}, {"no": 18, "srcId": 33, "section": "SEC_DIET", "category": "음용수 및 수분 섭취 온도", "question": "물을 마실 때 선호하는 온도와 즐겨 마시는 차는?", "options": [{"type": "Soyang", "text": "얼음물이나 시원한 냉수, 보리차, 녹차, 페퍼민트차"}, {"type": "Soeum", "text": "미온수나 따뜻한 물, 생강차, 계피차, 대추차"}, {"type": "Taeum", "text": "적당한 온도의 물, 율무차, 칡차, 오미자차"}, {"type": "Taeyang", "text": "시원한 생수, 모과차, 감잎차, 솔잎차"}]}, {"no": 19, "srcId": 37, "section": "SEC_DIET", "category": "상극 음식 및 부작용 반응", "question": "먹었을 때 탈이 나거나 몸에 부담을 주는 상극 음식은?", "options": [{"type": "Soyang", "text": "매운 고추/마늘, 인삼/홍삼, 닭고기 (상열감, 두통, 피부 발진 유발)"}, {"type": "Soeum", "text": "차가운 맥주/빙수, 기름진 돼지고기, 날채소 (복통, 설사 유발)"}, {"type": "Taeum", "text": "자극적인 조미료, 과도한 기름진 육류 (체중 증가, 담음, 가래 유발)"}, {"type": "Taeyang", "text": "맵고 뜨거운 보양식, 고칼로리 기름진 음식 (구역감, 상기증 유발)"}]}, {"no": 20, "srcId": 39, "section": "SEC_DIET", "category": "알코올 및 주류 반응", "question": "술을 마실 때의 주량 및 숙취 반응은?", "options": [{"type": "Soyang", "text": "시원한 맥주나 와인을 좋아하며 얼굴이 쉽게 붉어지고 열이 오른다."}, {"type": "Soeum", "text": "술이 약한 편이며 따뜻한 정종이나 소량의 독주가 맥주보다 편하다."}, {"type": "Taeum", "text": "주량이 센 편이고 술자리를 즐기며 땀을 흘려 해장한다."}, {"type": "Taeyang", "text": "술을 마시면 상기증이나 구역감이 심해 술을 멀리한다."}]}];
+const SECTIONS = {"SEC_MIND": "제1부. 심성 및 성정 (心性·性情)", "SEC_BODY": "제2부. 체형기상 및 외형 (體形氣象)", "SEC_PHYSIOLOGY": "제3부. 병증 및 소증 (病證·素證)", "SEC_DIET": "제4부. 체질식이 및 기호도 (體質食餌·嗜好度)"};
+const PROFILES = {"Taeum": {"name": "태음인", "hanja": "太陰人", "organ": "간대폐소(肝大肺小)", "essence": "간의 기운이 크고 폐의 기운이 작습니다. 축적하고 버티는 데 강하지만, 내보내고 순환시키는 데 약합니다.", "weak": "목·기관지 건조, 피부 장벽 약화, 림프 정체, 비만 경향", "oil": "유칼립투스, 이지에어, 티트리, 샌달우드, 미르", "tea": "오미자·율무·도라지·배", "spa": "디톡스 림프 드레나쥐 & 에어-클린 스팀", "share": "한국인에게 가장 흔하게 나타나는 체질군입니다."}, "Soyang": {"name": "소양인", "hanja": "少陽人", "organ": "비대신소(脾大腎小)", "essence": "비위의 기운이 크고 신장의 기운이 작습니다. 빠르게 소화하고 발산하지만, 아래로 저장하고 식히는 힘이 부족합니다.", "weak": "상체 열감, 가슴 답답함, 불면, 접촉성 피부 열감", "oil": "페퍼민트, 라벤더, 세레니티, 로만 카모마일", "tea": "구기자·결명자·산수유·보리", "spa": "쿨링 하이드로 & 딥 릴랙세이션 탄산", "share": "태음인 다음으로 많이 나타나는 체질군입니다."}, "Soeum": {"name": "소음인", "hanja": "少陰人", "organ": "신대비소(腎大脾小)", "essence": "신장의 기운이 크고 비위의 기운이 작습니다. 저장하고 지키는 데 강하지만, 소화하고 데우는 힘이 약합니다.", "weak": "수족·복부 냉증, 만성 소화불량, 기력 저하, 만성 피로", "oil": "온가드, 진저, 시나몬, 다이제스트젠, 오렌지", "tea": "대추·생강계피·인삼·당귀", "spa": "온열 스톤 & 코어 웜업 서멀", "share": "비교적 흔하게 나타나는 체질군입니다."}, "Taeyang": {"name": "태양인", "hanja": "太陽人", "organ": "폐대간소(肺大肝小)", "essence": "폐의 기운이 크고 간의 기운이 작습니다. 위로 뻗고 돌파하는 힘이 강하지만, 아래로 뿌리내리는 힘이 약합니다.", "weak": "상기증, 목덜미 긴장, 하지 무력감, 급격한 정서적 흥분", "oil": "베티버, 프랑킨센스, 레몬, 샌달우드", "tea": "모과·솔잎·포도발효·감잎", "spa": "그라운딩 & 하체 에너지 밸런싱 플로팅", "share": "사상체질 중 가장 드문 체질군입니다. 문항 응답만으로 확정하지 않습니다."}};
+const ORDER = ["Taeum","Soyang","Soeum","Taeyang"];
+
+const answers = new Array(ITEMS.length).fill(null);
+let cur = 0;
+const $ = id => document.getElementById(id);
+
+function show(which){
+  for (const s of ["intro","quiz","result"]) $(s).classList.toggle("hide", s !== which);
+  window.scrollTo(0,0);
+}
+
+function render(){
+  const q = ITEMS[cur];
+  $("bar").style.width = (cur / ITEMS.length * 100) + "%";
+  $("secname").textContent = SECTIONS[q.section];
+  $("counter").textContent = (cur+1) + " / " + ITEMS.length;
+  $("qcat").textContent = q.category;
+  $("qtext").textContent = q.question;
+  const box = $("opts");
+  box.textContent = "";
+  q.options.forEach(o => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    b.textContent = o.text;
+    if (answers[cur] === o.type) b.style.borderColor = "var(--accent)";
+    b.onclick = () => { answers[cur] = o.type; next(); };
+    box.appendChild(b);
+  });
+  $("prev").disabled = cur === 0;
+}
+
+function next(){
+  if (cur < ITEMS.length - 1) { cur++; render(); }
+  else finish();
+}
+
+function finish(){
+  const tally = {Taeum:0, Soyang:0, Soeum:0, Taeyang:0};
+  answers.forEach(a => { if (a) tally[a]++; });
+  const ranked = ORDER.slice().sort((a,b) => tally[b] - tally[a]);
+  const top = ranked[0], second = ranked[1];
+  const gap = tally[top] - tally[second];
+  const p = PROFILES[top];
+
+  // 판정 2단 구조: 격차가 좁으면 '잠정', 태양인은 희소 체질이므로 항상 재확인
+  let conf, gapNote;
+  if (gap >= 5)      { conf = "뚜렷한 경향"; gapNote = "1순위와 2순위의 격차가 충분히 벌어져 있습니다."; }
+  else if (gap >= 3) { conf = "잠정 확정";   gapNote = "경향은 보이나 격차가 크지 않습니다. 정밀 진단으로 재확인을 권합니다."; }
+  else               { conf = "혼합형 · 재확인 필요"; gapNote = "1순위와 2순위가 " + gap + "문항 차이로 근접합니다. 이 경우 자가진단만으로 체질을 확정하지 않습니다."; }
+
+  $("confBadge").textContent = conf;
+  $("typeName").textContent = p.name;
+  $("typeOrgan").textContent = p.organ;
+  $("typeEssence").textContent = p.essence;
+  $("gapNote").textContent = gapNote;
+
+  const bars = $("bars");
+  bars.textContent = "";
+  ranked.forEach(t => {
+    const row = document.createElement("div");
+    row.className = "bar-row";
+    const nm = document.createElement("span"); nm.textContent = PROFILES[t].name;
+    const tr = document.createElement("div"); tr.className = "bar-track";
+    const fill = document.createElement("i"); fill.style.width = (tally[t] / ITEMS.length * 100) + "%";
+    tr.appendChild(fill);
+    const n = document.createElement("b"); n.textContent = tally[t];
+    row.append(nm, tr, n);
+    bars.appendChild(row);
+  });
+
+  const needCheck = (top === "Taeyang") || gap < 3;
+  $("cautionCard").classList.toggle("hide", !needCheck);
+  if (needCheck) {
+    $("cautionText").textContent = (top === "Taeyang")
+      ? "태양인은 사상체질 중 가장 드문 체질군입니다. 20문항 자가진단만으로 태양인을 확정하지 않습니다. 2순위인 " + PROFILES[second].name + " 가능성을 함께 열어두고, 정밀 진단으로 반드시 재확인하시기 바랍니다."
+      : "두 체질의 응답 수가 근접합니다. 사상체질은 중간형이 존재하지 않으므로, 이 결과는 '아직 갈리지 않은 상태'로 읽는 것이 맞습니다. 정밀 진단이나 전문가 관찰로 확정하시기 바랍니다.";
+  }
+  show("result");
+}
+
+$("start").onclick = () => { show("quiz"); render(); };
+$("prev").onclick = () => { if (cur > 0) { cur--; render(); } };
+$("again").onclick = () => { answers.fill(null); cur = 0; show("intro"); };
+$("ctaBtn").onclick = () => alert("강의 안내 페이지 연결 예정입니다.");
+</script>
+</body>
+</html>
