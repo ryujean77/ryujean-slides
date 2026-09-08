@@ -1,0 +1,17 @@
+#!/bin/sh
+# law.md 11·13항: 내부 전용 파일이 공개 저장소(ryujean-slides)에 커밋되는 것을 차단
+# 우회가 필요하면 git commit --no-verify (헌장 위반이므로 사유를 남길 것)
+
+blocked=$(git diff --cached --name-only --diff-filter=AM | grep -i -E 'internal|_private|민감|상담스크립트' || true)
+
+if [ -n "$blocked" ]; then
+  echo "──────────────────────────────────────────────────────────"
+  echo " 커밋 거부: 내부 전용 파일이 공개 저장소에 포함되었습니다 (law.md 11·13항)"
+  echo "──────────────────────────────────────────────────────────"
+  echo "$blocked" | sed 's/^/  - /'
+  echo ""
+  echo " 해결 방법:"
+  echo "   git restore --staged <파일>            # 스테이징 취소"
+  echo "   비공개 저장소(ryujeanWorkSpace/deliverables/)로 이동 후 커밋"
+  exit 1
+fi
