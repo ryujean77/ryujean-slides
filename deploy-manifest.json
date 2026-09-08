@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-04T07:46:21.951Z",
-  "commit": "81567eb278f1bf400c4e4533ff7c2793d7c6dcd9",
+  "generatedAt": "2026-09-08T13:47:34.392Z",
+  "commit": "235d21b2c16481a5846148c8f5c93ba1f60cf5e1",
   "fileCount": 1949,
   "files": [
     {
@@ -277,11 +277,11 @@
     },
     {
       "path": "apps/git-collab-guide/git_workspace_guide.md",
-      "size": 8117
+      "size": 8129
     },
     {
       "path": "apps/git-collab-guide/presentation.html",
-      "size": 44460
+      "size": 44466
     },
     {
       "path": "apps/library-lecture/appsscript.json",
@@ -6053,7 +6053,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 20404
+      "size": 20419
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -6333,7 +6333,7 @@
     },
     {
       "path": "full-upgrade-report/index.html",
-      "size": 35299
+      "size": 35314
     },
     {
       "path": "gemini-lecture/index.html",
@@ -6345,11 +6345,11 @@
     },
     {
       "path": "git-collab-guide/git_workspace_guide.md",
-      "size": 8117
+      "size": 8129
     },
     {
       "path": "git-collab-guide/presentation.html",
-      "size": 44460
+      "size": 44466
     },
     {
       "path": "github_cms.html",
@@ -7581,11 +7581,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 20404
+      "size": 20419
     },
     {
       "path": "portal/index.html",
-      "size": 30922
+      "size": 30946
     },
     {
       "path": "portal/index.html.bak",
@@ -7741,7 +7741,7 @@
     },
     {
       "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/개발지시서.md",
-      "size": 13179
+      "size": 13185
     },
     {
       "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/구체적_작업지시서.html",
@@ -7757,7 +7757,7 @@
     },
     {
       "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/발표자료.html",
-      "size": 30794
+      "size": 30797
     },
     {
       "path": "산출물/20260821_2352_패션테라피_심리테스트앱_개발지시서/발표자료.html.bak",
