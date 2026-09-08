@@ -1,8 +1,53 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
-  "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터)",
-  "lastUpdated": "2026-08-26T09:40:00+09:00",
+  "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
+  "lastUpdated": "2026-09-08 23:03:35 (KST)",
   "domains": [
+    {
+      "id": "DOM-THESIS-SASANG",
+      "name": "사상체질 진단·판별 석사논문 연구 코어",
+      "icon": "fa-graduation-cap",
+      "color": "amber",
+      "accentHex": "#f59e0b",
+      "bgGradient": "from-amber-950 via-slate-900 to-rose-950",
+      "tag": "🎓 석사학위논문",
+      "partner": "유정근 (연구자) & 임동구 박사 (자문 / 식품공학박사)",
+      "summary": "가천대학교 석사학위 청구논문: 사상체질 분석방법의 타당성 검증 및 식이섭취와의 상관성 연구 (IRB 승인 1044396-201808-HR-171-01, N=397 실측 데이터).",
+      "storagePath": "도메인/사상체질_석사논문 & C:\\Users\\ryujean\\OneDrive\\drop\\03_susevo\\04_가천대\\논문\\IRB\\IRB\\01_ryu",
+      "skills": [
+        "aroma-care-engine",
+        "make-slide",
+        "designer-slides"
+      ],
+      "stats": {
+        "projectsCount": 0,
+        "liveUrlsCount": 0,
+        "status": "🟢 도메인 코어 셋업 완료"
+      }
+    },
+    {
+      "id": "DOM-AI-EDU",
+      "name": "AI 교육 & 실무 혁신",
+      "icon": "fa-robot",
+      "color": "cyan",
+      "accentHex": "#0891b2",
+      "bgGradient": "from-cyan-950 via-slate-900 to-blue-900",
+      "tag": "🤖 AI 교육",
+      "partner": "유정근 총괄 디렉터 (전담 AI 마스터 강사)",
+      "summary": "인천자활 4회차 풀패키지 교재(76개 에셋), Gemini & NotebookLM 반응형 웹 슬라이드, 노션 실습 템플릿 복제 생태계 및 B2B 출강 파이프라인.",
+      "storagePath": "도메인/AI교육_실무혁신 & C:\\01_Brain\\01_Projects\\인천자활_AI교육_강의안",
+      "skills": [
+        "ai-curriculum-builder",
+        "make-slide",
+        "designer-slides",
+        "codeit-theme-generator"
+      ],
+      "stats": {
+        "projectsCount": 3,
+        "liveUrlsCount": 3,
+        "status": "🟢 상시 출강/확장 가동"
+      }
+    },
     {
       "id": "DOM-BRAIN",
       "name": "옵시디언 제2의 뇌 & 로컬 AI 위키",
@@ -19,7 +64,7 @@
         "ai-curriculum-builder"
       ],
       "stats": {
-        "projectsCount": 2,
+        "projectsCount": 1,
         "liveUrlsCount": 1,
         "status": "🔵 5.2만건 독립 가동"
       }
@@ -32,7 +77,7 @@
       "accentHex": "#059669",
       "bgGradient": "from-emerald-950 via-slate-900 to-emerald-900",
       "tag": "🌿 아로마테라피",
-      "partner": "유정근 (전담 테라피스트)",
+      "partner": "유정근 전담 테라피스트 (010-4728-9917, ryujean77@gmail.com)",
       "summary": "도테라 CPTG 30종 마스터 DB, 사상체질 증상별 처방, 1:1 VIP 웹 처방전 및 5단계 온라인 수익 극대화 퍼널 시스템.",
       "storagePath": "도메인/아로마테라피 & E:\\OneDrive\\drop\\03_susevo\\00_000_도테라contact",
       "skills": [
@@ -41,7 +86,7 @@
         "email-sender"
       ],
       "stats": {
-        "projectsCount": 4,
+        "projectsCount": 3,
         "liveUrlsCount": 2,
         "status": "🟢 활발히 가동중"
       }
@@ -63,7 +108,7 @@
         "ppt-designer"
       ],
       "stats": {
-        "projectsCount": 6,
+        "projectsCount": 3,
         "liveUrlsCount": 3,
         "status": "🟢 기획/개발 진행중"
       }
@@ -84,7 +129,7 @@
         "gitnotion-publisher"
       ],
       "stats": {
-        "projectsCount": 3,
+        "projectsCount": 2,
         "liveUrlsCount": 1,
         "status": "🟡 원고 검토/보완"
       }
@@ -97,7 +142,7 @@
       "accentHex": "#e11d48",
       "bgGradient": "from-rose-950 via-slate-900 to-rose-900",
       "tag": "🧬 사상체질",
-      "partner": "임동구 생체정보학 박사 & 유정근 디렉터",
+      "partner": "임동구 박사 식품공학박사 (Dr.Yim's 체질라이프스타일 연구소 소장 | 010-2323-4662, ydoko@daum.net) & 유정근 디렉터 (010-4728-9917)",
       "summary": "사상체질 유전체 기반 전국 도서관, 공공기관, 성동구청 B2B 인문학 강연 제안서 및 슬라이드·포스터 패키지.",
       "storagePath": "deliverables/20260821_0118_..., deliverables/20260821_0156_...",
       "skills": [
@@ -105,7 +150,7 @@
         "ppt-designer"
       ],
       "stats": {
-        "projectsCount": 4,
+        "projectsCount": 5,
         "liveUrlsCount": 2,
         "status": "🟢 제안서 패키징 완료"
       }
@@ -127,13 +172,168 @@
         "skill-creator"
       ],
       "stats": {
-        "projectsCount": 3,
-        "liveUrlsCount": 4,
+        "projectsCount": 4,
+        "liveUrlsCount": 3,
         "status": "🔵 상시 가동중"
+      }
+    },
+    {
+      "id": "DOM-SPA",
+      "name": "사상체질 웰니스 스파 & 리트릿",
+      "icon": "fa-spa",
+      "color": "amber",
+      "accentHex": "#d4af37",
+      "bgGradient": "from-amber-950 via-slate-900 to-emerald-950",
+      "tag": "🧖 사상체질 스파",
+      "partner": "총괄 디렉터 유정근 (010-4728-9917, ryujean77@gmail.com) & 식품공학박사 임동구 박사 (Dr.Yim's 체질라이프스타일 연구소 소장 | 010-2323-4662, ydoko@daum.net)",
+      "summary": "한국 고유의 사상체질 장부대소 원리와 CPTG 에센셜 오일, 10대 시그니처 테라피, DTC 유전자/마이크로바이옴 LTV 모델이 결합된 K-프리미엄 웰니스 스파.",
+      "storagePath": "도메인/사상체질_스파 & I:\\내 드라이브\\2026체질스파",
+      "skills": [
+        "lead-capture-publisher",
+        "aroma-care-engine",
+        "designer-slides"
+      ],
+      "stats": {
+        "projectsCount": 1,
+        "liveUrlsCount": 1,
+        "status": "🟢 포털 론칭 및 배포완료"
+      }
+    },
+    {
+      "id": "DOM-TRADING",
+      "name": "AI 트레이딩 & TradingView 자동화",
+      "icon": "fa-chart-line",
+      "color": "green",
+      "accentHex": "#22c55e",
+      "bgGradient": "from-emerald-950 via-slate-900 to-slate-900",
+      "tag": "📈 AI 트레이딩",
+      "partner": "유정근 총괄 & Claude Code (TradingView MCP)",
+      "summary": "Claude Code ↔ TradingView Desktop MCP 연동으로 차트 분석, Pine Script 개발, 리플레이 백테스트, 알림/웹훅 자동매매를 자연어로 실행하는 AI 트레이딩 워크플로우.",
+      "storagePath": "도메인/AI트레이딩 & deliverables/20260827_0110_XAUUSD_골드선물_AI트레이딩_마스터플랜",
+      "skills": [],
+      "stats": {
+        "projectsCount": 2,
+        "liveUrlsCount": 0,
+        "status": "🟢 2개 프로젝트 가동 / XAUUSD 마스터플랜 수립"
+      }
+    },
+    {
+      "id": "DOM-WEBBIZ",
+      "name": "웹사이트 제작 & 관리형 비즈니스",
+      "icon": "fa-globe",
+      "color": "indigo",
+      "accentHex": "#6366f1",
+      "bgGradient": "from-indigo-950 via-slate-900 to-slate-900",
+      "tag": "🌐 웹 비즈니스",
+      "partner": "유정근 총괄 디렉터 (1인 부업 / 제작·관리 총괄)",
+      "summary": "소상공인·중소기업·기관 대상 반응형 홈페이지 제작을 진입점으로 삼고, 월 관리비 구독(MRR)으로 전환해 반복 수익을 확보하는 웹 비즈니스. 오픈마켓 경쟁사가 모두 '제작 후 종료' 모델이라는 시장 공백과, AI 교육 강사 본업의 기업·기관 네트워크를 리드 파이프라인으로 활용하는 비대칭 우위를 축으로 한다.",
+      "storagePath": "도메인/웹사이트_비즈니스 & deliverables/20260908_1445_website_business_masterplan",
+      "skills": [
+        "web-design-guidelines",
+        "lead-capture-publisher",
+        "gitnotion-publisher",
+        "knowledge-index"
+      ],
+      "stats": {
+        "projectsCount": 1,
+        "liveUrlsCount": 0,
+        "status": "🟡 기획 초안 완료 / 90일 로드맵 착수 준비"
       }
     }
   ],
   "projects": [
+    {
+      "id": "PRJ-AI-01",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "인천지역 자활센터 4회차 AI 실무 마스터 교안 포털",
+      "folder": "deliverables/20260826_1625_인천자활_제미나이_노트북_마스터교안_HTML_통합_및_배포",
+      "status": "배포완료",
+      "statusBadge": "bg-cyan-500/10 text-cyan-400 border border-cyan-500/30",
+      "date": "2026-08-26",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/",
+      "deliverables": [
+        {
+          "name": "마스터 포털 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "1회차 교재 (제미나이 생태계)",
+          "type": "html",
+          "path": "1회차_강사용마스터.html"
+        },
+        {
+          "name": "2회차 교재 (Gemini Notebooks)",
+          "type": "html",
+          "path": "2회차_강사용마스터.html"
+        },
+        {
+          "name": "3회차 교재 (프롬프트 엔지니어링)",
+          "type": "html",
+          "path": "3회차_강사용마스터.html"
+        },
+        {
+          "name": "4회차 교재 (GAS 자동화)",
+          "type": "html",
+          "path": "4회차_강사용마스터.html"
+        },
+        {
+          "name": "76개 고해상도 시연 에셋",
+          "type": "image",
+          "path": "assets/"
+        }
+      ],
+      "description": "실제 구글 스크린샷 76개를 결합하여 제미나이 ↔ NotebookLM ↔ GAS 자동화까지 완벽 가이드하는 4회차 인터랙티브 교재 포털."
+    },
+    {
+      "id": "PRJ-AI-02",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "Gemini & NotebookLM 실전 마스터클래스 웹 슬라이드",
+      "folder": "deliverables/20260826_1615_제미나이_및_제미나이노트북_실전강의교안_웹슬라이드_패키지",
+      "status": "배포완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-08-26",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/gemini-lecture/",
+      "deliverables": [
+        {
+          "name": "수강생 웹 슬라이드 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "강사용 스피치 큐카드 (internal.html)",
+          "type": "html",
+          "path": "internal.html"
+        },
+        {
+          "name": "노션 복제용 실습 템플릿",
+          "type": "md",
+          "path": "02_노션_복제용_실습템플릿_원문.md"
+        }
+      ],
+      "description": "8개 카드 슬라이드, 키보드 방향키 조작, 유튜브 프롬프트 원클릭 복사 및 노션 복제 연동 인터랙티브 발표 웹앱."
+    },
+    {
+      "id": "PRJ-AI-03",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "클라우드 3대장 (OneDrive, GDrive, Notion) MCP 생태계 리포트",
+      "folder": "deliverables/20260826_1206_클라우드3대장_OneDrive_GDrive_Notion_MCP_생태계_분석_및_연동가이드",
+      "status": "배포완료",
+      "statusBadge": "bg-blue-500/10 text-blue-400 border border-blue-500/30",
+      "date": "2026-08-26",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/cloud-mcp-ecosystem/",
+      "deliverables": [
+        {
+          "name": "클라우드 MCP 리포트",
+          "type": "html",
+          "path": "index.html"
+        }
+      ],
+      "description": "Google Drive, MS OneDrive, Notion 공식 MCP 서버 현황 및 AGY 워크스페이스 연동 가이드."
+    },
     {
       "id": "PRJ-BRAIN-01",
       "domainId": "DOM-BRAIN",
@@ -525,6 +725,352 @@
         }
       ],
       "description": "아로마 도메인 구축, 온라인 수익 극대화 기획서 발행, 양방향 슬랙 봇 연동 완료 일일 종합 업무일지."
+    },
+    {
+      "id": "PRJ-SPA-01",
+      "domainId": "DOM-SPA",
+      "domainTag": "🧖 사상체질 스파",
+      "title": "사상체질 기반 프리미엄 체질스파 포털 & 제안서 리드캡처",
+      "folder": "deliverables\\20260826_1645_사상체질_프리미엄_체질스파_프로젝트_기획서_및_리드캡처_포털",
+      "status": "배포완료",
+      "statusBadge": "bg-amber-500/10 text-amber-400 border border-amber-500/30",
+      "date": "2026-08-26",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/sasang-spa/",
+      "deliverables": [
+        {
+          "name": "인터랙티브 웹 포털 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "공식 제안서 PDF (spa_proposal_chejil.pdf)",
+          "type": "pdf",
+          "path": "spa_proposal_chejil.pdf"
+        },
+        {
+          "name": "마스터 기획서 (MD)",
+          "type": "md",
+          "path": "01_사상체질_프리미엄_체질스파_프로젝트_기획서.md"
+        }
+      ],
+      "description": "한국 고유의 사상체질 장부대소 원리와 도테라 CPTG 100% 순수 에센셜 오일, 10대 시그니처 테라피 및 리드 캡처/디렉터 관리자 뷰를 탑재한 K-웰니스 스파 포털."
+    },
+    {
+      "id": "PRJ-TRADING-01",
+      "domainId": "DOM-TRADING",
+      "domainTag": "📈 AI 트레이딩",
+      "title": "Claude Code × TradingView MCP 연동가이드",
+      "folder": "deliverables/20260826_2350_TradingView_MCP_AI트레이딩_연동가이드",
+      "status": "설치완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-08-26",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "연동가이드 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "연동가이드 원문 (MD)",
+          "type": "md",
+          "path": "TradingView_MCP_연동가이드.md"
+        }
+      ],
+      "description": "TradingView MCP(tradesdontlie/tradingview-mcp)를 Claude Code에 연동하여 차트 분석, Pine Script 개발, 리플레이 백테스트, 웹훅 자동매매까지 실행하는 방법을 정리한 실행 가이드. 원본 영상: Claude Code + TradingView AI = King of AI Trading."
+    },
+    {
+      "id": "PRJ-TRADING-02",
+      "domainId": "DOM-TRADING",
+      "domainTag": "📈 AI 트레이딩",
+      "title": "XAUUSD 골드 선물 AI 트레이딩 마스터플랜",
+      "folder": "deliverables/20260827_0110_XAUUSD_골드선물_AI트레이딩_마스터플랜",
+      "status": "기획완료",
+      "statusBadge": "bg-amber-500/10 text-amber-400 border border-amber-500/30",
+      "date": "2026-08-27",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "마스터플랜 대시보드 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "전체 기획서 원문 (MD)",
+          "type": "md",
+          "path": "01_XAUUSD_골드선물_AI트레이딩_전체기획서.md"
+        },
+        {
+          "name": "골드 전용 Pine Script 전략 코드",
+          "type": "pine",
+          "path": "02_XAUUSD_PineScript_전략코드_초안.pine"
+        },
+        {
+          "name": "YouTube 영상 2편 전문 스크립트",
+          "type": "md",
+          "path": "03_YouTube_영상_전문스크립트_및_핵심분석.md"
+        },
+        {
+          "name": "영상 기반 전략추천 및 실행계획서 (HTML/MD)",
+          "type": "html",
+          "path": "04_XAUUSD_영상기반_전략추천_및_구축실행계획서.html"
+        },
+        {
+          "name": "AGY & Claude 통합 MT5 실전자동매매 종합계획서 (HTML/MD)",
+          "type": "html",
+          "path": "05_XAUUSD_AGY_Claude_통합_MT5_실전자동매매_종합실행계획서.html"
+        }
+      ],
+      "description": "골드 선물(XAUUSD)을 대상으로 Claude Code 및 AGY × TradingView MCP(84개 도구)를 활용하여 시황 분석, Pine Script v5 자가 디버깅 컴파일, 리플레이 백테스트, 웹훅 자동매매 및 리스크 거버넌스를 구축한 전체 기획 마스터플랜."
+    },
+    {
+      "id": "PRJ-WEBBIZ-01",
+      "domainId": "DOM-WEBBIZ",
+      "domainTag": "🌐 웹 비즈니스",
+      "title": "웹사이트 제작·관리 비즈니스 마스터플랜",
+      "folder": "deliverables/20260908_1445_website_business_masterplan",
+      "status": "포트폴리오로컬검증완료",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-08",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "에이전트 공통 인수인계 (MD)",
+          "type": "md",
+          "path": "10-agent-handoff.md"
+        },
+        {
+          "name": "에이전트 공통 인수인계 (HTML)",
+          "type": "html",
+          "path": "10-agent-handoff.html"
+        },
+        {
+          "name": "포트폴리오 모바일 캡처",
+          "type": "png",
+          "path": "portfolio-evidence/portfolio-390.png"
+        },
+        {
+          "name": "포트폴리오 태블릿 캡처",
+          "type": "png",
+          "path": "portfolio-evidence/portfolio-768.png"
+        },
+        {
+          "name": "포트폴리오 데스크톱 캡처",
+          "type": "png",
+          "path": "portfolio-evidence/portfolio-1440.png"
+        },
+        {
+          "name": "포트폴리오 구현·검증 기록 (MD)",
+          "type": "md",
+          "path": "09-portfolio-implementation.md"
+        },
+        {
+          "name": "포트폴리오 구현·검증 리포트 (HTML)",
+          "type": "html",
+          "path": "09-portfolio-implementation.html"
+        },
+        {
+          "name": "포트폴리오 브라우저 검증 결과",
+          "type": "json",
+          "path": "portfolio-evidence/verification.json"
+        },
+        {
+          "name": "오너 의사결정 기록 (MD)",
+          "type": "md",
+          "path": "00-decisions.md"
+        },
+        {
+          "name": "오너 의사결정 리포트 (HTML)",
+          "type": "html",
+          "path": "00-decisions.html"
+        },
+        {
+          "name": "통합 대시보드 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "01 시장 조사 — 오픈마켓 경쟁사 3곳 분석",
+          "type": "md",
+          "path": "01-market-research.md"
+        },
+        {
+          "name": "02 사업 모델 — 관리형 수익구조·요금·유닛 이코노믹스",
+          "type": "md",
+          "path": "02-business-model.md"
+        },
+        {
+          "name": "03 자동화 로드맵 — 스택 결정 및 4단계 계획",
+          "type": "md",
+          "path": "03-automation-plan.md"
+        },
+        {
+          "name": "04 마케팅 — 채널 전략 및 세일즈 논리",
+          "type": "md",
+          "path": "04-marketing.md"
+        },
+        {
+          "name": "05 계약·운영 체크리스트",
+          "type": "md",
+          "path": "05-contracts.md"
+        },
+        {
+          "name": "06 90일 실행 로드맵",
+          "type": "md",
+          "path": "06-roadmap.md"
+        },
+        {
+          "name": "작업 백로그 (에이전트용)",
+          "type": "md",
+          "path": "backlog.md"
+        },
+        {
+          "name": "에이전트 지침 (law.md 승계)",
+          "type": "md",
+          "path": "AGENTS.md"
+        }
+      ],
+      "description": "제작비 일시불이 아니라 월 관리비(MRR)를 주 수익원으로 삼는 관리형 웹 비즈니스 마스터플랜. 오픈마켓 경쟁사 3곳 실조사, 요금·유닛 이코노믹스 설계, 제작·관리 자동화 4단계, 계약 체크리스트, 90일 실행 로드맵과 중단 기준까지 포함."
+    },
+    {
+      "id": "PRJ-SASANG-02",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "클래스101 사상체질 온라인 클래스 입점 프로젝트 (12주 로드맵)",
+      "folder": "deliverables/20260908_1531_class101_upload_project",
+      "status": "기획·로드맵수립완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-09-08",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "프로젝트 헌장 및 실행 로드맵 (MD)",
+          "type": "md",
+          "path": "README.md"
+        },
+        {
+          "name": "종합 기획 리포트 (HTML)",
+          "type": "html",
+          "path": "report.html"
+        }
+      ],
+      "description": "클래스101 사상체질 8차시 정규 온라인 클래스 입점을 위한 12주 실행 로드맵, 수익 배분 모델 및 기획·제안 마스터플랜."
+    },
+    {
+      "id": "PRJ-SASANG-03",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "무료 공개용 20문항 사상체질 자가진단 인터랙티브 웹앱",
+      "folder": "deliverables/20260904_2340_sasang_free20_self_diagnosis",
+      "status": "배포완료",
+      "statusBadge": "bg-cyan-500/10 text-cyan-400 border border-cyan-500/30",
+      "date": "2026-09-04",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/apps/sasang-diagnosis/",
+      "deliverables": [
+        {
+          "name": "체질 자가진단 웹앱 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "문항 선별 근거 및 개발 명세서 (MD)",
+          "type": "md",
+          "path": "README.md"
+        },
+        {
+          "name": "진단 결과 리포트 (HTML)",
+          "type": "html",
+          "path": "report.html"
+        }
+      ],
+      "description": "397명 실측 임상 데이터를 바탕으로 선별된 20문항 인터랙티브 체질 자가진단 및 맞춤 솔루션 반응형 모바일 웹앱."
+    },
+    {
+      "id": "PRJ-SASANG-04",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "체질라이프스타일 B2B 제휴 제안서 & 체질허브 쇼룸",
+      "folder": "deliverables/20260904_0835_chejilhub_partnership_proposal",
+      "status": "배포완료",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-09-04",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/chejilhub/",
+      "deliverables": [
+        {
+          "name": "체질허브 메인 쇼룸 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "기업 제휴 제안서 (HTML)",
+          "type": "html",
+          "path": "chejilhub_partnership_proposal.html"
+        },
+        {
+          "name": "글로벌 영문 브로슈어 (HTML)",
+          "type": "html",
+          "path": "chejilhub_global_brochure_en.html"
+        }
+      ],
+      "description": "기업·호텔·리조트 대상 사상체질 라이프스타일 웰니스 제휴 제안서 및 국/영문 글로벌 반응형 브로슈어 쇼룸."
+    },
+    {
+      "id": "PRJ-SASANG-05",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "사상체질 힐링 크루즈 웰니스 프로그램 상세 안내서",
+      "folder": "deliverables/20260904_1717_sasang_cruise_program_intro",
+      "status": "기획완료",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-04",
+      "liveUrl": "",
+      "deliverables": [
+        {
+          "name": "크루즈 프로그램 안내서 (HTML)",
+          "type": "html",
+          "path": "program_intro.html"
+        },
+        {
+          "name": "프로그램 기획안 원문 (MD)",
+          "type": "md",
+          "path": "program_intro.md"
+        }
+      ],
+      "description": "선상에서 진행되는 4대 체질별 맞춤 식단, 아로마 테라피, 체질 기공 및 웰니스 힐링 크루즈 상세 프로그램 안내서."
+    },
+    {
+      "id": "PRJ-INFRA-04",
+      "domainId": "DOM-INFRA",
+      "domainTag": "⚙️ 중앙 인프라",
+      "title": "Google Calendar & Tasks 하이브리드 일정 관리 연동 시스템",
+      "folder": "deliverables/20260908_1654_google_calendar_tasks_hybrid_system",
+      "status": "배포완료",
+      "statusBadge": "bg-cyan-500/10 text-cyan-400 border border-cyan-500/30",
+      "date": "2026-09-08",
+      "liveUrl": "https://script.google.com/macros/s/AKfycbwGyI3EzO3C2grJ-HKljwCvKvqzGlyx7V178gCRH_iqxjFA6YeT1KiScz13_QbdSn8/exec",
+      "deliverables": [
+        {
+          "name": "구축 종합 보고서 (README.md)",
+          "type": "md",
+          "path": "README.md"
+        },
+        {
+          "name": "반응형 리포트 (report.html)",
+          "type": "html",
+          "path": "report.html"
+        },
+        {
+          "name": "CLI 메인 연동 스크립트 (Python)",
+          "type": "py",
+          "path": "calendar_tasks_cli.py"
+        },
+        {
+          "name": "GAS 웹훅 브릿지 (Code.gs)",
+          "type": "js",
+          "path": "Code.gs"
+        }
+      ],
+      "description": "Python Native REST API(B 메인 엔진)와 Google Apps Script Webhook(A 보조 플러그인)을 결합하여 워크스페이스 전 프로젝트 마일스톤과 구글 클라우드를 실시간 연동하는 스케줄 인프라."
     }
   ]
 }
