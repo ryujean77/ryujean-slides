@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-08T15:01:13.155Z",
-  "commit": "ad6c5f1af94a7816af35341fa8b7942c3ecf11de",
-  "fileCount": 1949,
+  "generatedAt": "2026-09-08T15:30:49.553Z",
+  "commit": "e7be0e095b8aea6b50e6c0deaba75a1ab467ef65",
+  "fileCount": 1948,
   "files": [
     {
       "path": ".nojekyll",
@@ -6008,12 +6008,8 @@
       "size": 13561
     },
     {
-      "path": "choi-tommy-care/internal.html",
-      "size": 36201
-    },
-    {
-      "path": "choi-tommy-care/internal.html.bak",
-      "size": 35447
+      "path": "choi-tommy-care/internal-ea5dfb45.html",
+      "size": 36265
     },
     {
       "path": "cloud-mcp-ecosystem/index.html",
@@ -6333,15 +6329,11 @@
     },
     {
       "path": "full-upgrade-report/index.html",
-      "size": 35314
+      "size": 35325
     },
     {
       "path": "gemini-lecture/index.html",
       "size": 21113
-    },
-    {
-      "path": "gemini-lecture/internal.html",
-      "size": 4366
     },
     {
       "path": "git-collab-guide/git_workspace_guide.md",
@@ -7666,6 +7658,10 @@
     {
       "path": "report-2nd-meeting/index.html.bak",
       "size": 25053
+    },
+    {
+      "path": "robots.txt",
+      "size": 222
     },
     {
       "path": "sasang-spa/01_사상체질_프리미엄_체질스파_프로젝트_기획서.md",
