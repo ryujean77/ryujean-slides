@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-08T14:12:50.851Z",
-  "commit": "6be793bb17d7544ab9c24bc0efa4b10fc5e02623",
+  "generatedAt": "2026-09-08T14:41:29.086Z",
+  "commit": "63a784d1fc4ca1c3b76a1183a2e37a4d73c4c611",
   "fileCount": 1949,
   "files": [
     {
@@ -6053,7 +6053,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 42902
+      "size": 33640
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -7581,11 +7581,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 42902
+      "size": 33640
     },
     {
       "path": "portal/index.html",
-      "size": 50435
+      "size": 43603
     },
     {
       "path": "portal/index.html.bak",
