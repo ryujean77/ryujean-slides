@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-10 00:45:11 (KST)",
+  "lastUpdated": "2026-09-10 02:37:59 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -279,7 +279,7 @@
         "designer-slides"
       ],
       "stats": {
-        "projectsCount": 0,
+        "projectsCount": 1,
         "liveUrlsCount": 0,
         "status": "🟡 도메인 신설 (인박스 기획안 4건 대기)"
       }
@@ -889,6 +889,18 @@
       "liveUrl": "",
       "deliverables": [],
       "description": "음성/문서 인박스에서 자동 생성되어 승인된 기획안 기반 프로젝트 (통화 백태종 연구소장_260908_153147_original)."
+    },
+    {
+      "id": "PRJ-NOLAB-01",
+      "domainId": "DOM-NOLAB",
+      "domainTag": "🧪 산화질소 연구",
+      "title": "강의 배포용 올리고당 샘플 스티커 제작 안",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-10",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
     }
   ]
 }
