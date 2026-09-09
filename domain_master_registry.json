@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-09 15:51:36 (KST)",
+  "lastUpdated": "2026-09-09 16:31:15 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -129,7 +129,7 @@
         "gitnotion-publisher"
       ],
       "stats": {
-        "projectsCount": 2,
+        "projectsCount": 3,
         "liveUrlsCount": 0,
         "status": "🟡 원고 검토/보완"
       }
@@ -791,7 +791,7 @@
       "domainId": "DOM-AROMA",
       "domainTag": "🌿 아로마테라피",
       "title": "OILLAB 온라인 사업 구축 (도테라 쇼핑몰 + 락인 퍼널)",
-      "status": "플랫폼확정_스킨초안",
+      "status": "카테고리설계완료",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-09-09",
       "startDate": "2026-09-09",
@@ -811,6 +811,18 @@
       "liveUrl": "",
       "deliverables": [],
       "description": "천시아 대표(오라클라우드) 측 체질·웰니스 강의 협업 건. 강의 내용 원고 작성과 성채하 통화내용 공유가 실행 과제이며, 2025년에 걸어둔 마감일은 경과하여 비움. 통합 인덱스에 선행 자료가 전혀 없어 산출물은 전량 신규 작성 대상."
+    },
+    {
+      "id": "PRJ-LUMINUS-03",
+      "domainId": "DOM-LUMINUS",
+      "domainTag": "🌌 호모루미누스",
+      "title": "통화 백태종 연구소장_260908_153147_original",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-09",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성되어 승인된 기획안 기반 프로젝트 (통화 백태종 연구소장_260908_153147_original)."
     }
   ]
 }
