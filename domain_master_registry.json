@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-09 14:46:46 (KST)",
+  "lastUpdated": "2026-09-09 15:07:41 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -790,15 +790,15 @@
       "id": "PRJ-AROMA-04",
       "domainId": "DOM-AROMA",
       "domainTag": "🌿 아로마테라피",
-      "title": "도테라 쇼핑몰 구축 (카페24 / 워드프레스)",
-      "status": "실행준비",
+      "title": "도테라 판매채널 투트랙 구축 (Replicated Website + 아로마 브랜드 사이트)",
+      "status": "마스터플랜수립완료",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-09-09",
       "startDate": "2026-09-09",
       "dueDate": "2026-09-16",
       "liveUrl": "",
       "deliverables": [],
-      "description": "PRJ-AROMA-01 온라인 수익 극대화 퍼널의 결제 단계에 해당하는 자사 판매 채널 구축. 카페24 또는 워드프레스 중 플랫폼 선정 후 7일 내 개설 목표. 웹 제작 기술자산(web-design-guidelines, lead-capture-publisher)은 DOM-WEBBIZ 에서 스킬로 차용하되, 목적이 아로마 매출이므로 도메인은 DOM-AROMA 로 귀속."
+      "description": "PRJ-AROMA-01 온라인 수익 극대화 퍼널의 결제 단계에 해당하는 판매 채널 구축. 벤치마크 2사(natureterra·terraoil) 실측 결과 둘 다 아임웹 기반이며 도테라 정책(Section 11.B/12) 위반 구조로 확인되어, 자체몰 단일 구축이 아닌 투트랙(Track A: 도테라 Replicated Website 판매 / Track B: 도테라 상표를 배제한 사상체질×아로마 콘텐츠 브랜드 사이트) 아키텍처로 설계. D+0 한국판 정책 매뉴얼 확인이 전체 로드맵의 게이트."
     },
     {
       "id": "PRJ-SASANG-07",
