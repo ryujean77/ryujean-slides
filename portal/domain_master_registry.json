@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-09 15:25:45 (KST)",
+  "lastUpdated": "2026-09-09 15:42:42 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -791,7 +791,7 @@
       "domainId": "DOM-AROMA",
       "domainTag": "🌿 아로마테라피",
       "title": "OILLAB 온라인 사업 구축 (도테라 쇼핑몰 + 락인 퍼널)",
-      "status": "심의서류준비",
+      "status": "스킨초안작성",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-09-09",
       "startDate": "2026-09-09",
