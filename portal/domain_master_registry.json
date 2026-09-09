@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-09 12:25:11 (KST)",
+  "lastUpdated": "2026-09-09 14:46:46 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -86,7 +86,7 @@
         "email-sender"
       ],
       "stats": {
-        "projectsCount": 3,
+        "projectsCount": 4,
         "liveUrlsCount": 2,
         "status": "🟢 활발히 가동중"
       }
@@ -150,7 +150,7 @@
         "ppt-designer"
       ],
       "stats": {
-        "projectsCount": 6,
+        "projectsCount": 7,
         "liveUrlsCount": 2,
         "status": "🟢 제안서 패키징 완료"
       }
@@ -785,6 +785,32 @@
       "liveUrl": "",
       "deliverables": [],
       "description": "구글 태스크에만 존재하던 웰니스캠프 실행 과제 3건(오리엔테이션 교재·체질 검사지 인쇄 9/20, 강사진 롤분장표 확정 9/25, 참가자 1차 안내 문자·카카오톡 발송 9/26)을 레지스트리 프로젝트로 승격. 통합 인덱스에 선행 자료가 없어 산출물은 신규 작성 대상."
+    },
+    {
+      "id": "PRJ-AROMA-04",
+      "domainId": "DOM-AROMA",
+      "domainTag": "🌿 아로마테라피",
+      "title": "도테라 쇼핑몰 구축 (카페24 / 워드프레스)",
+      "status": "실행준비",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-09",
+      "startDate": "2026-09-09",
+      "dueDate": "2026-09-16",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "PRJ-AROMA-01 온라인 수익 극대화 퍼널의 결제 단계에 해당하는 자사 판매 채널 구축. 카페24 또는 워드프레스 중 플랫폼 선정 후 7일 내 개설 목표. 웹 제작 기술자산(web-design-guidelines, lead-capture-publisher)은 DOM-WEBBIZ 에서 스킬로 차용하되, 목적이 아로마 매출이므로 도메인은 DOM-AROMA 로 귀속."
+    },
+    {
+      "id": "PRJ-SASANG-07",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "오라클라우드 천시아 대표 협업 (체질·웰니스 강의)",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-09",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "천시아 대표(오라클라우드) 측 체질·웰니스 강의 협업 건. 강의 내용 원고 작성과 성채하 통화내용 공유가 실행 과제이며, 2025년에 걸어둔 마감일은 경과하여 비움. 통합 인덱스에 선행 자료가 전혀 없어 산출물은 전량 신규 작성 대상."
     }
   ]
 }
