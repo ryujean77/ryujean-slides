@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-09 11:37:52 (KST)",
+  "lastUpdated": "2026-09-09 12:25:11 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -150,7 +150,7 @@
         "ppt-designer"
       ],
       "stats": {
-        "projectsCount": 5,
+        "projectsCount": 6,
         "liveUrlsCount": 2,
         "status": "🟢 제안서 패키징 완료"
       }
@@ -771,6 +771,20 @@
       "date": "2026-09-08",
       "deliverables": [],
       "description": "Python Native REST API(B 메인 엔진)와 Google Apps Script Webhook(A 보조 플러그인)을 결합하여 워크스페이스 전 프로젝트 마일스톤과 구글 클라우드를 실시간 연동하는 스케줄 인프라."
+    },
+    {
+      "id": "PRJ-SASANG-06",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "사상체질 웰니스캠프 운영 (참가자 안내·스태프 롤분장·교재 인쇄)",
+      "status": "실행준비",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-09",
+      "startDate": "2026-09-09",
+      "dueDate": "2026-09-26",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "구글 태스크에만 존재하던 웰니스캠프 실행 과제 3건(오리엔테이션 교재·체질 검사지 인쇄 9/20, 강사진 롤분장표 확정 9/25, 참가자 1차 안내 문자·카카오톡 발송 9/26)을 레지스트리 프로젝트로 승격. 통합 인덱스에 선행 자료가 없어 산출물은 신규 작성 대상."
     }
   ]
 }
