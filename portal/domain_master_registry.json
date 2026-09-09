@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-09 16:31:15 (KST)",
+  "lastUpdated": "2026-09-09 17:04:29 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -238,6 +238,72 @@
         "projectsCount": 1,
         "liveUrlsCount": 0,
         "status": "🟡 기획 초안 완료 / 90일 로드맵 착수 준비"
+      }
+    },
+    {
+      "id": "DOM-GIVER",
+      "name": "관계기반 기버 커뮤니티 비즈니스",
+      "icon": "fa-handshake",
+      "color": "teal",
+      "accentHex": "#14b8a6",
+      "bgGradient": "from-teal-950 via-slate-900 to-emerald-950",
+      "tag": "🤝 기버 커뮤니티",
+      "partner": "유정근 총괄 디렉터 (커뮤니티 설계 · 기버 모델 운영)",
+      "summary": "'먼저 주는 사람(Giver)'을 원리로 삼는 관계기반 비즈니스 도메인. 소모임·동아리 단위 마이크로 커뮤니티 설계, 스마트 기버 수익 모델, 관계 자산을 레버리지로 전환하는 OSMU 콘텐츠 시스템을 다룬다.",
+      "storagePath": "도메인/관계기반_기버커뮤니티",
+      "skills": [
+        "knowledge-index",
+        "lead-capture-publisher",
+        "social-poster"
+      ],
+      "stats": {
+        "projectsCount": 0,
+        "liveUrlsCount": 0,
+        "status": "🟡 도메인 신설 (인박스 기획안 4건 대기)"
+      }
+    },
+    {
+      "id": "DOM-NOLAB",
+      "name": "산화질소(NO) · 기능성 소재 학술연구",
+      "icon": "fa-flask",
+      "color": "sky",
+      "accentHex": "#0ea5e9",
+      "bgGradient": "from-sky-950 via-slate-900 to-cyan-950",
+      "tag": "🧪 산화질소 연구",
+      "partner": "임동구 박사 (식품공학박사) & 유정근 총괄 디렉터",
+      "summary": "산화질소(NO)·올리고당 등 기능성 소재의 사상체질 융합 연구와 학술대회 발표·논문 외 학술 활동을 관리하는 도메인. 석사학위논문 코어(DOM-THESIS-SASANG)와 분리하여 공동연구·학회·제품 실증 라인을 담당한다.",
+      "storagePath": "도메인/산화질소_기능성연구",
+      "skills": [
+        "knowledge-index",
+        "make-slide",
+        "designer-slides"
+      ],
+      "stats": {
+        "projectsCount": 0,
+        "liveUrlsCount": 0,
+        "status": "🟡 도메인 신설 (인박스 기획안 4건 대기)"
+      }
+    },
+    {
+      "id": "DOM-AITHINK",
+      "name": "AI 사고법 & 집필 시스템",
+      "icon": "fa-pen-nib",
+      "color": "violet",
+      "accentHex": "#7c3aed",
+      "bgGradient": "from-violet-950 via-slate-900 to-indigo-950",
+      "tag": "🧭 AI 사고법·집필",
+      "partner": "유정근 총괄 디렉터 (저자 · 프롬프트 설계)",
+      "summary": "메타인지 기반 질문법과 맥락적 커뮤니케이션 프레임워크, AI 협업 도서 집필 및 프롬프트 표준화 프로세스를 다루는 도메인. 강의·교재 중심의 AI 교육(DOM-AI-EDU)과 달리 '사고 모델과 저작물' 자체를 산출한다.",
+      "storagePath": "도메인/AI사고법_집필",
+      "skills": [
+        "canonical-polishing-engine",
+        "knowledge-index",
+        "gemini-exporter"
+      ],
+      "stats": {
+        "projectsCount": 0,
+        "liveUrlsCount": 0,
+        "status": "🟡 도메인 신설 (인박스 기획안 3건 대기)"
       }
     }
   ],
@@ -791,7 +857,7 @@
       "domainId": "DOM-AROMA",
       "domainTag": "🌿 아로마테라피",
       "title": "OILLAB 온라인 사업 구축 (도테라 쇼핑몰 + 락인 퍼널)",
-      "status": "카테고리설계완료",
+      "status": "상품데이터완성",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-09-09",
       "startDate": "2026-09-09",
