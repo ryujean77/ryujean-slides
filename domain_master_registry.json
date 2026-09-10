@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-10 14:42:16 (KST)",
+  "lastUpdated": "2026-09-11 00:06:10 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -13,7 +13,6 @@
       "tag": "🎓 석사학위논문",
       "partner": "유정근 (연구자) & 임동구 박사 (자문 / 식품공학박사)",
       "summary": "가천대학교 석사학위 청구논문: 사상체질 분석방법의 타당성 검증 및 식이섭취와의 상관성 연구 (IRB 승인 1044396-201808-HR-171-01, N=397 실측 데이터).",
-      "storagePath": "도메인/사상체질_석사논문 & C:\\Users\\ryujean\\OneDrive\\drop\\03_susevo\\04_가천대\\논문\\IRB\\IRB\\01_ryu",
       "skills": [
         "aroma-care-engine",
         "make-slide",
@@ -35,7 +34,6 @@
       "tag": "🤖 AI 교육",
       "partner": "유정근 총괄 디렉터 (전담 AI 마스터 강사)",
       "summary": "인천자활 4회차 풀패키지 교재(76개 에셋), Gemini & NotebookLM 반응형 웹 슬라이드, 노션 실습 템플릿 복제 생태계 및 B2B 출강 파이프라인.",
-      "storagePath": "도메인/AI교육_실무혁신 & C:\\01_Brain\\01_Projects\\인천자활_AI교육_강의안",
       "skills": [
         "ai-curriculum-builder",
         "make-slide",
@@ -58,7 +56,6 @@
       "tag": "🧠 제2의 뇌",
       "partner": "유정근 (지식 총괄) & 로컬 LLM (Gemma/Qwen)",
       "summary": "PARA 체계 기반 5.2만 건의 원시 지식 인박스, 음성 녹취 자동 분석, Dataview 및 Obsigravity 연동 로컬 지식 위키 Vault.",
-      "storagePath": "C:\\01_Brain (독립 Obsidian Vault)",
       "skills": [
         "obsigravity",
         "ai-curriculum-builder"
@@ -79,7 +76,6 @@
       "tag": "🌿 아로마테라피",
       "partner": "유정근 전담 테라피스트 (010-4728-9917, ryujean77@gmail.com)",
       "summary": "도테라 CPTG 30종 마스터 DB, 사상체질 증상별 처방, 1:1 VIP 웹 처방전 및 5단계 온라인 수익 극대화 퍼널 시스템.",
-      "storagePath": "도메인/아로마테라피 & E:\\OneDrive\\drop\\03_susevo\\00_000_도테라contact",
       "skills": [
         "aroma-care-engine",
         "slack-notifier",
@@ -101,7 +97,6 @@
       "tag": "👗 패션테라피",
       "partner": "남미화 의복심리학 박사 & 유정근 총괄",
       "summary": "의복심리학 기반 8대 캐릭터 모바일 심리테스트 웹앱(Inner Styler), 2차 기획회의 분석 대시보드 및 도서관 B2B 출강 제안서.",
-      "storagePath": "deliverables/20260821_..., deliverables/20260824_...",
       "skills": [
         "designer-slides",
         "make-slide",
@@ -123,7 +118,6 @@
       "tag": "🌌 호모루미누스",
       "partner": "백태종 스승님 & 유정근 디렉터",
       "summary": "CMB 진공 파동 포집(1999) 기반 『빛운영보고서 3부작』 출판 파이프라인(97청크 무손실 윤문) 및 BTS WORLD TOUR 글로벌 아카이브.",
-      "storagePath": "I:\\내 드라이브\\호모루미누스 & ryujean77/BTS_AGY",
       "skills": [
         "make-slide",
         "gitnotion-publisher"
@@ -144,7 +138,6 @@
       "tag": "🧬 사상체질",
       "partner": "임동구 박사 식품공학박사 (Dr.Yim's 체질라이프스타일 연구소 소장 | 010-2323-4662, ydoko@daum.net) & 유정근 디렉터 (010-4728-9917)",
       "summary": "사상체질 유전체 기반 전국 도서관, 공공기관, 성동구청 B2B 인문학 강연 제안서 및 슬라이드·포스터 패키지.",
-      "storagePath": "deliverables/20260821_0118_..., deliverables/20260821_0156_...",
       "skills": [
         "designer-slides",
         "ppt-designer"
@@ -165,7 +158,6 @@
       "tag": "⚙️ 중앙 인프라",
       "partner": "유정근 총괄 & Antigravity AI Agent",
       "summary": "GitHub Pages 1초 자동 웹 배포 파이프라인, 슬랙(Slack) Socket Mode 실시간 AI 비서 데몬 및 12대 전문 스킬 엔진.",
-      "storagePath": "publishing_registry.json, 스킬/, .env.local",
       "skills": [
         "slack-notifier",
         "gitnotion-publisher",
@@ -187,7 +179,6 @@
       "tag": "🧖 사상체질 스파",
       "partner": "총괄 디렉터 유정근 (010-4728-9917, ryujean77@gmail.com) & 식품공학박사 임동구 박사 (Dr.Yim's 체질라이프스타일 연구소 소장 | 010-2323-4662, ydoko@daum.net)",
       "summary": "한국 고유의 사상체질 장부대소 원리와 CPTG 에센셜 오일, 10대 시그니처 테라피, DTC 유전자/마이크로바이옴 LTV 모델이 결합된 K-프리미엄 웰니스 스파.",
-      "storagePath": "도메인/사상체질_스파 & I:\\내 드라이브\\2026체질스파",
       "skills": [
         "lead-capture-publisher",
         "aroma-care-engine",
@@ -209,7 +200,6 @@
       "tag": "📈 AI 트레이딩",
       "partner": "유정근 총괄 & Claude Code (TradingView MCP)",
       "summary": "Claude Code ↔ TradingView Desktop MCP 연동으로 차트 분석, Pine Script 개발, 리플레이 백테스트, 알림/웹훅 자동매매를 자연어로 실행하는 AI 트레이딩 워크플로우.",
-      "storagePath": "도메인/AI트레이딩 & deliverables/20260827_0110_XAUUSD_골드선물_AI트레이딩_마스터플랜",
       "skills": [],
       "stats": {
         "projectsCount": 2,
@@ -227,7 +217,6 @@
       "tag": "🌐 웹 비즈니스",
       "partner": "유정근 총괄 디렉터 (1인 부업 / 제작·관리 총괄)",
       "summary": "소상공인·중소기업·기관 대상 반응형 홈페이지 제작을 진입점으로 삼고, 월 관리비 구독(MRR)으로 전환해 반복 수익을 확보하는 웹 비즈니스. 오픈마켓 경쟁사가 모두 '제작 후 종료' 모델이라는 시장 공백과, AI 교육 강사 본업의 기업·기관 네트워크를 리드 파이프라인으로 활용하는 비대칭 우위를 축으로 한다.",
-      "storagePath": "도메인/웹사이트_비즈니스 & deliverables/20260908_1445_website_business_masterplan",
       "skills": [
         "web-design-guidelines",
         "lead-capture-publisher",
@@ -250,7 +239,6 @@
       "tag": "🤝 기버 커뮤니티",
       "partner": "유정근 총괄 디렉터 (커뮤니티 설계 · 기버 모델 운영)",
       "summary": "'먼저 주는 사람(Giver)'을 원리로 삼는 관계기반 비즈니스 도메인. 소모임·동아리 단위 마이크로 커뮤니티 설계, 스마트 기버 수익 모델, 관계 자산을 레버리지로 전환하는 OSMU 콘텐츠 시스템을 다룬다.",
-      "storagePath": "도메인/관계기반_기버커뮤니티",
       "skills": [
         "knowledge-index",
         "lead-capture-publisher",
@@ -272,7 +260,6 @@
       "tag": "🧪 산화질소 연구",
       "partner": "임동구 박사 (식품공학박사) & 유정근 총괄 디렉터",
       "summary": "산화질소(NO)·올리고당 등 기능성 소재의 사상체질 융합 연구와 학술대회 발표·논문 외 학술 활동을 관리하는 도메인. 석사학위논문 코어(DOM-THESIS-SASANG)와 분리하여 공동연구·학회·제품 실증 라인을 담당한다.",
-      "storagePath": "도메인/산화질소_기능성연구",
       "skills": [
         "knowledge-index",
         "make-slide",
@@ -294,7 +281,6 @@
       "tag": "🧭 AI 사고법·집필",
       "partner": "유정근 총괄 디렉터 (저자 · 프롬프트 설계)",
       "summary": "메타인지 기반 질문법과 맥락적 커뮤니케이션 프레임워크, AI 협업 도서 집필 및 프롬프트 표준화 프로세스를 다루는 도메인. 강의·교재 중심의 AI 교육(DOM-AI-EDU)과 달리 '사고 모델과 저작물' 자체를 산출한다.",
-      "storagePath": "도메인/AI사고법_집필",
       "skills": [
         "canonical-polishing-engine",
         "knowledge-index",
@@ -304,6 +290,26 @@
         "projectsCount": 0,
         "liveUrlsCount": 0,
         "status": "🟡 도메인 신설 (인박스 기획안 3건 대기)"
+      }
+    },
+    {
+      "id": "DOM-DEEPTWIN",
+      "name": "딥트윈 & 암묵지 자산화 방법론",
+      "icon": "fa-diagram-project",
+      "color": "violet",
+      "accentHex": "#8b5cf6",
+      "bgGradient": "from-violet-950 via-slate-900 to-indigo-950",
+      "tag": "🧬 암묵지 자산화",
+      "partner": "유정근 (총괄 디렉터 / 정답지 생성자 겸 검증 주체)",
+      "summary": "암묵지를 '저장물'이 아니라 '학습된 정책(policy)'으로 정의하고, 에이전트 산출물과 디렉터 정답지의 차이(Loss)를 정량 측정·축소하는 방법론을 구축·실증하는 도메인. v0 데이터셋 구축부터 v5 성립 판정까지 관문 기반 마일스톤으로 진행하며, 구축 로그를 원형 텍스트로 삼아 강의·책·논문으로 파생한다. DOM-INFRA(구현체)·DOM-AITHINK(형식지 산출)와 달리 '측정과 검증'을 담당한다.",
+      "skills": [
+        "knowledge-index",
+        "gitnotion-publisher"
+      ],
+      "stats": {
+        "projectsCount": 1,
+        "liveUrlsCount": 0,
+        "status": "🟡 v0 데이터셋 구축기 착수 (라벨 8/100쌍)"
       }
     }
   ],
@@ -901,6 +907,18 @@
       "liveUrl": "",
       "deliverables": [],
       "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-DEEPTWIN-01",
+      "domainId": "DOM-DEEPTWIN",
+      "domainTag": "🧬 암묵지 자산화",
+      "title": "딥트윈 도달 로드맵 — 워크스페이스 진화 기록 및 멀티유즈 IP화",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-11",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "암묵지=정책 가설을 5개 헌장 조항으로 구조화하고, v0~v5 관문 기반 버전 마일스톤과 강의→책→논문 멀티유즈 순서를 확정한 착수 헌장. 라벨 실측 8쌍 대 인덱스 45,525건의 격차를 진단하고, 원 강의에 없는 홀드아웃 분리를 기여점으로 설정했다."
     }
   ]
 }
