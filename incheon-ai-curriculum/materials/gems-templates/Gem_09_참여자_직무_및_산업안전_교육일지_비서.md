@@ -76,7 +76,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`09_참여자_직무안전교육일지_및_안전점검표.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/09_%EC%B0%B8%EC%97%AC%EC%9E%90_%EC%A7%81%EB%AC%B4%EC%95%88%EC%A0%84%EA%B5%90%EC%9C%A1%EC%9D%BC%EC%A7%80_%EB%B0%8F_%EC%95%88%EC%A0%84%EC%A0%90%EA%B2%80%ED%91%9C.docx)
+* **표준 서식 다운로드:** [`09_참여자_직무안전교육일지_및_안전점검표.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/09_%EC%B0%B8%EC%97%AC%EC%9E%90_%EC%A7%81%EB%AC%B4%EC%95%88%EC%A0%84%EA%B5%90%EC%9C%A1%EC%9D%BC%EC%A7%80_%EB%B0%8F_%EC%95%88%EC%A0%84%EC%A0%90%EA%B2%80%ED%91%9C.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 매월 반복되는 교육과 점검 서류를 AI가 센터 양식에 맞춰 완벽하게 쓰게 하려면, 아래 파일들을 지식(Knowledge) 영역에 업로드해 두시면 좋습니다.

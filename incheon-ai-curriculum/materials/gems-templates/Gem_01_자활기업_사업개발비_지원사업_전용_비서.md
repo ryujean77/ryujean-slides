@@ -69,7 +69,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`01_자활기업_사업개발비_세부사업계획서_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/01_%EC%9E%90%ED%99%9C%EA%B8%B0%EC%97%85_%EC%82%AC%EC%97%85%EA%B0%9C%EB%B0%9C%EB%B9%84_%EC%84%B8%EB%B6%80%EC%82%AC%EC%97%85%EA%B3%84%ED%9A%8D%EC%84%9C_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
+* **표준 서식 다운로드:** [`01_자활기업_사업개발비_세부사업계획서_표준서식.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/01_%EC%9E%90%ED%99%9C%EA%B8%B0%EC%97%85_%EC%82%AC%EC%97%85%EA%B0%9C%EB%B0%9C%EB%B9%84_%EC%84%B8%EB%B6%80%EC%82%AC%EC%97%85%EA%B3%84%ED%9A%8D%EC%84%9C_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 현재 보고 계신 한국자활복지개발원 공모 페이지에서 다음 두 파일을 다운로드하여 Gem의 지식(Knowledge) 영역에 업로드해 두시면 완벽하게 작동합니다.

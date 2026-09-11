@@ -84,7 +84,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`08_지역자활센터_운영위원회_회의록_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/08_%EC%A7%80%EC%97%AD%EC%9E%90%ED%99%9C%EC%84%BC%ED%84%B0_%EC%9A%B4%EC%98%81%EC%9C%84%EC%9B%90%ED%9A%8C_%ED%9A%8C%EC%9D%98%EB%A1%9D_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
+* **표준 서식 다운로드:** [`08_지역자활센터_운영위원회_회의록_표준서식.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/08_%EC%A7%80%EC%97%AD%EC%9E%90%ED%99%9C%EC%84%BC%ED%84%B0_%EC%9A%B4%EC%98%81%EC%9C%84%EC%9B%90%ED%9A%8C_%ED%9A%8C%EC%9D%98%EB%A1%9D_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 AI가 우리 센터만의 양식과 자주 등장하는 위원들의 이름을 자동으로 매칭하게 하려면, 아래 파일들을 지식(Knowledge) 영역에 업로드해 두시면 매우 편리합니다.

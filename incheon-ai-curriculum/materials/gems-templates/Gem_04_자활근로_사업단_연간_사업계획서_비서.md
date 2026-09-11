@@ -81,7 +81,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`04_자활근로_사업단_사업계획서_표준양식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/04_%EC%9E%90%ED%99%9C%EA%B7%BC%EB%A1%9C_%EC%82%AC%EC%97%85%EB%8B%A8_%EC%82%AC%EC%97%85%EA%B3%84%ED%9A%8D%EC%84%9C_%ED%91%9C%EC%A4%80%EC%96%91%EC%8B%9D.docx)
+* **표준 서식 다운로드:** [`04_자활근로_사업단_사업계획서_표준양식.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/04_%EC%9E%90%ED%99%9C%EA%B7%BC%EB%A1%9C_%EC%82%AC%EC%97%85%EB%8B%A8_%EC%82%AC%EC%97%85%EA%B3%84%ED%9A%8D%EC%84%9C_%ED%91%9C%EC%A4%80%EC%96%91%EC%8B%9D.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 사업단 계획서를 심사하는 가장 큰 기준은 보건복지부 지침입니다. 따라서 해당 Gem의 지식(Knowledge) 영역에 아래 파일을 업로드해 두시면 AI가 사업 유형별 조건(매출액 30% vs 10%) 등을 헷갈리지 않고 정확히 적용합니다.

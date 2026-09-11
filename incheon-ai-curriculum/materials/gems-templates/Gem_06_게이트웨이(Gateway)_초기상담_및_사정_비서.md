@@ -85,7 +85,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`06_게이트웨이_초기상담기록지_및_욕구사정표.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/06_%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4_%EC%B4%88%EA%B8%B0%EC%83%81%EB%8B%B4%EA%B8%B0%EB%A1%9D%EC%A7%80_%EB%B0%8F_%EC%9A%95%EA%B5%AC%EC%82%AC%EC%A0%95%ED%91%9C.docx)
+* **표준 서식 다운로드:** [`06_게이트웨이_초기상담기록지_및_욕구사정표.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/06_%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4_%EC%B4%88%EA%B8%B0%EC%83%81%EB%8B%B4%EA%B8%B0%EB%A1%9D%EC%A7%80_%EB%B0%8F_%EC%9A%95%EA%B5%AC%EC%82%AC%EC%A0%95%ED%91%9C.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 신규 참여자 초기 상담 시 AI가 센터의 기준에 맞게 문서를 작성하도록 하려면, 아래 파일을 지식(Knowledge) 영역에 업로드해 두시는 것을 권장합니다.

@@ -78,7 +78,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`03_지역자활센터_사업단_자체성과평가서_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/03_%EC%A7%80%EC%97%AD%EC%9E%90%ED%99%9C%EC%84%BC%ED%84%B0_%EC%82%AC%EC%97%85%EB%8B%A8_%EC%9E%90%EC%B2%B4%EC%84%B1%EA%B3%BC%ED%8F%89%EA%B0%80%EC%84%9C_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
+* **표준 서식 다운로드:** [`03_지역자활센터_사업단_자체성과평가서_표준서식.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/03_%EC%A7%80%EC%97%AD%EC%9E%90%ED%99%9C%EC%84%BC%ED%84%B0_%EC%82%AC%EC%97%85%EB%8B%A8_%EC%9E%90%EC%B2%B4%EC%84%B1%EA%B3%BC%ED%8F%89%EA%B0%80%EC%84%9C_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 이 Gem이 단순한 글짓기를 넘어 '평가 배점 기준'에 맞춰 글을 쓰게 하려면, 다음 파일을 지식(Knowledge) 영역에 꼭 업로드해 두세요.

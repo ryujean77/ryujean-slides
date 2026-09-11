@@ -70,7 +70,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`10_자활생산품_언론보도자료_배포_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/10_%EC%9E%90%ED%99%9C%EC%83%9D%EC%82%B0%ED%92%88_%EC%96%B8%EB%A1%A0%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C_%EB%B0%B0%ED%8F%AC_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
+* **표준 서식 다운로드:** [`10_자활생산품_언론보도자료_배포_표준서식.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/10_%EC%9E%90%ED%99%9C%EC%83%9D%EC%82%B0%ED%92%88_%EC%96%B8%EB%A1%A0%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C_%EB%B0%B0%ED%8F%AC_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 AI가 우리 센터의 주력 생산품 성격이나 지난 보도자료의 톤을 완벽히 학습하게 하려면, 아래 자료들을 지식(Knowledge) 영역에 업로드해 두시면 매우 유용합니다.

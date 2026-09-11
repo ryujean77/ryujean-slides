@@ -91,7 +91,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`05_자활사업단_월간_매출정산_결과보고서_서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/05_%EC%9E%90%ED%99%9C%EC%82%AC%EC%97%85%EB%8B%A8_%EC%9B%94%EA%B0%84_%EB%A7%A4%EC%B6%9C%EC%A0%95%EC%82%B0_%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C_%EC%84%9C%EC%8B%9D.docx)
+* **표준 서식 다운로드:** [`05_자활사업단_월간_매출정산_결과보고서_서식.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/05_%EC%9E%90%ED%99%9C%EC%82%AC%EC%97%85%EB%8B%A8_%EC%9B%94%EA%B0%84_%EB%A7%A4%EC%B6%9C%EC%A0%95%EC%82%B0_%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C_%EC%84%9C%EC%8B%9D.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 정산 보고서의 생명은 '지침 위반 여부'입니다. 실무자가 배분 비율을 실수하지 않도록 AI를 세팅하기 위해 아래 파일을 지식(Knowledge) 영역에 업로드해 두시면 좋습니다.

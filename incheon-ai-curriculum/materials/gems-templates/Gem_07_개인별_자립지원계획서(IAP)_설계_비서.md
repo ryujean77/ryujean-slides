@@ -79,7 +79,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`07_개인별_자립지원계획서(IAP)_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/07_%EA%B0%9C%EC%9D%B8%EB%B3%84_%EC%9E%90%EB%A6%BD%EC%A7%80%EC%9B%90%EA%B3%84%ED%9A%8D%EC%84%9C%28IAP%29_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
+* **표준 서식 다운로드:** [`07_개인별_자립지원계획서(IAP)_표준서식.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/07_%EA%B0%9C%EC%9D%B8%EB%B3%84_%EC%9E%90%EB%A6%BD%EC%A7%80%EC%9B%90%EA%B3%84%ED%9A%8D%EC%84%9C%28IAP%29_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 이 Gem이 사회복지 용어와 자활 제도를 더 완벽하게 이해하게 하려면, 센터에서 사용하시는 다음 자료들을 지식(Knowledge)에 업로드해 두시는 것을 추천합니다.

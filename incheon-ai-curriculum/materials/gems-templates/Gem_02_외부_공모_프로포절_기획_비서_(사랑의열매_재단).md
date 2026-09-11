@@ -71,7 +71,7 @@
 
 ## 📁 5. 실습용 지식(Knowledge) 파일 다운로드
 
-* **표준 서식 다운로드:** [`02_사회복지공동모금회_배분신청서_및_프로포절_표준서식.docx`](https://github.com/ryujean77/ryujean-slides/blob/main/incheon-ai-curriculum/materials/gems-templates/02_%EC%82%AC%ED%9A%8C%EB%B3%B5%EC%A7%80%EA%B3%B5%EB%8F%99%EB%AA%A8%EA%B8%88%ED%9A%8C_%EB%B0%B0%EB%B6%84%EC%8B%A0%EC%B2%AD%EC%84%9C_%EB%B0%8F_%ED%94%84%EB%A1%9C%ED%8F%AC%EC%A0%88_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
+* **표준 서식 다운로드:** [`02_사회복지공동모금회_배분신청서_및_프로포절_표준서식.docx`](https://github.com/ryujean77/incheon-ai-curriculum/blob/main/materials/gems-templates/02_%EC%82%AC%ED%9A%8C%EB%B3%B5%EC%A7%80%EA%B3%B5%EB%8F%99%EB%AA%A8%EA%B8%88%ED%9A%8C_%EB%B0%B0%EB%B6%84%EC%8B%A0%EC%B2%AD%EC%84%9C_%EB%B0%8F_%ED%94%84%EB%A1%9C%ED%8F%AC%EC%A0%88_%ED%91%9C%EC%A4%80%EC%84%9C%EC%8B%9D.docx)
 
 📁 지식(Knowledge) 파일 설정 팁
 해당 Gem을 만들 때, 지식(Knowledge) 영역에 아래 파일들을 업로드해 두시면 AI의 어휘력과 심사 기준 준수율이 압도적으로 높아집니다.
