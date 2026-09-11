@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-11 11:31:23 (KST)",
+  "lastUpdated": "2026-09-12 00:51:54 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -41,7 +41,7 @@
         "codeit-theme-generator"
       ],
       "stats": {
-        "projectsCount": 3,
+        "projectsCount": 4,
         "liveUrlsCount": 3,
         "status": "🟢 상시 출강/확장 가동"
       }
@@ -103,7 +103,7 @@
         "ppt-designer"
       ],
       "stats": {
-        "projectsCount": 3,
+        "projectsCount": 4,
         "liveUrlsCount": 3,
         "status": "🟢 기획/개발 진행중"
       }
@@ -185,7 +185,7 @@
         "designer-slides"
       ],
       "stats": {
-        "projectsCount": 1,
+        "projectsCount": 2,
         "liveUrlsCount": 1,
         "status": "🟢 포털 론칭 및 배포완료"
       }
@@ -224,7 +224,7 @@
         "knowledge-index"
       ],
       "stats": {
-        "projectsCount": 1,
+        "projectsCount": 2,
         "liveUrlsCount": 0,
         "status": "🟡 기획 초안 완료 / 90일 로드맵 착수 준비"
       }
@@ -928,6 +928,54 @@
       "status": "진행중",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-09-11",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-SPA-02",
+      "domainId": "DOM-SPA",
+      "domainTag": "🧖 사상체질 스파",
+      "title": "골다공증 환자 대상 줄기세포 치료 연계 및 협업 추진 계획",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-11",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-FASHION-04",
+      "domainId": "DOM-FASHION",
+      "domainTag": "👗 패션테라피",
+      "title": "AI 시대의 개인 비즈니스 레버리지 시스템 구축 및 패션 테라피 OSMU 콘텐츠 마케팅 실전 안",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-11",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-AI-04",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "KT ESG 코딩·AI 교육 사업 참여 및 현장 강사 역할 확장 기획(초안)",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-12",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-WEBBIZ-02",
+      "domainId": "DOM-WEBBIZ",
+      "domainTag": "🌐 웹 비즈니스",
+      "title": "K-식기(Tableware) 글로벌 브랜딩 및 콘텐츠 기획안",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-12",
       "liveUrl": "",
       "deliverables": [],
       "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
