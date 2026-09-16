@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>구글 안티그래비티 2.0 완전 정복 — 120분 특강 교안</title>
+<meta name="description" content="Google Antigravity 2.0 윈도우 설치부터 기본 사용법, 에이전트 활용까지 다루는 인천지역 자활센터 대상 120분 특강 교안">
+<style>
+:root{
+  --bg:#000000; --panel:rgba(255,255,255,.055); --panel2:rgba(255,255,255,.085);
+  --line:rgba(255,255,255,.14); --line2:rgba(255,255,255,.22);
+  --tx:#FFFFFF; --tx2:#AEB4C2; --tx3:#7C8494;
+  --n1:#FC00DC; --n2:#731FFF; --n3:#00FFD7;
+  --grad:linear-gradient(120deg,var(--n1),var(--n2) 52%,var(--n3));
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font-family:'Pretendard','Pretendard Variable',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+  font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 12% -8%,rgba(115,31,255,.16),transparent 62%),
+                   radial-gradient(900px 520px at 92% 4%,rgba(252,0,220,.11),transparent 60%);
+  background-attachment:fixed;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px 120px}
+header.hero{padding:60px 0 30px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px;letter-spacing:.22em;color:var(--tx3);font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(26px,3.8vw,42px);line-height:1.26;margin:.3em 0 .2em;font-weight:800;letter-spacing:-.02em}
+h1 .g{color:var(--n3)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.sub{color:var(--tx2);font-size:15.5px;margin:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:5px 13px;font-size:12.5px;color:var(--tx2)}
+
+nav.toc{margin:30px 0 10px;border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:20px 24px}
+nav.toc h2{font-size:13px;letter-spacing:.16em;color:var(--tx3);margin:0 0 12px;font-weight:800}
+nav.toc ol{margin:0;padding-left:0;list-style:none;columns:2;column-gap:30px}
+nav.toc li{margin:0 0 6px;break-inside:avoid}
+nav.toc a{color:var(--tx2);text-decoration:none;font-size:14px;display:block;padding:2px 0;border:0}
+nav.toc a:hover{color:var(--tx)}
+nav.toc .num{display:inline-block;min-width:34px;color:var(--n3);font-weight:700}
+
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 0}
+.toolbar button{background:var(--panel2);border:1px solid var(--line);color:var(--tx2);
+  border-radius:999px;padding:7px 16px;font-size:13px;cursor:pointer;transition:all .15s ease;font-family:inherit}
+.toolbar button:hover{background:var(--n2);color:#fff;border-color:var(--n2)}
+
+details.section-card{margin:26px 0;border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden;transition:border-color .2s ease}
+details.section-card[open]{border-color:var(--line2);background:rgba(255,255,255,.035)}
+summary.section-header{padding:18px 22px;font-size:19px;font-weight:800;cursor:pointer;list-style:none;position:relative;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;background:var(--panel2)}
+summary.section-header::-webkit-details-marker{display:none}
+summary.section-header::after{content:'▼';font-size:12px;color:var(--tx3);transition:transform .2s ease;flex:0 0 auto}
+details[open] summary.section-header::after{transform:rotate(180deg)}
+.section-body{padding:22px 24px 28px}
+
+h2{font-size:22px;margin:28px 0 14px;font-weight:800}
+h3{font-size:17px;margin:24px 0 10px;font-weight:750;color:var(--n3)}
+h4{font-size:15px;margin:18px 0 8px;font-weight:700}
+p{margin:.7em 0;color:#E9ECF2}
+strong{color:#fff;font-weight:700}
+a{color:var(--n3);text-decoration:none;border-bottom:1px solid rgba(0,255,215,.32);word-break:break-all}
+a:hover{border-bottom-color:var(--n3)}
+ul,ol{padding-left:1.3em;margin:.6em 0}
+li{margin:.3em 0;color:#E4E8EF}
+hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+
+.code-wrap{position:relative;margin:18px 0}
+pre{background:linear-gradient(180deg,#0C0D13,#08090E);border:1px solid var(--line);
+  border-radius:14px;padding:18px 20px;overflow:auto;box-shadow:0 8px 28px rgba(0,0,0,.5);margin:0}
+pre code{background:none;border:0;padding:0;color:#D9DEE9;font-size:13.5px;line-height:1.68;
+  font-family:ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;white-space:pre}
+pre::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);border-radius:14px 0 0 14px}
+code{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:13.5px}
+.copy-btn{position:absolute;top:10px;right:12px;background:rgba(255,255,255,.1);border:1px solid var(--line);
+  border-radius:6px;padding:4px 10px;color:var(--tx2);font-size:11.5px;cursor:pointer;transition:all .15s ease;font-family:inherit}
+.copy-btn:hover{background:var(--n2);color:#fff;border-color:var(--n2)}
+
+blockquote{margin:18px 0;padding:14px 20px;border:1px solid rgba(115,31,255,.35);border-left:3px solid var(--n2);
+  background:linear-gradient(180deg,rgba(115,31,255,.12),rgba(115,31,255,.04));border-radius:0 14px 14px 0;color:#E9ECF2}
+blockquote p{margin:.35em 0}
+blockquote.warn{border-color:rgba(255,165,0,.4);border-left-color:#FFA500;
+  background:linear-gradient(180deg,rgba(255,165,0,.12),rgba(255,165,0,.03))}
+blockquote.tip{border-color:rgba(0,255,215,.35);border-left-color:var(--n3);
+  background:linear-gradient(180deg,rgba(0,255,215,.1),rgba(0,255,215,.03))}
+
+.tbl{overflow-x:auto;margin:18px 0}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th{background:rgba(255,255,255,.08);color:#fff;font-weight:700;padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid var(--line);color:#E4E8EF}
+tr:last-child td{border-bottom:0}
+
+@media(max-width:820px){nav.toc ol{columns:1}.wrap{padding:0 16px 80px}}
+@media print{body{background:#fff;color:#111}details{open:true}}
+</style></head><body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">인천지역 자활센터 · AI 역량강화 특강 교안</div>
+  <h1>🚀 구글 안티그래비티 2.0 <span class="g">완전 정복</span></h1>
+  <p class="sub">윈도우 설치부터 기본 사용법, 그리고 에이전트 실전 활용까지 — 120분 집중 과정</p>
+  <div class="meta">
+    <span class="chip">총 120분 (5개 교시)</span>
+    <span class="chip">실습 3회 포함</span>
+    <span class="chip">복사용 실전 프롬프트 제공</span>
+    <span class="chip">기관 보안 체크리스트 수록</span>
+  </div>
+  <div class="toolbar">
+    <button onclick="toggleAll(true)">전체 펼치기</button>
+    <button onclick="toggleAll(false)">전체 접기</button>
+    <button onclick="window.print()">인쇄 / PDF 저장</button>
+  </div>
+</header>
+<nav class="toc"><h2>📑 목차 바로가기</h2><ol><li><a href="#sec1"><span class="num">#01</span> 🎯 [0교시] 오리엔테이션 — 왜 지금 안티그래비티인가 (0~10분 / 10분)</a></li><li><a href="#sec2"><span class="num">#02</span> 🛠️ [1교시] 설치와 초기 설정 — 실패 없는 윈도우 설치 (10~35분 / 25분)</a></li><li><a href="#sec3"><span class="num">#03</span> 🖥️ [2교시] 화면 구조와 기본 사용법 (35~60분 / 25분)</a></li><li><a href="#sec4"><span class="num">#04</span> ☕ 휴식 (60~70분 / 10분)</a></li><li><a href="#sec5"><span class="num">#05</span> 🤖 [3교시] 에이전트 실전 활용 — 자활 실무에 바로 붙이기 (70~105분 / 35분)</a></li><li><a href="#sec6"><span class="num">#06</span> 🔒 [4교시] 안전·권한·비용 관리 (105~120분 / 15분)</a></li><li><a href="#sec7"><span class="num">#07</span> 📎 부록 A. 120분 타임테이블 요약</a></li><li><a href="#sec8"><span class="num">#08</span> 📎 부록 B. 강사 체크리스트</a></li><li><a href="#sec9"><span class="num">#09</span> 📎 부록 C. 참고 출처</a></li></ol></nav>
+<blockquote>
+<p><strong>대상</strong>: 인천지역 자활센터 센터장 · 실무자 (비개발자 포함)<br />
+<strong>소요</strong>: 총 120분 (이론 40분 / 실습 65분 / 휴식·Q&amp;A 15분)<br />
+<strong>준비물</strong>: Windows 10 64비트 이상 노트북, 구글 계정, Chrome 브라우저, 인터넷<br />
+<strong>강사</strong>: 유정근 (010-4728-9917 · https://www.eglslab.com/)</p>
+</blockquote>
+<hr />
+<div id="sec1"><details class="section-card" open><summary class="section-header">🎯 [0교시] 오리엔테이션 — 왜 지금 안티그래비티인가 (0~10분 / 10분)</summary><div class="section-body"><h3>📘 [교재] 한 줄 정의</h3>
+<p><strong>안티그래비티 2.0은 "대화하는 AI"가 아니라 "내 컴퓨터에서 실제로 일하는 AI 직원"입니다.</strong></p>
+<p>제미나이·챗GPT가 답변을 <em>말해주는</em> 도구였다면, 안티그래비티는 내 PC의 폴더를 열고, 파일을 읽고, 문서를 만들고, 브라우저를 켜서 공고문을 찾아오는 것까지 <strong>직접 수행</strong>합니다. 구글이 이것을 "에이전트 우선(Agent-First) 플랫폼"이라 부르는 이유입니다.</p>
+<h3>🗣️ 강사 멘트</h3>
+<blockquote>
+<p>"지금까지 여러분은 제미나이에게 '사업계획서 초안 좀 써줘'라고 물어보고, 나온 답을 복사해서 한글에 붙여넣으셨죠. 오늘 배울 안티그래비티는 그 복사·붙여넣기 단계 자체가 없습니다. 폴더를 통째로 맡기면, 그 안의 30개 파일을 스스로 읽고, 정리하고, 결과 문서를 그 폴더에 저장해 놓습니다. <strong>일을 시키는 방식이 '질문'에서 '지시'로 바뀝니다.</strong>"</p>
+</blockquote>
+<h3>📘 [교재] 세 가지 사고 전환</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>기존 AI 사용 방식</th>
+<th>안티그래비티 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>질문 → 답변 복사 → 내가 적용</td>
+<td>지시 → 에이전트가 직접 수행 → 나는 <strong>검수</strong></td>
+</tr>
+<tr>
+<td>대화창 하나, 한 번에 하나씩</td>
+<td>에이전트 여러 명 동시 투입 (병렬)</td>
+</tr>
+<tr>
+<td>결과만 보임 (과정 불투명)</td>
+<td><strong>Artifacts</strong>로 계획·과정·근거를 전부 공개</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="tip"><p>💡 <strong>오늘의 핵심 키워드 3개</strong>: <strong>Agent Manager</strong>(관제탑) · <strong>Artifacts</strong>(작업 증빙) · <strong>Permission</strong>(권한 통제)</p>
+</blockquote>
+<h3>⏱️ 진행</h3>
+<ul>
+<li>참석자 PC 사양 즉석 확인 (RAM 8GB 이상 / Windows 10 64비트 이상)</li>
+<li>구글 계정 로그인 상태 확인</li>
+<li>Chrome 설치 여부 확인 (브라우저 에이전트 실습에 필요)</li>
+</ul>
+<hr /></div></details></div><div id="sec2"><details class="section-card" open><summary class="section-header">🛠️ [1교시] 설치와 초기 설정 — 실패 없는 윈도우 설치 (10~35분 / 25분)</summary><div class="section-body"><h3>📘 [교재] 1단계. 설치 전 시스템 요구사항 확인</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>최소</th>
+<th>권장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운영체제</td>
+<td><strong>Windows 10 (64-bit) 이상</strong></td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>프로세서</td>
+<td>x86-64 (x64) 또는 ARM64</td>
+<td>x64</td>
+</tr>
+<tr>
+<td>메모리(RAM)</td>
+<td>8GB</td>
+<td><strong>16GB 이상</strong> (에이전트 여러 개 동시 운영 시)</td>
+</tr>
+<tr>
+<td>저장공간</td>
+<td>2GB 여유</td>
+<td>10GB 이상</td>
+</tr>
+<tr>
+<td>네트워크</td>
+<td>최초 실행 시 인터넷 필수 (모델 초기화)</td>
+<td>상시 연결</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🗣️ 강사 멘트</h3>
+<blockquote>
+<p>"여기서 제일 많이 막히는 지점이 딱 하나입니다. <strong>x64냐 ARM64냐.</strong> 다운로드 버튼이 두 개인데 잘못 받으면 설치가 안 됩니다. 대부분의 사무용 노트북은 x64입니다. 지금 다 같이 확인하고 넘어가겠습니다."</p>
+</blockquote>
+<h3>📘 [교재] 내 PC 아키텍처 1초 확인법</h3>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>방법 ① 키보드에서 [Windows 키] + [Pause] 동시 누르기
+방법 ② 설정 &gt; 시스템 &gt; 정보 &gt; &quot;시스템 종류&quot; 항목 확인
+
+  → &quot;64비트 운영 체제, x64 기반 프로세서&quot;  ▶ x64 버전 다운로드
+  → &quot;64비트 운영 체제, ARM 기반 프로세서&quot;  ▶ ARM64 버전 다운로드
+</code></pre></div>
+<h3>📘 [교재] 2단계. 다운로드 (공식 경로만 사용)</h3>
+<p><strong>공식 다운로드 주소: https://antigravity.google/download</strong></p>
+<blockquote class="warn"><p>⚠️ <strong>주의</strong>: 검색창에 "안티그래비티 다운로드"를 치면 비공식 재배포 사이트가 먼저 나오는 경우가 많습니다. <strong>반드시 <code>antigravity.google</code> 도메인에서만</strong> 받으십시오. 기관 PC에 출처 불명 실행파일을 설치하는 것은 그 자체로 보안 사고입니다.</p>
+</blockquote>
+<p>페이지에 접속하면 4종 제품이 함께 보입니다. <strong>오늘 설치할 것은 맨 위 "Antigravity 2.0" 데스크톱 앱 하나입니다.</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>제품</th>
+<th>무엇인가</th>
+<th>오늘 쓰나요</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Antigravity 2.0</strong> (데스크톱 앱)</td>
+<td>에이전트 관제 센터. 마우스로 쓰는 본체</td>
+<td>✅ <strong>오늘 이것</strong></td>
+</tr>
+<tr>
+<td>Antigravity CLI</td>
+<td>검은 터미널 창에서 명령어로 쓰는 버전</td>
+<td>❌ (개발자용)</td>
+</tr>
+<tr>
+<td>Antigravity IDE</td>
+<td>코드 편집기 형태의 별도 프로그램</td>
+<td>❌ (개발자용)</td>
+</tr>
+<tr>
+<td>Antigravity SDK</td>
+<td>프로그램에 끼워 넣는 개발 키트</td>
+<td>❌ (개발자용)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>윈도우 x64: <code>Antigravity-x64.exe</code> 다운로드</li>
+<li>윈도우 ARM64: <code>Antigravity-arm64.exe</code> 다운로드</li>
+</ul>
+<h3>📘 [교재] 3단계. 설치 파일 진위 확인 (기관 필수 절차)</h3>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>1. 다운로드한 .exe 파일에서 마우스 오른쪽 클릭
+2. [속성] 클릭
+3. [디지털 서명] 탭 열기
+4. 서명자 이름이 &quot;Google LLC&quot; 인지 확인  ← 다르면 즉시 삭제
+</code></pre></div>
+<h3>🗣️ 강사 멘트</h3>
+<blockquote>
+<p>"이 30초짜리 확인 절차, 자활센터처럼 개인정보를 다루는 기관에서는 <strong>생략하시면 안 됩니다.</strong> 감사 나왔을 때 '공식 사이트에서 받고 서명까지 확인했습니다'라고 말할 수 있는 근거가 바로 이 화면입니다."</p>
+</blockquote>
+<h3>📘 [교재] 4단계. 설치 및 첫 로그인</h3>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>① .exe 더블클릭 → 설치 진행
+② (기존 버전이 있다면) &quot;Replace&quot; 선택 — 덮어쓰기가 정상 절차입니다
+③ 설치 완료 후 안티그래비티 실행
+④ [Sign in with Google] 클릭 → 평소 쓰는 구글 계정으로 로그인
+⑤ Chrome 확장 프로그램 설치 안내 팝업 → [설치] 선택 (3교시 브라우저 실습에 필요)
+⑥ 테마/단축키 초기 설정 → 기본값 그대로 [Continue]
+</code></pre></div>
+<blockquote class="tip"><p>💡 <strong>로그인 계정 선택 팁</strong>: 센터 업무용 구글 계정으로 로그인하십시오. 요금제(Standard / Google AI Pro / Google AI Ultra)가 <strong>계정에 귀속</strong>되므로, 개인 계정으로 로그인하면 나중에 기관 구독을 붙일 때 다시 설정해야 합니다.</p>
+</blockquote>
+<h3>✋ 실습 ①  (5분)</h3>
+<ol>
+<li><code>antigravity.google/download</code> 접속</li>
+<li>내 PC에 맞는 버전 다운로드 → 서명 확인 → 설치</li>
+<li>구글 계정 로그인 완료</li>
+<li><strong>완료하신 분은 손 들어주세요</strong> — 옆자리 도와드리기</li>
+</ol>
+<hr /></div></details></div><div id="sec3"><details class="section-card" open><summary class="section-header">🖥️ [2교시] 화면 구조와 기본 사용법 (35~60분 / 25분)</summary><div class="section-body"><h3>📘 [교재] 화면은 딱 두 개만 기억하면 됩니다</h3>
+<p>안티그래비티는 <strong>Agent Manager View(관제탑)</strong> 와 <strong>Editor View(작업대)</strong> 두 화면을 오가며 씁니다.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>화면</th>
+<th>역할</th>
+<th>전환 단축키</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent Manager View</strong></td>
+<td>에이전트를 만들고, 여러 명을 동시에 감시·지휘하는 관제탑</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>M</code></td>
+</tr>
+<tr>
+<td><strong>Editor View</strong></td>
+<td>결과 파일을 직접 열어 보고 고치는 작업대</td>
+<td><code>Ctrl</code> + <code>E</code></td>
+</tr>
+</tbody>
+</table></div>
+<h3>📘 [교재] Agent Manager 4개 구역</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>구역</th>
+<th>하는 일</th>
+<th>자활 실무 비유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inbox</strong></td>
+<td>에이전트가 "이거 해도 될까요?" 하고 결재 올린 항목</td>
+<td>결재함</td>
+</tr>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>현재 진행 중인 작업과 변경 내역 검토</td>
+<td>진행 중인 사업단 현황판</td>
+</tr>
+<tr>
+<td><strong>Playground</strong></td>
+<td>실제 폴더를 건드리지 않는 연습용 공간</td>
+<td>초안 연습장</td>
+</tr>
+<tr>
+<td><strong>Knowledge</strong></td>
+<td>에이전트가 계속 기억할 지식 저장소</td>
+<td>센터 업무 매뉴얼 캐비닛</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🗣️ 강사 멘트</h3>
+<blockquote>
+<p>"<strong>Playground</strong>를 꼭 기억하십시오. '이거 시켰다가 내 파일 날아가면 어쩌지?' 싶을 때 쓰는 안전지대입니다. 오늘 처음 배우시는 분들은 실제 업무 폴더 대신 Playground에서 먼저 연습하시길 권합니다."</p>
+</blockquote>
+<h3>📘 [교재] 1단계. Project 만들기 — "일할 범위를 정해준다"</h3>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>① 좌측 사이드바의 [폴더 추가(+)] 버튼 클릭
+② 에이전트에게 맡길 로컬 폴더 선택
+   예) C:\자활센터\2026_사업계획
+③ 프로젝트 하나에 여러 폴더를 함께 넣을 수 있음 (Multi-folder Projects)
+</code></pre></div>
+<blockquote class="warn"><p>⚠️ <strong>첫 프로젝트는 반드시 좁게 잡으십시오.</strong> <code>C:\</code> 드라이브 전체나 바탕화면 전체를 통째로 주면 안 됩니다. <strong>폴더 하나부터</strong> 시작하는 것이 공식 권장 사항입니다.</p>
+</blockquote>
+<h3>📘 [교재] 2단계. 에이전트 실행 — 두 가지 모드 선택</h3>
+<p>지시문을 입력하고 실행할 때 아래 둘 중 하나를 고릅니다.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>모드</th>
+<th>동작</th>
+<th>언제 쓰나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Local Mode</strong></td>
+<td>내 폴더의 원본 파일을 직접 수정</td>
+<td>간단하고 되돌릴 일 없는 작업</td>
+</tr>
+<tr>
+<td><strong>New Worktree Mode</strong></td>
+<td>Git 별도 사본에서 작업 후 나중에 합침</td>
+<td><strong>원본 보존이 중요한 작업 (권장)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>📘 [교재] 3단계. 사고 방식 선택 — Planning vs Fast</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>모드</th>
+<th>동작</th>
+<th>권장 상황</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Planning Mode</strong></td>
+<td>실행 전에 <strong>계획서(Implementation Plan)를 먼저 제출</strong> → 내가 승인해야 진행</td>
+<td>복잡한 업무, 문서 대량 작업, <strong>자활 실무 기본값</strong></td>
+</tr>
+<tr>
+<td><strong>Fast Mode</strong></td>
+<td>계획 없이 즉시 실행</td>
+<td>단순 반복, 파일명 일괄 변경 등</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🗣️ 강사 멘트</h3>
+<blockquote>
+<p>"자활 실무에서는 무조건 <strong>Planning Mode</strong> 부터 쓰십시오. AI가 '저는 이런 순서로 이 파일들을 이렇게 바꾸겠습니다' 하고 계획서를 먼저 올립니다. 그걸 읽고 승인 버튼을 누르는 게 여러분의 역할입니다. <strong>여러분은 실무자에서 결재권자가 되는 겁니다.</strong>"</p>
+</blockquote>
+<h3>📘 [교재] 4단계. Artifacts — AI의 업무 일지</h3>
+<p>에이전트가 일하면서 만들어내는 <strong>모든 증빙 자료</strong>를 Artifacts라고 합니다. Artifacts 탭에서 확인할 수 있습니다.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Artifact 종류</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Task List</strong></td>
+<td>할 일 목록과 현재 진행 단계</td>
+</tr>
+<tr>
+<td><strong>Implementation Plan</strong></td>
+<td>실행 전 세운 상세 계획서</td>
+</tr>
+<tr>
+<td><strong>Walkthrough</strong></td>
+<td>무엇을 왜 바꿨는지 요약 보고서</td>
+</tr>
+<tr>
+<td><strong>Screenshots / Browser Recordings</strong></td>
+<td>브라우저 작업 시 자동 화면 녹화</td>
+</tr>
+<tr>
+<td><strong>Code Diff</strong></td>
+<td>변경 전후 대조표</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="tip"><p>💡 Artifacts는 <strong>AI가 한 일을 사람이 검수할 수 있게 만든 장치</strong>입니다. 자활센터 문서 작업에 AI를 쓸 때, "AI가 어떤 근거로 이 수치를 넣었는가"를 설명해야 하는 순간이 반드시 옵니다. 그때 Walkthrough를 그대로 보여주면 됩니다.</p>
+</blockquote>
+<h3>📘 [교재] 5단계. 필수 단축키 &amp; 슬래시 명령어</h3>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>[단축키]
+Ctrl + Shift + M   Agent Manager 열기
+Ctrl + E           Editor View 전환
+Ctrl + K           대화(에이전트) 목록 열기
+Ctrl + P           파일 빠른 검색
+
+[슬래시 명령어 — 입력창에 '/' 치면 목록이 뜹니다]
+/goal        이번 작업의 최종 목표를 명확히 선언
+/grill-me    에이전트가 나에게 역질문하며 요구사항을 파고듦
+/schedule    작업을 예약 실행 (1회 또는 반복)
+/browser     브라우저를 열어 웹에서 직접 작업 수행
+</code></pre></div>
+<h3>✋ 실습 ②  (7분) — 첫 에이전트 돌려보기</h3>
+<ol>
+<li>바탕화면에 <code>안티그래비티_실습</code> 폴더를 만들고 아무 문서 2~3개(hwp·docx·pdf)를 넣는다</li>
+<li>안티그래비티에서 그 폴더를 프로젝트로 추가</li>
+<li><strong>Planning Mode</strong> 선택 후 아래 지시문 입력</li>
+</ol>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>이 폴더 안의 문서를 전부 읽고,
+① 각 문서가 무슨 문서인지 한 줄 요약
+② 작성 시점 추정
+③ 파일명 정리 규칙 제안
+위 세 가지를 정리한 '문서현황.md' 파일을 이 폴더에 만들어줘.
+</code></pre></div>
+<ol start="4">
+<li>올라온 <strong>Implementation Plan</strong>을 읽고 승인</li>
+<li>Artifacts 탭에서 <strong>Walkthrough</strong> 확인 → 결과 파일 열어보기</li>
+</ol>
+<hr /></div></details></div><div id="sec4"><details class="section-card" open><summary class="section-header">☕ 휴식 (60~70분 / 10분)</summary><div class="section-body"><blockquote>
+<p>쉬는 시간 동안 설치가 안 된 분 개별 지원 / 브라우저 확장 설치 점검</p>
+</blockquote>
+<hr /></div></details></div><div id="sec5"><details class="section-card" open><summary class="section-header">🤖 [3교시] 에이전트 실전 활용 — 자활 실무에 바로 붙이기 (70~105분 / 35분)</summary><div class="section-body"><h3>📘 [교재] 실전 시나리오 1. 문서 정리 에이전트</h3>
+<h3>🗣️ 강사 멘트</h3>
+<blockquote>
+<p>"센터마다 '2026_최종_진짜최종_v3.hwp' 같은 파일이 수백 개 있습니다. 이걸 사람이 정리하면 이틀, 에이전트에게 맡기면 10분입니다."</p>
+</blockquote>
+<p><strong>실습 프롬프트 (복사해서 사용)</strong></p>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>목표: 이 폴더의 자활 실무 문서를 정리한다.
+
+[작업]
+1. 하위 폴더까지 포함해 모든 문서 파일을 목록화한다.
+2. 각 파일을 다음 분류로 태깅한다:
+   사업계획서 / 실적보고 / 회의록 / 공문 / 교육자료 / 기타
+3. '연도_분류_사업명_버전' 규칙의 새 파일명을 제안한다.
+4. 결과를 표로 정리한 '문서정리_제안표.md'를 만든다.
+
+[제약]
+- 원본 파일은 절대 이동·삭제하지 않는다. 제안표만 만든다.
+- 개인 식별 정보(주민번호, 연락처, 성명)가 포함된 파일은
+  '⚠️민감' 표시만 하고 내용은 요약하지 않는다.
+</code></pre></div>
+<blockquote class="warn"><p>⚠️ <strong>제약 조건을 반드시 붙이십시오.</strong> "원본은 건드리지 마라", "개인정보는 요약하지 마라" 같은 문장이 에이전트에게는 실제 안전장치로 작동합니다.</p>
+</blockquote>
+<h3>📘 [교재] 실전 시나리오 2. 브라우저 에이전트 — 공고문 수집</h3>
+<p>Chrome 확장을 설치하면 에이전트가 브라우저를 <strong>직접 조작</strong>합니다. 클릭·스크롤·다운로드까지 대신하고, 그 과정을 화면 녹화로 남깁니다.</p>
+<p><strong>실습 프롬프트</strong></p>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>/browser
+
+한국자활복지개발원과 인천광역자활센터 홈페이지의 공지사항을 열어서,
+최근 2개월 내 올라온 '공모' 또는 '지원사업' 관련 공고를 찾아줘.
+
+각 건마다 [제목 / 게시일 / 접수마감일 / 원문 링크]를 표로 정리하고
+'공모현황_요약.md'로 저장해줘. 마감이 임박한 순으로 정렬해줘.
+</code></pre></div>
+<h3>🗣️ 강사 멘트</h3>
+<blockquote>
+<p>"여기서 중요한 건, 에이전트가 찾아온 결과를 <strong>그대로 믿지 말라</strong>는 겁니다. Artifacts에 남은 브라우저 녹화를 재생해 보면 '아, 이 페이지에서 이걸 봤구나'가 보입니다. <strong>AI의 결과를 검증할 수 있는 근거가 함께 남는 것</strong> — 이게 안티그래비티의 진짜 가치입니다."</p>
+</blockquote>
+<h3>📘 [교재] 실전 시나리오 3. 예약 실행 (<code>/schedule</code>)</h3>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>/schedule
+
+매주 월요일 오전 9시에
+인천광역자활센터 공지사항을 확인해서
+새로 올라온 공고가 있으면 '주간_공고알림.md'에 추가해줘.
+</code></pre></div>
+<blockquote>
+<p>반복 업무를 에이전트에게 고정 배치하는 기능입니다. 월요일 아침 회의 전에 요약이 준비되어 있게 됩니다.</p>
+</blockquote>
+<h3>📘 [교재] 실전 시나리오 4. Rules &amp; Workflows — 우리 센터 방식 학습시키기</h3>
+<p>에이전트가 매번 같은 지적을 받지 않도록, <strong>행동 규칙을 저장</strong>할 수 있습니다.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>기능</th>
+<th>설명</th>
+<th>적용 범위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rules</strong></td>
+<td>에이전트가 항상 지켜야 할 작업 스타일·금지 사항</td>
+<td>Global(전체) / Workspace(프로젝트별)</td>
+</tr>
+<tr>
+<td><strong>Workflows</strong></td>
+<td>반복되는 업무의 단계를 미리 정의해 둔 절차서</td>
+<td>프로젝트별</td>
+</tr>
+<tr>
+<td><strong>Knowledge</strong></td>
+<td>센터 표준 서식·용어·과거 문서 등 지속 기억</td>
+<td>계정/프로젝트</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>자활센터 표준 Rules 예시 (복사해서 등록)</strong></p>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code># 문체 규칙
+- 모든 산출 문서는 공문 어투(~함, ~임)를 사용한다.
+- 숫자는 천 단위 쉼표를 넣고, 금액은 '원' 단위를 명시한다.
+
+# 데이터 규칙
+- 출처가 불명확한 통계·수치는 절대 임의로 생성하지 않는다.
+  근거가 없으면 &quot;[근거 확인 필요]&quot;로 표시한다.
+- 참여자 성명·주민번호·연락처는 어떤 산출물에도 기재하지 않는다.
+
+# 작업 규칙
+- 파일을 수정하기 전 반드시 원본 사본을 남긴다.
+- 작업 완료 시 무엇을 왜 바꿨는지 Walkthrough로 요약한다.
+</code></pre></div>
+<h3>📘 [교재] 실전 시나리오 5. 에이전트 병렬 운영</h3>
+<p>Agent Manager에서 <strong>New Agent</strong>를 여러 개 만들면 동시에 일을 시킬 수 있습니다. 각 에이전트를 <strong>New Worktree Mode</strong>로 띄우면 서로의 작업이 섞이지 않습니다.</p>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>에이전트 A : 사업계획서 초안 작성
+에이전트 B : 작년 실적 데이터 표 정리
+에이전트 C : 공모 공고 수집
+
+→ Inbox에서 세 명의 결재 요청을 순서대로 처리
+</code></pre></div>
+<blockquote class="tip"><p>💡 <strong>하드웨어 현실</strong>: 에이전트 3개 이상 동시 운영은 RAM 16GB 이상에서 쾌적합니다. 8GB PC라면 <strong>1~2개까지만</strong> 돌리십시오.</p>
+</blockquote>
+<h3>✋ 실습 ③  (15분) — 조별 자유 과제</h3>
+<p>각자 자기 센터 실무 폴더(민감정보 제외 사본) 하나를 골라, 위 프롬프트 중 하나를 변형해 실행하고 <strong>Walkthrough를 발표</strong>합니다.</p>
+<hr /></div></details></div><div id="sec6"><details class="section-card" open><summary class="section-header">🔒 [4교시] 안전·권한·비용 관리 (105~120분 / 15분)</summary><div class="section-body"><h3>📘 [교재] 권한 체계 — 우선순위는 Deny &gt; Ask &gt; Allow</h3>
+<p>안티그래비티는 에이전트가 할 수 있는 일을 항목별로 통제합니다. <strong>금지(Deny)가 항상 허용(Allow)을 이깁니다.</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>권한 항목</th>
+<th>통제 대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>read_file(path)</code> / <code>write_file(path)</code></td>
+<td>파일 읽기 / 쓰기 경로</td>
+</tr>
+<tr>
+<td><code>read_url</code> / <code>execute_url</code></td>
+<td>웹 열람 / 웹 실행</td>
+</tr>
+<tr>
+<td><code>command(prefix)</code></td>
+<td>실행 가능한 명령어</td>
+</tr>
+<tr>
+<td><code>unsandboxed(prefix)</code></td>
+<td>보호막 밖에서 실행되는 명령 (<strong>가장 위험</strong>)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>📘 [교재] 자활센터 권장 안전 설정값</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>설정</th>
+<th>권장값</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strict Mode</strong></td>
+<td><strong>켜기</strong></td>
+<td>샌드박싱 자동 활성화 + 네트워크 차단 + 검토 강제</td>
+</tr>
+<tr>
+<td><strong>Artifact Review Policy</strong></td>
+<td><strong>Request Review</strong></td>
+<td>결과물을 반드시 사람이 승인</td>
+</tr>
+<tr>
+<td><strong>Terminal Command Auto Execution</strong></td>
+<td><strong>자동 실행 끄기</strong></td>
+<td>명령어 자동 수행 차단</td>
+</tr>
+<tr>
+<td><strong>Non-Workspace File Access</strong></td>
+<td><strong>차단</strong></td>
+<td>지정 폴더 밖 파일 접근 금지</td>
+</tr>
+<tr>
+<td>작업 모드</td>
+<td><strong>New Worktree Mode</strong></td>
+<td>원본 보존</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🗣️ 강사 멘트</h3>
+<blockquote>
+<p>"딱 한 문장만 기억하십시오. <strong>'수급자 정보가 든 폴더는 절대 프로젝트로 등록하지 않는다.'</strong> 브라우저 에이전트는 별도 크롬 프로필을 쓰지만, 그 프로필에 로그인 정보가 <strong>영구 저장</strong>됩니다. 센터 행정망 계정이나 개인정보 포함 시스템에는 에이전트를 붙이지 마십시오."</p>
+</blockquote>
+<h3>📘 [교재] 자활센터 AI 도입 보안 체크리스트 7</h3>
+<div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>□ 1. 공식 도메인(antigravity.google)에서만 설치했는가
+□ 2. 설치 파일 디지털 서명(Google LLC)을 확인했는가
+□ 3. 프로젝트 폴더를 업무 범위로 좁게 지정했는가
+□ 4. 수급자·참여자 개인정보 폴더를 제외했는가
+□ 5. Strict Mode / Request Review를 켰는가
+□ 6. 브라우저 에이전트에 행정망 계정을 로그인하지 않았는가
+□ 7. AI 산출물을 사람이 최종 검수한 기록(Walkthrough)을 남겼는가
+</code></pre></div>
+<h3>📘 [교재] 요금제와 사용 한도</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>플랜</th>
+<th>한도 갱신</th>
+<th>사용 가능 모델</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard (무료)</strong></td>
+<td>주 단위 갱신</td>
+<td>Gemini 계열 기본 모델</td>
+</tr>
+<tr>
+<td><strong>Google AI Pro</strong></td>
+<td><strong>5시간마다 갱신</strong> (한도 상향)</td>
+<td>Gemini 계열</td>
+</tr>
+<tr>
+<td><strong>Google AI Ultra</strong></td>
+<td>5시간마다 갱신 (최고 한도)</td>
+<td>Gemini 계열 + Claude / GPT-OSS 등 외부 모델</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>모든 플랜에서 Gemini 기본 모델과 탭 자동완성은 사용 가능합니다.</li>
+<li>한도 초과분은 크레딧으로 이어서 쓸 수 있으며, 설정에서 차단할 수 있습니다.</li>
+<li>현재 <strong>개인 API 키(BYOK) 연결은 지원되지 않습니다.</strong></li>
+</ul>
+<blockquote class="tip"><p>💡 <strong>센터 도입 권고</strong>: 실무자 체험은 <strong>무료 Standard</strong>로 충분합니다. 문서 작업이 일상화되면 센터장·기획 담당자 1~2명만 <strong>Google AI Pro</strong>로 올리는 것이 비용 대비 효율이 가장 좋습니다.</p>
+</blockquote>
+<h3>📘 [교재] 마무리 — 오늘 가져가실 3가지</h3>
+<ol>
+<li><strong>설치 루트</strong>: <code>antigravity.google/download</code> → x64 확인 → 서명 확인 → 구글 로그인</li>
+<li><strong>작업 루트</strong>: 폴더 좁게 등록 → Planning Mode → 계획 승인 → Artifacts 검수</li>
+<li><strong>안전 루트</strong>: Strict Mode + Request Review + 개인정보 폴더 제외</li>
+</ol>
+<h3>💬 Q&amp;A (남은 시간)</h3>
+<hr /></div></details></div><div id="sec7"><details class="section-card" open><summary class="section-header">📎 부록 A. 120분 타임테이블 요약</summary><div class="section-body"><div class="tbl"><table>
+<thead>
+<tr>
+<th>시간</th>
+<th>교시</th>
+<th>내용</th>
+<th>형태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00~00:10</td>
+<td>0교시</td>
+<td>오리엔테이션 · 사고 전환 3가지</td>
+<td>강의</td>
+</tr>
+<tr>
+<td>00:10~00:35</td>
+<td>1교시</td>
+<td>설치 · 초기 설정 (실습①)</td>
+<td>강의+실습</td>
+</tr>
+<tr>
+<td>00:35~01:00</td>
+<td>2교시</td>
+<td>화면 구조 · 기본 사용법 (실습②)</td>
+<td>강의+실습</td>
+</tr>
+<tr>
+<td>01:00~01:10</td>
+<td>휴식</td>
+<td>개별 설치 지원</td>
+<td>—</td>
+</tr>
+<tr>
+<td>01:10~01:45</td>
+<td>3교시</td>
+<td>에이전트 실전 활용 (실습③)</td>
+<td>실습 중심</td>
+</tr>
+<tr>
+<td>01:45~02:00</td>
+<td>4교시</td>
+<td>안전·권한·비용 + Q&amp;A</td>
+<td>강의</td>
+</tr>
+</tbody>
+</table></div></div></details></div><div id="sec8"><details class="section-card" open><summary class="section-header">📎 부록 B. 강사 체크리스트</summary><div class="section-body"><div class="code-wrap"><button class="copy-btn" onclick="copyCode(this)">복사 📋</button><pre><code>[사전 준비]
+□ 강의실 무선망 대역폭 확인 (동시 다운로드 20대 이상)
+□ 설치 파일 USB 백업본 준비 (망 장애 대비, x64/ARM64 양쪽)
+□ 실습용 더미 문서 세트 배포 (개인정보 없는 샘플)
+□ 구글 계정 미보유자 사전 파악
+
+[강의 중 자주 나오는 질문]
+Q. 설치가 안 돼요 → 아키텍처(x64/ARM64) 오선택이 90%
+Q. 로그인이 안 돼요 → 기관 관리 계정의 외부 앱 차단 정책 확인
+Q. 너무 느려요 → RAM 8GB에서 에이전트 3개 이상 동시 실행 중
+Q. 결과가 틀려요 → Planning Mode 미사용 + 제약 조건 미기재
+</code></pre></div></div></details></div><div id="sec9"><details class="section-card" open><summary class="section-header">📎 부록 C. 참고 출처</summary><div class="section-body"><ul>
+<li>Google Antigravity 공식 다운로드: https://antigravity.google/download</li>
+<li>Google Antigravity 공식 시작 가이드: https://antigravity.google/docs/getting-started</li>
+<li>Antigravity 2.0 기능·안전 정책 해설: https://www.itechguides.com/google-antigravity-explained-the-agent-first-coding-platform-is-now-a-command-center/</li>
+<li>Antigravity 실사용 정리 (한국어): https://zzsza.github.io/ai/2025/12/08/how-to-use-antigravity/</li>
+</ul>
+<hr />
+<blockquote>
+<p>© 2026 유정근 · EGLS Lab | 인천지역 자활센터 AI 역량강화 과정 부속 교안</p>
+</blockquote></div></details></div>
+</div>
+<script>
+function copyCode(btn){
+  const code = btn.parentElement.querySelector('code');
+  navigator.clipboard.writeText(code.innerText).then(function(){
+    const old = btn.textContent; btn.textContent = '복사 완료 ✅';
+    setTimeout(function(){ btn.textContent = old; }, 1400);
+  });
+}
+function toggleAll(open){
+  document.querySelectorAll('details.section-card').forEach(function(d){ d.open = open; });
+}
+</script>
+</body></html>
