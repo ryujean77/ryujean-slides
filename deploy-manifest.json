@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-12T17:26:39.552Z",
-  "commit": "1ae6698bab440e1e53753b68d2e00d080f414981",
-  "fileCount": 1952,
+  "generatedAt": "2026-09-16T06:45:36.077Z",
+  "commit": "8d9f475164885b349305622d905d23d6aa5cd7c2",
+  "fileCount": 1953,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -7386,6 +7386,10 @@
     {
       "path": "incheon-ai-curriculum/강의계획서.md",
       "size": 8336
+    },
+    {
+      "path": "incheon-ai-curriculum/구글_안티그래비티_2.0_120분_완전정복.html",
+      "size": 38669
     },
     {
       "path": "incheon-ai-curriculum/자활사업_10대문서_Gems_5단계제작매뉴얼.html",
