@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-16 15:49:33 (KST)",
+  "lastUpdated": "2026-09-18 06:12:01 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -41,7 +41,7 @@
         "codeit-theme-generator"
       ],
       "stats": {
-        "projectsCount": 4,
+        "projectsCount": 8,
         "liveUrlsCount": 3,
         "status": "🟢 상시 출강/확장 가동"
       }
@@ -123,8 +123,8 @@
         "gitnotion-publisher"
       ],
       "stats": {
-        "projectsCount": 3,
-        "liveUrlsCount": 0,
+        "projectsCount": 7,
+        "liveUrlsCount": 1,
         "status": "🟡 원고 검토/보완"
       }
     },
@@ -143,7 +143,7 @@
         "ppt-designer"
       ],
       "stats": {
-        "projectsCount": 8,
+        "projectsCount": 9,
         "liveUrlsCount": 2,
         "status": "🟢 제안서 패키징 완료"
       }
@@ -266,7 +266,7 @@
         "designer-slides"
       ],
       "stats": {
-        "projectsCount": 1,
+        "projectsCount": 3,
         "liveUrlsCount": 0,
         "status": "🟡 도메인 신설 (인박스 기획안 4건 대기)"
       }
@@ -976,6 +976,144 @@
       "status": "진행중",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-09-12",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-AI-05",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "김포 수업 강사 2인 동반 투입 — 이력서 제출 실행 초안",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-LUMINUS-04",
+      "domainId": "DOM-LUMINUS",
+      "domainTag": "🌌 호모루미누스",
+      "title": "원고 변환·교정 협업 체계 정립 및 홈페이지 방향 협의 기획(초안)",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-SASANG-09",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "김포 사우고등학교 3일 연속 특강 — 수주 확정 및 운영 준비 초안",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-AI-06",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "신탄진중학교 교사 대상 생성형 AI 업무 자동화 연수 (2026-11-06)",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-AI-07",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "AI 리터러시 · 개인 AX 시스템 강의화 기획 초안",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-NOLAB-02",
+      "domainId": "DOM-NOLAB",
+      "domainTag": "🧪 산화질소 연구",
+      "title": "임동구 박사 통화 기록 기반 — QR 코드 인식 및 패키지 재단 품질 개선 기획 초안",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-LUMINUS-05",
+      "domainId": "DOM-LUMINUS",
+      "domainTag": "🌌 호모루미누스",
+      "title": "백태종 연구소장 통화 기록 기반 실행 기획서 — 도서 재출간 및 홈페이지 구축",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-AI-08",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "인천광역자활센터 종사자 대상 AI 실무 역량 강화 교육 운영",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-LUMINUS-06",
+      "domainId": "DOM-LUMINUS",
+      "domainTag": "🌌 호모루미누스",
+      "title": "도서출판 디아파니 설립 — 출판사 신고 확인증(제2026-000174호) 판독 및 후속 실행",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+    },
+    {
+      "id": "PRJ-LUMINUS-07",
+      "domainId": "DOM-LUMINUS",
+      "domainTag": "🌌 호모루미누스",
+      "title": "루미누스 아카이브 공식 홈페이지",
+      "status": "홈페이지 공개 · 출판물 제작 진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/luminus/",
+      "deliverables": [
+        {
+          "name": "루미누스 아카이브 공식 홈페이지",
+          "type": "html",
+          "path": "index.html"
+        }
+      ],
+      "description": "도서출판 디아파니의 루미누스 아카이브 공식 기록소. 국영문 브랜드와 도서 소개를 통합한다."
+    },
+    {
+      "id": "PRJ-NOLAB-03",
+      "domainId": "DOM-NOLAB",
+      "domainTag": "🧪 산화질소 연구",
+      "title": "산화질소 및 올리고당 스티커 제작/발송 건",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
       "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
