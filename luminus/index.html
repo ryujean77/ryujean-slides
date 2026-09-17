@@ -149,6 +149,17 @@ section{padding-block:clamp(56px,11vw,104px);border-top:1px solid var(--line)}
   border:1px solid var(--line);padding:2px 9px;border-radius:999px;
   display:inline-block;margin-top:14px}
 
+/* Publisher */
+.pub-block{border:1px solid var(--line);border-radius:3px;padding:clamp(28px,6vw,52px);
+  background:linear-gradient(160deg,rgba(203,182,130,.05),rgba(18,21,31,.45));text-align:center}
+.pub-name{font-family:var(--latin);font-size:clamp(1.8rem,5.5vw,2.6rem);letter-spacing:.2em;
+  color:var(--glow);margin:0 0 10px;line-height:1.3}
+.pub-etym{display:block;font-family:var(--serif);font-size:.82rem;letter-spacing:.1em;
+  color:var(--faint);margin-top:14px}
+.pub-story{max-width:46ch;margin:32px auto 0;font-size:clamp(.98rem,2.7vw,1.1rem);
+  line-height:2.3;color:var(--dim);letter-spacing:.02em}
+.pub-story strong{color:var(--glow);font-weight:400}
+
 /* Contact */
 .contact{text-align:center}
 .contact a.mail{font-family:var(--latin);font-size:1.2rem;letter-spacing:.12em;
@@ -179,6 +190,7 @@ footer .pub{color:var(--dim)}
         <li><a href="#books">도서</a></li>
         <li><a href="#media">아카이브</a></li>
         <li><a href="#meditation">빛 명상</a></li>
+        <li><a href="#publisher">출판사</a></li>
       </ul>
     </nav>
   </div>
@@ -353,10 +365,28 @@ footer .pub{color:var(--dim)}
   </section>
 
   <!-- ── CONTACT ── -->
+  <!-- ── PUBLISHER ── -->
+  <section id="publisher">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-num">V — Publisher</span>
+        <h2>도서출판 디아파니</h2>
+      </div>
+      <div class="pub-block">
+        <p class="pub-name">Diaphany<span class="pub-etym">δια‑φαίνω · 빛이 투과하여 온전히 드러남</span></p>
+        <p class="pub-story">
+          도서출판 디아파니(Diaphany)는 그리스어로 ‘빛이 투과하여 온전히 드러남’을 뜻합니다.
+          에고의 혼탁을 벗고 맑은 진공의 빛이 우리의 의식과 뇌를 막힘없이 관통하는
+          <strong>‘성통광명(性通光明)’</strong>의 세상을 지향합니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="container contact">
       <div class="sec-head" style="text-align:left">
-        <span class="sec-num">V — Contact</span>
+        <span class="sec-num">VI — Contact</span>
         <h2>문의</h2>
       </div>
       <p style="color:var(--dim);margin:0 0 22px">도서 이용 및 아카이브 관련 문의</p>
