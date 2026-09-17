@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-17T21:10:33.354Z",
-  "commit": "789e0a86b29fad3d90a805b93adbcbdba79f76f4",
+  "generatedAt": "2026-09-17T21:12:23.865Z",
+  "commit": "e7db1a33d1459f51a9d26176efa3eac0dc95fb37",
   "fileCount": 1956,
   "files": [
     {
@@ -6065,7 +6065,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 43430
+      "size": 50681
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -7537,15 +7537,15 @@
     },
     {
       "path": "luminus/img/vol1-cover.jpg",
-      "size": 209420
+      "size": 112496
     },
     {
       "path": "luminus/img/vol2-cover.jpg",
-      "size": 189143
+      "size": 100761
     },
     {
       "path": "luminus/index.html",
-      "size": 17128
+      "size": 17098
     },
     {
       "path": "multi-ai-orchestration/index.html",
@@ -7605,11 +7605,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 43430
+      "size": 50681
     },
     {
       "path": "portal/index.html",
-      "size": 52459
+      "size": 58884
     },
     {
       "path": "portal/index.html.bak",
