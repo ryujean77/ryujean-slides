@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-19 01:42:15 (KST)",
+  "lastUpdated": "2026-09-19 01:44:14 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -355,7 +355,7 @@
           "path": "assets/"
         }
       ],
-      "description": "실제 구글 스크린샷 76개를 결합하여 제미나이 ↔ NotebookLM ↔ GAS 자동화까지 완벽 가이드하는 4회차 인터랙티브 교재 포털."
+      "description": "실제 구글 스크린샷 76개를 결합하여 제미나이 ↔ NotebookLM ↔ GAS 자동화까지 완벽 가이드하는 4회차 인터랙티브 교재 포털"
     },
     {
       "id": "PRJ-AI-02",
@@ -378,7 +378,7 @@
           "path": "02_노션_복제용_실습템플릿_원문.md"
         }
       ],
-      "description": "8개 카드 슬라이드, 키보드 방향키 조작, 유튜브 프롬프트 원클릭 복사 및 노션 복제 연동 인터랙티브 발표 웹앱."
+      "description": "8개 카드 슬라이드, 키보드 방향키 조작, 유튜브 프롬프트 원클릭 복사 및 노션 복제 연동 인터랙티브 발표 웹앱"
     },
     {
       "id": "PRJ-AI-03",
@@ -396,7 +396,7 @@
           "path": "index.html"
         }
       ],
-      "description": "Google Drive, MS OneDrive, Notion 공식 MCP 서버 현황 및 AGY 워크스페이스 연동 가이드."
+      "description": "Google Drive, MS OneDrive, Notion 공식 MCP 서버 현황 및 AGY 워크스페이스 연동 가이드"
     },
     {
       "id": "PRJ-BRAIN-01",
@@ -424,7 +424,7 @@
           "path": "_Automation/"
         }
       ],
-      "description": "5.2만 건의 지식을 보관하는 옵시디언 볼트로, 물리적 독립을 유지하면서 HQ 포털과 유기적으로 연계된 개인 지식 위키."
+      "description": "5.2만 건의 지식을 보관하는 옵시디언 볼트로, 물리적 독립을 유지하면서 HQ 포털과 유기적으로 연계된 개인 지식 위키"
     },
     {
       "id": "PRJ-AROMA-01",
@@ -457,7 +457,7 @@
           "path": "04_고객_유입_및_전환_랜딩페이지_설계안.html"
         }
       ],
-      "description": "5개년 원드라이브 강의 자산을 기반으로 5단계 고수익 온라인 퍼널(무료진단 ➔ 스타터키트 ➔ LRP정기구독 ➔ 자격증 ➔ B2B출강)을 구축한 마스터 비즈니스 플랜."
+      "description": "5개년 원드라이브 강의 자산을 기반으로 5단계 고수익 온라인 퍼널(무료진단 ➔ 스타터키트 ➔ LRP정기구독 ➔ 자격증 ➔ B2B출강)을 구축한 마스터 비즈니스 플랜"
     },
     {
       "id": "PRJ-AROMA-02",
@@ -480,7 +480,7 @@
           "path": "최토미교수_1대1_아로마케어_가이드.md"
         }
       ],
-      "description": "목 부위 피부 자극 진정, 3대 안전 수칙 코칭 및 샌달우드(Sandalwood)·유칼립투스 순차 복귀를 안내하는 3중 격리형 1:1 웰니스 처방전."
+      "description": "목 부위 피부 자극 진정, 3대 안전 수칙 코칭 및 샌달우드(Sandalwood)·유칼립투스 순차 복귀를 안내하는 3중 격리형 1:1 웰니스 처방전"
     },
     {
       "id": "PRJ-AROMA-03",
@@ -492,7 +492,7 @@
       "date": "2026-08-25",
       "liveUrl": "",
       "deliverables": [],
-      "description": "도테라 30종 마스터 DB와 사상체질 증상별 매트릭스, 실존 논문 10편을 탑재하여 상담 즉시 웹 처방전을 발행하는 지식 엔진."
+      "description": "도테라 30종 마스터 DB와 사상체질 증상별 매트릭스, 실존 논문 10편을 탑재하여 상담 즉시 웹 처방전을 발행하는 지식 엔진"
     },
     {
       "id": "PRJ-FASHION-01",
@@ -535,7 +535,7 @@
           "path": "05_남미화박사님께_보내는_보고서.html"
         }
       ],
-      "description": "남미화 박사와의 2차 기획회의를 5대 탭(개요, 회의록, 린캔버스, RACI, 에세이) 및 전용 뷰어로 체계화한 반응형 대시보드."
+      "description": "남미화 박사와의 2차 기획회의를 5대 탭(개요, 회의록, 린캔버스, RACI, 에세이) 및 전용 뷰어로 체계화한 반응형 대시보드"
     },
     {
       "id": "PRJ-FASHION-02",
@@ -563,7 +563,7 @@
           "path": "남미화박사님_콘텐츠_제작_가이드_및_요청질문지.docx"
         }
       ],
-      "description": "사상체질과 의복심리학을 융합한 8대 캐릭터 진단 로직, 문항 설계 및 모바일 웹앱 구축을 위한 기술 지시서."
+      "description": "사상체질과 의복심리학을 융합한 8대 캐릭터 진단 로직, 문항 설계 및 모바일 웹앱 구축을 위한 기술 지시서"
     },
     {
       "id": "PRJ-FASHION-03",
@@ -591,7 +591,7 @@
           "path": "posters/"
         }
       ],
-      "description": "전국 도서관 및 문화센터를 대상으로 한 패션테라피 인문학 강연 제안서 일러스트 에디션."
+      "description": "전국 도서관 및 문화센터를 대상으로 한 패션테라피 인문학 강연 제안서 일러스트 에디션"
     },
     {
       "id": "PRJ-LUMINUS-01",
@@ -603,7 +603,7 @@
       "date": "2026-08-21",
       "liveUrl": "",
       "deliverables": [],
-      "description": "백태종 스승님의 CMB 진공 파동 포집 실증 서사를 기록관 겸 도슨트 페르소나로 97개 청크 무손실 윤문 및 조판."
+      "description": "백태종 스승님의 CMB 진공 파동 포집 실증 서사를 기록관 겸 도슨트 페르소나로 97개 청크 무손실 윤문 및 조판"
     },
     {
       "id": "PRJ-LUMINUS-02",
@@ -627,7 +627,7 @@
       "date": "2026-08-21",
       "liveUrl": "",
       "deliverables": [],
-      "description": "생체정보학 기반 사상체질 유전체 강연을 도서관 및 지자체 문화 프로그램에 제안하는 종합 패키지."
+      "description": "생체정보학 기반 사상체질 유전체 강연을 도서관 및 지자체 문화 프로그램에 제안하는 종합 패키지"
     },
     {
       "id": "PRJ-INFRA-01",
@@ -650,7 +650,7 @@
           "path": "publishing_registry.json"
         }
       ],
-      "description": "로컬에서 생성된 모든 HTML 결과물을 GitHub Pages(ryujean-slides)에 1초 만에 원클릭 라이브 배포하는 중앙 관리 CMS."
+      "description": "로컬에서 생성된 모든 HTML 결과물을 GitHub Pages(ryujean-slides)에 1초 만에 원클릭 라이브 배포하는 중앙 관리 CMS"
     },
     {
       "id": "PRJ-INFRA-02",
@@ -662,7 +662,7 @@
       "date": "2026-08-25",
       "liveUrl": "",
       "deliverables": [],
-      "description": "공인 IP 없이 스마트폰 슬랙 채널(#workspace) 및 1:1 DM에서 유정근 대표님의 지시를 받아 실시간 처리하는 AI 봇 데몬."
+      "description": "공인 IP 없이 스마트폰 슬랙 채널(#workspace) 및 1:1 DM에서 유정근 대표님의 지시를 받아 실시간 처리하는 AI 봇 데몬"
     },
     {
       "id": "PRJ-INFRA-03",
@@ -685,7 +685,7 @@
           "path": "업무일지_20260825.md"
         }
       ],
-      "description": "아로마 도메인 구축, 온라인 수익 극대화 기획서 발행, 양방향 슬랙 봇 연동 완료 일일 종합 업무일지."
+      "description": "아로마 도메인 구축, 온라인 수익 극대화 기획서 발행, 양방향 슬랙 봇 연동 완료 일일 종합 업무일지"
     },
     {
       "id": "PRJ-SPA-01",
@@ -713,7 +713,7 @@
           "path": "01_사상체질_프리미엄_체질스파_프로젝트_기획서.md"
         }
       ],
-      "description": "한국 고유의 사상체질 장부대소 원리와 도테라 CPTG 100% 순수 에센셜 오일, 10대 시그니처 테라피 및 리드 캡처/디렉터 관리자 뷰를 탑재한 K-웰니스 스파 포털."
+      "description": "한국 고유의 사상체질 장부대소 원리와 도테라 CPTG 100% 순수 에센셜 오일, 10대 시그니처 테라피 및 리드 캡처/디렉터 관리자 뷰를 탑재한 K-웰니스 스파 포털"
     },
     {
       "id": "PRJ-TRADING-01",
@@ -725,7 +725,7 @@
       "date": "2026-08-26",
       "liveUrl": "",
       "deliverables": [],
-      "description": "TradingView MCP(tradesdontlie/tradingview-mcp)를 Claude Code에 연동하여 차트 분석, Pine Script 개발, 리플레이 백테스트, 웹훅 자동매매까지 실행하는 방법을 정리한 실행 가이드. 원본 영상: Claude Code + TradingView AI = King of AI Trading."
+      "description": "TradingView MCP(tradesdontlie/tradingview-mcp)를 Claude Code에 연동하여 차트 분석, Pine Script 개발, 리플레이 백테스트, 웹훅 자동매매까지 실행하는 방법을 정리한 실행 가이드. 원본 영상: Claude Code + TradingView AI = King of AI Trading"
     },
     {
       "id": "PRJ-TRADING-02",
@@ -737,7 +737,7 @@
       "date": "2026-08-27",
       "liveUrl": "",
       "deliverables": [],
-      "description": "골드 선물(XAUUSD)을 대상으로 Claude Code 및 AGY × TradingView MCP(84개 도구)를 활용하여 시황 분석, Pine Script v5 자가 디버깅 컴파일, 리플레이 백테스트, 웹훅 자동매매 및 리스크 거버넌스를 구축한 전체 기획 마스터플랜."
+      "description": "골드 선물(XAUUSD)을 대상으로 Claude Code 및 AGY × TradingView MCP(84개 도구)를 활용하여 시황 분석, Pine Script v5 자가 디버깅 컴파일, 리플레이 백테스트, 웹훅 자동매매 및 리스크 거버넌스를 구축한 전체 기획 마스터플랜"
     },
     {
       "id": "PRJ-WEBBIZ-01",
@@ -749,7 +749,7 @@
       "date": "2026-09-08",
       "liveUrl": "",
       "deliverables": [],
-      "description": "제작비 일시불이 아니라 월 관리비(MRR)를 주 수익원으로 삼는 관리형 웹 비즈니스 마스터플랜. 오픈마켓 경쟁사 3곳 실조사, 요금·유닛 이코노믹스 설계, 제작·관리 자동화 4단계, 계약 체크리스트, 90일 실행 로드맵과 중단 기준까지 포함."
+      "description": "제작비 일시불이 아니라 월 관리비(MRR)를 주 수익원으로 삼는 관리형 웹 비즈니스 마스터플랜. 오픈마켓 경쟁사 3곳 실조사, 요금·유닛 이코노믹스 설계, 제작·관리 자동화 4단계, 계약 체크리스트, 90일 실행 로드맵과 중단 기준까지 포함"
     },
     {
       "id": "PRJ-SASANG-02",
@@ -761,7 +761,7 @@
       "date": "2026-09-08",
       "liveUrl": "",
       "deliverables": [],
-      "description": "클래스101 사상체질 8차시 정규 온라인 클래스 입점을 위한 12주 실행 로드맵, 수익 배분 모델 및 기획·제안 마스터플랜.",
+      "description": "클래스101 사상체질 8차시 정규 온라인 클래스 입점을 위한 12주 실행 로드맵, 수익 배분 모델 및 기획·제안 마스터플랜",
       "startDate": "2026-09-17",
       "dueDate": "2026-12-06"
     },
@@ -791,7 +791,7 @@
           "path": "item_selection_rationale.md"
         }
       ],
-      "description": "397명 실측 임상 데이터를 바탕으로 선별된 20문항 인터랙티브 체질 자가진단 및 맞춤 솔루션 반응형 모바일 웹앱."
+      "description": "397명 실측 임상 데이터를 바탕으로 선별된 20문항 인터랙티브 체질 자가진단 및 맞춤 솔루션 반응형 모바일 웹앱"
     },
     {
       "id": "PRJ-SASANG-04",
@@ -819,7 +819,7 @@
           "path": "chejilhub_global_brochure_en.html"
         }
       ],
-      "description": "기업·호텔·리조트 대상 사상체질 라이프스타일 웰니스 제휴 제안서 및 국/영문 글로벌 반응형 브로슈어 쇼룸."
+      "description": "기업·호텔·리조트 대상 사상체질 라이프스타일 웰니스 제휴 제안서 및 국/영문 글로벌 반응형 브로슈어 쇼룸"
     },
     {
       "id": "PRJ-SASANG-05",
@@ -831,7 +831,7 @@
       "date": "2026-09-04",
       "liveUrl": "",
       "deliverables": [],
-      "description": "선상에서 진행되는 4대 체질별 맞춤 식단, 아로마 테라피, 체질 기공 및 웰니스 힐링 크루즈 상세 프로그램 안내서."
+      "description": "선상에서 진행되는 4대 체질별 맞춤 식단, 아로마 테라피, 체질 기공 및 웰니스 힐링 크루즈 상세 프로그램 안내서"
     },
     {
       "id": "PRJ-INFRA-04",
@@ -842,7 +842,7 @@
       "statusBadge": "bg-cyan-500/10 text-cyan-400 border border-cyan-500/30",
       "date": "2026-09-08",
       "deliverables": [],
-      "description": "Python Native REST API(B 메인 엔진)와 Google Apps Script Webhook(A 보조 플러그인)을 결합하여 워크스페이스 전 프로젝트 마일스톤과 구글 클라우드를 실시간 연동하는 스케줄 인프라."
+      "description": "Python Native REST API(B 메인 엔진)와 Google Apps Script Webhook(A 보조 플러그인)을 결합하여 워크스페이스 전 프로젝트 마일스톤과 구글 클라우드를 실시간 연동하는 스케줄 인프라"
     },
     {
       "id": "PRJ-SASANG-06",
@@ -856,7 +856,7 @@
       "dueDate": "2026-09-26",
       "liveUrl": "",
       "deliverables": [],
-      "description": "구글 태스크에만 존재하던 웰니스캠프 실행 과제 3건(오리엔테이션 교재·체질 검사지 인쇄 9/20, 강사진 롤분장표 확정 9/25, 참가자 1차 안내 문자·카카오톡 발송 9/26)을 레지스트리 프로젝트로 승격. 통합 인덱스에 선행 자료가 없어 산출물은 신규 작성 대상."
+      "description": "구글 태스크에만 존재하던 웰니스캠프 실행 과제 3건(오리엔테이션 교재·체질 검사지 인쇄 9/20, 강사진 롤분장표 확정 9/25, 참가자 1차 안내 문자·카카오톡 발송 9/26)을 레지스트리 프로젝트로 승격. 통합 인덱스에 선행 자료가 없어 산출물은 신규 작성 대상"
     },
     {
       "id": "PRJ-AROMA-04",
@@ -870,7 +870,7 @@
       "dueDate": "2026-09-16",
       "liveUrl": "",
       "deliverables": [],
-      "description": "도테라코리아 온라인판매 가이드라인 기준 투트랙 설계. Site 1 = 도테라 전용 쇼핑몰(카페24, skin5), Site 2 = OILLAB 콘텐츠 퍼널. 2026-09-10 기준 상품 140건 등록 완료 — 네이처테라 전수 150건 수집 → 도테라 공식 마스터 353건 대조(140 매칭) → 이미지 760장 FTP 업로드 → 90컬럼 엑셀 일괄등록. 판매가는 max(네이처테라가, 회원공급가)로 §1-2 자동 준수. 마스터 미발견 10건은 정식 통관 확인 후 별도 등록. 다음: 진열 설정(4열/40개), 법적고지·IPC 로고, 소음인 기획전, 도메인 연결 후 심의 접수."
+      "description": "도테라코리아 온라인판매 가이드라인 기준 투트랙 설계. Site 1 = 도테라 전용 쇼핑몰(카페24, skin5), Site 2 = OILLAB 콘텐츠 퍼널. 2026-09-10 기준 상품 140건 등록 완료 — 네이처테라 전수 150건 수집 → 도테라 공식 마스터 353건 대조(140 매칭) → 이미지 760장 FTP 업로드 → 90컬럼 엑셀 일괄등록. 판매가는 max(네이처테라가, 회원공급가)로 §1-2 자동 준수. 마스터 미발견 10건은 정식 통관 확인 후 별도 등록. 다음: 진열 설정(4열/40개), 법적고지·IPC 로고, 소음인 기획전, 도메인 연결 후 심의 접수"
     },
     {
       "id": "PRJ-SASANG-07",
@@ -882,7 +882,7 @@
       "date": "2026-09-09",
       "liveUrl": "",
       "deliverables": [],
-      "description": "천시아 대표(오라클라우드) 측 체질·웰니스 강의 협업 건. 강의 내용 원고 작성과 성채하 통화내용 공유가 실행 과제이며, 2025년에 걸어둔 마감일은 경과하여 비움. 통합 인덱스에 선행 자료가 전혀 없어 산출물은 전량 신규 작성 대상."
+      "description": "천시아 대표(오라클라우드) 측 체질·웰니스 강의 협업 건. 강의 내용 원고 작성과 성채하 협의 기록가 실행 과제이며, 2025년에 걸어둔 마감일은 경과하여 비움. 통합 인덱스에 선행 자료가 전혀 없어 산출물은 전량 신규 작성 대상"
     },
     {
       "id": "PRJ-LUMINUS-03",
@@ -894,7 +894,7 @@
       "date": "2026-09-09",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성되어 승인된 기획안 기반 프로젝트 (통화 백태종 연구소장_260908_153147_original)."
+      "description": "음성/문서 인박스에서 자동 생성되어 승인된 기획안 기반 프로젝트"
     },
     {
       "id": "PRJ-NOLAB-01",
@@ -906,7 +906,7 @@
       "date": "2026-09-10",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-DEEPTWIN-01",
@@ -918,7 +918,7 @@
       "date": "2026-09-11",
       "liveUrl": "",
       "deliverables": [],
-      "description": "암묵지=정책 가설을 5개 헌장 조항으로 구조화하고, v0~v5 관문 기반 버전 마일스톤과 강의→책→논문 멀티유즈 순서를 확정한 착수 헌장. 라벨 실측 8쌍 대 인덱스 45,525건의 격차를 진단하고, 원 강의에 없는 홀드아웃 분리를 기여점으로 설정했다."
+      "description": "암묵지=정책 가설을 5개 헌장 조항으로 구조화하고, v0~v5 관문 기반 버전 마일스톤과 강의→책→논문 멀티유즈 순서를 확정한 착수 헌장. 라벨 실측 8쌍 대 인덱스 45,525건의 격차를 진단하고, 원 강의에 없는 홀드아웃 분리를 기여점으로 설정했다"
     },
     {
       "id": "PRJ-SASANG-08",
@@ -930,7 +930,7 @@
       "date": "2026-09-11",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-SPA-02",
@@ -942,7 +942,7 @@
       "date": "2026-09-11",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-FASHION-04",
@@ -954,7 +954,7 @@
       "date": "2026-09-11",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-AI-04",
@@ -966,7 +966,7 @@
       "date": "2026-09-12",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-WEBBIZ-02",
@@ -978,7 +978,7 @@
       "date": "2026-09-12",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-AI-05",
@@ -990,7 +990,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-LUMINUS-04",
@@ -1002,7 +1002,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-SASANG-09",
@@ -1014,7 +1014,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-AI-06",
@@ -1026,7 +1026,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-AI-07",
@@ -1038,7 +1038,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-NOLAB-02",
@@ -1050,7 +1050,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-LUMINUS-05",
@@ -1062,7 +1062,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-AI-08",
@@ -1074,7 +1074,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-LUMINUS-06",
@@ -1086,7 +1086,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     },
     {
       "id": "PRJ-LUMINUS-07",
@@ -1104,7 +1104,7 @@
           "path": "index.html"
         }
       ],
-      "description": "도서출판 디아파니의 루미누스 아카이브 공식 기록소. 국영문 브랜드와 도서 소개를 통합한다."
+      "description": "도서출판 디아파니의 루미누스 아카이브 공식 기록소. 국영문 브랜드와 도서 소개를 통합한다"
     },
     {
       "id": "PRJ-NOLAB-03",
@@ -1116,7 +1116,7 @@
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다."
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     }
   ]
 }
