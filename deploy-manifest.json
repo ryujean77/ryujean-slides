@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-19T06:52:47.645Z",
-  "commit": "b5158a4766e0e6ffa8131bb48ca3091455849c39",
-  "fileCount": 1956,
+  "generatedAt": "2026-09-22T02:10:12.074Z",
+  "commit": "3b29707f44bec13e6318cddfb9017a6f27d2328e",
+  "fileCount": 1972,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -6065,7 +6065,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 51213
+      "size": 51579
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -7548,6 +7548,70 @@
       "size": 18621
     },
     {
+      "path": "luminus/studio/assets/cover_vol1.jpg",
+      "size": 171980
+    },
+    {
+      "path": "luminus/studio/assets/cover_vol2.jpg",
+      "size": 216766
+    },
+    {
+      "path": "luminus/studio/data/about.json",
+      "size": 11519
+    },
+    {
+      "path": "luminus/studio/data/books.json",
+      "size": 63202
+    },
+    {
+      "path": "luminus/studio/data/chronicle.json",
+      "size": 12548
+    },
+    {
+      "path": "luminus/studio/data/concepts.json",
+      "size": 98585
+    },
+    {
+      "path": "luminus/studio/data/studio.json",
+      "size": 7136
+    },
+    {
+      "path": "luminus/studio/data/ui.json",
+      "size": 17250
+    },
+    {
+      "path": "luminus/studio/index.html",
+      "size": 230725
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_audio_ko.m4a",
+      "size": 47286056
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_infographic.png",
+      "size": 4086252
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_video_ko.mp4",
+      "size": 47000320
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_video.mp4",
+      "size": 56973952
+    },
+    {
+      "path": "luminus/studio/vol2_notebooklm_audio_ko.m4a",
+      "size": 32313686
+    },
+    {
+      "path": "luminus/studio/vol2_notebooklm_infographic.png",
+      "size": 6105565
+    },
+    {
+      "path": "luminus/studio/vol2_notebooklm_video_ko.mp4",
+      "size": 38512392
+    },
+    {
       "path": "multi-ai-orchestration/index.html",
       "size": 8519
     },
@@ -7605,11 +7669,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 51213
+      "size": 51579
     },
     {
       "path": "portal/index.html",
-      "size": 59346
+      "size": 59706
     },
     {
       "path": "portal/index.html.bak",
