@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-22T05:04:09.505Z",
-  "commit": "bf895ef6246835f14667bc751e3811c7538fcff2",
-  "fileCount": 1973,
+  "generatedAt": "2026-09-22T19:55:09.510Z",
+  "commit": "e6e82f853bd67617a58610d8eaa72f166cd2ebae",
+  "fileCount": 1982,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -7577,7 +7577,7 @@
     },
     {
       "path": "luminus/studio/data/studio.json",
-      "size": 7142
+      "size": 17088
     },
     {
       "path": "luminus/studio/data/ui.json",
@@ -7585,35 +7585,71 @@
     },
     {
       "path": "luminus/studio/index.html",
-      "size": 231690
+      "size": 238984
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_audio_en.m4a",
+      "size": 10234670
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_audio_ja.m4a",
+      "size": 9836877
     },
     {
       "path": "luminus/studio/vol1_notebooklm_audio_ko.m4a",
       "size": 12094734
     },
     {
+      "path": "luminus/studio/vol1_notebooklm_audio_zh.m4a",
+      "size": 10387998
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_infographic_en.webp",
+      "size": 362018
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_infographic_ja.webp",
+      "size": 334364
+    },
+    {
+      "path": "luminus/studio/vol1_notebooklm_infographic_zh.webp",
+      "size": 246550
+    },
+    {
       "path": "luminus/studio/vol1_notebooklm_infographic.webp",
       "size": 261634
     },
     {
-      "path": "luminus/studio/vol1_notebooklm_video_ko.mp4",
-      "size": 47000320
+      "path": "luminus/studio/vol2_notebooklm_audio_en.m4a",
+      "size": 11083198
     },
     {
-      "path": "luminus/studio/vol1_notebooklm_video.mp4",
-      "size": 56973952
+      "path": "luminus/studio/vol2_notebooklm_audio_ja.m4a",
+      "size": 9300546
     },
     {
       "path": "luminus/studio/vol2_notebooklm_audio_ko.m4a",
       "size": 8270928
     },
     {
-      "path": "luminus/studio/vol2_notebooklm_infographic.webp",
-      "size": 458154
+      "path": "luminus/studio/vol2_notebooklm_audio_zh.m4a",
+      "size": 11670464
     },
     {
-      "path": "luminus/studio/vol2_notebooklm_video_ko.mp4",
-      "size": 38512392
+      "path": "luminus/studio/vol2_notebooklm_infographic_en.webp",
+      "size": 595428
+    },
+    {
+      "path": "luminus/studio/vol2_notebooklm_infographic_ja.webp",
+      "size": 425678
+    },
+    {
+      "path": "luminus/studio/vol2_notebooklm_infographic_zh.webp",
+      "size": 422064
+    },
+    {
+      "path": "luminus/studio/vol2_notebooklm_infographic.webp",
+      "size": 458154
     },
     {
       "path": "multi-ai-orchestration/index.html",
