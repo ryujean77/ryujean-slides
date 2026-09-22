@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-22 11:08:18 (KST)",
+  "lastUpdated": "2026-09-22 11:12:16 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -124,7 +124,7 @@
       ],
       "stats": {
         "projectsCount": 8,
-        "liveUrlsCount": 1,
+        "liveUrlsCount": 2,
         "status": "🟢 스튜디오 구축 완료"
       }
     },
@@ -1127,8 +1127,59 @@
       "status": "완료",
       "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
       "date": "2026-09-18",
-      "liveUrl": "",
-      "deliverables": [],
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/luminus/studio/",
+      "deliverables": [
+        {
+          "name": "공식 인터랙티브 웹 대시보드",
+          "type": "html",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/index.html"
+        },
+        {
+          "name": "1·2권 스튜디오 마스터 프레임워크 총서",
+          "type": "md",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/homo_luminus_studio_master.md"
+        },
+        {
+          "name": "1권 공식 비디오 오버뷰 (MP4)",
+          "type": "mp4",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/vol1_notebooklm_video.mp4"
+        },
+        {
+          "name": "1권 공식 심층 오디오 팟캐스트 (M4A)",
+          "type": "m4a",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/vol1_notebooklm_audio.m4a"
+        },
+        {
+          "name": "1권 초고해상도 인포그래픽 (PNG)",
+          "type": "png",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/vol1_notebooklm_infographic.png"
+        },
+        {
+          "name": "2권 공식 비디오 오버뷰 (MP4)",
+          "type": "mp4",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/vol2_notebooklm_video.mp4"
+        },
+        {
+          "name": "2권 공식 심층 오디오 팟캐스트 (M4A)",
+          "type": "m4a",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/vol2_notebooklm_audio.m4a"
+        },
+        {
+          "name": "2권 초고해상도 인포그래픽 (PNG)",
+          "type": "png",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/vol2_notebooklm_infographic.png"
+        },
+        {
+          "name": "1권 공식 마인드맵 (JSON)",
+          "type": "json",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/vol1_notebooklm_mindmap.json"
+        },
+        {
+          "name": "2권 공식 마인드맵 (JSON)",
+          "type": "json",
+          "path": "deliverables/20260918_0615_homo_luminus_studio/vol2_notebooklm_mindmap.json"
+        }
+      ],
       "description": "Google NotebookLM 클라우드 API 및 nlm CLI를 통해 원작 도서 1권(364쪽)과 2권(445쪽) 전문을 학습하여 비디오, 고음질 팟캐스트 오디오, 초고해상도 인포그래픽, 마인드맵, 퀴즈, 플래시카드, 연구 가이드를 일괄 구축하고 통합 반응형 대시보드로 완성"
     }
   ]
