@@ -20,10 +20,9 @@
       },
       "media": [
         {
-          "kind": "video",
+          "kind": "youtube",
           "lang": "ko",
-          "src": "vol1_notebooklm_video_ko.mp4",
-          "poster": "vol1_notebooklm_infographic.webp",
+          "src": "_4NxAq5WrVw",
           "spec": "1280×720 · 8:09",
           "title": {
             "ko": "영상 개요",
@@ -39,22 +38,21 @@
           }
         },
         {
-          "kind": "video",
+          "kind": "youtube",
           "lang": "en",
-          "src": "vol1_notebooklm_video.mp4",
-          "poster": "vol1_notebooklm_infographic.webp",
-          "spec": "1280×720 · 9:29",
+          "src": "OSmLKqYuyds",
+          "spec": "1280×720 · 8:09",
           "title": {
-            "ko": "영상 개요 (영어판)",
-            "en": "Video overview (English)",
-            "ja": "映像概要（英語版）",
-            "zh": "视频概览（英文版）"
+            "ko": "영상 개요",
+            "en": "Video overview",
+            "ja": "映像概要",
+            "zh": "视频概览"
           },
           "desc": {
-            "ko": "같은 내용의 영어 내레이션판입니다.",
-            "en": "The same content with English narration.",
-            "ja": "同じ内容の英語ナレーション版です。",
-            "zh": "同一内容的英文旁白版本。"
+            "ko": "진공광이 무엇이고 왜 인간과 연결되는지를 도해와 함께 설명합니다.",
+            "en": "Explains what vacuum light is and why it connects to human beings, with diagrams.",
+            "ja": "真空光とは何か、なぜ人間とつながるのかを図解とともに説明します。",
+            "zh": "结合图解说明真空光是什么，以及它为何与人相连。"
           }
         },
         {
@@ -76,9 +74,117 @@
           }
         },
         {
+          "kind": "audio",
+          "lang": "en",
+          "src": "vol1_notebooklm_audio_en.m4a",
+          "spec": "AAC · 24:29",
+          "title": {
+            "ko": "두 진행자의 심층 대담",
+            "en": "In-depth conversation between two hosts",
+            "ja": "二人のホストによる深層対談",
+            "zh": "两位主持人的深度对谈"
+          },
+          "desc": {
+            "ko": "이동 중에 듣기 좋습니다. 책의 논점을 대화로 풀어냅니다.",
+            "en": "Good for listening on the move. It unpacks the book's arguments as a conversation.",
+            "ja": "移動中に聴くのに適しています。本の論点を対話で解きほぐします。",
+            "zh": "适合在路上收听，以对谈方式梳理本书的论点。"
+          }
+        },
+        {
+          "kind": "audio",
+          "lang": "ja",
+          "src": "vol1_notebooklm_audio_ja.m4a",
+          "spec": "AAC · 24:29",
+          "title": {
+            "ko": "두 진행자의 심층 대담",
+            "en": "In-depth conversation between two hosts",
+            "ja": "二人のホストによる深層対談",
+            "zh": "两位主持人的深度对谈"
+          },
+          "desc": {
+            "ko": "이동 중에 듣기 좋습니다. 책의 논점을 대화로 풀어냅니다.",
+            "en": "Good for listening on the move. It unpacks the book's arguments as a conversation.",
+            "ja": "移動中に聴くのに適しています。本の論点を対話で解きほぐします。",
+            "zh": "适合在路上收听，以对谈方式梳理本书的论点。"
+          }
+        },
+        {
+          "kind": "audio",
+          "lang": "zh",
+          "src": "vol1_notebooklm_audio_zh.m4a",
+          "spec": "AAC · 24:29",
+          "title": {
+            "ko": "두 진행자의 심층 대담",
+            "en": "In-depth conversation between two hosts",
+            "ja": "二人のホストによる深層対談",
+            "zh": "两位主持人的深度对谈"
+          },
+          "desc": {
+            "ko": "이동 중에 듣기 좋습니다. 책의 논점을 대화로 풀어냅니다.",
+            "en": "Good for listening on the move. It unpacks the book's arguments as a conversation.",
+            "ja": "移動中に聴くのに適しています。本の論点を対話で解きほぐします。",
+            "zh": "适合在路上收听，以对谈方式梳理本书的论点。"
+          }
+        },
+        {
           "kind": "image",
-          "lang": "-",
+          "lang": "ko",
           "src": "vol1_notebooklm_infographic.webp",
+          "spec": "2752×1536",
+          "title": {
+            "ko": "핵심 개념 한 장 도해",
+            "en": "Key concepts on a single sheet",
+            "ja": "主要概念の一枚図解",
+            "zh": "核心概念一图速览"
+          },
+          "desc": {
+            "ko": "CMB · 진공광 · 빛운영의 관계를 한 화면에 담았습니다.",
+            "en": "Shows the relationship between the CMB, vacuum light, and light operation in one view.",
+            "ja": "CMB・真空光・光運営の関係を一画面にまとめています。",
+            "zh": "在一张图中呈现CMB、真空光与光运营之间的关系。"
+          }
+        },
+        {
+          "kind": "image",
+          "lang": "en",
+          "src": "vol1_notebooklm_infographic_en.webp",
+          "spec": "2752×1536",
+          "title": {
+            "ko": "핵심 개념 한 장 도해",
+            "en": "Key concepts on a single sheet",
+            "ja": "主要概念の一枚図解",
+            "zh": "核心概念一图速览"
+          },
+          "desc": {
+            "ko": "CMB · 진공광 · 빛운영의 관계를 한 화면에 담았습니다.",
+            "en": "Shows the relationship between the CMB, vacuum light, and light operation in one view.",
+            "ja": "CMB・真空光・光運営の関係を一画面にまとめています。",
+            "zh": "在一张图中呈现CMB、真空光与光运营之间的关系。"
+          }
+        },
+        {
+          "kind": "image",
+          "lang": "ja",
+          "src": "vol1_notebooklm_infographic_ja.webp",
+          "spec": "2752×1536",
+          "title": {
+            "ko": "핵심 개념 한 장 도해",
+            "en": "Key concepts on a single sheet",
+            "ja": "主要概念の一枚図解",
+            "zh": "核心概念一图速览"
+          },
+          "desc": {
+            "ko": "CMB · 진공광 · 빛운영의 관계를 한 화면에 담았습니다.",
+            "en": "Shows the relationship between the CMB, vacuum light, and light operation in one view.",
+            "ja": "CMB・真空光・光運営の関係を一画面にまとめています。",
+            "zh": "在一张图中呈现CMB、真空光与光运营之间的关系。"
+          }
+        },
+        {
+          "kind": "image",
+          "lang": "zh",
+          "src": "vol1_notebooklm_infographic_zh.webp",
           "spec": "2752×1536",
           "title": {
             "ko": "핵심 개념 한 장 도해",
@@ -112,10 +218,9 @@
       },
       "media": [
         {
-          "kind": "video",
+          "kind": "youtube",
           "lang": "ko",
-          "src": "vol2_notebooklm_video_ko.mp4",
-          "poster": "vol2_notebooklm_infographic.webp",
+          "src": "tjL_CzTkQlI",
           "spec": "1280×720 · 7:14",
           "title": {
             "ko": "영상 개요",
@@ -149,9 +254,117 @@
           }
         },
         {
+          "kind": "audio",
+          "lang": "en",
+          "src": "vol2_notebooklm_audio_en.m4a",
+          "spec": "AAC · 16:44",
+          "title": {
+            "ko": "두 진행자의 심층 대담",
+            "en": "In-depth conversation between two hosts",
+            "ja": "二人のホストによる深層対談",
+            "zh": "两位主持人的深度对谈"
+          },
+          "desc": {
+            "ko": "천부삼인의 우주론과 6단계 공정을 대화로 정리합니다.",
+            "en": "Organizes the cosmology of Cheonbu-samin and the six-stage process as a conversation.",
+            "ja": "天符三印の宇宙論と六段階工程を対話で整理します。",
+            "zh": "以对谈形式梳理天符三印的宇宙论与六阶段工艺。"
+          }
+        },
+        {
+          "kind": "audio",
+          "lang": "ja",
+          "src": "vol2_notebooklm_audio_ja.m4a",
+          "spec": "AAC · 16:44",
+          "title": {
+            "ko": "두 진행자의 심층 대담",
+            "en": "In-depth conversation between two hosts",
+            "ja": "二人のホストによる深層対談",
+            "zh": "两位主持人的深度对谈"
+          },
+          "desc": {
+            "ko": "천부삼인의 우주론과 6단계 공정을 대화로 정리합니다.",
+            "en": "Organizes the cosmology of Cheonbu-samin and the six-stage process as a conversation.",
+            "ja": "天符三印の宇宙論と六段階工程を対話で整理します。",
+            "zh": "以对谈形式梳理天符三印的宇宙论与六阶段工艺。"
+          }
+        },
+        {
+          "kind": "audio",
+          "lang": "zh",
+          "src": "vol2_notebooklm_audio_zh.m4a",
+          "spec": "AAC · 16:44",
+          "title": {
+            "ko": "두 진행자의 심층 대담",
+            "en": "In-depth conversation between two hosts",
+            "ja": "二人のホストによる深層対談",
+            "zh": "两位主持人的深度对谈"
+          },
+          "desc": {
+            "ko": "천부삼인의 우주론과 6단계 공정을 대화로 정리합니다.",
+            "en": "Organizes the cosmology of Cheonbu-samin and the six-stage process as a conversation.",
+            "ja": "天符三印の宇宙論と六段階工程を対話で整理します。",
+            "zh": "以对谈形式梳理天符三印的宇宙论与六阶段工艺。"
+          }
+        },
+        {
           "kind": "image",
-          "lang": "-",
+          "lang": "ko",
           "src": "vol2_notebooklm_infographic.webp",
+          "spec": "2752×1536",
+          "title": {
+            "ko": "빛운영 6단계 공정 도해",
+            "en": "The six stages of light operation",
+            "ja": "光運営 六段階工程の図解",
+            "zh": "光运营六阶段工艺图解"
+          },
+          "desc": {
+            "ko": "포집 · 절연 · 저장 · 복제 · 중층화 · 공진의 흐름을 한눈에.",
+            "en": "Capture, insulation, storage, replication, stratification, and resonance at a glance.",
+            "ja": "捕集・絶縁・貯蔵・複製・重層化・共振の流れを一目で。",
+            "zh": "一目了然地呈现捕集、绝缘、储存、复制、多层化与共振的流程。"
+          }
+        },
+        {
+          "kind": "image",
+          "lang": "en",
+          "src": "vol2_notebooklm_infographic_en.webp",
+          "spec": "2752×1536",
+          "title": {
+            "ko": "빛운영 6단계 공정 도해",
+            "en": "The six stages of light operation",
+            "ja": "光運営 六段階工程の図解",
+            "zh": "光运营六阶段工艺图解"
+          },
+          "desc": {
+            "ko": "포집 · 절연 · 저장 · 복제 · 중층화 · 공진의 흐름을 한눈에.",
+            "en": "Capture, insulation, storage, replication, stratification, and resonance at a glance.",
+            "ja": "捕集・絶縁・貯蔵・複製・重層化・共振の流れを一目で。",
+            "zh": "一目了然地呈现捕集、绝缘、储存、复制、多层化与共振的流程。"
+          }
+        },
+        {
+          "kind": "image",
+          "lang": "ja",
+          "src": "vol2_notebooklm_infographic_ja.webp",
+          "spec": "2752×1536",
+          "title": {
+            "ko": "빛운영 6단계 공정 도해",
+            "en": "The six stages of light operation",
+            "ja": "光運営 六段階工程の図解",
+            "zh": "光运营六阶段工艺图解"
+          },
+          "desc": {
+            "ko": "포집 · 절연 · 저장 · 복제 · 중층화 · 공진의 흐름을 한눈에.",
+            "en": "Capture, insulation, storage, replication, stratification, and resonance at a glance.",
+            "ja": "捕集・絶縁・貯蔵・複製・重層化・共振の流れを一目で。",
+            "zh": "一目了然地呈现捕集、绝缘、储存、复制、多层化与共振的流程。"
+          }
+        },
+        {
+          "kind": "image",
+          "lang": "zh",
+          "src": "vol2_notebooklm_infographic_zh.webp",
           "spec": "2752×1536",
           "title": {
             "ko": "빛운영 6단계 공정 도해",
