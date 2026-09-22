@@ -23,7 +23,7 @@
           "kind": "video",
           "lang": "ko",
           "src": "vol1_notebooklm_video_ko.mp4",
-          "poster": "vol1_notebooklm_infographic.png",
+          "poster": "vol1_notebooklm_infographic.webp",
           "spec": "1280×720 · 8:09",
           "title": {
             "ko": "영상 개요",
@@ -42,7 +42,7 @@
           "kind": "video",
           "lang": "en",
           "src": "vol1_notebooklm_video.mp4",
-          "poster": "vol1_notebooklm_infographic.png",
+          "poster": "vol1_notebooklm_infographic.webp",
           "spec": "1280×720 · 9:29",
           "title": {
             "ko": "영상 개요 (영어판)",
@@ -78,7 +78,7 @@
         {
           "kind": "image",
           "lang": "-",
-          "src": "vol1_notebooklm_infographic.png",
+          "src": "vol1_notebooklm_infographic.webp",
           "spec": "2752×1536",
           "title": {
             "ko": "핵심 개념 한 장 도해",
@@ -115,7 +115,7 @@
           "kind": "video",
           "lang": "ko",
           "src": "vol2_notebooklm_video_ko.mp4",
-          "poster": "vol2_notebooklm_infographic.png",
+          "poster": "vol2_notebooklm_infographic.webp",
           "spec": "1280×720 · 7:14",
           "title": {
             "ko": "영상 개요",
@@ -151,7 +151,7 @@
         {
           "kind": "image",
           "lang": "-",
-          "src": "vol2_notebooklm_infographic.png",
+          "src": "vol2_notebooklm_infographic.webp",
           "spec": "2752×1536",
           "title": {
             "ko": "빛운영 6단계 공정 도해",
