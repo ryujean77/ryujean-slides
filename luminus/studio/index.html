@@ -699,9 +699,9 @@ footer a{color:var(--glow)}
       var m = el('div', 'media');
       (v.media || []).forEach(function (x) {
         /* 현재 언어판이 있으면 그것만, 없으면 원본을 보여준다 */
-        if (x.kind === 'video' && x.lang !== '-' ) {
+        if (x.lang !== '-') {
           var hasCur = (v.media || []).some(function (y) {
-            return y.kind === 'video' && y.lang === lang && !y.pending;
+            return y.kind === x.kind && y.lang === lang && !y.pending;
           });
           if (hasCur && x.lang !== lang) return;
           if (!hasCur && x.pending && x.lang === lang) { /* 준비 중 카드는 노출 */ }
