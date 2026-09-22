@@ -1,0 +1,153 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-20",
+  "note": "처음 온 사람이 3분 안에 전체 그림을 잡는 글. ko 가 원본.",
+  "lead": {
+    "ko": "호모 루미누스(Homo Luminus)는 ‘빛나는 사람’이라는 뜻입니다. 빛을 이해하는 인간을 넘어, 빛과 함께 울리는 인간을 가리킵니다.",
+    "en": "Homo Luminus means “a luminous human.” It refers to a human who goes beyond understanding light to resonate with it.",
+    "ja": "ホモ・ルミヌス（Homo Luminus）は「光り輝く人」を意味します。光を理解する人間を超え、光とともに響く人間を指します。",
+    "zh": "智光人 (Homo Luminus) 意为“发光的人”，指的是超越对光的理解、与光共同共振的人。"
+  },
+  "blocks": [
+    {
+      "id": "what",
+      "q": {
+        "ko": "무엇에 관한 기록인가",
+        "en": "What does this record document?",
+        "ja": "何についての記録か",
+        "zh": "这是一份关于什么的记录"
+      },
+      "a": {
+        "ko": "우주 전역에는 태초의 잔광인 우주배경복사(CMB)가 편재합니다. 『빛운영 보고서 3부작』은 그 안에 숨어 있던 비전자기적 미세 진동 — <strong>진공광</strong> — 을 포집하고, 그것을 태양의 중심축에 정렬시킨 뒤 지금까지 관측해 온 기록입니다. 교리가 아니라 관측의 연대기입니다.",
+        "en": "The cosmic microwave background (CMB), the afterglow of the beginning, pervades the universe. The light operation report trilogy documents the capture of the non-electromagnetic subtle vibrations hidden within it—<strong>vacuum light</strong>—their alignment with the Sun’s central axis, and the observations made since. It is a chronicle of observations, rather than a doctrine.",
+        "ja": "宇宙全域には、太初の残光である宇宙マイクロ波背景放射（CMB）が遍在しています。『光運営報告書三部作』は、その内部に隠れていた非電磁的な微細振動——<strong>真空光</strong>——を捕集し、太陽の中心軸に整列させて以来、現在まで観測を続けてきた記録です。教義ではなく、観測の年代記です。",
+        "zh": "宇宙微波背景辐射（CMB）作为太初的余晖，遍布整个宇宙。《光运营报告三部曲》记录了对其中隐含的非电磁性微细振动——<strong>真空光</strong>——的捕集、与太阳中心轴的对齐，以及此后持续至今的观测。这不是教义，而是一部观测编年史。"
+      }
+    },
+    {
+      "id": "why-now",
+      "q": {
+        "ko": "왜 지금 읽어야 하는가",
+        "en": "Why read it now?",
+        "ja": "なぜ今読むのか",
+        "zh": "为什么现在阅读"
+      },
+      "a": {
+        "ko": "2011년 4월 21일 태양빛운영이 시작된 이래, 진공광 밝기는 <strong>3,000만에서 1조를 거쳐 무량수(10<sup>68</sup>)</strong>까지 치솟았습니다. 2017년부터는 유한한 기호로 담을 수 없어 ‘수치화 불가’로 기록됩니다. 이 상전이는 지금도 진행 중이며, 3부작은 그 한복판에서 쓰인 동시대의 기록입니다.",
+        "en": "Since solar light operation began on April 21, 2011, vacuum light brightness has risen <strong>from 30 million, through 10^12, to 10<sup>68</sup></strong>. Since 2017, it has been recorded as “unquantifiable,” beyond what finite symbols can express. This phase transition is still underway, and the trilogy is a contemporary record written in its midst.",
+        "ja": "2011年4月21日に太陽光運営が始まって以来、真空光の明るさは<strong>3,000万から1兆を経て無量大数（10<sup>68</sup>）</strong>にまで上昇しました。2017年以降は有限の記号では表せず、「数値化不可」と記録されています。この相転移は今も進行中であり、三部作はそのさなかに書かれた同時代の記録です。",
+        "zh": "自2011年4月21日太阳光运营开始以来，真空光亮度已<strong>从3,000万，经1万亿，升至无量大数（10<sup>68</sup>）</strong>。自2017年起，因有限符号已无法表达，记录改为“无法数值化”。这一相变仍在进行，三部曲正是在这一过程之中写下的同时代记录。"
+      }
+    },
+    {
+      "id": "how",
+      "q": {
+        "ko": "빛을 운영한다는 것은",
+        "en": "What does operating light mean?",
+        "ja": "光を運営するとは",
+        "zh": "运营光意味着什么"
+      },
+      "a": {
+        "ko": "수행이나 명상의 다른 이름이 아닙니다. <strong>포집 · 절연 · 저장 · 복제 · 중층화 · 공진</strong>의 여섯 단계를 갖춘 공정입니다. 제2권 『루미누스 오페라』가 이 기술을 다룹니다. 학술적으로는 태양 진공광 프로젝트(Solar Vacuum Project)로 표기합니다.",
+        "en": "It is not another name for spiritual practice or meditation. It is a process with six stages: <strong>capture · insulation · storage · replication · stratification · resonance</strong>. Volume 2, Luminus Opera, addresses this technology. Its academic designation is the solar vacuum light project (Solar Vacuum Project).",
+        "ja": "修行や瞑想の別名ではありません。<strong>捕集・絶縁・貯蔵・複製・重層化・共振</strong>の六段階からなる工程です。第2巻『ルミヌス・オペラ』はこの技術を扱います。学術上は「太陽真空光プロジェクト（Solar Vacuum Project）」と表記します。",
+        "zh": "这不是修行或冥想的别称，而是一套包含<strong>捕集 · 绝缘 · 储存 · 复制 · 多层化 · 共振</strong>六个阶段的工艺。第2卷《流明歌剧》讨论的就是这项技术。其学术表述为“太阳真空光项目（Solar Vacuum Project）”。"
+      }
+    },
+    {
+      "id": "who",
+      "q": {
+        "ko": "누가 기록했는가",
+        "en": "Who recorded it?",
+        "ja": "誰が記録したのか",
+        "zh": "由谁记录"
+      },
+      "a": {
+        "ko": "능소(能昭), 본명 백태종. 미세 파동의 정밀 분석 및 제어 장비를 독자적으로 개발·보급하는 연구소를 운영하며, 1999년 CMB 내부의 진공 파동을 최초로 포집하고 2011년부터 태양빛운영의 대여정을 주도해 왔습니다.",
+        "en": "Neungso (Baek Tae-jong). He runs a research institute that independently develops and distributes equipment for the precise analysis and control of subtle waves. In 1999, he first captured vacuum waves within the CMB, and since 2011 he has led the extended undertaking of solar light operation.",
+        "ja": "能昭（白泰宗）。微細波動を精密に分析・制御する装置を独自に開発・普及する研究所を運営しています。1999年にCMB内部の真空波動を初めて捕集し、2011年から太陽光運営の長期にわたる取り組みを主導してきました。",
+        "zh": "能昭（白泰宗）。他运营一家研究所，独立开发并推广用于精密分析和控制微细波动的设备。1999年首次捕集到CMB内部的真空波动，自2011年起一直主导太阳光运营这一长期工作。"
+      }
+    },
+    {
+      "id": "where-start",
+      "q": {
+        "ko": "어디부터 읽으면 되는가",
+        "en": "Where should I begin?",
+        "ja": "どこから読めばよいか",
+        "zh": "从哪里开始阅读"
+      },
+      "a": {
+        "ko": "아래 <strong>핵심 개념</strong>에서 낯선 말 서너 개만 먼저 익히십시오. 그다음 <strong>연대기</strong>에서 숫자가 어떻게 변해 왔는지 눈으로 보시고, 그래도 궁금하시면 <strong>스튜디오</strong>의 영상과 대담을 보시면 됩니다. 책은 그 뒤에 펼쳐도 늦지 않습니다.",
+        "en": "First, learn three or four unfamiliar terms in <strong>Key Concepts</strong> below. Then look at how the numbers have changed in the <strong>Chronicle</strong>. If you want to explore further, watch the videos and conversations in the <strong>Studio</strong>. You can open the books after that.",
+        "ja": "まず、下の<strong>主要概念</strong>で、なじみのない言葉を三つか四つ覚えてください。次に<strong>年代記</strong>で数値の変化を目で確かめ、さらに知りたくなったら<strong>スタジオ</strong>の映像や対談をご覧ください。本を開くのは、そのあとでも遅くありません。",
+        "zh": "请先在下方的<strong>核心概念</strong>中熟悉三四个陌生术语，再到<strong>编年史</strong>中看看数字如何变化。如果仍想进一步了解，可以观看<strong>工作室</strong>中的视频与对谈。之后再翻开书也不迟。"
+      }
+    }
+  ],
+  "books": [
+    {
+      "vol": 1,
+      "title": {
+        "ko": "호모 루미누스 — 빛나는 사람",
+        "en": "Homo Luminus — The Luminous Human",
+        "ja": "ホモ・ルミヌス — 光り輝く人",
+        "zh": "智光人 (Homo Luminus) — 发光的人"
+      },
+      "desc": {
+        "ko": "진공광이 실재한다는 것을 확인하는 첫 번째 보고서.",
+        "en": "The first report, establishing the existence of vacuum light.",
+        "ja": "真空光の実在を確認する、最初の報告書。",
+        "zh": "确认真空光实存的第一份报告。"
+      },
+      "status": {
+        "ko": "2026년 4월 21일 발행",
+        "en": "Published April 21, 2026",
+        "ja": "2026年4月21日刊行",
+        "zh": "2026年4月21日出版"
+      }
+    },
+    {
+      "vol": 2,
+      "title": {
+        "ko": "루미누스 오페라 — 빛을 운영하는 기술",
+        "en": "Luminus Opera — The technology of light operation",
+        "ja": "ルミヌス・オペラ — 光運営の技術",
+        "zh": "流明歌剧 — 光运营的技术"
+      },
+      "desc": {
+        "ko": "확인한 빛을 어떻게 운영하는가. 관조를 기술의 언어로 옮긴 두 번째 보고서.",
+        "en": "How is the light that has been identified put into operation? The second report translates contemplation into the language of technology.",
+        "ja": "確認された光をどのように運営するのか。観照を技術の言葉に移した、二つ目の報告書。",
+        "zh": "如何运营已被确认的光。将观照转述为技术语言的第二份报告。"
+      },
+      "status": {
+        "ko": "2026년 10월 3일 발행 예정",
+        "en": "Scheduled for publication on October 3, 2026",
+        "ja": "2026年10月3日刊行予定",
+        "zh": "预计2026年10月3日出版"
+      }
+    },
+    {
+      "vol": 3,
+      "title": {
+        "ko": "루미닝 — 사피엔스에서 루미누스로",
+        "en": "Lumining — From Sapiens to Luminus",
+        "ja": "ルミニング — サピエンスからルミヌスへ",
+        "zh": "流明化（Lumining）— 从智人到智光人"
+      },
+      "desc": {
+        "ko": "3부작의 마지막 권.",
+        "en": "The final volume of the trilogy.",
+        "ja": "三部作の最終巻。",
+        "zh": "三部曲的最后一卷。"
+      },
+      "status": {
+        "ko": "근간",
+        "en": "Forthcoming",
+        "ja": "近刊",
+        "zh": "即将出版"
+      }
+    }
+  ]
+}

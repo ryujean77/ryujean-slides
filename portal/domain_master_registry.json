@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-19 15:52:13 (KST)",
+  "lastUpdated": "2026-09-22 11:08:18 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -1008,13 +1008,14 @@
       "id": "PRJ-SASANG-09",
       "domainId": "DOM-SASANG",
       "domainTag": "🧬 사상체질",
-      "title": "김포 사우고등학교 3일 연속 특강 — 수주 확정 및 운영 준비 초안",
+      "title": "김포 사우고등학교 3일 연속 특강 — 일정 확정(10/21~23) 및 운영 준비",
       "status": "진행중",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-09-18",
       "liveUrl": "",
       "deliverables": [],
-      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
+      "description": "주영욱 대표 섭외 건. 출강 확정: 2026-10-21·22·23 각 17:00~21:00 (1일 4회차 x 3일 = 총 12회차, 김포 사우고등학교). 구글 캘린더 등록 완료(기본 캘린더 단일 관리). 미확정 6항목(주제/학년·인원/회차당 시간/강의료·정산/기자재/보조강사)은 대표 회신 대기. 음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다",
+      "dueDate": "2026-10-21"
     },
     {
       "id": "PRJ-AI-06",

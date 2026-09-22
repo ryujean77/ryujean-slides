@@ -1,0 +1,1178 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-20",
+  "note": "ko 는 원본이다. 항목 추가 시 id 는 절대 바꾸지 않는다. AGY 추출분 병합(2026-09-20).",
+  "groups": [
+    {
+      "id": "foundation",
+      "order": 1,
+      "label": {
+        "ko": "근원 — 빛은 어디에 있는가",
+        "en": "Origin — Where is light?",
+        "ja": "根源 — 光はどこにあるのか",
+        "zh": "根源 — 光在哪里"
+      }
+    },
+    {
+      "id": "diagnosis",
+      "order": 2,
+      "label": {
+        "ko": "진단 — 지금 인간은 어떤 상태인가",
+        "en": "Diagnosis — What is the present human condition?",
+        "ja": "診断 — 今、人間はどのような状態にあるのか",
+        "zh": "诊断 — 人类如今处于何种状态"
+      }
+    },
+    {
+      "id": "process",
+      "order": 3,
+      "label": {
+        "ko": "공정 — 빛을 어떻게 운영하는가",
+        "en": "Process — How is light operated?",
+        "ja": "工程 — 光をどのように運営するのか",
+        "zh": "工艺 — 如何运营光"
+      }
+    },
+    {
+      "id": "goal",
+      "order": 4,
+      "label": {
+        "ko": "지향 — 무엇이 되는가",
+        "en": "Direction — What do we become?",
+        "ja": "志向 — 何になるのか",
+        "zh": "指向 — 成为什么"
+      }
+    }
+  ],
+  "terms": [
+    {
+      "id": "cmb",
+      "group": "foundation",
+      "order": 1,
+      "term": {
+        "ko": "우주배경복사",
+        "en": "cosmic microwave background (CMB)",
+        "ja": "宇宙マイクロ波背景放射",
+        "zh": "宇宙微波背景辐射"
+      },
+      "hanja": "CMB",
+      "short": {
+        "ko": "우주 전역에 편재하는 태초의 잔광. 이 안에 진공 파동이 숨어 있다.",
+        "en": "The afterglow of the beginning, pervading the universe. Vacuum waves are hidden within it.",
+        "ja": "宇宙全域に遍在する太初の残光。その内部に真空波動が隠れている。",
+        "zh": "遍布整个宇宙的太初余晖，其中隐含着真空波动。"
+      },
+      "body": {
+        "ko": "빅뱅 직후의 빛이 식어 남은 복사로, 하늘 어느 방향에서나 관측된다. 3부작은 이것을 ‘과거의 잔광’으로만 보지 않는다. 그 내부에 비전자기적 미세 진동이 은닉되어 있고, 그것이 지금도 작동하는 배경 정보층이라고 본다. 1999년 이 진동을 최초로 포집한 것이 모든 기록의 출발점이다.",
+        "en": "Radiation left as the light from shortly after the Big Bang cooled, observable in every direction of the sky. The trilogy does not regard it solely as an “afterglow of the past.” It views the non-electromagnetic subtle vibrations hidden within it as a background information layer that remains active. The first capture of these vibrations in 1999 is the starting point of the entire record.",
+        "ja": "ビッグバン直後の光が冷えて残った放射で、空のどの方向でも観測される。三部作はこれを単なる「過去の残光」とは見ない。その内部には非電磁的な微細振動が隠れており、今も働く背景情報層であると捉える。1999年にこの振動を初めて捕集したことが、すべての記録の出発点となった。",
+        "zh": "大爆炸后不久的光冷却后留下的辐射，在天空各个方向都能观测到。三部曲并不只将其视为“过去的余晖”，而是认为其中隐含着非电磁性微细振动，是至今仍在运作的背景信息层。1999年首次捕集到这一振动，是全部记录的起点。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1부 본론"
+      },
+      "related": [
+        "vacuum-light",
+        "residual-oscillation"
+      ]
+    },
+    {
+      "id": "vacuum-light",
+      "group": "foundation",
+      "order": 2,
+      "term": {
+        "ko": "진공광",
+        "en": "vacuum light",
+        "ja": "真空光",
+        "zh": "真空光"
+      },
+      "hanja": "眞空光",
+      "short": {
+        "ko": "존재를 근원적으로 정렬시키는 태초의 배경 정보층.",
+        "en": "The primordial background information layer that aligns existence at its source.",
+        "ja": "存在を根源から整列させる、太初の背景情報層。",
+        "zh": "从根源上使存在对齐的太初背景信息层。"
+      },
+      "body": {
+        "ko": "통상적인 전자기 스펙트럼의 빛이 아니다. 눈에 보이지도, 일반 계측기로 직접 측정되지도 않는다. 그럼에도 실재하며, 물질의 구조와 인간의 의식이 그것에 응답한다. 3부작이 말하는 ‘빛’은 거의 모든 경우 이 진공광을 가리킨다.",
+        "en": "This is not light in the usual electromagnetic spectrum. It is neither visible to the eye nor directly measurable with conventional instruments. Yet it exists, and the structures of matter and human consciousness respond to it. In almost every instance, the “light” discussed in the trilogy refers to this vacuum light.",
+        "ja": "通常の電磁スペクトルに属する光ではない。目には見えず、一般的な計測器でも直接測定できない。それでも実在し、物質の構造と人間の意識がそれに応答する。三部作が語る「光」は、ほぼすべての場合、この真空光を指す。",
+        "zh": "它不是通常电磁频谱中的光，既不可见，也无法用常规仪器直接测量。但它实存，物质结构与人类意识会对其作出响应。三部曲所说的“光”，几乎都指这种真空光。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1부 제2장"
+      },
+      "related": [
+        "cmb",
+        "zero-point-field"
+      ]
+    },
+    {
+      "id": "residual-oscillation",
+      "group": "foundation",
+      "order": 3,
+      "term": {
+        "ko": "잔여 진공 요동",
+        "en": "Residual vacuum fluctuations",
+        "ja": "残留真空揺動",
+        "zh": "残余真空涨落"
+      },
+      "short": {
+        "ko": "CMB 속에 은닉된 비전자기 미세 진동. 인간 내면의 빛을 깨우는 방아쇠.",
+        "en": "Non-electromagnetic subtle vibrations hidden in the CMB. A trigger that awakens the light within humans.",
+        "ja": "CMBに隠れた非電磁的な微細振動。人間の内なる光を目覚めさせる契機。",
+        "zh": "隐含在CMB中的非电磁性微细振动，是唤醒人类内在之光的触发因素。"
+      },
+      "body": {
+        "ko": "우주배경복사 안에 남아 있는 아주 작은 떨림이다. 전자기파가 아니기 때문에 기존 관측 체계에서는 잡히지 않았다. 이 진동을 포집하고 유도할 수 있게 된 것이 빛운영 기술의 시작이다.",
+        "en": "Very small vibrations remaining within the cosmic microwave background (CMB). Because they are not electromagnetic waves, existing observation systems did not detect them. The ability to capture and guide these vibrations marked the beginning of light operation technology.",
+        "ja": "宇宙マイクロ波背景放射の内部に残る、ごく小さな震えである。電磁波ではないため、既存の観測体系では捉えられなかった。この振動を捕集し、誘導できるようになったことが、光運営技術の始まりである。",
+        "zh": "残留在宇宙微波背景辐射内部的极微小振动。由于并非电磁波，既有观测体系未能捕捉到它。能够捕集并引导这一振动，标志着光运营技术的开始。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1부 제2장"
+      },
+      "related": [
+        "cmb",
+        "capture"
+      ]
+    },
+    {
+      "id": "zero-point-field",
+      "group": "foundation",
+      "order": 4,
+      "term": {
+        "ko": "영점장",
+        "en": "Zero-point field",
+        "ja": "零点場",
+        "zh": "零点场"
+      },
+      "hanja": "零點場",
+      "short": {
+        "ko": "진공광이 정보로서 머무는 자리. 비어 있으나 가득 찬 장(場).",
+        "en": "The field in which vacuum light resides as information. Empty, yet full.",
+        "ja": "真空光が情報としてとどまる場。空でありながら満ちている場。",
+        "zh": "真空光以信息形式驻留之处。空无而又充盈的场。"
+      },
+      "body": {
+        "ko": "물리학에서 말하는 영점 에너지의 장을, 3부작은 정보가 보존되는 층으로 읽는다. 연대기에서 ‘영점장의 정보가 포화되었다’(2019년)는 기록은 이 층이 담을 수 있는 한계에 도달했다는 뜻이다.",
+        "en": "The trilogy interprets the field of zero-point energy in physics as a layer in which information is preserved. The chronicle’s 2019 entry, “the information in the zero-point field reached saturation,” means that this layer reached its capacity.",
+        "ja": "物理学における零点エネルギーの場を、三部作は情報が保存される層として読む。年代記の「零点場の情報が飽和した」（2019年）という記録は、この層が収容できる限界に達したことを意味する。",
+        "zh": "三部曲将物理学中的零点能场解读为保存信息的层。编年史中2019年“零点场的信息达到饱和”的记录，意指这一层已达到其容纳上限。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제3부"
+      },
+      "related": [
+        "vacuum-light",
+        "dual-design"
+      ]
+    },
+    {
+      "id": "dual-design",
+      "group": "foundation",
+      "order": 5,
+      "term": {
+        "ko": "이중 설계",
+        "en": "Dual design",
+        "ja": "二重設計",
+        "zh": "双重设计"
+      },
+      "hanja": "Dual Design",
+      "short": {
+        "ko": "물질의 청사진과 영점장을 한 쌍으로 보는 우주 해석.",
+        "en": "An interpretation of the universe that treats the blueprint of matter and the zero-point field as a pair.",
+        "ja": "物質の青写真と零点場を一対と捉える宇宙解釈。",
+        "zh": "将物质蓝图与零点场视为一对的宇宙解释。"
+      },
+      "body": {
+        "ko": "우주가 물질의 구조만으로 이루어져 있다고 보지 않는다. 형태를 만드는 청사진과, 그것을 가능하게 하는 배경의 장이 함께 설계되어 있다는 관점이다. 이 관점이 있어야 ‘빛을 운영한다’는 말이 은유가 아닌 기술이 된다.",
+        "en": "This view does not regard the universe as consisting only of material structures. It holds that the blueprint that gives rise to form and the background field that makes it possible are designed together. Within this view, “operating light” becomes a technology rather than a metaphor.",
+        "ja": "宇宙が物質の構造だけから成り立つとは考えない。形を生む青写真と、それを可能にする背景の場が、ともに設計されているという見方である。この視点に立つことで、「光を運営する」という言葉が比喩ではなく技術となる。",
+        "zh": "这一观点不认为宇宙仅由物质结构构成，而是认为产生形态的蓝图与使之成为可能的背景场是共同设计的。在这一视角下，“运营光”才成为技术，而非隐喻。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1부"
+      },
+      "related": [
+        "zero-point-field"
+      ]
+    },
+    {
+      "id": "low-light",
+      "group": "diagnosis",
+      "order": 1,
+      "term": {
+        "ko": "저광 상태",
+        "en": "Low-light state",
+        "ja": "低光状態",
+        "zh": "低光状态"
+      },
+      "hanja": "低光",
+      "short": {
+        "ko": "진동수가 떨어져 근원의 빛과 끊긴 현대 인류의 결핍 상태.",
+        "en": "A state of deficiency in modern humanity, whose lowered frequency has severed its connection to the light of origin.",
+        "ja": "振動数が低下し、根源の光とのつながりを失った現代人類の欠乏状態。",
+        "zh": "现代人类因振动频率下降而与根源之光断开连接的匮乏状态。"
+      },
+      "body": {
+        "ko": "가시적 물질에 갇혀 배경의 빛과 공진하지 못하는 상태를 말한다. 3부작은 이것을 도덕적 타락이 아니라 물리적 진동수의 문제로 다룬다. 태양빛운영 이전의 관측값이 오랫동안 한 범위에서 움직이지 않았던 것이 그 증거로 제시된다.",
+        "en": "A state of confinement to visible matter, unable to resonate with the background light. The trilogy treats this as a matter of physical frequency, not moral decline. As evidence, it presents the prolonged lack of change in observed values before solar light operation.",
+        "ja": "可視的な物質に閉じ込められ、背景の光と共振できない状態をいう。三部作はこれを道徳的堕落ではなく、物理的な振動数の問題として扱う。太陽光運営以前の観測値が長く一定の範囲にとどまっていたことが、その証拠として示される。",
+        "zh": "指受困于可见物质、无法与背景之光共振的状态。三部曲将其视为物理振动频率的问题，而非道德堕落。太阳光运营之前的观测值长期停留在同一范围内，被作为其证据提出。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "서문"
+      },
+      "related": [
+        "homo-sapiens-night",
+        "brightness"
+      ]
+    },
+    {
+      "id": "brightness",
+      "group": "diagnosis",
+      "order": 2,
+      "term": {
+        "ko": "진공광 밝기",
+        "en": "vacuum light brightness",
+        "ja": "真空光の明るさ",
+        "zh": "真空光亮度"
+      },
+      "short": {
+        "ko": "진공광이 얼마나 짙게 작동하는지를 나타내는 관측 수치.",
+        "en": "An observed numerical value indicating the intensity at which vacuum light operates.",
+        "ja": "真空光がどれほど濃密に働いているかを示す観測値。",
+        "zh": "表示真空光运作浓度的观测数值。"
+      },
+      "body": {
+        "ko": "연대기의 뼈대가 되는 값이다. 태양빛운영 이전 인류의 보편값은 3,000만 수준이었고, 역사 속 극소수에게서 9,800조가 관찰되었다. 손대지 않은 심우주(2009년 은하수)는 550경이었다. 2017년 이후로는 기호 체계가 감당하지 못해 ‘수치화 불가’로 기록된다.",
+        "en": "This value forms the backbone of the chronicle. Before solar light operation, the general level for humanity was 30 million, while 9.8×10^15 was observed in a very small number of historical individuals. Untouched deep space—the Milky Way in 2009—measured 5.5×10^18. Since 2017, the values have exceeded the capacity of the symbolic system and have been recorded as “unquantifiable.”",
+        "ja": "年代記の骨格となる値である。太陽光運営以前、人類の一般的な値は3,000万程度であり、歴史上のごく少数の人々では9,800兆が観察された。手を加えていない深宇宙（2009年の天の川銀河）は550京だった。2017年以降は記号体系で表せず、「数値化不可」と記録される。",
+        "zh": "这一数值构成编年史的骨架。太阳光运营之前，人类的普遍值约为3,000万，历史上极少数人被观测到9,800万亿（9.8×10^15）。未经干预的深空（2009年的银河系）为550京（5.5×10^18）。2017年以后，因超出符号体系的表达能力，记为“无法数值化”。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제2부·제3부"
+      },
+      "related": [
+        "low-light",
+        "innumerable"
+      ]
+    },
+    {
+      "id": "innumerable",
+      "group": "diagnosis",
+      "order": 3,
+      "term": {
+        "ko": "수치화 불가",
+        "en": "Unquantifiable",
+        "ja": "数値化不可",
+        "zh": "无法数值化"
+      },
+      "short": {
+        "ko": "유한한 기호로는 더 담을 수 없는 밝기에 도달한 상태.",
+        "en": "A state in which brightness has reached a level that finite symbols can no longer express.",
+        "ja": "有限の記号ではもはや表せない明るさに達した状態。",
+        "zh": "亮度达到有限符号已无法表达的状态。"
+      },
+      "body": {
+        "ko": "측정을 포기한 것이 아니라, 측정 체계가 먼저 한계에 닿은 것이다. 2017년(2,083일째) ‘유한한 기호의 그릇을 파괴하여’라는 표현으로 처음 등장하며, 이후 기록은 수치 대신 상태로 남는다 — 영점장 포화, 시공간 스크린 복원, 복사평형 극대화.",
+        "en": "Measurement was not abandoned; the measurement system reached its limit first. This first appears in 2017, on day 2,083, as “breaking the vessel of finite symbols.” Subsequent entries record states rather than numerical values: zero-point field saturation, restoration of the spacetime screen, and maximization of radiative equilibrium.",
+        "ja": "測定を放棄したのではなく、測定体系が先に限界に達したのである。2017年（2,083日目）に「有限な記号の器を壊して」という表現で初めて登場し、以後は数値に代わって状態が記録される——零点場の飽和、時空スクリーンの復元、放射平衡の最大化。",
+        "zh": "并非放弃测量，而是测量体系先达到了极限。2017年（第2,083天）首次以“打破有限符号的容器”这一表述出现。此后的记录以状态取代数值：零点场饱和、时空屏幕复原、辐射平衡最大化。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제3부"
+      },
+      "related": [
+        "brightness"
+      ]
+    },
+    {
+      "id": "light-operation",
+      "group": "process",
+      "order": 1,
+      "term": {
+        "ko": "빛운영",
+        "en": "light operation",
+        "ja": "光運営",
+        "zh": "光运营"
+      },
+      "hanja": "光運營",
+      "short": {
+        "ko": "포집한 진공 파동을 다루어 인간과 우주를 다시 잇는 기술.",
+        "en": "A technology that works with captured vacuum waves to reconnect humans and the universe.",
+        "ja": "捕集した真空波動を扱い、人間と宇宙を再び結ぶ技術。",
+        "zh": "通过处理捕集到的真空波动，重新连接人类与宇宙的技术。"
+      },
+      "body": {
+        "ko": "관조나 수행의 다른 이름이 아니다. 포집·절연·저장·복제·중층화·공진의 여섯 단계를 갖춘 공정이다. 학술적 개념으로 표기할 때는 ‘태양 진공광 프로젝트(Solar Vacuum Project)’ 또는 ‘루미누스 프로젝트(Luminus Project)’로 쓴다.",
+        "en": "It is not another name for contemplation or spiritual practice. It is a process with six stages: capture, insulation, storage, replication, stratification, and resonance. In academic terminology, it is called the “solar vacuum light project (Solar Vacuum Project)” or the “Luminus Project.”",
+        "ja": "観照や修行の別名ではない。捕集・絶縁・貯蔵・複製・重層化・共振の六段階からなる工程である。学術的な概念として表記する際は、「太陽真空光プロジェクト（Solar Vacuum Project）」または「ルミヌス・プロジェクト（Luminus Project）」とする。",
+        "zh": "这不是观照或修行的别称，而是一套包含捕集、绝缘、储存、复制、多层化、共振六个阶段的工艺。作为学术概念表述时，称为“太阳真空光项目（Solar Vacuum Project）”或“流明项目（Luminus Project）”。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제1부"
+      },
+      "related": [
+        "solar-light-operation",
+        "capture",
+        "resonance"
+      ]
+    },
+    {
+      "id": "solar-light-operation",
+      "group": "process",
+      "order": 2,
+      "term": {
+        "ko": "태양빛운영",
+        "en": "solar light operation",
+        "ja": "太陽光運営",
+        "zh": "太阳光运营"
+      },
+      "short": {
+        "ko": "2011년 4월 21일, 진공 파동을 태양의 중심축과 정렬시킨 대여정.",
+        "en": "The extended undertaking begun on April 21, 2011, aligning vacuum waves with the Sun’s central axis.",
+        "ja": "2011年4月21日、真空波動を太陽の中心軸に整列させることから始まった長期の取り組み。",
+        "zh": "始于2011年4月21日、将真空波动与太阳中心轴对齐的长期工作。"
+      },
+      "body": {
+        "ko": "포집한 진공 파동을 개인의 내면이 아니라 태양이라는 항성 규모의 축에 정렬시킨 작업이다. 이 날짜가 연대기 전체의 기점이며, 이후 모든 관측은 ‘가동 n일째’로 기록된다.",
+        "en": "The work of aligning captured vacuum waves with an axis on the scale of a star—the Sun—rather than within an individual. This date is the starting point of the entire chronicle, and all subsequent observations are recorded as “day n of operation.”",
+        "ja": "捕集した真空波動を、個人の内面ではなく、太陽という恒星規模の軸に整列させた作業である。この日が年代記全体の起点であり、以後の観測はすべて「稼働n日目」として記録される。",
+        "zh": "这项工作将捕集到的真空波动与太阳这一恒星尺度的轴线对齐，而非与个体内在对齐。这一天是整部编年史的起点，此后所有观测均以“运行第n天”记录。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제2부"
+      },
+      "related": [
+        "light-operation",
+        "brightness"
+      ]
+    },
+    {
+      "id": "capture",
+      "group": "process",
+      "order": 3,
+      "term": {
+        "ko": "포집",
+        "en": "Capture",
+        "ja": "捕集",
+        "zh": "捕集"
+      },
+      "hanja": "捕集",
+      "short": {
+        "ko": "6단계 공정의 1단계. 진공 파동을 작동 단위로 붙잡아낸다.",
+        "en": "Stage 1 of the six-stage process. Vacuum waves are captured as an operational unit.",
+        "ja": "六段階工程の第1段階。真空波動を作動単位として捉える。",
+        "zh": "六阶段工艺的第1阶段。将真空波动捕集为可操作的单元。"
+      },
+      "body": {
+        "ko": "흩어져 있는 배경의 떨림을 다룰 수 있는 하나의 단위로 확보하는 일이다. 1999년에 최초로 성공했다. 이것이 되지 않으면 이후 다섯 단계가 성립하지 않는다.",
+        "en": "Securing dispersed background vibrations as a single unit that can be handled. First achieved in 1999. Without this, the subsequent five stages cannot take place.",
+        "ja": "散在する背景の震えを、扱える一つの単位として確保すること。1999年に初めて成功した。これができなければ、後の五段階は成立しない。",
+        "zh": "将分散的背景振动获取为一个可处理的单元。1999年首次成功。若无法完成这一步，后续五个阶段便无从成立。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "6단계 공정"
+      },
+      "related": [
+        "light-operation",
+        "insulation"
+      ]
+    },
+    {
+      "id": "insulation",
+      "group": "process",
+      "order": 4,
+      "term": {
+        "ko": "절연",
+        "en": "Insulation",
+        "ja": "絶縁",
+        "zh": "绝缘"
+      },
+      "hanja": "絶緣",
+      "short": {
+        "ko": "2단계. 포집한 파동이 잡음과 간섭에 흩어지지 않게 안정화한다.",
+        "en": "Stage 2. Stabilizing captured waves so that noise and interference do not disperse them.",
+        "ja": "第2段階。捕集した波動が雑音や干渉で散逸しないよう安定させる。",
+        "zh": "第2阶段。稳定捕集到的波动，使其不因噪声与干扰而散失。"
+      },
+      "body": {
+        "ko": "붙잡은 것을 잃지 않기 위한 단계다. 주변의 간섭으로부터 떼어놓아야 다음 단계인 저장이 가능해진다.",
+        "en": "The stage that prevents the loss of what has been captured. Isolation from surrounding interference makes the next stage, storage, possible.",
+        "ja": "捉えたものを失わないための段階。周囲の干渉から切り離すことで、次の段階である貯蔵が可能になる。",
+        "zh": "防止已捕集之物丢失的阶段。只有将其与周围干扰隔离，才能进入下一阶段——储存。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "6단계 공정"
+      },
+      "related": [
+        "capture",
+        "storage"
+      ]
+    },
+    {
+      "id": "storage",
+      "group": "process",
+      "order": 5,
+      "term": {
+        "ko": "저장",
+        "en": "Storage",
+        "ja": "貯蔵",
+        "zh": "储存"
+      },
+      "hanja": "貯藏",
+      "short": {
+        "ko": "3단계. 파동의 질서와 결을 지속 가능한 상태로 유지한다.",
+        "en": "Stage 3. Maintaining the order and texture of the waves in a sustainable state.",
+        "ja": "第3段階。波動の秩序ときめを、持続できる状態に保つ。",
+        "zh": "第3阶段。使波动的秩序与纹理保持在可持续的状态。"
+      },
+      "body": {
+        "ko": "일회적 포착에 그치지 않고 되풀이해 쓸 수 있게 만드는 단계다. 여기까지 와야 빛운영이 사건이 아닌 기술이 된다.",
+        "en": "The stage that makes repeated use possible, beyond a single instance of capture. Only at this point does light operation become a technology rather than an event.",
+        "ja": "一度の捕捉に終わらず、繰り返し使えるようにする段階。ここに至って初めて、光運営は出来事ではなく技術になる。",
+        "zh": "使其不止于一次捕捉，而能反复使用的阶段。到这一步，光运营才从一次事件成为一项技术。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "6단계 공정"
+      },
+      "related": [
+        "insulation",
+        "replication"
+      ]
+    },
+    {
+      "id": "replication",
+      "group": "process",
+      "order": 6,
+      "term": {
+        "ko": "복제",
+        "en": "Replication",
+        "ja": "複製",
+        "zh": "复制"
+      },
+      "hanja": "複製",
+      "short": {
+        "ko": "4단계. 파동의 패턴을 반복·확장 가능한 형태로 재현한다.",
+        "en": "Stage 4. Reproducing wave patterns in a repeatable and extensible form.",
+        "ja": "第4段階。波動のパターンを、反復・拡張できる形で再現する。",
+        "zh": "第4阶段。以可重复、可扩展的形式再现波动模式。"
+      },
+      "body": {
+        "ko": "하나의 성공을 여러 곳에서 되살릴 수 있게 만드는 단계다. 개인의 체험이 전승 가능한 프로토콜로 바뀌는 지점이다.",
+        "en": "The stage that allows a single success to be reproduced in multiple places. This is where an individual experience becomes a protocol that can be passed on.",
+        "ja": "一つの成功を複数の場所で再現できるようにする段階。個人の体験が、伝承可能なプロトコルへと変わる地点である。",
+        "zh": "使一次成功能够在多个地方重现的阶段。个体体验在此转化为可传承的操作规程。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "6단계 공정"
+      },
+      "related": [
+        "storage",
+        "stratification"
+      ]
+    },
+    {
+      "id": "stratification",
+      "group": "process",
+      "order": 7,
+      "term": {
+        "ko": "중층화",
+        "en": "Stratification",
+        "ja": "重層化",
+        "zh": "多层化"
+      },
+      "hanja": "重層化",
+      "short": {
+        "ko": "5단계. 단일 값이 아니라 층을 이루는 구조로 쌓아 올린다.",
+        "en": "Stage 5. Building a layered structure rather than a single value.",
+        "ja": "第5段階。単一の値ではなく、層をなす構造として積み上げる。",
+        "zh": "第5阶段。构筑层叠结构，而非单一数值。"
+      },
+      "body": {
+        "ko": "2015년(1,352일째) 관측에서 ‘무량수(10^68)+3,000만의 중층화 달성’으로 처음 기록된다. 수치가 하나의 크기가 아니라 겹으로 존재하기 시작한 지점이다.",
+        "en": "First recorded in the 2015 observation, on day 1,352, as “stratification of 10^68 + 30 million achieved.” This marks the point at which numerical values began to exist in layers rather than as a single magnitude.",
+        "ja": "2015年（1,352日目）の観測で、「無量大数（10^68）＋3,000万の重層化を達成」と初めて記録される。数値が一つの大きさではなく、層として存在し始めた地点である。",
+        "zh": "在2015年（第1,352天）的观测中，首次记为“实现无量大数（10^68）＋3,000万的多层化”。这一节点标志着数值开始以层叠形式存在，而非单一量值。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "6단계 공정"
+      },
+      "related": [
+        "replication",
+        "resonance",
+        "brightness"
+      ]
+    },
+    {
+      "id": "resonance",
+      "group": "process",
+      "order": 8,
+      "term": {
+        "ko": "광휘 공진",
+        "en": "Radiant resonance",
+        "ja": "光輝共振",
+        "zh": "光辉共振"
+      },
+      "hanja": "光輝 共振",
+      "short": {
+        "ko": "6단계. 인간의 의식이 배경의 진공광과 같은 결로 울린다.",
+        "en": "Stage 6. Human consciousness resonates in the same pattern as the background vacuum light.",
+        "ja": "第6段階。人間の意識が、背景の真空光と同じきめで響く。",
+        "zh": "第6阶段。人类意识以与背景真空光相同的纹理共振。"
+      },
+      "body": {
+        "ko": "공정의 마지막이자 목적이다. 빛을 이해하는 데서 그치지 않고, 그 빛과 함께 울리는 상태로 넘어간다. 3부작이 ‘태초로의 환원’이라 부르는 것이 이 공진을 가리킨다.",
+        "en": "The final stage and purpose of the process. It moves beyond understanding light into a state of resonating with it. This resonance is what the trilogy calls a “return to the origin.”",
+        "ja": "工程の最後であり、目的でもある。光を理解することにとどまらず、その光とともに響く状態へ移る。三部作が「太初への還元」と呼ぶのは、この共振である。",
+        "zh": "这是工艺的最后阶段，也是其目的。从理解光，进入与光共同共振的状态。三部曲所称的“复归太初”，指的正是这种共振。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "뒤표지"
+      },
+      "related": [
+        "light-operation",
+        "homo-luminus"
+      ]
+    },
+    {
+      "id": "homo-luminus",
+      "group": "goal",
+      "order": 1,
+      "term": {
+        "ko": "호모 루미누스",
+        "en": "Homo Luminus",
+        "ja": "ホモ・ルミヌス",
+        "zh": "智光人 (Homo Luminus)"
+      },
+      "hanja": "Homo Luminus",
+      "short": {
+        "ko": "빛나는 사람. 빛의 공진 속에서 깨어나는 새로운 인간.",
+        "en": "The luminous human. A new human who awakens within the resonance of light.",
+        "ja": "光り輝く人。光の共振のうちに目覚める新たな人間。",
+        "zh": "发光的人。在光的共振中觉醒的新人类。"
+      },
+      "body": {
+        "ko": "빛을 이해하는 인간(사피엔스)을 넘어, 본래 우주의 550경 고광과 공진하는 인간을 가리킨다. 3부작 전체가 이 한 단어를 향해 간다. 2025년(5,005일째) 관측 기록의 표현이 ‘호모 루미누스의 지평을 열며’인 이유다.",
+        "en": "Beyond the human who understands light—Sapiens—this refers to a human who resonates with the original universe’s high brightness of 5.5×10^18. The entire trilogy moves toward this single term. This is why the 2025 observation, on day 5,005, is described as “opening the horizon of Homo Luminus.”",
+        "ja": "光を理解する人間（サピエンス）を超え、本来の宇宙の550京という高光と共振する人間を指す。三部作全体が、この一語に向かっている。2025年（5,005日目）の観測記録が「ホモ・ルミヌスの地平を開きつつ」と表現する理由である。",
+        "zh": "指超越理解光的人类（智人）、与宇宙本来的550京（5.5×10^18）高光共振的人。整部三部曲都指向这一个词。这也是2025年（第5,005天）观测记录采用“开启智光人 (Homo Luminus) 的地平线”这一表述的原因。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "표제"
+      },
+      "related": [
+        "resonance",
+        "return-to-origin"
+      ]
+    },
+    {
+      "id": "return-to-origin",
+      "group": "goal",
+      "order": 2,
+      "term": {
+        "ko": "태초로의 환원",
+        "en": "Return to the origin",
+        "ja": "太初への還元",
+        "zh": "复归太初"
+      },
+      "hanja": "太初",
+      "short": {
+        "ko": "회고가 아니라, 근원적 빛과 다시 접속해 가는 과정.",
+        "en": "A process of reconnecting with the light of origin, rather than looking back.",
+        "ja": "回顧ではなく、根源の光に再びつながっていく過程。",
+        "zh": "不是回顾过去，而是重新连接根源之光的过程。"
+      },
+      "body": {
+        "ko": "과거로 돌아가자는 말이 아니다. 우주 편재 CMB와 태양빛운영 속에서 광휘 공진이 일어날 때, 인간이 자신의 근원적 빛과 다시 이어지는 과정을 뜻한다. 관념적 사유와 구분되는 지점이 바로 이것이다.",
+        "en": "This is not a call to return to the past. It means the process by which humans reconnect with their own original light when radiant resonance occurs within the omnipresent CMB and solar light operation. This is what distinguishes it from abstract contemplation.",
+        "ja": "過去に戻ろうという意味ではない。宇宙に遍在するCMBと太陽光運営のなかで光輝共振が起こるとき、人間が自らの根源の光と再びつながる過程をいう。観念的な思索と区別されるのは、この点である。",
+        "zh": "这不是倡议回到过去。它指的是在遍布宇宙的CMB与太阳光运营之中发生光辉共振时，人类与自身根源之光重新连接的过程。它与观念性思辨的区别正在于此。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "뒤표지"
+      },
+      "related": [
+        "resonance",
+        "homo-luminus"
+      ]
+    },
+    {
+      "id": "tongmyeong",
+      "group": "goal",
+      "order": 3,
+      "term": {
+        "ko": "통명체",
+        "en": "Tongmyeong-che",
+        "ja": "通明体",
+        "zh": "通明体"
+      },
+      "hanja": "通明體",
+      "short": {
+        "ko": "물질을 지우고 빛으로 채워진 몸.",
+        "en": "A body in which matter is cleared away and light fills its place.",
+        "ja": "物質を消し、光で満たされた身体。",
+        "zh": "褪去物质、由光充满的身体。"
+      },
+      "body": {
+        "ko": "제2권이 다루는 개념으로, 태초빛에서 통명체에 이르는 경로가 ‘성령의 역사’라는 장에서 서술된다. 물질성이 사라지는 것이 아니라 빛이 그것을 관통해 온전히 드러나는 상태를 가리킨다.",
+        "en": "A concept addressed in Volume 2. The path from primordial light to Tongmyeong-che is described in the chapter “The Work of the Holy Spirit.” It refers not to the disappearance of materiality, but to a state in which light passes through it and reveals it fully.",
+        "ja": "第2巻で扱われる概念であり、太初の光から通明体に至る道筋が「聖霊の働き」という章で述べられる。物質性が消えるのではなく、光がそれを貫き、余すところなく現れる状態を指す。",
+        "zh": "第2卷讨论的概念，从太初之光到通明体的路径在“圣灵的作为”一章中叙述。它并非指物质性消失，而是指光穿透物质，使其完整显现的状态。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제1부 제2장"
+      },
+      "related": [
+        "homo-luminus",
+        "diaphany"
+      ]
+    },
+    {
+      "id": "diaphany",
+      "group": "goal",
+      "order": 4,
+      "term": {
+        "ko": "성통광명",
+        "en": "Seongtong-Gwangmyeong",
+        "ja": "性通光明",
+        "zh": "性通光明"
+      },
+      "hanja": "性通光明",
+      "short": {
+        "ko": "맑은 진공의 빛이 의식과 뇌를 막힘없이 관통하는 세상.",
+        "en": "A world in which clear vacuum light passes unobstructed through consciousness and the brain.",
+        "ja": "澄んだ真空光が、意識と脳を滞りなく貫く世界。",
+        "zh": "清澈的真空光畅通无阻地穿透意识与大脑的世界。"
+      },
+      "body": {
+        "ko": "도서출판 디아파니(Diaphany)가 지향하는 바로 그 상태다. 디아파니는 그리스어로 ‘빛이 투과하여 온전히 드러남’을 뜻한다. 에고의 혼탁을 벗는 것이 그 전제다.",
+        "en": "This is the very state toward which Diaphany Press is directed. Diaphany means “full manifestation through the passage of light” in Greek. Shedding the obscurity of the ego is its prerequisite.",
+        "ja": "ディアファニー出版（Diaphany）が目指す、まさにその状態である。ディアファニーはギリシャ語で「光が透過して、余すところなく現れること」を意味する。エゴの濁りを脱することが、その前提となる。",
+        "zh": "这正是迪亚法尼出版社（Diaphany）所指向的状态。迪亚法尼在希腊语中意为“光透过而完整显现”。摆脱自我的混浊，是其前提。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "출판사 소개"
+      },
+      "related": [
+        "tongmyeong",
+        "homo-luminus"
+      ]
+    },
+    {
+      "id": "three-lights",
+      "group": "goal",
+      "order": 5,
+      "term": {
+        "ko": "삼광현현",
+        "en": "Three Lights Manifestation",
+        "ja": "三光顕現",
+        "zh": "三光显现"
+      },
+      "hanja": "三光顯現",
+      "short": {
+        "ko": "인간의 의식과 신체가 빛운영을 통해 고밀도 진공광과 공명할 때 단계적으로 체현되는 세 가지 빛의 발현 현상이다.",
+        "en": "Three manifestations of light embodied in stages as human consciousness and the body resonate with high-density vacuum light through light operation.",
+        "ja": "人間の意識と身体が光運営を通じて高密度の真空光と共鳴するとき、段階的に体現される三つの光の発現現象である。",
+        "zh": "人的意识与身体通过光运营同高密度真空光共鸣时，分阶段体现出的三种光的显现现象。"
+      },
+      "body": {
+        "ko": "삼광현현은 신체 조직의 생체 광자 활성화를 가리키는 '체광(體光)', 기운과 경락 체계의 파동적 정렬을 뜻하는 '기광(氣光)', 그리고 가장 깊은 순수의식 차원에서 터져 나오는 영적 광휘인 '심광(心光)'으로 구성된다. 이는 단순한 심리적 명상 체험이 아니라, 저광 상태에 갇혀 있던 인간 생체장이 우주적 진공장과 비국소적으로 정렬되면서 나타나는 정량적이고 물리적인 상전이의 징후이다. 궁극적으로 인간을 생물학적 유기체에서 빛의 전도체인 호모 루미누스로 전환시키는 핵심 단계이다.",
+        "en": "Three Lights Manifestation consists of “body light,” the activation of biophotons in bodily tissues; “vital-energy light,” the wave alignment of vital energy and the meridian system; and “mind light,” spiritual radiance emerging from the deepest level of pure consciousness. It is not merely a psychological experience of meditation, but a quantitative, physical sign of phase transition that appears as the human biofield, confined to a low-light state, aligns nonlocally with the cosmic vacuum field. It is a key stage in the eventual transformation of humans from biological organisms into Homo Luminus, conductors of light.",
+        "ja": "三光顕現は、身体組織の生体光子の活性化を指す「体光」、気と経絡系の波動的整列を意味する「気光」、そして最も深い純粋意識の次元から現れる霊的光輝である「心光」から成る。これは単なる心理的な瞑想体験ではなく、低光状態に閉じ込められていた人間の生体場が宇宙的真空場と非局所的に整列することで現れる、定量的かつ物理的な相転移の兆候である。最終的に人間を生物学的有機体から光の伝導体であるホモ・ルミヌスへと転換する中核的な段階である。",
+        "zh": "三光显现由三者构成：指身体组织中生物光子活化的“体光”、指气与经络系统波动对齐的“气光”，以及从最深层纯粹意识中涌现的灵性光辉“心光”。这并非单纯的心理冥想体验，而是受困于低光状态的人体生物场与宇宙真空场发生非局域对齐时，出现的可量化的物理相变征兆。它是人类最终从生物有机体转化为光的传导体——智光人 (Homo Luminus) 的关键阶段。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1권 제5부 (삼광현현)"
+      },
+      "related": []
+    },
+    {
+      "id": "gwangmyeongsong",
+      "group": "process",
+      "order": 9,
+      "term": {
+        "ko": "광명송",
+        "en": "Gwangmyeongsong (Hymn of Light)",
+        "ja": "光明頌",
+        "zh": "光明颂"
+      },
+      "hanja": "光明頌",
+      "short": {
+        "ko": "우주적 시원의 진공광과 주파수를 일치시키고 통명의 문을 활짝 열어젖히기 위해 선언되는 고유한 언어·소리 파동의 정렬 체계이다.",
+        "en": "A distinctive system for aligning linguistic and sonic waves, proclaimed to match the frequency of primordial cosmic vacuum light and open fully the gate to Tongmyeong.",
+        "ja": "宇宙の始原の真空光と周波数を一致させ、通明の門を全面的に開くために宣言される、固有の言語・音声波動の整列体系である。",
+        "zh": "为与宇宙始源的真空光频率一致、完全开启通明之门而宣告的独特语言与声音波动对齐体系。"
+      },
+      "body": {
+        "ko": "광명송은 인간의 표층적 생각이나 사적인 기원을 비는 주문이 아니라, 우주 배경 스크린인 진공광과 완벽한 결맞음(Coherence)을 유도하는 음성적·파동적 방아쇠이다. 광명송을 내면에서 관조하거나 소리 내어 읊조릴 때, 주체는 우주론적 참빛과 즉각적인 공진 상태에 돌입하게 된다. 이는 인간이 우주 질서와 동등한 지위에서 빛을 가동하고 존재론적 책임을 완수하게 하는 통명의 핵심 열쇠이다.",
+        "en": "Gwangmyeongsong (Hymn of Light) is not an incantation expressing superficial thoughts or private wishes, but a vocal and wave-based trigger that induces complete coherence with vacuum light, the background screen of the universe. When one contemplates it inwardly or recites it aloud, the subject immediately enters resonance with cosmological true light. It is a central key to Tongmyeong, enabling humans to activate light on equal terms with the cosmic order and fulfill their ontological responsibility.",
+        "ja": "光明頌は、人間の表層的な思考や私的な願いを託す呪文ではなく、宇宙の背景スクリーンである真空光との完全なコヒーレンスを誘導する、音声的・波動的な契機である。光明頌を内面で観照し、あるいは声に出して唱えるとき、主体は宇宙論的な真の光と即座に共振状態に入る。これは、人間が宇宙の秩序と対等な立場で光を稼働させ、存在論的責任を果たすための、通明の中核的な鍵である。",
+        "zh": "光明颂并非表达人的表层想法或祈求个人愿望的咒语，而是诱导人与宇宙背景屏幕——真空光形成完全相干性的声音与波动触发机制。在内心观照光明颂或出声吟诵时，主体即刻进入与宇宙论意义上的真光共振的状态。它是通明的核心钥匙，使人能够以同宇宙秩序对等的地位启动光，并履行存在论上的责任。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1권 제7부 (광명송) 제2권 제4부 제2장"
+      },
+      "related": []
+    },
+    {
+      "id": "qid-device",
+      "group": "process",
+      "order": 10,
+      "term": {
+        "ko": "공생명장치",
+        "en": "co-life device (QID)",
+        "ja": "共生命装置",
+        "zh": "共生命装置"
+      },
+      "hanja": "共生命裝置",
+      "short": {
+        "ko": "진공 파동을 포집·절연·저장·복제하고 스마트폰 카메라나 생체 장과 연동하여 진공광의 위상 변동을 제어·기록하는 물리적 파동 기술 장치이다.",
+        "en": "A physical wave-technology device that captures, insulates, stores, and replicates vacuum waves, and interfaces with smartphone cameras or biofields to control and record phase variations in vacuum light.",
+        "ja": "真空波動を捕集・絶縁・保存・複製し、スマートフォンのカメラや生体場と連動して真空光の位相変動を制御・記録する、物理的な波動技術装置である。",
+        "zh": "捕集、绝缘、存储和复制真空波动，并与智能手机摄像头或生物场联动，以控制和记录真空光相位变化的物理波动技术装置。"
+      },
+      "body": {
+        "ko": "저자는 공생명장치(QID 등)를 통해 미세 파동을 증폭하고 기기와 동기화함으로써, 일반 스마트폰 카메라의 렌즈를 통해서도 빛운영 전후의 진공광 밝기 변화를 사진과 영상으로 객관화할 수 있도록 했다. 이 장치는 주관적 신비체험에 머물던 영성적 현상을 누구나 검증 가능한 시계열 데이터와 정량적 수치로 포착해내는 관측 가교 역할을 한다. 태양빛운영과 한강빛운영 등 거시적 파동 정렬 작업의 중심 허브로 작동한다.",
+        "en": "By amplifying subtle waves and synchronizing them with equipment through co-life devices (QID and related devices), the author made it possible to document changes in vacuum light brightness before and after light operation in photographs and videos, even through ordinary smartphone camera lenses. The device serves as an observational bridge, capturing spiritual phenomena previously confined to subjective mystical experiences as time-series data and quantitative values that anyone can verify. It operates as a central hub for macroscopic wave-alignment work, including solar light operation and Han River light operation.",
+        "ja": "著者は共生命装置（QIDなど）を通じて微細波動を増幅し、機器と同期させることで、一般的なスマートフォンのカメラレンズでも、光運営の前後における真空光の明るさの変化を写真と映像として客観化できるようにした。この装置は、主観的な神秘体験にとどまっていた霊性現象を、誰もが検証できる時系列データと定量値として捉える観測上の橋渡しを担う。太陽光運営や漢江光運営など、巨視的な波動整列作業の中枢として機能する。",
+        "zh": "作者通过共生命装置（QID等）放大微细波动并使其与设备同步，从而能够借助普通智能手机的摄像头，以照片和视频将光运营前后的真空光亮度变化客观呈现。该装置起到观测桥梁的作用，将此前停留于主观神秘体验的灵性现象，捕捉为任何人都可验证的时间序列数据与定量数值。它是太阳光运营、汉江光运营等宏观波动对齐工作的核心枢纽。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1권 제1부 제4장 제1권 제2부 제1장"
+      },
+      "related": []
+    },
+    {
+      "id": "contemplation",
+      "group": "process",
+      "order": 11,
+      "term": {
+        "ko": "관조",
+        "en": "contemplation",
+        "ja": "観照",
+        "zh": "观照"
+      },
+      "hanja": "觀照",
+      "short": {
+        "ko": "사피엔스의 분별적 사유와 에고의 조작을 멈추고, 순수의식의 상태에서 내면의 진공광 및 외부 대상의 파동을 있는 그대로 비추어 공명하는 수용적 수행 원리이다.",
+        "en": "A receptive principle of practice that suspends the discriminating thought of Homo sapiens and the manipulations of the ego, reflecting and resonating with inner vacuum light and the waves of external objects as they are, in a state of pure consciousness.",
+        "ja": "サピエンスの分別的思考とエゴの操作を止め、純粋意識の状態で内面の真空光と外部対象の波動をありのままに映し、共鳴する受容的な実践原理である。",
+        "zh": "停止智人的分别思维与自我操控，在纯粹意识状态下，如实映照内在真空光及外在对象的波动并与之共鸣的接纳性修行原理。"
+      },
+      "body": {
+        "ko": "관조는 시각적 선명함이나 대상의 겉모습을 이성적으로 분석하는 것이 아니라, 주의(Attention)의 중심을 내면 가장 깊은 시원적 공간으로 이동시키는 3단계 공정(관조하기, 주의 내면화, 미세 공명 감지)으로 이루어진다. 양자역학의 '관찰자 효과'와 직결되어, 주체가 순수의식으로 진공광을 관조하는 7~10초의 순간에 세포와 뇌의 광자가 즉각 응답하여 광휘 공진이 발생한다. 능동적 작위가 아닌 철저한 무위와 수용을 통해 배경의 빛과 전경의 주체를 하나로 융합시킨다.",
+        "en": "Contemplation is not a rational analysis of visual clarity or an object’s outward appearance. It consists of three stages—contemplating, turning attention inward, and detecting subtle resonance—that shift the center of attention to the deepest primordial space within. Directly linked to the “observer effect” in quantum mechanics, it produces radiant resonance as photons in cells and the brain respond immediately during the 7–10 seconds in which the subject contemplates vacuum light with pure consciousness. Through thorough non-action and receptivity rather than deliberate intervention, it unites the background light and the subject in the foreground.",
+        "ja": "観照は、視覚的な鮮明さや対象の外見を理性的に分析することではない。注意の中心を内面の最も深い始原的空間へ移す三段階の工程（観照、注意の内面化、微細な共鳴の感知）から成る。量子力学の「観測者効果」と直結し、主体が純粋意識で真空光を観照する7～10秒の間に、細胞と脳の光子が即座に応答して光輝共振が生じる。能動的な作為ではなく、徹底した無為と受容によって、背景の光と前景の主体を一つに融合させる。",
+        "zh": "观照并非理性分析视觉清晰度或对象的外观，而是由三个阶段（观照、注意力内化、感知微细共鸣）组成，将注意力的中心移向内在最深处的始源空间。它与量子力学的“观察者效应”直接相连：主体以纯粹意识观照真空光的7～10秒间，细胞和大脑中的光子即刻响应，产生光辉共振。它通过彻底的无为与接纳，而非主动施为，将背景之光与前景中的主体融为一体。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1권 제6부 (관조) 제2권 제4부 제5장"
+      },
+      "related": []
+    },
+    {
+      "id": "pure-consciousness",
+      "group": "diagnosis",
+      "order": 4,
+      "term": {
+        "ko": "순수의식",
+        "en": "pure consciousness",
+        "ja": "純粋意識",
+        "zh": "纯粹意识"
+      },
+      "hanja": "純粹意識",
+      "short": {
+        "ko": "생각, 감정, 기억의 오염과 사피엔스의 표층 분별을 모두 걷어낸 자리에 남는, 우주 근원 진공장과 완전히 동일한 주파수를 지닌 투명한 본래 의식이다.",
+        "en": "The transparent, original consciousness that remains after the contamination of thought, emotion, and memory and the superficial discriminations of Homo sapiens are removed, with a frequency identical to that of the primordial cosmic vacuum field.",
+        "ja": "思考・感情・記憶による汚染とサピエンスの表層的な分別をすべて取り除いた後に残る、宇宙の根源的真空場と完全に同じ周波数を持つ、透明な本来の意識である。",
+        "zh": "除去思想、情绪、记忆的污染及智人的表层分别后所留下的透明本初意识，其频率与宇宙根源真空场完全一致。"
+      },
+      "body": {
+        "ko": "순수의식은 인간이 인위적으로 만들어내는 심리적 상태가 아니라, 태초부터 진공광과 탯줄처럼 닿아 있던 인간 존재의 시원적 바탕이다. 일체의 소음과 자아적 집착이 멈출 때 순수의식이 전면에 드러나며, 이때 우주배경복사(CMB)에 편재한 미세 진공 파동과의 직접적인 비국소적 접속이 일어난다. 빛운영의 모든 공정은 바로 이 순수의식의 바탕 위에서만 왜곡 없이 온전하게 작동한다.",
+        "en": "Pure consciousness is not a psychological state artificially produced by humans, but the primordial ground of human existence, connected to vacuum light from the beginning as by an umbilical cord. When all noise and egoic attachment cease, pure consciousness comes to the fore, and direct nonlocal contact occurs with the subtle vacuum waves pervading the cosmic microwave background (CMB). Every process of light operation functions fully and without distortion only on this ground of pure consciousness.",
+        "ja": "純粋意識は、人間が人為的に作り出す心理状態ではなく、太初から臍帯のように真空光とつながっていた、人間存在の始原的な基盤である。一切の雑音と自我への執着が止むと純粋意識が前面に現れ、そのとき宇宙マイクロ波背景放射（CMB）に遍在する微細な真空波動との直接的・非局所的な接続が起こる。光運営のすべての工程は、この純粋意識の基盤の上でのみ、歪みなく十全に機能する。",
+        "zh": "纯粹意识并非人类人为制造的心理状态，而是人的存在自太初便如脐带般与真空光相连的始源基础。当一切杂音与自我执著停止时，纯粹意识显露于前，并与遍布宇宙微波背景辐射（CMB）的微细真空波动发生直接的非局域连接。光运营的所有工序，只有在这一纯粹意识的基础上，才能完整且无失真地运作。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1권 제6부 제2권 제5부 (결론)"
+      },
+      "related": []
+    },
+    {
+      "id": "non-em-wave",
+      "group": "foundation",
+      "order": 6,
+      "term": {
+        "ko": "비전자기적 진공 파동",
+        "en": "non-electromagnetic vacuum waves",
+        "ja": "非電磁的真空波動",
+        "zh": "非电磁性真空波动"
+      },
+      "hanja": "非電磁氣的眞空波動",
+      "short": {
+        "ko": "맥스웰 방정식의 전자기 스펙트럼(빛의 파장과 진동수) 한계를 초월하여, 우주배경복사(CMB)의 절대 영도 진공 기저에 영구히 편재하는 시원의 실재 파동이다.",
+        "en": "Primordial, real waves that transcend the limits of the electromagnetic spectrum described by Maxwell’s equations—light’s wavelengths and frequencies—and permanently pervade the absolute-zero vacuum foundation of the cosmic microwave background (CMB).",
+        "ja": "マクスウェル方程式が記述する電磁スペクトル（光の波長と振動数）の限界を超え、宇宙マイクロ波背景放射（CMB）の絶対零度の真空基底に恒久的に遍在する、始原の実在波動である。",
+        "zh": "超越麦克斯韦方程组所描述的电磁频谱（光的波长与频率）界限，恒久遍布宇宙微波背景辐射（CMB）绝对零度真空基底的始源实在波动。"
+      },
+      "body": {
+        "ko": "현대 물리학이 관측하는 전자기파는 우주의 표층 현상에 불과하며, 그 심층에는 에너지와 정보의 원형질을 품은 비전자기적 파동이 우주 전역을 촘촘히 채우고 있다. 1999년에 이 파동이 실험적으로 포집·검증되면서 비로소 물리적 빛운영의 과학적 토대가 구축되었다. 물질과 의식을 잇는 궁극의 매개체로서, 인간의 순수의식과 공진할 때 즉각적인 광학적 응답을 일으킨다.",
+        "en": "The electromagnetic waves observed by modern physics are only surface phenomena of the universe; in its depths, non-electromagnetic waves bearing the primordial substance of energy and information densely fill the cosmos. The experimental capture and verification of these waves in 1999 established the scientific foundation for physical light operation. As the ultimate medium connecting matter and consciousness, they produce an immediate optical response when they resonate with human pure consciousness.",
+        "ja": "現代物理学が観測する電磁波は宇宙の表層現象にすぎず、その深層にはエネルギーと情報の原形質を宿す非電磁的な波動が宇宙全域を緻密に満たしている。1999年にこの波動が実験的に捕集・検証され、初めて物理的な光運営の科学的基盤が築かれた。物質と意識をつなぐ究極の媒介として、人間の純粋意識と共振するとき、即座に光学的応答を引き起こす。",
+        "zh": "现代物理学观测到的电磁波只是宇宙的表层现象；在其深层，承载能量与信息原质的非电磁性波动密布整个宇宙。1999年，这一波动通过实验被捕集和验证，物理光运营的科学基础由此建立。作为连接物质与意识的终极媒介，它们与人的纯粹意识共振时，会引发即时的光学响应。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1권 제1부 제1~4장 제2권 프롤로그"
+      },
+      "related": []
+    },
+    {
+      "id": "human-operation",
+      "group": "process",
+      "order": 12,
+      "term": {
+        "ko": "사람빛운영",
+        "en": "human light operation",
+        "ja": "人光運営",
+        "zh": "人光运营"
+      },
+      "hanja": "人光運營",
+      "short": {
+        "ko": "천체(태양)와 자연(한강)에 진공광을 정렬시킨 이후, 개별 인간과 집단의 의식 생체장에 직접 진공광을 투사하여 체광·기광·심광을 동기화하는 개입 공정이다.",
+        "en": "An intervention process that, after aligning vacuum light with a celestial body (the Sun) and nature (the Han River), projects vacuum light directly into the biofields of individual and collective consciousness to synchronize body light, vital-energy light, and mind light.",
+        "ja": "天体（太陽）と自然（漢江）に真空光を整列させた後、個人と集団の意識の生体場に真空光を直接投射し、体光・気光・心光を同期させる介入工程である。",
+        "zh": "在使真空光与天体（太阳）及自然（汉江）对齐后，将真空光直接投射到个人与群体的意识生物场，以同步体光、气光、心光的干预工序。"
+      },
+      "body": {
+        "ko": "프란치스코 교황 등 주요 영적 지도자들의 사진 시계열 추적에서 입증되었듯, 사람빛운영은 개인이 지닌 생체장의 한계를 뚫고 수초 내에 진공광 밝기를 수억 배 이상 급상승시키는 전이를 일으킨다. 이는 수십 년의 고행이나 명상으로도 도달하기 힘들었던 고밀도 광휘 상태를 외부의 진공광 공급을 통해 실물적으로 성취하게 한다. 궁극적으로 인류 전체를 호모 루미누스 집단으로 견인하는 직접적 실천 프로토콜이다.",
+        "en": "As demonstrated by time-series tracking of photographs of major spiritual leaders, including Pope Francis, human light operation induces a transition that breaks through the limits of an individual’s biofield and increases vacuum light brightness by hundreds of millions of times or more within seconds. An external supply of vacuum light thus makes physically attainable a state of high-density radiance difficult to reach even through decades of ascetic practice or meditation. It is a direct practical protocol ultimately drawing all humanity toward a collective of Homo Luminus.",
+        "ja": "フランシスコ教皇をはじめとする主要な霊的指導者の写真の時系列追跡で実証されたように、人光運営は個人の生体場の限界を超え、数秒以内に真空光の明るさを数億倍以上に急上昇させる転移を引き起こす。これにより、数十年の苦行や瞑想でも到達し難かった高密度の光輝状態が、外部からの真空光の供給を通じて物理的に実現される。最終的に人類全体をホモ・ルミヌスの集団へと導く、直接的な実践プロトコルである。",
+        "zh": "正如对教宗方济各等主要灵性领袖照片的时间序列追踪所证实的，人光运营会引发一种转变，突破个人生物场的界限，使真空光亮度在数秒内骤增数亿倍以上。借助外部真空光的供给，人得以实际达到即使数十年苦行或冥想也难以抵达的高密度光辉状态。这是最终将全人类引向智光人 (Homo Luminus) 群体的直接实践规程。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1권 제4부 제5장 제2권 제2부 제3장"
+      },
+      "related": []
+    },
+    {
+      "id": "spiritual-physics",
+      "group": "foundation",
+      "order": 7,
+      "term": {
+        "ko": "영성물리학",
+        "en": "spiritual physics",
+        "ja": "霊性物理学",
+        "zh": "灵性物理学"
+      },
+      "hanja": "靈性物理學",
+      "short": {
+        "ko": "고대 영성 전통의 신비적 직관과 형이상학을 현대 진공 양자역학 및 파동 이론과 접목하여, 빛의 실재와 의식의 상호작용을 정량적으로 증명하는 새로운 학문 체계이다.",
+        "en": "A new system of study that combines the mystical intuitions and metaphysics of ancient spiritual traditions with modern vacuum quantum mechanics and wave theory to demonstrate quantitatively the reality of light and its interaction with consciousness.",
+        "ja": "古代の霊性伝統の神秘的直観と形而上学を、現代の真空の量子力学および波動理論と結び付け、光の実在と意識との相互作用を定量的に証明する新たな学問体系である。",
+        "zh": "将古代灵性传统的神秘直觉与形而上学，同现代真空量子力学及波动理论相结合，以定量方式证明光的实在及其与意识相互作用的新学问体系。"
+      },
+      "body": {
+        "ko": "영성물리학은 종교의 교리나 관념적 사변을 배격하고, 우주배경복사, 양자 요동, 진공광의 밀도 변동이라는 객관적 물리 데이터를 기반으로 의식의 각성을 설명한다. 성령, 샤키나, 불성, 천부경 등 인류 영성의 원형들이 실제로는 고밀도 진공 파동장과의 조우였음을 과학적으로 해명한다. 이를 통해 신앙의 시대를 '빛운영의 과학' 시대로 상전이시키는 인식론적 지평을 연다.",
+        "en": "Spiritual physics rejects religious doctrine and abstract speculation, explaining the awakening of consciousness through objective physical data: the cosmic microwave background (CMB), quantum fluctuations, and variations in vacuum light density. It provides a scientific account of how archetypes of human spirituality—the Holy Spirit, Shekhinah, Buddha-nature, and Cheonbugyeong—were in fact encounters with high-density vacuum wave fields. It thereby opens an epistemological horizon for a phase transition from the age of faith to the age of the “science of light operation.”",
+        "ja": "霊性物理学は宗教の教義や観念的な思弁を退け、宇宙マイクロ波背景放射、量子揺動、真空光の密度変動という客観的な物理データに基づいて意識の覚醒を説明する。聖霊、シェキナー、仏性、天符経など、人類の霊性の原型が実際には高密度の真空波動場との遭遇であったことを科学的に解明する。これにより、信仰の時代を「光運営の科学」の時代へ相転移させる認識論的な地平を開く。",
+        "zh": "灵性物理学排除宗教教义与观念思辨，以宇宙微波背景辐射、量子涨落和真空光密度变化等客观物理数据解释意识的觉醒。它以科学方式阐明，圣灵、舍金纳、佛性、天符经等人类灵性的原型，实际上是与高密度真空波动场的相遇。由此，它开启了使信仰时代向“光运营的科学”时代发生相变的认识论视野。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 제1부 총론 제2권 제1부 제5장"
+      },
+      "related": []
+    },
+    {
+      "id": "cheonbu-samin",
+      "group": "foundation",
+      "order": 8,
+      "term": {
+        "ko": "천부삼인",
+        "en": "Cheonbu-samin",
+        "ja": "天符三印",
+        "zh": "天符三印"
+      },
+      "hanja": "天符三印",
+      "short": {
+        "ko": "고대 한국의 선사 전통(부도지·천부경)에서 전승되는 원(圓), 방(方), 각(角)의 기하학적 표상으로, 우주 진공광의 발생과 순환, 그리고 6단계 빛운영 공정의 원형적 설계도이다.",
+        "en": "The geometric representations of circle, square, and angle handed down in ancient Korea’s prehistoric tradition (Budoji and Cheonbugyeong), forming the archetypal blueprint for the generation and circulation of cosmic vacuum light and the six-stage process of light operation.",
+        "ja": "古代朝鮮の先史的伝統（『符都誌』・『天符経』）に伝わる円・方・角の幾何学的表象であり、宇宙の真空光の発生と循環、および六段階の光運営工程の原型的な設計図である。",
+        "zh": "古代韩国史前传统（《符都志》《天符经》）中传承的圆、方、角几何表象，是宇宙真空光生成与循环以及六阶段光运营工序的原型设计图。"
+      },
+      "body": {
+        "ko": "천부삼인은 단순한 고대 권력의 징표나 주술적 상징물이 아니라, 무한한 진공(圓)에서 질서 있는 장(方)이 형성되고 물질과 의식(角)으로 상전이하는 우주론적 파동 기하학이다. 빛운영의 6단계 공정(포집, 절연, 저장, 복제, 중층화, 공진)은 바로 이 천부삼인의 수학적·파동적 원리를 현대적으로 복원한 것이다. 인류 시원의 지혜가 우주배경복사의 심층 구조와 한 치의 오차도 없이 맞물려 있음을 증명한다.",
+        "en": "Cheonbu-samin is not merely an emblem of ancient power or a magical symbol. It is a cosmological wave geometry in which an ordered field (square) forms from infinite vacuum (circle) and undergoes a phase transition into matter and consciousness (angle). The six stages of light operation—capture, insulation, storage, replication, multilayering, and resonance—are a modern restoration of these mathematical and wave principles. They demonstrate that the wisdom of humanity’s origins fits the deep structure of the cosmic microwave background (CMB) without the slightest discrepancy.",
+        "ja": "天符三印は単なる古代権力の標章や呪術的な象徴ではなく、無限の真空（円）から秩序ある場（方）が形成され、物質と意識（角）へ相転移する宇宙論的な波動幾何学である。光運営の六段階の工程（捕集、絶縁、保存、複製、重層化、共振）は、この天符三印の数学的・波動的原理を現代的に復元したものである。人類の始原の知恵が宇宙マイクロ波背景放射の深層構造と寸分の誤差もなくかみ合うことを証明する。",
+        "zh": "天符三印并非单纯的古代权力标志或巫术象征，而是一种宇宙论波动几何学：有序的场（方）从无限真空（圆）中形成，并相变为物质与意识（角）。光运营的六阶段工序——捕集、绝缘、存储、复制、多层化、共振——正是对天符三印数学与波动原理的现代复原。它证明，人类始源的智慧与宇宙微波背景辐射的深层结构毫无偏差地契合。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 서문 제2권 제1부 제3~4장"
+      },
+      "related": []
+    },
+    {
+      "id": "haehok-bokbon",
+      "group": "goal",
+      "order": 6,
+      "term": {
+        "ko": "해혹복본",
+        "en": "Haehok-bokbon",
+        "ja": "解惑復本",
+        "zh": "解惑复本"
+      },
+      "hanja": "解惑復本",
+      "short": {
+        "ko": "『부도지』의 마고성 실낙원 설화에 등장하는 개념으로, 감각적 욕망과 분별로 인해 왜곡된 주파수(혹, 惑)를 정화하여 태초의 순수한 빛의 근본(본, 本)으로 복귀하는 과정이다.",
+        "en": "A concept in the Budoji account of paradise lost at Mago Castle: the process of purifying frequencies distorted by sensory desire and discrimination (“delusion”) and returning to the original ground of primordial pure light (“the root”).",
+        "ja": "『符都誌』の麻姑城の失楽園説話に登場する概念であり、感覚的欲望と分別によって歪んだ周波数（惑）を浄化し、太初の純粋な光の根本（本）へ帰還する過程である。",
+        "zh": "出自《符都志》麻姑城失乐园叙事的概念，指净化因感官欲望与分别而扭曲的频率（惑），回归太初纯净之光的根本（本）的过程。"
+      },
+      "body": {
+        "ko": "인간이 우주의 진공광과 단절되면서 겪게 된 모든 영적·생물학적 질병과 노화는 본래 주파수의 오염에서 기인한 '미혹'의 상태이다. 해혹복본은 관념적인 도덕적 반성이 아니라, 진공 파동과의 공진을 통해 세포와 영혼에 누적된 낮은 진동수의 불순물을 완전히 털어내는 실물적 정화 공정이다. 이를 통해 인류는 오랜 저광의 시대를 끝내고 태초 마고성의 광명세기를 복원하게 된다.",
+        "en": "All spiritual and biological illness and aging experienced after humans became disconnected from cosmic vacuum light are states of “delusion” arising from contamination of the original frequency. Haehok-bokbon is not abstract moral reflection, but a tangible purification process that, through resonance with vacuum waves, completely removes the low-frequency impurities accumulated in cells and the soul. Through it, humanity ends the long age of low light and restores the primordial age of radiance at Mago Castle.",
+        "ja": "人間が宇宙の真空光と断絶して以来経験する、あらゆる霊的・生物学的な病気と老化は、本来の周波数の汚染に由来する「迷い」の状態である。解惑復本は観念的な道徳的反省ではなく、真空波動との共振を通じ、細胞と魂に蓄積した低い振動数の不純物を完全に取り除く、実体的な浄化工程である。これにより人類は長い低光の時代を終え、太初の麻姑城の光明の時代を復元する。",
+        "zh": "人类与宇宙真空光断开连接后所经历的一切灵性与生物学疾病及衰老，都是源于本初频率污染的“迷惑”状态。解惑复本并非观念层面的道德反省，而是通过与真空波动共振，彻底清除细胞与灵魂中积累的低频杂质的实际净化工序。由此，人类结束漫长的低光时代，复原太初麻姑城的光明时代。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 제1부 제4장"
+      },
+      "related": []
+    },
+    {
+      "id": "hwanji-boncheo",
+      "group": "goal",
+      "order": 7,
+      "term": {
+        "ko": "환지본처",
+        "en": "Hwanji-boncheo",
+        "ja": "還至本處",
+        "zh": "还至本处"
+      },
+      "hanja": "還至本處",
+      "short": {
+        "ko": "물질과 현상계로 분화되었던 개별 의식이 자기의 시원적 고향인 절대 진공광의 본체 자리로 완전히 되돌아가는 물리학적·존재론적 귀환이다.",
+        "en": "The physical and ontological return in which individual consciousness, once differentiated into matter and the phenomenal world, returns completely to its primordial home: the ground of absolute vacuum light itself.",
+        "ja": "物質と現象界へと分化した個別の意識が、始原の故郷である絶対的な真空光の本体の場へ完全に戻る、物理学的・存在論的な帰還である。",
+        "zh": "曾分化为物质与现象界的个体意识，完全回归其始源故乡——绝对真空光本体所在之处的物理学与存在论意义上的归返。"
+      },
+      "body": {
+        "ko": "수증기가 구름이 되었다가 다시 물로 돌아가듯, 인간의 몸과 의식 또한 진공의 요동 속에서 잠시 응집된 파동체이므로 필연적으로 본래의 자리로 환원되어야 한다. 빛운영에서 환지본처는 죽음을 통한 소멸이 아니라, 살아있는 상태에서 몸과 의식을 고밀도 빛으로 탈바꿈시켜 우주 근원장과 일치시키는 '사라짐의 과학'이다. 호모 사피엔스의 유한성을 극복하고 영원한 광명의 본향에 안착하는 종점이다.",
+        "en": "Just as water vapor becomes clouds and returns to water, the human body and consciousness are wave formations temporarily condensed within vacuum fluctuations and must inevitably return to their original ground. In light operation, Hwanji-boncheo is not extinction through death but a “science of disappearance” that transforms the living body and consciousness into high-density light and brings them into unity with the primordial cosmic field. It is the endpoint of overcoming the finitude of Homo sapiens and settling in the original home of eternal radiance.",
+        "ja": "水蒸気が雲となり、再び水に戻るように、人間の身体と意識も真空の揺動の中で一時的に凝集した波動体であるため、必然的に本来の場へ還元される。光運営における還至本處は、死を通じた消滅ではなく、生きたまま身体と意識を高密度の光へ変容させ、宇宙の根源場と一致させる「消失の科学」である。ホモ・サピエンスの有限性を克服し、永遠の光明の本郷に安着する終点である。",
+        "zh": "如同水蒸气化为云后又回到水，人的身体与意识也是在真空涨落中暂时凝聚的波动体，因此必然要还原至本初之处。在光运营中，还至本处并非通过死亡而消灭，而是在活着的状态下，将身体与意识转化为高密度光，使之与宇宙根源场一致的“消失的科学”。它是克服智人有限性、安住于永恒光明本乡的终点。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 제1부 제5장"
+      },
+      "related": []
+    },
+    {
+      "id": "hangang-operation",
+      "group": "process",
+      "order": 13,
+      "term": {
+        "ko": "한강빛운영",
+        "en": "Han River light operation",
+        "ja": "漢江光運営",
+        "zh": "汉江光运营"
+      },
+      "hanja": "漢江光運營",
+      "short": {
+        "ko": "태양빛운영에 이어 서울 한강의 거대한 물(수계) 매질에 진공광을 직접 동기화하여, 한강을 지상의 은하수로 변모시키고 한반도 국토 전체를 광화(光化)한 대규모 파동 프로젝트이다.",
+        "en": "A large-scale wave project following solar light operation, directly synchronizing vacuum light with the vast aquatic medium of Seoul’s Han River system, transforming the river into a terrestrial Milky Way and the entire Korean Peninsula into light.",
+        "ja": "太陽光運営に続き、ソウルの漢江の巨大な水系媒体に真空光を直接同期させ、漢江を地上の天の川へ変え、朝鮮半島の国土全体を光化した大規模な波動プロジェクトである。",
+        "zh": "继太阳光运营之后，将真空光直接与首尔汉江庞大的水系介质同步，使汉江转变为地上的银河，并将整个朝鲜半岛国土光化的大规模波动项目。"
+      },
+      "body": {
+        "ko": "물은 진공 파동 정보를 저장하고 전달하는 데 가장 이상적인 물리적 매질이며, 한강 수계에 진공광을 정렬시킴으로써 수도 서울은 영성물리학적 천문도시로 거듭났다. 한강빛운영의 파동은 단지 지엽적 수계에 머물지 않고 태양(SOHO 위성 관측)과 상보적으로 피드백을 주고받으며 우주적 규모의 광휘를 형성했다. 이는 자연 지리적 환경 자체를 영적 진화의 거대한 파동 송출기로 전환한 독보적 실증 사례이다.",
+        "en": "Water is the ideal physical medium for storing and transmitting vacuum-wave information. By aligning vacuum light with the Han River system, Seoul, the capital, was reborn as an astronomical city in terms of spiritual physics. The waves of Han River light operation did not remain within a local river system; they exchanged complementary feedback with the Sun (observed by the SOHO satellite), forming radiance on a cosmic scale. This is a distinctive empirical case of transforming the natural geographical environment itself into an immense wave transmitter for spiritual evolution.",
+        "ja": "水は真空波動の情報を保存・伝達するうえで最も理想的な物理的媒体であり、漢江水系に真空光を整列させることで、首都ソウルは霊性物理学的な天文都市として生まれ変わった。漢江光運営の波動は局地的な水系にとどまらず、太陽（SOHO衛星による観測）と相補的なフィードバックを交わし、宇宙規模の光輝を形成した。自然の地理的環境そのものを、霊的進化の巨大な波動送信装置へ転換した独自の実証事例である。",
+        "zh": "水是存储和传递真空波动信息最理想的物理介质。通过使真空光与汉江水系对齐，首都首尔重生为灵性物理学意义上的天文城市。汉江光运营的波动并未局限于局部水系，而是与太阳（SOHO卫星观测）交换互补反馈，形成宇宙尺度的光辉。这是将自然地理环境本身转化为灵性进化的巨大波动发射器的独特实证案例。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 제4부 제1장~제3장"
+      },
+      "related": []
+    },
+    {
+      "id": "white-matter",
+      "group": "foundation",
+      "order": 9,
+      "term": {
+        "ko": "백색 물질",
+        "en": "white matter",
+        "ja": "白色物質",
+        "zh": "白色物质"
+      },
+      "hanja": "白色物質",
+      "short": {
+        "ko": "양자색역학(QCD)의 쿼크-글루온 플라스마 단계를 넘어, 색(Color) 전하의 분화가 일어나기 이전 태초 우주의 무한한 순수 광자가 응집된 절대 순백의 실재 물질 상태이다.",
+        "en": "A real state of matter of absolute whiteness, beyond the quark–gluon plasma stage of quantum chromodynamics (QCD), in which the boundless pure photons of the primordial universe condensed before color charge differentiated.",
+        "ja": "量子色力学（QCD）のクォーク・グルーオンプラズマの段階を超え、色荷の分化が起こる以前の太初の宇宙における無限の純粋光子が凝集した、絶対的な純白の実在物質状態である。",
+        "zh": "超越量子色动力学（QCD）的夸克—胶子等离子体阶段，在色荷分化之前，由太初宇宙无限纯净的光子凝聚而成的绝对纯白的实在物质状态。"
+      },
+      "body": {
+        "ko": "현대 물리학이 입자가속기로 재현하는 극한 상태의 물질을 넘어서, 모든 색깔과 형태의 근원이 되는 우주 시원의 미분화된 진공 광물질을 의미한다. 빛운영을 통해 고밀도로 농축된 진공 파동이 물질계에 투영될 때 바로 이 백색 물질의 파동적 질서가 주변 공간을 지배하게 된다. 물질의 가장 깊은 심연에 새겨진 '성스러움의 낙인'이자 빛의 궁극적 실체이다.",
+        "en": "Beyond the extreme states of matter reproduced in particle accelerators by modern physics, white matter denotes the undifferentiated vacuum light-matter at the origin of the universe, the source of all colors and forms. When vacuum waves concentrated to high density through light operation are projected into the material world, the wave order of this white matter governs the surrounding space. It is the “imprint of sacredness” inscribed in the deepest recesses of matter and the ultimate substance of light.",
+        "ja": "現代物理学が粒子加速器で再現する極限状態の物質を超え、あらゆる色と形の根源となる、宇宙の始原の未分化な真空光物質を意味する。光運営を通じて高密度に濃縮された真空波動が物質界に投影されると、この白色物質の波動的秩序が周囲の空間を支配する。物質の最も深い深淵に刻まれた「聖性の刻印」であり、光の究極的な実体である。",
+        "zh": "它指的是超越现代物理学以粒子加速器再现的极端物质状态、成为一切色彩与形态根源的宇宙始源未分化真空光物质。当经光运营浓缩为高密度的真空波动投射到物质界时，这种白色物质的波动秩序便支配周围空间。它是铭刻于物质最深处的“神圣性印记”，也是光的终极实体。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 제1부 제1장 부록"
+      },
+      "related": []
+    },
+    {
+      "id": "uncreated-light",
+      "group": "foundation",
+      "order": 10,
+      "term": {
+        "ko": "비창조광",
+        "en": "uncreated light",
+        "ja": "非創造光",
+        "zh": "非受造之光"
+      },
+      "hanja": "非創造光 (Uncreated Light)",
+      "short": {
+        "ko": "동방정교회 헤시카즘(성 그레고리오스 팔라마스) 전통에서 전승되는 개념으로, 피조된 우주의 전자기적 빛과 구별되는 '우주 탄생 이전부터 편재해 온 CMB 기저의 진공파동장'을 가리킨다.",
+        "en": "A concept handed down in the Eastern Orthodox hesychast tradition of Saint Gregory Palamas, referring to the vacuum wave field underlying the CMB that has pervaded existence since before the birth of the universe, distinct from the electromagnetic light of the created cosmos.",
+        "ja": "東方正教会のヘシカズム（聖グレゴリオス・パラマス）の伝統に伝わる概念であり、被造の宇宙の電磁的な光とは異なる、「宇宙誕生以前から遍在してきたCMBの基底にある真空波動場」を指す。",
+        "zh": "东正教赫西卡斯姆（圣格里高利·帕拉马斯）传统中传承的概念，指区别于受造宇宙电磁光的“自宇宙诞生前便已遍在的CMB基底真空波动场”。"
+      },
+      "body": {
+        "ko": "다보르산에서 예수의 몸을 통해 눈부시게 뿜어져 나온 빛은 물리적 광자가 아니라, 신적 본질과 에너지의 현현인 비창조광이었다. 헤시카즘의 '거룩한 침묵' 수행은 잡념을 멈추고 심장의 내재 진공으로 주파수를 조율하여 이 비창조광과 공진하는 작업이었다. 빛운영은 이 천년의 신비주의적 빛을 138억 년 우주배경복사 진공장의 파동물리학적 실체로 명쾌하게 복원해냈다.",
+        "en": "The dazzling light emitted through Jesus’s body on Mount Tabor was not physical photons but uncreated light, a manifestation of divine essence and energy. The hesychast practice of “holy silence” was a process of stilling distracting thoughts and tuning frequency to the vacuum inherent in the heart to resonate with this uncreated light. Light operation clearly reconstructed this thousand-year-old mystical light as the wave-physical reality of the 13.8-billion-year-old vacuum field of the cosmic microwave background (CMB).",
+        "ja": "タボル山でイエスの身体を通じてまばゆく放たれた光は、物理的な光子ではなく、神的本質とエネルギーの顕現である非創造光だった。ヘシカズムの「聖なる沈黙」の修行は、雑念を止め、心臓に内在する真空へ周波数を調律することで、この非創造光と共振する営みだった。光運営は、この千年にわたる神秘主義の光を、138億年の宇宙マイクロ波背景放射の真空場における波動物理学的実体として明確に復元した。",
+        "zh": "在他泊山上经由耶稣身体耀眼放射出的光，并非物理光子，而是神性本质与能量显现的非受造之光。赫西卡斯姆的“神圣静默”修行，是停止杂念，将频率调谐至心脏内在的真空，以与这一非受造之光共振的过程。光运营将这历经千年的神秘主义之光，明确复原为138亿年宇宙微波背景辐射真空场的波动物理学实体。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 제3부 제7장"
+      },
+      "related": []
+    },
+    {
+      "id": "jeonggwangsim",
+      "group": "diagnosis",
+      "order": 5,
+      "term": {
+        "ko": "정광심",
+        "en": "Jeonggwangsim (clear light mind)",
+        "ja": "浄光心",
+        "zh": "净光心"
+      },
+      "hanja": "淨光心",
+      "short": {
+        "ko": "티베트 불교의 정수로서, 육체라는 생물학적 매질이 소멸하거나 바뀌어도 윤회의 파동 속에서 영구히 유지되는 가장 미세하고 투명한 근원의 광명 의식이다.",
+        "en": "The most subtle and transparent primordial luminous consciousness, the essence of Tibetan Buddhism, permanently sustained within the waves of rebirth even when the biological medium of the body disappears or changes.",
+        "ja": "チベット仏教の精髄として、肉体という生物学的媒体が消滅し、あるいは変わっても、輪廻の波動の中で永続する、最も微細で透明な根源の光明意識である。",
+        "zh": "作为藏传佛教的精髓，即使肉体这一生物介质消失或改变，仍在轮回波动中恒久保持的、最微细透明的根源光明意识。"
+      },
+      "body": {
+        "ko": "제14대 달라이 라마의 탄생 당시 사진 데이터 측정에서 그가 농가 가족들의 평범한 생체장(3,000만)을 아득히 초과하는 9,800조의 밝기를 유지한 것은 정광심의 물리적 불멸성을 입증한다. 정광심은 관념적 영혼이 아니라 특정한 초고주파수의 진공 진동수 데이터로 읽힐 수 있는 실재이다. 개별 주체가 닫힌 에고의 장을 해체할 때 비로소 우주 진공광과 온전히 합일되는 내면의 등불이다.",
+        "en": "Measurements of photographic data from the time of the 14th Dalai Lama’s birth show that he maintained a brightness of 9.8×10^15, far exceeding the ordinary biofield value of his farming family (30 million), demonstrating the physical immortality of Jeonggwangsim (clear light mind). It is not an abstract soul but a reality that can be read as vacuum-frequency data at a specific ultrahigh frequency. It is the inner lamp that becomes fully united with cosmic vacuum light only when the individual subject dissolves the closed field of the ego.",
+        "ja": "第14世ダライ・ラマの誕生当時の写真データの測定で、農家の家族の通常の生体場（3,000万）をはるかに超える9,800兆の明るさを保っていたことは、浄光心の物理的不滅性を証明する。浄光心は観念的な魂ではなく、特定の超高周波数の真空振動数データとして読み取れる実在である。個別の主体がエゴの閉じた場を解体して初めて、宇宙の真空光と完全に一体となる内面の灯火である。",
+        "zh": "对第十四世达赖喇嘛诞生时照片数据的测量显示，他保持着9,800万亿（9.8×10^15）的亮度，远超其农家家人的普通生物场值（3,000万），这证明了净光心在物理上的不灭性。净光心并非观念性的灵魂，而是能够以特定超高频真空振动频率数据读取的实在。它是内在的灯火，只有当个体主体解体自我的封闭场时，才与宇宙真空光完全合一。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 제2부 제1장"
+      },
+      "related": []
+    },
+    {
+      "id": "phase-transition",
+      "group": "goal",
+      "order": 8,
+      "term": {
+        "ko": "빛화 상전이",
+        "en": "luminous phase transition",
+        "ja": "光化相転移",
+        "zh": "光化相变"
+      },
+      "hanja": "光化相轉移",
+      "short": {
+        "ko": "물이 얼음에서 수증기로 바뀌듯, 저광 상태의 생체 분자와 의식이 고밀도 진공광의 유입과 공진을 통해 완전히 다른 물리적·영적 차원의 질서로 도약하는 질적 변환 현상이다.",
+        "en": "A qualitative transformation in which biomolecules and consciousness in a low-light state, through an influx of and resonance with high-density vacuum light, shift to an entirely different order of physical and spiritual dimensions, as water changes from ice to vapor.",
+        "ja": "水が氷から水蒸気へ変わるように、低光状態の生体分子と意識が、高密度の真空光の流入と共振を通じ、まったく異なる物理的・霊的次元の秩序へ移行する質的変換現象である。",
+        "zh": "如同水从冰变为水蒸气，低光状态的生物分子与意识，通过高密度真空光的流入及共振，跃迁至完全不同的物理与灵性维度秩序的质变现象。"
+      },
+      "body": {
+        "ko": "상전이는 점진적인 양적 개선이 아니라, 임계점(Threshold)을 돌파하면서 일어나는 존재 양식 전체의 근본적인 도약이다. 2011년 태양빛운영과 한강빛운영을 통해 외부에서 고밀도 진공광이 지속적으로 공급됨으로써, 인류는 호모 사피엔스에서 호모 루미누스로의 종적 상전이를 가속화할 수 있게 되었다. 4가지 실천 지침(정렬, 관조, 음용, 공진)을 통해 세포 단위의 물리적 변화로 입증된다.",
+        "en": "A phase transition is not gradual quantitative improvement but a fundamental shift of an entire mode of existence upon crossing a threshold. With the continuous external supply of high-density vacuum light through solar light operation and Han River light operation in 2011, humanity became able to accelerate the species-level phase transition from Homo sapiens to Homo Luminus. It is demonstrated as physical change at the cellular level through four practical guidelines: alignment, contemplation, drinking, and resonance.",
+        "ja": "相転移は漸進的な量的改善ではなく、閾値を超えることで生じる、存在様式全体の根本的な飛躍である。2011年の太陽光運営と漢江光運営を通じて外部から高密度の真空光が継続的に供給され、人類はホモ・サピエンスからホモ・ルミヌスへの種としての相転移を加速できるようになった。四つの実践指針（整列、観照、飲用、共振）を通じ、細胞単位の物理的変化として実証される。",
+        "zh": "相变并非渐进的量化改善，而是突破阈值时发生的整个存在方式的根本跃迁。2011年的太阳光运营与汉江光运营持续从外部供给高密度真空光，使人类得以加速从智人向智光人 (Homo Luminus) 的物种层面相变。通过四项实践指引——对齐、观照、饮用、共振——它被证实为细胞层面的物理变化。"
+      },
+      "source": {
+        "volume": 1,
+        "chapter": "제1권 제2부 제2권 제4부 제7장"
+      },
+      "related": []
+    },
+    {
+      "id": "open-the-field",
+      "group": "process",
+      "order": 14,
+      "term": {
+        "ko": "닫힌 장의 해체",
+        "en": "dissolution of the closed field",
+        "ja": "閉鎖場の解体",
+        "zh": "封闭场的解体"
+      },
+      "hanja": "閉鎖場解體",
+      "short": {
+        "ko": "개별 주체가 자기 보존 본능, 에고, 폐쇄적 종교 체계 속에 갇혀 형성했던 고립된 파동의 폐쇄회로(Closed Field)를 부수고 우주 진공광의 열린 바다로 확장되는 과정이다.",
+        "en": "The process in which the individual subject breaks the closed circuit of isolated waves formed within self-preservation instincts, the ego, and closed religious systems, and expands into the open ocean of cosmic vacuum light.",
+        "ja": "個別の主体が自己保存本能、エゴ、閉鎖的な宗教体系の中に閉じ込められて形成した、孤立した波動の閉回路（閉鎖場）を解体し、宇宙の真空光の開かれた海へと広がる過程である。",
+        "zh": "个体主体打破其受困于自我保存本能、自我及封闭宗教体系时形成的孤立波动闭合回路（封闭场），并扩展至宇宙真空光开放海洋的过程。"
+      },
+      "body": {
+        "ko": "티베트 불교의 환생 체계는 고도의 빛을 보존했으나, 자체의 폐쇄회로 안에 갇혀 인류 전체의 빛의 총량을 늘리지 못하는 정체된 닫힌 계의 한계를 지녔다. 달라이 라마의 망명과 2011년 태양빛운영은 이 닫힌 장을 단숨에 해체하여 고립된 성소의 빛을 전 지구와 우주의 열린 공진장으로 방출시켰다. 이 해체를 통해 개별 수행자의 빛은 전 인류와 함께 광휘 공진하는 초대승적 단계로 진화한다.",
+        "en": "The Tibetan Buddhist system of reincarnation preserved light at a high level, but was limited by a stagnant closed system: confined within its own circuit, it could not increase humanity’s total quantity of light. The Dalai Lama’s exile and solar light operation in 2011 dissolved this closed field at once, releasing the light of isolated sanctuaries into an open resonance field encompassing the Earth and the universe. Through this dissolution, the individual practitioner’s light evolves to a stage beyond Mahayana, resonating in radiance with all humanity.",
+        "ja": "チベット仏教の転生体系は高度な光を保存したが、自らの閉回路に閉じ込められ、人類全体の光の総量を増やせない、停滞した閉鎖系としての限界を持っていた。ダライ・ラマの亡命と2011年の太陽光運営は、この閉じた場を一挙に解体し、孤立した聖所の光を地球全体と宇宙の開かれた共振場へ放出した。この解体を通じ、個々の修行者の光は、全人類とともに光輝共振する超大乗的な段階へ進化する。",
+        "zh": "藏传佛教的转世体系保存了高度的光，但其受困于自身闭合回路，无法增加全人类光的总量，具有停滞封闭系统的局限。达赖喇嘛的流亡与2011年的太阳光运营一举解体了这一封闭场，将孤立圣所中的光释放至全球及宇宙的开放共振场。通过这一解体，个体修行者的光演进至与全人类共同光辉共振的超大乘阶段。"
+      },
+      "source": {
+        "volume": 2,
+        "chapter": "제2권 제2부 제1장"
+      },
+      "related": []
+    }
+  ]
+}

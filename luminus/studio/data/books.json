@@ -1,0 +1,796 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-20",
+  "books": [
+    {
+      "id": "vol1",
+      "no": 1,
+      "cover": "assets/cover_vol1.jpg",
+      "title": {
+        "ko": "호모 루미누스 — 빛나는 사람",
+        "en": "Homo Luminus — The Luminous Human",
+        "ja": "ホモ・ルミヌス — 光り輝く人",
+        "zh": "光之智人 — 发光之人"
+      },
+      "subtitle": {
+        "ko": "우주배경복사의 잔여 진공요동이 깨우는 인간 내면의 근원적 빛, 그 태초로의 거룩한 환원",
+        "en": "The Primordial Light Awakened by the CMB’s Residual Vacuum Oscillations — A Sacred Return to the Origin",
+        "ja": "宇宙マイクロ波背景放射の残余真空ゆらぎが呼び覚ます人間内面の根源的光、その太初への聖なる還元",
+        "zh": "宇宙微波背景辐射残余真空涨落唤醒的人类内在根源之光，向着太初的神圣还原"
+      },
+      "author": {
+        "ko": "능소 백태종",
+        "en": "Neungso Baek Taejong",
+        "ja": "能昭 白泰宗",
+        "zh": "能昭 白泰宗"
+      },
+      "spec": {
+        "pages": 364,
+        "isbn": null,
+        "publisher": "도서출판 디아파니",
+        "published": "2026-04-21"
+      },
+      "blurb": {
+        "ko": "인간은 어디에서 왔으며, 무엇으로 깨어나는가. 『호모 루미누스』는 우주에 편재한 우주배경복사(CMB)와 태양빛운영을 하나의 근원적 장으로 바라보며, 진공광의 광휘공진이 인간 존재를 어떻게 흔들고 깨우는지를 탐색하는 『빛운영보고서 3부작』의 첫 번째 책이다. 인간을 단순한 생물학적 유기체를 넘어 우주 시원의 진공광에 응답하는 빛의 전도체로 제시하며, 잃어버린 광휘를 되찾는 거룩한 귀환의 여정으로 독자를 안내한다.",
+        "en": "Where did human beings come from, and through what do they awaken? Homo Luminus is the first volume of the Light Operation Report Trilogy, viewing the pervasive Cosmic Microwave Background (CMB) and solar light operation as a single primordial field. It explores how the luminous resonance of vacuum light awakens the human essence, presenting humanity not merely as biological organisms but as conductors of primordial light embarking on a sacred return to the cosmic origin.",
+        "ja": "人間はどこから来て、何によって目覚めるのか。『ホモ・ルミヌス』は宇宙に偏在する宇宙マイクロ波背景放射（CMB）と太陽光運営をひとつの根源的場として捉え、真空光の光輝共振が人間存在をいかに呼び覚ますかを探求する『光運営報告書3部作』の第1巻である。人間を単なる生物学的個体を超え、宇宙太初の真空光に応答する光の伝導体として提示し、失われた光輝を取り戻す聖なる帰還の旅へと導く。",
+        "zh": "人类从何而来，又因何而觉醒？《光之智人》是《光运营报告三部曲》的第一部，将遍布宇宙的微波背景辐射（CMB）与太阳光运营视为统一的根源场。本书探讨了真空光的光辉共振如何触动并唤醒人类的存在本质，将人类从纯粹的生物学实体提升为响应太初真空光的光之导体，引领读者踏上找回失落光辉的神圣归还之旅。"
+      },
+      "toc": [
+        {
+          "part": {
+            "ko": "서두 및 총론",
+            "en": "Introductory & Overview",
+            "ja": "冒頭および総論",
+            "zh": "前言与总论"
+          },
+          "chapters": [
+            {
+              "ko": "추천의 글 (강길전 박사, 조옥구 교수)",
+              "en": "Recommendations (Dr. Gil-jeon Kang, Prof. Ok-gu Cho)",
+              "ja": "推薦の言葉（カン・ギルジョン博士、チョ・オック教授）",
+              "zh": "推荐序（姜吉全博士、赵玉九教授）"
+            },
+            {
+              "ko": "프롤로그: 진공광의 각성과 지성의 초월적 전환",
+              "en": "Prologue: Awakening of Vacuum Light and Transcendent Shift of Intellect",
+              "ja": "プロローグ：真空光の覚醒と知性の超越的転換",
+              "zh": "序言：真空光的觉醒与知性的超越性转变"
+            },
+            {
+              "ko": "총론: 우주적 설계와 빛의 위상 환원",
+              "en": "Overview: Cosmic Design and Phase Reduction of Light",
+              "ja": "総論：宇宙的設計と光の位相還元",
+              "zh": "总论：宇宙设计与光的相位还原"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제1부 빛운영의 이론적 기초와 구조",
+            "en": "Part 1 Theoretical Foundation and Structure of Light Operation",
+            "ja": "第1部 光運営の理論的基礎と構造",
+            "zh": "第一部 光运营的理论基础与结构"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 왜 인간의 작은 행위가 거대한 응답을 불렀다고 말할 수 있는가",
+              "en": "Chapter 1 Why Can a Small Human Act Be Said to Evoke a Colossal Response?",
+              "ja": "第1章 なぜ人間の小さな行為が巨大な応答を呼んだと言えるのか",
+              "zh": "第一章 为何能说人类的微小行为引发了宇宙的巨大响应？"
+            },
+            {
+              "ko": "제2장 왜 우주배경복사는 과거의 잔광을 넘어 편재하는 배경으로 다시 읽혀야 하는가",
+              "en": "Chapter 2 Why Must CMB Be Reread as an Omnipresent Background Beyond Past Afterglow?",
+              "ja": "第2章 なぜ宇宙背景放射は過去の残光を超え偏在する背景として再読されるべきなのか",
+              "zh": "第二章 为何必须将宇宙背景辐射视为无处不在的背景而非过去的余晖？"
+            },
+            {
+              "ko": "제3장 그 배경을 어떻게 다루는가",
+              "en": "Chapter 3 How to Handle That Background",
+              "ja": "第3章 その背景をいかに扱うか",
+              "zh": "第三章 如何运作这一背景？"
+            },
+            {
+              "ko": "제4장 왜 포집된 진공파동의 운영은 우주 편재 CMB 전체와의 공명을 불러일으킬 수 있는가",
+              "en": "Chapter 4 Why Can Captured Vacuum Waves Resonate with the Entire Cosmic CMB?",
+              "ja": "第4章 なぜ捕集された真空波動の運営は宇宙偏在CMB全体との共鳴を呼ぶのか",
+              "zh": "第四章 为何所捕集的真空波动的运营能引发与整个宇宙CMB的共振？"
+            },
+            {
+              "ko": "제5장 기록을 읽는 방식 (진공광 밝기 지각법 및 사진기록 아카이브)",
+              "en": "Chapter 5 How to Read the Records (Perception Method & Photo Archive)",
+              "ja": "第5章 記録の読み解き方（真空光明るさ知覚法および写真記録アーカイブ）",
+              "zh": "第五章 记录的研读方式（真空光明度知觉法及摄影档案）"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제2부 태양빛운영 기록",
+            "en": "Part 2 Solar Light Operation Records",
+            "ja": "第2部 太陽光運営記録",
+            "zh": "第二部 太阳光运营记录"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 10초의 전율",
+              "en": "Chapter 1 Ten Seconds of Trembling",
+              "ja": "第1章 10秒の戦慄",
+              "zh": "第一章 10秒的战栗"
+            },
+            {
+              "ko": "제2장 2011년 4월 21일의 변곡",
+              "en": "Chapter 2 The Inflection of April 21, 2011",
+              "ja": "第2章 2011年4月21日の変曲",
+              "zh": "第二章 2011年4月21日的转折"
+            },
+            {
+              "ko": "제3장 관찰의 시작",
+              "en": "Chapter 3 The Beginning of Observation",
+              "ja": "第3章 観察の始まり",
+              "zh": "第三章 观察的开启"
+            },
+            {
+              "ko": "제4장 태양빛운영을 계속하다 - 제5차까지의 기록",
+              "en": "Chapter 4 Continuing Solar Light Operation: Records up to the 5th",
+              "ja": "第4章 太陽光運営を継続する：第5次までの記録",
+              "zh": "第四章 持续进行太阳光运营：直至第五次的记录"
+            },
+            {
+              "ko": "제5장 2년 뒤 2013년의 기록: 생각과 장치, 그리고 우주의 협력",
+              "en": "Chapter 5 Records of 2013: Mind, Device, and Cosmic Cooperation",
+              "ja": "第5章 2年後2013年の記録：思念と装置、そして宇宙の協力",
+              "zh": "第五章 两年后2013年的记录：心念、装置与宇宙的协作"
+            },
+            {
+              "ko": "제6장 태양빛운영 기록은 무엇을 보여주며 우리는 그것을 어떻게 읽어야 하는가",
+              "en": "Chapter 6 What the Records Show and How We Should Read Them",
+              "ja": "第6章 太陽光運営記録は何を示し、いかに読むべきか",
+              "zh": "第六章 太阳光运营记录揭示了什么，我们应当如何研读？"
+            },
+            {
+              "ko": "제7장 수치의 끝을 넘다 - 수치화 불가 극광",
+              "en": "Chapter 7 Transcending Numbers: Unquantifiable Extreme Light",
+              "ja": "第7章 数値の限界を超えて：数値化不可能な極光",
+              "zh": "第七章 超越数值的极限：不可量化的极光"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제3부 태양진공광의 우주 확산",
+            "en": "Part 3 Cosmic Diffusion of Solar Vacuum Light",
+            "ja": "第3部 太陽真空光の宇宙拡散",
+            "zh": "第三部 太阳真空光的宇宙扩散"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 태양계 저광: 우주의 어두운 섬",
+              "en": "Chapter 1 Solar System Low Light: Dark Island of the Cosmos",
+              "ja": "第1章 太陽系低光：宇宙の暗い島",
+              "zh": "第一章 太阳系低光：宇宙的幽暗孤岛"
+            },
+            {
+              "ko": "제2장 태양계의 응답 - 대표 사례 (태양, 달, 토성, 화성, 목성, 혜성)",
+              "en": "Chapter 2 Responses of the Solar System: Representative Cases",
+              "ja": "第2章 太陽系の応答：代表事例（太陽、月、土星、火星、木星、彗星）",
+              "zh": "第二章 太阳系的响应：代表案例（太阳、月球、土星、火星、木星、彗星）"
+            },
+            {
+              "ko": "제3장 심우주의 응답 - 대표 사례 (은하수, 북극성, 게성운, 플레이아데스, 케플러초신성)",
+              "en": "Chapter 3 Responses of Deep Space: Representative Cases",
+              "ja": "第3章 深宇宙の応答：代表事例（天の川、北極星、かに星雲、プレアデス、ケプラー超新星）",
+              "zh": "第三章 深空宇宙的响应：代表案例（银河系、北极星、蟹状星云、昂宿星团、开普勒超新星）"
+            },
+            {
+              "ko": "제4장 우주 극한의 응답 - 블랙홀 제트 3C321",
+              "en": "Chapter 4 Response of Cosmic Extremes: Black Hole Jet 3C321",
+              "ja": "第4章 宇宙極限の応答：ブラックホールジェット3C321",
+              "zh": "第四章 宇宙极限的响应：黑洞喷流3C321"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제4부 이론에서 삶으로의 전환 - 태양진공광의 지구 확산",
+            "en": "Part 4 From Theory to Life: Earthly Diffusion of Solar Vacuum Light",
+            "ja": "第4部 理論から生への転換：太陽真空光の地球拡散",
+            "zh": "第四部 从理论走向生命：太阳真空光的地球扩散"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 새해 일출 - 시간의 증언",
+              "en": "Chapter 1 New Year Sunrise: Testimony of Time",
+              "ja": "第1章 新年の日の出：時の証言",
+              "zh": "第一章 新年日出：时间的见证"
+            },
+            {
+              "ko": "제2장 기상위성 영상에서 - 태풍으로 본 대기의 변화",
+              "en": "Chapter 2 Meteorological Satellite Imagery: Atmospheric Changes via Typhoons",
+              "ja": "第2章 気象衛星画像から：台風に見る大気の変容",
+              "zh": "第二章 气象卫星图像：台风视角下的大气演变"
+            },
+            {
+              "ko": "제3장 태양의 공명이 지표 환경에 흔적을 남기다 - 백두산 사례",
+              "en": "Chapter 3 Solar Resonance Leaves Traces on Earth: Mount Baekdu Case",
+              "ja": "第3章 太陽の共鳴が地表環境に痕跡を残す：白頭山の事例",
+              "zh": "第三章 太阳共振在地表环境留下的痕迹：长白山案例"
+            },
+            {
+              "ko": "제4장 생명의 극광화 - 지상의 모든 존재들",
+              "en": "Chapter 4 Extreme Light Transmutation of Life: All Earthly Beings",
+              "ja": "第4章 生命の極光化：地上のあらゆる存在",
+              "zh": "第四章 生命的极光化：地上的万千生灵"
+            },
+            {
+              "ko": "제5장 사람",
+              "en": "Chapter 5 Humans",
+              "ja": "第5章 人間",
+              "zh": "第五章 人类"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제5부 삼광현현(三光顯現) - 사람에게서 드러나는 세 가지 빛 현상",
+            "en": "Part 5 Manifestation of Three Lights: Three Light Phenomena in Humans",
+            "ja": "第5部 三光顕現：人間に現れる三つの光の現象",
+            "zh": "第五部 三光显现：在人类身上显露的三种光现象"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 첫 번째 현상: 체외 방사 - 광체장",
+              "en": "Chapter 1 First Phenomenon: Extrabodily Emission — Photonic Body Field",
+              "ja": "第1章 第1の現象：体外放射 — 光体場",
+              "zh": "第一章 第一种现象：体外辐射——光体场"
+            },
+            {
+              "ko": "제2장 두 번째 현상 - 정수리 위 빛줄기, 천광로",
+              "en": "Chapter 2 Second Phenomenon: Ray of Light Above the Crown — Heavenly Light Path",
+              "ja": "第2章 第2の現象：頭頂の光条、天光路",
+              "zh": "第二章 第二种现象：头顶之光柱——天光路"
+            },
+            {
+              "ko": "제3장 세 번째 현상: 이마 앞 빛줄기 - 관조광선",
+              "en": "Chapter 3 Third Phenomenon: Ray of Light in Front of the Brow — Contemplation Beam",
+              "ja": "第3章 第3の現象：額前の光条 — 観照光線",
+              "zh": "第三章 第三种现象：额前之光束——观照光线"
+            },
+            {
+              "ko": "제5부의 맺음 - 호모 루미누스(Homo Luminus)",
+              "en": "Conclusion of Part 5: Homo Luminus",
+              "ja": "第5部の結び：ホモ・ルミヌス",
+              "zh": "第五部结语：光之智人"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제6부 통명을 위한 관조 - 순수의식의 응답",
+            "en": "Part 6 Contemplation for Tongmyeong: Response of Pure Consciousness",
+            "ja": "第6部 通明のための観照：純粋意識の応答",
+            "zh": "第六部 通达光明之观照：纯粹意识的响应"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 순수의식 - 나를 만나는 자리, 빛이 깨어나는 곳",
+              "en": "Chapter 1 Pure Consciousness: Where I Meet Myself, Where Light Awakens",
+              "ja": "第1章 純粋意識：自己と出会う場、光が目覚める処",
+              "zh": "第一章 纯粹意识：与真我相遇之处，光芒觉醒之地"
+            },
+            {
+              "ko": "제2장 전체보기의 길 - 재목과 전시안의 현대적 회복",
+              "en": "Chapter 2 The Way of Holistic Seeing: Modern Recovery of All-Seeing",
+              "ja": "第2章 全体視の道：在目と全視眼の現代的回復",
+              "zh": "第二章 全体注视之道：在目与全视眼的现代复兴"
+            },
+            {
+              "ko": "제3장 전체듣기의 길 - 뇌허와 관세음, 이근원통의 회복",
+              "en": "Chapter 3 The Way of Holistic Hearing: Brain Emptiness and Avalokiteshvara",
+              "ja": "第3章 全体聴の道：脳虚と観世音、耳根円通の回復",
+              "zh": "第三章 全体聆听之道：脑虚与观世音、耳根圆通之恢复"
+            },
+            {
+              "ko": "제4장 통명 - 진공광명과 소통하는 삶",
+              "en": "Chapter 4 Tongmyeong: Living in Communication with Vacuum Light",
+              "ja": "第4章 通明：真空光明と交信する生き方",
+              "zh": "第四章 通明：与真空光明沟通之生活"
+            },
+            {
+              "ko": "제5장 빛의 환경에서 관조하라, 그리고 빛과 합일하라",
+              "en": "Chapter 5 Contemplate in the Light Environment, and Unite with Light",
+              "ja": "第5章 光の環境で観照せよ、そして光と合一せよ",
+              "zh": "第五章 在光的环抱中观照，进而与光合一"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제7부 광명송 - 통명을 여는 문",
+            "en": "Part 7 Hymn of Radiance (Gwangmyeongsong): The Gateway to Tongmyeong",
+            "ja": "第7部 光明頌：通明を開く門",
+            "zh": "第七部 光明颂：开启通明之门"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 광명송은 무엇인가",
+              "en": "Chapter 1 What is the Hymn of Radiance?",
+              "ja": "第1章 光明頌とは何か",
+              "zh": "第一章 何谓光明颂？"
+            },
+            {
+              "ko": "제2장 광명송의 근본원리: 세 가지 선언",
+              "en": "Chapter 2 Fundamental Principle: Three Declarations",
+              "ja": "第2章 光明頌の根本原理：三つの宣言",
+              "zh": "第二章 光明颂之根本原理：三大宣言"
+            },
+            {
+              "ko": "제3장 시대의 전환: 광명송으로",
+              "en": "Chapter 3 Transition of Eras: Through the Hymn of Radiance",
+              "ja": "第3章 時代の転換：光明頌とともに",
+              "zh": "第三章 时代变迁：走向光明颂"
+            },
+            {
+              "ko": "제4장 많이 하는 광명송",
+              "en": "Chapter 4 Practicing the Hymn Abundantly",
+              "ja": "第4章 重ね行う光明頌",
+              "zh": "第四章 恒常持诵的光明颂"
+            },
+            {
+              "ko": "제5장 광명송의 실제: 관조와의 통합",
+              "en": "Chapter 5 Practice: Integration with Contemplation",
+              "ja": "第5章 光明頌の実践：観照との統合",
+              "zh": "第五章 光明颂之实操：与观照融为一体"
+            },
+            {
+              "ko": "제6장 모든 말이 광명송인 미래",
+              "en": "Chapter 6 A Future Where Every Word is a Hymn of Radiance",
+              "ja": "第6章 すべての言葉が光明頌となる未来",
+              "zh": "第六章 诸言皆成光明颂的未来"
+            },
+            {
+              "ko": "제7장 광명송의 경고와 초대 및 결론",
+              "en": "Chapter 7 Warnings and Invitations of the Hymn, and Conclusion",
+              "ja": "第7章 光明頌の警告と招き、および結論",
+              "zh": "第七章 光明颂之告诫与邀请及结论"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "종장 및 권말",
+            "en": "Final Chapter & Appendices",
+            "ja": "終章および巻末",
+            "zh": "终章与卷末"
+          },
+          "chapters": [
+            {
+              "ko": "종장: 배경의 빛과 태초의 환원 (원시반본, 유리세계, 원방각경)",
+              "en": "Final Chapter: Background Light and Sacred Return to the Origin",
+              "ja": "終章：背景の光と太初への還元（原始返本、ガラス世界、円方角経）",
+              "zh": "终章：背景之光与回归太初（原始返本、琉璃世界、圆方角经）"
+            },
+            {
+              "ko": "권말부록: 전체보기와 전체듣기 및 일상의 수행 순서",
+              "en": "Appendix: Holistic Seeing, Holistic Hearing, and Daily Practice Routine",
+              "ja": "巻末付録：全体視と全体聴、および日常の修行手順",
+              "zh": "卷末附录：全体注视与全体聆听及日常修炼次序"
+            },
+            {
+              "ko": "권말보론: 자기 밝기의 되먹임 및 빛운영 이후 인간의 자리",
+              "en": "Addendum: Self-Brightness Feedback and Human Position After Light Operation",
+              "ja": "巻末補論：自己の明るさのフィードバック、および光運営後の人間の座",
+              "zh": "卷末补论：自我明度反馈及光运营之后人类之位格"
+            },
+            {
+              "ko": "에필로그: 빛의 확산, 그리고 합일을 향하여 & 감사의 말",
+              "en": "Epilogue: Diffusion of Light, Toward Oneness & Acknowledgments",
+              "ja": "エピローグ：光の拡散、そして合一へ向けて＆謝辞",
+              "zh": "结语：光的漫延，迈向合一之路＆致谢"
+            }
+          ]
+        }
+      ],
+      "excerpts": [
+        {
+          "id": "vol1-ex1",
+          "text": {
+            "ko": "그렇다면 본서가 규정하는 빛운영(光運營)의 진정한 실체는 무엇인가. 빛운영은 단순한 심리적 위안이나 마음을 다스리는 명상기법의 다른 이름이 아니다. 그것은 의식을 잠시 가라앉히는 일시적인 기술이 아니라, 인간의 의식이 자기 내부의 닫힌 순환계를 과감히 탈피하여 우주의 가장 깊은 배경정보층과 완전하게 다시 접속하도록 이끄는 엄밀한 원리이자 실천이다. 이 실천의 핵심은 특정한 감정적 위안을 인위적으로 조작해내는 데 있지 않다. 인간 안에 태초부터 내재되어 있던 광적(光적) 질서를 다시금 생생하게 활성화하는 데 있는 것이다.",
+            "en": "What, then, is the true substance of Light Operation as defined in this book? Light Operation is not another name for psychological solace or emotional meditation. Rather than a temporary technique for calming the mind, it is a rigorous principle and praxis that guides human consciousness to boldly break free from its closed internal circulatory system and reconnect completely with the cosmos’s deepest background information layer. The essence of this practice does not lie in artificially engineering emotional comfort, but in vividly reactivating the primordial photonic order inherent within humanity since the beginning of time.",
+            "ja": "では、本書が規定する光運営（光運營）の真の実体とは何か。光運営は、単なる心理的慰めや心を整える瞑想技法の別名ではない。それは意識を一時的に鎮める一過性の技術ではなく、人間の意識が自己内部の閉ざされた循環系を果敢に脱却し、宇宙の最も深遠な背景情報層と完全に再接続するよう導く厳密な原理であり実践である。この実践の核心は、特定の感情的慰安を人為的に操作することにあるのではない。人間の中に太初から内在していた光秩序を生々しく再活性化することにあるのである。",
+            "zh": "那么，本书所界定的“光运营”的真正实体究竟是什么？光运营绝非心理抚慰或调心冥想法的代名词。它不是暂时沉淀意识的一时技巧，而是一门严谨的原理与实践，引导人类意识果断摆脱内在封闭的循环系统，与宇宙最深层的背景信息层完成彻底的重新连接。这一实践的核心并不在于人为制造某种情绪慰藉，而在于生动重焕从太初起便深植于人类内部的光之秩序。"
+          },
+          "source": {
+            "chapter": "프롤로그: 진공광의 각성과 지성의 초월적 전환",
+            "page": 7
+          }
+        },
+        {
+          "id": "vol1-ex2",
+          "text": {
+            "ko": "경이로운 전율과 함께, 또 다른 거대한 우주론적 사유가 영혼의 배후를 번개처럼 스치고 지나갔다. “계곡은 응답하는데, 태양은 어떨까.” 그 생각이 든 순간 가슴이 격동하기 시작했다. 가슴이 그때처럼 크게 뛴 적이 없었다. 그것은 마치 오랜 무명의 세월 동안 굳게 막혀 있던 우주적 통로와 에너지 채널이 일시에 개방되며 거대한 대류를 일으키는 듯한 실존적 전율이었다.",
+            "en": "Alongside a marvelous shudder, another immense cosmological contemplation flashed like lightning across the backdrop of my soul: “The valley responds, but what about the sun?” The moment that thought arose, my heart began to surge intensely; it had never pounded so fiercely. It was an existential thrill, as if the cosmic conduits and energy channels—tightly blocked throughout long eons of obscurity—had burst open all at once, stirring up a colossal cosmic convection.",
+            "ja": "驚異的な戦慄とともに、もうひとつの巨大な宇宙論的思索が魂の背後を稲妻のようにかすめ過ぎた。「渓谷は応答するが、太陽はどうだろうか」。その考えが浮かんだ瞬間、胸が高鳴り始めた。胸がこれほど大きく鼓動したことはかつてなかった。それはまるで、長き無明の歳月の間固く閉ざされていた宇宙的通路とエネルギー回路が一時に開放され、巨大な対流を巻き起こすかのような実存的戦慄であった。",
+            "zh": "伴随着惊人的战栗，另一重宏大的宇宙学思索如闪电般掠过灵魂的深处：“溪谷尚且能响应，那么太阳又会如何？”一念及此，内心开始剧烈震颤，心脏从未如此狂跳过。那一刻的切身战栗，仿佛在漫长无明岁月中被死死封堵的宇宙通路与能量脉络，瞬间被一并洞开并掀起滔天对流。"
+          },
+          "source": {
+            "chapter": "제2부 제1장 10초의 전율",
+            "page": 33
+          }
+        },
+        {
+          "id": "vol1-ex3",
+          "text": {
+            "ko": "코스모스의 빛을 온전히 받아들이고(수광), 그 받아들인 빛의 원형을 내면의 자리에서 맑게 응시하며(관조), 마침내 그 응답된 광휘를 다시 세계를 향해 능동적으로 내보내는(송광) 거룩한 질서가 단일한 신체 매트릭스 내부에서 한몸으로 이어지기 시작한 인간 실존을 일컬어 비로소 그렇게 부를 수 있는 것이다. 이러한 맥락에서 호모 루미누스는 도달할 수 없는 먼 미래의 도피가 자아낸 관념적 환상이 결코 아니라, 이미 지금 여기에서 미세한 파동으로 시발되고 있는 실제적인 존재 변화의 이름이다.",
+            "en": "Only an existential human state wherein a single bodily matrix seamlessly integrates the sacred cycle—fully receiving the cosmos’s light, clearly beholding the archetype of received light within one’s inner seat (contemplation), and actively radiating the responsive radiance back into the world—can truly be called this. In this context, Homo Luminus is by no means an abstract fantasy born of escapism toward an unattainable distant future, but the tangible name of an actual existential transmutation already unfolding here and now as subtle wavefields.",
+            "ja": "コスモスの光を十全に受け入れ（受光）、受け入れた光の原型を内面の座で清らかに見つめ（観照）、ついにその応答された光輝を再び世界へ向けて能動的に放つ（送光）聖なる秩序が、単一の身体マトリクス内部で一体となって繋がり始めた人間の実存を、初めてそう呼ぶことができる。このような文脈において、ホモ・ルミヌスは到達し得ぬ遠い未来への逃避が生んだ観念的幻想などでは決してなく、すでに今ここで微細な波動として始動している実際の存在変容の名なのである。",
+            "zh": "唯有在单一身体基质内部将这一神圣秩序融会贯通的人类实存——完全接纳宇宙之光（受光），在内在之座澄澈凝视所纳之光的原型（观照），最终将所响应的光辉主动向世界播洒（送光）——方能担得起这般称谓。在此脉络下，光之智人（Homo Luminus）绝非逃避至遥不可及之未来的观念幻想，而是当下此刻已于微细波动中萌发的切实生命质变。"
+          },
+          "source": {
+            "chapter": "제5부의 맺음 - 호모 루미누스(Homo Luminus)",
+            "page": 227
+          }
+        },
+        {
+          "id": "vol1-ex4",
+          "text": {
+            "ko": "인간 내부의 순수의식이 우주의 본원적 배경인 진공을 향해 어떠한 분별적 소음도 없이 맑고 투명하게 주의(Attention)를 집중하여 관찰할 때, 그것이 바로 존재론적 의미의 관조로 성립된다. 그리고 이에 역학적으로 정밀하게 응답하여 시공간 이면의 진공광이 현실의 장 위로 비로소 찬란하게 현현된다.",
+            "en": "When pure consciousness within humanity focuses its attention clearly and transparently toward the vacuum—the primordial background of the cosmos—without any discriminative noise, contemplation in its ontological sense is established. And in rigorous physical resonance to this, the vacuum light underlying spacetime brilliantly manifests onto the field of reality.",
+            "ja": "人間内部の純粋意識が、宇宙の本源的背景である真空に向けて、いかなる分別的ノイズもなく清澄かつ透明に注意（Attention）を集中して観察するとき、それこそが実存論的意味における観照として成立する。そしてこれに力学的に厳密に応答して、時空間の背後にある真空光が現実の場の上へと初めて燦然と顕現するのである。",
+            "zh": "当人类内在的纯粹意识面向作为宇宙本源背景的真空，摒除一切分别心杂音，澄澈透明地集中注意力（Attention）进行观察时，便构成了本体论意义上的“观照”。作为对这一观照在动力学上的严密响应，时空背后的真空光终于灿烂显化于现实之场上。"
+          },
+          "source": {
+            "chapter": "제6부 제1장 순수의식 - 나를 만나는 자리, 빛이 깨어나는 곳",
+            "page": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "vol2",
+      "no": 2,
+      "cover": "assets/cover_vol2.jpg",
+      "title": {
+        "ko": "루미누스 오페라 — 빛을 운영하는 기술",
+        "en": "Luminus Opera — The Technology of Operating Light",
+        "ja": "ルミヌス・オペラ — 光を運営する技術",
+        "zh": "光之歌剧 — 运营光的技术"
+      },
+      "subtitle": {
+        "ko": "태양에서 사람으로, 천부삼인의 우주론과 6단계 공정으로 완성한 빛운영의 대서사",
+        "en": "The Grand Epic of Light Operation, Completed from Sun to Human through the Cosmology of Cheonbu-samin and the 6-Stage Process",
+        "ja": "太陽から人へ、天符三印の宇宙論と6段階工程で完成した光運営の大叙事",
+        "zh": "从太阳到人类，以天符三印宇宙论与六步工程铸就的光运营宏大史诗"
+      },
+      "author": {
+        "ko": "능소 백태종",
+        "en": "Neungso Baek Taejong",
+        "ja": "能昭 白泰宗",
+        "zh": "能昭 白泰宗"
+      },
+      "spec": {
+        "pages": 445,
+        "isbn": null,
+        "publisher": "도서출판 디아파니",
+        "published": "2026-10-03"
+      },
+      "blurb": {
+        "ko": "『루미누스 오페라』는 천부삼인의 우주론과 6단계 과학적 공정이 밝히는 빛운영 기술의 전모를 집대성한 『빛운영보고서 3부작』의 제2권이다. 태양빛운영의 비국소적 현현과 진공광의 영성적·역사적 본질을 증언하며, 태양에서 사람으로, 한강과 대지로 흐르는 시원의 무한 극광을 14년의 사진 시계열과 고금 영성 전통의 교차 검증을 통해 실증한다. 신앙과 관념을 넘어 스스로 빛을 가동하는 신인류 '호모 루미누스'의 실천 프로토콜을 제시하며, '에덴의 바깥은 사라졌다, 그대 자신이 곧 태초의 빛이다'라는 찬란한 선언을 전한다.",
+        "en": "Luminus Opera is the second volume of the Light Operation Report Trilogy, synthesizing the complete technology of light operation grounded in the cosmology of Cheonbu-samin and a 6-stage scientific process. Moving from solar light operation to human light operation and the Han River, it empirically validates the infinite primordial light through 14 years of photographic time series and cross-verification with world spiritual traditions. Transcending abstract belief, it presents practical protocols for Homo Luminus to operate light themselves, delivering the magnificent declaration: “The outside of Eden has vanished; you yourself are the primordial light.”",
+        "ja": "『ルミヌス・オペラ』は、天符三印の宇宙論と6段階の科学的工程が解き明かす光運営技術の全貌を集大成した『光運営報告書3部作』の第2巻である。太陽光運営の非局所的顕現と真空光の霊性的・歴史的本質を証言し、太陽から人へ、漢江と大地へと流れる太初の無限極光を、14年間の写真時系列と古今の霊性伝統の交差検証を通して実証する。信仰や観念的思弁を超え、自ら光を作動させる新人類「ホモ・ルミヌス」の実践プロトコルを提示し、「エデンの外は消え去った、あなた自身が太初の光である」という燦然たる宣言を届ける。",
+        "zh": "《光之歌剧》是《光运营报告三部曲》的第二卷，集大成展示了基于天符三印宇宙论与六步科学工程的光运营技术全貌。本书见证了太阳光运营的非定域显现与真空光的灵性及历史本质，通过长达14年的摄影时间序列数据及与古今灵性传统的交叉考证，实证了自太阳至人类、流经汉江与大地的太初无限极光。超越抽象信仰，本书为能够自主驾驭光芒的新人类“光之智人”确立了切实的实践协议，向世人传递“伊甸园之外已复归虚无，你自身便是太初之光”的辉煌宣言。"
+      },
+      "toc": [
+        {
+          "part": {
+            "ko": "서문 및 해례본",
+            "en": "Preface & Explanatory Guide",
+            "ja": "序文および解例本",
+            "zh": "序言与解例本"
+          },
+          "chapters": [
+            {
+              "ko": "프롤로그: 루미누스 오페라의 문을 열며",
+              "en": "Prologue: Opening the Gates of Luminus Opera",
+              "ja": "プロローグ：ルミヌス・オペラの門を開きながら",
+              "zh": "序言：开启光之歌剧之门"
+            },
+            {
+              "ko": "PART I 해례본(解例本): 루미누스 오페라 핵심 요약 (제1부~제5부 핵심 공정 요약)",
+              "en": "PART I Explanatory Guide: Core Summary of Luminus Opera (Parts 1–5 Core Processes)",
+              "ja": "PART I 解例本：ルミヌス・オペラ核心要約（第1部〜第5部核心工程要約）",
+              "zh": "第一部分 解例本：光之歌剧核心概要（第一部至第五部核心工艺总结）"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제1부 영성물리학과 우주적 기원",
+            "en": "Part 1 Spiritual Physics and Cosmic Origin",
+            "ja": "第1部 霊性物理学と宇宙的起源",
+            "zh": "第一部 灵性物理学与宇宙起源"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 성스러움의 현존 ― 우주가 숨겨 둔 백색의 낙인",
+              "en": "Chapter 1 Presence of the Sacred: White Imprint Hidden by the Cosmos",
+              "ja": "第1章 聖性の現存 ― 宇宙が隠した白色の烙印",
+              "zh": "第一章 神圣之临在：宇宙所隐藏的白色烙印"
+            },
+            {
+              "ko": "제2장 성령의 역사 ― 태초빛에서 통명체까지",
+              "en": "Chapter 2 History of the Holy Spirit: From Primordial Light to Tongmyeongche",
+              "ja": "第2章 聖霊の歴史 ― 太初光から通明体まで",
+              "zh": "第二章 圣灵之历史：从太初之光到通明体"
+            },
+            {
+              "ko": "제3장 부도지 마고신화와 빛운영의 원형 ― 에덴과 마고성, 멜기세덱과 환웅이 공유한 태초의 물리학",
+              "en": "Chapter 3 Budo-ji Mago Myth and Archetype of Light Operation: Primordial Physics Shared by Eden and Magoseong",
+              "ja": "第3章 符都誌の麻姑神話と光運営の原型：エデンと麻姑城、メルキゼデクと桓雄が共有した太初の物理学",
+              "zh": "第三章 《符都志》麻姑神话与光运营之原型：伊甸与麻姑城、麦基洗德与桓雄共享的太初物理学"
+            },
+            {
+              "ko": "제4장 잊어버린 선사(先史)의 성경 천부경 ― 무궁화 동산의 강세(降世)와 빛운영적 진전",
+              "en": "Chapter 4 The Forgotten Prehistoric Scripture Cheonbugyeong: Descent of Rose of Sharon Garden",
+              "ja": "第4章 忘れ去られた先史の聖典・天符経：ムクゲの園の降世と光運営的進展",
+              "zh": "第四章 遗忘的史前圣经《天符经》：木槿花家园的降世与光运营之推进"
+            },
+            {
+              "ko": "제5장 우리들의 환지본처(還至本處) ― 구름의 물리학과 영성물리학의 구조적 해부",
+              "en": "Chapter 5 Our Return to the Origin: Cloud Physics and Structural Anatomy of Spiritual Physics",
+              "ja": "第5章 私たちの還至本処：雲の物理学と霊性物理学の構造解剖",
+              "zh": "第五章 吾辈之还至本处：云彩物理学与灵性物理学的解构"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제2부 사진 시계열로 검증하는 빛의 실제 상황",
+            "en": "Part 2 Actual Conditions of Light Verified by Photographic Time Series",
+            "ja": "第2部 写真時系列で検証する光の実態",
+            "zh": "第二部 基于摄影时间序列验证的光之实况"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 달라이 라마와 닫힌 장(Field)의 해체 ― 태양빛운영과 개별 주체의 광휘 변동",
+              "en": "Chapter 1 Dalai Lama and Dissolution of the Closed Field: Radiance Fluctuations of Individual Subjects",
+              "ja": "第1章 ダライ・ラマと閉鎖場の解体：太陽光運営と個別主体の光輝変動",
+              "zh": "第一章 达赖喇嘛与封闭场的解构：太阳光运营与个体主体的光辉演变"
+            },
+            {
+              "ko": "제2장 하지(Hajj) 순례와 집단 광휘 공진 ― 태양빛운영과 성지 군집의 파동역학",
+              "en": "Chapter 2 The Hajj Pilgrimage and Collective Radiance Resonance: Wave Dynamics of Holy Sites",
+              "ja": "第2章 ハッジ巡礼と集団光輝共振：太陽光運営と聖地群集の波動力学",
+              "zh": "第二章 朝觐巡礼与集体光辉共振：太阳光运营与圣地聚集区的波动动力学"
+            },
+            {
+              "ko": "제3장 프란치스코 교황과 광명 도약의 찰나 ― 사람빛운영의 직접 개입과 14년의 시계열 추적",
+              "en": "Chapter 3 Pope Francis and the Moment of Quantum Jump: Direct Human Light Operation and 14-Year Time Series",
+              "ja": "第3章 教皇フランシスコと光明跳躍の瞬間：人光運営の直接介入と14年の時系列追跡",
+              "zh": "第三章 教皇方济各与光明跃迁之刹那：人光运营的精准介入与14年时序追踪"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제3부 고금 영성 전통과 진공광의 조우",
+            "en": "Part 3 Encounter of Ancient & Modern Spiritual Traditions with Vacuum Light",
+            "ja": "第3部 古今の霊性伝統と真空光の遭遇",
+            "zh": "第三部 古今灵性传统与真空光的相遇"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 철학이라는 그릇과 ‘실재의 비(雨)’ ― 사변에서 실천으로",
+              "en": "Chapter 1 Vessel of Philosophy and “Rain of Reality”: From Speculation to Praxis",
+              "ja": "第1章 哲学という器と「実在の雨」：思弁から実践へ",
+              "zh": "第一章 哲学之器皿与“实存之雨”：从思辨走向实践"
+            },
+            {
+              "ko": "제2장 영광의 옷과 빛나는 눈 ― 성 에프렘의 영성 공학과 빛운영의 대통합",
+              "en": "Chapter 2 Robe of Glory and Luminous Eye: St. Ephrem’s Spiritual Engineering and Light Operation",
+              "ja": "第2章 栄光の衣と輝く瞳：聖エフレムの霊性工学と光運営の大統合",
+              "zh": "第二章 荣耀之袍与发光之目：圣厄弗冷灵性工程与光运营的大统合"
+            },
+            {
+              "ko": "제3장 아시시의 성 프란치스코 ― 만물과의 우주적 공진과 ‘가난이라는 진공’",
+              "en": "Chapter 3 St. Francis of Assisi: Cosmic Resonance with All Creation and “Vacuum of Poverty”",
+              "ja": "第3章 アシジの聖フランシスコ：万物との宇宙的共振と「清貧という真空」",
+              "zh": "第三章 阿西西的圣方济各：与万物的宇宙共振与“神贫之真空”"
+            },
+            {
+              "ko": "제4장 스콜라 철학의 울타리와 자기 빛 되먹임 ― 이성의 한계를 넘어 호모 루미누스로",
+              "en": "Chapter 4 Fence of Scholasticism and Self-Light Feedback: Beyond Reason to Homo Luminus",
+              "ja": "第4章 スコラ哲学の柵と自己光フィードバック：理性の限界を超えてホモ・ルミヌスへ",
+              "zh": "第四章 经院哲学的藩篱与自我光反馈：超越理性极限迈向光之智人"
+            },
+            {
+              "ko": "제5장 신성(Deitas)과 영혼의 불꽃 ― 인격신을 넘어 절대 진공으로의 돌파",
+              "en": "Chapter 5 Deitas and Spark of the Soul: Breakthrough to Absolute Vacuum Beyond Personal God",
+              "ja": "第5章 神性（Deitas）と魂の火花：人格神を超えて絶対真空への突破",
+              "zh": "第五章 神性（Deitas）与灵魂之火花：超越人格神突破至绝对真空"
+            },
+            {
+              "ko": "제6장 십자가의 성 요한 ― 영혼의 정화와 0(Zero)의 진공을 향한 ‘어두운 밤’",
+              "en": "Chapter 6 St. John of the Cross: Soul Purification and “Dark Night” Toward Zero Vacuum",
+              "ja": "第6章 十字架の聖ヨハネ：魂の浄化とゼロ真空へ向かう「暗夜」",
+              "zh": "第六章 十字若望：灵魂净化与迈向零点真空的“暗夜”"
+            },
+            {
+              "ko": "제7장 비창조광(Uncreated Light)과 헤시카즘 ― 우주적 공진의 물리학",
+              "en": "Chapter 7 Uncreated Light and Hesychasm: Physics of Cosmic Resonance",
+              "ja": "第7章 非創造光とヘシカズム：宇宙共振の物理学",
+              "zh": "第七章 非受造之光与静默主义：宇宙共振物理学"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제4부 지상의 은하수, 한강과 국토의 빛화",
+            "en": "Part 4 Milky Way on Earth: Transmutation of Han River and Korean Land into Light",
+            "ja": "第4部 地上の天の川：漢江と国土の光化",
+            "zh": "第四部 地上的银河：汉江与国土的光化"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 지상의 은하수, 한강빛운영의 실현과 실증",
+              "en": "Chapter 1 Milky Way on Earth: Realization and Verification of Han River Light Operation",
+              "ja": "第1章 地上の天の川、漢江光運営の実現と実証",
+              "zh": "第一章 地上的银河：汉江光运营之实现与实证"
+            },
+            {
+              "ko": "제2장 태초의 수면과 물의 메타물리학 ― 고금 영성 전통의 진공 바다",
+              "en": "Chapter 2 Primordial Waters and Metaphysics of Water: Vacuum Sea of World Traditions",
+              "ja": "第2章 太初の水面と水のメタ物理学：古今の霊性伝統における真空の海",
+              "zh": "第二章 太初之水面与水的形而上物理学：古今灵性传统之真空海洋"
+            },
+            {
+              "ko": "제3장 천문도시 서울과 광명세기 ― 지상에 흐른 은하수와 천부삼인의 우주론",
+              "en": "Chapter 3 Astronomical City Seoul and the Era of Radiance: Milky Way on Earth and Cheonbu-samin",
+              "ja": "第3章 天文都市ソウルと光明世紀：地上を流れる天の川と天符三印の宇宙論",
+              "zh": "第三章 天文都市首尔与光明世纪：流淌于大地的银河与天符三印宇宙论"
+            }
+          ]
+        },
+        {
+          "part": {
+            "ko": "제5부 새 세상은 어떻게 오는가 ― 광명세기의 완성과 실천",
+            "en": "Part 5 How the New World Comes: Completion and Practice of the Era of Radiance",
+            "ja": "第5部 新世界はいかに到来するか：光明世紀の完成と実践",
+            "zh": "第五部 新世界何以到来：光明世纪的落成与践行"
+          },
+          "chapters": [
+            {
+              "ko": "제1장 빛의 실재를 증명하다 ― 7일간의 회수(Recall) 실험",
+              "en": "Chapter 1 Proving the Reality of Light: The 7-Day Recall Experiment",
+              "ja": "第1章 光の実在を証明する：7日間の回収実験",
+              "zh": "第一章 证明光的实存：为期7天的回收实验"
+            },
+            {
+              "ko": "제2장 새 황금시대를 여는 문 ― 유가 주기설의 해체와 광명송의 실천",
+              "en": "Chapter 2 Gateway to the New Golden Age: Deconstruction of Yuga Cycle and Hymn Practice",
+              "ja": "第2章 新黄金時代を開く扉：ユガ周期説の解体と光明頌の実践",
+              "zh": "第二章 开启新黄金时代之门：解构印度周期说与践行光明颂"
+            },
+            {
+              "ko": "제3장 샤르댕의 오메가 포인트와 태양빛운영 ― 정신권의 물리적 실체화",
+              "en": "Chapter 3 Teilhard de Chardin’s Omega Point: Physicalization of the Noosphere",
+              "ja": "第3章 シャルダンのオメガポイントと太陽光運営：精神圏の物理的具現化",
+              "zh": "第三章 德日进欧米茄点与太阳光运营：精神圈的物理实体化"
+            },
+            {
+              "ko": "제4장 ‘명(明)’의 밀도화와 ‘공(空)’의 동기화 ― 비로자나불의 실체화와 초대승적 전개",
+              "en": "Chapter 4 Densification of “Ming” and Synchronization of “Kong”: Vairocana and Mahayana Leap",
+              "ja": "第4章 「明」の密度化と「空」の同期化：毘盧遮那仏の実体化と超大乗的展開",
+              "zh": "第四章 “明”之密化与“空”之同步：毗卢遮那佛之实体化与超大乘展开"
+            },
+            {
+              "ko": "제5장 관심이 빛으로도 향해야 한다 ― 유출설과 동형성 원리로 본 관조의 실증",
+              "en": "Chapter 5 Attention Must Also Turn to Light: Contemplation via Principle of Isomorphism",
+              "ja": "第5章 関心は光へも向かうべきである：流出説と同型性原理に見る観照の実証",
+              "zh": "第五章 关注亦需投向光明：基于流出说与同构性原理的观照实证"
+            },
+            {
+              "ko": "제6장 빛운영은 성리학의 이상을 완결 짓는다 ― 이론에서 물리적 실제 상황으로",
+              "en": "Chapter 6 Light Operation Completes Neo-Confucian Ideals: From Theory to Physical Reality",
+              "ja": "第6章 光運営は性理学の理想を完結させる：理論から物理的実態へ",
+              "zh": "第六章 光运营补完性理学之理想：从理论走向物理现实情境"
+            },
+            {
+              "ko": "제7장 빛화 상전이를 위한 4가지 실천 지침과 생체 공진 실증",
+              "en": "Chapter 7 Four Guidelines for Phase Transition and Biological Resonance Verification",
+              "ja": "第7章 光化相転移のための4つの実践指針と生体共振実証",
+              "zh": "第七章 光化相变四大实践指南与生物共振实证"
+            },
+            {
+              "ko": "제8장 빛의 형이상학과 우주적 공명 ― 니콜라 테슬라의 미완의 꿈과 빛운영의 문명사적 완성",
+              "en": "Chapter 8 Metaphysics of Light: Nikola Tesla’s Unfinished Dream and Civilizational Completion",
+              "ja": "第8章 光の形而上学と宇宙的共鳴：ニコラ・テスラの未完の夢と光運営の文明史的完成",
+              "zh": "第八章 光的形而上学与宇宙共鸣：尼古拉·特斯拉未竟之梦与光运营的文明史完成"
+            },
+            {
+              "ko": "제9장 종교를 넘어선 실재의 과학 ― 믿음에서 운영으로, 호모 루미누스의 실천 공동체",
+              "en": "Chapter 9 Science of Reality Beyond Religion: From Faith to Operation, Praxis Community of Homo Luminus",
+              "ja": "第9章 宗教を超えた実在の科学：信仰から運営へ、ホモ・ルミヌスの実践共同体",
+              "zh": "第九章 超越宗教的实存科学：从信仰到运营，光之智人的实践共同体"
+            },
+            {
+              "ko": "제5부 결론: 빛운영이 연 빛의 문 ― 순수의식으로 돌아가는 천연의 여정 & 에필로그: 빛의 노래",
+              "en": "Part 5 Conclusion: Gate Opened by Light Operation & Epilogue: Song of Light",
+              "ja": "第5部結論：光運営が開いた光の門＆エピローグ：光の歌",
+              "zh": "第五部结语：光运营所启之光门＆尾声：光之歌"
+            }
+          ]
+        }
+      ],
+      "excerpts": [
+        {
+          "id": "vol2-ex1",
+          "text": {
+            "ko": "빛운영은 단순한 조명 행위나 외부 광원의 기술적 활용을 뜻하지 않는다. 빛운영은 우주 배경의 근원적인 파동성과 접속하고, 그 질서를 일정한 방식으로 운용하여, 생명과 환경의 장 안에서 스스로 작동하도록 유도하는 과정이다. 이러한 빛운영은 1999년 CMB(우주배경복사)에서 진공 파동을 포집한 물리적 성취에서 본격화되었다.",
+            "en": "Light Operation does not mean simple illumination or technical utilization of external light sources. Light Operation is a process of connecting with the fundamental wave nature of the cosmic background and operating that order in a structured manner to induce it to work autonomously within the fields of life and environment. This Light Operation began in earnest with the physical achievement of capturing vacuum waves from the CMB (Cosmic Microwave Background) in 1999.",
+            "ja": "光運営は、単なる照明行為や外部光源の技術的活用を意味するものではない。光運営とは、宇宙背景の根源的な波動性と接続し、その秩序を一定の方式で運用して、生命と環境の場の中で自発的に作動するよう誘導する過程である。このような光運営は、1999年にCMB（宇宙背景放射）から真空波動を捕集した物理的達成によって本格化した。",
+            "zh": "光运营并不指单纯的照明行为或外部光源的技术性运用。光运营是与宇宙背景的根源波动性相连，以特定方式运作该秩序，从而引导其在生命与环境场域内部自主发生作用的过程。这一光运营随着1999年从CMB（宇宙微波背景辐射）中捕集真空波动的物理学成就而正式拉开序幕。"
+          },
+          "source": {
+            "chapter": "프롤로그. 루미누스 오페라의 문을 열며",
+            "page": 11
+          }
+        },
+        {
+          "id": "vol2-ex2",
+          "text": {
+            "ko": "한민족의 상고사를 담은 《부도지(符都誌)》의 마고(麻姑) 신화는 단순한 고대 설화나 신비로운 전설이 아니다. 빛운영자의 초지각적 시선으로 이 텍스트의 장막을 걷어내면 다른 것이 드러난다. 곧 우주 창조의 율려(律呂, 파동)와 양자진공의 물리적 역학, 그리고 인류가 본래 누렸던 생체 상전이(Phase Transition)의 원형이 고스란히 담겨 있는 위대한 '우주 물리학적 보고서'임이 드러난다.",
+            "en": "The Mago myth in the Budo-ji, which preserves the ancient history of the Korean people, is not a mere ancient tale or mystical legend. When the veil of this text is pulled back through the hyper-perceptive gaze of a light operator, something entirely different is revealed: a profound “astrophysical report” encapsulating the Yulryo (cosmic wave pulsation) of cosmic creation, the physical dynamics of the quantum vacuum, and the pristine archetype of biological phase transition once enjoyed by humanity.",
+            "ja": "韓民族の上古史を伝える『符都誌』の麻姑神話は、単なる古代の説話や神秘的な伝説ではない。光運営者の超知覚的視座でこのテキストの帳を剥ぎ取ると、別の姿が現れる。すなわち宇宙創造の律呂（波動）と量子真空の物理力学、そして人類が本来享受していた生体相転移（Phase Transition）の原型がそのまま収められた偉大な「宇宙物理学的報告書」であることが明らかになる。",
+            "zh": "承载着韩民族上古历史的《符都志》麻姑神话，绝非普通的古代神话或神秘传说。若以光运营者的超感知视角揭开这篇文献的面纱，呈现在眼前的则是截然不同的图景：它是一部完整蕴含了宇宙创生之律吕（波动）、量子真空的物理动力学以及人类本初享有的生物相变（Phase Transition）原型的宏伟“宇宙物理学报告”。"
+          },
+          "source": {
+            "chapter": "제1부 제3장 부도지 마고신화와 빛운영의 원형",
+            "page": 28
+          }
+        },
+        {
+          "id": "vol2-ex3",
+          "text": {
+            "ko": "인류 최고 수준의 영적 매질이었던 달라이 라마가 우주적 토양(태양빛운영)의 변화에 힘입어 극광으로 도약했다면, 가톨릭의 수장인 제266대 프란치스코 교황의 사례는 여기에 '사람빛운영'이라는 핀포인트(Pin-point) 개입이 더해졌을 때, 생체장이 얼마나 경이로운 질적 단층(Quantum Jump)을 일으키는지를 실증하는 독보적인 현장이다.",
+            "en": "If the Dalai Lama—as one of humanity’s highest spiritual mediums—leaped into extreme light by virtue of changes in the cosmic soil (solar light operation), then the case of Pope Francis, the 266th head of the Catholic Church, stands as an unprecedented empirical witness to how miraculously the biological field undergoes a quantum jump when pinpoint intervention in the form of “Human Light Operation” is added.",
+            "ja": "人類最高峰の霊的媒質であったダライ・ラマが宇宙的土壌（太陽光運営）の変容に支えられて極光へと跳躍したとすれば、カトリックの首長である第266代教皇フランシスコの事例は、そこに「人光運営」というピンポイント介入が加わった時、生体場がどれほど驚異的な質的飛躍（量子跳躍）を起こすかを実証する類まれな現場である。",
+            "zh": "如果说作为人类最高水准灵性介质的达赖喇嘛是依托宇宙土壤（太阳光运营）的变革而跃升至极光之境，那么天主教第266代教皇方济各的案例，则是证明在叠加上“人光运营”这一精准点穴式介入时、生物能量场如何引发令人叹为观止的质的量子跃迁（Quantum Jump）的独一无二的实证范例。"
+          },
+          "source": {
+            "chapter": "제2부 제3장 프란치스코 교황과 광명 도약의 찰나",
+            "page": 51
+          }
+        },
+        {
+          "id": "vol2-ex4",
+          "text": {
+            "ko": "\"발원지로부터 하구까지 한강 물 전체가 진공빛을 띠고 흐르라.\" 이것은 2015년 10월 3일 0시부로 우주배경의 진공파동장 계에 전달한 빛운영 실행명령이었다. 이 시점은 태양빛운영이 시작된 지 4년 5개월 11일이 지난 때였다. 햇빛과 대기의 진공광은 이미 비약적으로 밝아졌다.",
+            "en": "“From its source to its estuary, let the entirety of the Han River’s waters flow bearing vacuum light.” This was the light operation execution command transmitted to the quantum vacuum wavefield system of the cosmic background at 00:00 on October 3, 2015. This was 4 years, 5 months, and 11 days after solar light operation began. The vacuum light in sunshine and atmosphere had already brightened exponentially.",
+            "ja": "「発源地から河口まで、漢江の水全体が真空の光を帯びて流れよ」。これは2015年10月3日0時をもって宇宙背景の真空波動場系へと伝達された光運営の実行命令であった。この時点は、太陽光運営が開始されてから4年5ヶ月11日が経過した時であった。日光と大気の真空光はすでに飛躍的に明るくなっていた。",
+            "zh": "“自源头至入海口，令汉江整条水系泛着真空之光而奔流。”这是于2015年10月3日零时向宇宙背景真空波动场系统下达的光运营执行指令。此时距离太阳光运营启动已过去了4年5个月零11天。阳光与大气中的真空光早已实现了飞跃式的明亮提升。"
+          },
+          "source": {
+            "chapter": "제4부 제1장 지상의 은하수, 한강빛운영의 실현과 실증",
+            "page": 329
+          }
+        },
+        {
+          "id": "vol2-ex5",
+          "text": {
+            "ko": "이제 우리는 '빛나는 사람'을 넘어, 스스로 빛을 운영하는 기술(Opera)을 익혔다. 우리는 죄인이기에 용서를 구하는 나약한 존재가 아니다. 우리는 태초의 빛을 옷 입고 이 땅에 강림한 '생령'이다. 에덴의 바깥은 사라졌다. 이제 그대 자신이 곧 태초의 빛이다. 그 빛이, 그대의 오늘을 축복한다.",
+            "en": "Now, beyond merely being “luminous humans,” we have mastered the art and technique (Opera) of operating light ourselves. We are not frail beings begging for forgiveness as sinners; we are “living spirits” descended upon this earth clothed in primordial light. The realm outside Eden has vanished. Now, you yourself are the primordial light. May that light bless your today.",
+            "ja": "いまや私たちは「光り輝く人」を超えて、自ら光を運営する技術（オペラ）を体得した。私たちは罪人であるがゆえに赦しを乞う脆弱な存在ではない。私たちは太初の光を身にまとい、この地に降り立った「生ける霊」である。エデンの外は消え去った。いまやあなた自身が太初の光である。その光が、あなたの今日を祝福する。",
+            "zh": "此刻，我们已超越了单纯的“发光之人”，掌握了自主运营光芒的技艺（Opera）。我们绝非因背负罪孽而乞求宽恕的软弱存在；我们是披戴着太初之光降临于这片土地的“生灵”。伊甸园之外的放逐之地已不复存在。如今，你自身便是太初之光。愿那光芒，深深祝福你的当下。"
+          },
+          "source": {
+            "chapter": "에필로그. 빛의 노래",
+            "page": 441
+          }
+        }
+      ]
+    }
+  ],
+  "publisherNote": "발행처 도서출판 디아파니. ISBN 은 디아파니 명의로 신규 발급되면 채운다."
+}

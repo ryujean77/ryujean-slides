@@ -1,0 +1,172 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-20",
+  "note": "한국어판 미디어로 교체 완료(2026-09-20). lang 이 현재 언어와 맞는 것을 우선 노출한다.",
+  "volumes": [
+    {
+      "id": "vol1",
+      "no": 1,
+      "title": {
+        "ko": "호모 루미누스 — 빛나는 사람",
+        "en": "Homo Luminus — The Luminous Human",
+        "ja": "ホモ・ルミヌス — 光り輝く人",
+        "zh": "智光人 (Homo Luminus) — 发光的人"
+      },
+      "meta": {
+        "ko": "능소(백태종) · 364쪽",
+        "en": "Neungso (Baek Tae-jong) · 364 pages",
+        "ja": "能昭（白泰宗）・364ページ",
+        "zh": "能昭（白泰宗）· 364页"
+      },
+      "media": [
+        {
+          "kind": "video",
+          "lang": "ko",
+          "src": "vol1_notebooklm_video_ko.mp4",
+          "poster": "vol1_notebooklm_infographic.png",
+          "spec": "1280×720 · 8:09",
+          "title": {
+            "ko": "영상 개요",
+            "en": "Video overview",
+            "ja": "映像概要",
+            "zh": "视频概览"
+          },
+          "desc": {
+            "ko": "진공광이 무엇이고 왜 인간과 연결되는지를 도해와 함께 설명합니다.",
+            "en": "Explains what vacuum light is and why it connects to human beings, with diagrams.",
+            "ja": "真空光とは何か、なぜ人間とつながるのかを図解とともに説明します。",
+            "zh": "结合图解说明真空光是什么，以及它为何与人相连。"
+          }
+        },
+        {
+          "kind": "video",
+          "lang": "en",
+          "src": "vol1_notebooklm_video.mp4",
+          "poster": "vol1_notebooklm_infographic.png",
+          "spec": "1280×720 · 9:29",
+          "title": {
+            "ko": "영상 개요 (영어판)",
+            "en": "Video overview (English)",
+            "ja": "映像概要（英語版）",
+            "zh": "视频概览（英文版）"
+          },
+          "desc": {
+            "ko": "같은 내용의 영어 내레이션판입니다.",
+            "en": "The same content with English narration.",
+            "ja": "同じ内容の英語ナレーション版です。",
+            "zh": "同一内容的英文旁白版本。"
+          }
+        },
+        {
+          "kind": "audio",
+          "lang": "ko",
+          "src": "vol1_notebooklm_audio_ko.m4a",
+          "spec": "AAC · 24:29",
+          "title": {
+            "ko": "두 진행자의 심층 대담",
+            "en": "In-depth conversation between two hosts",
+            "ja": "二人のホストによる深層対談",
+            "zh": "两位主持人的深度对谈"
+          },
+          "desc": {
+            "ko": "이동 중에 듣기 좋습니다. 책의 논점을 대화로 풀어냅니다.",
+            "en": "Good for listening on the move. It unpacks the book's arguments as a conversation.",
+            "ja": "移動中に聴くのに適しています。本の論点を対話で解きほぐします。",
+            "zh": "适合在路上收听，以对谈方式梳理本书的论点。"
+          }
+        },
+        {
+          "kind": "image",
+          "lang": "-",
+          "src": "vol1_notebooklm_infographic.png",
+          "spec": "2752×1536",
+          "title": {
+            "ko": "핵심 개념 한 장 도해",
+            "en": "Key concepts on a single sheet",
+            "ja": "主要概念の一枚図解",
+            "zh": "核心概念一图速览"
+          },
+          "desc": {
+            "ko": "CMB · 진공광 · 빛운영의 관계를 한 화면에 담았습니다.",
+            "en": "Shows the relationship between the CMB, vacuum light, and light operation in one view.",
+            "ja": "CMB・真空光・光運営の関係を一画面にまとめています。",
+            "zh": "在一张图中呈现CMB、真空光与光运营之间的关系。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vol2",
+      "no": 2,
+      "title": {
+        "ko": "루미누스 오페라 — 빛을 운영하는 기술",
+        "en": "Luminus Opera — The technology of light operation",
+        "ja": "ルミヌス・オペラ — 光運営の技術",
+        "zh": "流明歌剧 — 光运营的技术"
+      },
+      "meta": {
+        "ko": "능소(백태종) · 2026년 10월 3일 발행 예정",
+        "en": "Neungso (Baek Tae-jong) · Scheduled for publication on October 3, 2026",
+        "ja": "能昭（白泰宗）・2026年10月3日刊行予定",
+        "zh": "能昭（白泰宗）· 预计2026年10月3日出版"
+      },
+      "media": [
+        {
+          "kind": "video",
+          "lang": "ko",
+          "src": "vol2_notebooklm_video_ko.mp4",
+          "poster": "vol2_notebooklm_infographic.png",
+          "spec": "1280×720 · 7:14",
+          "title": {
+            "ko": "영상 개요",
+            "en": "Video overview",
+            "ja": "映像概要",
+            "zh": "视频概览"
+          },
+          "desc": {
+            "ko": "태양에서 사람으로 이어지는 빛운영의 기술을 순서대로 짚습니다.",
+            "en": "Walks through the technology of light operation, from the Sun to the human being.",
+            "ja": "太陽から人へとつながる光運営の技術を順に追います。",
+            "zh": "依次梳理从太阳到人的光运营技术。"
+          }
+        },
+        {
+          "kind": "audio",
+          "lang": "ko",
+          "src": "vol2_notebooklm_audio_ko.m4a",
+          "spec": "AAC · 16:44",
+          "title": {
+            "ko": "두 진행자의 심층 대담",
+            "en": "In-depth conversation between two hosts",
+            "ja": "二人のホストによる深層対談",
+            "zh": "两位主持人的深度对谈"
+          },
+          "desc": {
+            "ko": "천부삼인의 우주론과 6단계 공정을 대화로 정리합니다.",
+            "en": "Organizes the cosmology of Cheonbu-samin and the six-stage process as a conversation.",
+            "ja": "天符三印の宇宙論と六段階工程を対話で整理します。",
+            "zh": "以对谈形式梳理天符三印的宇宙论与六阶段工艺。"
+          }
+        },
+        {
+          "kind": "image",
+          "lang": "-",
+          "src": "vol2_notebooklm_infographic.png",
+          "spec": "2752×1536",
+          "title": {
+            "ko": "빛운영 6단계 공정 도해",
+            "en": "The six stages of light operation",
+            "ja": "光運営 六段階工程の図解",
+            "zh": "光运营六阶段工艺图解"
+          },
+          "desc": {
+            "ko": "포집 · 절연 · 저장 · 복제 · 중층화 · 공진의 흐름을 한눈에.",
+            "en": "Capture, insulation, storage, replication, stratification, and resonance at a glance.",
+            "ja": "捕集・絶縁・貯蔵・複製・重層化・共振の流れを一目で。",
+            "zh": "一目了然地呈现捕集、绝缘、储存、复制、多层化与共振的流程。"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "version": "1.0",
+  "strings": {
+    "brand": {
+      "ko": "LUMINUS ARCHIVE",
+      "en": "Luminus Archive",
+      "ja": "ルミヌス・アーカイブ",
+      "zh": "流明档案"
+    },
+    "nav.about": {
+      "ko": "호모 루미누스란?",
+      "en": "What is Homo Luminus?",
+      "ja": "ホモ・ルミヌスとは？",
+      "zh": "什么是智光人 (Homo Luminus)？"
+    },
+    "nav.concepts": {
+      "ko": "핵심 개념",
+      "en": "Key Concepts",
+      "ja": "主要概念",
+      "zh": "核心概念"
+    },
+    "nav.chronicle": {
+      "ko": "연대기",
+      "en": "Chronicle",
+      "ja": "年代記",
+      "zh": "编年史"
+    },
+    "nav.studio": {
+      "ko": "스튜디오",
+      "en": "Studio",
+      "ja": "スタジオ",
+      "zh": "工作室"
+    },
+    "hero.eyebrow": {
+      "ko": "Luminus Archive · Studio",
+      "en": "Luminus Archive · Studio",
+      "ja": "ルミヌス・アーカイブ・スタジオ",
+      "zh": "流明档案 · 工作室"
+    },
+    "hero.title": {
+      "ko": "기록은 숫자로 남았다",
+      "en": "The record remains in numbers",
+      "ja": "記録は数値として残された",
+      "zh": "记录以数字留存"
+    },
+    "hero.sub": {
+      "ko": "1999년 우주배경복사(CMB) 진공 파동 포집에서<br>2011년 태양빛운영을 거쳐 오늘에 이르는 실증의 궤적",
+      "en": "An empirical trajectory from the capture of vacuum waves in the cosmic microwave background (CMB) in 1999,<br>through solar light operation in 2011, to the present",
+      "ja": "1999年の宇宙マイクロ波背景放射（CMB）内の真空波動捕集から<br>2011年の太陽光運営を経て、今日に至る実証の軌跡",
+      "zh": "从1999年捕集宇宙微波背景辐射（CMB）中的真空波动，<br>经2011年太阳光运营，延续至今的实证轨迹"
+    },
+    "sec.about": {
+      "ko": "호모 루미누스란?",
+      "en": "What is Homo Luminus?",
+      "ja": "ホモ・ルミヌスとは？",
+      "zh": "什么是智光人 (Homo Luminus)？"
+    },
+    "sec.about.lead": {
+      "ko": "처음 오셨다면 여기서 시작하십시오.",
+      "en": "If this is your first visit, start here.",
+      "ja": "初めての方は、ここからお読みください。",
+      "zh": "初次来访，请从这里开始。"
+    },
+    "sec.concepts": {
+      "ko": "핵심 개념",
+      "en": "Key Concepts",
+      "ja": "主要概念",
+      "zh": "核心概念"
+    },
+    "sec.concepts.lead": {
+      "ko": "책을 읽기 전에 알아두면 좋은 말들입니다. 항목은 계속 늘어납니다.",
+      "en": "Terms to know before reading the books. More entries will be added over time.",
+      "ja": "本を読む前に知っておきたい言葉です。項目は順次追加されます。",
+      "zh": "阅读前值得了解的术语。条目将持续增加。"
+    },
+    "sec.chronicle": {
+      "ko": "진공광 밝기의 궤적",
+      "en": "The trajectory of vacuum light brightness",
+      "ja": "真空光の明るさの軌跡",
+      "zh": "真空光亮度的轨迹"
+    },
+    "sec.chronicle.lead": {
+      "ko": "태양빛운영 가동일로부터의 경과일과 그때 관측된 진공광 밝기입니다. 수치가 기호의 한계를 넘어서는 지점에서, 기록은 ‘수치화 불가’로 바뀝니다.",
+      "en": "Days elapsed since solar light operation began, alongside the vacuum light brightness observed at each point. Where the values exceed the limits of symbols, the record changes to “unquantifiable.”",
+      "ja": "太陽光運営の開始からの経過日数と、その時点で観測された真空光の明るさです。数値が記号の限界を超える地点で、記録は「数値化不可」に変わります。",
+      "zh": "这里列出太阳光运营开始后的经过天数，以及各时点观测到的真空光亮度。当数值超出符号的表达极限时，记录改为“无法数值化”。"
+    },
+    "sec.studio": {
+      "ko": "영상 · 대담 · 도해",
+      "en": "Videos · Conversations · Diagrams",
+      "ja": "映像・対談・図解",
+      "zh": "视频 · 对谈 · 图解"
+    },
+    "sec.studio.lead": {
+      "ko": "두 권의 내용을 Google NotebookLM이 읽고 만든 자료입니다. 책을 펼치기 전에 전체 윤곽을 잡거나, 읽은 뒤 되짚을 때 쓰십시오.",
+      "en": "Materials created by Google NotebookLM from the contents of the two volumes. Use them to get an overview before opening the books, or to review after reading.",
+      "ja": "二冊の内容をGoogle NotebookLMが読み込んで作成した資料です。本を開く前に全体像をつかんだり、読後に振り返ったりする際にお使いください。",
+      "zh": "这些资料由Google NotebookLM读取两卷内容后生成。可用于阅读前了解整体轮廓，或阅读后回顾。"
+    },
+    "label.day": {
+      "ko": "일째",
+      "en": "days",
+      "ja": "日目",
+      "zh": "天"
+    },
+    "label.source": {
+      "ko": "출처",
+      "en": "Source",
+      "ja": "出典",
+      "zh": "出处"
+    },
+    "label.related": {
+      "ko": "관련",
+      "en": "Related",
+      "ja": "関連",
+      "zh": "相关"
+    },
+    "label.pending": {
+      "ko": "준비 중",
+      "en": "In preparation",
+      "ja": "準備中",
+      "zh": "准备中"
+    },
+    "label.zoom": {
+      "ko": "원본 크기로 보기",
+      "en": "View at original size",
+      "ja": "原寸で表示",
+      "zh": "查看原始尺寸"
+    },
+    "label.volume": {
+      "ko": "제{n}권",
+      "en": "Volume {n}",
+      "ja": "第{n}巻",
+      "zh": "第{n}卷"
+    },
+    "theme.dark": {
+      "ko": "다크",
+      "en": "Dark",
+      "ja": "ダーク",
+      "zh": "深色"
+    },
+    "theme.light": {
+      "ko": "라이트",
+      "en": "Light",
+      "ja": "ライト",
+      "zh": "浅色"
+    },
+    "footer.pub": {
+      "ko": "도서출판 디아파니 · 루미누스 아카이브",
+      "en": "Diaphany Press · Luminus Archive",
+      "ja": "ディアファニー出版・ルミヌス・アーカイブ",
+      "zh": "迪亚法尼出版社 · 流明档案"
+    },
+    "footer.contact": {
+      "ko": "저자 능소(백태종) · 문의",
+      "en": "Author: Neungso (Baek Tae-jong) · Contact",
+      "ja": "著者：能昭（白泰宗）・お問い合わせ",
+      "zh": "作者：能昭（白泰宗）· 联系"
+    },
+    "a11y.langSwitch": {
+      "ko": "언어 선택",
+      "en": "Select language",
+      "ja": "言語を選択",
+      "zh": "选择语言"
+    },
+    "a11y.themeToggle": {
+      "ko": "테마 전환",
+      "en": "Switch theme",
+      "ja": "テーマを切り替え",
+      "zh": "切换主题"
+    },
+    "a11y.volTabs": {
+      "ko": "권 선택",
+      "en": "Select volume",
+      "ja": "巻を選択",
+      "zh": "选择卷次"
+    },
+    "label.search": {
+      "ko": "개념 검색",
+      "en": "Search concepts",
+      "ja": "概念を検索",
+      "zh": "搜索概念"
+    },
+    "label.searchPh": {
+      "ko": "용어로 찾기",
+      "en": "Find by term",
+      "ja": "用語で探す",
+      "zh": "按术语查找"
+    },
+    "label.count": {
+      "ko": "{n} / {t}개",
+      "en": "{n} / {t}",
+      "ja": "{n} / {t} 件",
+      "zh": "{n} / {t} 条"
+    },
+    "nav.community": {
+      "ko": "소통",
+      "en": "Community",
+      "ja": "コミュニティ",
+      "zh": "交流"
+    },
+    "sec.community": {
+      "ko": "자유게시판 · Q&A",
+      "en": "Open Board · Q&A",
+      "ja": "自由掲示板 · Q&A",
+      "zh": "自由论坛 · 问答"
+    },
+    "sec.community.lead": {
+      "ko": "읽고 느낀 것을 남겨 주십시오. 질문은 Q&A 탭에 올려 주시면 답변드립니다.",
+      "en": "Leave what you felt as you read. Questions go in the Q&A tab and will be answered.",
+      "ja": "読んで感じたことをお書きください。ご質問は Q&A タブへどうぞ。",
+      "zh": "欢迎留下阅读后的感受。提问请发在问答栏，我们会回复。"
+    },
+    "a11y.boardTabs": {
+      "ko": "게시판 선택",
+      "en": "Select board",
+      "ja": "掲示板の選択",
+      "zh": "选择版块"
+    },
+    "board.free": {
+      "ko": "자유게시판",
+      "en": "Open Board",
+      "ja": "自由掲示板",
+      "zh": "自由论坛"
+    },
+    "board.qna": {
+      "ko": "Q&A",
+      "en": "Q&A",
+      "ja": "Q&A",
+      "zh": "问答"
+    },
+    "board.empty": {
+      "ko": "아직 남겨진 글이 없습니다. 첫 글을 남겨 주십시오.",
+      "en": "No posts yet. Be the first to write.",
+      "ja": "まだ投稿がありません。最初の一言をどうぞ。",
+      "zh": "还没有帖子。欢迎成为第一位留言者。"
+    },
+    "board.loading": {
+      "ko": "불러오는 중…",
+      "en": "Loading…",
+      "ja": "読み込み中…",
+      "zh": "加载中…"
+    },
+    "board.sending": {
+      "ko": "보내는 중…",
+      "en": "Sending…",
+      "ja": "送信中…",
+      "zh": "发送中…"
+    },
+    "board.posted": {
+      "ko": "등록되었습니다.",
+      "en": "Posted.",
+      "ja": "登録されました。",
+      "zh": "已发布。"
+    },
+    "board.deleted": {
+      "ko": "삭제되었습니다.",
+      "en": "Deleted.",
+      "ja": "削除されました。",
+      "zh": "已删除。"
+    },
+    "board.offline": {
+      "ko": "게시판 서버 연결을 준비하고 있습니다. 곧 열립니다.",
+      "en": "The board backend is being connected. It will open shortly.",
+      "ja": "掲示板サーバーを準備中です。まもなく公開されます。",
+      "zh": "论坛后台正在接入，即将开放。"
+    },
+    "btn.post": {
+      "ko": "글 남기기",
+      "en": "Post",
+      "ja": "投稿する",
+      "zh": "发布"
+    },
+    "btn.comment": {
+      "ko": "댓글",
+      "en": "Comment",
+      "ja": "コメント",
+      "zh": "评论"
+    },
+    "btn.delete": {
+      "ko": "삭제",
+      "en": "Delete",
+      "ja": "削除",
+      "zh": "删除"
+    },
+    "btn.subscribe": {
+      "ko": "구독하기",
+      "en": "Subscribe",
+      "ja": "購読する",
+      "zh": "订阅"
+    },
+    "ph.name": {
+      "ko": "이름",
+      "en": "Name",
+      "ja": "お名前",
+      "zh": "姓名"
+    },
+    "ph.password": {
+      "ko": "비밀번호 (4자 이상 · 수정·삭제에 씁니다)",
+      "en": "Password (4+ chars — used to edit or delete)",
+      "ja": "パスワード（4文字以上・削除時に使用）",
+      "zh": "密码（4位以上，用于删除）"
+    },
+    "ph.title": {
+      "ko": "제목",
+      "en": "Title",
+      "ja": "タイトル",
+      "zh": "标题"
+    },
+    "ph.body": {
+      "ko": "내용을 적어 주십시오.",
+      "en": "Write your message.",
+      "ja": "内容をご記入ください。",
+      "zh": "请填写内容。"
+    },
+    "ph.email": {
+      "ko": "이메일 주소",
+      "en": "Email address",
+      "ja": "メールアドレス",
+      "zh": "电子邮箱"
+    },
+    "ph.nameOpt": {
+      "ko": "이름 (선택)",
+      "en": "Name (optional)",
+      "ja": "お名前（任意）",
+      "zh": "姓名（选填）"
+    },
+    "prompt.name": {
+      "ko": "이름을 입력해 주십시오.",
+      "en": "Enter your name.",
+      "ja": "お名前を入力してください。",
+      "zh": "请输入姓名。"
+    },
+    "prompt.password": {
+      "ko": "비밀번호를 입력해 주십시오. (4자 이상)",
+      "en": "Enter a password. (4+ characters)",
+      "ja": "パスワードを入力してください。（4文字以上）",
+      "zh": "请输入密码。（4位以上）"
+    },
+    "prompt.comment": {
+      "ko": "댓글을 입력해 주십시오.",
+      "en": "Enter your comment.",
+      "ja": "コメントを入力してください。",
+      "zh": "请输入评论。"
+    },
+    "prompt.deletePw": {
+      "ko": "비밀번호를 입력해 주십시오. (관리자 비밀번호도 가능합니다)",
+      "en": "Enter the password. (The admin password also works.)",
+      "ja": "パスワードを入力してください。（管理者パスワードも可）",
+      "zh": "请输入密码。（管理员密码同样有效）"
+    },
+    "confirm.delete": {
+      "ko": "삭제하시겠습니까? 되돌릴 수 없습니다.",
+      "en": "Delete this? This cannot be undone.",
+      "ja": "削除しますか？元に戻せません。",
+      "zh": "确定删除？此操作无法撤销。"
+    },
+    "pager.prev": {
+      "ko": "이전",
+      "en": "Prev",
+      "ja": "前へ",
+      "zh": "上一页"
+    },
+    "pager.next": {
+      "ko": "다음",
+      "en": "Next",
+      "ja": "次へ",
+      "zh": "下一页"
+    },
+    "news.title": {
+      "ko": "뉴스레터",
+      "en": "Newsletter",
+      "ja": "ニュースレター",
+      "zh": "电子报"
+    },
+    "news.lead": {
+      "ko": "새 자료가 아카이브에 오르면 메일로 알려 드립니다.",
+      "en": "We will email you when new material is added to the archive.",
+      "ja": "新しい資料がアーカイブに追加されたらメールでお知らせします。",
+      "zh": "档案新增资料时，我们会通过邮件通知您。"
+    },
+    "news.privacy": {
+      "ko": "수집한 이메일은 아카이브 소식 발송에만 사용하며, 제3자에게 제공하지 않습니다. 해지는 메일 하단 링크로 언제든 가능합니다.",
+      "en": "Your email is used only to send archive updates and is never shared with third parties. You can unsubscribe anytime via the link in each email.",
+      "ja": "いただいたメールアドレスはアーカイブのお知らせ配信にのみ使用し、第三者には提供しません。配信停止はメール末尾のリンクからいつでも可能です。",
+      "zh": "您的邮箱仅用于发送档案更新，绝不提供给第三方。可随时通过邮件底部链接退订。"
+    },
+    "news.done": {
+      "ko": "구독이 등록되었습니다. 감사합니다.",
+      "en": "Subscribed. Thank you.",
+      "ja": "購読を登録しました。ありがとうございます。",
+      "zh": "订阅成功，谢谢。"
+    },
+    "books.toc": {
+      "ko": "목차 보기",
+      "en": "Table of contents",
+      "ja": "目次を見る",
+      "zh": "查看目录"
+    },
+    "unit.pages": {
+      "ko": "쪽",
+      "en": " pp.",
+      "ja": "頁",
+      "zh": "页"
+    },
+    "unit.page": {
+      "ko": "쪽",
+      "en": "p.",
+      "ja": "頁",
+      "zh": "页"
+    },
+    "err.bad_board": {
+      "ko": "잘못된 게시판입니다.",
+      "en": "Invalid board.",
+      "ja": "不正な掲示板です。",
+      "zh": "版块无效。"
+    },
+    "err.missing_field": {
+      "ko": "필수 항목을 모두 채워 주십시오.",
+      "en": "Please fill in all required fields.",
+      "ja": "必須項目をすべてご記入ください。",
+      "zh": "请填写所有必填项。"
+    },
+    "err.too_long": {
+      "ko": "입력이 너무 깁니다. 줄여서 다시 보내 주십시오.",
+      "en": "Input is too long. Please shorten it.",
+      "ja": "入力が長すぎます。短くしてお送りください。",
+      "zh": "内容过长，请缩短后重试。"
+    },
+    "err.bad_email": {
+      "ko": "이메일 주소 형식을 확인해 주십시오.",
+      "en": "Please check the email address format.",
+      "ja": "メールアドレスの形式をご確認ください。",
+      "zh": "请检查邮箱格式。"
+    },
+    "err.wrong_password": {
+      "ko": "비밀번호가 일치하지 않습니다.",
+      "en": "Password does not match.",
+      "ja": "パスワードが一致しません。",
+      "zh": "密码不正确。"
+    },
+    "err.not_found": {
+      "ko": "대상을 찾을 수 없습니다. 이미 삭제되었을 수 있습니다.",
+      "en": "Not found. It may already have been deleted.",
+      "ja": "対象が見つかりません。すでに削除された可能性があります。",
+      "zh": "未找到对象，可能已被删除。"
+    },
+    "err.rate_limited": {
+      "ko": "잠시 후 다시 시도해 주십시오.",
+      "en": "Please try again in a moment.",
+      "ja": "しばらくしてからもう一度お試しください。",
+      "zh": "请稍后再试。"
+    },
+    "err.spam": {
+      "ko": "전송하지 못했습니다.",
+      "en": "Could not send.",
+      "ja": "送信できませんでした。",
+      "zh": "发送失败。"
+    },
+    "err.network": {
+      "ko": "연결에 실패했습니다. 네트워크를 확인해 주십시오.",
+      "en": "Connection failed. Please check your network.",
+      "ja": "接続に失敗しました。ネットワークをご確認ください。",
+      "zh": "连接失败，请检查网络。"
+    },
+    "err.timeout": {
+      "ko": "응답이 늦어지고 있습니다. 다시 시도해 주십시오.",
+      "en": "The server is not responding. Please try again.",
+      "ja": "応答がありません。もう一度お試しください。",
+      "zh": "服务器无响应，请重试。"
+    }
+  },
+  "updated": "2026-09-20"
+}

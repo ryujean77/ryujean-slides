@@ -1,0 +1,314 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-20",
+  "epoch": "2011-04-21",
+  "note": "day 는 태양빛운영 가동일로부터의 경과일. ko 가 원본.",
+  "events": [
+    {
+      "id": "1999-capture",
+      "year": "1999",
+      "day": null,
+      "key": true,
+      "title": {
+        "ko": "우주배경복사 내부의 진공 파동 발견",
+        "en": "Discovery of vacuum waves within the cosmic microwave background (CMB)",
+        "ja": "宇宙マイクロ波背景放射内部の真空波動を発見",
+        "zh": "发现宇宙微波背景辐射内部的真空波动"
+      },
+      "body": {
+        "ko": "고대 사상의 형상학적 문헌을 교차 검증하는 과정에서 CMB 내부에 감추어진 고유의 진공 파동을 발견하고, 이 미세한 진동을 최초로 포집·유도하는 데 성공했습니다.",
+        "en": "While cross-checking texts on forms in ancient thought, distinctive vacuum waves hidden within the CMB were discovered, and these subtle vibrations were successfully captured and guided for the first time.",
+        "ja": "古代思想の形象学的文献を相互に検証する過程で、CMB内部に隠された固有の真空波動を発見し、この微細な振動を初めて捕集・誘導することに成功しました。",
+        "zh": "在交叉核验古代思想中有关形象学的文献时，发现了隐藏于CMB内部的特有真空波动，并首次成功捕集、引导了这一微细振动。"
+      },
+      "lux": null
+    },
+    {
+      "id": "2009-baseline",
+      "year": "2009",
+      "day": null,
+      "key": false,
+      "title": {
+        "ko": "심우주의 원형적 기준선",
+        "en": "The original baseline of deep space",
+        "ja": "深宇宙の原型的な基準線",
+        "zh": "深空的原型基准线"
+      },
+      "body": {
+        "ko": "태양빛운영 이전 촬영된 은하수(허블우주망원경). 손대지 않은 심우주의 기준값입니다.",
+        "en": "The Milky Way photographed before solar light operation, with the Hubble Space Telescope. This is the reference value for untouched deep space.",
+        "ja": "太陽光運営以前にハッブル宇宙望遠鏡で撮影された天の川銀河。手を加えていない深宇宙の基準値です。",
+        "zh": "太阳光运营之前由哈勃空间望远镜拍摄的银河系。这是未经干预的深空基准值。"
+      },
+      "lux": {
+        "display": {
+          "ko": "550경",
+          "en": "5.5×10^18",
+          "ja": "550京",
+          "zh": "550京（5.5×10^18）"
+        }
+      }
+    },
+    {
+      "id": "pre-2011",
+      "year": "~2011.4",
+      "day": null,
+      "key": false,
+      "title": {
+        "ko": "가동 이전 — 변동 없는 구간",
+        "en": "Before operation — An interval without change",
+        "ja": "稼働前 — 変動のない区間",
+        "zh": "运行之前 — 无变化区间"
+      },
+      "body": {
+        "ko": "알 수 없는 과거부터 태양빛운영 직전까지, 관측값은 한 범위 안에서 움직이지 않았습니다. 역사 속 극소수의 영성인과 세기적 천재에게서 상단값이 관찰되었을 뿐입니다.",
+        "en": "From an unknown point in the past until just before solar light operation, observed values remained within a fixed range. The upper value was observed only in a very small number of spiritual figures and exceptional geniuses in history.",
+        "ja": "いつとも知れない過去から太陽光運営の直前まで、観測値は一定の範囲にとどまっていました。上限の値が観察されたのは、歴史上のごく少数の霊性に生きた人々や世紀的な天才だけでした。",
+        "zh": "从不可知的过去直到太阳光运营前夕，观测值始终停留在同一范围内。只有历史上极少数灵性人士和世纪天才被观测到上限值。"
+      },
+      "lux": {
+        "display": {
+          "ko": "3,000만 – 9,800조",
+          "en": "30 million – 9.8×10^15",
+          "ja": "3,000万 – 9,800兆",
+          "zh": "3,000万 – 9,800万亿（9.8×10^15）"
+        }
+      }
+    },
+    {
+      "id": "2011-start",
+      "year": "2011",
+      "dayLabel": {
+        "ko": "4월 21일",
+        "en": "April 21",
+        "ja": "4月21日",
+        "zh": "4月21日"
+      },
+      "day": 0,
+      "key": true,
+      "title": {
+        "ko": "태양빛운영 개시",
+        "en": "Beginning of solar light operation",
+        "ja": "太陽光運営の開始",
+        "zh": "太阳光运营开始"
+      },
+      "body": {
+        "ko": "포집한 진공 파동을 태양의 중심축과 정렬시키는 대여정이 시작됩니다. 이 날짜가 이후 모든 기록의 기점이 됩니다.",
+        "en": "The extended undertaking of aligning captured vacuum waves with the Sun’s central axis begins. This date becomes the starting point for all subsequent records.",
+        "ja": "捕集した真空波動を太陽の中心軸に整列させる、長期にわたる取り組みが始まります。この日が、以後すべての記録の起点となります。",
+        "zh": "将捕集到的真空波动与太阳中心轴对齐的长期工作由此开始。这一天成为此后所有记录的起点。"
+      },
+      "lux": null
+    },
+    {
+      "id": "2012-rise",
+      "year": "2012",
+      "day": 255,
+      "key": false,
+      "title": {
+        "ko": "초기 격상",
+        "en": "Initial increase",
+        "ja": "初期の上昇",
+        "zh": "初期提升"
+      },
+      "body": {
+        "ko": "가동 8개월여 만에 첫 자릿수 도약이 관측됩니다.",
+        "en": "The first increase in order of magnitude is observed a little over eight months after operation begins.",
+        "ja": "稼働から8か月余りで、初めて桁数の上昇が観測されます。",
+        "zh": "运行八个多月后，首次观测到数量级的跃升。"
+      },
+      "lux": {
+        "display": {
+          "ko": "1백억",
+          "en": "10^10",
+          "ja": "100億",
+          "zh": "100亿"
+        }
+      }
+    },
+    {
+      "id": "2013-power",
+      "year": "2013",
+      "day": 621,
+      "key": false,
+      "title": {
+        "ko": "거듭제곱 구간 진입",
+        "en": "Entering the exponential phase",
+        "ja": "累乗の区間に入る",
+        "zh": "进入幂次增长区间"
+      },
+      "body": {
+        "ko": "기하급수적 증폭이 시작됩니다. 『호모 루미누스』 제5장이 이 시기를 다룹니다.",
+        "en": "Exponential amplification begins. Chapter 5 of Homo Luminus covers this period.",
+        "ja": "指数関数的な増幅が始まります。『ホモ・ルミヌス』第5章は、この時期を扱います。",
+        "zh": "指数式放大开始。《智光人 (Homo Luminus)》第5章讨论这一时期。"
+      },
+      "lux": {
+        "display": {
+          "ko": "1조",
+          "en": "10^12",
+          "ja": "1兆",
+          "zh": "1万亿（10^12）"
+        },
+        "exp": "10^12"
+      }
+    },
+    {
+      "id": "2015-strat",
+      "year": "2015",
+      "day": 1352,
+      "key": false,
+      "title": {
+        "ko": "중층화 달성",
+        "en": "Stratification achieved",
+        "ja": "重層化の達成",
+        "zh": "实现多层化"
+      },
+      "body": {
+        "ko": "단일 수치가 아니라 층을 이루는 구조로 관측되기 시작합니다.",
+        "en": "Observations begin to show a layered structure rather than a single numerical value.",
+        "ja": "単一の数値ではなく、層をなす構造として観測され始めます。",
+        "zh": "观测开始呈现层叠结构，而非单一数值。"
+      },
+      "lux": {
+        "display": {
+          "ko": "무량수 + 3,000만",
+          "en": "10^68 + 30 million",
+          "ja": "無量大数（10^68）＋3,000万",
+          "zh": "无量大数（10^68）＋3,000万"
+        },
+        "exp": "10^68"
+      }
+    },
+    {
+      "id": "2017-break",
+      "year": "2017",
+      "day": 2083,
+      "key": true,
+      "title": {
+        "ko": "기호의 그릇이 깨지다",
+        "en": "The vessel of symbols breaks",
+        "ja": "記号の器が壊れる",
+        "zh": "符号的容器破裂"
+      },
+      "body": {
+        "ko": "유한한 기호 체계로는 더 이상 담을 수 없는 밝기에 도달합니다. 이 지점 이후의 기록은 수치가 아니라 상태로 남습니다.",
+        "en": "Brightness reaches a level that a finite symbolic system can no longer express. Beyond this point, the record describes states rather than numerical values.",
+        "ja": "有限の記号体系では、もはや表せない明るさに達します。この地点以後は、数値ではなく状態が記録されます。",
+        "zh": "亮度达到有限符号体系已无法表达的水平。此后的记录以状态取代数值。"
+      },
+      "lux": {
+        "display": {
+          "ko": "수치화 불가",
+          "en": "Unquantifiable",
+          "ja": "数値化不可",
+          "zh": "无法数值化"
+        }
+      }
+    },
+    {
+      "id": "2019-sat",
+      "year": "2019",
+      "day": 2813,
+      "key": false,
+      "title": {
+        "ko": "영점장의 정보 포화",
+        "en": "Information saturation in the zero-point field",
+        "ja": "零点場の情報飽和",
+        "zh": "零点场的信息饱和"
+      },
+      "body": {
+        "ko": "직전 관측보다 명질하게 밝아짐.",
+        "en": "Distinctly brighter than at the preceding observation.",
+        "ja": "直前の観測より明瞭に明るくなった。",
+        "zh": "较上次观测明显变亮。"
+      },
+      "lux": {
+        "display": {
+          "ko": "수치화 불가",
+          "en": "Unquantifiable",
+          "ja": "数値化不可",
+          "zh": "无法数值化"
+        }
+      }
+    },
+    {
+      "id": "2021-screen",
+      "year": "2021",
+      "day": 3544,
+      "key": false,
+      "title": {
+        "ko": "시공간 스크린의 복원",
+        "en": "Restoration of the spacetime screen",
+        "ja": "時空スクリーンの復元",
+        "zh": "时空屏幕的复原"
+      },
+      "body": {
+        "ko": "직전 관측보다 명질하게 밝아짐.",
+        "en": "Distinctly brighter than at the preceding observation.",
+        "ja": "直前の観測より明瞭に明るくなった。",
+        "zh": "较上次观测明显变亮。"
+      },
+      "lux": {
+        "display": {
+          "ko": "수치화 불가",
+          "en": "Unquantifiable",
+          "ja": "数値化不可",
+          "zh": "无法数值化"
+        }
+      }
+    },
+    {
+      "id": "2023-equil",
+      "year": "2023",
+      "day": 4274,
+      "key": false,
+      "title": {
+        "ko": "복사평형의 극대화",
+        "en": "Maximization of radiative equilibrium",
+        "ja": "放射平衡の最大化",
+        "zh": "辐射平衡的最大化"
+      },
+      "body": {
+        "ko": "직전 관측보다 명질하게 밝아짐.",
+        "en": "Distinctly brighter than at the preceding observation.",
+        "ja": "直前の観測より明瞭に明るくなった。",
+        "zh": "较上次观测明显变亮。"
+      },
+      "lux": {
+        "display": {
+          "ko": "수치화 불가",
+          "en": "Unquantifiable",
+          "ja": "数値化不可",
+          "zh": "无法数值化"
+        }
+      }
+    },
+    {
+      "id": "2025-horizon",
+      "year": "2025",
+      "day": 5005,
+      "key": true,
+      "title": {
+        "ko": "호모 루미누스의 지평을 열며",
+        "en": "Opening the horizon of Homo Luminus",
+        "ja": "ホモ・ルミヌスの地平を開きつつ",
+        "zh": "开启智光人 (Homo Luminus) 的地平线"
+      },
+      "body": {
+        "ko": "가동 만 14년. 3부작이 기록하려는 지평이 여기서 열립니다.",
+        "en": "Fourteen full years of operation. Here opens the horizon that the trilogy seeks to document.",
+        "ja": "稼働から満14年。三部作が記録しようとする地平が、ここで開かれます。",
+        "zh": "运行满14年。三部曲所要记录的地平线在此展开。"
+      },
+      "lux": {
+        "display": {
+          "ko": "수치화 불가",
+          "en": "Unquantifiable",
+          "ja": "数値化不可",
+          "zh": "无法数值化"
+        }
+      }
+    }
+  ]
+}
