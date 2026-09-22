@@ -71,6 +71,9 @@ header{position:sticky;top:0;z-index:40;padding-top:env(safe-area-inset-top,0px)
   font-size:.82rem;letter-spacing:.1em;color:var(--dim);flex-wrap:wrap}
 .bar nav a{text-decoration:none;transition:color .25s ease}
 .bar nav a:hover{color:var(--glow)}
+a.up{font-family:"Cormorant Garamond",serif;letter-spacing:.16em;color:var(--faint);
+  text-decoration:none;transition:color .25s ease}
+a.up:hover{color:var(--glow)}
 .ctrl{display:flex;gap:6px;align-items:center;margin-left:auto}
 .lang{display:flex;gap:2px;border:1px solid var(--line-2);border-radius:999px;padding:2px}
 .lang button{appearance:none;background:transparent;border:0;color:var(--faint);
@@ -313,6 +316,7 @@ footer a{color:var(--glow)}
     <a href="#top" class="brand" data-i18n="brand">LUMINUS ARCHIVE</a>
     <nav aria-label="주요 메뉴">
       <ul>
+        <li><a href="../" class="up">← Luminus Archive</a></li>
         <li><a href="#about" data-i18n="nav.about">호모 루미누스란?</a></li>
         <li><a href="#concepts" data-i18n="nav.concepts">핵심 개념</a></li>
         <li><a href="#chronicle" data-i18n="nav.chronicle">연대기</a></li>
@@ -455,6 +459,7 @@ footer a{color:var(--glow)}
     <p class="pub" data-i18n="footer.pub"></p>
     <p><span data-i18n="footer.contact"></span>
        <a href="mailto:vit31@naver.com">vit31@naver.com</a></p>
+    <p style="margin-top:14px"><a href="../" class="up">← Luminus Archive</a></p>
     <p style="font-family:'Cormorant Garamond',serif;letter-spacing:.24em;margin-top:12px;opacity:.55">
       FROM SAPIENS TO LUMINUS</p>
   </div>
