@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-22T19:55:09.510Z",
-  "commit": "e6e82f853bd67617a58610d8eaa72f166cd2ebae",
-  "fileCount": 1982,
+  "generatedAt": "2026-09-25T12:47:56.017Z",
+  "commit": "1050319db7a8b3db3251cb8e734a4444a75c4196",
+  "fileCount": 1983,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -7718,6 +7718,10 @@
     {
       "path": "portal/index.html.bak",
       "size": 39422
+    },
+    {
+      "path": "privacy.html",
+      "size": 2923
     },
     {
       "path": "publishing_registry.json",
