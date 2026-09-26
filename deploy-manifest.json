@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-26T05:37:55.277Z",
-  "commit": "5f8d752825e64bf455f7909beca46b246c3cc867",
-  "fileCount": 1983,
+  "generatedAt": "2026-09-26T18:38:35.867Z",
+  "commit": "06d22e12be97a368816b3bf7b8ec69a3748a8091",
+  "fileCount": 2053,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -10,6 +10,286 @@
     {
       "path": ".nojekyll",
       "size": 0
+    },
+    {
+      "path": "academy/app.js",
+      "size": 22240
+    },
+    {
+      "path": "academy/catalog.json",
+      "size": 5138
+    },
+    {
+      "path": "academy/course.html",
+      "size": 1383
+    },
+    {
+      "path": "academy/courses/agy-beginner/course.json",
+      "size": 3492
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/01-agent.md",
+      "size": 1749
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/02-setup.md",
+      "size": 1932
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/03-workspace.md",
+      "size": 2099
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/04-taste.md",
+      "size": 2221
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/05-clear-request.md",
+      "size": 2140
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/06-questions.md",
+      "size": 1843
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/07-read-source.md",
+      "size": 2113
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/08-facts.md",
+      "size": 1707
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/09-permission.md",
+      "size": 2999
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/10-modes.md",
+      "size": 2408
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/11-plan.md",
+      "size": 1688
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/12-blocked.md",
+      "size": 1905
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/13-restore.md",
+      "size": 2107
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/14-draft.md",
+      "size": 1776
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/15-page.md",
+      "size": 1863
+    },
+    {
+      "path": "academy/courses/agy-beginner/units/16-next.md",
+      "size": 2294
+    },
+    {
+      "path": "academy/courses/computer-basics/course.json",
+      "size": 5046
+    },
+    {
+      "path": "academy/courses/computer-basics/units/01-start.md",
+      "size": 5607
+    },
+    {
+      "path": "academy/courses/computer-basics/units/02-mouse-keys.md",
+      "size": 4761
+    },
+    {
+      "path": "academy/courses/computer-basics/units/03-explorer.md",
+      "size": 5309
+    },
+    {
+      "path": "academy/courses/computer-basics/units/04-names.md",
+      "size": 5132
+    },
+    {
+      "path": "academy/courses/computer-basics/units/05-chrome-sso.md",
+      "size": 5991
+    },
+    {
+      "path": "academy/courses/computer-basics/units/06-profiles.md",
+      "size": 5089
+    },
+    {
+      "path": "academy/courses/computer-basics/units/07-2step.md",
+      "size": 5828
+    },
+    {
+      "path": "academy/courses/computer-basics/units/08-public-pc.md",
+      "size": 6439
+    },
+    {
+      "path": "academy/courses/computer-basics/units/09-drive-desktop.md",
+      "size": 4866
+    },
+    {
+      "path": "academy/courses/computer-basics/units/10-stream-mirror.md",
+      "size": 4525
+    },
+    {
+      "path": "academy/courses/computer-basics/units/11-gdoc.md",
+      "size": 5367
+    },
+    {
+      "path": "academy/courses/computer-basics/units/12-share.md",
+      "size": 5037
+    },
+    {
+      "path": "academy/courses/computer-basics/units/13-same-account.md",
+      "size": 4896
+    },
+    {
+      "path": "academy/courses/computer-basics/units/14-phone-to-pc.md",
+      "size": 5273
+    },
+    {
+      "path": "academy/courses/computer-basics/units/15-qr-approve.md",
+      "size": 5363
+    },
+    {
+      "path": "academy/courses/computer-basics/units/16-calendar-tasks.md",
+      "size": 5049
+    },
+    {
+      "path": "academy/courses/computer-basics/units/17-gmail.md",
+      "size": 4426
+    },
+    {
+      "path": "academy/courses/computer-basics/units/18-docs.md",
+      "size": 4180
+    },
+    {
+      "path": "academy/courses/computer-basics/units/19-sheets-forms.md",
+      "size": 4504
+    },
+    {
+      "path": "academy/courses/computer-basics/units/20-together.md",
+      "size": 4561
+    },
+    {
+      "path": "academy/courses/computer-basics/units/21-ai-first.md",
+      "size": 4187
+    },
+    {
+      "path": "academy/courses/computer-basics/units/22-capture-ask.md",
+      "size": 4511
+    },
+    {
+      "path": "academy/courses/computer-basics/units/23-workspace-folder.md",
+      "size": 5061
+    },
+    {
+      "path": "academy/courses/computer-basics/units/24-agy-download.md",
+      "size": 5911
+    },
+    {
+      "path": "academy/courses/myway/course.json",
+      "size": 4430
+    },
+    {
+      "path": "academy/courses/myway/units/01-museum.md",
+      "size": 4441
+    },
+    {
+      "path": "academy/courses/myway/units/02-big-bucket.md",
+      "size": 4627
+    },
+    {
+      "path": "academy/courses/myway/units/03-index-map.md",
+      "size": 4538
+    },
+    {
+      "path": "academy/courses/myway/units/04-lab-map.md",
+      "size": 8162
+    },
+    {
+      "path": "academy/courses/myway/units/05-knowledge-base.md",
+      "size": 4628
+    },
+    {
+      "path": "academy/courses/myway/units/06-tacit.md",
+      "size": 4620
+    },
+    {
+      "path": "academy/courses/myway/units/07-refine.md",
+      "size": 4917
+    },
+    {
+      "path": "academy/courses/myway/units/08-museum-design.md",
+      "size": 5305
+    },
+    {
+      "path": "academy/courses/myway/units/09-lab-audit.md",
+      "size": 6106
+    },
+    {
+      "path": "academy/courses/myway/units/10-agent-reads.md",
+      "size": 4636
+    },
+    {
+      "path": "academy/courses/myway/units/11-charter-skills.md",
+      "size": 7340
+    },
+    {
+      "path": "academy/courses/myway/units/12-mcp.md",
+      "size": 5926
+    },
+    {
+      "path": "academy/courses/myway/units/13-retrieval-first.md",
+      "size": 5696
+    },
+    {
+      "path": "academy/courses/myway/units/14-digital-twin.md",
+      "size": 6026
+    },
+    {
+      "path": "academy/courses/myway/units/15-output-pipeline.md",
+      "size": 4849
+    },
+    {
+      "path": "academy/courses/myway/units/16-lab-twin.md",
+      "size": 4729
+    },
+    {
+      "path": "academy/courses/myway/units/17-osmu.md",
+      "size": 4998
+    },
+    {
+      "path": "academy/courses/myway/units/18-routine.md",
+      "size": 4797
+    },
+    {
+      "path": "academy/courses/myway/units/19-public-private.md",
+      "size": 5396
+    },
+    {
+      "path": "academy/courses/myway/units/20-lab-finish.md",
+      "size": 6370
+    },
+    {
+      "path": "academy/courses/work-automation/course.json",
+      "size": 1301
+    },
+    {
+      "path": "academy/index.html",
+      "size": 7819
+    },
+    {
+      "path": "academy/lesson.html",
+      "size": 3596
+    },
+    {
+      "path": "academy/style.css",
+      "size": 20617
     },
     {
       "path": "agy-mobile-notebooklm-mcp/index.html",
