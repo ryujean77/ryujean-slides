@@ -1,24 +1,149 @@
 {
   "id": "work-automation",
-  "title": "업무 자동화 — 내 업무 하나가 자동으로 돈다",
-  "tagline": "인박스 → 초안 → 승인. 결재하는 자동화를 내 업무 하나에 붙인다",
-  "instructor": "유정근 · 마이웨이 아카데미",
-  "level": "실무 (C2 수료 권장)",
+  "title": "업무 자동화 — 내 업무 하나가, 내가 결재하는 방식으로 돈다",
+  "tagline": "자동화는 판단을 없애는 것이 아니라, 판단할 지점만 남기는 일입니다",
+  "instructor": "유정근 · Ryu JeongKun",
+  "level": "중급 (C2 수료 권장)",
   "format": "텍스트 + 실습",
-  "tags": ["업무 자동화", "인박스", "캘린더", "결재", "맥락 원장"],
+  "tags": [
+    "업무 자동화",
+    "인박스",
+    "결재",
+    "앱스 스크립트",
+    "캘린더",
+    "수로"
+  ],
   "news": [
-    {"date": "2026-09-26", "title": "과정 설계 중 — 2차 공개 예정"}
+    {
+      "date": "2026-09-27",
+      "title": "20수업 공개"
+    }
   ],
   "sections": [
-    {"title": "내 업무 하나 자동화", "units": [
-      {"id": "u01", "title": "무엇을 맡길까 — 반복 업무 고르기", "file": "units/01-pick.md"},
-      {"id": "u02", "title": "인박스 → 초안 → 승인 — 결재하는 자동화", "file": "units/02-inbox.md"},
-      {"id": "u03", "title": "캘린더·할 일과 이어 붙이기", "file": "units/03-calendar.md"}
-    ]},
-    {"title": "나만의 워크플로우", "units": [
-      {"id": "u04", "title": "사람과 일의 맥락을 잇는 원장", "file": "units/04-ledger.md"},
-      {"id": "u05", "title": "실패에서 배운 확인 단계", "file": "units/05-verify.md"},
-      {"id": "u06", "title": "실습: 내 워크플로우 한 장", "file": "units/06-lab.md"}
-    ]}
+    {
+      "title": "자동화를 설계하다",
+      "units": [
+        {
+          "id": "u01",
+          "title": "무엇을 자동화할까 — 반복되고, 규칙이 있고, 확인할 수 있는 일",
+          "file": "units/01-what.md"
+        },
+        {
+          "id": "u02",
+          "title": "사람이 결재하는 자동화 — 멈추는 지점부터 정한다",
+          "file": "units/02-human-gate.md"
+        },
+        {
+          "id": "u03",
+          "title": "흐름도 한 장 — 입력·처리·결재·출력·기록",
+          "file": "units/03-flow.md"
+        },
+        {
+          "id": "u04",
+          "title": "실습 ① 내 업무 하나의 자동화 설계서",
+          "file": "units/04-lab-design.md"
+        }
+      ]
+    },
+    {
+      "title": "입구: 인박스와 초안",
+      "units": [
+        {
+          "id": "u05",
+          "title": "인박스를 지켜보는 자동화 — 파일이 들어오면 일이 시작된다",
+          "file": "units/05-watch-inbox.md"
+        },
+        {
+          "id": "u06",
+          "title": "음성·메모를 기획 초안으로 — 말로 넣고 글로 받는다",
+          "file": "units/06-voice-draft.md"
+        },
+        {
+          "id": "u07",
+          "title": "초안 양식을 고정하라 — 새로 생긴 것·부딪히는 것·빠진 것",
+          "file": "units/07-draft-form.md"
+        },
+        {
+          "id": "u08",
+          "title": "실습 ② 인박스에서 초안까지 한 바퀴",
+          "file": "units/08-lab-inbox.md"
+        }
+      ]
+    },
+    {
+      "title": "결재와 산출",
+      "units": [
+        {
+          "id": "u09",
+          "title": "결재판 — 승인·수정·보류를 어떻게 남기나",
+          "file": "units/09-approval.md"
+        },
+        {
+          "id": "u10",
+          "title": "승인 다음에 저절로 — 산출물·보관·알림",
+          "file": "units/10-after-approval.md"
+        },
+        {
+          "id": "u11",
+          "title": "캘린더와 할 일로 이어 붙이기 — 그리고 이중 등록 사고",
+          "file": "units/11-calendar.md"
+        },
+        {
+          "id": "u12",
+          "title": "설문지 → 시트 → 알림 — 앱스 스크립트를 AGY에게 맡기기",
+          "file": "units/12-form-sheet.md"
+        }
+      ]
+    },
+    {
+      "title": "맥락과 단계",
+      "units": [
+        {
+          "id": "u13",
+          "title": "사람과 사업의 맥락을 잇는 원장 — 수로(SURO)",
+          "file": "units/13-context-ledger.md"
+        },
+        {
+          "id": "u14",
+          "title": "단계가 다음 일을 정한다 — 건·단계·완료 조건",
+          "file": "units/14-stages.md"
+        },
+        {
+          "id": "u15",
+          "title": "실습 ③ 나의 줄기 문서 한 장과 원장 첫 줄",
+          "file": "units/15-lab-stream.md"
+        }
+      ]
+    },
+    {
+      "title": "운영과 안전",
+      "units": [
+        {
+          "id": "u16",
+          "title": "자동으로 내보낼 때의 안전장치 — 막고 멈추는 코드",
+          "file": "units/16-publish-guard.md"
+        },
+        {
+          "id": "u17",
+          "title": "내 컴퓨터에서 돌릴까, 서버에서 돌릴까 — 로컬·클라우드 에이전트",
+          "file": "units/17-local-cloud.md"
+        },
+        {
+          "id": "u18",
+          "title": "자동화가 실패할 때 — 기록하고, 되돌리고, 다른 길로",
+          "file": "units/18-failure.md"
+        },
+        {
+          "id": "u19",
+          "title": "건마다 결재에서 정책 결재로 — 신뢰의 사다리",
+          "file": "units/19-policy.md"
+        },
+        {
+          "id": "u20",
+          "title": "실습 ④ 나의 자동화 운영 계획과 사후 측정",
+          "file": "units/20-lab-operate.md"
+        }
+      ]
+    }
   ]
 }
