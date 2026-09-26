@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-26T18:38:35.867Z",
-  "commit": "06d22e12be97a368816b3bf7b8ec69a3748a8091",
-  "fileCount": 2053,
+  "generatedAt": "2026-09-26T18:57:40.621Z",
+  "commit": "97c256e254c32925c57875bae4288fd14426977f",
+  "fileCount": 2073,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -17,7 +17,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 5138
+      "size": 5134
     },
     {
       "path": "academy/course.html",
@@ -277,7 +277,87 @@
     },
     {
       "path": "academy/courses/work-automation/course.json",
-      "size": 1301
+      "size": 4515
+    },
+    {
+      "path": "academy/courses/work-automation/units/01-what.md",
+      "size": 5941
+    },
+    {
+      "path": "academy/courses/work-automation/units/02-human-gate.md",
+      "size": 6372
+    },
+    {
+      "path": "academy/courses/work-automation/units/03-flow.md",
+      "size": 5829
+    },
+    {
+      "path": "academy/courses/work-automation/units/04-lab-design.md",
+      "size": 6793
+    },
+    {
+      "path": "academy/courses/work-automation/units/05-watch-inbox.md",
+      "size": 7469
+    },
+    {
+      "path": "academy/courses/work-automation/units/06-voice-draft.md",
+      "size": 6363
+    },
+    {
+      "path": "academy/courses/work-automation/units/07-draft-form.md",
+      "size": 7333
+    },
+    {
+      "path": "academy/courses/work-automation/units/08-lab-inbox.md",
+      "size": 8024
+    },
+    {
+      "path": "academy/courses/work-automation/units/09-approval.md",
+      "size": 6276
+    },
+    {
+      "path": "academy/courses/work-automation/units/10-after-approval.md",
+      "size": 8011
+    },
+    {
+      "path": "academy/courses/work-automation/units/11-calendar.md",
+      "size": 7479
+    },
+    {
+      "path": "academy/courses/work-automation/units/12-form-sheet.md",
+      "size": 7792
+    },
+    {
+      "path": "academy/courses/work-automation/units/13-context-ledger.md",
+      "size": 9023
+    },
+    {
+      "path": "academy/courses/work-automation/units/14-stages.md",
+      "size": 9673
+    },
+    {
+      "path": "academy/courses/work-automation/units/15-lab-stream.md",
+      "size": 8628
+    },
+    {
+      "path": "academy/courses/work-automation/units/16-publish-guard.md",
+      "size": 10947
+    },
+    {
+      "path": "academy/courses/work-automation/units/17-local-cloud.md",
+      "size": 10243
+    },
+    {
+      "path": "academy/courses/work-automation/units/18-failure.md",
+      "size": 10454
+    },
+    {
+      "path": "academy/courses/work-automation/units/19-policy.md",
+      "size": 9809
+    },
+    {
+      "path": "academy/courses/work-automation/units/20-lab-operate.md",
+      "size": 9112
     },
     {
       "path": "academy/index.html",
