@@ -1,0 +1,149 @@
+{
+  "id": "myway",
+  "title": "자료관리론 — 개인 역사박물관에서 나를 닮은 AI 워크스페이스까지",
+  "tagline": "버리지 않고 자산으로, 흩어진 자료를 한 바구니에, 그 위에서 에이전트에게 일을 맡기는 법",
+  "instructor": "유정근 · Ryu JeongKun",
+  "level": "중급 (C0·C1 수료 권장)",
+  "format": "텍스트 + 실습",
+  "tags": [
+    "자료관리",
+    "빅 버킷",
+    "암묵지",
+    "MCP",
+    "디지털 트윈",
+    "OSMU"
+  ],
+  "news": [
+    {
+      "date": "2026-09-26",
+      "title": "최종초안(2일 16교시) 기준 온라인판 제작 중"
+    }
+  ],
+  "sections": [
+    {
+      "title": "기록을 자산으로",
+      "units": [
+        {
+          "id": "u01",
+          "title": "기억을 자산으로 — 개인 역사박물관이라는 관점",
+          "file": "units/01-museum.md"
+        },
+        {
+          "id": "u02",
+          "title": "큰 바구니 하나 — 빅 버킷과 단일 진실 공급원",
+          "file": "units/02-big-bucket.md"
+        },
+        {
+          "id": "u03",
+          "title": "흩어진 기기의 자료를 한 장의 지도로 — 인덱싱과 태그",
+          "file": "units/03-index-map.md"
+        },
+        {
+          "id": "u04",
+          "title": "실습 ① 내 자료 지도 30개와 사전 검색 측정",
+          "file": "units/04-lab-map.md"
+        }
+      ]
+    },
+    {
+      "title": "지식 베이스와 암묵지",
+      "units": [
+        {
+          "id": "u05",
+          "title": "구글 워크스페이스와 NotebookLM으로 지식 베이스 세우기",
+          "file": "units/05-knowledge-base.md"
+        },
+        {
+          "id": "u06",
+          "title": "암묵지를 글로 — \"나는 왜 이렇게 판단했나\" 기록법",
+          "file": "units/06-tacit.md"
+        },
+        {
+          "id": "u07",
+          "title": "메모를 재사용 모듈로 — 정제와 압축",
+          "file": "units/07-refine.md"
+        }
+      ]
+    },
+    {
+      "title": "에이전트에게 내 자료를 연결하다",
+      "units": [
+        {
+          "id": "u08",
+          "title": "개인 역사박물관 1차 설계 — 연대기 맵과 표준 폴더",
+          "file": "units/08-museum-design.md"
+        },
+        {
+          "id": "u09",
+          "title": "실습 ② 내 워크스페이스 감사",
+          "file": "units/09-lab-audit.md"
+        },
+        {
+          "id": "u10",
+          "title": "에이전트가 내 폴더를 읽는 방식 — GUI에서 CLI로",
+          "file": "units/10-agent-reads.md"
+        },
+        {
+          "id": "u11",
+          "title": "헌장과 스킬 — 에이전트가 가장 먼저 읽는 문서",
+          "file": "units/11-charter-skills.md"
+        },
+        {
+          "id": "u12",
+          "title": "MCP로 내 자료를 에이전트에 연결하기",
+          "file": "units/12-mcp.md"
+        },
+        {
+          "id": "u13",
+          "title": "검색 우선 — 쓰기 전에 찾게 하기",
+          "file": "units/13-retrieval-first.md"
+        }
+      ]
+    },
+    {
+      "title": "나를 닮은 작업 방식",
+      "units": [
+        {
+          "id": "u14",
+          "title": "디지털 트윈의 실체 — 말투와 판단 기준을 지침 문서로",
+          "file": "units/14-digital-twin.md"
+        },
+        {
+          "id": "u15",
+          "title": "산출물 지향 — 한 원천에서 기획서·강의안까지",
+          "file": "units/15-output-pipeline.md"
+        },
+        {
+          "id": "u16",
+          "title": "실습 ③ 나의 지침 문서와 첫 산출물",
+          "file": "units/16-lab-twin.md"
+        }
+      ]
+    },
+    {
+      "title": "운영하고 나누다",
+      "units": [
+        {
+          "id": "u17",
+          "title": "OSMU — 하나의 원천, 여러 상품",
+          "file": "units/17-osmu.md"
+        },
+        {
+          "id": "u18",
+          "title": "주 15분 운영 루틴 — 갱신과 점검",
+          "file": "units/18-routine.md"
+        },
+        {
+          "id": "u19",
+          "title": "무엇을 나누고 무엇을 지키나 — 공개와 비공개",
+          "file": "units/19-public-private.md"
+        },
+        {
+          "id": "u20",
+          "title": "실습 ④ 사후 측정과 30일 계획",
+          "file": "units/20-lab-finish.md"
+        }
+      ]
+    }
+  ]
+}

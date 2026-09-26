@@ -1,0 +1,24 @@
+{
+  "id": "work-automation",
+  "title": "업무 자동화 — 내 업무 하나가 자동으로 돈다",
+  "tagline": "인박스 → 초안 → 승인. 결재하는 자동화를 내 업무 하나에 붙인다",
+  "instructor": "유정근 · 마이웨이 아카데미",
+  "level": "실무 (C2 수료 권장)",
+  "format": "텍스트 + 실습",
+  "tags": ["업무 자동화", "인박스", "캘린더", "결재", "맥락 원장"],
+  "news": [
+    {"date": "2026-09-26", "title": "과정 설계 중 — 2차 공개 예정"}
+  ],
+  "sections": [
+    {"title": "내 업무 하나 자동화", "units": [
+      {"id": "u01", "title": "무엇을 맡길까 — 반복 업무 고르기", "file": "units/01-pick.md"},
+      {"id": "u02", "title": "인박스 → 초안 → 승인 — 결재하는 자동화", "file": "units/02-inbox.md"},
+      {"id": "u03", "title": "캘린더·할 일과 이어 붙이기", "file": "units/03-calendar.md"}
+    ]},
+    {"title": "나만의 워크플로우", "units": [
+      {"id": "u04", "title": "사람과 일의 맥락을 잇는 원장", "file": "units/04-ledger.md"},
+      {"id": "u05", "title": "실패에서 배운 확인 단계", "file": "units/05-verify.md"},
+      {"id": "u06", "title": "실습: 내 워크플로우 한 장", "file": "units/06-lab.md"}
+    ]}
+  ]
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수업 · 마이웨이 아카데미</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/marked@18.0.14/lib/marked.umd.js" integrity="sha384-2vpGtuKqJvFlwJqYnf/wUMuzUfhUnYBt9oay0e2yaFcq0Dh6/aEbQ8YAOeKGzlYo" crossorigin="anonymous" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body data-page="lesson">
+<a class="skip" href="#lesson-body">본문으로 건너뛰기</a>
+<header class="site-head lesson-bar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="마이웨이 아카데미 홈">
+      <svg width="22" height="26" viewBox="0 0 26 30" aria-hidden="true"><path d="M2 29V13a11 11 0 0 1 22 0v16" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 29V16a5 5 0 0 1 10 0v13" fill="#B8925A"/></svg>
+      <span class="visually-hidden">마이웨이 아카데미</span>
+    </a>
+    <p class="crumb" id="crumb"></p>
+    <p class="prog"><span id="prog-bar"></span><span class="num" id="prog-text"></span></p>
+  </div>
+</header>
+<div id="main">
+  <div class="lesson">
+    <main>
+      <article>
+        <div class="md" id="lesson-body" tabindex="-1"><p class="loading">불러오는 중…</p></div>
+        <div class="finish">
+          <div class="complete-row">
+            <button type="button" class="btn" id="done-btn" aria-pressed="false">수강 완료</button>
+            <span class="muted" id="done-status" role="status"></span>
+          </div>
+          <nav class="pager" id="pager" aria-label="이전·다음 수업"></nav>
+        </div>
+      </article>
+    </main>
+    <aside class="rail" aria-label="학습 도구">
+      <button type="button" class="rail-toggle" aria-expanded="false" aria-controls="rail-body">커리큘럼 · Q&amp;A · 노트 · 성장 로그</button>
+      <div id="rail-body">
+        <div class="tablist" role="tablist" aria-label="학습 도구">
+          <button class="tab" role="tab" id="rt-cur" aria-controls="p-cur" aria-selected="true">커리큘럼</button>
+          <button class="tab" role="tab" id="rt-qa" aria-controls="p-qa" aria-selected="false" tabindex="-1">Q&amp;A</button>
+          <button class="tab" role="tab" id="rt-note" aria-controls="p-note" aria-selected="false" tabindex="-1">노트</button>
+          <button class="tab" role="tab" id="rt-log" aria-controls="p-log" aria-selected="false" tabindex="-1">성장 로그</button>
+        </div>
+        <div class="rail-panels">
+          <div id="p-cur" role="tabpanel" aria-labelledby="rt-cur"></div>
+          <div id="p-qa" role="tabpanel" aria-labelledby="rt-qa" hidden></div>
+          <div id="p-note" role="tabpanel" aria-labelledby="rt-note" hidden>
+            <label class="h-side" for="note">이 수업 노트</label>
+            <textarea class="note-area" id="note" placeholder="떠오른 생각, 내 자료에 적용할 점을 적어 두세요. 자동으로 저장됩니다."></textarea>
+            <div class="note-meta"><span id="note-status" role="status" aria-live="polite">입력하면 자동 저장됩니다</span><button type="button" class="btn ghost small" id="note-export">노트 전체 .md 내보내기</button></div>
+          </div>
+          <div id="p-log" role="tabpanel" aria-labelledby="rt-log" hidden></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

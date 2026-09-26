@@ -1,0 +1,123 @@
+{
+  "id": "agy-beginner",
+  "title": "AGY 첫걸음 — 말로 맡기고 직접 확인하기",
+  "tagline": "C0 다음 단계: 좋은 요청부터 권한·계획·검수·복구까지 배우는 C1 입문",
+  "instructor": "유정근 · JJ에듀 대표강사 · 자료관리론·업무자동화 강사",
+  "level": "왕초보",
+  "format": "텍스트 + 실습",
+  "tags": [
+    "Antigravity",
+    "C1 AGY 입문",
+    "요청과 위임",
+    "권한과 검수",
+    "C1+·C2·C3 준비"
+  ],
+  "news": [
+    {
+      "date": "2026-09-26",
+      "title": "학습 경로: C0 컴퓨터 왕기초 → C1 AGY 입문 → C1+ 검은 화면 → C2 자료관리론 → C3 업무 자동화"
+    }
+  ],
+  "sections": [
+    {
+      "title": "AGY와 작은 작업 시작하기",
+      "units": [
+        {
+          "id": "u01",
+          "title": "AI에게 묻기, 시키기, 맡기기",
+          "file": "units/01-agent.md"
+        },
+        {
+          "id": "u02",
+          "title": "내 컴퓨터에 맞는 AGY 준비하기",
+          "file": "units/02-setup.md"
+        },
+        {
+          "id": "u03",
+          "title": "연습 폴더를 열고 첫 파일 받기",
+          "file": "units/03-workspace.md"
+        },
+        {
+          "id": "u04",
+          "title": "자료와 작업 약속은 한 번만 맛보기",
+          "file": "units/04-taste.md"
+        }
+      ]
+    },
+    {
+      "title": "내 뜻이 전달되는 요청 만들기",
+      "units": [
+        {
+          "id": "u05",
+          "title": "막연한 부탁을 좋은 요청으로 바꾸기",
+          "file": "units/05-clear-request.md"
+        },
+        {
+          "id": "u06",
+          "title": "말로 적고, AI에게 되물어 달라 하기",
+          "file": "units/06-questions.md"
+        },
+        {
+          "id": "u07",
+          "title": "자료를 줬다면 정말 읽었는지 묻기",
+          "file": "units/07-read-source.md"
+        },
+        {
+          "id": "u08",
+          "title": "없는 사실을 채우지 못하게 하기",
+          "file": "units/08-facts.md"
+        }
+      ]
+    },
+    {
+      "title": "권한과 계획을 읽고 실행하기",
+      "units": [
+        {
+          "id": "u09",
+          "title": "권한 창을 읽고 범위를 정하기",
+          "file": "units/09-permission.md"
+        },
+        {
+          "id": "u10",
+          "title": "계획부터 할까, 바로 실행할까",
+          "file": "units/10-modes.md"
+        },
+        {
+          "id": "u11",
+          "title": "AI의 계획에서 과한 일을 덜어내기",
+          "file": "units/11-plan.md"
+        },
+        {
+          "id": "u12",
+          "title": "막히면 오류를 들고 되묻기",
+          "file": "units/12-blocked.md"
+        }
+      ]
+    },
+    {
+      "title": "고치고 확인하며 내 결과물 완성하기",
+      "units": [
+        {
+          "id": "u13",
+          "title": "잘못 고쳤다면 사본으로 돌아가기",
+          "file": "units/13-restore.md"
+        },
+        {
+          "id": "u14",
+          "title": "초안을 받고 내 말로 승인하기",
+          "file": "units/14-draft.md"
+        },
+        {
+          "id": "u15",
+          "title": "짧은 요청서로 한 페이지 만들기",
+          "file": "units/15-page.md"
+        },
+        {
+          "id": "u16",
+          "title": "혼자 한 번 더 하고 다음 과정 고르기",
+          "file": "units/16-next.md"
+        }
+      ]
+    }
+  ]
+}
