@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T04:04:38.580Z",
-  "commit": "096a2b88fbf7acea50bd2836fbd58e05ea7dff10",
+  "generatedAt": "2026-09-27T05:31:37.205Z",
+  "commit": "5c238a1b834eb3c6ff68eeec0d2cf4d62bd48e4c",
   "fileCount": 2085,
   "files": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 5134
+      "size": 5573
     },
     {
       "path": "academy/certificate.html",
@@ -33,7 +33,7 @@
     },
     {
       "path": "academy/community.js",
-      "size": 11877
+      "size": 12186
     },
     {
       "path": "academy/course-intro.js",
@@ -381,7 +381,7 @@
     },
     {
       "path": "academy/data/challenges.json",
-      "size": 1690
+      "size": 1845
     },
     {
       "path": "academy/data/intro.json",
