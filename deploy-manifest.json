@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-26T18:57:40.621Z",
-  "commit": "97c256e254c32925c57875bae4288fd14426977f",
+  "generatedAt": "2026-09-27T03:14:46.888Z",
+  "commit": "b911464d1e11dc628384bf25d79b38e55c4d48ff",
   "fileCount": 2073,
   "files": [
     {
@@ -309,7 +309,7 @@
     },
     {
       "path": "academy/courses/work-automation/units/08-lab-inbox.md",
-      "size": 8024
+      "size": 13216
     },
     {
       "path": "academy/courses/work-automation/units/09-approval.md",
