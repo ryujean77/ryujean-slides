@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-27T03:14:46.888Z",
-  "commit": "b911464d1e11dc628384bf25d79b38e55c4d48ff",
-  "fileCount": 2073,
+  "generatedAt": "2026-09-27T04:04:38.580Z",
+  "commit": "096a2b88fbf7acea50bd2836fbd58e05ea7dff10",
+  "fileCount": 2085,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -13,15 +13,35 @@
     },
     {
       "path": "academy/app.js",
-      "size": 22240
+      "size": 22412
     },
     {
       "path": "academy/catalog.json",
       "size": 5134
     },
     {
+      "path": "academy/certificate.html",
+      "size": 1118
+    },
+    {
+      "path": "academy/challenges.html",
+      "size": 1642
+    },
+    {
+      "path": "academy/community.css",
+      "size": 1924
+    },
+    {
+      "path": "academy/community.js",
+      "size": 11877
+    },
+    {
+      "path": "academy/course-intro.js",
+      "size": 11041
+    },
+    {
       "path": "academy/course.html",
-      "size": 1383
+      "size": 2935
     },
     {
       "path": "academy/courses/agy-beginner/course.json",
@@ -360,16 +380,44 @@
       "size": 9112
     },
     {
+      "path": "academy/data/challenges.json",
+      "size": 1690
+    },
+    {
+      "path": "academy/data/intro.json",
+      "size": 5974
+    },
+    {
       "path": "academy/index.html",
-      "size": 7819
+      "size": 7481
     },
     {
       "path": "academy/lesson.html",
-      "size": 3596
+      "size": 3134
+    },
+    {
+      "path": "academy/my.html",
+      "size": 1305
+    },
+    {
+      "path": "academy/nav.js",
+      "size": 3701
+    },
+    {
+      "path": "academy/pages.css",
+      "size": 7953
+    },
+    {
+      "path": "academy/pages.js",
+      "size": 23918
+    },
+    {
+      "path": "academy/roadmaps.html",
+      "size": 1286
     },
     {
       "path": "academy/style.css",
-      "size": 20617
+      "size": 21814
     },
     {
       "path": "agy-mobile-notebooklm-mcp/index.html",
