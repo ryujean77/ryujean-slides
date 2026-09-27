@@ -7,20 +7,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/marked@18.0.14/lib/marked.umd.js" integrity="sha384-2vpGtuKqJvFlwJqYnf/wUMuzUfhUnYBt9oay0e2yaFcq0Dh6/aEbQ8YAOeKGzlYo" crossorigin="anonymous" defer></script>
+<script src="nav.js" defer></script>
 <script src="app.js" defer></script>
 </head>
 <body data-page="lesson">
 <a class="skip" href="#lesson-body">본문으로 건너뛰기</a>
-<header class="site-head lesson-bar">
-  <div class="wrap">
-    <a class="brand" href="index.html" aria-label="마이웨이 아카데미 홈">
-      <svg width="22" height="26" viewBox="0 0 26 30" aria-hidden="true"><path d="M2 29V13a11 11 0 0 1 22 0v16" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 29V16a5 5 0 0 1 10 0v13" fill="#B8925A"/></svg>
-      <span class="visually-hidden">마이웨이 아카데미</span>
-    </a>
-    <p class="crumb" id="crumb"></p>
-    <p class="prog"><span id="prog-bar"></span><span class="num" id="prog-text"></span></p>
-  </div>
-</header>
+<header class="site-head lesson-bar"></header>
 <div id="main">
   <div class="lesson">
     <main>
@@ -30,6 +22,7 @@
           <div class="complete-row">
             <button type="button" class="btn" id="done-btn" aria-pressed="false">수강 완료</button>
             <span class="muted" id="done-status" role="status"></span>
+            <span id="certificate-link"></span>
           </div>
           <nav class="pager" id="pager" aria-label="이전·다음 수업"></nav>
         </div>

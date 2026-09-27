@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>챌린지 · 마이웨이 아카데미</title>
+<meta name="description" content="마이웨이 아카데미의 실시간 학습 과정을 확인하세요.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pages.css">
+<script src="nav.js" defer></script>
+<script src="pages.js" defer></script>
+</head>
+<body data-page="challenges">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="site-head"></header>
+<main id="main" class="page-main">
+  <div class="wrap">
+    <div class="page-hero"><p class="eyebrow">함께 따라 해 보기</p><h1>챌린지</h1><p class="page-lead">정해진 시간에 만나, 내 자료로 직접 연습하는 실시간 과정입니다.</p></div>
+    <div id="page-content" role="status" aria-live="polite"><p class="loading">불러오는 중…</p></div>
+  </div>
+</main>
+<div class="pages-modal-backdrop" id="challenge-modal" hidden>
+  <div class="pages-modal" role="dialog" aria-modal="true" aria-labelledby="challenge-modal-title" tabindex="-1">
+    <button type="button" class="pages-modal-close" id="challenge-close" aria-label="상세 닫기">×</button>
+    <div id="challenge-detail"></div>
+  </div>
+</div>
+<footer class="site-foot"><div class="wrap"><p>마이웨이 아카데미</p><p>과정의 모집 정보는 이 페이지에서 확인해 주세요.</p></div></footer>
+</body>
+</html>

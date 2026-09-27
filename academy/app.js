@@ -280,6 +280,7 @@
       const p = progress(c);
       $("#prog-text").textContent = `${p.n}/${p.N}`;
       $("#prog-bar").innerHTML = bar(p.pct, "강의 진도");
+      $("#certificate-link").innerHTML = p.N && p.n === p.N ? `<a class="btn ghost small" href="certificate.html?c=${encodeURIComponent(c.id)}">수료증 보기</a>` : "";
       $("#p-cur").innerHTML = railCurriculum();
       $("#p-log").innerHTML = `<h2 class="h-side">나의 성장 로그</h2>${logHTML(s.log, 30)}`;
     }
