@@ -148,6 +148,24 @@
     "repo": "ryujean77/ryujean-slides",
     "repoId": "R_kgDOT_a79A",
     "category": "Q&A",
-    "categoryId": "DIC_kwDOT_a79M4DGdQi"
+    "categoryId": "DIC_kwDOT_a79M4DGdQi",
+    "categories": {
+      "reviews": {
+        "category": "Show and tell",
+        "categoryId": "DIC_kwDOT_a79M4DGdQk"
+      },
+      "question": {
+        "category": "Q&A",
+        "categoryId": "DIC_kwDOT_a79M4DGdQi"
+      },
+      "worry": {
+        "category": "General",
+        "categoryId": "DIC_kwDOT_a79M4DGdQh"
+      },
+      "study": {
+        "category": "Ideas",
+        "categoryId": "DIC_kwDOT_a79M4DGdQj"
+      }
+    }
   }
 }

@@ -171,7 +171,10 @@
 
     function loadEmbed(slot, term) {
       clearEmbeds();
-      const g = catalog.giscus;
+      // 글 종류별 카테고리(catalog.giscus.categories)가 있으면 그것을, 없으면 기본 카테고리를 쓴다
+      const base = catalog.giscus || {};
+      const kind = /\/reviews$/.test(term) ? "reviews" : (term.split("/community/")[1] || "");
+      const g = Object.assign({}, base, (base.categories || {})[kind] || {});
       if (!(g && g.repo && g.repoId && g.category && g.categoryId)) {
         const note = element("p", "myway-community__pending", "게시판을 준비 중입니다. 설정이 완료되면 이곳에서 글을 남길 수 있습니다.");
         note.setAttribute("role", "status");
