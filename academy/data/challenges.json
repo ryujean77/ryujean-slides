@@ -24,9 +24,9 @@
     "format": "Jitsi Meet 실시간",
     "capacity": "20명",
     "fee": "무료",
-    "status": "모집 예정",
-    "application": "신청 링크는 강사가 설문을 만든 뒤 채움",
-    "applicationUrl": null,
+    "status": "모집 중",
+    "application": "구글 폼 신청 · 선착순 20명",
+    "applicationUrl": "https://docs.google.com/forms/d/e/1FAIpQLScDzr7qpLRVVnFslX_EDwH7TYUI34INspJ1PLnZJH8dlqXtBQ/viewform",
     "remaining": null,
     "summary": "내 자료를 한 장의 지도로 정리하고, 에이전트가 읽을 작업 지침까지 만드는 이틀입니다.",
     "details": [

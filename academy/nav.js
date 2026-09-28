@@ -12,6 +12,7 @@
     ["community", "커뮤니티", "course.html?c=computer-basics#community"],
     ["my", "내 학습", "my.html"],
     ["glossary", "용어 사전", "glossary.html"],
+    ["org", "기관 교육·문의", "index.html#org"],
   ];
   header.innerHTML = `<div class="wrap nav-wrap">
     <a class="brand" href="index.html" aria-label="마이웨이 아카데미 홈">

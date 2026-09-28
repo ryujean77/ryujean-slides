@@ -126,7 +126,7 @@
   function challengesPage() {
     getJson("data/challenges.json").then((challenges) => {
       if (!Array.isArray(challenges)) throw new Error("챌린지 목록 형식 오류");
-      const featured = challenges.find((item) => item.status === "모집 예정" && !String(item.application || "").includes("비공개 초대"));
+      const featured = challenges.find((item) => ["모집 중", "모집 예정"].includes(item.status) &&!String(item.application || "").includes("비공개 초대"));
       setContent(`${featured ? `<aside class="pages-feature" aria-label="곧 열리는 과정"><p class="eyebrow">곧 열립니다</p><h2>${esc(featured.title)}</h2><p>${esc(featured.date)} · ${esc(featured.fee)}</p><button type="button" class="btn ghost small" data-challenge="${esc(featured.id)}">자세히 보기</button></aside>` : ""}
         <div class="pages-section-head"><div><p class="eyebrow">라이브 과정</p><h2>모든 챌린지</h2></div><p>신청 링크와 남은 자리는 운영자가 확인해 올립니다.</p></div>
         <div class="filters" id="challenge-filters" role="group" aria-label="챌린지 필터">${challengeFilters.map((name, index) => `<button type="button" class="chip" data-filter="${esc(name)}" aria-pressed="${index === 0}">${esc(name)}</button>`).join("")}</div>
