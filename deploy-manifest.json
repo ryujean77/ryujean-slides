@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-28T05:21:40.529Z",
-  "commit": "6ec4cd8f173779f041b34f1d700a4b34c12393f5",
-  "fileCount": 2088,
+  "generatedAt": "2026-09-28T06:12:21.260Z",
+  "commit": "c69d12dcaaa408361bfe32d2ac3d425efcf72da8",
+  "fileCount": 2109,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -17,7 +17,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 5573
+      "size": 5893
     },
     {
       "path": "academy/certificate.html",
@@ -37,7 +37,7 @@
     },
     {
       "path": "academy/course-intro.js",
-      "size": 11041
+      "size": 11272
     },
     {
       "path": "academy/course.html",
@@ -296,6 +296,90 @@
       "size": 10649
     },
     {
+      "path": "academy/courses/vibe-system/course.json",
+      "size": 5350
+    },
+    {
+      "path": "academy/courses/vibe-system/units/01-lesson.md",
+      "size": 1350
+    },
+    {
+      "path": "academy/courses/vibe-system/units/02-lesson.md",
+      "size": 1600
+    },
+    {
+      "path": "academy/courses/vibe-system/units/03-lesson.md",
+      "size": 1354
+    },
+    {
+      "path": "academy/courses/vibe-system/units/04-lesson.md",
+      "size": 1870
+    },
+    {
+      "path": "academy/courses/vibe-system/units/05-lesson.md",
+      "size": 2384
+    },
+    {
+      "path": "academy/courses/vibe-system/units/06-lesson.md",
+      "size": 1837
+    },
+    {
+      "path": "academy/courses/vibe-system/units/07-lesson.md",
+      "size": 1289
+    },
+    {
+      "path": "academy/courses/vibe-system/units/08-lesson.md",
+      "size": 1582
+    },
+    {
+      "path": "academy/courses/vibe-system/units/09-lesson.md",
+      "size": 1376
+    },
+    {
+      "path": "academy/courses/vibe-system/units/10-lesson.md",
+      "size": 1975
+    },
+    {
+      "path": "academy/courses/vibe-system/units/11-lesson.md",
+      "size": 1308
+    },
+    {
+      "path": "academy/courses/vibe-system/units/12-lesson.md",
+      "size": 1649
+    },
+    {
+      "path": "academy/courses/vibe-system/units/13-lesson.md",
+      "size": 1350
+    },
+    {
+      "path": "academy/courses/vibe-system/units/14-lesson.md",
+      "size": 1587
+    },
+    {
+      "path": "academy/courses/vibe-system/units/15-lesson.md",
+      "size": 1238
+    },
+    {
+      "path": "academy/courses/vibe-system/units/16-lesson.md",
+      "size": 1688
+    },
+    {
+      "path": "academy/courses/vibe-system/units/17-lesson.md",
+      "size": 1443
+    },
+    {
+      "path": "academy/courses/vibe-system/units/18-lesson.md",
+      "size": 1845
+    },
+    {
+      "path": "academy/courses/vibe-system/units/19-lesson.md",
+      "size": 1765
+    },
+    {
+      "path": "academy/courses/vibe-system/units/20-lesson.md",
+      "size": 1968
+    },
+    {
       "path": "academy/courses/work-automation/course.json",
       "size": 4515
     },
@@ -389,7 +473,7 @@
     },
     {
       "path": "academy/data/intro.json",
-      "size": 5974
+      "size": 7882
     },
     {
       "path": "academy/glossary.html",
