@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-28T01:14:45.666Z",
-  "commit": "41ff39e3b5e627add8df83ce487699303f9f8adf",
+  "generatedAt": "2026-09-28T05:21:40.529Z",
+  "commit": "6ec4cd8f173779f041b34f1d700a4b34c12393f5",
   "fileCount": 2088,
   "files": [
     {
@@ -381,7 +381,7 @@
     },
     {
       "path": "academy/data/challenges.json",
-      "size": 1845
+      "size": 1921
     },
     {
       "path": "academy/data/glossary.json",
@@ -401,7 +401,7 @@
     },
     {
       "path": "academy/index.html",
-      "size": 7481
+      "size": 8211
     },
     {
       "path": "academy/lesson.html",
@@ -413,7 +413,7 @@
     },
     {
       "path": "academy/nav.js",
-      "size": 3776
+      "size": 3832
     },
     {
       "path": "academy/pages.css",
@@ -421,7 +421,7 @@
     },
     {
       "path": "academy/pages.js",
-      "size": 23918
+      "size": 23939
     },
     {
       "path": "academy/roadmaps.html",
