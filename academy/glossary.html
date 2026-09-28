@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>용어 사전 · 마이웨이 아카데미</title>
+<meta name="description" content="마이웨이 아카데미 강의에 나오는 용어를 검색하고 과정별로 살펴보세요.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pages.css">
+<script src="nav.js" defer></script>
+<script src="glossary.js" defer></script>
+</head>
+<body data-page="glossary">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="site-head"></header>
+<main id="main" class="page-main">
+  <div class="wrap">
+    <div class="page-hero"><p class="eyebrow">배움의 말 찾기</p><h1>용어 사전</h1><p class="page-lead">낯선 말을 검색하고, 처음 나오는 강의로 이어서 살펴보세요.</p></div>
+    <div class="glossary-controls">
+      <label class="pages-search-label" for="glossary-search">용어·풀이 검색</label>
+      <input class="pages-search" id="glossary-search" type="search" autocomplete="off" placeholder="찾을 말을 입력하세요">
+      <div class="filters glossary-filters" id="glossary-filters" role="group" aria-label="과정 필터">
+        <button type="button" class="chip" data-code="all" aria-pressed="true">전체</button>
+        <button type="button" class="chip" data-code="C0" aria-pressed="false">C0</button>
+        <button type="button" class="chip" data-code="C1" aria-pressed="false">C1</button>
+        <button type="button" class="chip" data-code="C2" aria-pressed="false">C2</button>
+        <button type="button" class="chip" data-code="C3" aria-pressed="false">C3</button>
+      </div>
+    </div>
+    <p class="glossary-count num" id="glossary-count" role="status" aria-live="polite">용어를 불러오는 중…</p>
+    <nav class="glossary-jump" id="glossary-jump" aria-label="초성 바로가기" hidden></nav>
+    <div id="glossary-results" aria-busy="true"></div>
+  </div>
+</main>
+<footer class="site-foot"><div class="wrap"><p>마이웨이 아카데미</p><p>강의 속 낯선 말을 찾아보세요.</p></div></footer>
+</body>
+</html>

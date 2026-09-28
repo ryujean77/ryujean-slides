@@ -52,6 +52,21 @@
 .my-course .pages-progress { margin: 0; }
 .pages-search-label { display: block; margin-bottom: 6px; font-weight: 700; }
 .pages-search { width: min(100%, 520px); min-height: 48px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; }
+.glossary-controls { margin-bottom: 24px; }
+.glossary-filters { margin: 20px 0 0; }
+.glossary-count { margin-bottom: 20px; color: var(--muted); }
+.glossary-jump { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 32px; }
+.glossary-jump a { display: inline-flex; align-items: center; min-height: 40px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; font-size: 14px; }
+.glossary-jump a:hover { background: var(--surface); border-color: var(--ink); }
+.glossary-group { margin-bottom: 48px; scroll-margin-top: 88px; }
+.glossary-group h2 { display: flex; align-items: baseline; gap: 10px; padding-bottom: 12px; margin-bottom: 16px; border-bottom: 1px solid var(--line); font-size: 1.6rem; }
+.glossary-group h2 small { color: var(--muted); font-size: 14px; font-weight: 500; }
+.glossary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.glossary-card { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.glossary-card h3 { margin: 0; font-weight: 800; }
+.glossary-card p { flex: 1; }
+.glossary-course { max-width: 100%; white-space: normal; overflow-wrap: anywhere; text-decoration: none; }
+.glossary-course:hover { text-decoration: underline; }
 .notes-list { display: grid; gap: 16px; margin-top: 20px; }
 .note-text { white-space: pre-wrap; overflow-wrap: anywhere; }
 .certificate-controls { padding-bottom: 28px; }
@@ -75,6 +90,7 @@
   .pages-section { margin-top: 56px; }
   .pages-section-head { align-items: start; flex-direction: column; }
   .track-grid, .challenge-grid, .my-grid { grid-template-columns: 1fr; }
+  .glossary-grid { grid-template-columns: 1fr; }
   .pages-card { padding: 22px; }
   .pages-modal { padding: 24px; }
   .certificate-sheet { min-height: 480px; padding: 44px 18px; border-width: 6px; }

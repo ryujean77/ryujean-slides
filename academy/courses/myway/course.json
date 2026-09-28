@@ -50,7 +50,7 @@
       "units": [
         {
           "id": "u05",
-          "title": "구글 워크스페이스와 NotebookLM으로 지식 베이스 세우기",
+          "title": "구글 워크스페이스와 Gemini Notebook으로 지식 베이스 세우기",
           "file": "units/05-knowledge-base.md"
         },
         {

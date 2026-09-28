@@ -11,6 +11,7 @@
     ["challenges", "챌린지", "challenges.html"],
     ["community", "커뮤니티", "course.html?c=computer-basics#community"],
     ["my", "내 학습", "my.html"],
+    ["glossary", "용어 사전", "glossary.html"],
   ];
   header.innerHTML = `<div class="wrap nav-wrap">
     <a class="brand" href="index.html" aria-label="마이웨이 아카데미 홈">
@@ -41,7 +42,7 @@
   document.addEventListener("click", (event) => { if (!header.contains(event.target)) closeMenu(); });
 
   function markCurrent(panelId) {
-    const active = page === "roadmaps" || page === "challenges" ? page
+    const active = page === "roadmaps" || page === "challenges" || page === "glossary" ? page
       : page === "my" || page === "certificate" ? "my"
       : page === "course" && (panelId === "tab-community" || (!panelId && location.hash === "#community")) ? "community" : "courses";
     menu.querySelectorAll("a").forEach((link) => {

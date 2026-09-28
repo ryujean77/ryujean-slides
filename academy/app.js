@@ -270,6 +270,7 @@
       body = `<h1>${esc(u.title)}</h1><div class="soon-box" role="status"><strong>준비 중인 수업입니다</strong>원고를 다듬고 있습니다. 먼저 다른 수업을 둘러보시거나, 강의 대시보드의 새소식을 확인해 주세요.</div>`;
     }
     $("#lesson-body").innerHTML = body;
+    $("#lesson-body").insertAdjacentHTML("afterend", '<p class="muted" style="margin-top:32px">모르는 말이 있나요? <a href="glossary.html">용어 사전에서 찾기</a></p>');
 
     // 완료 토글 · 이전/다음
     const btn = $("#done-btn");
