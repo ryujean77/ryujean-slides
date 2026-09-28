@@ -57,7 +57,10 @@
     const crumb = document.createElement("nav");
     crumb.className = "course-crumb";
     crumb.setAttribute("aria-label", "강의 위치");
-    crumb.innerHTML = `<a href="index.html#roadmap-sec">로드맵</a> <span aria-hidden="true">›</span> <span>${esc(entry.code)} 단계</span> <span aria-hidden="true">›</span> <span aria-current="page">${esc(course.title)}</span>`;
+    const parentHref = entry.standalone ? "index.html#courses" : "index.html#roadmap-sec";
+    const parentLabel = entry.standalone ? "강의" : "로드맵";
+    const placeLabel = entry.standalone ? "독립 강좌" : `${entry.code} 단계`;
+    crumb.innerHTML = `<a href="${parentHref}">${parentLabel}</a> <span aria-hidden="true">›</span> <span>${esc(placeLabel)}</span> <span aria-hidden="true">›</span> <span aria-current="page">${esc(course.title)}</span>`;
     hero.prepend(crumb);
 
     const badges = document.createElement("div");
