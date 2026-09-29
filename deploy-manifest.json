@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-28T06:12:21.260Z",
-  "commit": "c69d12dcaaa408361bfe32d2ac3d425efcf72da8",
-  "fileCount": 2109,
+  "generatedAt": "2026-09-29T11:53:54.763Z",
+  "commit": "7c5fc63239787ed8f20419fc8a4cde3cbd35c8d8",
+  "fileCount": 2110,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -485,7 +485,7 @@
     },
     {
       "path": "academy/index.html",
-      "size": 8211
+      "size": 8033
     },
     {
       "path": "academy/lesson.html",
@@ -497,7 +497,11 @@
     },
     {
       "path": "academy/nav.js",
-      "size": 3832
+      "size": 3836
+    },
+    {
+      "path": "academy/org.html",
+      "size": 22602
     },
     {
       "path": "academy/pages.css",
