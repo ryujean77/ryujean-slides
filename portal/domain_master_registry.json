@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-30 17:19:43 (KST)",
+  "lastUpdated": "2026-09-30 20:11:13 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -143,7 +143,7 @@
         "ppt-designer"
       ],
       "stats": {
-        "projectsCount": 9,
+        "projectsCount": 10,
         "liveUrlsCount": 2,
         "status": "🟢 제안서 패키징 완료"
       }
@@ -1181,6 +1181,18 @@
         }
       ],
       "description": "Google NotebookLM 클라우드 API 및 nlm CLI를 통해 원작 도서 1권(364쪽)과 2권(445쪽) 전문을 학습하여 비디오, 고음질 팟캐스트 오디오, 초고해상도 인포그래픽, 마인드맵, 퀴즈, 플래시카드, 연구 가이드를 일괄 구축하고 통합 반응형 대시보드로 완성"
+    },
+    {
+      "id": "PRJ-SASANG-10",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "향·체질·기·빛 통합 아카데미 마스터기획서",
+      "status": "기획완료·내부검토",
+      "statusBadge": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
+      "date": "2026-09-29",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "아로마테라피·사상체질·이와오·빛을 몸·마음·영의 한 사다리로 잇는 평생교육 과정·민간자격·아카데미 기획"
     }
   ]
 }
