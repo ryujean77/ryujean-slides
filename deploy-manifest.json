@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-30T11:18:08.512Z",
-  "commit": "3325fd87422e0d2285034b7c81ddf943b79d8ef8",
-  "fileCount": 2110,
+  "generatedAt": "2026-10-05T16:29:57.885Z",
+  "commit": "3b952a379e28e4ca3bb9d63ed74be699c2d5d38e",
+  "fileCount": 2128,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -7290,6 +7290,78 @@
     {
       "path": "incheon-ai-curriculum/assets/s2_30b_notebooklm_delete_chat_warning.png",
       "size": 570030
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/assets/01_slash_skill_list.png",
+      "size": 234690
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/assets/02_stacked_skills.png",
+      "size": 136389
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/assets/03_upload_dialog.png",
+      "size": 220975
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/assets/04_uploaded_skill.png",
+      "size": 442730
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/assets/05_skill_files.png",
+      "size": 454290
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/assets/06_references_file.png",
+      "size": 463411
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/index.html",
+      "size": 24581
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/00_jahwal-admin-tone_jahwal-admin-tone.zip",
+      "size": 697
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_01_business-development-grant.zip",
+      "size": 3659
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_02_welfare-proposal.zip",
+      "size": 3576
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_03_performance-evaluation.zip",
+      "size": 3422
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_04_work-unit-plan.zip",
+      "size": 3243
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_05_sales-settlement.zip",
+      "size": 3465
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_06_gateway-intake.zip",
+      "size": 3627
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_07_individual-action-plan.zip",
+      "size": 3448
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_08_committee-minutes.zip",
+      "size": 3197
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_09_training-safety-log.zip",
+      "size": 3393
+    },
+    {
+      "path": "incheon-ai-curriculum/gems-to-skills/zips/skill_10_self-sufficiency-promotion.zip",
+      "size": 3591
     },
     {
       "path": "incheon-ai-curriculum/index.html",
