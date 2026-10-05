@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-09-30 20:17:20 (KST)",
+  "lastUpdated": "2026-10-06 01:34:57 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -41,7 +41,7 @@
         "codeit-theme-generator"
       ],
       "stats": {
-        "projectsCount": 8,
+        "projectsCount": 9,
         "liveUrlsCount": 3,
         "status": "🟢 상시 출강/확장 가동"
       }
@@ -82,7 +82,7 @@
         "email-sender"
       ],
       "stats": {
-        "projectsCount": 4,
+        "projectsCount": 5,
         "liveUrlsCount": 2,
         "status": "🟢 활발히 가동중"
       }
@@ -1193,6 +1193,30 @@
       "liveUrl": "",
       "deliverables": [],
       "description": "아로마테라피·사상체질·이와오·빛을 몸·마음·영의 한 사다리로 잇는 평생교육 과정·민간자격·아카데미 기획"
+    },
+    {
+      "id": "PRJ-AROMA-05",
+      "domainId": "DOM-AROMA",
+      "domainTag": "🌿 아로마테라피",
+      "title": "줄기세포 및 통합 건강관리 시스템 구축 및 실행 방안",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-10-05",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
+    },
+    {
+      "id": "PRJ-AI-09",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "인천광역자활센터 2027년도 AI 실무교육 제안 기획 초안: 예산 편성기(10~11월) 선제 대응",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-10-05",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     }
   ]
 }
