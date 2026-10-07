@@ -8,6 +8,7 @@
 <meta property="og:title" content="기관·단체 교육 — AI 앞 다섯 개의 문부터 엽니다">
 <meta property="og:description" content="2시간 무료 특강 · 사전·사후 진단 결과보고서 · 출강 또는 실시간 온라인">
 <meta property="og:type" content="website">
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="style.css">
 <script src="nav.js" defer></script>
@@ -276,7 +277,7 @@
     const arch = '<svg viewBox="0 0 26 30" aria-hidden="true"><path d="M2 29V13a11 11 0 0 1 22 0v16" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/><path d="M8 29V16a5 5 0 0 1 10 0v13" fill="#D4B27A" fill-opacity=".55"/></svg>';
     fetch("catalog.json").then((r) => r.json()).then((cat) => {
       const tracks = cat.tracks || [];
-      list.innerHTML = tracks.map((t, i) => `<li class="o-track"><div class="o-thumb" style="--t:${tones[i % tones.length]}"><span>TRACK ${i + 1}</span>${arch}<strong>${esc(t.title)}</strong></div><div class="o-track-body"><p class="o-path">${esc(t.path)}</p><p>${esc(t.note)}</p><a href="${form}" target="_blank" rel="noopener noreferrer">이 과정 문의하기 →<span class="visually-hidden">(새 창)</span></a></div></li>`).join("") || '<li>등록된 과정이 없습니다.</li>';
+      list.innerHTML = tracks.map((t, i) => `<li class="o-track"><div class="o-thumb" style="--t:${tones[i % tones.length]}"><span>TRACK ${i + 1}</span>${arch}<strong>${esc(t.title)}</strong></div><div class="o-track-body"><p class="o-path">${esc(t.path)}</p><p>${esc(t.note)}</p>${t.prep ? `<a href="${esc(t.prep)}">교육 전 사전학습 →</a>` : ""}<a href="${form}" target="_blank" rel="noopener noreferrer">이 과정 문의하기 →<span class="visually-hidden">(새 창)</span></a></div></li>`).join("") || '<li>등록된 과정이 없습니다.</li>';
     }).catch(() => { list.innerHTML = '<li>과정 목록을 불러오지 못했습니다. 잠시 뒤 새로고침해 주십시오.</li>'; });
   })();
 </script>

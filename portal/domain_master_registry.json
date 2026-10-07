@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-10-06 01:34:57 (KST)",
+  "lastUpdated": "2026-10-07 22:22:04 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -42,7 +42,7 @@
       ],
       "stats": {
         "projectsCount": 9,
-        "liveUrlsCount": 3,
+        "liveUrlsCount": 4,
         "status": "🟢 상시 출강/확장 가동"
       }
     },
@@ -310,6 +310,25 @@
         "projectsCount": 1,
         "liveUrlsCount": 0,
         "status": "🟡 v0 데이터셋 구축기 착수 (라벨 8/100쌍)"
+      }
+    },
+    {
+      "id": "DOM-MARKETING",
+      "name": "마케팅 & 콘텐츠 기록",
+      "icon": "fa-pen-nib",
+      "color": "rose",
+      "accentHex": "#a65b45",
+      "bgGradient": "from-rose-950 via-slate-900 to-amber-950",
+      "tag": "✍️ 마케팅",
+      "partner": "유정근 (Ryu JeongKun)",
+      "summary": "실제 작업과 대화에서 나온 질문을 근거로 콘텐츠를 기획하고 기록하는 비공개 편집 도메인.",
+      "skills": [
+        "knowledge-index"
+      ],
+      "stats": {
+        "projectsCount": 1,
+        "liveUrlsCount": 0,
+        "status": "🟡 원고 제작 · 게시 전 검수"
       }
     }
   ],
@@ -1214,9 +1233,41 @@
       "status": "진행중",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-10-05",
-      "liveUrl": "",
-      "deliverables": [],
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/proposals/incheon-jahwal-2027/landing.html",
+      "deliverables": [
+        {
+          "name": "자활 담당자용 소개·교육 페이지",
+          "type": "html",
+          "path": "landing.html"
+        },
+        {
+          "name": "광역센터 2027 교육계획 개괄안",
+          "type": "html",
+          "path": "index.html"
+        },
+        {
+          "name": "광역센터 개괄안 PDF",
+          "type": "pdf",
+          "path": "index.pdf"
+        },
+        {
+          "name": "지역자활센터용 안내",
+          "type": "html",
+          "path": "regional.html"
+        }
+      ],
       "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
+    },
+    {
+      "id": "PRJ-MKT-01",
+      "domainId": "DOM-MARKETING",
+      "domainTag": "✍️ 마케팅",
+      "title": "AI 에이전트와 만든 워크스페이스 — 질문과 작업 기록 60편",
+      "status": "원고·이미지 제작 · 게시 전 검수",
+      "statusBadge": "bg-amber-500/10 text-amber-400 border border-amber-500/30",
+      "date": "2026-10-07",
+      "deliverables": [],
+      "description": "2026년 AI 에이전트 대화와 실제 작업 파일에 근거한 질문 중심 60편 시리즈. 소셜 계정에는 미게시"
     }
   ]
 }
