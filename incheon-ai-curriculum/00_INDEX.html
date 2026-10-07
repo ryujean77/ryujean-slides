@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,138 +7,410 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Pretendard', sans-serif; } </style>
+    <style>
+        body { font-family: 'Pretendard', sans-serif; }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-8 antialiased selection:bg-blue-500 selection:text-white">
-    <div class="max-w-6xl mx-auto space-y-8">
+<body class="bg-slate-950 text-slate-100 min-h-screen py-6 sm:py-10 px-3 sm:px-8 antialiased selection:bg-blue-500 selection:text-white overflow-x-hidden w-full max-w-full">
+    <div class="max-w-6xl mx-auto space-y-8 sm:space-y-10 w-full">
         
         <!-- Header -->
-        <header class="p-8 rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border border-blue-800/40 shadow-2xl space-y-3">
-            <div class="flex items-center justify-between">
-                <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">
-                    <i class="fa-solid fa-graduation-cap mr-1"></i> MASTER AI CURRICULUM SUITE
+        <header class="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border border-blue-800/40 shadow-2xl space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="inline-flex items-center w-fit px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i> MASTER AI CURRICULUM SUITE
                 </span>
-                <span class="text-xs text-slate-400 font-mono">총 4회차 풀패키지 • 76개 고해상도 시연 에셋</span>
+                <span class="text-xs text-slate-400 font-mono">정규 4회차 + 심화 자료 4종 • 90개 고해상도 시연 에셋</span>
             </div>
-            <h1 class="text-2xl sm:text-4xl font-black text-white">
+            <h1 class="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tight break-keep leading-tight">
                 인천지역 자활센터 『Gemini & NotebookLM 실무 마스터』 교안 포털
             </h1>
-            <p class="text-xs sm:text-sm text-slate-300">
-                실제 현장 강의에서 즉시 활용할 수 있는 회차별 인터랙티브 교재 웹앱 및 실습 매뉴얼
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed break-keep">
+                실제 현장 강의에서 즉시 활용할 수 있는 회차별 인터랙티브 교재 웹앱, 심화 특강 자료 및 실습 매뉴얼
             </p>
-            <div class="pt-2 flex flex-wrap items-center gap-3 text-xs">
-                <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
-                    👨‍🏫 전담 강사: <strong class="text-white">유정근 총괄 디렉터</strong>
+            <div class="pt-2 flex flex-wrap items-center gap-2 text-xs">
+                <span class="px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+                    <span>👨‍🏫 전담 강사:</span> <strong class="text-white">유정근 총괄 디렉터</strong>
                 </span>
-                <a href="https://ryujean77.github.io/ryujean-slides/gemini-lecture/" target="_blank" class="px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold hover:bg-amber-500/30 transition">
-                    🖥️ 내일 강의용 웹 슬라이드 열기 ➔
+                <a href="https://ryujean77.github.io/ryujean-slides/gemini-lecture/" target="_blank" class="px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold hover:bg-amber-500/30 transition flex items-center gap-1.5">
+                    <span>🖥️ 제미나이 강의 웹 슬라이드 ➔</span>
+                </a>
+                <a href="강의계획서.html" target="_blank" class="px-3 py-1.5 rounded-xl bg-blue-500/20 text-blue-300 border border-blue-500/30 font-bold hover:bg-blue-500/30 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-file-lines"></i> 강의계획서 보기
+                </a>
+                <a href="강의계획서.docx" download class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 font-semibold hover:bg-slate-700 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-download"></i> 강의계획서 내려받기 (.docx)
                 </a>
             </div>
         </header>
 
-        <!-- 4 Sessions Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- Session 1 -->
-            <div class="p-6 rounded-3xl bg-slate-900/90 border border-blue-500/30 space-y-4 flex flex-col justify-between shadow-xl">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="px-2.5 py-1 rounded-lg bg-blue-500/20 text-blue-400 text-xs font-mono font-bold">1회차 (2시간)</span>
-                        <span class="text-[11px] text-slate-500 font-mono">110 KB • 4개 대주제</span>
-                    </div>
-                    <h3 class="text-lg font-black text-white">제미나이 생태계 완전 정복</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        • 모바일 앱 ↔ 데스크톱 멀티 디바이스 동기화<br>
-                        • Google Docs 서식 유지 1초 내보내기<br>
-                        • 워크스페이스 익스텐션 (@Gmail, @Drive 실무 연동)<br>
-                        • 모바일 라이브(Live) 음성 대화 실습
-                    </p>
-                </div>
-                <div class="flex items-center gap-2 pt-2">
-                    <a href="1회차_강사용마스터.html" class="flex-1 text-center py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg transition">
-                        📖 1회차 전체 교재 열기
-                    </a>
-                </div>
+        <!-- Section 1: Regular 4 Sessions -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h2 class="text-lg sm:text-xl font-black text-white flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-blue-400"></i> 정규 과정 (4회차 마스터 교재)
+                </h2>
+                <span class="text-xs text-slate-400 font-mono hidden sm:inline">총 8시간 집중 실습</span>
             </div>
 
-            <!-- Session 2 -->
-            <div class="p-6 rounded-3xl bg-slate-900/90 border border-amber-500/30 space-y-4 flex flex-col justify-between shadow-xl">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-400 text-xs font-mono font-bold">2회차 (2시간)</span>
-                        <span class="text-[11px] text-slate-500 font-mono">108 KB • 4개 대주제</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                
+                <!-- Session 1 -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-blue-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
+                            <span class="px-2.5 py-1 rounded-lg bg-blue-500/20 text-blue-400 text-xs font-mono font-bold">1회차 (2시간)</span>
+                            <span class="text-[11px] text-slate-500 font-mono">164 KB • 4개 대주제</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-black text-white">제미나이 생태계 완전 정복</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            • 모바일 앱 ↔ 데스크톱 멀티 디바이스 동기화<br>
+                            • Google Docs 서식 유지 1초 내보내기<br>
+                            • 워크스페이스 익스텐션 (@Gmail, @Drive 실무 연동)<br>
+                            • 모바일 라이브(Live) 음성 대화 실습
+                        </p>
                     </div>
-                    <h3 class="text-lg font-black text-white">Gemini Notebooks 지식 관리</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        • NotebookLM 인터페이스 및 출처(RAG) 원리<br>
-                        • 딥리서치(Deep Research) 기능 연동<br>
-                        • 50개 소스 관리 체계화 (PDF, 웹, Docs 주입)<br>
-                        • Audio Overview (2인 AI 팟캐스트) 생성 실습
-                    </p>
+                    <div class="pt-2">
+                        <a href="1회차_강사용마스터.html" class="block w-full text-center py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg transition">
+                            📖 1회차 전체 교재 열기
+                        </a>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2 pt-2">
-                    <a href="2회차_강사용마스터.html" class="flex-1 text-center py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs shadow-lg transition">
-                        📖 2회차 전체 교재 열기
-                    </a>
+
+                <!-- Session 2 -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-amber-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
+                            <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-400 text-xs font-mono font-bold">2회차 (2시간)</span>
+                            <span class="text-[11px] text-slate-500 font-mono">53 KB • 4개 대주제</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-black text-white">Gemini Notebooks 지식 관리</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            • NotebookLM 인터페이스 및 출처(RAG) 원리<br>
+                            • 딥리서치(Deep Research) 기능 연동<br>
+                            • 50개 소스 관리 체계화 (PDF, 웹, Docs 주입)<br>
+                            • Audio Overview (2인 AI 팟캐스트) 생성 실습
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <a href="2회차_강사용마스터.html" class="block w-full text-center py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs shadow-lg transition">
+                            📖 2회차 전체 교재 열기
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Session 3 -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-emerald-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">3회차 (2시간)</span>
+                            <span class="text-[11px] text-slate-500 font-mono">148 KB • 4개 대주제</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-black text-white">프롬프트 엔지니어링 × 실무</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            • 데이터 처리 파이프라인 7단계 최적화<br>
+                            • CoT(Chain of Thought) 단계별 추론 프롬프팅<br>
+                            • Zero-shot / Few-shot 템플릿 구조화<br>
+                            • 공공/복지 현장 맞춤형 서식 자동화
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <a href="3회차_강사용마스터.html" class="block w-full text-center py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition">
+                            📖 3회차 전체 교재 열기
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Session 4 -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-purple-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
+                            <span class="px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-400 text-xs font-mono font-bold">4회차 (2시간)</span>
+                            <span class="text-[11px] text-slate-500 font-mono">118 KB • 4개 대주제</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-black text-white">GAS 자동화 및 사후관리</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            • Google Apps Script(GAS) 기초 및 에디터 진입<br>
+                            • Google Docs 문서 자동 생성 봇<br>
+                            • Google Calendar 연동 기한 알림 봇<br>
+                            • 보안 클라우드 코드 실행 및 데이터 심층 분석
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <a href="4회차_강사용마스터.html" class="block w-full text-center py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg transition">
+                            📖 4회차 전체 교재 열기
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 2: Advanced & Special Lectures -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h2 class="text-lg sm:text-xl font-black text-white flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-amber-400"></i> 심화 · 특강 자료
+                </h2>
+                <span class="text-xs text-slate-400 font-mono hidden sm:inline">현업 고도화 & 최신 업데이트 4종</span>
             </div>
 
-            <!-- Session 3 -->
-            <div class="p-6 rounded-3xl bg-slate-900/90 border border-emerald-500/30 space-y-4 flex flex-col justify-between shadow-xl">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">3회차 (2시간)</span>
-                        <span class="text-[11px] text-slate-500 font-mono">111 KB • 4개 대주제</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                
+                <!-- Gems to Skills (NEW) -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-rose-500/40 space-y-4 flex flex-col justify-between shadow-xl relative overflow-hidden">
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-400 text-xs font-bold border border-rose-500/30">
+                                    🔥 NEW • 2026-10-06
+                                </span>
+                                <span class="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 text-[11px] font-mono">마이그레이션</span>
+                            </div>
+                            <span class="text-[11px] text-amber-400 font-mono font-semibold">스킬 zip 11종 수록</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-black text-white break-keep">
+                            젬스(Gems)가 스킬(Skills)로 바뀝니다
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            • 자활 실무자를 위한 구글 체계 개편 대처법 3가지와 마이그레이션 전략<br>
+                            • 사이드바 개별 룸 방식에서 채팅창 슬래시(/) 명령어 호출 체계로 전환 안내<br>
+                            • 자활 현장 즉시 적용 가능한 10대 문서 전용 스킬 ZIP 11종 패키지 동시 제공
+                        </p>
                     </div>
-                    <h3 class="text-lg font-black text-white">프롬프트 엔지니어링 × 실무</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        • 데이터 처리 파이프라인 7단계 최적화<br>
-                        • CoT(Chain of Thought) 단계별 추론 프롬프팅<br>
-                        • Zero-shot / Few-shot 템플릿 구조화<br>
-                        • 공공/복지 현장 맞춤형 서식 자동화
-                    </p>
+                    <div class="pt-2 space-y-2">
+                        <div class="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-300 flex items-center justify-between">
+                            <span class="text-amber-300 font-semibold"><i class="fa-solid fa-box-archive mr-1"></i> 부록 패키지:</span>
+                            <span class="text-slate-400">실무 스킬 zip 11종 다운로드 포함</span>
+                        </div>
+                        <a href="gems-to-skills/" class="w-full block text-center py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow-lg shadow-rose-900/20 transition">
+                            🚀 가이드 및 스킬 11종 열기
+                        </a>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2 pt-2">
-                    <a href="3회차_강사용마스터.html" class="flex-1 text-center py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition">
-                        📖 3회차 전체 교재 열기
-                    </a>
+
+                <!-- Antigravity 2.0 -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-cyan-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
+                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/20 text-cyan-400 text-xs font-mono font-bold">120분 특강</span>
+                            <span class="text-[11px] text-slate-500 font-mono">39 KB • 5개 교시</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-black text-white break-keep">구글 안티그래비티 2.0 120분 완전정복</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            • 윈도우 설치부터 화면 구조, 에이전트 실전 활용까지 5교시 집중 커리큘럼<br>
+                            • 실습 3회, 즉시 복사용 프롬프트, 기관 맞춤형 보안 체크리스트 완비<br>
+                            • 복잡한 자활 행정 문서를 스스로 작성하는 차세대 AI 에이전트 마스터
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <a href="구글_안티그래비티_2.0_120분_완전정복.html" class="block w-full text-center py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs shadow-lg transition">
+                            📖 특강 교안 열기
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Gems 10 Manual -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-emerald-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">실전 매뉴얼</span>
+                            <span class="text-[11px] text-slate-500 font-mono">87 KB • 10대 Gems</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-black text-white break-keep">자활사업 10대 문서 Gems 5단계 제작 매뉴얼</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            • 사업개발비 공모, 프로포절, 성과평가 등 자활 핵심 10대 실무 비서 매뉴얼<br>
+                            • 원클릭 복사 시스템 프롬프트 및 5단계 표준 제작 파이프라인 정립<br>
+                            • 공식 지식(Knowledge) 서식 연동 및 자활 행정 문서 완벽 자동화
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <a href="자활사업_10대문서_Gems_5단계제작매뉴얼.html" class="block w-full text-center py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition">
+                            📖 매뉴얼 열기
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AX Plans 12 -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-indigo-500/30 space-y-4 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
+                            <span class="px-2.5 py-1 rounded-lg bg-indigo-500/20 text-indigo-400 text-xs font-mono font-bold">AX 마스터플랜</span>
+                            <span class="text-[11px] text-slate-500 font-mono">67 KB • 12종 기획안</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-black text-white break-keep">자활센터 AX 사업계획서 12종</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            • 사업단 관리, 참여자 상담, 자활기업 창업 등 센터 10대 분야 + 종합 2종 AX 계획<br>
+                            • Gemini & NotebookLM 기반 실무 디지털 전환(AX) 마스터 플랜 및 표준 양식<br>
+                            • 현장 즉시 투입 가능한 실전 사업계획서 풀텍스트 및 원클릭 프롬프트 수록
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <a href="자활센터_AX_사업계획서_12종.html" class="block w-full text-center py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg transition">
+                            📖 사업계획서 12종 열기
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 3: Practice Materials Download -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h2 class="text-lg sm:text-xl font-black text-white flex items-center gap-2">
+                    <i class="fa-solid fa-folder-open text-sky-400"></i> 실습 자료 내려받기
+                </h2>
+                <span class="text-xs text-slate-400 font-mono hidden sm:inline">회차별 실습 예제 및 서식 패키지</span>
             </div>
 
-            <!-- Session 4 -->
-            <div class="p-6 rounded-3xl bg-slate-900/90 border border-purple-500/30 space-y-4 flex flex-col justify-between shadow-xl">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-400 text-xs font-mono font-bold">4회차 (2시간)</span>
-                        <span class="text-[11px] text-slate-500 font-mono">78 KB • 4개 대주제</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                
+                <!-- counseling-samples -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">2-5 실습</span>
+                            <span class="text-[11px] text-slate-500 font-mono">8개 파일</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white break-keep">참여자 상담일지 샘플 5인</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            김철수, 이영희, 박진호, 최정순, 정성남 5인의 사업단별 상담일지 텍스트 샘플
+                        </p>
                     </div>
-                    <h3 class="text-lg font-black text-white">GAS 자동화 및 사후관리</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        • Google Apps Script(GAS) 기초 및 에디터 진입<br>
-                        • Google Docs 문서 자동 생성 봇<br>
-                        • Google Calendar 연동 기한 알림 봇<br>
-                        • 보안 클라우드 코드 실행 및 데이터 심층 분석
-                    </p>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-2">
+                        <a href="https://github.com/ryujean77/ryujean-slides/tree/main/incheon-ai-curriculum/materials/counseling-samples" target="_blank" class="flex-1 text-center py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-brands fa-github"></i> 폴더 보기
+                        </a>
+                        <a href="materials/counseling-samples/2-5_참여자_상담일지_샘플_5인_모음.zip" download class="flex-1 text-center py-2 px-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-file-zipper"></i> ZIP 다운로드
+                        </a>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2 pt-2">
-                    <a href="4회차_강사용마스터.html" class="flex-1 text-center py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg transition">
-                        📖 4회차 전체 교재 열기
-                    </a>
-                </div>
-            </div>
 
-        </div>
+                <!-- case-studies -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">우수사례집</span>
+                            <span class="text-[11px] text-slate-500 font-mono">7개 파일</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white break-keep">2023~2025 우수자활사례집</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            희망을 만드는 사람들(2023), 자립을 향한 동행(2024), 내일을 여는 희망(2025) 전문
+                        </p>
+                    </div>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-2">
+                        <a href="https://github.com/ryujean77/ryujean-slides/tree/main/incheon-ai-curriculum/materials/case-studies" target="_blank" class="flex-1 text-center py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-brands fa-github"></i> 폴더 보기
+                        </a>
+                        <a href="materials/case-studies/2023_2025_3개년_우수자활사례집_모음.zip" download class="flex-1 text-center py-2 px-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-file-zipper"></i> ZIP 다운로드
+                        </a>
+                    </div>
+                </div>
+
+                <!-- practice-2-7 -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">2-7 실습</span>
+                            <span class="text-[11px] text-slate-500 font-mono">10개 파일</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white break-keep">다회용기 세척사업 제안서 실습</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            타지역 우수사례(에코워시) 및 인천희망센터 지역환경분석보고서 예제 데이터
+                        </p>
+                    </div>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-2">
+                        <a href="https://github.com/ryujean77/ryujean-slides/tree/main/incheon-ai-curriculum/materials/practice-2-7" target="_blank" class="flex-1 text-center py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-brands fa-github"></i> 폴더 보기
+                        </a>
+                        <a href="materials/practice-2-7/2-7_실습용_자료_모음_다회용기세척사업_제안서.zip" download class="flex-1 text-center py-2 px-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-file-zipper"></i> ZIP 다운로드
+                        </a>
+                    </div>
+                </div>
+
+                <!-- practice-2-16 -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">2-16 실습</span>
+                            <span class="text-[11px] text-slate-500 font-mono">9개 파일</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white break-keep">다중문서 교차검색 실습</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            2024~2025 사업실적보고서 및 2026 성과평가지표 가이드라인 멀티소스
+                        </p>
+                    </div>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-2">
+                        <a href="https://github.com/ryujean77/ryujean-slides/tree/main/incheon-ai-curriculum/materials/practice-2-16" target="_blank" class="flex-1 text-center py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-brands fa-github"></i> 폴더 보기
+                        </a>
+                        <a href="materials/practice-2-16/2-16_실습용_자료_모음_다중문서교차검색.zip" download class="flex-1 text-center py-2 px-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-file-zipper"></i> ZIP 다운로드
+                        </a>
+                    </div>
+                </div>
+
+                <!-- gems-templates -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-teal-500/10 text-teal-400 border border-teal-500/20">서식 템플릿</span>
+                            <span class="text-[11px] text-slate-500 font-mono">73개 파일</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white break-keep">10대 문서 공식서식 & Gem 프롬프트</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            자활기업 사업개발비, 프로포절, 성과평가 등 10대 문서 서식 및 시스템 프롬프트 모음
+                        </p>
+                    </div>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-2">
+                        <a href="https://github.com/ryujean77/ryujean-slides/tree/main/incheon-ai-curriculum/materials/gems-templates" target="_blank" class="flex-1 text-center py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-brands fa-github"></i> 폴더 보기
+                        </a>
+                        <a href="materials/gems-templates/자활사업_10대문서_공식_서식모음_HWP_PDF_DOCX.zip" download class="flex-1 text-center py-2 px-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-file-zipper"></i> ZIP 다운로드
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ax-plans -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">AX 기획서</span>
+                            <span class="text-[11px] text-slate-500 font-mono">13개 파일</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white break-keep">자활센터 AX 사업계획서 12종 원문</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            센터 10대 분야 AI 에이전트 전환 사업계획서 및 종합 구축 기획안 마크다운 원문 모음
+                        </p>
+                    </div>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-2">
+                        <a href="https://github.com/ryujean77/ryujean-slides/tree/main/incheon-ai-curriculum/materials/ax-plans" target="_blank" class="flex-1 text-center py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-brands fa-github"></i> 폴더 보기
+                        </a>
+                        <a href="자활센터_AX_사업계획서_12종.html" class="flex-1 text-center py-2 px-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> 웹 슬라이드
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
         <!-- Footer Actions -->
-        <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <footer class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
                 <h4 class="text-sm font-bold text-white">RYUJEAN DOMAIN HQ 포털 연동</h4>
                 <p class="text-xs text-slate-400 mt-1">인천자활 AI 교육 풀패키지가 포털 대시보드에 실시간 반영되어 있습니다.</p>
             </div>
-            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-lg shadow-brand-500/20 transition whitespace-nowrap">
+            <a href="https://ryujean77.github.io/ryujean-slides/portal/" target="_blank" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-500/20 transition whitespace-nowrap">
                 🏛️ 마스터 포털 열기 ➔
             </a>
-        </div>
+        </footer>
 
     </div>
 </body>
