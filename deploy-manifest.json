@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-07T13:22:38.632Z",
-  "commit": "47709d4297b17fea1e56b593d1d595b6f8c8215f",
-  "fileCount": 2134,
+  "generatedAt": "2026-10-07T13:39:19.246Z",
+  "commit": "a3d304fc2dfc34a8402d3eb6252cbbfdfe7ea9ce",
+  "fileCount": 2135,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -6577,7 +6577,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 57395
+      "size": 57477
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -8293,11 +8293,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 57395
+      "size": 57477
     },
     {
       "path": "portal/index.html",
-      "size": 64436
+      "size": 64470
     },
     {
       "path": "portal/index.html.bak",
@@ -8308,16 +8308,20 @@
       "size": 2923
     },
     {
-      "path": "proposals/incheon-jahwal-2027/index.html",
-      "size": 11504
+      "path": "proposals/incheon-jahwal-2027/deck.pdf",
+      "size": 1498977
     },
     {
-      "path": "proposals/incheon-jahwal-2027/index.pdf",
-      "size": 1009675
+      "path": "proposals/incheon-jahwal-2027/index.html",
+      "size": 23927
     },
     {
       "path": "proposals/incheon-jahwal-2027/landing.html",
       "size": 25552
+    },
+    {
+      "path": "proposals/incheon-jahwal-2027/official.pdf",
+      "size": 802497
     },
     {
       "path": "proposals/incheon-jahwal-2027/proposal.css",
