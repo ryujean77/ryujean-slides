@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T15:00:39.259Z",
-  "commit": "788b291cb9e998fa710d6dc1017a1f165a835667",
+  "generatedAt": "2026-10-07T18:34:37.559Z",
+  "commit": "a1b00a0dd7239ef8bdfac213fa22d0e4bd0d5d0d",
   "fileCount": 2139,
   "files": [
     {
@@ -6913,11 +6913,11 @@
     },
     {
       "path": "incheon-ai-curriculum/00_INDEX.html",
-      "size": 9344
+      "size": 32101
     },
     {
       "path": "incheon-ai-curriculum/00_INDEX.md",
-      "size": 468
+      "size": 2443
     },
     {
       "path": "incheon-ai-curriculum/1회차_강사용마스터.html",
@@ -7369,7 +7369,7 @@
     },
     {
       "path": "incheon-ai-curriculum/index.html",
-      "size": 9344
+      "size": 32101
     },
     {
       "path": "incheon-ai-curriculum/materials/ax-plans/01_자활센터_제미나이_노트북_자동화_AX전환_사업계획서.md",
@@ -7861,7 +7861,7 @@
     },
     {
       "path": "incheon-ai-curriculum/r/c_02/index.html",
-      "size": 1307
+      "size": 1271
     },
     {
       "path": "incheon-ai-curriculum/r/c_03/index.html",
@@ -7869,7 +7869,7 @@
     },
     {
       "path": "incheon-ai-curriculum/r/c_04/index.html",
-      "size": 1370
+      "size": 1352
     },
     {
       "path": "incheon-ai-curriculum/r/c_05/index.html",
@@ -7929,7 +7929,7 @@
     },
     {
       "path": "incheon-ai-curriculum/r/p216_zip/index.html",
-      "size": 1256
+      "size": 1259
     },
     {
       "path": "incheon-ai-curriculum/r/p27_case/index.html",
