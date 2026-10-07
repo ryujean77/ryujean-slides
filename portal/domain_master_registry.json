@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-10-07 22:22:04 (KST)",
+  "lastUpdated": "2026-10-07 22:38:44 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -1233,22 +1233,27 @@
       "status": "진행중",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-10-05",
-      "liveUrl": "https://ryujean77.github.io/ryujean-slides/proposals/incheon-jahwal-2027/landing.html",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/proposals/incheon-jahwal-2027/",
       "deliverables": [
         {
-          "name": "자활 담당자용 소개·교육 페이지",
-          "type": "html",
-          "path": "landing.html"
-        },
-        {
-          "name": "광역센터 2027 교육계획 개괄안",
+          "name": "제안서 (프레젠테이션)",
           "type": "html",
           "path": "index.html"
         },
         {
-          "name": "광역센터 개괄안 PDF",
+          "name": "제안 공문 PDF",
           "type": "pdf",
-          "path": "index.pdf"
+          "path": "official.pdf"
+        },
+        {
+          "name": "제안서 PDF",
+          "type": "pdf",
+          "path": "deck.pdf"
+        },
+        {
+          "name": "자활 담당자용 소개·교육 페이지",
+          "type": "html",
+          "path": "landing.html"
         },
         {
           "name": "지역자활센터용 안내",
