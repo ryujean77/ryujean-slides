@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 AI 실무교육 제안</title>
+<meta name="description" content="2027년도 인천광역자활센터 종사자 AI 실무 역량 강화 교육 제안서 — 제안자 유정근">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap">
+<style>
+:root {
+  --navy: #16243d; --navy-2: #22355a; --ink: #1b2433; --sub: #5d6778;
+  --line: #e3ddd1; --paper: #fbf8f2; --card: #fff;
+  --gold: #a8843f; --gold-soft: #f4ecdb; --teal: #2f6f68; --teal-soft: #e2efec;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-snap-type: y proximity; }
+body { margin: 0; background: #e9e5dc; color: var(--ink); font-family: 'Pretendard', 'Malgun Gothic', sans-serif; word-break: keep-all; }
+.deck { display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 28px 16px 80px; }
+
+/* 슬라이드: 16:9 고정 비율, 글자 크기는 슬라이드 폭(cqw) 기준이라 화면 크기와 상관없이 같은 구도로 보인다 */
+.slide {
+  width: min(100%, 1280px); aspect-ratio: 16 / 9; container-type: inline-size;
+  background: var(--paper); position: relative; overflow: hidden; scroll-snap-align: center;
+  box-shadow: 0 10px 40px rgba(22, 36, 61, .14); border-radius: 6px;
+}
+.in { position: absolute; inset: 0; padding: 5.2cqw 6cqw 4.6cqw; display: flex; flex-direction: column; }
+.kicker { font-size: 1.05cqw; letter-spacing: .16em; color: var(--gold); font-weight: 700; }
+.title { font-family: 'Noto Serif KR', serif; font-size: 2.9cqw; line-height: 1.32; margin: .8cqw 0 0; color: var(--navy); font-weight: 700; }
+.title em { font-style: normal; color: var(--teal); }
+.lead { font-size: 1.35cqw; line-height: 1.7; color: var(--sub); margin: 1.2cqw 0 0; max-width: 72cqw; }
+.body { flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+.foot { position: absolute; left: 6cqw; right: 6cqw; bottom: 2.2cqw; display: flex; justify-content: space-between; font-size: .95cqw; color: #9a9fa9; }
+.foot .bar { flex: 1; margin: auto 1.6cqw; height: 1px; background: var(--line); }
+
+/* 표지 */
+.cover { background: var(--navy); color: #f4eee1; }
+.cover .in { justify-content: space-between; }
+.cover .kicker { color: #d8bd84; }
+.cover h1 { font-family: 'Noto Serif KR', serif; font-size: 4.2cqw; line-height: 1.3; margin: 0; font-weight: 700; }
+.cover h1 span { color: #d8bd84; }
+.cover .sub { font-size: 1.6cqw; color: #c3cbd8; margin-top: 1.8cqw; }
+.cover .meta { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: .6cqw 4cqw; font-size: 1.2cqw; color: #aeb8c9; }
+.cover .meta b { display: block; color: #f4eee1; font-size: 1.45cqw; font-weight: 600; margin-top: .3cqw; }
+.cover .arc { position: absolute; right: -10cqw; top: -14cqw; width: 52cqw; height: 52cqw; border-radius: 50%; border: 1px solid rgba(216, 189, 132, .28); }
+.cover .arc.b { right: -4cqw; top: -8cqw; width: 40cqw; height: 40cqw; border-color: rgba(216, 189, 132, .16); }
+
+/* 공통 블록 */
+.grid { display: grid; gap: 1.6cqw; }
+.g2 { grid-template-columns: 1fr 1fr; } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: .9cqw; padding: 2cqw 2cqw 1.8cqw; }
+.card h3 { margin: 0; font-size: 1.6cqw; color: var(--navy); line-height: 1.4; }
+.card p, .card li { font-size: 1.32cqw; line-height: 1.65; color: #3e4757; }
+.card p { margin: .7cqw 0 0; }
+.card ul { margin: .8cqw 0 0; padding-left: 1.4cqw; }
+.num { font-family: 'Noto Serif KR', serif; color: var(--gold); font-size: 2.4cqw; font-weight: 700; line-height: 1; margin-bottom: 1cqw; }
+.pill { display: inline-block; font-size: 1cqw; font-weight: 700; padding: .3cqw 1cqw; border-radius: 99px; background: var(--teal-soft); color: var(--teal); }
+.out { margin-top: 1.2cqw; padding-top: 1cqw; border-top: 1px solid var(--line); font-size: 1.15cqw; color: var(--teal); font-weight: 600; }
+
+/* 요지 */
+.summary { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3cqw; align-items: center; }
+.summary .big { font-family: 'Noto Serif KR', serif; font-size: 2.6cqw; line-height: 1.45; color: var(--navy); margin: 0; }
+.summary .big em { font-style: normal; color: var(--teal); }
+.points { display: grid; gap: 1.1cqw; }
+.point { display: grid; grid-template-columns: 3.4cqw 1fr; gap: 1.2cqw; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: .9cqw; padding: 1.4cqw 1.6cqw; }
+.point .n { font-family: 'Noto Serif KR', serif; color: var(--gold); font-size: 2cqw; font-weight: 700; line-height: 1.1; }
+.point b { font-size: 1.45cqw; color: var(--navy); }
+.point span { display: block; font-size: 1.28cqw; color: var(--sub); margin-top: .3cqw; line-height: 1.55; }
+
+/* 문제 → 방향 */
+.issue { display: grid; grid-template-columns: 1fr 2.6cqw 1fr; gap: 1cqw; align-items: stretch; }
+.issue + .issue { margin-top: 1.1cqw; }
+.issue > div { background: var(--card); border: 1px solid var(--line); border-radius: .8cqw; padding: 1.3cqw 1.7cqw; font-size: 1.28cqw; line-height: 1.6; }
+.issue .p { border-left: .35cqw solid #c58a72; }
+.issue .s { border-left: .35cqw solid var(--teal); }
+.issue .arr { background: none; border: 0; padding: 0; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 2cqw; }
+.issue small { display: block; font-size: .95cqw; font-weight: 700; letter-spacing: .06em; margin-bottom: .3cqw; }
+.issue .p small { color: #a8624c; } .issue .s small { color: var(--teal); }
+
+/* 단계 */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; }
+.steps .card { border-radius: 0; border-right: 0; }
+.steps .card:first-child { border-radius: .9cqw 0 0 .9cqw; }
+.steps .card:last-child { border-radius: 0 .9cqw .9cqw 0; border-right: 1px solid var(--line); }
+.steps .when { font-size: 1.05cqw; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
+.steps h3 { margin-top: .5cqw; }
+
+/* 표 */
+table.t { width: 100%; border-collapse: collapse; background: var(--card); font-size: 1.32cqw; border: 1px solid var(--line); }
+table.t th, table.t td { padding: 1cqw 1.3cqw; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; line-height: 1.55; }
+table.t thead th { background: var(--navy); color: #f4eee1; font-weight: 600; }
+table.t td:first-child { color: var(--navy); font-weight: 700; white-space: nowrap; }
+table.t tr:last-child td { border-bottom: 0; }
+
+/* 일정 */
+.line { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+.line::before { content: ''; position: absolute; left: 1cqw; right: 1cqw; top: 1cqw; height: 2px; background: var(--gold); opacity: .5; }
+.line .ev { position: relative; padding-right: 1.6cqw; }
+.line .dot { width: 2cqw; height: 2cqw; border-radius: 50%; background: var(--paper); border: .3cqw solid var(--gold); }
+.line .when { margin-top: 1.4cqw; font-weight: 700; color: var(--navy); font-size: 1.45cqw; }
+.line .who { font-size: 1cqw; color: var(--gold); font-weight: 700; margin-top: .2cqw; }
+.line p { font-size: 1.18cqw; line-height: 1.6; color: #3e4757; margin: .7cqw 0 0; }
+
+/* 효과 */
+.metric .v { font-family: 'Noto Serif KR', serif; font-size: 4.4cqw; color: var(--navy); line-height: 1; font-weight: 700; }
+.metric .v small { font-size: 1.6cqw; color: var(--teal); margin-left: .4cqw; }
+.metric h3 { margin-top: 1.2cqw; font-size: 1.4cqw; }
+
+/* 요청 */
+.ask { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.4cqw; }
+.ask ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 1cqw; counter-reset: a; }
+.ask li { counter-increment: a; background: var(--card); border: 1px solid var(--line); border-radius: .8cqw; padding: 1.3cqw 1.6cqw 1.3cqw 4.6cqw; position: relative; font-size: 1.3cqw; line-height: 1.55; }
+.ask li::before { content: counter(a); position: absolute; left: 1.5cqw; top: 1.2cqw; width: 2.2cqw; height: 2.2cqw; border-radius: 50%; background: var(--navy); color: #fff; font-size: 1.1cqw; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.ask li b { color: var(--navy); }
+.budget { background: var(--navy); color: #f4eee1; border-radius: .9cqw; padding: 2.4cqw; display: flex; flex-direction: column; justify-content: center; }
+.budget .k { font-size: 1.1cqw; color: #d8bd84; letter-spacing: .1em; font-weight: 700; }
+.budget .v { font-family: 'Noto Serif KR', serif; font-size: 3.2cqw; margin: .8cqw 0; }
+.budget p { font-size: 1.2cqw; line-height: 1.65; color: #c3cbd8; margin: 0; }
+
+/* 마무리 */
+.close .in { justify-content: center; }
+.close .msg { font-family: 'Noto Serif KR', serif; font-size: 2.7cqw; line-height: 1.5; color: #f4eee1; margin: 0; max-width: 70cqw; }
+.close .msg span { color: #d8bd84; }
+.close .who { margin-top: 3.2cqw; display: grid; grid-template-columns: auto auto; justify-content: start; gap: 2.4cqw; font-size: 1.25cqw; color: #c3cbd8; line-height: 1.8; }
+.close .who b { color: #f4eee1; font-size: 1.6cqw; }
+.close a { color: #d8bd84; }
+
+/* 페이지 이동 버튼 */
+.nav { position: fixed; right: 18px; bottom: 18px; display: flex; gap: 8px; z-index: 5; }
+.nav button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--navy); font-size: 18px; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+.nav button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.nav .count { align-self: center; font-size: 13px; color: var(--sub); background: #fff; border-radius: 99px; padding: 6px 12px; border: 1px solid var(--line); }
+
+@media print {
+  @page { size: 297mm 167.06mm; margin: 0; }
+  html, body { background: #fff; }
+  .deck { padding: 0; gap: 0; display: block; }
+  .slide { width: 297mm; height: 167.06mm; aspect-ratio: auto; box-shadow: none; border-radius: 0; break-after: page; }
+  .nav { display: none; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- 1. 표지 -->
+<section class="slide cover" aria-label="표지">
+  <div class="arc"></div><div class="arc b"></div>
+  <div class="in">
+    <div class="kicker">PROPOSAL · 2027 교육계획 제안</div>
+    <div>
+      <h1>2027년도 인천광역자활센터<br>종사자 <span>AI 실무 역량 강화 교육</span> 제안</h1>
+      <div class="sub">센터의 실제 서식으로 배우고, 교육이 끝나면 업무 문서가 남는 교육</div>
+    </div>
+    <div class="meta">
+      <div>수신<b>인천광역자활센터 교육 담당자</b></div>
+      <div>제안<b>유정근 · AI 실무교육 강사</b></div>
+      <div>일자<b>2026년 10월</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 제안 요지 -->
+<section class="slide" aria-label="제안 요지">
+  <div class="in">
+    <div class="kicker">01 · 제안 요지</div>
+    <div class="body">
+      <div class="summary">
+        <p class="big">2027년, 인천광역자활센터 직원 여러분께<br><em>업무에 바로 쓰는 AI 교육</em>을<br>제안드립니다.</p>
+        <div class="points">
+          <div class="point"><div class="n">1</div><div><b>교육 전 무료 사전학습</b><span>계정·기초 설정은 온라인으로 미리 마치고, 강의 시간은 모두 실습에 씁니다.</span></div></div>
+          <div class="point"><div class="n">2</div><div><b>센터 실제 서식으로 실습</b><span>부서별로 쓰시는 계획서·보고서·공문 서식을 교재로 삼습니다.</span></div></div>
+          <div class="point"><div class="n">3</div><div><b>결과물이 남는 교육</b><span>교육 후 부서별 AI 활용 서식 모음을 센터 자산으로 정리해 드립니다.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>2027 AI 실무교육 제안</span><span class="bar"></span><span>02</span></div>
+</section>
+
+<!-- 3. 제안 배경 -->
+<section class="slide" aria-label="제안 배경">
+  <div class="in">
+    <div class="kicker">02 · 제안 배경</div>
+    <h2 class="title">2026년 지역자활센터 종사자 교육을 운영하며<br><em>세 가지 과제</em>를 확인했습니다.</h2>
+    <div class="body">
+      <div class="issue"><div class="p"><small>확인한 과제</small>계정 만들기·로그인에 강의 시간이 쓰여, 정해진 시간을 실습에 온전히 쓰기 어려웠습니다.</div><div class="arr">→</div><div class="s"><small>제안 방향</small>기초 준비를 무료 온라인 사전학습으로 옮겨 교육 전에 마칩니다.</div></div>
+      <div class="issue"><div class="p"><small>확인한 과제</small>AI 사용법은 익혔지만, 실제 업무에 얼마나 적용되었는지가 분명하지 않았습니다.</div><div class="arr">→</div><div class="s"><small>제안 방향</small>센터 서식을 미리 받아 교재로 쓰고, 교육 종료 시 업무 문서 완성본을 남깁니다.</div></div>
+      <div class="issue"><div class="p"><small>확인한 과제</small>수강생의 수준 차이가 커서 한 가지 진도로 운영하기 어려웠습니다.</div><div class="arr">→</div><div class="s"><small>제안 방향</small>1분 사전 조사로 수준과 필요 문서를 파악해 과제를 개인별로 나눕니다.</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>2027 AI 실무교육 제안</span><span class="bar"></span><span>03</span></div>
+</section>
+
+<!-- 4. 교육 구조 -->
+<section class="slide" aria-label="교육 구조">
+  <div class="in">
+    <div class="kicker">03 · 교육 구조</div>
+    <h2 class="title">준비·실습·정착의 <em>3단계</em>로 운영하고자 합니다.</h2>
+    <p class="lead">활주로에서 점검하느라 비행 시간을 쓰지 않도록, 준비와 실습과 정착을 나누었습니다.</p>
+    <div class="body">
+      <div class="steps">
+        <div class="card"><div class="when">1단계 · 교육 전 (무상)</div><h3>온라인 사전학습</h3><ul><li>AI 사용 계정 생성과 기본 설정</li><li>개인정보를 지우고 쓰는 요령</li><li>1분 사전 조사 (필요 문서·수준)</li></ul><div class="out">교육 당일, 모두가 같은 출발선</div></div>
+        <div class="card"><div class="when">2단계 · 교육 당일</div><h3>센터 서식 기반 대면 실습</h3><ul><li>사업계획서 초안 작성</li><li>실적·회의록의 보고서 정리</li><li>공문·보도자료 문체 다듬기</li></ul><div class="out">직원별 업무 문서 완성본 1건</div></div>
+        <div class="card"><div class="when">3단계 · 교육 후</div><h3>부서별 정착 지원</h3><ul><li>부서별 AI 활용 서식 모음 정리</li><li>사후 질의응답 창구 운영</li><li>희망자 심화 과정 연계</li></ul><div class="out">센터가 계속 쓰는 서식 자산</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>2027 AI 실무교육 제안</span><span class="bar"></span><span>04</span></div>
+</section>
+
+<!-- 5. 세부 커리큘럼 -->
+<section class="slide" aria-label="세부 커리큘럼">
+  <div class="in">
+    <div class="kicker">04 · 세부 커리큘럼 (안)</div>
+    <h2 class="title">대면 실습은 <em>6시간 × 4회</em>를 기본안으로 제안드립니다.</h2>
+    <div class="body">
+      <table class="t">
+        <thead><tr><th>회차</th><th>주제</th><th>실습 내용</th><th>산출물</th></tr></thead>
+        <tbody>
+          <tr><td>1회차</td><td>AI와 일하는 기본기</td><td>질문의 기본 틀(역할·상황·할 일·조건) · 개인정보 비식별 요령 · 긴 지침과 회의록 요약</td><td>개인별 질문 서식 모음</td></tr>
+          <tr><td>2회차</td><td>문서 작성 실무</td><td>공문·보도자료·홍보 문구 문체 다듬기 · 실적 수치를 보고서 문장으로 정리</td><td>보고서·공문 완성본</td></tr>
+          <tr><td>3회차</td><td>사업 기획 실무</td><td>센터 사업계획서 목차 기반 초안 작성 · 추진 배경과 성과 지표 도출 · 참고자료 요약</td><td>사업계획서 초안</td></tr>
+          <tr><td>4회차</td><td>센터 서식 완성과 정착</td><td>부서별 서식 1:1 클리닉 · 부서 전용 AI 비서(Gems) 만들기 · 부서별 서식 모음 정리</td><td>부서별 서식 템플릿 · 전용 AI 비서</td></tr>
+        </tbody>
+      </table>
+      <p class="lead" style="margin-top:1.4cqw">회차 간격(주 1회 또는 격주)과 시수는 센터 일정에 맞춰 조정할 수 있습니다. 무료 AI 기능을 기본으로 운영합니다.</p>
+    </div>
+  </div>
+  <div class="foot"><span>2027 AI 실무교육 제안</span><span class="bar"></span><span>05</span></div>
+</section>
+
+<!-- 6. 대상 구분 -->
+<section class="slide" aria-label="교육 대상">
+  <div class="in">
+    <div class="kicker">05 · 교육 대상</div>
+    <h2 class="title">광역센터 직원 과정을 먼저 운영하고,<br><em>지역자활센터로 확산</em>하는 순서를 제안드립니다.</h2>
+    <div class="body">
+      <div class="grid g2">
+        <div class="card"><span class="pill">우선 제안</span><h3 style="margin-top:1cqw">광역센터 직원 과정</h3><ul><li>대상: 광역센터 직원 전원 (10여 명)</li><li>부서별 실제 서식을 받아 1:1에 가깝게 맞춤</li><li>남는 것: 부서별 AI 활용 서식 모음</li></ul></div>
+        <div class="card"><span class="pill" style="background:var(--gold-soft);color:#7a5c22">확산 단계</span><h3 style="margin-top:1cqw">지역자활센터 종사자 과정</h3><ul><li>대상: 관내 지역자활센터 종사자</li><li>센터마다 서식이 달라 공통 업무 중심, 기초·심화 분반</li><li>광역 주관 공동 과정 또는 센터별 단독 과정</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>2027 AI 실무교육 제안</span><span class="bar"></span><span>06</span></div>
+</section>
+
+<!-- 7. 추진 일정 -->
+<section class="slide" aria-label="추진 일정">
+  <div class="in">
+    <div class="kicker">06 · 추진 일정 (안)</div>
+    <h2 class="title">2027년 상반기 교육 실시를 목표로 합니다.</h2>
+    <div class="body">
+      <div class="line">
+        <div class="ev"><div class="dot"></div><div class="when">2026. 10~11.</div><div class="who">센터</div><p>2027년도 교육계획 수립 시 본 제안 검토·반영</p></div>
+        <div class="ev"><div class="dot"></div><div class="when">2027. 1~2.</div><div class="who">센터 · 제안자</div><p>일정·시수 확정, 1분 사전 조사, 실습용 서식 2~3종 수합 (개인정보 삭제 후)</p></div>
+        <div class="ev"><div class="dot"></div><div class="when">2027. 상반기</div><div class="who">제안자</div><p>온라인 사전학습 안내 → 대면 실습 4회 → 부서별 서식 모음 정리</p></div>
+        <div class="ev"><div class="dot"></div><div class="when">2027. 하반기</div><div class="who">협의</div><p>사후 질의응답 운영, 필요 시 지역자활센터 과정으로 확산</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>2027 AI 실무교육 제안</span><span class="bar"></span><span>07</span></div>
+</section>
+
+<!-- 8. 기대 효과 -->
+<section class="slide" aria-label="기대 효과">
+  <div class="in">
+    <div class="kicker">07 · 기대 효과</div>
+    <h2 class="title">교육이 끝난 뒤에도 <em>센터에 남는 것</em>을 목표로 합니다.</h2>
+    <div class="body">
+      <div class="grid g3">
+        <div class="card metric"><div class="v">1<small>건</small></div><h3>직원별 업무 문서 완성본</h3><p>교육 시간에 실제 업무 문서를 함께 완성합니다.</p></div>
+        <div class="card metric"><div class="v">1<small>세트</small></div><h3>부서별 AI 활용 서식 모음</h3><p>담당자가 바뀌어도 이어 쓸 수 있는 센터 자산으로 정리합니다.</p></div>
+        <div class="card metric"><div class="v">2<small>단계</small></div><h3>광역 → 지역 확산 모델</h3><p>광역센터에서 검증한 서식을 지역자활센터 교육의 기준으로 씁니다.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>2027 AI 실무교육 제안</span><span class="bar"></span><span>08</span></div>
+</section>
+
+<!-- 9. 협조 요청 -->
+<section class="slide" aria-label="검토 요청 사항">
+  <div class="in">
+    <div class="kicker">08 · 검토 요청 사항</div>
+    <h2 class="title">아래 사항을 검토하여 주시면 감사하겠습니다.</h2>
+    <div class="body">
+      <div class="ask">
+        <ol>
+          <li><b>2027년도 교육계획 반영</b><br>본 제안을 2027년도 직원 역량 강화 교육계획에 반영하여 주시기를 요청드립니다.</li>
+          <li><b>실습용 서식 협조</b><br>교육 확정 후 부서별 대표 서식 2~3종을 개인정보 삭제 후 공유해 주시면 교재로 맞춤 제작하겠습니다.</li>
+          <li><b>사전 조사 협조</b><br>교육 2주 전 직원 대상 1분 사전 조사 배포를 요청드립니다. 문항은 제안자가 준비합니다.</li>
+        </ol>
+        <div class="budget">
+          <div class="k">소요 예산</div>
+          <div class="v">별도 협의</div>
+          <p>교육 인원, 시수, 서식 맞춤 범위를 확정한 뒤 센터의 강사료 지급 기준에 맞추어 세부 내역을 협의드리겠습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>2027 AI 실무교육 제안</span><span class="bar"></span><span>09</span></div>
+</section>
+
+<!-- 10. 맺음 -->
+<section class="slide cover close" aria-label="맺음과 연락처">
+  <div class="arc"></div>
+  <div class="in">
+    <div class="kicker">09 · 제안자</div>
+    <p class="msg" style="margin-top:2cqw">교육이 끝나는 날이 아니라, 다음 날 아침<br>직원 여러분의 <span>업무가 가벼워지는 교육</span>을 준비하겠습니다.<br>검토 후 채택하여 주시면 감사하겠습니다.</p>
+    <div class="who">
+      <div><b>유정근</b><br>AI 실무교육 강사<br>2026 지역자활센터 종사자 AI 교육 운영</div>
+      <div>010-4728-9917<br>ryujean77@gmail.com<br><a href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/" target="_blank" rel="noopener">2026 교육 교안 포털 보기</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="nav" aria-label="슬라이드 이동">
+  <button type="button" id="prev" aria-label="이전 슬라이드">↑</button>
+  <span class="count" id="count" aria-live="polite">1 / 10</span>
+  <button type="button" id="next" aria-label="다음 슬라이드">↓</button>
+</div>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var count = document.getElementById('count');
+  function current() {
+    var mid = window.innerHeight / 2, best = 0, dist = Infinity;
+    slides.forEach(function (s, i) {
+      var r = s.getBoundingClientRect(), d = Math.abs(r.top + r.height / 2 - mid);
+      if (d < dist) { dist = d; best = i; }
+    });
+    return best;
+  }
+  function go(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    slides[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function update() { count.textContent = (current() + 1) + ' / ' + slides.length; }
+  document.getElementById('prev').addEventListener('click', function () { go(current() - 1); });
+  document.getElementById('next').addEventListener('click', function () { go(current() + 1); });
+  document.addEventListener('keydown', function (e) {
+    if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); go(current() + 1); }
+    if (['ArrowUp', 'ArrowLeft', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); go(current() - 1); }
+  });
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
+</body>
+</html>
