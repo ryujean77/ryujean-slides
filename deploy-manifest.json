@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T14:40:21.956Z",
-  "commit": "0de3dfb4f0ff70093a617855c3b5a979d3fadb3c",
+  "generatedAt": "2026-10-07T15:00:39.259Z",
+  "commit": "788b291cb9e998fa710d6dc1017a1f165a835667",
   "fileCount": 2139,
   "files": [
     {
@@ -8329,7 +8329,7 @@
     },
     {
       "path": "proposals/incheon-jahwal-2027/index.html",
-      "size": 11055
+      "size": 14903
     },
     {
       "path": "proposals/incheon-jahwal-2027/landing.html",
