@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T13:39:19.246Z",
-  "commit": "a3d304fc2dfc34a8402d3eb6252cbbfdfe7ea9ce",
+  "generatedAt": "2026-10-07T14:09:05.268Z",
+  "commit": "a82663c10c7bc771ea5e0aab71e1143219fa248e",
   "fileCount": 2135,
   "files": [
     {
@@ -8309,11 +8309,11 @@
     },
     {
       "path": "proposals/incheon-jahwal-2027/deck.pdf",
-      "size": 1498977
+      "size": 1504483
     },
     {
       "path": "proposals/incheon-jahwal-2027/index.html",
-      "size": 23927
+      "size": 24205
     },
     {
       "path": "proposals/incheon-jahwal-2027/landing.html",
@@ -8321,7 +8321,7 @@
     },
     {
       "path": "proposals/incheon-jahwal-2027/official.pdf",
-      "size": 802497
+      "size": 819807
     },
     {
       "path": "proposals/incheon-jahwal-2027/proposal.css",
