@@ -50,7 +50,6 @@ nav.tabs a[aria-selected="true"]:hover { color: var(--navy); }
 .card b { font-size: 18px; color: var(--navy); }
 .card span { color: var(--sub); font-size: 14.5px; }
 .card .go { margin-top: auto; padding-top: 10px; color: var(--teal); font-weight: 600; font-size: 14px; }
-h2 { font-family: 'Noto Serif KR', serif; font-size: 20px; color: var(--navy); margin: 30px 0 12px; }
 .links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--navy); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; }
@@ -61,6 +60,42 @@ footer { border-top: 1px solid var(--line); padding: 22px 0 40px; color: var(--s
   .cards, .links { grid-template-columns: 1fr; }
   .frame { height: 70vh; }
 }
+
+/* 섹션 색 구분 */
+.sec { border-radius: 16px; padding: 22px 22px 24px; margin-bottom: 18px; border: 1px solid transparent; }
+.sec-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.sec-head p { margin: 0; color: var(--sub); font-size: 15px; }
+.chip { display: inline-block; font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; color: #fff; }
+.sec-docs { background: #eef1f6; border-color: #d9dfe9; }
+.sec-docs .chip { background: var(--navy); }
+.sec-down { background: var(--gold-soft); border-color: #e8dcc0; }
+.sec-down .chip { background: var(--gold); }
+.sec-more { background: #e5f0ee; border-color: #cfe2de; }
+.sec-more .chip { background: var(--teal); }
+.dl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.dl-item { display: flex; flex-direction: column; gap: 2px; background: #fff; border: 1px solid #e8dcc0; border-radius: 12px; padding: 14px 16px 14px 48px; text-decoration: none; color: var(--ink); position: relative; }
+.dl-item::before { content: '↓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%; background: var(--gold); color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.dl-item:hover { border-color: var(--gold); }
+.dl-item b { color: var(--navy); font-size: 15.5px; }
+.dl-item span { color: var(--sub); font-size: 13px; }
+
+/* EGLS LAB 배너 */
+.promo-wrap { margin-top: 8px; margin-bottom: 28px; }
+.promo { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "k btn" "h btn" "p btn"; gap: 6px 24px; align-items: center; padding: 28px 30px; border-radius: 18px; text-decoration: none; color: #eef3f2; background: radial-gradient(120% 160% at 100% 0%, rgba(63,181,159,.45), transparent 55%), radial-gradient(90% 120% at 0% 100%, rgba(127,214,200,.18), transparent 60%), #06100f; border: 1px solid rgba(127,214,200,.25); }
+.promo:hover { border-color: rgba(127,214,200,.6); }
+.promo-k { grid-area: k; color: #7fd6c8; font-size: 12px; letter-spacing: .16em; font-weight: 700; }
+.promo-h { grid-area: h; font-size: clamp(19px, 2.4vw, 25px); line-height: 1.45; font-weight: 600; }
+.promo-h em { font-style: normal; color: #7fd6c8; }
+.promo-p { grid-area: p; color: #9aa8a6; font-size: 14.5px; }
+.promo-btn { grid-area: btn; white-space: nowrap; background: linear-gradient(135deg, #a6efe2, #3fb59f); color: #032420; font-weight: 700; font-size: 15px; padding: 12px 20px; border-radius: 999px; }
+
+@media (max-width: 760px) {
+  .dl { grid-template-columns: 1fr 1fr; }
+  .promo { grid-template-columns: 1fr; grid-template-areas: "k" "h" "p" "btn"; padding: 24px 20px; }
+  .promo-btn { justify-self: start; margin-top: 8px; }
+  .sec { padding: 18px 14px 20px; }
+}
+@media (max-width: 420px) { .dl { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -87,25 +122,31 @@ footer { border-top: 1px solid var(--line); padding: 22px 0 40px; color: var(--s
 <main class="wrap">
 
   <section class="panel" id="p-home" role="tabpanel" aria-label="한눈에 보기">
-    <div class="bar"><p>세 가지 자료가 같은 제안을 서로 다른 용도로 정리하고 있습니다. 필요한 자료를 골라 보시거나 내려받으실 수 있습니다.</p></div>
-    <div class="cards">
-      <a class="card" href="#proposal"><span class="k">01 · 제안서</span><b>프레젠테이션 제안서</b><span>제안 요지, 배경, 3단계 구조, 6시간 × 4회 과정, 일정과 기대 효과를 10장으로 정리했습니다.</span><span class="go">제안서 보기 →</span></a>
-      <a class="card" href="#official"><span class="k">02 · 공문</span><b>제안 공문 (PDF)</b><span>교육계획 검토·결재에 첨부하실 수 있는 공문서 형식입니다. 붙임으로 운영 계획과 세부 과정이 들어 있습니다.</span><span class="go">공문 보기 →</span></a>
-      <a class="card" href="#brief"><span class="k">03 · 검토 자료</span><b>도입 검토 자료</b><span>교육이 왜 지금 필요한지, 교육과 정착 컨설팅을 함께 하면 무엇이 달라지는지, 예상 질문과 답을 담았습니다.</span><span class="go">검토 자료 보기 →</span></a>
+    <div class="sec sec-docs">
+      <div class="sec-head"><span class="chip">제안 자료</span><p>세 가지 자료가 같은 제안을 서로 다른 용도로 정리하고 있습니다.</p></div>
+      <div class="cards">
+        <a class="card" href="#proposal"><span class="k">01 · 제안서</span><b>프레젠테이션 제안서</b><span>제안 요지, 배경, 3단계 구조, 6시간 × 4회 과정, 일정과 기대 효과를 10장으로 정리했습니다.</span><span class="go">제안서 보기 →</span></a>
+        <a class="card" href="#official"><span class="k">02 · 공문</span><b>제안 공문 (PDF)</b><span>교육계획 검토·결재에 첨부하실 수 있는 공문서 형식입니다. 붙임으로 운영 계획과 세부 과정이 들어 있습니다.</span><span class="go">공문 보기 →</span></a>
+        <a class="card" href="#brief"><span class="k">03 · 검토 자료</span><b>도입 검토 자료</b><span>교육이 왜 지금 필요한지, 교육과 정착 컨설팅을 함께 하면 무엇이 달라지는지, 예상 질문과 답을 담았습니다.</span><span class="go">검토 자료 보기 →</span></a>
+      </div>
     </div>
 
-    <h2>내려받기</h2>
-    <div class="btns">
-      <a class="btn" href="deck.pdf" download>제안서 PDF</a>
-      <a class="btn" href="official.pdf" download>제안 공문 PDF</a>
-      <a class="btn" href="brief.pdf" download>검토 자료 PDF</a>
-      <a class="btn" href="brief.hwp" download>검토 자료 한글(HWP)</a>
+    <div class="sec sec-down">
+      <div class="sec-head"><span class="chip">내려받기</span><p>결재 첨부나 회의 자료로 쓰실 수 있도록 파일로 받으실 수 있습니다.</p></div>
+      <div class="dl">
+        <a class="dl-item" href="deck.pdf" download><b>제안서</b><span>PDF · 10장</span></a>
+        <a class="dl-item" href="official.pdf" download><b>제안 공문</b><span>PDF · A4 2쪽</span></a>
+        <a class="dl-item" href="brief.pdf" download><b>검토 자료</b><span>PDF · A4 5쪽</span></a>
+        <a class="dl-item" href="brief.hwp" download><b>검토 자료</b><span>한글(HWP) · 편집 가능</span></a>
+      </div>
     </div>
 
-    <h2>함께 보시면 좋은 자료</h2>
-    <div class="links">
-      <a class="card" href="regional.html" target="_blank" rel="noopener"><span class="k">지역자활센터용</span><b>지역자활센터 종사자 교육 안내</b><span>기초·심화 분반으로 운영하는 지역 과정 안내입니다.</span></a>
-      <a class="card" href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/" target="_blank" rel="noopener"><span class="k">2026 운영 자료</span><b>지역자활센터 AI 교육 교안 포털</b><span>2026년 교육 교안을 지금도 열람하실 수 있습니다.</span></a>
+    <div class="sec sec-more">
+      <div class="sec-head"><span class="chip">함께 보시면 좋은 자료</span><p>지역 확산 단계와 2026년 운영 기록입니다.</p></div>
+      <div class="links">
+        <a class="card" href="regional.html" target="_blank" rel="noopener"><span class="k">지역자활센터용</span><b>지역자활센터 종사자 교육 안내</b><span>기초·심화 분반으로 운영하는 지역 과정 안내입니다.</span></a>
+        <a class="card" href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/" target="_blank" rel="noopener"><span class="k">2026 운영 자료</span><b>지역자활센터 AI 교육 교안 포털</b><span>2026년 교육 교안을 지금도 열람하실 수 있습니다.</span></a>
+      </div>
     </div>
   </section>
 
@@ -134,6 +175,15 @@ footer { border-top: 1px solid var(--line); padding: 22px 0 40px; color: var(--s
   </section>
 
 </main>
+
+<aside class="wrap promo-wrap" aria-label="EGLS LAB 안내">
+  <a class="promo" href="https://www.eglslab.com" target="_blank" rel="noopener">
+    <span class="promo-k">AI · AX PARTNER</span>
+    <span class="promo-h">AI를 <em>배운</em> 조직과 AI로 <em>일하는</em> 조직,<br>1년 뒤의 차이는 교육 다음에서 갈립니다.</span>
+    <span class="promo-p">교육으로 시작해 업무 방식까지 바꾸는 AX 파트너 — EGLS LAB</span>
+    <span class="promo-btn">eglslab.com 둘러보기 →</span>
+  </a>
+</aside>
 
 <footer>
   <div class="wrap">유정근 · AI 실무교육 강사 · 010-4728-9917 · ryujean77@gmail.com</div>
