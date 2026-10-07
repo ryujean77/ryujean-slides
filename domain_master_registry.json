@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-10-07 22:38:44 (KST)",
+  "lastUpdated": "2026-10-07 23:37:25 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -1236,9 +1236,14 @@
       "liveUrl": "https://ryujean77.github.io/ryujean-slides/proposals/incheon-jahwal-2027/",
       "deliverables": [
         {
-          "name": "제안서 (프레젠테이션)",
+          "name": "제안 자료 모음 (제안서·공문·검토 자료)",
           "type": "html",
           "path": "index.html"
+        },
+        {
+          "name": "제안서 (프레젠테이션)",
+          "type": "html",
+          "path": "deck.html"
         },
         {
           "name": "제안 공문 PDF",
@@ -1246,14 +1251,14 @@
           "path": "official.pdf"
         },
         {
-          "name": "제안서 PDF",
-          "type": "pdf",
-          "path": "deck.pdf"
+          "name": "도입 검토 자료",
+          "type": "html",
+          "path": "brief.html"
         },
         {
-          "name": "자활 담당자용 소개·교육 페이지",
-          "type": "html",
-          "path": "landing.html"
+          "name": "도입 검토 자료 HWP",
+          "type": "hwp",
+          "path": "brief.hwp"
         },
         {
           "name": "지역자활센터용 안내",
