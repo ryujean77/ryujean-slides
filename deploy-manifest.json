@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-05T16:37:26.834Z",
-  "commit": "090705277bfeedc3595e59f56a054356b793568b",
-  "fileCount": 2128,
+  "generatedAt": "2026-10-07T13:22:38.632Z",
+  "commit": "47709d4297b17fea1e56b593d1d595b6f8c8215f",
+  "fileCount": 2134,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -17,7 +17,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 5893
+      "size": 5927
     },
     {
       "path": "academy/certificate.html",
@@ -501,7 +501,7 @@
     },
     {
       "path": "academy/org.html",
-      "size": 22602
+      "size": 22709
     },
     {
       "path": "academy/pages.css",
@@ -510,6 +510,10 @@
     {
       "path": "academy/pages.js",
       "size": 24113
+    },
+    {
+      "path": "academy/prep-jahwal.html",
+      "size": 12018
     },
     {
       "path": "academy/roadmaps.html",
@@ -6573,7 +6577,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 55551
+      "size": 57395
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -8289,11 +8293,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 55551
+      "size": 57395
     },
     {
       "path": "portal/index.html",
-      "size": 62980
+      "size": 64436
     },
     {
       "path": "portal/index.html.bak",
@@ -8302,6 +8306,26 @@
     {
       "path": "privacy.html",
       "size": 2923
+    },
+    {
+      "path": "proposals/incheon-jahwal-2027/index.html",
+      "size": 11504
+    },
+    {
+      "path": "proposals/incheon-jahwal-2027/index.pdf",
+      "size": 1009675
+    },
+    {
+      "path": "proposals/incheon-jahwal-2027/landing.html",
+      "size": 25552
+    },
+    {
+      "path": "proposals/incheon-jahwal-2027/proposal.css",
+      "size": 6993
+    },
+    {
+      "path": "proposals/incheon-jahwal-2027/regional.html",
+      "size": 8717
     },
     {
       "path": "publishing_registry.json",
