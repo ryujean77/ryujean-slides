@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T18:34:37.559Z",
-  "commit": "a1b00a0dd7239ef8bdfac213fa22d0e4bd0d5d0d",
+  "generatedAt": "2026-10-08T03:43:37.479Z",
+  "commit": "840c1f450e25fb8ad6f31a31790d8f9db00c0bb1",
   "fileCount": 2139,
   "files": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 5927
+      "size": 5979
     },
     {
       "path": "academy/certificate.html",
@@ -501,7 +501,7 @@
     },
     {
       "path": "academy/org.html",
-      "size": 22709
+      "size": 22878
     },
     {
       "path": "academy/pages.css",
@@ -8329,11 +8329,11 @@
     },
     {
       "path": "proposals/incheon-jahwal-2027/index.html",
-      "size": 14903
+      "size": 15221
     },
     {
       "path": "proposals/incheon-jahwal-2027/landing.html",
-      "size": 25552
+      "size": 818
     },
     {
       "path": "proposals/incheon-jahwal-2027/official.pdf",
