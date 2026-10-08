@@ -50,7 +50,7 @@ nav.tabs a[aria-selected="true"]:hover { color: var(--navy); }
 .card b { font-size: 18px; color: var(--navy); }
 .card span { color: var(--sub); font-size: 14.5px; }
 .card .go { margin-top: auto; padding-top: 10px; color: var(--teal); font-weight: 600; font-size: 14px; }
-.links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--navy); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; }
 .toast.show { opacity: 1; }
@@ -142,9 +142,10 @@ footer { border-top: 1px solid var(--line); padding: 22px 0 40px; color: var(--s
     </div>
 
     <div class="sec sec-more">
-      <div class="sec-head"><span class="chip">함께 보시면 좋은 자료</span><p>지역 확산 단계와 2026년 운영 기록입니다.</p></div>
+      <div class="sec-head"><span class="chip">함께 보시면 좋은 자료</span><p>직원 공유용 페이지, 지역 확산 단계, 2026년 운영 기록입니다.</p></div>
       <div class="links">
         <a class="card" href="regional.html" target="_blank" rel="noopener"><span class="k">지역자활센터용</span><b>지역자활센터 종사자 교육 안내</b><span>기초·심화 분반으로 운영하는 지역 과정 안내입니다.</span></a>
+        <a class="card" href="https://www.eglslab.com/jahwal/" target="_blank" rel="noopener"><span class="k">직원 공유용</span><b>직원분들께 미리 보여 주실 페이지</b><span>교육 방식과, 오늘 바로 써 보는 질문 서식 4종을 담았습니다.</span></a>
         <a class="card" href="https://ryujean77.github.io/ryujean-slides/incheon-ai-curriculum/" target="_blank" rel="noopener"><span class="k">2026 운영 자료</span><b>지역자활센터 AI 교육 교안 포털</b><span>2026년 교육 교안을 지금도 열람하실 수 있습니다.</span></a>
       </div>
     </div>
