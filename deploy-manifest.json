@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-08T03:43:37.479Z",
-  "commit": "840c1f450e25fb8ad6f31a31790d8f9db00c0bb1",
-  "fileCount": 2139,
+  "generatedAt": "2026-10-10T04:24:49.461Z",
+  "commit": "1bc1217315ae0811b5438b73b299eb5398fb42db",
+  "fileCount": 2183,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -6577,7 +6577,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 57617
+      "size": 58291
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -8293,11 +8293,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 57617
+      "size": 58291
     },
     {
       "path": "portal/index.html",
-      "size": 64562
+      "size": 65166
     },
     {
       "path": "portal/index.html.bak",
@@ -8426,6 +8426,182 @@
     {
       "path": "robots.txt",
       "size": 222
+    },
+    {
+      "path": "sasang-life-wellness/index.html",
+      "size": 65899
+    },
+    {
+      "path": "sasang-life-wellness/media/CREDITS.md",
+      "size": 3175
+    },
+    {
+      "path": "sasang-life-wellness/media/fonts/Cormorant-italic.woff2",
+      "size": 12772
+    },
+    {
+      "path": "sasang-life-wellness/media/fonts/Cormorant-normal.woff2",
+      "size": 12228
+    },
+    {
+      "path": "sasang-life-wellness/media/fonts/NotoSerifKR-subset.woff2",
+      "size": 164892
+    },
+    {
+      "path": "sasang-life-wellness/media/fonts/Pretendard-Regular.woff2",
+      "size": 765892
+    },
+    {
+      "path": "sasang-life-wellness/media/fonts/Pretendard-SemiBold.woff2",
+      "size": 785856
+    },
+    {
+      "path": "sasang-life-wellness/media/hero_brand.mp4",
+      "size": 1239437
+    },
+    {
+      "path": "sasang-life-wellness/media/hero_poster.webp",
+      "size": 25064
+    },
+    {
+      "path": "sasang-life-wellness/media/img/aroma.webp",
+      "size": 27306
+    },
+    {
+      "path": "sasang-life-wellness/media/img/ayurveda.webp",
+      "size": 214192
+    },
+    {
+      "path": "sasang-life-wellness/media/img/bedroom.webp",
+      "size": 320484
+    },
+    {
+      "path": "sasang-life-wellness/media/img/earth.webp",
+      "size": 218804
+    },
+    {
+      "path": "sasang-life-wellness/media/img/fashion.webp",
+      "size": 93050
+    },
+    {
+      "path": "sasang-life-wellness/media/img/fire.webp",
+      "size": 224722
+    },
+    {
+      "path": "sasang-life-wellness/media/img/food_lab.webp",
+      "size": 212940
+    },
+    {
+      "path": "sasang-life-wellness/media/img/food.webp",
+      "size": 118024
+    },
+    {
+      "path": "sasang-life-wellness/media/img/footbath.webp",
+      "size": 215660
+    },
+    {
+      "path": "sasang-life-wellness/media/img/hanok.webp",
+      "size": 216190
+    },
+    {
+      "path": "sasang-life-wellness/media/img/ivory.webp",
+      "size": 83468
+    },
+    {
+      "path": "sasang-life-wellness/media/img/massage.webp",
+      "size": 228108
+    },
+    {
+      "path": "sasang-life-wellness/media/img/meditation.webp",
+      "size": 337084
+    },
+    {
+      "path": "sasang-life-wellness/media/img/mist.webp",
+      "size": 123072
+    },
+    {
+      "path": "sasang-life-wellness/media/img/sauna.webp",
+      "size": 113876
+    },
+    {
+      "path": "sasang-life-wellness/media/img/stone.webp",
+      "size": 254172
+    },
+    {
+      "path": "sasang-life-wellness/media/img/tea.webp",
+      "size": 79146
+    },
+    {
+      "path": "sasang-life-wellness/media/img/texas.webp",
+      "size": 172596
+    },
+    {
+      "path": "sasang-life-wellness/media/img/water_bottle.webp",
+      "size": 67092
+    },
+    {
+      "path": "sasang-life-wellness/media/img/water.webp",
+      "size": 202186
+    },
+    {
+      "path": "sasang-life-wellness/media/img/yeosu.webp",
+      "size": 108932
+    },
+    {
+      "path": "sasang-life-wellness/media/org/CREDITS.md",
+      "size": 1417
+    },
+    {
+      "path": "sasang-life-wellness/media/org/hero_org.mp4",
+      "size": 393936
+    },
+    {
+      "path": "sasang-life-wellness/media/org/img/consultation.webp",
+      "size": 49134
+    },
+    {
+      "path": "sasang-life-wellness/media/org/img/kitchen.webp",
+      "size": 66900
+    },
+    {
+      "path": "sasang-life-wellness/media/org/img/meeting.webp",
+      "size": 66514
+    },
+    {
+      "path": "sasang-life-wellness/media/org/img/spa_room.webp",
+      "size": 208202
+    },
+    {
+      "path": "sasang-life-wellness/media/org/img/tea.webp",
+      "size": 55528
+    },
+    {
+      "path": "sasang-life-wellness/media/org/img/training.webp",
+      "size": 80454
+    },
+    {
+      "path": "sasang-life-wellness/media/sunset_loop.mp4",
+      "size": 1179360
+    },
+    {
+      "path": "sasang-life-wellness/media/tea_loop.mp4",
+      "size": 35329
+    },
+    {
+      "path": "sasang-life-wellness/media/water_loop.mp4",
+      "size": 1267637
+    },
+    {
+      "path": "sasang-life-wellness/organization.html",
+      "size": 55347
+    },
+    {
+      "path": "sasang-life-wellness/pdf/sasang_life_organization.pdf",
+      "size": 2596868
+    },
+    {
+      "path": "sasang-life-wellness/pdf/sasang_life_proposal.pdf",
+      "size": 2567439
     },
     {
       "path": "sasang-spa/01_사상체질_프리미엄_체질스파_프로젝트_기획서.md",
