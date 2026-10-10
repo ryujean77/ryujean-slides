@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-10T05:30:38.754Z",
-  "commit": "92b14a9c1fdac733392358f55b9194fdf21e153c",
-  "fileCount": 2183,
+  "generatedAt": "2026-10-10T08:33:45.906Z",
+  "commit": "c47c3fcd188439ba28b797208c47af01f7b49a5b",
+  "fileCount": 2191,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -8428,8 +8428,24 @@
       "size": 222
     },
     {
+      "path": "sasang-life-wellness/en/index.html",
+      "size": 67779
+    },
+    {
+      "path": "sasang-life-wellness/en/organization.html",
+      "size": 57974
+    },
+    {
       "path": "sasang-life-wellness/index.html",
-      "size": 64731
+      "size": 65419
+    },
+    {
+      "path": "sasang-life-wellness/ja/index.html",
+      "size": 70023
+    },
+    {
+      "path": "sasang-life-wellness/ja/organization.html",
+      "size": 60283
     },
     {
       "path": "sasang-life-wellness/media/CREDITS.md",
@@ -8593,15 +8609,31 @@
     },
     {
       "path": "sasang-life-wellness/organization.html",
-      "size": 55347
+      "size": 56047
+    },
+    {
+      "path": "sasang-life-wellness/pdf/sasang_life_organization_en.pdf",
+      "size": 1984903
+    },
+    {
+      "path": "sasang-life-wellness/pdf/sasang_life_organization_ja.pdf",
+      "size": 4518526
     },
     {
       "path": "sasang-life-wellness/pdf/sasang_life_organization.pdf",
-      "size": 2375603
+      "size": 2389805
+    },
+    {
+      "path": "sasang-life-wellness/pdf/sasang_life_proposal_en.pdf",
+      "size": 5259028
+    },
+    {
+      "path": "sasang-life-wellness/pdf/sasang_life_proposal_ja.pdf",
+      "size": 9176355
     },
     {
       "path": "sasang-life-wellness/pdf/sasang_life_proposal.pdf",
-      "size": 6174246
+      "size": 6188786
     },
     {
       "path": "sasang-spa/01_사상체질_프리미엄_체질스파_프로젝트_기획서.md",
