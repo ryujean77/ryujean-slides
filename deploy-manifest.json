@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T04:24:49.461Z",
-  "commit": "1bc1217315ae0811b5438b73b299eb5398fb42db",
+  "generatedAt": "2026-10-10T04:54:04.866Z",
+  "commit": "f5b5333267c8eb8bd231ee124bc569f1b58cee5a",
   "fileCount": 2183,
   "files": [
     {
@@ -8597,11 +8597,11 @@
     },
     {
       "path": "sasang-life-wellness/pdf/sasang_life_organization.pdf",
-      "size": 2596868
+      "size": 2375603
     },
     {
       "path": "sasang-life-wellness/pdf/sasang_life_proposal.pdf",
-      "size": 2567439
+      "size": 6174246
     },
     {
       "path": "sasang-spa/01_사상체질_프리미엄_체질스파_프로젝트_기획서.md",
