@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T08:33:45.906Z",
-  "commit": "c47c3fcd188439ba28b797208c47af01f7b49a5b",
+  "generatedAt": "2026-10-10T09:38:44.587Z",
+  "commit": "8935fb61ddd63ca512a9369f55cc219d2165af47",
   "fileCount": 2191,
   "files": [
     {
@@ -8617,7 +8617,7 @@
     },
     {
       "path": "sasang-life-wellness/pdf/sasang_life_organization_ja.pdf",
-      "size": 4518526
+      "size": 4516638
     },
     {
       "path": "sasang-life-wellness/pdf/sasang_life_organization.pdf",
@@ -8629,7 +8629,7 @@
     },
     {
       "path": "sasang-life-wellness/pdf/sasang_life_proposal_ja.pdf",
-      "size": 9176355
+      "size": 9173283
     },
     {
       "path": "sasang-life-wellness/pdf/sasang_life_proposal.pdf",
