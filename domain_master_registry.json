@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-10-10 13:24:18 (KST)",
+  "lastUpdated": "2026-10-12 01:35:23 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -41,7 +41,7 @@
         "codeit-theme-generator"
       ],
       "stats": {
-        "projectsCount": 9,
+        "projectsCount": 10,
         "liveUrlsCount": 4,
         "status": "🟢 상시 출강/확장 가동"
       }
@@ -1287,6 +1287,18 @@
       "status": "진행중",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-10-08",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
+    },
+    {
+      "id": "PRJ-AI-10",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "디지털새싹 신성고 · 마이크로비트 창업 수업 운영 기획 초안 (주영욱 대표 사전 브리핑 반영)",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-10-12",
       "liveUrl": "",
       "deliverables": [],
       "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
