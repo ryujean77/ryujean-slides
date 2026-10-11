@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-10T09:38:44.587Z",
-  "commit": "8935fb61ddd63ca512a9369f55cc219d2165af47",
-  "fileCount": 2191,
+  "generatedAt": "2026-10-11T16:36:30.034Z",
+  "commit": "0c4f3f8fdfe8fa4e6097ee97ea6411426b4d8758",
+  "fileCount": 2462,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -6577,7 +6577,1091 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 58291
+      "size": 58972
+    },
+    {
+      "path": "dsac-shinsung-microbit/index.html",
+      "size": 27843
+    },
+    {
+      "path": "dsac-shinsung-microbit/s01.html",
+      "size": 11595
+    },
+    {
+      "path": "dsac-shinsung-microbit/s02.html",
+      "size": 24035
+    },
+    {
+      "path": "dsac-shinsung-microbit/s03.html",
+      "size": 17266
+    },
+    {
+      "path": "dsac-shinsung-microbit/s04.html",
+      "size": 11663
+    },
+    {
+      "path": "dsac-shinsung-microbit/s05.html",
+      "size": 11334
+    },
+    {
+      "path": "dsac-shinsung-microbit/s06.html",
+      "size": 11840
+    },
+    {
+      "path": "dsac-shinsung-microbit/s07.html",
+      "size": 11378
+    },
+    {
+      "path": "dsac-shinsung-microbit/s08.html",
+      "size": 10973
+    },
+    {
+      "path": "dsac-shinsung-microbit/s09.html",
+      "size": 8725
+    },
+    {
+      "path": "dsac-shinsung-microbit/s10.html",
+      "size": 13396
+    },
+    {
+      "path": "dsac-shinsung-microbit/s11.html",
+      "size": 13290
+    },
+    {
+      "path": "dsac-shinsung-microbit/s12.html",
+      "size": 9790
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/01.webp",
+      "size": 19920
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/02.webp",
+      "size": 17654
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/03.webp",
+      "size": 14130
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/04.webp",
+      "size": 15152
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/05.webp",
+      "size": 25850
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/06.webp",
+      "size": 19910
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/07.webp",
+      "size": 14830
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/08.webp",
+      "size": 13336
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/09.webp",
+      "size": 16454
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/10.webp",
+      "size": 36992
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/11.webp",
+      "size": 15688
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/12.webp",
+      "size": 33514
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/13.webp",
+      "size": 20802
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/14.webp",
+      "size": 27732
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s01/15.webp",
+      "size": 11388
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/01.webp",
+      "size": 17562
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/02.webp",
+      "size": 18294
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/03.webp",
+      "size": 15918
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/04.webp",
+      "size": 39936
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/05.webp",
+      "size": 29508
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/06.webp",
+      "size": 31916
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/07.webp",
+      "size": 23720
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/08.webp",
+      "size": 53958
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/09.webp",
+      "size": 37262
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/10.webp",
+      "size": 26558
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/11.webp",
+      "size": 37246
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/12.webp",
+      "size": 34792
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/13.webp",
+      "size": 33978
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/14.webp",
+      "size": 28546
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/15.webp",
+      "size": 44958
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/16.webp",
+      "size": 36156
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/17.webp",
+      "size": 20770
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/18.webp",
+      "size": 29606
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/19.webp",
+      "size": 24360
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/20.webp",
+      "size": 29796
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/21.webp",
+      "size": 37044
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/22.webp",
+      "size": 23410
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/23.webp",
+      "size": 26798
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/24.webp",
+      "size": 32468
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/25.webp",
+      "size": 23226
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/26.webp",
+      "size": 32508
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/27.webp",
+      "size": 40144
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/28.webp",
+      "size": 26154
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/29.webp",
+      "size": 14694
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/30.webp",
+      "size": 18834
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/31.webp",
+      "size": 21074
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/32.webp",
+      "size": 21076
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/33.webp",
+      "size": 26032
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/34.webp",
+      "size": 20132
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/35.webp",
+      "size": 14956
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/36.webp",
+      "size": 29244
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/37.webp",
+      "size": 17698
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/38.webp",
+      "size": 31082
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/39.webp",
+      "size": 13960
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s02/40.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/01.webp",
+      "size": 20398
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/02.webp",
+      "size": 17486
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/03.webp",
+      "size": 15424
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/04.webp",
+      "size": 42414
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/05.webp",
+      "size": 29702
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/06.webp",
+      "size": 31916
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/07.webp",
+      "size": 27974
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/08.webp",
+      "size": 41502
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/09.webp",
+      "size": 37262
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/10.webp",
+      "size": 37246
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/11.webp",
+      "size": 42746
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/12.webp",
+      "size": 42548
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/13.webp",
+      "size": 27404
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/14.webp",
+      "size": 35816
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/15.webp",
+      "size": 34126
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/16.webp",
+      "size": 32584
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/17.webp",
+      "size": 25598
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/18.webp",
+      "size": 39458
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/19.webp",
+      "size": 40722
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/20.webp",
+      "size": 33226
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/21.webp",
+      "size": 35736
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/22.webp",
+      "size": 38188
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/23.webp",
+      "size": 26300
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/24.webp",
+      "size": 12780
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/25.webp",
+      "size": 28054
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/26.webp",
+      "size": 19416
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/27.webp",
+      "size": 24216
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/28.webp",
+      "size": 16816
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/29.webp",
+      "size": 12858
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/30.webp",
+      "size": 18808
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/31.webp",
+      "size": 22408
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/32.webp",
+      "size": 13912
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s03/33.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/01.webp",
+      "size": 18948
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/02.webp",
+      "size": 19734
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/03.webp",
+      "size": 15258
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/04.webp",
+      "size": 34614
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/05.webp",
+      "size": 37324
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/06.webp",
+      "size": 21144
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/07.webp",
+      "size": 22166
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/08.webp",
+      "size": 41662
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/09.webp",
+      "size": 35620
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/10.webp",
+      "size": 33560
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/11.webp",
+      "size": 15550
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/12.webp",
+      "size": 32150
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/13.webp",
+      "size": 31130
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/14.webp",
+      "size": 11786
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/15.webp",
+      "size": 10922
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/16.webp",
+      "size": 12474
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/17.webp",
+      "size": 11388
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/18.webp",
+      "size": 23684
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/19.webp",
+      "size": 15082
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/20.webp",
+      "size": 23368
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/21.webp",
+      "size": 29486
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/22.webp",
+      "size": 12382
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s04/23.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/01.webp",
+      "size": 20260
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/02.webp",
+      "size": 22018
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/03.webp",
+      "size": 16358
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/04.webp",
+      "size": 29236
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/05.webp",
+      "size": 24826
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/06.webp",
+      "size": 16958
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/07.webp",
+      "size": 36914
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/08.webp",
+      "size": 19840
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/09.webp",
+      "size": 23290
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/10.webp",
+      "size": 17654
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/11.webp",
+      "size": 10938
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/12.webp",
+      "size": 44470
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/13.webp",
+      "size": 37034
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/14.webp",
+      "size": 33390
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/15.webp",
+      "size": 15792
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/16.webp",
+      "size": 17310
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/17.webp",
+      "size": 12592
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/18.webp",
+      "size": 27818
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/19.webp",
+      "size": 8432
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s05/20.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/01.webp",
+      "size": 22104
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/02.webp",
+      "size": 20966
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/03.webp",
+      "size": 18422
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/04.webp",
+      "size": 41138
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/05.webp",
+      "size": 37474
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/06.webp",
+      "size": 33002
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/07.webp",
+      "size": 33500
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/08.webp",
+      "size": 32876
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/09.webp",
+      "size": 20410
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/10.webp",
+      "size": 29942
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/11.webp",
+      "size": 23056
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/12.webp",
+      "size": 18568
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/13.webp",
+      "size": 14904
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/14.webp",
+      "size": 19880
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/15.webp",
+      "size": 12032
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/16.webp",
+      "size": 16104
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/17.webp",
+      "size": 22242
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/18.webp",
+      "size": 12898
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s06/19.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/01.webp",
+      "size": 20672
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/02.webp",
+      "size": 19862
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/03.webp",
+      "size": 13480
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/04.webp",
+      "size": 28060
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/05.webp",
+      "size": 24290
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/06.webp",
+      "size": 39302
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/07.webp",
+      "size": 40868
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/08.webp",
+      "size": 16256
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/09.webp",
+      "size": 20586
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/10.webp",
+      "size": 30046
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/11.webp",
+      "size": 26928
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/12.webp",
+      "size": 19198
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/13.webp",
+      "size": 19188
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/14.webp",
+      "size": 17502
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/15.webp",
+      "size": 16786
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/16.webp",
+      "size": 15318
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/17.webp",
+      "size": 22234
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/18.webp",
+      "size": 13980
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/19.webp",
+      "size": 20734
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s07/20.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/01.webp",
+      "size": 20646
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/02.webp",
+      "size": 21922
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/03.webp",
+      "size": 20582
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/04.webp",
+      "size": 36722
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/05.webp",
+      "size": 45312
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/06.webp",
+      "size": 25330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/07.webp",
+      "size": 37134
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/08.webp",
+      "size": 43152
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/09.webp",
+      "size": 61220
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/10.webp",
+      "size": 16808
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/11.webp",
+      "size": 18618
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/12.webp",
+      "size": 35678
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/13.webp",
+      "size": 17320
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/14.webp",
+      "size": 42156
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/15.webp",
+      "size": 22208
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/16.webp",
+      "size": 10788
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s08/17.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/01.webp",
+      "size": 21404
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/02.webp",
+      "size": 17236
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/03.webp",
+      "size": 28246
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/04.webp",
+      "size": 13084
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/05.webp",
+      "size": 37364
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/06.webp",
+      "size": 14172
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/07.webp",
+      "size": 15718
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/08.webp",
+      "size": 19176
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/09.webp",
+      "size": 12778
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s09/10.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/01.webp",
+      "size": 19572
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/02.webp",
+      "size": 23472
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/03.webp",
+      "size": 20496
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/04.webp",
+      "size": 31530
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/05.webp",
+      "size": 20294
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/06.webp",
+      "size": 20092
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/07.webp",
+      "size": 18438
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/08.webp",
+      "size": 13606
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/09.webp",
+      "size": 119912
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/10.webp",
+      "size": 75168
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/11.webp",
+      "size": 34356
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/12.webp",
+      "size": 43784
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/13.webp",
+      "size": 18628
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/14.webp",
+      "size": 44632
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/15.webp",
+      "size": 36352
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/16.webp",
+      "size": 32010
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/17.webp",
+      "size": 28502
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/18.webp",
+      "size": 52886
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/19.webp",
+      "size": 40038
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/20.webp",
+      "size": 30746
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/21.webp",
+      "size": 12778
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s10/22.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/01.webp",
+      "size": 23020
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/02.webp",
+      "size": 20332
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/03.webp",
+      "size": 19192
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/04.webp",
+      "size": 13756
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/05.webp",
+      "size": 13188
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/06.webp",
+      "size": 11252
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/07.webp",
+      "size": 9838
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/08.webp",
+      "size": 9872
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/09.webp",
+      "size": 10888
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/10.webp",
+      "size": 35240
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/11.webp",
+      "size": 28862
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/12.webp",
+      "size": 27566
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/13.webp",
+      "size": 31082
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/14.webp",
+      "size": 30738
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/15.webp",
+      "size": 39622
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/16.webp",
+      "size": 40216
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/17.webp",
+      "size": 35240
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/18.webp",
+      "size": 13386
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/19.webp",
+      "size": 15096
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/20.webp",
+      "size": 17620
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/21.webp",
+      "size": 30696
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/22.webp",
+      "size": 10260
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/23.webp",
+      "size": 21130
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s11/24.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/01.webp",
+      "size": 17258
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/02.webp",
+      "size": 17716
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/03.webp",
+      "size": 16468
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/04.webp",
+      "size": 14354
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/05.webp",
+      "size": 10346
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/06.webp",
+      "size": 19074
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/07.webp",
+      "size": 11876
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/08.webp",
+      "size": 16354
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/09.webp",
+      "size": 13702
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/10.webp",
+      "size": 14344
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/11.webp",
+      "size": 15426
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/12.webp",
+      "size": 38640
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/13.webp",
+      "size": 7452
+    },
+    {
+      "path": "dsac-shinsung-microbit/slides/s12/14.webp",
+      "size": 10330
+    },
+    {
+      "path": "dsac-shinsung-microbit/style.css",
+      "size": 7765
     },
     {
       "path": "dual-track-polishing/index.html",
@@ -8293,11 +9377,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 58291
+      "size": 58972
     },
     {
       "path": "portal/index.html",
-      "size": 65166
+      "size": 65777
     },
     {
       "path": "portal/index.html.bak",
