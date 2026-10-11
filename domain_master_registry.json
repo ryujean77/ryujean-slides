@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-10-12 01:35:23 (KST)",
+  "lastUpdated": "2026-10-12 01:36:36 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -42,7 +42,7 @@
       ],
       "stats": {
         "projectsCount": 10,
-        "liveUrlsCount": 4,
+        "liveUrlsCount": 5,
         "status": "🟢 상시 출강/확장 가동"
       }
     },
@@ -1299,8 +1299,19 @@
       "status": "진행중",
       "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
       "date": "2026-10-12",
-      "liveUrl": "",
-      "deliverables": [],
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/dsac-shinsung-microbit/",
+      "deliverables": [
+        {
+          "name": "[최종산출물]_통화 주영욱 대표 디싹 신성고 강의 설명_261009_110033_original.md",
+          "type": "md",
+          "path": "[최종산출물]_통화 주영욱 대표 디싹 신성고 강의 설명_261009_110033_original.md"
+        },
+        {
+          "name": "웹 리포트 (index.html)",
+          "type": "html",
+          "path": "index.html"
+        }
+      ],
       "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     }
   ]
