@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T11:31:53.873Z",
-  "commit": "f83c7a3160533538d77643ce5179dcfcedb67485",
+  "generatedAt": "2026-10-18T11:31:34.592Z",
+  "commit": "2b90ef6318c9aadd0e17c0f2f38508a1171e4203",
   "fileCount": 2465,
   "files": [
     {
@@ -1001,7 +1001,7 @@
     },
     {
       "path": "aroma-guide/business.html",
-      "size": 8714
+      "size": 8872
     },
     {
       "path": "aroma-guide/frankincense.html",
