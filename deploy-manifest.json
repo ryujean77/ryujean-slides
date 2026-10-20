@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-20T15:10:26.291Z",
-  "commit": "199cc8ec66a6137937cc663e9b23f2d79d101630",
+  "generatedAt": "2026-10-20T15:31:24.927Z",
+  "commit": "874fb498e10670384f5cea245219ebf97c39a256",
   "fileCount": 2460,
   "files": [
     {
@@ -457,7 +457,7 @@
     },
     {
       "path": "academy/nav.js",
-      "size": 4864
+      "size": 5260
     },
     {
       "path": "academy/org.html",
