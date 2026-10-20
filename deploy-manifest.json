@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-20T06:42:28.964Z",
-  "commit": "8a60acd5752ed817c7272197b791a868748ccaea",
-  "fileCount": 2456,
+  "generatedAt": "2026-10-20T14:48:30.295Z",
+  "commit": "60c3c9749ceb7a913b038c3bf228ec351ffb6fda",
+  "fileCount": 2459,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -6557,7 +6557,7 @@
     },
     {
       "path": "dsac-shinsung-microbit/index.html",
-      "size": 27843
+      "size": 28040
     },
     {
       "path": "dsac-shinsung-microbit/s01.html",
@@ -7638,6 +7638,18 @@
     {
       "path": "dsac-shinsung-microbit/style.css",
       "size": 7765
+    },
+    {
+      "path": "dsac-shinsung-microbit/survey-highschool-post-qr.svg",
+      "size": 8638
+    },
+    {
+      "path": "dsac-shinsung-microbit/survey-highschool-pre-qr.svg",
+      "size": 8419
+    },
+    {
+      "path": "dsac-shinsung-microbit/survey.html",
+      "size": 3876
     },
     {
       "path": "dual-track-polishing/index.html",
