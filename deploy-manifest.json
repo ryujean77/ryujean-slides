@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-20T14:48:30.295Z",
-  "commit": "60c3c9749ceb7a913b038c3bf228ec351ffb6fda",
-  "fileCount": 2459,
+  "generatedAt": "2026-10-20T14:59:15.171Z",
+  "commit": "582a80dfbe42d9b7f1a3dc8937d428c4909b276e",
+  "fileCount": 2460,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -21,7 +21,7 @@
     },
     {
       "path": "academy/app.js",
-      "size": 28069
+      "size": 28112
     },
     {
       "path": "academy/auth.js",
@@ -53,7 +53,7 @@
     },
     {
       "path": "academy/course.html",
-      "size": 2986
+      "size": 2998
     },
     {
       "path": "academy/courses/agy-beginner/course.json",
@@ -437,19 +437,19 @@
     },
     {
       "path": "academy/index.html",
-      "size": 8084
+      "size": 8096
     },
     {
       "path": "academy/lesson.html",
-      "size": 3146
+      "size": 3158
     },
     {
       "path": "academy/login.html",
-      "size": 7936
+      "size": 8278
     },
     {
       "path": "academy/login.js",
-      "size": 7205
+      "size": 9157
     },
     {
       "path": "academy/my.html",
@@ -476,6 +476,10 @@
       "size": 12217
     },
     {
+      "path": "academy/privacy.html",
+      "size": 3316
+    },
+    {
       "path": "academy/progress-merge.js",
       "size": 1000
     },
@@ -485,7 +489,7 @@
     },
     {
       "path": "academy/style.css",
-      "size": 23788
+      "size": 24178
     },
     {
       "path": "agy-mobile-notebooklm-mcp/index.html",
