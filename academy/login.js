@@ -34,6 +34,30 @@ async function applyMkt(a, me) {
   try { const m = await a.setMarketing(true); rememberMkt(false); return m; } catch (e) { return me; } // 실패하면 다음에 다시
 }
 
+// 입금 안내(계좌·카카오페이 QR·카카오톡 채널)는 공개 저장소가 아니라 회원 API 에서 받아 온다
+let payShown = false;
+async function showPay() {
+  if (payShown) return;
+  payShown = true;
+  let p;
+  try { const r = await window.mwAuth.api("/pay"); if (!r.ok) throw 0; p = await r.json(); } catch (e) { payShown = false; return; }
+  const box = $("#m-howto");
+  box.className = "pay-info";
+  box.replaceChildren();
+  const el = (tag, text, attrs = {}) => { const n = document.createElement(tag); if (text) n.textContent = text; for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v); return n; };
+  const acc = el("p"); acc.append(el("b", "계좌 입금 "), `${p.bank} ${p.account} (예금주 ${p.holder}) `);
+  const copy = el("button", "계좌번호 복사", { type: "button", class: "btn ghost small" });
+  copy.addEventListener("click", async () => { try { await navigator.clipboard.writeText(p.account); copy.textContent = "복사했습니다"; } catch (e) { copy.textContent = p.account; } });
+  acc.append(copy);
+  const kp = el("p"); kp.append(el("b", "카카오페이 송금 "), el("a", "카카오페이로 보내기 (휴대폰)", { href: p.kakaopay, target: "_blank", rel: "noopener noreferrer", class: "btn small" }));
+  const qr = el("img", "", { src: p.qr, alt: "카카오페이 송금 QR 코드", width: "180", height: "180", class: "pay-qr" });
+  const ch = el("p");
+  ch.append(el("b", "신청 연락 "));
+  if (p.channel) ch.append(el("a", "카카오톡 채널로 회원 번호 보내기", { href: p.channel, target: "_blank", rel: "noopener noreferrer", class: "btn small" }));
+  else ch.append("카카오톡 채널을 준비하고 있습니다. 개설되면 이곳에 연결됩니다.");
+  box.append(acc, kp, qr, el("p", "PC에서는 휴대폰 카메라나 카카오톡 QR 스캔으로 위 코드를 찍으세요.", { class: "muted" }), ch);
+}
+
 let applying = false;
 async function render(user, me) {
   if (!user) { $("#auth-title").textContent = "로그인"; return show("v-guest"); }
@@ -49,6 +73,7 @@ async function render(user, me) {
   $("#m-mkt").checked = !!(me && me.marketing);
   $("#m-mkt-at").textContent = me && me.marketing_at ? ` (${me.marketing ? "동의" : "철회"} ${me.marketing_at.slice(0, 10)})` : "";
   $("#m-upgrade").hidden = !!(me && me.tier === "paid");
+  if (me && me.tier !== "paid") showPay();
   $("#m-admin").hidden = !(me && me.admin);
   show("v-member");
 }
