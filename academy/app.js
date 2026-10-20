@@ -51,6 +51,61 @@
   }
   const isOpen = (entry) => entry.status !== "준비 중";
 
+  /* ---------- 회원: 유료 과목·맛보기·자료 (auth.js 가 window.mwAuth 를 연다) ---------- */
+  const isPaid = (entry) => entry.tier === "paid";
+  const isLocked = (entry, uid) => isPaid(entry) && !(entry.preview || []).includes(uid);
+  function whenAuth() {
+    return new Promise((res) => {
+      if (window.mwAuth) return res(window.mwAuth);
+      document.addEventListener("mw-auth-ready", () => res(window.mwAuth), { once: true });
+      setTimeout(() => res(window.mwAuth || null), 10000);
+    });
+  }
+  const here = () => encodeURIComponent(location.pathname.split("/").pop() + location.search);
+  const lockBox = (title, text, href, label) => `<div class="soon-box lock-box" role="status"><strong>🔒 ${esc(title)}</strong>${esc(text)}<p><a class="btn small" href="${href}">${esc(label)}</a></p></div>`;
+
+  // 유료 수업 원고: 로그인 → 회원 API 가 등급 확인 후 내준다
+  async function paidMarkdown(c, u) {
+    const a = await whenAuth();
+    if (!a || a.disabled) return { box: lockBox("회원 기능 준비 중입니다", "유료 수업은 회원 기능을 연 뒤 열립니다. 맛보기 수업을 먼저 들어 보세요.", courseURL(c.id), "강의 대시보드로") };
+    const user = await a.ready;
+    if (!user || !user.emailVerified) return { box: lockBox("로그인이 필요한 수업입니다", "이 강의는 유료 과목입니다. 로그인한 뒤 유료 회원으로 등록되면 바로 열립니다.", `login.html?next=${here()}`, "로그인") };
+    const r = await a.api(`/unit/${encodeURIComponent(c.id)}/${encodeURIComponent(u.id)}`);
+    if (r.status === 403) return { box: lockBox("유료 회원 전용 수업입니다", "맛보기 수업은 누구나 볼 수 있습니다. 전체 수업은 유료 회원 승인 뒤 열립니다.", "login.html", "등급과 신청 방법 보기") };
+    if (!r.ok) throw new Error(r.status);
+    return { md: await r.text() };
+  }
+
+  // 원고 속 [이름](member-file:과목/파일) 링크 → 로그인 회원만 내려받기
+  function bindMemberFiles(root) {
+    $$('a[href^="member-file:"]', root).forEach((link) => {
+      // marked 가 한글 파일명을 %EC… 로 인코딩해 두므로 한 번 풀어서 쓴다
+      const [course, name] = link.getAttribute("href").slice("member-file:".length).split("/").map((s) => { try { return decodeURIComponent(s); } catch (e) { return s; } });
+      link.href = "#"; link.classList.add("member-file");
+      link.insertAdjacentHTML("beforeend", ' <small class="muted">(로그인 회원)</small>');
+      link.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const a = await whenAuth();
+        const user = a && !a.disabled ? await a.ready : null;
+        if (!user || !user.emailVerified) { location.href = `login.html?next=${here()}`; return; }
+        const label = link.querySelector("small");
+        label.textContent = "(내려받는 중…)";
+        try {
+          const r = await a.api(`/file/${encodeURIComponent(course)}/${encodeURIComponent(name)}`);
+          if (!r.ok) throw new Error(r.status);
+          const url = URL.createObjectURL(await r.blob());
+          const d = document.createElement("a");
+          d.href = url; d.download = name;
+          document.body.appendChild(d); d.click(); d.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 2000);
+          label.textContent = "(내려받았습니다)";
+        } catch (err) {
+          label.textContent = "(내려받지 못했습니다. 잠시 후 다시 눌러 주세요)";
+        }
+      });
+    });
+  }
+
   /* ---------- 표시 도우미 ---------- */
   function fmtTime(sec) {
     const m = Math.floor(sec / 60);
@@ -136,7 +191,8 @@
       const list = courses.filter((c) => active === "전체" || (c.entry.topics || []).includes(active));
       $("#course-list").innerHTML = list.length ? list.map((c) => {
         const p = progress(c), e = c.entry, open = isOpen(e);
-        const statusBadge = e.status && e.status !== "공개" ? `<span class="badge">${esc(e.status)}</span>` : "";
+        const statusBadge = (e.status && e.status !== "공개" ? `<span class="badge">${esc(e.status)}</span>` : "") +
+          (isPaid(e) ? '<span class="badge tier-paid">유료 · 맛보기 무료</span>' : '<span class="badge tier-free">무료</span>');
         return `<li class="course-row${open ? "" : " soon"}">
           <span class="code" aria-hidden="true">${esc(e.code)}</span>
           <div><h3>${open ? `<a href="${courseURL(c.id)}">${esc(c.title)}</a>` : esc(c.title)}</h3><p class="tagline">${esc(c.tagline || "")}</p></div>
@@ -172,8 +228,9 @@
   }
   function unitLi(c, st, u, currentId) {
     const d = !!st.done[u.id];
+    const lock = isLocked(c.entry, u.id) ? '<span class="lock" title="유료 회원 전용">🔒<span class="visually-hidden"> (유료 회원 전용)</span></span>' : "";
     return `<li class="unit${d ? " done" : ""}"><a href="${lessonURL(c.id, u.id)}"${u.id === currentId ? ' aria-current="page"' : ""}>
-      <span class="mark" aria-hidden="true">${d ? "✓" : ""}</span><span class="t">${esc(u.title)}${d ? '<span class="visually-hidden"> (완료)</span>' : ""}</span><span class="no num">${esc(u.id.replace(/^u0?/, ""))}</span></a></li>`;
+      <span class="mark" aria-hidden="true">${d ? "✓" : ""}</span><span class="t">${esc(u.title)}${d ? '<span class="visually-hidden"> (완료)</span>' : ""}</span>${lock}<span class="no num">${esc(u.id.replace(/^u0?/, ""))}</span></a></li>`;
   }
   function bindAccordion(root) {
     root.addEventListener("click", (e) => {
@@ -199,7 +256,7 @@
 
     $("#main").innerHTML = `
       <section class="course-hero"><div class="wrap">
-        <p class="eyebrow">${esc(entry.code)} · ${esc(c.level || "")}${entry.status && entry.status !== "공개" ? " · " + esc(entry.status) : ""}</p>
+        <p class="eyebrow">${esc(entry.code)} · ${esc(c.level || "")}${entry.status && entry.status !== "공개" ? " · " + esc(entry.status) : ""} · ${isPaid(entry) ? `유료 과목 (맛보기 ${(entry.preview || []).length}개 수업 무료)` : "무료 과목"}</p>
         <h1>${esc(c.title)}</h1><p class="tagline">${esc(c.tagline || "")}</p>
         <ul class="tags" aria-label="태그">${(c.tags || []).map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
       </div></section>
@@ -260,16 +317,26 @@
     // 본문
     let body;
     try {
-      const r = await fetch(`courses/${encodeURIComponent(c.id)}/${u.file}`, { cache: "no-cache" });
-      if (!r.ok) throw new Error(r.status);
-      const md = await r.text();
-      // 원고는 공개 전 sync_academy.py 가드를 통과한 1차 자료 (신뢰 원천)
-      body = window.marked ? window.marked.parse(md) : `<pre style="white-space:pre-wrap">${esc(md)}</pre>`;
-      if (!/^\s*<h1/.test(body)) body = `<h1>${esc(u.title)}</h1>` + body;
+      let md;
+      if (isLocked(entry, u.id)) {
+        const got = await paidMarkdown(c, u);
+        if (got.box) body = `<h1>${esc(u.title)}</h1>` + got.box;
+        md = got.md;
+      } else {
+        const r = await fetch(`courses/${encodeURIComponent(c.id)}/${u.file}`, { cache: "no-cache" });
+        if (!r.ok) throw new Error(r.status);
+        md = await r.text();
+      }
+      if (md !== undefined) {
+        // 원고는 공개·업로드 전 sync_academy.py 가드를 통과한 1차 자료 (신뢰 원천)
+        body = window.marked ? window.marked.parse(md) : `<pre style="white-space:pre-wrap">${esc(md)}</pre>`;
+        if (!/^\s*<h1/.test(body)) body = `<h1>${esc(u.title)}</h1>` + body;
+      }
     } catch (e) {
       body = `<h1>${esc(u.title)}</h1><div class="soon-box" role="status"><strong>준비 중인 수업입니다</strong>원고를 다듬고 있습니다. 먼저 다른 수업을 둘러보시거나, 강의 대시보드의 새소식을 확인해 주세요.</div>`;
     }
     $("#lesson-body").innerHTML = body;
+    bindMemberFiles($("#lesson-body"));
     $("#lesson-body").insertAdjacentHTML("afterend", '<p class="muted" style="margin-top:32px">모르는 말이 있나요? <a href="glossary.html">용어 사전에서 찾기</a></p>');
 
     // 완료 토글 · 이전/다음

@@ -13,7 +13,26 @@
     ["my", "내 학습", "my.html"],
     ["glossary", "용어 사전", "glossary.html"],
     ["org", "기관 교육", "org.html"],
+    ["account", "로그인", "login.html"],
   ];
+  // 방문 통계: Cloudflare Web Analytics (쿠키 없음). 토큰은 공개값. 로그인·관리 화면엔 넣지 않는다.
+  const CF_BEACON = "ada7b76de3dd4a30a081f2cbbf22053f";
+  if (CF_BEACON && page !== "account" && page !== "admin") {
+    const s = document.createElement("script");
+    s.defer = true; s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    s.dataset.cfBeacon = JSON.stringify({ token: CF_BEACON });
+    document.head.appendChild(s);
+  }
+  // 회원 로그인 모듈은 모든 화면에서 한 번만 불러온다
+  if (!document.querySelector('script[src="auth.js"]')) {
+    const s = document.createElement("script");
+    s.type = "module"; s.src = "auth.js";
+    document.head.appendChild(s);
+  }
+  document.addEventListener("mw-auth", (e) => {
+    const a = header.querySelector('[data-nav="account"]');
+    if (a) a.textContent = e.detail.user ? "내 계정" : "로그인";
+  });
   header.innerHTML = `<div class="wrap nav-wrap">
     <a class="brand" href="index.html" aria-label="마이웨이 아카데미 홈">
       <svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M2 29V13a11 11 0 0 1 22 0v16" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 29V16a5 5 0 0 1 10 0v13" fill="var(--gold)"/></svg>
@@ -44,6 +63,7 @@
 
   function markCurrent(panelId) {
     const active = page === "roadmaps" || page === "challenges" || page === "glossary" || page === "org" ? page
+      : page === "account" || page === "admin" ? "account"
       : page === "my" || page === "certificate" ? "my"
       : page === "course" && (panelId === "tab-community" || (!panelId && location.hash === "#community")) ? "community" : "courses";
     menu.querySelectorAll("a").forEach((link) => {

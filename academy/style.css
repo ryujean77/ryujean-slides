@@ -313,3 +313,30 @@ label.h-side { display: block; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
 @media print { .site-head, .rail, .finish { display: none; } }
+
+/* ---------- 회원: 등급 배지·잠금·로그인·관리 ---------- */
+.badge.tier-free { color: var(--done); }
+.badge.tier-paid { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 12%, transparent); }
+.unit .lock { font-size: 13px; margin-left: 6px; }
+.lock-box p { margin-top: 14px; }
+.member-file { font-weight: 600; }
+.auth-wrap { max-width: 560px; }
+.auth-msg { min-height: 1.6em; color: var(--done); font-weight: 600; }
+.auth-msg.bad { color: #B3261E; }
+.auth-google { width: 100%; justify-content: center; }
+.auth-or { text-align: center; margin: 18px 0 6px; }
+.auth-form { display: grid; gap: 8px; margin-top: 16px; }
+.auth-form input[type="email"], .auth-form input[type="password"], #adm-q { font: inherit; padding: 12px; min-height: 48px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--ink); width: 100%; box-sizing: border-box; }
+.auth-agree { display: flex; gap: 8px; align-items: center; font-size: 15px; }
+.auth-privacy { margin-top: 24px; font-size: 14px; color: var(--muted); }
+.auth-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.auth-info { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 8px 0 20px; }
+.auth-info dt { color: var(--muted); }
+.auth-info dd { margin: 0; word-break: break-all; }
+.auth-box { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; background: var(--surface); }
+.btn.danger { color: #B3261E; border-color: #B3261E; }
+.adm-table-wrap { overflow-x: auto; margin-top: 12px; }
+.adm-table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.adm-table th, .adm-table td { border-bottom: 1px solid var(--line); padding: 8px; text-align: left; vertical-align: middle; }
+.adm-table code { font-size: 12px; word-break: break-all; }
+.tier-paid-cell { color: var(--gold-ink); font-weight: 700; }
