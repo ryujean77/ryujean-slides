@@ -340,3 +340,5 @@ label.h-side { display: block; }
 .adm-table th, .adm-table td { border-bottom: 1px solid var(--line); padding: 8px; text-align: left; vertical-align: middle; }
 .adm-table code { font-size: 12px; word-break: break-all; }
 .tier-paid-cell { color: var(--gold-ink); font-weight: 700; }
+.auth-mkt { margin-bottom: 12px; }
+.auth-note { font-size: 14px; margin-top: 8px; }

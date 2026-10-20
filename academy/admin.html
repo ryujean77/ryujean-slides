@@ -25,8 +25,11 @@
       <label for="adm-q">이메일·이름·회원 번호 찾기</label>
       <input id="adm-q" type="search" maxlength="120" autocomplete="off">
       <p class="muted" id="adm-count"></p>
+      <p class="auth-row"><button type="button" class="btn ghost small" id="csv-all">CSV 내보내기 (전체 회원 관리용)</button>
+        <button type="button" class="btn ghost small" id="csv-mkt">CSV 내보내기 (소식 받기 동의자만 — 마케팅 발송용)</button></p>
+      <p class="muted">마케팅 메일은 '소식 동의' 회원에게만 보낼 수 있습니다. 동의일로부터 2년이 지난 회원은 다시 동의를 받아야 합니다.</p>
       <div class="adm-table-wrap"><table class="adm-table">
-        <thead><tr><th scope="col">이메일</th><th scope="col">이름</th><th scope="col">등급</th><th scope="col">가입일</th><th scope="col">마지막 접속</th><th scope="col">회원 번호</th><th scope="col">변경</th></tr></thead>
+        <thead><tr><th scope="col">이메일</th><th scope="col">이름</th><th scope="col">등급</th><th scope="col">소식 동의</th><th scope="col">완료 수업</th><th scope="col">학습 시간</th><th scope="col">마지막 학습</th><th scope="col">가입일</th><th scope="col">회원 번호</th><th scope="col">변경</th></tr></thead>
         <tbody id="adm-rows"></tbody>
       </table></div>
     </div>

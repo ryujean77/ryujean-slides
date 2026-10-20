@@ -22,7 +22,8 @@
     const s = store.get("myway:" + cid) || {};
     return { done: s.done || {}, time: s.time || {}, notes: s.notes || {}, log: Array.isArray(s.log) ? s.log : [], last: s.last || null, lastAt: s.lastAt || 0 };
   }
-  const save = (cid, st) => store.set("myway:" + cid, st);
+  // 저장할 때마다 auth.js 에 알려 로그인 회원의 계정에도 남긴다
+  const save = (cid, st) => { store.set("myway:" + cid, st); document.dispatchEvent(new CustomEvent("mw-progress", { detail: { cid } })); };
   function addLog(st, type, u) {
     st.log.unshift({ t: new Date().toISOString(), type, uid: u.id, title: u.title });
     st.log = st.log.slice(0, 200);
@@ -54,6 +55,14 @@
   /* ---------- 회원: 유료 과목·맛보기·자료 (auth.js 가 window.mwAuth 를 연다) ---------- */
   const isPaid = (entry) => entry.tier === "paid";
   const isLocked = (entry, uid) => isPaid(entry) && !(entry.preview || []).includes(uid);
+  // 가입 없이 열리는 수업은 catalog 의 open 목록뿐 (C0 앞 3강: 로그인하는 법을 배우는 수업)
+  const needsLogin = (entry, uid) => !(entry.open || []).includes(uid);
+  async function signedIn() {
+    const a = await whenAuth();
+    if (!a || a.disabled) return true; // 회원 기능이 꺼져 있으면 막지 않는다
+    const user = await a.ready;
+    return !!(user && user.emailVerified);
+  }
   function whenAuth() {
     return new Promise((res) => {
       if (window.mwAuth) return res(window.mwAuth);
@@ -256,7 +265,7 @@
 
     $("#main").innerHTML = `
       <section class="course-hero"><div class="wrap">
-        <p class="eyebrow">${esc(entry.code)} · ${esc(c.level || "")}${entry.status && entry.status !== "공개" ? " · " + esc(entry.status) : ""} · ${isPaid(entry) ? `유료 과목 (맛보기 ${(entry.preview || []).length}개 수업 무료)` : "무료 과목"}</p>
+        <p class="eyebrow">${esc(entry.code)} · ${esc(c.level || "")}${entry.status && entry.status !== "공개" ? " · " + esc(entry.status) : ""} · ${isPaid(entry) ? `유료 과목 (맛보기 ${(entry.preview || []).length}개 수업은 회원 무료)` : (entry.open || []).length ? `무료 과목 · 앞 ${entry.open.length}개 수업은 가입 없이, 이후 회원 무료` : "무료 과목 · 회원 가입 후 무료"}</p>
         <h1>${esc(c.title)}</h1><p class="tagline">${esc(c.tagline || "")}</p>
         <ul class="tags" aria-label="태그">${(c.tags || []).map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
       </div></section>
@@ -322,6 +331,8 @@
         const got = await paidMarkdown(c, u);
         if (got.box) body = `<h1>${esc(u.title)}</h1>` + got.box;
         md = got.md;
+      } else if (needsLogin(entry, u.id) && !(await signedIn())) {
+        body = `<h1>${esc(u.title)}</h1>` + lockBox("회원 가입 후 무료로 들을 수 있습니다", "구글 계정이나 이메일로 1분이면 가입합니다. 가입하면 진도와 노트가 계정에 저장되어 다른 기기에서도 이어집니다.", `login.html?next=${here()}`, "무료로 가입·로그인");
       } else {
         const r = await fetch(`courses/${encodeURIComponent(c.id)}/${u.file}`, { cache: "no-cache" });
         if (!r.ok) throw new Error(r.status);

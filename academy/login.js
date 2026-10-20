@@ -24,9 +24,21 @@ const ERR = {
 const say = (e) => msg(ERR[e && e.code] || "처리하지 못했습니다. 잠시 후 다시 해 주세요.", true);
 const busy = async (btn, fn) => { btn.disabled = true; try { await fn(); } catch (e) { say(e); } finally { btn.disabled = false; } };
 
-function render(user, me) {
+// 가입 화면에서 고른 [선택] 소식 받기 동의는 이메일 인증을 마친 뒤 서버에 저장된다
+const MKT = "mw-mkt-intent"; // myway: 로 시작하면 학습 기록 키로 오인된다
+const rememberMkt = (on) => { try { if (on) localStorage.setItem(MKT, "1"); else localStorage.removeItem(MKT); } catch (e) { /* 저장 막힘 */ } };
+async function applyMkt(a, me) {
+  let want = false;
+  try { want = localStorage.getItem(MKT) === "1"; } catch (e) { /* 무시 */ }
+  if (!want || !me || me.marketing) return me;
+  try { const m = await a.setMarketing(true); rememberMkt(false); return m; } catch (e) { return me; } // 실패하면 다음에 다시
+}
+
+let applying = false;
+async function render(user, me) {
   if (!user) { $("#auth-title").textContent = "로그인"; return show("v-guest"); }
   if (!user.emailVerified) { $("#auth-title").textContent = "이메일 인증"; $("#verify-email").textContent = user.email; return show("v-verify"); }
+  if (!applying) { applying = true; me = await applyMkt(window.mwAuth, me); applying = false; }
   if (safeNext) { location.replace(safeNext); return; }
   $("#auth-title").textContent = "내 계정";
   $("#m-email").textContent = user.email;
@@ -34,6 +46,8 @@ function render(user, me) {
   $("#m-tier").textContent = !me ? "확인하지 못함 (새로고침해 주세요)" : me.tier === "paid" ? "유료 회원 — 모든 강의 이용" : "무료 회원 — 무료 강의·맛보기·실습 자료 이용";
   $("#m-since").textContent = me && me.since ? me.since.slice(0, 10) : "—";
   $("#m-uid").textContent = user.uid;
+  $("#m-mkt").checked = !!(me && me.marketing);
+  $("#m-mkt-at").textContent = me && me.marketing_at ? ` (${me.marketing ? "동의" : "철회"} ${me.marketing_at.slice(0, 10)})` : "";
   $("#m-upgrade").hidden = !!(me && me.tier === "paid");
   $("#m-admin").hidden = !(me && me.admin);
   show("v-member");
@@ -46,12 +60,17 @@ async function main() {
   render(user, a.me);
   document.addEventListener("mw-auth", (e) => render(e.detail.user, e.detail.me));
 
-  $("#btn-google").addEventListener("click", (e) => busy(e.currentTarget, () => a.google()));
+  $("#btn-google").addEventListener("click", (e) => { rememberMkt($("#mkt-guest").checked); busy(e.currentTarget, () => a.google()); });
+  $("#m-mkt").addEventListener("change", (e) => {
+    const box = e.currentTarget;
+    busy(box, async () => { const m = await a.setMarketing(box.checked); render(a.user, m); msg(box.checked ? "소식 받기에 동의했습니다." : "소식 받기를 철회했습니다."); });
+  });
   $("#p-in").addEventListener("submit", (e) => { e.preventDefault(); busy(e.submitter, () => a.signIn($("#in-email").value.trim(), $("#in-pw").value)); });
   $("#p-up").addEventListener("submit", (e) => {
     e.preventDefault();
     const pw = $("#up-pw").value;
     if (!(/[A-Za-z]/.test(pw) && /\d/.test(pw))) return msg("비밀번호에 영문과 숫자를 함께 넣어 주세요.", true);
+    rememberMkt($("#mkt-up").checked);
     busy(e.submitter, async () => { await a.signUp($("#up-email").value.trim(), pw); msg("인증 메일을 보냈습니다. 메일함을 확인해 주세요."); });
   });
   $("#btn-reset").addEventListener("click", (e) => {

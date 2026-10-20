@@ -20,7 +20,7 @@
 <main id="main" class="page-main">
   <div class="wrap auth-wrap">
     <div class="page-hero"><p class="eyebrow">회원</p><h1 id="auth-title">로그인</h1>
-      <p class="page-lead">무료 강의는 로그인 없이 볼 수 있습니다. 실습 자료 내려받기와 유료 강의는 로그인한 회원만 이용할 수 있습니다.</p></div>
+      <p class="page-lead">무료 강의는 회원 가입 후 무료로 들을 수 있습니다(컴퓨터 기초의 첫 수업과 로그인 배우기 수업은 가입 없이). 진도와 노트가 계정에 저장되어 다른 기기에서도 이어집니다.</p></div>
     <p id="auth-msg" class="auth-msg" role="status" aria-live="polite"></p>
 
     <section id="v-loading"><p class="loading">불러오는 중…</p></section>
@@ -28,7 +28,9 @@
     <section id="v-off" hidden><div class="soon-box"><strong>회원 기능 준비 중입니다</strong>곧 열립니다. 무료 강의는 지금 바로 들을 수 있습니다.</div></section>
 
     <section id="v-guest" hidden>
+      <label class="auth-agree auth-mkt"><input id="mkt-guest" type="checkbox"> <span>[선택] 새 강의·무료 특강 소식을 이메일로 받겠습니다</span></label>
       <button type="button" class="btn auth-google" id="btn-google">구글 계정으로 계속하기</button>
+      <p class="muted auth-note">처음 로그인하면 회원으로 가입됩니다. 아래 개인정보 수집·이용 안내를 확인해 주세요.</p>
       <p class="muted auth-or">또는 이메일로</p>
       <div class="tablist" role="tablist" aria-label="이메일 로그인 방식">
         <button class="tab" role="tab" id="t-in" aria-controls="p-in" aria-selected="true">로그인</button>
@@ -44,15 +46,17 @@
         <label for="up-email">이메일</label><input id="up-email" type="email" autocomplete="email" required maxlength="120">
         <label for="up-pw">비밀번호 (8자 이상, 영문·숫자 섞기)</label><input id="up-pw" type="password" autocomplete="new-password" required minlength="8" maxlength="128">
         <label class="auth-agree"><input id="up-agree" type="checkbox" required> 아래 개인정보 수집·이용에 동의합니다 (필수)</label>
+        <label class="auth-agree"><input id="mkt-up" type="checkbox"> [선택] 새 강의·무료 특강 소식을 이메일로 받겠습니다</label>
         <button class="btn" type="submit">가입하고 인증 메일 받기</button>
       </form>
       <details class="auth-privacy"><summary>개인정보 수집·이용 안내</summary>
         <ul>
-          <li>수집 항목: 이메일 주소, 이름(구글 로그인 시 구글 계정 이름), 가입일, 마지막 접속일, 회원 등급</li>
-          <li>목적: 회원 확인, 유료 강의·실습 자료 이용 권한 관리</li>
-          <li>보관: 회원 탈퇴 시 즉시 삭제 (등급 변경 기록은 회원 번호로만 남김)</li>
+          <li>[필수] 수집 항목: 이메일 주소, 이름(구글 로그인 시 구글 계정 이름), 가입일, 마지막 접속일, 회원 등급, 수강 기록(완료한 수업·학습 시간·마지막 수업·성장 로그), 수업 노트</li>
+          <li>[필수] 목적: 회원 확인, 강의·실습 자료 이용 권한 관리, 진도·노트를 여러 기기에서 이어 보기, 수강 현황 관리</li>
+          <li>[선택] 마케팅 정보 수신(이메일): 새 강의·무료 특강·교육 일정 안내. 동의하지 않아도 모든 무료 강의를 이용할 수 있으며, '내 계정'에서 언제든 철회할 수 있습니다. 동의 여부는 2년마다 다시 확인합니다.</li>
+          <li>보관: 회원 탈퇴 시 회원 정보·수강 기록·노트를 즉시 삭제 (등급 변경·동의 기록은 회원 번호로만 남김)</li>
+          <li>공용 PC에서는 로그아웃하면 이 브라우저의 진도·노트가 지워집니다(계정에는 남아 있음).</li>
           <li>비밀번호는 구글 Firebase 인증이 암호화해 보관하며, 이 사이트는 비밀번호를 받거나 저장하지 않습니다.</li>
-          <li>강의 진도·노트는 지금처럼 이 브라우저에만 저장되며 서버로 보내지 않습니다.</li>
           <li>방문 통계는 쿠키 없이 Cloudflare Web Analytics로 페이지 조회 수만 집계하며, 개인을 식별하지 않습니다.</li>
         </ul>
       </details>
@@ -72,6 +76,7 @@
         <dt>등급</dt><dd id="m-tier"></dd>
         <dt>가입일</dt><dd id="m-since"></dd>
         <dt>회원 번호</dt><dd><code id="m-uid"></code></dd>
+        <dt>소식 받기</dt><dd><label class="auth-agree"><input id="m-mkt" type="checkbox"> 새 강의·무료 특강 소식을 이메일로 받기 (선택)</label><small class="muted" id="m-mkt-at"></small></dd>
       </dl>
       <div class="auth-box" id="m-upgrade">
         <h2 class="h-side">유료 강의 신청</h2>
