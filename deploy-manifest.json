@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-18T11:31:34.592Z",
-  "commit": "2b90ef6318c9aadd0e17c0f2f38508a1171e4203",
-  "fileCount": 2465,
+  "generatedAt": "2026-10-20T03:09:19.643Z",
+  "commit": "cc5b1d7abc00de8ddfc9449a05a5d89c7db8ac48",
+  "fileCount": 2486,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -17,7 +17,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 5979
+      "size": 6269
     },
     {
       "path": "academy/certificate.html",
@@ -464,6 +464,90 @@
       "size": 15473
     },
     {
+      "path": "academy/courses/workbox/course.json",
+      "size": 5183
+    },
+    {
+      "path": "academy/courses/workbox/units/01-lesson.md",
+      "size": 6784
+    },
+    {
+      "path": "academy/courses/workbox/units/02-lesson.md",
+      "size": 6739
+    },
+    {
+      "path": "academy/courses/workbox/units/03-lesson.md",
+      "size": 6407
+    },
+    {
+      "path": "academy/courses/workbox/units/04-lesson.md",
+      "size": 8019
+    },
+    {
+      "path": "academy/courses/workbox/units/05-lesson.md",
+      "size": 8842
+    },
+    {
+      "path": "academy/courses/workbox/units/06-lesson.md",
+      "size": 7816
+    },
+    {
+      "path": "academy/courses/workbox/units/07-lesson.md",
+      "size": 7326
+    },
+    {
+      "path": "academy/courses/workbox/units/08-lesson.md",
+      "size": 6935
+    },
+    {
+      "path": "academy/courses/workbox/units/09-lesson.md",
+      "size": 8032
+    },
+    {
+      "path": "academy/courses/workbox/units/10-lesson.md",
+      "size": 6866
+    },
+    {
+      "path": "academy/courses/workbox/units/11-lesson.md",
+      "size": 6958
+    },
+    {
+      "path": "academy/courses/workbox/units/12-lesson.md",
+      "size": 7645
+    },
+    {
+      "path": "academy/courses/workbox/units/13-lesson.md",
+      "size": 8745
+    },
+    {
+      "path": "academy/courses/workbox/units/14-lesson.md",
+      "size": 8278
+    },
+    {
+      "path": "academy/courses/workbox/units/15-lesson.md",
+      "size": 8230
+    },
+    {
+      "path": "academy/courses/workbox/units/16-lesson.md",
+      "size": 8488
+    },
+    {
+      "path": "academy/courses/workbox/units/17-lesson.md",
+      "size": 8820
+    },
+    {
+      "path": "academy/courses/workbox/units/18-lesson.md",
+      "size": 6843
+    },
+    {
+      "path": "academy/courses/workbox/units/19-lesson.md",
+      "size": 8346
+    },
+    {
+      "path": "academy/courses/workbox/units/20-lesson.md",
+      "size": 7681
+    },
+    {
       "path": "academy/data/challenges.json",
       "size": 1921
     },
@@ -473,7 +557,7 @@
     },
     {
       "path": "academy/data/intro.json",
-      "size": 7882
+      "size": 9602
     },
     {
       "path": "academy/glossary.html",
@@ -6589,7 +6673,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 59454
+      "size": 62154
     },
     {
       "path": "dsac-shinsung-microbit/index.html",
@@ -9389,11 +9473,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 59454
+      "size": 62154
     },
     {
       "path": "portal/index.html",
-      "size": 66155
+      "size": 68575
     },
     {
       "path": "portal/index.html.bak",
