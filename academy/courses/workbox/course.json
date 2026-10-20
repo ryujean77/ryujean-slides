@@ -1,0 +1,165 @@
+{
+  "id": "workbox",
+  "title": "나의 업무함 만들기 — AGY와 20차시에 완성하는 AI 업무자동화 웹앱",
+  "tagline": "자료관리 규칙에서 시작해 Inbox·지식 카드·대시보드·승인 로그·AI 초안·GitHub 공개까지, 웹앱 하나를 차시마다 한 칸씩 키웁니다",
+  "instructor": "유정근 · Ryu JeongKun",
+  "level": "입문~중급 (독립 강좌)",
+  "format": "20차시 · 차시당 1시간 · 따라 하기 + 실습지 + 복사용 요청문",
+  "tags": [
+    "바이브 코딩",
+    "AGY",
+    "업무 자동화",
+    "Inbox",
+    "지식 카드",
+    "GitHub Pages"
+  ],
+  "about": {
+    "target": "문서·인터넷은 쓰지만 코딩은 처음인 직장인·중장년 전직 준비자·1인 사업자. 반복 업무 하나를 내 손으로 만든 도구로 바꾸고 싶은 분.",
+    "outcomes": [
+      "자료관리 규칙표와 업무자동화 설계서(수용 기준 포함)",
+      "고유 번호·분류·처리 상태가 있는 Inbox 화면",
+      "출처가 보이는 지식 카드 검색과 개인 대시보드",
+      "자동화 규칙·사람 승인·실행 로그, 근거 표시 AI 초안",
+      "비공개 GitHub 이력과 GitHub Pages 공개 시연 페이지"
+    ],
+    "prep": [
+      "윈도우 PC와 크롬, 구글 계정",
+      "AGY(Antigravity) 설치 — C1 AGY 입문 2강",
+      "GitHub 계정(17차시 전까지)과 GitHub Desktop",
+      "가상 샘플 자료 3~4건(실제 고객 정보는 쓰지 않습니다)"
+    ]
+  },
+  "news": [
+    {
+      "date": "2026-10-20",
+      "title": "20차시 독립 강좌 개설 — 요청문을 AGY에 넣어 끝까지 돌려 본 시범 실행 반영"
+    }
+  ],
+  "sections": [
+    {
+      "title": "자료관리와 업무 설계",
+      "units": [
+        {
+          "id": "u01",
+          "title": "자료관리론: 원본과 자료 생명주기",
+          "file": "units/01-lesson.md"
+        },
+        {
+          "id": "u02",
+          "title": "자료관리론: 저장 규칙과 자료 지도",
+          "file": "units/02-lesson.md"
+        },
+        {
+          "id": "u03",
+          "title": "업무자동화 설계: 반복 업무 분석",
+          "file": "units/03-lesson.md"
+        },
+        {
+          "id": "u04",
+          "title": "업무자동화 설계: AI 요구사항 명세",
+          "file": "units/04-lesson.md"
+        }
+      ]
+    },
+    {
+      "title": "Inbox를 만들다",
+      "units": [
+        {
+          "id": "u05",
+          "title": "시스템 구축 ①: 프로젝트 구조와 AI 협업",
+          "file": "units/05-lesson.md"
+        },
+        {
+          "id": "u06",
+          "title": "시스템 구축 ②: Inbox 입력 화면",
+          "file": "units/06-lesson.md"
+        },
+        {
+          "id": "u07",
+          "title": "시스템 구축 ③: 메타데이터·분류 기준",
+          "file": "units/07-lesson.md"
+        },
+        {
+          "id": "u08",
+          "title": "시스템 구축 ④: Inbox 처리 상태",
+          "file": "units/08-lesson.md"
+        }
+      ]
+    },
+    {
+      "title": "지식저장소와 대시보드",
+      "units": [
+        {
+          "id": "u09",
+          "title": "시스템 구축 ⑤: 출처가 보이는 지식 카드",
+          "file": "units/09-lesson.md"
+        },
+        {
+          "id": "u10",
+          "title": "시스템 구축 ⑥: 지식 검색과 근거 확인",
+          "file": "units/10-lesson.md"
+        },
+        {
+          "id": "u11",
+          "title": "구축 ⑦: 자동화 대시보드 설계",
+          "file": "units/11-lesson.md"
+        },
+        {
+          "id": "u12",
+          "title": "구축 ⑧: 대시보드 데이터 연결",
+          "file": "units/12-lesson.md"
+        }
+      ]
+    },
+    {
+      "title": "자동화 실행과 AI 초안",
+      "units": [
+        {
+          "id": "u13",
+          "title": "시스템 구축 ⑨: 자동화 실행 규칙",
+          "file": "units/13-lesson.md"
+        },
+        {
+          "id": "u14",
+          "title": "시스템 구축 ⑩: 사람 승인과 실행 로그",
+          "file": "units/14-lesson.md"
+        },
+        {
+          "id": "u15",
+          "title": "시스템 구축 ⑪: 산출물 템플릿",
+          "file": "units/15-lesson.md"
+        },
+        {
+          "id": "u16",
+          "title": "시스템 구축 ⑫: AI 초안 생성·검수",
+          "file": "units/16-lesson.md"
+        }
+      ]
+    },
+    {
+      "title": "점검하고 공개하다",
+      "units": [
+        {
+          "id": "u17",
+          "title": "시스템 구축 ⑬: 기능 테스트와 공개 점검",
+          "file": "units/17-lesson.md"
+        },
+        {
+          "id": "u18",
+          "title": "시스템 구축 ⑭: GitHub 커밋·푸시",
+          "file": "units/18-lesson.md"
+        },
+        {
+          "id": "u19",
+          "title": "시스템 구축 ⑮: 공개용 시연본 분리",
+          "file": "units/19-lesson.md"
+        },
+        {
+          "id": "u20",
+          "title": "시스템 구축 ⑯: 배포·시연·운영 규칙",
+          "file": "units/20-lesson.md"
+        }
+      ]
+    }
+  ]
+}

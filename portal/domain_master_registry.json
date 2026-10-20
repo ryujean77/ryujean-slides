@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-10-12 10:56:12 (KST)",
+  "lastUpdated": "2026-10-20 12:08:45 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -41,7 +41,7 @@
         "codeit-theme-generator"
       ],
       "stats": {
-        "projectsCount": 10,
+        "projectsCount": 12,
         "liveUrlsCount": 5,
         "status": "🟢 상시 출강/확장 가동"
       }
@@ -185,7 +185,7 @@
         "designer-slides"
       ],
       "stats": {
-        "projectsCount": 2,
+        "projectsCount": 4,
         "liveUrlsCount": 1,
         "status": "🟢 포털 론칭 및 배포완료"
       }
@@ -1312,6 +1312,54 @@
           "path": "index.html"
         }
       ],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
+    },
+    {
+      "id": "PRJ-AI-11",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "중·고등 수행평가용 교통약자 버스 안내 서비스 바이브코딩·런칭 교육",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-10-12",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "승인된 교통약자 버스 탑승 안내 기획안을 바탕으로 중·고등 수행평가에 적용할 AI 교육 과정을 설계하고, 수업과 함께 시제품 검증 및 실제 서비스 출시를 추진하는 프로젝트. 앱 구현·배포는 아직 검증되지 않음"
+    },
+    {
+      "id": "PRJ-AI-12",
+      "domainId": "DOM-AI-EDU",
+      "domainTag": "🤖 AI 교육",
+      "title": "대전 폴리텍 교육 다음 주 개강 대응: 강사 시간 정리와 오늘 회의 준비 (주영욱 대표 통화, 2026-10-12 11:39)",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-10-12",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
+    },
+    {
+      "id": "PRJ-SPA-03",
+      "domainId": "DOM-SPA",
+      "domainTag": "🧖 사상체질 스파",
+      "title": "메디텔(의료+호텔) 항노화 콘텐츠 기획 참여 초안 — 임동구 박사 통화 건",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-10-12",
+      "liveUrl": "",
+      "deliverables": [],
+      "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
+    },
+    {
+      "id": "PRJ-SPA-04",
+      "domainId": "DOM-SPA",
+      "domainTag": "🧖 사상체질 스파",
+      "title": "메디텔 안티에이징 파트 제안서 초안 준비 기획(안)",
+      "status": "진행중",
+      "statusBadge": "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30",
+      "date": "2026-10-12",
+      "liveUrl": "",
+      "deliverables": [],
       "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
     }
   ]
