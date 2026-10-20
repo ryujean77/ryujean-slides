@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="신성고 디지털새싹 고등학생 사전·사후 설문 URL과 QR 코드">
+  <title>사전사후 설문 페이지 · 신성고</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .survey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin:26px 0 40px}
+    .survey-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px}
+    .survey-card h2{margin:0 0 8px}
+    .survey-card p{color:var(--muted);margin:0 0 16px}
+    .survey-qr{display:block;width:max-content;max-width:100%;padding:12px;background:#fff;border:1px solid var(--line);border-radius:12px;margin:0 0 16px}
+    .survey-qr img{width:216px;height:216px;max-width:100%}
+    .survey-url{display:block;overflow-wrap:anywhere;font-size:14px;line-height:1.5;margin:14px 0 0}
+    .survey-action{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;padding:11px 17px;border-radius:10px;min-height:44px}
+    .survey-action:hover{filter:brightness(.9)}
+    a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <nav class="top"><div class="wrap"><a href="index.html">준비 허브</a><a href="survey.html" aria-current="page">사전사후 설문</a></div></nav>
+  <header class="hero small"><div class="wrap">
+    <p class="kicker">2026 디지털새싹 · 신성고등학교 · 고등학생용</p>
+    <h1>사전사후 설문 페이지</h1>
+    <p class="lead">수업 전에는 사전 설문, 수업을 마친 뒤에는 사후 설문에 참여하세요. 버튼을 누르거나 QR 코드를 스캔하면 설문이 열립니다.</p>
+  </div></header>
+  <main class="wrap">
+    <div class="survey-grid">
+      <section class="survey-card" aria-labelledby="pre-title">
+        <h2 id="pre-title">사전 설문</h2>
+        <p>수업 시작 전 참여</p>
+        <a class="survey-qr" href="https://form.kosac.re.kr/v/emceh9Is6nebETgnJOJ1" target="_blank" rel="noopener noreferrer" aria-label="고등학교 사전 설문 열기"><img src="survey-highschool-pre-qr.svg" width="216" height="216" alt="고등학교 사전 설문 QR 코드"></a>
+        <a class="survey-action" href="https://form.kosac.re.kr/v/emceh9Is6nebETgnJOJ1" target="_blank" rel="noopener noreferrer">사전 설문 열기</a>
+        <a class="survey-url" href="https://form.kosac.re.kr/v/emceh9Is6nebETgnJOJ1" target="_blank" rel="noopener noreferrer">https://form.kosac.re.kr/v/emceh9Is6nebETgnJOJ1</a>
+      </section>
+      <section class="survey-card" aria-labelledby="post-title">
+        <h2 id="post-title">사후 설문</h2>
+        <p>수업 종료 후 참여</p>
+        <a class="survey-qr" href="https://form.kosac.re.kr/v/LEgNDB9s3pXTlpqwUeKT" target="_blank" rel="noopener noreferrer" aria-label="고등학교 사후 설문 열기"><img src="survey-highschool-post-qr.svg" width="216" height="216" alt="고등학교 사후 설문 QR 코드"></a>
+        <a class="survey-action" href="https://form.kosac.re.kr/v/LEgNDB9s3pXTlpqwUeKT" target="_blank" rel="noopener noreferrer">사후 설문 열기</a>
+        <a class="survey-url" href="https://form.kosac.re.kr/v/LEgNDB9s3pXTlpqwUeKT" target="_blank" rel="noopener noreferrer">https://form.kosac.re.kr/v/LEgNDB9s3pXTlpqwUeKT</a>
+      </section>
+    </div>
+    <p class="note">출처: 순천향대 제공 「2026년 상반기 디지털새싹 핵심역량 진단」 안내 PDF의 ‘고등학교 사전 설문·사후 설문’ 항목.</p>
+  </main>
+</body>
+</html>
