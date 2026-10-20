@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-20T04:17:19.624Z",
-  "commit": "07d8341b08e9328c1122bd4aeffb6a845bc626db",
-  "fileCount": 2455,
+  "generatedAt": "2026-10-20T06:42:28.964Z",
+  "commit": "8a60acd5752ed817c7272197b791a868748ccaea",
+  "fileCount": 2456,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -13,23 +13,23 @@
     },
     {
       "path": "academy/admin.html",
-      "size": 2368
+      "size": 2943
     },
     {
       "path": "academy/admin.js",
-      "size": 2920
+      "size": 4759
     },
     {
       "path": "academy/app.js",
-      "size": 26917
+      "size": 28069
     },
     {
       "path": "academy/auth.js",
-      "size": 3328
+      "size": 7925
     },
     {
       "path": "academy/catalog.json",
-      "size": 6426
+      "size": 6540
     },
     {
       "path": "academy/certificate.html",
@@ -53,7 +53,7 @@
     },
     {
       "path": "academy/course.html",
-      "size": 2946
+      "size": 2986
     },
     {
       "path": "academy/courses/agy-beginner/course.json",
@@ -437,23 +437,23 @@
     },
     {
       "path": "academy/index.html",
-      "size": 8044
+      "size": 8084
     },
     {
       "path": "academy/lesson.html",
-      "size": 3145
+      "size": 3146
     },
     {
       "path": "academy/login.html",
-      "size": 6622
+      "size": 7936
     },
     {
       "path": "academy/login.js",
-      "size": 5855
+      "size": 7205
     },
     {
       "path": "academy/my.html",
-      "size": 1305
+      "size": 1393
     },
     {
       "path": "academy/nav.js",
@@ -461,7 +461,7 @@
     },
     {
       "path": "academy/org.html",
-      "size": 22954
+      "size": 22964
     },
     {
       "path": "academy/pages.css",
@@ -473,15 +473,19 @@
     },
     {
       "path": "academy/prep-jahwal.html",
-      "size": 12018
+      "size": 12217
+    },
+    {
+      "path": "academy/progress-merge.js",
+      "size": 1000
     },
     {
       "path": "academy/roadmaps.html",
-      "size": 1286
+      "size": 1325
     },
     {
       "path": "academy/style.css",
-      "size": 23704
+      "size": 23788
     },
     {
       "path": "agy-mobile-notebooklm-mcp/index.html",
