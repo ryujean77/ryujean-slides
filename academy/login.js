@@ -4,9 +4,9 @@ const views = ["v-loading", "v-off", "v-guest", "v-verify", "v-member"];
 const show = (id) => views.forEach((v) => { $("#" + v).hidden = v !== id; });
 const msg = (t, bad) => { const m = $("#auth-msg"); m.textContent = t || ""; m.classList.toggle("bad", !!bad); };
 
-// 로그인 뒤 돌아갈 곳: 이 사이트 안의 .html 만 (외부 주소로 보내는 오픈 리다이렉트 차단)
+// 로그인 뒤 돌아갈 곳: 이 사이트 안의 페이지만 (Pages 는 .html 을 뗀 주소를 쓴다) (외부 주소로 보내는 오픈 리다이렉트 차단)
 const next = new URLSearchParams(location.search).get("next") || "";
-const safeNext = /^[a-z0-9-]+\.html(\?[\w=&%.-]*)?(#[\w-]*)?$/i.test(next) ? next : "";
+const safeNext = /^[a-z0-9-]+(\.html)?(\?[\w=&%.-]*)?(#[\w-]*)?$/i.test(next) ? next : "";
 
 const ERR = {
   "auth/invalid-credential": "이메일 또는 비밀번호가 맞지 않습니다.",
