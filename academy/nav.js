@@ -2,6 +2,12 @@
 (function () {
   "use strict";
 
+  // 예전 주소(github.io)로 들어오면 새 주소로 옮긴다. 비회원 진도(이 브라우저 저장분)는 따라가지 않고, 회원 기록은 계정에서 다시 받는다.
+  if (location.hostname === "ryujean77.github.io") {
+    location.replace("https://academy.eglslab.com/" + location.pathname.replace(/^.*\/academy\//, "") + location.search + location.hash);
+    return;
+  }
+
   const header = document.querySelector(".site-head");
   if (!header) return;
   const page = document.body.dataset.page;
