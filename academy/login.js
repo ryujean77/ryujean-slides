@@ -58,6 +58,22 @@ async function showPay() {
   box.append(acc, kp, qr, el("p", "PC에서는 휴대폰 카메라나 카카오톡 QR 스캔으로 위 코드를 찍으세요.", { class: "muted" }), ch);
 }
 
+// 쿠폰으로 열린 과목과 기한
+let courseNames = null;
+async function showGrants(me) {
+  const dd = $("#m-grants");
+  const list = (me && me.grants) || [];
+  if (!list.length) { dd.textContent = me && me.tier === "paid" ? "모든 유료 과목" : "—"; return; }
+  if (!courseNames) {
+    try { courseNames = Object.fromEntries((await (await fetch("catalog.json", { cache: "no-cache" })).json()).courses.map((c) => [c.id, c.code])); } catch (e) { courseNames = {}; }
+  }
+  dd.replaceChildren(...list.map((g) => {
+    const s = document.createElement("span"); s.className = "grant";
+    s.textContent = `${courseNames[g.course] || g.course} · ${g.until.slice(0, 10)}까지`;
+    return s;
+  }));
+}
+
 let applying = false;
 async function render(user, me) {
   if (!user) { $("#auth-title").textContent = "로그인"; return show("v-guest"); }
@@ -72,6 +88,7 @@ async function render(user, me) {
   $("#m-uid").textContent = user.uid;
   $("#m-mkt").checked = !!(me && me.marketing);
   $("#m-mkt-at").textContent = me && me.marketing_at ? ` (${me.marketing ? "동의" : "철회"} ${me.marketing_at.slice(0, 10)})` : "";
+  showGrants(me);
   $("#m-upgrade").hidden = !!(me && me.tier === "paid");
   if (me && me.tier !== "paid") showPay();
   $("#m-admin").hidden = !(me && me.admin);
@@ -89,6 +106,19 @@ async function main() {
   $("#m-mkt").addEventListener("change", (e) => {
     const box = e.currentTarget;
     busy(box, async () => { const m = await a.setMarketing(box.checked); render(a.user, m); msg(box.checked ? "소식 받기에 동의했습니다." : "소식 받기를 철회했습니다."); });
+  });
+  $("#m-coupon").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const code = $("#coupon-code").value.trim().toUpperCase();
+    if (!/^[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/.test(code)) return msg("쿠폰 코드는 ABCD-EFGH-JKLM 처럼 네 글자씩 세 묶음입니다.", true);
+    busy(e.submitter, async () => {
+      const r = await a.api("/redeem", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ code }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) return msg(j.error || "쿠폰을 쓰지 못했습니다.", true);
+      $("#coupon-code").value = "";
+      await a.refresh();
+      msg(`쿠폰을 사용했습니다. ${j.until.slice(0, 10)}까지 열립니다.`);
+    });
   });
   $("#p-in").addEventListener("submit", (e) => { e.preventDefault(); busy(e.submitter, () => a.signIn($("#in-email").value.trim(), $("#in-pw").value)); });
   $("#p-up").addEventListener("submit", (e) => {

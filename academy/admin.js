@@ -76,6 +76,44 @@ async function setTier(u, tier, btn) {
   }
 }
 
+/* 복습 쿠폰: 과목 하나를 정해진 일수만큼 여는 코드. 코드는 서버가 난수로 만든다. */
+async function loadCoupons(a) {
+  const r = await a.api("/admin/coupons");
+  if (!r.ok) return;
+  const body = $("#cp-rows");
+  body.replaceChildren();
+  for (const c of (await r.json()).coupons) {
+    const tr = document.createElement("tr");
+    const code = document.createElement("code"); code.textContent = c.code; cell(tr, "").appendChild(code);
+    cell(tr, c.course); cell(tr, `${c.days}일`); cell(tr, `${c.used} / ${c.max_uses}명`);
+    const late = c.redeem_by && Date.parse(c.redeem_by) < Date.now();
+    cell(tr, `${(c.redeem_by || "").slice(0, 10)}${late ? " · 마감" : ""}`); cell(tr, c.memo); cell(tr, (c.created_at || "").slice(0, 10));
+    body.appendChild(tr);
+  }
+}
+
+async function setupCoupons(a) {
+  try {
+    const cat = await (await fetch("catalog.json", { cache: "no-cache" })).json();
+    $("#cp-course").replaceChildren(...cat.courses.filter((c) => c.tier === "paid").map((c) => { const o = document.createElement("option"); o.value = c.id; o.textContent = `${c.code} · ${c.id}`; return o; }));
+  } catch (e) { /* 과목 목록을 못 읽으면 만들기만 막힌다 */ }
+  $("#cp-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = e.submitter; btn.disabled = true;
+    try {
+      const r = await a.api("/admin/coupons", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+        course: $("#cp-course").value, days: +$("#cp-days").value, max_uses: +$("#cp-max").value, redeem_days: +$("#cp-redeem").value, memo: $("#cp-memo").value.trim() }) });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error);
+      const p = $("#cp-new"); p.hidden = false;
+      p.textContent = `새 쿠폰 ${j.code} — ${j.course} ${j.days}일 열람, ${j.max_uses}명, ${j.redeem_by.slice(0, 10)}까지 사용. 수강생에게 이 코드와 "회원 가입 → 내 계정 → 쿠폰 코드 입력"을 안내하세요.`;
+      loadCoupons(a);
+    } catch (err) { msg("쿠폰을 만들지 못했습니다: " + (err.message || ""), true); }
+    finally { btn.disabled = false; }
+  });
+  loadCoupons(a);
+}
+
 async function main() {
   const a = window.mwAuth;
   if (!a || a.disabled) return msg("회원 기능이 아직 켜지지 않았습니다.", true);
@@ -85,6 +123,7 @@ async function main() {
   $("#csv-all").addEventListener("click", () => exportCsv(false));
   $("#csv-mkt").addEventListener("click", () => exportCsv(true));
   load(a);
+  setupCoupons(a);
 }
 
 if (window.mwAuth) main(); else document.addEventListener("mw-auth-ready", main, { once: true });

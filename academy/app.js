@@ -188,6 +188,57 @@
     root.addEventListener("change", (e) => { if (e.target.type === "checkbox" && e.target.dataset.k) e.target.dispatchEvent(new Event("input", { bubbles: true })); });
   }
 
+  /* 판정 퀴즈: data/quiz-<과목>.json 이 있으면 '오늘의 확인' 앞에 붙인다. 고른 답은 state.sheets[수업].q0.. 에 남는다.
+     정답 자리가 늘 같지 않게 보기 순서를 수업·문항마다 고정된 방식으로 섞는다. */
+  async function bindQuiz(root, c, u) {
+    if (root.querySelector(".lock-box, .soon-box")) return;
+    let data;
+    try { const r = await fetch(`data/quiz-${encodeURIComponent(c.id)}.json`, { cache: "no-cache" }); if (!r.ok) return; data = await r.json(); } catch (e) { return; }
+    const qs = (data.units || {})[u.id];
+    if (!qs || !qs.length) return;
+    const seed = (s) => [...s].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) >>> 0, 7);
+    const rand = (s) => { let t = seed(s); return () => { t = (t + 0x6D2B79F5) >>> 0; let r = Math.imul(t ^ (t >>> 15), 1 | t); r ^= r + Math.imul(r ^ (r >>> 7), 61 | r); return ((r ^ (r >>> 14)) >>> 0) / 4294967296; }; }; // mulberry32
+    const order = (n, s) => { const a = [...Array(n).keys()], rnd = rand(s); for (let i = n - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+    const sec = document.createElement("section");
+    sec.className = "quiz";
+    sec.setAttribute("aria-labelledby", "quiz-h");
+    sec.innerHTML = `<h2 id="quiz-h">${esc(data.title || "판정 퀴즈")}</h2><p class="muted">${esc(data.intro || "")}</p>` +
+      qs.map((q, i) => `<fieldset class="quiz-q" data-i="${i}"><legend><span class="quiz-n">${i + 1}</span>${esc(q.q)}</legend>` +
+        order(q.choices.length, `${c.id}${u.id}${i}`).map((k) => `<label class="quiz-c"><input type="radio" name="quiz-${i}" value="${k}"> <span>${esc(q.choices[k])}</span></label>`).join("") +
+        `<p class="quiz-fb" role="status" aria-live="polite" hidden></p></fieldset>`).join("") +
+      `<p class="quiz-score muted" aria-live="polite"></p>`;
+    const anchor = [...root.querySelectorAll("h2")].find((h) => h.textContent.includes("오늘의 확인") || h.textContent.includes("다음 차시"));
+    anchor ? anchor.before(sec) : root.appendChild(sec);
+    const show = () => {
+      let done = 0, right = 0;
+      sec.querySelectorAll(".quiz-q").forEach((fs) => {
+        const q = qs[+fs.dataset.i], sel = fs.querySelector("input:checked"), fb = fs.querySelector(".quiz-fb");
+        fs.querySelectorAll(".quiz-c").forEach((l) => l.classList.remove("ok", "no"));
+        if (!sel) { fb.hidden = true; return; }
+        done++;
+        const ok = +sel.value === q.answer;
+        if (ok) right++;
+        sel.closest(".quiz-c").classList.add(ok ? "ok" : "no");
+        if (!ok) fs.querySelector(`input[value="${q.answer}"]`).closest(".quiz-c").classList.add("ok");
+        fb.hidden = false;
+        fb.className = "quiz-fb " + (ok ? "ok" : "no");
+        fb.textContent = (ok ? "맞습니다. " : "다시 보세요. ") + q.why;
+      });
+      sec.querySelector(".quiz-score").textContent = done ? `${qs.length}문제 중 ${right}개 맞음${done < qs.length ? ` (${qs.length - done}문제 남음)` : ""}` : "";
+    };
+    const saved = state(c.id).sheets[u.id] || {};
+    sec.querySelectorAll(".quiz-q").forEach((fs) => { const v = saved[`q${fs.dataset.i}`]; if (v != null) { const inp = fs.querySelector(`input[value="${v}"]`); if (inp) inp.checked = true; } });
+    show();
+    sec.addEventListener("change", (e) => {
+      const fs = e.target.closest(".quiz-q"); if (!fs) return;
+      const s = state(c.id);
+      s.sheets[u.id] = { ...(s.sheets[u.id] || {}), [`q${fs.dataset.i}`]: e.target.value };
+      s.lastAt = Date.now();
+      save(c.id, s);
+      show();
+    });
+  }
+
   function bindMemberFiles(root) {
     $$('a[href^="member-file:"]', root).forEach((link) => {
       // marked 가 한글 파일명을 %EC… 로 인코딩해 두므로 한 번 풀어서 쓴다
@@ -451,6 +502,7 @@
     $("#lesson-body").innerHTML = body;
     bindMemberFiles($("#lesson-body"));
     bindWorksheets($("#lesson-body"), c, u);
+    bindQuiz($("#lesson-body"), c, u);
     $("#lesson-body").insertAdjacentHTML("afterend", '<p class="muted" style="margin-top:32px">모르는 말이 있나요? <a href="glossary.html">용어 사전에서 찾기</a></p>');
 
     // 완료 토글 · 이전/다음
