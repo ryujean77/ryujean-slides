@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-21T21:38:46.397Z",
-  "commit": "91cb1fbb2d399097d813b2a680945c98e77abc94",
-  "fileCount": 2483,
+  "generatedAt": "2026-10-21T22:06:15.830Z",
+  "commit": "ed8dbdac360a04b162d140b2c5b60a5104a059ed",
+  "fileCount": 2487,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -9808,6 +9808,22 @@
       "size": 13199
     },
     {
+      "path": "workbox-class/fig/fig1_lifecycle.html",
+      "size": 147950
+    },
+    {
+      "path": "workbox-class/fig/fig2_inbox.html",
+      "size": 133982
+    },
+    {
+      "path": "workbox-class/fig/fig3_search.html",
+      "size": 128759
+    },
+    {
+      "path": "workbox-class/fig/fig4_commit.html",
+      "size": 133890
+    },
+    {
       "path": "workbox-class/img/shot_05.webp",
       "size": 7408
     },
@@ -9861,7 +9877,7 @@
     },
     {
       "path": "workbox-class/index.html",
-      "size": 201934
+      "size": 204711
     },
     {
       "path": "workbox-class/instructor.html",
