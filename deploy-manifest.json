@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-21T13:39:07.328Z",
-  "commit": "d707e5a929a1929b71c681ebeeb981382a5dcf64",
-  "fileCount": 2460,
+  "generatedAt": "2026-10-21T13:52:12.387Z",
+  "commit": "748b6295983b0fb19980fcfed12cf953d361c00e",
+  "fileCount": 2465,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -49,11 +49,11 @@
     },
     {
       "path": "academy/course-intro.js",
-      "size": 11272
+      "size": 12022
     },
     {
       "path": "academy/course.html",
-      "size": 2998
+      "size": 3010
     },
     {
       "path": "academy/courses/agy-beginner/course.json",
@@ -425,7 +425,11 @@
     },
     {
       "path": "academy/data/intro.json",
-      "size": 9602
+      "size": 9642
+    },
+    {
+      "path": "academy/data/story-workbox.html",
+      "size": 12811
     },
     {
       "path": "academy/glossary.html",
@@ -434,6 +438,22 @@
     {
       "path": "academy/glossary.js",
       "size": 5129
+    },
+    {
+      "path": "academy/img/workbox/inbox.webp",
+      "size": 27540
+    },
+    {
+      "path": "academy/img/workbox/index.webp",
+      "size": 39242
+    },
+    {
+      "path": "academy/img/workbox/knowledge.webp",
+      "size": 65786
+    },
+    {
+      "path": "academy/img/workbox/outputs.webp",
+      "size": 45002
     },
     {
       "path": "academy/index.html",
@@ -489,7 +509,7 @@
     },
     {
       "path": "academy/style.css",
-      "size": 24178
+      "size": 29852
     },
     {
       "path": "agy-mobile-notebooklm-mcp/index.html",
