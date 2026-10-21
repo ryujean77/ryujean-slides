@@ -268,6 +268,38 @@
     });
   }
 
+  /* 이 수업의 실습 자료: 본문이 '샘플·가상 자료'를 말하면, 회원 자료 목록에서 본문에 이름이 나오는 파일을 골라 맨 위에 내려받기 상자로 보인다.
+     원고를 고치지 않아도 모든 수업에 붙는다. 목록은 로그인 회원만 받을 수 있어, 로그인 전에는 전체 묶음 링크만 보인다. */
+  const SKIP_TOKENS = new Set(["한경수", "오미선", "가나문구", "묶음", "스캔", "수정중"]);
+  async function bindLessonFiles(root, c) {
+    if (root.querySelector(".lock-box, .soon-box")) return;
+    const body = root.textContent.replace(/\s/g, "");
+    if (!/샘플|가상자료|연습자료/.test(body)) return;
+    let names = [];
+    if (await signedIn()) {
+      try {
+        const a = await whenAuth();
+        const r = await a.api(`/files/${encodeURIComponent(c.id)}`);
+        if (r.ok) names = (await r.json()).files.map((f) => f.name);
+      } catch (e) { /* 목록을 못 받으면 묶음 링크만 */ }
+    }
+    if (!names.length && !["vibe-system", "workbox"].includes(c.id)) return;
+    const used = names.filter((n) => {
+      if (/^C5_\d+_done\.zip$|슬라이드|^샘플자료\.zip$/.test(n)) return false;
+      const stem = n.replace(/\.[^.]+$/, "");
+      return stem.split(/[_\s]/).some((t) => t.length >= 4 &&!/^\d+$|^v\d+$/i.test(t) && !SKIP_TOKENS.has(t) && body.includes(t));
+    });
+    const link = (n, label) => `<a href="member-file:${encodeURIComponent(c.id)}/${encodeURIComponent(n)}">${esc(label || n)}</a>`;
+    const box = document.createElement("div");
+    box.className = "lesson-files";
+    box.innerHTML = `<strong>📎 이 수업의 실습 자료</strong>` +
+      (used.length ? `<ul>${used.map((n) => `<li>${link(n)}</li>`).join("")}</ul>` : "") +
+      `<p>${link("샘플자료.zip", "샘플자료 전체 묶음(zip) 내려받기")} — 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p>`;
+    const anchor = root.querySelector("h1");
+    anchor ? anchor.after(box) : root.prepend(box);
+    bindMemberFiles(box);
+  }
+
   /* ---------- 표시 도우미 ---------- */
   function fmtTime(sec) {
     const m = Math.floor(sec / 60);
@@ -503,6 +535,7 @@
     bindMemberFiles($("#lesson-body"));
     bindWorksheets($("#lesson-body"), c, u);
     bindQuiz($("#lesson-body"), c, u);
+    bindLessonFiles($("#lesson-body"), c);
     $("#lesson-body").insertAdjacentHTML("afterend", '<p class="muted" style="margin-top:32px">모르는 말이 있나요? <a href="glossary.html">용어 사전에서 찾기</a></p>');
 
     // 완료 토글 · 이전/다음
