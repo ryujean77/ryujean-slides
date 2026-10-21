@@ -1,0 +1,21 @@
+name: academy checks
+on:
+  push:
+    branches: [main]
+    paths: ["academy/**"]
+  workflow_dispatch:
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 아카데미 데이터 정합
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python academy/tests/check_data.py
