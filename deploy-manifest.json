@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-21T14:55:06.874Z",
-  "commit": "13fa0773df4dd2e3c0adc05e1a1fd605c2962fc3",
+  "generatedAt": "2026-10-21T15:25:52.529Z",
+  "commit": "9172f98ddf064cdd96205065ba21f12a7a43b5d9",
   "fileCount": 2467,
   "files": [
     {
@@ -409,7 +409,7 @@
     },
     {
       "path": "academy/courses/workbox/units/01-lesson.md",
-      "size": 6979
+      "size": 7181
     },
     {
       "path": "academy/courses/workbox/units/02-lesson.md",
