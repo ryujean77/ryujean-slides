@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-21T15:28:14.165Z",
-  "commit": "778b8261dc9d5a80883bb1192f4d62ad7c1a6c7b",
-  "fileCount": 2467,
+  "generatedAt": "2026-10-21T15:33:52.824Z",
+  "commit": "3a7aeac4cfccbe3480f5e11cae115108f3bd2873",
+  "fileCount": 2483,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -9806,6 +9806,70 @@
     {
       "path": "web-design-guidelines/index.html.bak",
       "size": 13199
+    },
+    {
+      "path": "workbox-class/img/shot_05.webp",
+      "size": 7408
+    },
+    {
+      "path": "workbox-class/img/shot_06.webp",
+      "size": 22414
+    },
+    {
+      "path": "workbox-class/img/shot_07.webp",
+      "size": 26772
+    },
+    {
+      "path": "workbox-class/img/shot_08.webp",
+      "size": 23478
+    },
+    {
+      "path": "workbox-class/img/shot_09.webp",
+      "size": 46570
+    },
+    {
+      "path": "workbox-class/img/shot_10.webp",
+      "size": 30848
+    },
+    {
+      "path": "workbox-class/img/shot_11.webp",
+      "size": 36034
+    },
+    {
+      "path": "workbox-class/img/shot_12.webp",
+      "size": 32030
+    },
+    {
+      "path": "workbox-class/img/shot_13.webp",
+      "size": 23188
+    },
+    {
+      "path": "workbox-class/img/shot_14.webp",
+      "size": 30606
+    },
+    {
+      "path": "workbox-class/img/shot_15.webp",
+      "size": 34452
+    },
+    {
+      "path": "workbox-class/img/shot_16.webp",
+      "size": 34776
+    },
+    {
+      "path": "workbox-class/img/shot_19.webp",
+      "size": 34444
+    },
+    {
+      "path": "workbox-class/index.html",
+      "size": 193629
+    },
+    {
+      "path": "workbox-class/instructor.html",
+      "size": 151784
+    },
+    {
+      "path": "workbox-class/slides.pdf",
+      "size": 1599710
     },
     {
       "path": "worklog.html",
