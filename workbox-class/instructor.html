@@ -18,6 +18,7 @@ main { max-width:1000px; padding:32px 40px 80px; }
 .lesson { border-top:3px solid var(--gold); padding-top:22px; margin-top:44px; }
 .eyebrow { margin:0; color:var(--gold-ink); font-weight:700; font-size:14px; }
 h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px; }
+.fig { margin:16px 0; } .fig img { width:100%; max-width:720px; height:auto; display:block; border:1px solid var(--line, #ddd); border-radius:10px; } .fig figcaption { font-size:14px; margin-top:6px; }
 .goal { margin:0 0 6px; } .out { margin:0; padding:10px 14px; border-radius:10px; background:var(--done-bg); }
 .timeline { list-style:none; padding:0; margin:0; display:flex; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
 .timeline li { flex:var(--w); min-width:0; padding:8px 10px; background:#fff; border-right:1px solid var(--line); display:flex; flex-direction:column; font-size:13px; }
@@ -42,8 +43,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <section class=common><h3 style="margin-top:0">모든 차시 공통 — 시범 실행에서 확인된 막힘</h3><ul><li><b>AGY가 계획만 보여 주고 멈춤</b> — 계획이 workbox 안의 일인지 함께 읽고 &quot;계획대로 진행해 줘.&quot;를 보내게 한다. (시범 실행 5·7차시에서 실제 발생)</li><li><b>요청 하나에 2~14분</b> — 기다리는 동안 실습지를 채우게 한다. 8차시는 대기만 약 22분 — 요청 두 개를 이어서 보내는 운영도 가능.</li><li><b>AGY가 스스로 테스트 스크립트를 만들며 멈춤</b> — 요청문 끝의 &quot;확인용 테스트 스크립트는 만들거나 실행하지 마&quot;를 지웠는지 확인한다.</li><li><b>화면 파일이 inbox.js 등으로 나뉨</b> — 정상이다. app.js = AGY가 만든 .js 파일들로 읽는다. 19차시에는 .js 파일도 모두 옮긴다.</li><li><b>작성자 칸에 강사 실명이 들어감</b> — 강사 시연 PC는 깨끗한 계정으로. 수강생 PC도 19차시에 Ctrl+F로 자기 이름을 찾게 한다.</li></ul></section>
   
 <section id="s01" class=lesson>
-  <header><p class=eyebrow>1부 · 자료관리와 업무 설계 · 1차시 · 슬라이드 9~10</p><h2>1차시. 자료관리론: 원본과 자료 생명주기</h2>
+  <header><p class=eyebrow>1부 · 자료관리와 업무 설계 · 1차시 · 슬라이드 9~11</p><h2>1차시. 자료관리론: 원본과 자료 생명주기</h2>
   <p class=goal>과정 전체의 흐름을 알고, 업무 자료 한 묶음을 원본·작업본·공유본·백업으로 나눕니다. 그중 &quot;이것만 믿는다&quot;는 기준 자료와 개인정보가 든 자료를 가려냅니다.</p><p class=out><b>오늘 손에 남는 것</b> 자료 역할 분류지 한 장. 2차시에 완성할 산출물 ① 나의 자료관리 규칙표의 앞 절반으로, 규칙표의 &#x27;역할&#x27; 칸과 &#x27;민감도&#x27; 칸의 재료가 됩니다.</p></header>
+  <figure class=fig><img src="img/fig1_lifecycle.webp" loading=lazy alt="구조 그림: 자료 생명주기"><figcaption>구조 그림 · 자료 생명주기 (슬라이드 11) — 움직이는 버전은 <a href="./#fig1_lifecycle">온라인 교안</a>에서 띄워 설명합니다.</figcaption></figure>
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 산출물 확인 · 오늘 목표</em></li><li style="--w:12"><b>개념</b><span>12분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:30"><b>실습</b><span>30분</span><em>따라 하기 + 실습지 + 제미나이</em></li><li style="--w:10"><b>확인</b><span>10분</span><em>오늘의 확인 · 판정 퀴즈 3문항</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>다음 차시 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>자료 역할 분류지(이 교안의 실습지), 펜</li><li>비식별 샘플 파일 목록(아래 &#x27;따라 하기&#x27;에 있습니다)</li><li>실습용 PC와 크롬, 구글 계정</li><li>과정 안내: 5차시부터 쓰는 AGY와 18차시부터 쓰는 GitHub Desktop은 강사가 실습 PC에 미리 설치해 둡니다. GitHub 계정은 18차시 전까지 집에서 만드는 사전 과제입니다(방법은 17차시 교안).</li></ul></div>
@@ -59,8 +61,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 오늘 분류를 바탕으로 파일명·폴더·민감도 규칙을 정하고, 자료 5건의 위치와 소유자를 적어 산출물 ① 나의 자료관리 규칙표를 완성합니다.</p>
 </section>
 <section id="s02" class=lesson>
-  <header><p class=eyebrow>1부 · 자료관리와 업무 설계 · 2차시 · 슬라이드 11~12</p><h2>2차시. 자료관리론: 저장 규칙과 자료 지도</h2>
+  <header><p class=eyebrow>1부 · 자료관리와 업무 설계 · 2차시 · 슬라이드 12~13</p><h2>2차시. 자료관리론: 저장 규칙과 자료 지도</h2>
   <p class=goal>파일명·폴더·민감도·기준 자료·백업 규칙 다섯 줄을 정하고, 자료 5건의 위치와 소유자를 자료 지도에 기록합니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ① 나의 자료관리 규칙표 — 구글 시트 한 파일에 &#x27;규칙&#x27; 5줄과 &#x27;자료지도&#x27; 5건을 담은 표. 이후 모든 차시가 이 규칙으로 자료를 다룹니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 산출물 확인 · 오늘 목표</em></li><li style="--w:12"><b>개념</b><span>12분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:30"><b>실습</b><span>30분</span><em>따라 하기 + 실습지 + 제미나이</em></li><li style="--w:10"><b>확인</b><span>10분</span><em>오늘의 확인 · 판정 퀴즈 3문항</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>다음 차시 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>1차시 자료 역할 분류지</li><li>자료 지도 템플릿(이 교안의 실습지), 샘플 자료 5건</li><li>실습용 PC와 크롬(구글 시트 사용)</li></ul></div>
@@ -76,8 +79,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 규칙이 섰으니 이제 일을 봅니다. 반복 업무 하나를 골라 입력→판단→처리→출력으로 쪼개고, 걸리는 시간과 예외를 업무 프로세스 맵에 적습니다.</p>
 </section>
 <section id="s03" class=lesson>
-  <header><p class=eyebrow>1부 · 자료관리와 업무 설계 · 3차시 · 슬라이드 13~14</p><h2>3차시. 업무자동화 설계: 반복 업무 분석</h2>
+  <header><p class=eyebrow>1부 · 자료관리와 업무 설계 · 3차시 · 슬라이드 14~15</p><h2>3차시. 업무자동화 설계: 반복 업무 분석</h2>
   <p class=goal>자동화할 반복 업무 1개를 고르고, 입력→판단→처리→출력 네 단계와 단계별 소요 시간·예외 상황을 업무 프로세스 맵 한 장에 정리합니다.</p><p class=out><b>오늘 손에 남는 것</b> 업무 프로세스 맵 한 장. 4차시에 완성할 산출물 ② 업무자동화 설계서의 앞 절반으로, 설계서의 &#x27;입력&#x27;, &#x27;자동화 규칙&#x27;, &#x27;예외 처리&#x27; 항목이 이 맵에서 나옵니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 산출물 확인 · 오늘 목표</em></li><li style="--w:12"><b>개념</b><span>12분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:30"><b>실습</b><span>30분</span><em>따라 하기 + 실습지 + 제미나이</em></li><li style="--w:10"><b>확인</b><span>10분</span><em>오늘의 확인 · 판정 퀴즈 3문항</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>다음 차시 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>업무 분석 워크시트(이 교안의 실습지), 펜</li><li>2차시 산출물 ① 나의 자료관리 규칙표</li><li>실습용 PC와 크롬</li></ul></div>
@@ -93,8 +97,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 오늘의 맵을 트리거·조건·액션이라는 AI가 알아듣는 문장으로 바꾸고, 사람 승인 지점과 수용 기준을 더해 산출물 ② 업무자동화 설계서를 완성합니다.</p>
 </section>
 <section id="s04" class=lesson>
-  <header><p class=eyebrow>1부 · 자료관리와 업무 설계 · 4차시 · 슬라이드 15~16</p><h2>4차시. 업무자동화 설계: AI 요구사항 명세</h2>
+  <header><p class=eyebrow>1부 · 자료관리와 업무 설계 · 4차시 · 슬라이드 16~17</p><h2>4차시. 업무자동화 설계: AI 요구사항 명세</h2>
   <p class=goal>3차시 업무 프로세스 맵을 트리거·조건·액션 문장으로 바꾸고, 사람 승인 지점과 수용 기준을 더해 AI에게 건넬 설계서 한 장을 완성합니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ② 업무자동화 설계서 — 7개 항목(1항 업무 이름 ~ 7항 수용 기준)으로 된 구글 문서 한 장. 5차시부터 AGY에게 일을 시킬 때마다 이 설계서를 함께 건네고, 결과는 7항 수용 기준으로 점검합니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 산출물 확인 · 오늘 목표</em></li><li style="--w:12"><b>개념</b><span>12분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:30"><b>실습</b><span>30분</span><em>따라 하기 + 실습지 + 제미나이</em></li><li style="--w:10"><b>확인</b><span>10분</span><em>오늘의 확인 · 판정 퀴즈 3문항</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>다음 차시 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>3차시 업무 프로세스 맵, 2차시 자료관리 규칙표</li><li>설계서 템플릿(이 교안의 실습지)</li><li>실습용 PC, 크롬, 제미나이(생성형 AI 도구)</li></ul></div>
@@ -110,8 +115,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 2부가 시작됩니다. AI 코딩 도구 AGY를 처음 열어 workbox 폴더를 만들고, 오늘의 설계서와 규칙표를 docs 폴더에 옮겨 둔 뒤 첫 화면을 크롬에서 열어 봅니다.</p>
 </section>
 <section id="s05" class=lesson>
-  <header><p class=eyebrow>2부 · Inbox를 만들다 · 5차시 · 슬라이드 18~19</p><h2>5차시. 시스템 구축 ①: 프로젝트 구조와 AI 협업</h2>
+  <header><p class=eyebrow>2부 · Inbox를 만들다 · 5차시 · 슬라이드 19~20</p><h2>5차시. 시스템 구축 ①: 프로젝트 구조와 AI 협업</h2>
   <p class=goal>AI 코딩 도구 AGY를 처음 열어 workbox 폴더를 연결하고, 「나의 업무함」의 빈 뼈대(폴더와 파일)를 AGY에게 만들게 합니다. 만들어진 첫 화면을 크롬에서 직접 열어 확인합니다.</p><p class=out><b>오늘 손에 남는 것</b> 다음 차시 산출물 ③ Inbox 화면의 앞 절반입니다. Inbox 화면이 들어갈 자리(inbox.html)와 자료를 담을 폴더(data, knowledge, outputs, docs)가 내 PC에 생기고, 크롬에서 열리는 것까지 확인합니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>실습용 PC (AGY와 GitHub Desktop 설치는 강사가 미리 마쳤습니다)</li><li>AGY에 로그인할 구글 계정과 비밀번호</li><li>강사가 나눠 준 샘플자료 폴더(C:\사용자\(내 계정 이름)\샘플자료, workbox 밖에 둡니다)</li><li>2차시 규칙표(구글 시트), 4차시 설계서(구글 문서)</li></ul></div>
@@ -127,8 +133,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 빈 inbox.html 에 입력칸을 붙입니다. 자료 한 건을 등록하고, 창을 닫았다 열어도 다시 보이게 만듭니다.</p>
 </section>
 <section id="s06" class=lesson>
-  <header><p class=eyebrow>2부 · Inbox를 만들다 · 6차시 · 슬라이드 20~21</p><h2>6차시. 시스템 구축 ②: Inbox 입력 화면</h2>
+  <header><p class=eyebrow>2부 · Inbox를 만들다 · 6차시 · 슬라이드 21~22</p><h2>6차시. 시스템 구축 ②: Inbox 입력 화면</h2>
   <p class=goal>inbox.html 에 제목·유입일·원본 위치·상태를 입력하는 화면을 만듭니다. 등록한 자료가 창을 닫았다 열어도 다시 보이고, &#x27;내보내기&#x27;로 파일에 저장되게 합니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ③ Inbox 화면 — 샘플 자료 1건을 등록하고, 다시 열었을 때 제목·유입일·원본 위치·상태를 그대로 확인할 수 있는 화면입니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>5차시에 만든 workbox 폴더와 AGY 프로젝트</li><li>크롬 브라우저</li><li>샘플 자료: 샘플자료 폴더의 한경수 씨 「10월 운영위원회 회의록」(가상, 20261007_운영위원회회의록_v02)</li><li>4차시 설계서의 수용 기준</li></ul></div>
@@ -144,8 +151,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 자료에 꼬리표를 붙입니다. 유형·태그·민감도·중복 여부를 더하고, 어떤 자료를 어떻게 분류할지 기준표를 만듭니다.</p>
 </section>
 <section id="s07" class=lesson>
-  <header><p class=eyebrow>2부 · Inbox를 만들다 · 7차시 · 슬라이드 22~23</p><h2>7차시. 시스템 구축 ③: 메타데이터·분류 기준</h2>
+  <header><p class=eyebrow>2부 · Inbox를 만들다 · 7차시 · 슬라이드 23~24</p><h2>7차시. 시스템 구축 ③: 메타데이터·분류 기준</h2>
   <p class=goal>Inbox 화면에 유형·태그·민감도·중복 여부 칸을 더하고, 자료를 어떻게 분류할지 정한 분류 기준표를 만듭니다. AI에게는 기준표대로 분류를 제안만 하게 하고, 최종 값은 내가 정합니다.</p><p class=out><b>오늘 손에 남는 것</b> 다음 차시 산출물 ④ 분류 흐름의 앞 절반입니다. docs\분류기준.md 한 장과, 샘플 3건에 유형·태그·민감도·중복 여부가 붙은 Inbox 목록이 남습니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>6차시에 만든 Inbox 화면과 data\inbox.json</li><li>2차시 규칙표의 민감도 3단계(공개/내부/민감)</li><li>샘플 3건(가상): 회의록, 견적서, 교육 신청서</li></ul></div>
@@ -161,8 +169,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 꼬리표가 붙은 3건을 실제로 처리합니다. 신규→검토→보관/반려로 옮기고, 왜 그렇게 정했는지 근거와 처리자를 남깁니다.</p>
 </section>
 <section id="s08" class=lesson>
-  <header><p class=eyebrow>2부 · Inbox를 만들다 · 8차시 · 슬라이드 24~25</p><h2>8차시. 시스템 구축 ④: Inbox 처리 상태</h2>
+  <header><p class=eyebrow>2부 · Inbox를 만들다 · 8차시 · 슬라이드 25~27</p><h2>8차시. 시스템 구축 ④: Inbox 처리 상태</h2>
   <p class=goal>Inbox 항목을 신규→검토→보관/반려 순서로 옮기는 처리 단추를 만들고, 처리할 때마다 처리 근거와 처리자를 남기게 합니다. 샘플 3건을 끝까지 처리합니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ④ 분류 흐름 — 샘플 3건이 정해진 순서로만 상태가 바뀌고, 항목마다 왜 보관 또는 반려했는지와 누가 정했는지가 기록된 Inbox입니다.</p></header>
+  <figure class=fig><img src="img/fig2_inbox.webp" loading=lazy alt="구조 그림: Inbox 처리와 실행 기록"><figcaption>구조 그림 · Inbox 처리와 실행 기록 (슬라이드 27) — 움직이는 버전은 <a href="./#fig2_inbox">온라인 교안</a>에서 띄워 설명합니다.</figcaption></figure>
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>7차시까지 만든 Inbox 화면과 data\inbox.json</li><li>docs\분류기준.md, 4차시 설계서의 수용 기준</li><li>검수표(아래 실습지), 샘플 자료 3건</li></ul></div>
@@ -178,8 +187,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> &#x27;보관&#x27;된 자료를 지식 카드로 옮깁니다. 원본 출처와 버전이 보이는 Markdown 카드를 knowledge 폴더에 만듭니다.</p>
 </section>
 <section id="s09" class=lesson>
-  <header><p class=eyebrow>3부 · 지식저장소와 대시보드 · 9차시 · 슬라이드 27~28</p><h2>9차시. 시스템 구축 ⑤: 출처가 보이는 지식 카드</h2>
+  <header><p class=eyebrow>3부 · 지식저장소와 대시보드 · 9차시 · 슬라이드 29~31</p><h2>9차시. 시스템 구축 ⑤: 출처가 보이는 지식 카드</h2>
   <p class=goal>Inbox에서 &#x27;보관&#x27;으로 확정한 자료를 Markdown 지식 카드로 옮기고, 카드마다 원본 출처·버전·태그를 붙입니다. 카드 목록이 knowledge.html 화면에 보이게 합니다.</p><p class=out><b>오늘 손에 남는 것</b> 다음 차시의 &quot;산출물 ⑤ 지식저장소&quot;의 앞 절반입니다. 출처가 적힌 지식 카드 3장(knowledge/*.md), 카드 목록 파일 data/cards.js, 그리고 카드가 줄지어 보이는 knowledge.html 첫 화면입니다.</p></header>
+  <figure class=fig><img src="img/fig3_search.webp" loading=lazy alt="구조 그림: 지식 카드 검색"><figcaption>구조 그림 · 지식 카드 검색 (슬라이드 31) — 움직이는 버전은 <a href="./#fig3_search">온라인 교안</a>에서 띄워 설명합니다.</figcaption></figure>
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>실습용 PC, 크롬, AGY(workbox 프로젝트가 열린 상태)</li><li>8차시까지 만든 Inbox 화면과 샘플자료 폴더(가상 자료)</li><li>지식 카드 템플릿(아래 &#x27;따라 하기&#x27;에 있음), 메모장(Markdown 편집기 대신 씁니다)</li></ul></div>
@@ -195,8 +205,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 카드가 늘어나면 눈으로 찾기 어렵습니다. 다음 차시에는 키워드로 카드를 찾고, 찾은 카드에서 원본까지 걸어가 확인하는 검색 화면을 완성합니다.</p>
 </section>
 <section id="s10" class=lesson>
-  <header><p class=eyebrow>3부 · 지식저장소와 대시보드 · 10차시 · 슬라이드 29~30</p><h2>10차시. 시스템 구축 ⑥: 지식 검색과 근거 확인</h2>
+  <header><p class=eyebrow>3부 · 지식저장소와 대시보드 · 10차시 · 슬라이드 32~33</p><h2>10차시. 시스템 구축 ⑥: 지식 검색과 근거 확인</h2>
   <p class=goal>knowledge.html 에 키워드 검색을 붙이고, 검색 결과에서 원본 출처로 돌아가 내용을 직접 확인합니다. 그 과정에서 RAG의 기본 원리를 손으로 익힙니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ⑤ 지식저장소 — 출처가 적힌 카드 3건 이상이 키워드로 검색되고, 검색 결과마다 원본 위치를 따라가 확인한 기록이 남은 상태입니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>실습용 PC, 크롬, AGY(workbox 프로젝트)</li><li>9차시에 만든 지식 카드 3건과 knowledge.html</li><li>카드의 원본 파일(Inbox &#x27;원본 위치&#x27;에 적힌 곳에 그대로 있어야 합니다)</li></ul></div>
@@ -212,8 +223,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> Inbox와 지식저장소가 각자 화면을 갖췄습니다. 다음 차시에는 이 둘과 앞으로 만들 업무·산출물을 첫 화면 한 장에 모으는 대시보드를 설계합니다.</p>
 </section>
 <section id="s11" class=lesson>
-  <header><p class=eyebrow>3부 · 지식저장소와 대시보드 · 11차시 · 슬라이드 31~32</p><h2>11차시. 구축 ⑦: 자동화 대시보드 설계</h2>
+  <header><p class=eyebrow>3부 · 지식저장소와 대시보드 · 11차시 · 슬라이드 34~35</p><h2>11차시. 구축 ⑦: 자동화 대시보드 설계</h2>
   <p class=goal>대기 중인 Inbox·업무 상태·산출물·지식 검색을 첫 화면 한 장에 배치하고, 영역마다 숫자를 어디서 가져올지(데이터 원천)를 정합니다. 설계대로 index.html 의 뼈대를 만듭니다.</p><p class=out><b>오늘 손에 남는 것</b> 다음 차시 &quot;산출물 ⑥ 개인 대시보드&quot;의 앞 절반입니다. 손으로 그린 화면 설계지 1장과, 영역 4개가 자리 잡은 index.html 뼈대(숫자는 아직 &#x27;예시&#x27;)입니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>화면 설계지(아래 실습지), 연필</li><li>실습용 PC, 크롬, AGY(workbox 프로젝트)</li><li>지금까지 만든 inbox.html, knowledge.html, 4차시 업무자동화 설계서(docs/)</li></ul></div>
@@ -229,8 +241,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 다음 차시에는 &#x27;예시&#x27; 숫자를 하나씩 실제 Inbox와 지식 카드 숫자로 바꾸고, Inbox 화면과 직접 세어 본 숫자가 같은지 확인해 개인 대시보드를 완성합니다.</p>
 </section>
 <section id="s12" class=lesson>
-  <header><p class=eyebrow>3부 · 지식저장소와 대시보드 · 12차시 · 슬라이드 33~34</p><h2>12차시. 구축 ⑧: 대시보드 데이터 연결</h2>
+  <header><p class=eyebrow>3부 · 지식저장소와 대시보드 · 12차시 · 슬라이드 36~37</p><h2>12차시. 구축 ⑧: 대시보드 데이터 연결</h2>
   <p class=goal>대시보드의 &#x27;예시&#x27; 숫자를 실제 Inbox 건수와 업무 상태, 지식 카드 수로 바꾸고, 각 칸에서 해당 화면으로 이동하게 합니다. 화면의 숫자가 직접 센 숫자와 같은지 확인해 개인 대시보드를 완성합니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ⑥ 개인 대시보드 — index.html 을 열면 대기 Inbox·업무 상태·지식 검색이 실제 데이터로 표시되고, 각 칸에서 Inbox와 검색 화면으로 이동하는 첫 화면입니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>실습용 PC, 크롬, AGY(workbox 프로젝트)</li><li>11차시 화면 설계지와 index.html 뼈대</li><li>샘플 데이터: Inbox 항목 5건 이상(상태가 고루 섞이게), 지식 카드 3건</li></ul></div>
@@ -246,8 +259,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 이제 첫 화면에서 할 일이 보입니다. 4부에서는 4차시 설계서의 트리거·조건·액션을 앱에 옮겨, 정해진 경우에 앱이 스스로 상태를 바꾸고 사람의 승인을 기다리게 만듭니다.</p>
 </section>
 <section id="s13" class=lesson>
-  <header><p class=eyebrow>4부 · 자동화 실행과 AI 초안 · 13차시 · 슬라이드 36~37</p><h2>13차시. 시스템 구축 ⑨: 자동화 실행 규칙</h2>
+  <header><p class=eyebrow>4부 · 자동화 실행과 AI 초안 · 13차시 · 슬라이드 39~40</p><h2>13차시. 시스템 구축 ⑨: 자동화 실행 규칙</h2>
   <p class=goal>4차시 업무자동화 설계서에 적은 트리거·조건·액션을 「나의 업무함」에 실제로 도는 규칙으로 넣습니다. 잘못된 입력은 저장하지 않고 이유를 보여 주며, 고친 뒤 &#x27;다시 시도&#x27;로 이어 가게 합니다.</p><p class=out><b>오늘 손에 남는 것</b> 다음 차시 &quot;산출물 ⑦ 실행 가능한 업무 프로세스&quot;의 앞 절반입니다. Inbox에 새 항목이 저장될 때 규칙 3개가 스스로 돌고, 잘못된 입력은 문 앞에서 막히는 상태를 만듭니다. 다음 차시에 여기에 사람의 승인과 실행 로그를 붙입니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>산출물 ② 업무자동화 설계서(workbox\docs 또는 종이본)</li><li>AGY, 크롬, workbox 폴더</li><li>테스트 자료 5건(아래 &#x27;다.&#x27;에 적힌 가상 자료)</li></ul></div>
@@ -263,8 +277,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> &#x27;검토&#x27;로 올라간 항목을 사람이 승인하거나 반려하고, 그 결정을 누가·언제·왜 내렸는지 data/log.json 에 남깁니다.</p>
 </section>
 <section id="s14" class=lesson>
-  <header><p class=eyebrow>4부 · 자동화 실행과 AI 초안 · 14차시 · 슬라이드 38~39</p><h2>14차시. 시스템 구축 ⑩: 사람 승인과 실행 로그</h2>
+  <header><p class=eyebrow>4부 · 자동화 실행과 AI 초안 · 14차시 · 슬라이드 41~42</p><h2>14차시. 시스템 구축 ⑩: 사람 승인과 실행 로그</h2>
   <p class=goal>규칙이 &#x27;검토&#x27;로 올린 항목을 사람이 승인하거나 반려하고, 그 결정이 시각·항목·결정·이유·처리자와 함께 data/log.json 에 남게 합니다. 샘플 업무 1건을 처음부터 끝까지 흘려 봅니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ⑦ 실행 가능한 업무 프로세스 — 샘플 업무 1건이 Inbox 저장 → 자동 규칙 → 사람 승인 → 보관까지 흐르고, 그 과정이 실행 로그 두 줄 이상으로 남은 상태입니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>13차시에 규칙을 넣은 workbox 와 AGY</li><li>크롬</li><li>실행 로그 양식(아래 실습지)</li><li>샘플 업무 1건: 한경수 씨의 「11월 정기총회 참석자 명단」(가상, 민감도 &#x27;민감&#x27;)</li></ul></div>
@@ -280,8 +295,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 보관된 자료와 지식 카드를 근거로 쓸 업무 문서의 틀을 만듭니다. 필수 칸·파일명·버전·출처 표시를 템플릿으로 정합니다.</p>
 </section>
 <section id="s15" class=lesson>
-  <header><p class=eyebrow>4부 · 자동화 실행과 AI 초안 · 15차시 · 슬라이드 40~41</p><h2>15차시. 시스템 구축 ⑪: 산출물 템플릿</h2>
+  <header><p class=eyebrow>4부 · 자동화 실행과 AI 초안 · 15차시 · 슬라이드 43~44</p><h2>15차시. 시스템 구축 ⑪: 산출물 템플릿</h2>
   <p class=goal>업무 문서 한 종류를 골라 필수 항목·파일명·버전·출처 표시를 템플릿으로 정하고, 지식 카드를 고르면 근거 칸이 채워지는 산출물 화면을 만듭니다.</p><p class=out><b>오늘 손에 남는 것</b> 다음 차시 &quot;산출물 ⑧ 근거 표시 문서 1건&quot;의 앞 절반입니다. 「회의 결과 보고」 템플릿 파일 한 장과, 그 템플릿으로 문서를 만들어 outputs 폴더에 버전별로 저장하는 산출물 화면 outputs.html, 그리고 대시보드가 읽는 산출물 목록 data/outputs.js 를 만듭니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>10차시에 만든 지식 카드 3건 이상과 data/cards.js</li><li>AGY, 크롬, workbox 폴더</li><li>샘플 산출물: 한경수 씨의 「9월 운영위원회 결과 보고」(가상, 종이본)</li><li>문서 템플릿 양식(아래 실습지)</li></ul></div>
@@ -297,8 +313,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 산출물 화면이 템플릿과 카드 근거를 묶은 프롬프트를 만들어 주면, 그것을 제미나이에 넣어 정해진 칸으로 초안을 받습니다. 근거를 대조하고 검토자가 승인해 문서 1건을 완성합니다.</p>
 </section>
 <section id="s16" class=lesson>
-  <header><p class=eyebrow>4부 · 자동화 실행과 AI 초안 · 16차시 · 슬라이드 42~43</p><h2>16차시. 시스템 구축 ⑫: AI 초안 생성·검수</h2>
+  <header><p class=eyebrow>4부 · 자동화 실행과 AI 초안 · 16차시 · 슬라이드 45~46</p><h2>16차시. 시스템 구축 ⑫: AI 초안 생성·검수</h2>
   <p class=goal>산출물 화면이 템플릿과 지식 카드를 묶어 만든 프롬프트를 제미나이에 넣고, 정해진 칸으로 초안을 받습니다. 그 초안을 앱에 다시 붙여 넣어 문장마다 근거를 대조하고, 검토자가 승인 상태를 정해 문서 1건을 완성합니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ⑧ 근거 표시 문서 1건 — 「10월 운영위원회 결과 보고」의 문장마다 [근거 n] 이 달려 있고, 검토자 이름과 승인 상태 &#x27;승인&#x27;이 적힌 채 outputs 폴더에 저장된 문서입니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>15차시의 outputs.html 과 「회의 결과 보고」 템플릿</li><li>지식 카드 3건 이상, 제미나이 웹(https://gemini.google.com), AGY, 크롬</li><li>검수표(아래 실습지)</li></ul></div>
@@ -314,8 +331,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> Inbox → 검색 → 산출물로 이어지는 흐름 전체를 처음부터 시험합니다. 오류를 재현해 고치고, 공개하기 전에 개인정보와 비밀키가 남아 있지 않은지 점검합니다.</p>
 </section>
 <section id="s17" class=lesson>
-  <header><p class=eyebrow>5부 · 점검하고 공개하다 · 17차시 · 슬라이드 45~46</p><h2>17차시. 시스템 구축 ⑬: 기능 테스트와 공개 점검</h2>
+  <header><p class=eyebrow>5부 · 점검하고 공개하다 · 17차시 · 슬라이드 48~49</p><h2>17차시. 시스템 구축 ⑬: 기능 테스트와 공개 점검</h2>
   <p class=goal>Inbox에서 산출물까지 한 건을 처음부터 끝까지 흘려 보며 고장 난 곳을 찾아 고칩니다. 그리고 workbox 폴더에 개인정보나 비밀키(API 키·비밀번호)가 들어 있지 않은지 점검합니다.</p><p class=out><b>오늘 손에 남는 것</b> 다음 차시 산출물 ⑨ 비공개 작업 저장소의 GitHub 기록의 앞 절반입니다. 오늘 채운 기능·공개 점검표를 통과한 workbox 만 18차시에 GitHub로 올립니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 확인 · 오늘 목표</em></li><li style="--w:10"><b>개념</b><span>10분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>강사 화면에서 한 바퀴</em></li><li style="--w:25"><b>실습</b><span>25분</span><em>따라 하기 + 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>다음 차시 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>실습용 PC, 크롬, AGY(workbox 프로젝트가 열린 상태)</li><li>기능 테스트 체크리스트(이 교안의 실습지)</li><li>샘플 자료 1건(한경수 씨의 가상 회의록 등, 지금까지 쓴 것)</li><li>4차시 설계서의 수용 기준, 연필</li><li>GitHub 계정 — 사전 과제: 18차시 전에 집에서 크롬으로 https://github.com/signup 에 들어가 안내대로 계정을 만들고, 받은 메일로 이메일 확인까지 끝냅니다. 아이디(username)는 20차시 공개 주소에 들어가므로 실명이 드러나지 않는 영문 소문자로 짧게 정합니다. 아이디와 비밀번호는 수첩에 적어 둡니다.</li></ul></div>
@@ -331,8 +349,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 점검을 통과한 workbox 를 GitHub Desktop으로 비공개 저장소에 올립니다. 변경 이력이 한 줄씩 쌓이는 모습을 직접 확인합니다.</p>
 </section>
 <section id="s18" class=lesson>
-  <header><p class=eyebrow>5부 · 점검하고 공개하다 · 18차시 · 슬라이드 47~48</p><h2>18차시. 시스템 구축 ⑭: GitHub 커밋·푸시</h2>
+  <header><p class=eyebrow>5부 · 점검하고 공개하다 · 18차시 · 슬라이드 50~52</p><h2>18차시. 시스템 구축 ⑭: GitHub 커밋·푸시</h2>
   <p class=goal>GitHub Desktop으로 workbox 폴더를 비공개 저장소에 올리고, 변경을 검토한 뒤 커밋·푸시해 버전 이력이 쌓이는 것을 확인합니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ⑨ 비공개 작업 저장소의 GitHub 기록 — GitHub에 비공개 저장소 workbox 가 있고, 그 안에 커밋 두 건 이상이 이력으로 남은 상태입니다.</p></header>
+  <figure class=fig><img src="img/fig4_commit.webp" loading=lazy alt="구조 그림: 커밋과 푸시"><figcaption>구조 그림 · 커밋과 푸시 (슬라이드 52) — 움직이는 버전은 <a href="./#fig4_commit">온라인 교안</a>에서 띄워 설명합니다.</figcaption></figure>
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 확인 · 오늘 목표</em></li><li style="--w:10"><b>개념</b><span>10분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>강사 화면에서 한 바퀴</em></li><li style="--w:25"><b>실습</b><span>25분</span><em>따라 하기 + 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>다음 차시 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>실습용 PC, 크롬, GitHub Desktop(강사가 사전 설치), AGY</li><li>GitHub 계정(17차시 사전 과제로 만든 아이디·비밀번호 수첩)</li><li>17차시 기능·공개 점검표(모든 행 &#x27;통과&#x27;)</li></ul></div>
@@ -348,8 +367,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 지금 저장소는 나만 보는 금고입니다. 19차시에는 남에게 보여 줄 시연본 workbox-demo 를 따로 만들고, 개인 자료는 한 줄도 옮기지 않습니다.</p>
 </section>
 <section id="s19" class=lesson>
-  <header><p class=eyebrow>5부 · 점검하고 공개하다 · 19차시 · 슬라이드 49~50</p><h2>19차시. 시스템 구축 ⑮: 공개용 시연본 분리</h2>
+  <header><p class=eyebrow>5부 · 점검하고 공개하다 · 19차시 · 슬라이드 53~54</p><h2>19차시. 시스템 구축 ⑮: 공개용 시연본 분리</h2>
   <p class=goal>workbox 옆에 공개용 폴더 workbox-demo 를 만들고, 화면 파일과 비식별 가상 샘플만 담습니다. 공개 범위 검수표를 통과한 상태로 첫 커밋까지 합니다.</p><p class=out><b>오늘 손에 남는 것</b> 다음 차시 산출물 ⑩ 공개 시연 페이지와 개인 운영 규칙의 앞 절반입니다. 개인 자료가 한 줄도 없는 workbox-demo 폴더와, 그것을 확인한 공개 범위 검수표가 남습니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 화면 열기 · 오늘 목표 · 수용 기준</em></li><li style="--w:8"><b>개념</b><span>8분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>요청 1을 강사 화면에서 보내고 권한 카드 읽기</em></li><li style="--w:27"><b>실습</b><span>27분</span><em>따라 하기 — AGY 대기 시간에 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>내보내기 저장 · 다음 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>실습용 PC, 크롬, 파일 탐색기, AGY, GitHub Desktop</li><li>공개 범위 검수표(이 교안의 실습지)</li><li>비식별 샘플: 가상 인물 한경수 씨·오미선 씨의 회의록·견적서·교육 신청서 등</li></ul></div>
@@ -365,8 +385,9 @@ h2 { margin:4px 0 8px; font-size:24px; } h3 { margin:22px 0 8px; font-size:17px;
   <p class=next><b>다음 차시</b> 검수를 한 번 더 거친 workbox-demo 를 공개 저장소로 올리고 GitHub Pages로 웹 주소를 엽니다. 전 과정을 3분 동안 시연하고, 앞으로 지킬 개인 운영 규칙을 씁니다.</p>
 </section>
 <section id="s20" class=lesson>
-  <header><p class=eyebrow>5부 · 점검하고 공개하다 · 20차시 · 슬라이드 51~52</p><h2>20차시. 시스템 구축 ⑯: 배포·시연·운영 규칙</h2>
+  <header><p class=eyebrow>5부 · 점검하고 공개하다 · 20차시 · 슬라이드 55~56</p><h2>20차시. 시스템 구축 ⑯: 배포·시연·운영 규칙</h2>
   <p class=goal>workbox-demo 를 공개 저장소로 올리고 GitHub Pages로 웹 주소를 엽니다. 그 주소로 전 과정을 3분 동안 시연하고, 앞으로 이 시스템을 지켜 갈 개인 운영 규칙을 씁니다.</p><p class=out><b>오늘 손에 남는 것</b> 산출물 ⑩ 공개 시연 페이지와 개인 운영 규칙 — 누구나 열 수 있는 https://(내 아이디).github.io/workbox-demo/ 주소 하나와, 언제 기록하고 무엇을 공개하는지 정한 운영 규칙 한 장입니다.</p></header>
+  
   <h3>60분 진행표</h3><ol class=timeline><li style="--w:5"><b>도입</b><span>5분</span><em>지난 차시 확인 · 오늘 목표</em></li><li style="--w:10"><b>개념</b><span>10분</span><em>먼저 이해하기 · 용어</em></li><li style="--w:10"><b>시연</b><span>10분</span><em>강사 화면에서 한 바퀴</em></li><li style="--w:25"><b>실습</b><span>25분</span><em>따라 하기 + 실습지</em></li><li style="--w:7"><b>확인</b><span>7분</span><em>오늘의 확인 · 판정 퀴즈</em></li><li style="--w:3"><b>정리</b><span>3분</span><em>다음 차시 예고</em></li></ol>
   <div class=grid>
     <div><h3>준비물 (수업 전)</h3><ul><li>실습용 PC, 크롬, GitHub Desktop, 휴대폰(주소 점검용)</li><li>19차시 공개 범위 검수표(모든 칸 &#x27;예&#x27;)</li><li>발표 화면(강의실 프로젝터), 운영 규칙 양식(이 교안의 실습지)</li></ul></div>
