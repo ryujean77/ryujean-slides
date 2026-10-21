@@ -453,3 +453,8 @@ label.h-side { display: block; }
 .quiz-score { margin: 18px 0 0; font-weight: 700; }
 @media (max-width: 520px) { .quiz { padding: 18px 14px; } .quiz-c, .quiz-fb { margin-left: 0; } }
 @media print { .quiz-fb { display: none; } }
+
+/* ---------- 이 수업의 실습 자료 ---------- */
+.lesson-files { margin: 0 0 28px; padding: 14px 18px; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 10px; background: var(--surface); }
+.lesson-files ul { margin: 8px 0 6px; padding-left: 20px; }
+.lesson-files p { margin: 6px 0 0; font-size: 15px; }
