@@ -20,7 +20,7 @@
   // 강의 id 별 한 덩어리: 완료, 수업별 시간, 노트, 성장 로그, 마지막 수업
   function state(cid) {
     const s = store.get("myway:" + cid) || {};
-    return { done: s.done || {}, time: s.time || {}, notes: s.notes || {}, log: Array.isArray(s.log) ? s.log : [], last: s.last || null, lastAt: s.lastAt || 0 };
+    return { done: s.done || {}, time: s.time || {}, notes: s.notes || {}, sheets: s.sheets || {}, log: Array.isArray(s.log) ? s.log : [], last: s.last || null, lastAt: s.lastAt || 0 };
   }
   // 저장할 때마다 auth.js 에 알려 로그인 회원의 계정에도 남긴다
   const save = (cid, st) => { store.set("myway:" + cid, st); document.dispatchEvent(new CustomEvent("mw-progress", { detail: { cid } })); };
@@ -86,6 +86,108 @@
   }
 
   // 원고 속 [이름](member-file:과목/파일) 링크 → 로그인 회원만 내려받기
+  /* 실습지·오늘의 확인: 원고의 빈 표 칸과 ____ 자리를 입력칸으로 바꾸고, 수업별로 state.sheets[수업] 에 저장한다
+     (노트와 같은 길로 계정에 동기화). 키: t표r줄c칸 · b빈칸 · c체크 */
+  function bindWorksheets(root, c, u) {
+    const sections = (word) => {
+      const out = [];
+      for (const h of root.querySelectorAll("h2")) {
+        if (!h.textContent.includes(word)) continue;
+        const els = [];
+        for (let n = h.nextElementSibling; n && n.tagName !== "H2"; n = n.nextElementSibling) els.push(n);
+        out.push({ h, els });
+      }
+      return out;
+    };
+    const sheet = () => state(c.id).sheets[u.id] || {};
+    const fields = [];
+    let ti = 0, bi = 0, ci = 0;
+    for (const { h, els } of sections("실습지")) {
+      const tables = [];
+      for (const el of els) {
+        const tbls = el.tagName === "TABLE" ? [el] : [...el.querySelectorAll("table")];
+        for (const t of tbls) {
+          const k = ti++;
+          const heads = [...t.querySelectorAll("thead th")].map((th) => th.textContent.trim());
+          [...t.querySelectorAll("tbody tr")].forEach((tr, r) => {
+            const label0 = tr.cells[0] ? tr.cells[0].textContent.trim() : "";
+            [...tr.cells].forEach((td, col) => {
+              if (td.textContent.trim()) return;
+              const ta = document.createElement("textarea");
+              ta.className = "ws-in"; ta.rows = 1; ta.dataset.k = `t${k}r${r}c${col}`;
+              ta.setAttribute("aria-label", [label0 || `${r + 1}번째 줄`, heads[col] || `${col + 1}번째 칸`].join(" · "));
+              td.replaceChildren(ta); fields.push(ta);
+            });
+          });
+          tables.push(t);
+        }
+        if (el.tagName === "P" && /_{3,}/.test(el.textContent)) {
+          el.innerHTML = el.innerHTML.replace(/_{3,}/g, () => `<input type="text" class="ws-blank" data-k="b${bi++}">`);
+          el.querySelectorAll(".ws-blank").forEach((inp) => { inp.setAttribute("aria-label", (inp.previousSibling && inp.previousSibling.textContent.trim().replace(/[:：]\s*$/, "")) || "빈칸"); fields.push(inp); });
+        }
+      }
+      if (!tables.length && !bi) continue;
+      const bar = document.createElement("div");
+      bar.className = "ws-bar";
+      bar.innerHTML = '<span class="ws-status muted" role="status" aria-live="polite">칸을 눌러 바로 적으세요. 자동으로 저장됩니다.</span><button type="button" class="btn ghost small" data-act="csv">구글 시트용 CSV 내려받기</button><button type="button" class="btn ghost small" data-act="print">인쇄</button>';
+      (els[els.length - 1] || h).after(bar);
+      bar.addEventListener("click", (e) => {
+        const act = e.target.closest("button") && e.target.closest("button").dataset.act;
+        if (act === "print") window.print();
+        if (act === "csv") {
+          const cell = (v) => /[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
+          const rows = [];
+          tables.forEach((t) => {
+            for (const tr of t.rows) rows.push([...tr.cells].map((td) => cell((td.querySelector("textarea") ? td.querySelector("textarea").value : td.textContent).trim())).join(","));
+            rows.push("");
+          });
+          root.querySelectorAll(".ws-blank").forEach((inp) => rows.push(cell(`${inp.getAttribute("aria-label")}: ${inp.value}`)));
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(new Blob(["﻿" + rows.join("\r\n")], { type: "text/csv;charset=utf-8" }));
+          a.download = `${c.id}-${u.id}-실습지.csv`;
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+        }
+      });
+    }
+    for (const { els } of sections("오늘의 확인")) {
+      for (const el of els) el.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+        cb.disabled = false; cb.dataset.k = `c${ci++}`; cb.classList.add("ws-check");
+        const li = cb.closest("li"); if (li) cb.setAttribute("aria-label", li.textContent.trim());
+        fields.push(cb);
+      });
+    }
+    if (!fields.length) return;
+    const saved = sheet();
+    const grow = (ta) => { ta.style.height = "auto"; ta.style.height = ta.scrollHeight + "px"; };
+    for (const f of fields) {
+      const v = saved[f.dataset.k];
+      if (f.type === "checkbox") f.checked = v === "1"; else if (v) f.value = v;
+      if (f.tagName === "TEXTAREA") requestAnimationFrame(() => grow(f));
+    }
+    let timer;
+    root.addEventListener("input", (e) => {
+      const f = e.target;
+      if (!f.dataset || !f.dataset.k) return;
+      if (f.tagName === "TEXTAREA") grow(f);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const s = state(c.id);
+        const cur = { ...(s.sheets[u.id] || {}) };
+        for (const x of fields) {
+          const v = x.type === "checkbox" ? (x.checked ? "1" : "") : x.value.slice(0, 2000);
+          if (v) cur[x.dataset.k] = v; else delete cur[x.dataset.k];
+        }
+        if (Object.keys(cur).length) s.sheets[u.id] = cur; else delete s.sheets[u.id];
+        s.lastAt = Date.now();
+        save(c.id, s);
+        const now = new Date();
+        root.querySelectorAll(".ws-status").forEach((el) => { el.textContent = `${storageOK ? "저장됨" : "임시 저장됨 (창을 닫으면 사라짐)"} ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`; });
+      }, 500);
+    });
+    root.addEventListener("change", (e) => { if (e.target.type === "checkbox" && e.target.dataset.k) e.target.dispatchEvent(new Event("input", { bubbles: true })); });
+  }
+
   function bindMemberFiles(root) {
     $$('a[href^="member-file:"]', root).forEach((link) => {
       // marked 가 한글 파일명을 %EC… 로 인코딩해 두므로 한 번 풀어서 쓴다
@@ -348,6 +450,7 @@
     }
     $("#lesson-body").innerHTML = body;
     bindMemberFiles($("#lesson-body"));
+    bindWorksheets($("#lesson-body"), c, u);
     $("#lesson-body").insertAdjacentHTML("afterend", '<p class="muted" style="margin-top:32px">모르는 말이 있나요? <a href="glossary.html">용어 사전에서 찾기</a></p>');
 
     // 완료 토글 · 이전/다음

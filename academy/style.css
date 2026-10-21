@@ -309,6 +309,7 @@ label.h-side { display: block; }
   .rail.open .rail-toggle::after { transform: rotate(-135deg); margin-top: -6px; }
   .rail:not(.open) .tablist, .rail:not(.open) .rail-panels { display: none; }
   .rail-panels { max-height: calc(78vh - 112px); }
+  body[data-page="lesson"] .rail { top: auto; height: auto; } /* 위쪽 고정 규칙보다 강하게: 닫힌 패널이 화면을 덮지 않게 */
 }
 @media (max-width: 420px) { .pager { grid-template-columns: 1fr; } .pager .next { grid-column: 1; } }
 
@@ -411,3 +412,16 @@ label.h-side { display: block; }
   .story-proof li:nth-child(3) { border-left: 0; }
   .story-proof li:nth-child(n+3) { border-top: 1px solid var(--line); }
 }
+
+/* ---------- 실습지 입력 (app.js bindWorksheets) ---------- */
+.md td:has(> .ws-in) { padding: 4px; background: var(--bg); }
+.ws-in { display: block; width: 100%; min-width: 7em; min-height: 2.4em; resize: vertical; overflow: hidden; padding: 6px 8px; font: inherit; font-size: 15px; line-height: 1.5; color: var(--ink); background: transparent; border: 1px dashed var(--line); border-radius: 6px; }
+.ws-in:hover { border-color: var(--gold); }
+.ws-in:focus, .ws-blank:focus { outline: 2px solid var(--focus); outline-offset: 1px; border-style: solid; background: var(--bg); }
+.ws-blank { width: 11em; max-width: 100%; margin: 0 4px; padding: 3px 6px; font: inherit; color: var(--ink); background: transparent; border: 0; border-bottom: 2px solid var(--gold); }
+.ws-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: -4px 0 24px; }
+.ws-bar .ws-status { margin-right: auto; font-size: 14px; }
+.md input.ws-check { width: 18px; height: 18px; accent-color: var(--done); cursor: pointer; vertical-align: -3px; }
+@media print { .ws-bar { display: none; } .ws-in, .ws-blank { border: 0; border-bottom: 1px solid #999; border-radius: 0; resize: none; } }
+.md li:has(> input.ws-check) { list-style: none; margin-left: -1.3em; }
+.lesson > main, .lesson article { min-width: 0; } /* 넓은 실습지 표가 본문 칸을 밀어내지 않게 (표 안에서 가로로 밀기) */
