@@ -21,8 +21,10 @@
     const sections = course.sections || [];
     const count = sections.reduce((sum, section) => sum + (section.units || []).length, 0);
     const teacherCount = catalog.courses.length;
+    // intro.story: 디자인된 소개 블록(같은 사이트의 data/*.html, 직접 쓴 정적 HTML). 있으면 '할 수 있어요' 목록 대신 쓴다.
+    const story = /^data\/story-[a-z0-9-]+\.html$/.test(intro.story || "") ? intro.story : "";
     panel.innerHTML = `
-      <section><h2>수강 후 이런 걸 할 수 있어요</h2>${list(intro.outcomes || [])}</section>
+      ${story ? '<div class="story-slot" aria-busy="true"></div>' : `<section><h2>수강 후 이런 걸 할 수 있어요</h2>${list(intro.outcomes || [])}</section>`}
       <div class="intro-grid">
         <section><h2>이런 분께 추천합니다</h2><p>${esc(intro.audience)}</p></section>
         <section><h2>강의 형식</h2><p>${esc(intro.formatNote)}</p><p class="muted">${esc(course.format || "텍스트 수업")}</p></section>
@@ -40,6 +42,14 @@
         <div class="teacher-stats"><span>운영 강의 <strong>${teacherCount}개</strong></span><span>전체 수업 <strong>${totalLessons == null ? "집계 불가" : `${totalLessons}개`}</strong></span></div>
       </section>
       <section class="intro-dates"><p>게시일: ${dateText(intro.publishedAt)} · 업데이트일: ${dateText(intro.updatedAt)}</p></section>`;
+
+    if (story) {
+      const slot = panel.querySelector(".story-slot");
+      fetch(story, { cache: "no-cache" })
+        .then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then((html) => { slot.innerHTML = html; slot.removeAttribute("aria-busy"); })
+        .catch(() => { slot.outerHTML = `<section><h2>수강 후 이런 걸 할 수 있어요</h2>${list(intro.outcomes || [])}</section>`; });
+    }
 
     const expand = panel.querySelector("#intro-expand");
     expand.addEventListener("click", () => {
