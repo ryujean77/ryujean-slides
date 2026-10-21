@@ -32,6 +32,8 @@ main { max-width:860px; min-width:0; padding:28px 40px 100px; }
 .lesson table { border-collapse:collapse; width:100%; display:block; overflow-x:auto; font-size:15px; }
 .lesson th, .lesson td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; min-width:90px; }
 .lesson th { background:var(--surface); }
+.anat { margin:18px 0; } .anat iframe { width:100%; height:640px; border:0; border-radius:12px; background:#fff; display:block; }
+.anat figcaption, .anat-link { font-size:14px; color:var(--muted, #5B6475); margin:6px 0 0; }
 .req { position:relative; padding-right:80px !important; }
 .copy { position:absolute; top:10px; right:10px; font:inherit; font-size:13px; padding:4px 10px; border:1px solid var(--line); border-radius:8px; background:var(--surface); cursor:pointer; }
 td textarea { width:100%; min-height:2.4em; border:1px dashed var(--line); border-radius:6px; padding:5px 7px; font:inherit; font-size:15px; background:transparent; resize:vertical; }
@@ -60,7 +62,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
     <p>차시마다 <b>어디서 → 무엇을 → 이렇게 보이면 → 막히면</b> 순서로 따라 하고, 요청문은 '복사' 단추로 그대로 붙여 넣습니다. 실습지 칸은 화면에서 바로 적을 수 있고 이 브라우저에 저장됩니다.</p>
     <div class="btns"><a class="btn" href="#s01">1차시부터 시작</a><a class="btn ghost" href="slides.pdf" download>슬라이드 PDF 내려받기</a><a class="btn ghost" href="https://academy.eglslab.com/course.html?c=workbox">마이웨이 아카데미에서 복습</a></div>
   </section>
-  <article id="s01" class="lesson" data-n="1"><p class="eyebrow">1부 · 자료관리와 업무 설계 · 1차시</p><h1>1차시. 자료관리론: 원본과 자료 생명주기</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><h2>오늘의 목표</h2>
+  <article id="s01" class="lesson" data-n="1"><p class="eyebrow">1부 · 자료관리와 업무 설계 · 1차시</p><h1>1차시. 자료관리론: 원본과 자료 생명주기</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><figure class="anat" id="fig1_lifecycle"><iframe src="fig/fig1_lifecycle.html" title="Fig 1 · 자료 생명주기" loading="lazy"></iframe><figcaption>Fig 1 · 자료 생명주기 — 구조를 실물 기계로 본 그림. 마우스를 올리면 멈추고, <a href="fig/fig1_lifecycle.html" target="_blank">새 창으로 크게 보기</a>.</figcaption></figure><h2>오늘의 목표</h2>
 <p>과정 전체의 흐름을 알고, 업무 자료 한 묶음을 원본·작업본·공유본·백업으로 나눕니다. 그중 "이것만 믿는다"는 기준 자료와 개인정보가 든 자료를 가려냅니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p><strong>자료 역할 분류지</strong> 한 장. 2차시에 완성할 산출물 ① 나의 자료관리 규칙표의 앞 절반으로, 규칙표의 '역할' 칸과 '민감도' 칸의 재료가 됩니다.</p>
@@ -182,7 +184,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] 내 업무 자료 하나를 같은 방식으로 분류해 보았다</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>오늘 분류를 바탕으로 파일명·폴더·민감도 규칙을 정하고, 자료 5건의 위치와 소유자를 적어 산출물 ① 나의 자료관리 규칙표를 완성합니다.</p></article><article id="s02" class="lesson" data-n="2"><p class="eyebrow">1부 · 자료관리와 업무 설계 · 2차시</p><h1>2차시. 자료관리론: 저장 규칙과 자료 지도</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><h2>오늘의 목표</h2>
+<p>오늘 분류를 바탕으로 파일명·폴더·민감도 규칙을 정하고, 자료 5건의 위치와 소유자를 적어 산출물 ① 나의 자료관리 규칙표를 완성합니다.</p></article><article id="s02" class="lesson" data-n="2"><p class="eyebrow">1부 · 자료관리와 업무 설계 · 2차시</p><h1>2차시. 자료관리론: 저장 규칙과 자료 지도</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><p class="anat-link">🔧 이 차시의 구조 그림: <a href="#fig1_lifecycle">Fig 1 · 자료 생명주기</a> (1차시)</p><h2>오늘의 목표</h2>
 <p>파일명·폴더·민감도·기준 자료·백업 규칙 다섯 줄을 정하고, 자료 5건의 위치와 소유자를 자료 지도에 기록합니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p><strong>산출물 ① 나의 자료관리 규칙표</strong> — 구글 시트 한 파일에 '규칙' 5줄과 '자료지도' 5건을 담은 표. 이후 모든 차시가 이 규칙으로 자료를 다룹니다.</p>
@@ -677,7 +679,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] <code>docs</code> 에 규칙표와 설계서를 넣었다.</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>빈 <code>inbox.html</code> 에 입력칸을 붙입니다. 자료 한 건을 등록하고, 창을 닫았다 열어도 다시 보이게 만듭니다.</p></article><article id="s06" class="lesson" data-n="6"><p class="eyebrow">2부 · Inbox를 만들다 · 6차시</p><h1>6차시. 시스템 구축 ②: Inbox 입력 화면</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><h2>오늘의 목표</h2>
+<p>빈 <code>inbox.html</code> 에 입력칸을 붙입니다. 자료 한 건을 등록하고, 창을 닫았다 열어도 다시 보이게 만듭니다.</p></article><article id="s06" class="lesson" data-n="6"><p class="eyebrow">2부 · Inbox를 만들다 · 6차시</p><h1>6차시. 시스템 구축 ②: Inbox 입력 화면</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><p class="anat-link">🔧 이 차시의 구조 그림: <a href="#fig2_inbox">Fig 2 · Inbox 처리와 실행 기록</a> (8차시)</p><h2>오늘의 목표</h2>
 <p><code>inbox.html</code> 에 제목·유입일·원본 위치·상태를 입력하는 화면을 만듭니다. 등록한 자료가 창을 닫았다 열어도 다시 보이고, '내보내기'로 파일에 저장되게 합니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p>산출물 ③ Inbox 화면 — 샘플 자료 1건을 등록하고, 다시 열었을 때 제목·유입일·원본 위치·상태를 그대로 확인할 수 있는 화면입니다.</p>
@@ -900,7 +902,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] 마지막에 '내보내기'로 <code>data\inbox.json</code> 을 덮어썼다.</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>꼬리표가 붙은 3건을 실제로 처리합니다. 신규→검토→보관/반려로 옮기고, 왜 그렇게 정했는지 근거와 처리자를 남깁니다.</p></article><article id="s08" class="lesson" data-n="8"><p class="eyebrow">2부 · Inbox를 만들다 · 8차시</p><h1>8차시. 시스템 구축 ④: Inbox 처리 상태</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><h2>오늘의 목표</h2>
+<p>꼬리표가 붙은 3건을 실제로 처리합니다. 신규→검토→보관/반려로 옮기고, 왜 그렇게 정했는지 근거와 처리자를 남깁니다.</p></article><article id="s08" class="lesson" data-n="8"><p class="eyebrow">2부 · Inbox를 만들다 · 8차시</p><h1>8차시. 시스템 구축 ④: Inbox 처리 상태</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><figure class="anat" id="fig2_inbox"><iframe src="fig/fig2_inbox.html" title="Fig 2 · Inbox 처리와 실행 기록" loading="lazy"></iframe><figcaption>Fig 2 · Inbox 처리와 실행 기록 — 구조를 실물 기계로 본 그림. 마우스를 올리면 멈추고, <a href="fig/fig2_inbox.html" target="_blank">새 창으로 크게 보기</a>.</figcaption></figure><h2>오늘의 목표</h2>
 <p>Inbox 항목을 신규→검토→보관/반려 순서로 옮기는 처리 단추를 만들고, 처리할 때마다 처리 근거와 처리자를 남기게 합니다. 샘플 3건을 끝까지 처리합니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p>산출물 ④ 분류 흐름 — 샘플 3건이 정해진 순서로만 상태가 바뀌고, 항목마다 왜 보관 또는 반려했는지와 누가 정했는지가 기록된 Inbox입니다.</p>
@@ -1028,7 +1030,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] '내보내기'로 <code>data\inbox.json</code> 을 덮어쓰고 메모장으로 근거를 확인했다.</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>'보관'된 자료를 지식 카드로 옮깁니다. 원본 출처와 버전이 보이는 Markdown 카드를 <code>knowledge</code> 폴더에 만듭니다.</p></article><article id="s09" class="lesson" data-n="9"><p class="eyebrow">3부 · 지식저장소와 대시보드 · 9차시</p><h1>9차시. 시스템 구축 ⑤: 출처가 보이는 지식 카드</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><h2>오늘의 목표</h2>
+<p>'보관'된 자료를 지식 카드로 옮깁니다. 원본 출처와 버전이 보이는 Markdown 카드를 <code>knowledge</code> 폴더에 만듭니다.</p></article><article id="s09" class="lesson" data-n="9"><p class="eyebrow">3부 · 지식저장소와 대시보드 · 9차시</p><h1>9차시. 시스템 구축 ⑤: 출처가 보이는 지식 카드</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><figure class="anat" id="fig3_search"><iframe src="fig/fig3_search.html" title="Fig 3 · 지식 카드 검색" loading="lazy"></iframe><figcaption>Fig 3 · 지식 카드 검색 — 구조를 실물 기계로 본 그림. 마우스를 올리면 멈추고, <a href="fig/fig3_search.html" target="_blank">새 창으로 크게 보기</a>.</figcaption></figure><h2>오늘의 목표</h2>
 <p>Inbox에서 '보관'으로 확정한 자료를 Markdown 지식 카드로 옮기고, 카드마다 원본 출처·버전·태그를 붙입니다. 카드 목록이 <code>knowledge.html</code> 화면에 보이게 합니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p>다음 차시의 "산출물 ⑤ 지식저장소"의 앞 절반입니다. 출처가 적힌 지식 카드 3장(<code>knowledge/*.md</code>), 카드 목록 파일 <code>data/cards.js</code>, 그리고 카드가 줄지어 보이는 <code>knowledge.html</code> 첫 화면입니다.</p>
@@ -1160,7 +1162,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] 작업을 마치고 '내보내기'로 저장했다.</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>카드가 늘어나면 눈으로 찾기 어렵습니다. 다음 차시에는 키워드로 카드를 찾고, 찾은 카드에서 원본까지 걸어가 확인하는 검색 화면을 완성합니다.</p></article><article id="s10" class="lesson" data-n="10"><p class="eyebrow">3부 · 지식저장소와 대시보드 · 10차시</p><h1>10차시. 시스템 구축 ⑥: 지식 검색과 근거 확인</h1><h2>오늘의 목표</h2>
+<p>카드가 늘어나면 눈으로 찾기 어렵습니다. 다음 차시에는 키워드로 카드를 찾고, 찾은 카드에서 원본까지 걸어가 확인하는 검색 화면을 완성합니다.</p></article><article id="s10" class="lesson" data-n="10"><p class="eyebrow">3부 · 지식저장소와 대시보드 · 10차시</p><h1>10차시. 시스템 구축 ⑥: 지식 검색과 근거 확인</h1><p class="anat-link">🔧 이 차시의 구조 그림: <a href="#fig3_search">Fig 3 · 지식 카드 검색</a> (9차시)</p><h2>오늘의 목표</h2>
 <p><code>knowledge.html</code> 에 키워드 검색을 붙이고, 검색 결과에서 원본 출처로 돌아가 내용을 직접 확인합니다. 그 과정에서 RAG의 기본 원리를 손으로 익힙니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p><strong>산출물 ⑤ 지식저장소</strong> — 출처가 적힌 카드 3건 이상이 키워드로 검색되고, 검색 결과마다 원본 위치를 따라가 확인한 기록이 남은 상태입니다.</p>
@@ -1523,7 +1525,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] 작업을 마치고 '내보내기'로 저장했다.</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>이제 첫 화면에서 할 일이 보입니다. 4부에서는 4차시 설계서의 트리거·조건·액션을 앱에 옮겨, 정해진 경우에 앱이 스스로 상태를 바꾸고 사람의 승인을 기다리게 만듭니다.</p></article><article id="s13" class="lesson" data-n="13"><p class="eyebrow">4부 · 자동화 실행과 AI 초안 · 13차시</p><h1>13차시. 시스템 구축 ⑨: 자동화 실행 규칙</h1><h2>오늘의 목표</h2>
+<p>이제 첫 화면에서 할 일이 보입니다. 4부에서는 4차시 설계서의 트리거·조건·액션을 앱에 옮겨, 정해진 경우에 앱이 스스로 상태를 바꾸고 사람의 승인을 기다리게 만듭니다.</p></article><article id="s13" class="lesson" data-n="13"><p class="eyebrow">4부 · 자동화 실행과 AI 초안 · 13차시</p><h1>13차시. 시스템 구축 ⑨: 자동화 실행 규칙</h1><p class="anat-link">🔧 이 차시의 구조 그림: <a href="#fig2_inbox">Fig 2 · Inbox 처리와 실행 기록</a> (8차시)</p><h2>오늘의 목표</h2>
 <p>4차시 업무자동화 설계서에 적은 트리거·조건·액션을 「나의 업무함」에 실제로 도는 규칙으로 넣습니다. 잘못된 입력은 저장하지 않고 이유를 보여 주며, 고친 뒤 '다시 시도'로 이어 가게 합니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p>다음 차시 "산출물 ⑦ 실행 가능한 업무 프로세스"의 앞 절반입니다. Inbox에 새 항목이 저장될 때 규칙 3개가 스스로 돌고, 잘못된 입력은 문 앞에서 막히는 상태를 만듭니다. 다음 차시에 여기에 사람의 승인과 실행 로그를 붙입니다.</p>
@@ -1659,7 +1661,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] '내보내기'로 <code>data\inbox.json</code> 을 새로 저장했다.</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>'검토'로 올라간 항목을 사람이 승인하거나 반려하고, 그 결정을 누가·언제·왜 내렸는지 <code>data/log.json</code> 에 남깁니다.</p></article><article id="s14" class="lesson" data-n="14"><p class="eyebrow">4부 · 자동화 실행과 AI 초안 · 14차시</p><h1>14차시. 시스템 구축 ⑩: 사람 승인과 실행 로그</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><h2>오늘의 목표</h2>
+<p>'검토'로 올라간 항목을 사람이 승인하거나 반려하고, 그 결정을 누가·언제·왜 내렸는지 <code>data/log.json</code> 에 남깁니다.</p></article><article id="s14" class="lesson" data-n="14"><p class="eyebrow">4부 · 자동화 실행과 AI 초안 · 14차시</p><h1>14차시. 시스템 구축 ⑩: 사람 승인과 실행 로그</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><p class="anat-link">🔧 이 차시의 구조 그림: <a href="#fig2_inbox">Fig 2 · Inbox 처리와 실행 기록</a> (8차시)</p><h2>오늘의 목표</h2>
 <p>규칙이 '검토'로 올린 항목을 사람이 승인하거나 반려하고, 그 결정이 시각·항목·결정·이유·처리자와 함께 <code>data/log.json</code> 에 남게 합니다. 샘플 업무 1건을 처음부터 끝까지 흘려 봅니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p>산출물 ⑦ 실행 가능한 업무 프로세스 — 샘플 업무 1건이 Inbox 저장 → 자동 규칙 → 사람 승인 → 보관까지 흐르고, 그 과정이 실행 로그 두 줄 이상으로 남은 상태입니다.</p>
@@ -2184,7 +2186,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] GitHub 계정을 만들고 이메일 확인까지 마쳤다</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>점검을 통과한 <code>workbox</code> 를 GitHub Desktop으로 비공개 저장소에 올립니다. 변경 이력이 한 줄씩 쌓이는 모습을 직접 확인합니다.</p></article><article id="s18" class="lesson" data-n="18"><p class="eyebrow">5부 · 점검하고 공개하다 · 18차시</p><h1>18차시. 시스템 구축 ⑭: GitHub 커밋·푸시</h1><h2>오늘의 목표</h2>
+<p>점검을 통과한 <code>workbox</code> 를 GitHub Desktop으로 비공개 저장소에 올립니다. 변경 이력이 한 줄씩 쌓이는 모습을 직접 확인합니다.</p></article><article id="s18" class="lesson" data-n="18"><p class="eyebrow">5부 · 점검하고 공개하다 · 18차시</p><h1>18차시. 시스템 구축 ⑭: GitHub 커밋·푸시</h1><figure class="anat" id="fig4_commit"><iframe src="fig/fig4_commit.html" title="Fig 4 · 커밋과 푸시" loading="lazy"></iframe><figcaption>Fig 4 · 커밋과 푸시 — 구조를 실물 기계로 본 그림. 마우스를 올리면 멈추고, <a href="fig/fig4_commit.html" target="_blank">새 창으로 크게 보기</a>.</figcaption></figure><h2>오늘의 목표</h2>
 <p>GitHub Desktop으로 <code>workbox</code> 폴더를 비공개 저장소에 올리고, 변경을 검토한 뒤 커밋·푸시해 버전 이력이 쌓이는 것을 확인합니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p><strong>산출물 ⑨ 비공개 작업 저장소의 GitHub 기록</strong> — GitHub에 비공개 저장소 <code>workbox</code> 가 있고, 그 안에 커밋 두 건 이상이 이력으로 남은 상태입니다.</p>
@@ -2303,7 +2305,7 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <li>[ ] 'History'와 GitHub 화면 양쪽에서 커밋 두 건을 확인했다</li>
 </ul>
 <h2>다음 차시 예고</h2>
-<p>지금 저장소는 나만 보는 금고입니다. 19차시에는 남에게 보여 줄 시연본 <code>workbox-demo</code> 를 따로 만들고, 개인 자료는 한 줄도 옮기지 않습니다.</p></article><article id="s19" class="lesson" data-n="19"><p class="eyebrow">5부 · 점검하고 공개하다 · 19차시</p><h1>19차시. 시스템 구축 ⑮: 공개용 시연본 분리</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><h2>오늘의 목표</h2>
+<p>지금 저장소는 나만 보는 금고입니다. 19차시에는 남에게 보여 줄 시연본 <code>workbox-demo</code> 를 따로 만들고, 개인 자료는 한 줄도 옮기지 않습니다.</p></article><article id="s19" class="lesson" data-n="19"><p class="eyebrow">5부 · 점검하고 공개하다 · 19차시</p><h1>19차시. 시스템 구축 ⑮: 공개용 시연본 분리</h1><div class="files"><strong>📎 이 차시의 샘플 자료 받기</strong><p>교실에서는 강사가 나눠 준 <code>샘플자료</code> 폴더를 씁니다. 집에서는 <a href="https://academy.eglslab.com/lesson.html?c=workbox&u=u01">마이웨이 아카데미 C5 1강</a>에 무료 회원으로 로그인하면 맨 위 「이 수업의 실습 자료」 상자에서 <b>샘플자료.zip</b>(회의록·견적서·신청서·사진 목록 등 12개)과 파일별로 내려받을 수 있습니다. 내 PC의 <code>샘플자료</code> 폴더에 풀어 두고 씁니다. 모두 학습용 가상 자료입니다.</p></div><p class="anat-link">🔧 이 차시의 구조 그림: <a href="#fig4_commit">Fig 4 · 커밋과 푸시</a> (18차시)</p><h2>오늘의 목표</h2>
 <p><code>workbox</code> 옆에 공개용 폴더 <code>workbox-demo</code> 를 만들고, 화면 파일과 비식별 가상 샘플만 담습니다. 공개 범위 검수표를 통과한 상태로 첫 커밋까지 합니다.</p>
 <h2>오늘 손에 남는 것</h2>
 <p>다음 차시 산출물 ⑩ 공개 시연 페이지와 개인 운영 규칙의 앞 절반입니다. 개인 자료가 한 줄도 없는 <code>workbox-demo</code> 폴더와, 그것을 확인한 <strong>공개 범위 검수표</strong>가 남습니다.</p>
@@ -2556,6 +2558,9 @@ footer { margin-top:60px; padding:22px; border-radius:14px; background:var(--sur
 <button class="navtoggle" type="button" aria-controls="nav" aria-expanded="false">차시 목록</button>
 <script>
 (function () {
+  // 구조 그림 iframe 높이를 그림 카드에 맞춘다(같은 출처)
+  const fit = (f) => { try { f.style.height = f.contentDocument.documentElement.scrollHeight + "px"; } catch (_) {} };
+  document.querySelectorAll(".anat iframe").forEach((f) => { f.addEventListener("load", () => fit(f)); addEventListener("resize", () => fit(f)); });
   // 요청문(‘AI에게 건네는 말’의 인용, '어디에 입력하나요' 안내 제외)에 복사 단추
   document.querySelectorAll(".lesson").forEach((art) => {
     let inAi = false;
