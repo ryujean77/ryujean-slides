@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-21T13:52:12.387Z",
-  "commit": "748b6295983b0fb19980fcfed12cf953d361c00e",
+  "generatedAt": "2026-10-21T14:08:41.899Z",
+  "commit": "0323ab144e4f2c41096b6444161d75a86a8a4423",
   "fileCount": 2465,
   "files": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "path": "academy/app.js",
-      "size": 28112
+      "size": 33846
     },
     {
       "path": "academy/auth.js",
@@ -501,7 +501,7 @@
     },
     {
       "path": "academy/progress-merge.js",
-      "size": 1000
+      "size": 1101
     },
     {
       "path": "academy/roadmaps.html",
@@ -509,7 +509,7 @@
     },
     {
       "path": "academy/style.css",
-      "size": 29852
+      "size": 31398
     },
     {
       "path": "agy-mobile-notebooklm-mcp/index.html",
