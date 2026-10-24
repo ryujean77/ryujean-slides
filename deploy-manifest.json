@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-24T19:25:48.225Z",
-  "commit": "cb3180a5880ee5bbc00b849e81db926f2420cf19",
+  "generatedAt": "2026-10-24T19:46:31.322Z",
+  "commit": "b87c71a77407dca52f9754661803bf194ed2c14b",
   "fileCount": 2503,
   "files": [
     {
@@ -953,11 +953,11 @@
     },
     {
       "path": "apps/sasang-spa/gas_backend/appsscript.json",
-      "size": 192
+      "size": 202
     },
     {
       "path": "apps/sasang-spa/gas_backend/Code.js",
-      "size": 3541
+      "size": 3017
     },
     {
       "path": "apps/sasang-spa/google_sheets_lead_collector.gs",
@@ -965,7 +965,7 @@
     },
     {
       "path": "apps/sasang-spa/index.html",
-      "size": 118014
+      "size": 118039
     },
     {
       "path": "apps/sasang-spa/presentation.html",
@@ -9805,11 +9805,11 @@
     },
     {
       "path": "sasang-spa/gas_backend/appsscript.json",
-      "size": 192
+      "size": 202
     },
     {
       "path": "sasang-spa/gas_backend/Code.js",
-      "size": 3541
+      "size": 3017
     },
     {
       "path": "sasang-spa/google_sheets_lead_collector.gs",
@@ -9817,7 +9817,7 @@
     },
     {
       "path": "sasang-spa/index.html",
-      "size": 118014
+      "size": 118039
     },
     {
       "path": "sasang-spa/presentation.html",
