@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-22T04:02:55.717Z",
-  "commit": "e0e26cf30d7ab97a1845a88ef59404ad8261c7f3",
-  "fileCount": 2491,
+  "generatedAt": "2026-10-24T18:34:25.359Z",
+  "commit": "02a0f026f99fa86e46c3afee31eb8fc26056d0cb",
+  "fileCount": 2500,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -1421,7 +1421,7 @@
     },
     {
       "path": "chejilhub/index.html",
-      "size": 22864
+      "size": 24756
     },
     {
       "path": "chejilhub/items/gm-00071.html",
@@ -6585,7 +6585,7 @@
     },
     {
       "path": "domain_master_registry.json",
-      "size": 62154
+      "size": 63328
     },
     {
       "path": "dsac-shinsung-microbit/index.html",
@@ -9397,11 +9397,11 @@
     },
     {
       "path": "portal/domain_master_registry.json",
-      "size": 62154
+      "size": 63328
     },
     {
       "path": "portal/index.html",
-      "size": 68575
+      "size": 69527
     },
     {
       "path": "portal/index.html.bak",
@@ -9532,6 +9532,42 @@
       "size": 222
     },
     {
+      "path": "sasang-feng-shui/guide.html",
+      "size": 23804
+    },
+    {
+      "path": "sasang-feng-shui/guidebook.pdf",
+      "size": 2293643
+    },
+    {
+      "path": "sasang-feng-shui/img/hero.webp",
+      "size": 226530
+    },
+    {
+      "path": "sasang-feng-shui/img/materials.webp",
+      "size": 216272
+    },
+    {
+      "path": "sasang-feng-shui/img/soeum.webp",
+      "size": 223392
+    },
+    {
+      "path": "sasang-feng-shui/img/soyang.webp",
+      "size": 177404
+    },
+    {
+      "path": "sasang-feng-shui/img/taeeum.webp",
+      "size": 214174
+    },
+    {
+      "path": "sasang-feng-shui/img/taeyang.webp",
+      "size": 177864
+    },
+    {
+      "path": "sasang-feng-shui/index.html",
+      "size": 23530
+    },
+    {
       "path": "sasang-life-wellness/en/index.html",
       "size": 67779
     },
@@ -9541,7 +9577,7 @@
     },
     {
       "path": "sasang-life-wellness/index.html",
-      "size": 65419
+      "size": 66402
     },
     {
       "path": "sasang-life-wellness/ja/index.html",
