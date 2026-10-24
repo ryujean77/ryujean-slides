@@ -92,4 +92,11 @@
     var t = e.target.closest && e.target.closest("[data-guidebook]");
     if (t) { e.preventDefault(); dlg.showModal(); }
   });
+  // 이미지 우클릭·끌어 저장 막기 (텍스트 복사는 막지 않는다)
+  var noSave = document.createElement("style");
+  noSave.textContent = "img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}";
+  document.head.appendChild(noSave);
+  ["contextmenu", "dragstart"].forEach(function (ev) {
+    document.addEventListener(ev, function (e) { if (e.target && e.target.tagName === "IMG") e.preventDefault(); });
+  });
 })();
