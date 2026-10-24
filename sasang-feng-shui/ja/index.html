@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>四象体質の生活風水</title>
+<meta name="description" content="住む人が中心の風水。四象体質に合わせて素材・カラー・光・香りを処方する、体質に寄り添う生活風水インテリア。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--organ:#7a1508;--organ-2:#9b2a17;--cream:#efe8dc;--paper:#f7f3ec;--gray:#cfc9be;--khaki:#8a8463;--ink:#2a1a14;--muted:#6f625a;--line:rgba(122,21,8,.18);
+--wood:#5f7a4e;--fire:#b8442c;--earth:#c49a52;--metal:#a7a39b;--water:#1f2f45}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.75 'Noto Sans JP',system-ui,sans-serif;line-break:strict;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.marble{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><g fill='none' stroke='%237a1508' stroke-opacity='.07' stroke-width='1.2'><path d='M0 120 C180 60 260 260 420 210 S700 40 900 140'/><path d='M0 480 C140 420 300 560 470 500 S760 380 900 470'/><path d='M120 900 C200 700 160 620 300 520 S520 300 560 0'/><path d='M640 900 C600 760 720 680 700 560 S820 360 900 320'/></g></svg>")}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s}
+header.solid{background:var(--organ)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 14px Montserrat,sans-serif;letter-spacing:.28em;color:var(--cream);text-decoration:none}
+nav a{color:var(--cream);text-decoration:none;font-size:13px;margin-left:22px;opacity:.85}
+nav a:hover{opacity:1}
+@media(max-width:760px){nav{display:none}}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:grid;grid-template-rows:1fr auto;background:linear-gradient(180deg,rgba(42,26,20,.15),rgba(42,26,20,.55)),url(../img/hero.webp) center/cover;color:var(--cream)}
+.hero .wrap{align-self:end;padding-bottom:clamp(40px,8vh,96px);width:100%}
+.eyebrow{font:700 12px Montserrat,sans-serif;letter-spacing:.32em;text-transform:uppercase}
+.hero h1{font:800 clamp(44px,9vw,120px)/.95 Montserrat,'Noto Sans JP',sans-serif;letter-spacing:-.02em;margin:18px 0 22px}
+.hero p{max-width:560px;font-size:clamp(16px,2vw,19px);margin:0}
+.hero .meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(239,232,220,.4);padding:16px 0 22px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+/* sections */
+section{padding:clamp(72px,12vw,140px) 0}
+.split{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,6vw,96px)}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.big{font:800 clamp(32px,5.4vw,64px)/1.05 Montserrat,'Noto Sans JP',sans-serif;color:var(--organ);text-transform:uppercase;letter-spacing:-.01em;margin:0}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--ink)}
+.small-cap{font:700 11px Montserrat,sans-serif;letter-spacing:.24em;color:var(--khaki);text-transform:uppercase;margin-bottom:16px;display:block}
+.compare{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--organ);margin-top:28px}
+.compare div{padding:20px 18px 20px 0;border-bottom:1px solid var(--line)}
+.compare div:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+.compare b{display:block;font:800 13px Montserrat,'Noto Sans JP';color:var(--organ);letter-spacing:.06em;margin-bottom:4px}
+.compare .h{font:800 12px Montserrat,'Noto Sans JP';letter-spacing:.14em;color:var(--muted);padding-top:12px}
+/* organ band */
+.band{background:var(--organ);color:var(--cream)}
+.band .big{color:var(--cream)}
+.band .small-cap{color:#e0b9a8}
+.cycle{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:40px 0 18px}
+@media(max-width:700px){.cycle{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}}
+.el{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;border:1px solid rgba(239,232,220,.35)}
+.el span{font:700 clamp(22px,4vw,40px) 'Noto Serif JP',serif;display:block;line-height:1}
+.el small{font-size:clamp(10px,1.4vw,13px);opacity:.85}
+.legend{font-size:14px;opacity:.85}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(239,232,220,.35)}
+@media(max-width:860px){.rules{grid-template-columns:1fr 1fr}}
+.rules div{padding:22px 18px 8px 0}
+.rules i{font:800 40px Montserrat;font-style:normal;color:#e0b9a8;display:block}
+.rules b{font-size:17px;display:block;margin:4px 0}
+.rules p{font-size:14px;opacity:.85;margin:0}
+/* selector */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0}
+.tabs button{font:700 14px 'Noto Sans JP';padding:10px 18px;border:1px solid var(--organ);background:transparent;color:var(--organ);cursor:pointer;border-radius:999px}
+.tabs button[aria-selected=true]{background:var(--organ);color:var(--cream)}
+.room{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,56px);align-items:start}
+@media(max-width:860px){.room{grid-template-columns:1fr}}
+.room img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.room h3{font:800 clamp(26px,3.6vw,40px)/1.1 Montserrat,'Noto Sans JP';color:var(--organ);margin:0 0 4px;text-transform:uppercase}
+.room .sub{color:var(--khaki);margin:0 0 20px}
+.rx{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:15px;margin:0}
+.rx dt{font:800 12px Montserrat,'Noto Sans JP';letter-spacing:.08em;color:var(--organ);padding-top:3px}
+.rx dd{margin:0}
+.chip{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px}
+.chip i{width:22px;height:22px;border-radius:50%;display:inline-block;border:1px solid var(--line)}
+/* table */
+.tw{overflow-x:auto;margin-top:28px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px;background:rgba(247,243,236,.8)}
+th{background:var(--ink);color:var(--cream);text-align:left;padding:11px 12px;font-weight:600}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font:700 20px 'Noto Serif JP',serif;color:var(--organ);white-space:nowrap}
+/* steps */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:40px;border-top:2px solid var(--organ)}
+@media(max-width:900px){.steps{grid-template-columns:1fr}}
+.steps li{list-style:none;padding:22px 18px 22px 0;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font:800 32px Montserrat;color:var(--organ);display:block}
+.steps b{display:block;font-size:17px;margin:6px 0}
+.steps p{margin:0;font-size:14px;color:var(--muted)}
+.mat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+@media(max-width:860px){.mat{grid-template-columns:1fr}}
+/* apps */
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+@media(max-width:860px){.apps{grid-template-columns:1fr}}
+.apps div{background:var(--cream);padding:28px}
+.apps b{font:800 13px Montserrat,'Noto Sans JP';letter-spacing:.12em;color:var(--organ);text-transform:uppercase}
+.apps h4{font-size:20px;margin:8px 0}
+.apps p{font-size:14px;color:var(--muted);margin:0}
+.refs{font-size:14px;color:var(--muted);padding-left:18px}
+.cta{display:inline-block;margin-top:28px;background:var(--cream);color:var(--organ);padding:14px 26px;font:800 13px Montserrat,'Noto Sans JP';letter-spacing:.14em;text-decoration:none;text-transform:uppercase}
+footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
+.note{font-size:13px;color:var(--muted);margin-top:24px}
+</style>
+</head>
+<body class="marble">
+<header id="hd"><div class="wrap"><a class="logo" href="#top">SASANG · FENG SHUI</a>
+<nav><a href="guide.html">解説書</a><a href="#concept">コンセプト</a><a href="#principle">原理</a><a href="#rooms">体質別の空間</a><a href="#method">実践</a><a href="#objects">インテリア・小物</a><a href="#apply">展開</a></nav></div></header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Sasang Constitution Feng Shui</span>
+    <h1>住む人が<br>中心の風水</h1>
+    <p>同じ家でも、住む人が違えば処方も変わるべきです。四象体質の生活風水は、住まい手の体質に合わせて、空間の素材・カラー・光・香りを減らし、補います。</p>
+  </div>
+  <div class="wrap meta"><span>Space that knows who lives in it</span><span>原案 任東九（イム・ドング）博士 · 韓国体質ライフ振興院</span></div>
+</div>
+
+<section id="concept">
+  <div class="wrap split">
+    <div><span class="small-cap">01 · Concept</span><h2 class="big">家より<br>人が<br>先にある</h2></div>
+    <div>
+      <p class="lead">伝統的な生活風水は、場所の配置と陰陽五行の調和を中心に据えてきました。けれど人もまた、ひとつの気を携えて空間に入ってきます。私たちはその人を、四象体質で読み解きます。</p>
+      <p>1894年、李済馬の『東医寿世保元』に始まる韓国固有の四象医学で体質と感覚を読み、五行の相生・相剋を象徴言語として空間を処方します。インテリアは、人を調和のとれた状態、<b>陰陽和平之人</b>へと導く道具になります。</p>
+      <div class="compare">
+        <div class="h">伝統的な生活風水の主な視点</div><div class="h">四象体質の生活風水</div>
+        <div><b>中心</b>場所の配置・周辺環境・陰陽五行</div><div><b>中心</b>空間に住む人の体質と暮らし</div>
+        <div><b>人の読み方</b>八宅法などは生年・性別から個人の方位を見る</div><div><b>人の読み方</b>四象体質 — 臓腑の大小・気質・感覚の好み</div>
+        <div><b>評価</b>流派ごとの解釈基準</div><div><b>評価</b>住まい手が感じる心地よさ・好み・使いやすさ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="principle">
+  <div class="wrap">
+    <span class="small-cap">02 · Principle</span>
+    <h2 class="big">強みは生かし<br>弱みは補う</h2>
+    <div class="cycle" aria-label="体質と五行の対応" style="grid-template-columns:repeat(4,1fr)">
+      <div class="el" style="background:var(--wood)"><div><span>木</span><small>太陰人 · 肝</small></div></div>
+      <div class="el" style="background:var(--earth)"><div><span>土</span><small>少陽人 · 脾</small></div></div>
+      <div class="el" style="background:var(--metal);color:var(--ink)"><div><span>金</span><small>太陽人 · 肺</small></div></div>
+      <div class="el" style="background:var(--water)"><div><span>水</span><small>少陰人 · 腎</small></div></div>
+    </div>
+    <p class="legend">体質の五行とは、その体質の大きな臓腑（肝・脾・肺・腎）の五行です。太陰人（テウム）は肝大肺小、少陽人（ソヤン）は脾大腎小、少陰人（ソウム）は腎大脾小、太陽人（テヤン）は肺大肝小。四象体質は四つの臓腑で人を分けるため、火（心）は扱いません。<br>相生 木→火→土→金→水 · 相剋 木→土→水→火→金 · 体質と五行の対応は、原典（四象の体系）の定説ではなく、四象体質を空間に移すための任東九博士による解釈モデルです。</p>
+    <div class="rules">
+      <div><i>1</i><b>強いところは瀉（減らす）</b><p>大きな臓腑の気は、すでに携えて入ってきます。空間でまで積み重ねれば溢れるので、減らします。</p></div>
+      <div><i>2</i><b>弱いところは補（補う）</b><p>小さな臓腑の気を、素材・色・香りで満たしてバランスを整えます。</p></div>
+      <div><i>3</i><b>強みを生かす</b><p>その人本来の五行を生む気を加え、強みが溢れることなく、よく発揮されるようにします。</p></div>
+      <div><i>4</i><b>補いは控えめに</b><p>補う気が本来の五行を抑える関係なら、さりげなく。弱みを満たそうとして強みを折ることはしません。</p></div>
+    </div>
+    <p class="legend" style="margin-top:28px">五行は色・形・素材の象徴言語です。実際の材料を禁じるルールではなく、構造・防火・換気・アクセシビリティの基準をまず守ります。処方は出発点であり、最終的な判断は住まい手の心地よさです。</p>
+  </div>
+</section>
+
+<section id="rooms">
+  <div class="wrap">
+    <span class="small-cap">03 · Four Rooms</span>
+    <h2 class="big">四つの体質、<br>四つの空間の表情</h2>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="room" id="room" aria-live="polite">
+      <img id="r-img" alt="">
+      <div>
+        <h3 id="r-name"></h3><p class="sub" id="r-sub"></p>
+        <dl class="rx">
+          <dt>瀉 · 減らす</dt><dd id="r-cut"></dd>
+          <dt>補 · 補う</dt><dd id="r-add"></dd>
+          <dt>生かす</dt><dd id="r-live"></dd>
+          <dt>香り</dt><dd id="r-oil"></dd>
+          <dt>暮らし</dt><dd id="r-life"></dd>
+        </dl>
+        <span class="chip"><i id="r-dot"></i><span id="r-color"></span></span>
+      </div>
+    </div>
+    <p class="note">ポイントカラーは、任東九博士の2021年の体質原稿が示した体質基準カラー（PANTONE）です。少陽人・太陽人では弱い臓腑を直接補う色と、太陰人・少陰人では弱い臓腑を生む色と重なります（振興院の観察、博士の確認前）。</p>
+  </div>
+</section>
+
+<section id="method" style="background:var(--paper)">
+  <div class="wrap">
+    <span class="small-cap">04 · Method</span>
+    <h2 class="big">実践の5ステップ</h2>
+    <ol class="steps">
+      <li><b>体質診断</b><p>四象体質の質問票（KS-15など）と専門家の相談に加え、光・音・肌触りの好みも伺います。</p></li>
+      <li><b>空間の五行診断</b><p>部屋ごとに素材・カラー・形・照明・香りを五行に分類し、その比率を記録します。</p></li>
+      <li><b>処方の設計</b><p>瀉・補・生かすを決め、ポイントカラーと香りを選びます。</p></li>
+      <li><b>スタイリング</b><p>小さな面（小物・香り・絵）から変え、大きな面（床・壁・家具）へと広げます。</p></li>
+      <li><b>暮らしの点検</b><p>2週間後・4週間後に睡眠・疲れ・集中・気分を記録し、調整します。</p></li>
+    </ol>
+    <p class="note">家族で暮らす場合、リビング・キッチンは四つの五行をバランスよく置いて多数派の体質へ少し寄せ、寝室・書斎はその部屋の主の体質処方に従います。</p>
+  </div>
+</section>
+
+<section id="objects">
+  <div class="wrap">
+    <div class="mat">
+      <img src="../img/materials.webp" alt="無垢材、トラバーチン、真鍮、ガラス、テラコッタ、リネン、アロマオイルのサンプル" loading="lazy">
+      <div><span class="small-cap">05 · Interior &amp; Objects</span><h2 class="big">五行<br>デザイン事典</h2>
+      <p class="lead">処方は、最後にはモノへと置き換えられます。四つの気がどんな色と素材、形として現れるのかをまとめました。火（照明・赤）は体質処方ではなく、基本条件として扱います。</p></div>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>五行</th><th>カラー</th><th>素材</th><th>形</th><th>小物・要素</th><th>光・質感</th></tr></thead>
+      <tbody>
+        <tr><td>木</td><td>グリーン、青緑</td><td>無垢材、竹、ラタン、リネン</td><td>縦に長い柱状、ストライプ</td><td>背の高い植物、木製の棚</td><td>自然光、マットな木目</td></tr>
+        <tr><td>土</td><td>イエロー、オーカー、ベージュ、テラコッタ</td><td>陶器、黄土・漆喰の壁、ライムストーン</td><td>低く広い四角</td><td>陶器の花瓶、ローテーブル、ラグ</td><td>やわらかな拡散光</td></tr>
+        <tr><td>金</td><td>ホワイト、グレー、シルバー、ゴールド</td><td>真鍮、スチール、白大理石</td><td>円形、アーチ</td><td>丸い鏡、金属フレーム</td><td>反射光、なめらかな面</td></tr>
+        <tr><td>水</td><td>ブラック、ネイビー、ディープブルー</td><td>ガラス、鏡、ハイグロス、水</td><td>波、曲線、不定形</td><td>水盤、水墨画、ガラスの花瓶</td><td>深いトーン、ほのかな陰影</td></tr>
+      </tbody></table></div>
+    <h3 style="margin-top:56px;color:var(--organ)">アロマとディフューザー</h3>
+    <p>体質基準オイルを中心に、ラベンダー・ティーツリー・レモンでブレンドします。合成芳香剤や燃やすタイプの香りよりも、超音波ディフューザーやリードディフューザーをおすすめし、30〜60分使っては休ませる間欠方式で用います。乳幼児・妊婦・ペットのいる空間では、オイルの種類と濃度を個別に確認してください。</p>
+  </div>
+</section>
+
+<section class="band" id="apply">
+  <div class="wrap">
+    <span class="small-cap">06 · Application</span>
+    <h2 class="big">住まいから<br>ミラノまで</h2>
+    <div class="apps" style="background:rgba(239,232,220,.25);border-color:rgba(239,232,220,.25)">
+      <div><b>Residence</b><h4>タウンハウス · 集合住宅</h4><p>入居前に家族の体質を診断 → 世帯ごとの空間処方書。寝室は主の体質で、リビングは家族調和型で。</p></div>
+      <div><b>Exhibition</b><h4>ミラノ・デザインウィーク 2027</h4><p>仮称 WHO AM I SPACE（企画中）— 体質を見つけ、空間を調整してみて、処方カードを持ち帰る参加型の韓国館。</p></div>
+      <div><b>Hospitality</b><h4>スパ・カフェ・ホテル</h4><p>体質スパと体質カフェ、客室や企業の休憩スペースへと広がる空間処方のスタンダード。</p></div>
+    </div>
+    <a class="cta" href="guide.html">解説書を読む</a> <a class="cta" href="guidebook.pdf" download>ガイドブックPDFをダウンロード</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div><span class="small-cap">07 · References</span><h2 class="big" style="font-size:clamp(26px,3.4vw,40px)">参考資料</h2></div>
+    <ol class="refs">
+      <li>李済馬『東医寿世保元』(1894) — 四象医学の臓腑大小論</li>
+      <li>任東九「体質原稿整理」（2021、体質ライフキュレーション）— 体質基準アロマ・基準カラー</li>
+      <li>柳晶根「体質アロマテラピー」原稿（2021）— 体質別の代表オイルとブレンドの原則</li>
+      <li>任東九 体質本 2-13「体質に合う生活風水」</li>
+      <li>体質タイプ別の調和・不調和カラー研究（修士学位論文）</li>
+      <li>任東九博士との対談、2026-10-20 · 2026-10-24</li>
+    </ol>
+  </div>
+  <div class="wrap"><p class="note">このサイトは、四象体質のライフスタイルと空間デザインを結ぶ暮らしの提案です。体質別の空間処方はデザイン上の解釈であり、臨床的に検証された処方ではありません。空間の価値は心地よさ・好み・使いやすさで確かめるものであり、病気の診断や治療に代わるものではありません。方法論の名称は仮称です。</p></div>
+</section>
+
+<footer><div class="wrap">© 2026 韓国体質ライフ振興院 · 原案 任東九（イム・ドング）博士（Dr. Yim's 体質ライフスタイル研究所）</div></footer>
+
+<script>
+const ROOMS=[
+ {k:'taeeum',t:'太陰人（テウム） · 木',n:'Water Room',s:'流れる水のそばの大樹',cut:'木 — 濃い木目・縦ルーバーの繰り返しを減らし、面をシンプルに',add:'金（さりげなく）— 弱い肺を補う：マットな金属のディテール、白いリネン、丸い小物。光沢のある金属は避けます',live:'水 — 藍色・青灰色のポイント、しなやかな曲線、水面のような淡い光、ガラスの花瓶',oil:'ペパーミント + ラベンダー',life:'溜め込みやすい傾向があるため、扉付きの収納で手放すリズムをつくります',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
+ {k:'soyang',t:'少陽人（ソヤン） · 土',n:'Breeze Room',s:'風の通る水辺の庭',cut:'土 — 黄土の壁・テラコッタ・厚手のラグ・重い陶器を減らします',add:'水（たっぷりと）— 弱い腎を補う：淡い青のガラス、半透明のパーティション、青灰色のリネン、水を張ったガラスの花瓶',live:'火生土ですが、火は扱いません。滞りのない動線と開いた窓で、気質がのびやかに動けるように',oil:'グレープフルーツ + レモン',life:'熱がこもりやすいので、寝室は涼しく、風通しよく',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
+ {k:'soeum',t:'少陰人（ソウム） · 水',n:'Gold Room',s:'あたたかな金色の書斎',cut:'水 — ガラス・鏡・黒の面積を減らし、水盤は置きません',add:'土（さりげなく）— 弱い脾を補う：手に触れる陶器の小物、ベージュのファブリック。重い土壁は避けます',live:'金 — 真鍮の照明、丸い鏡、円形テーブル、白大理石のトレイ',oil:'ローズマリー · イランイラン',life:'体が冷えやすいので、床のぬくもりと重ねたウールのブランケット、居心地のよい片隅を',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
+ {k:'taeyang',t:'太陽人（テヤン） · 金',n:'Earth Room',s:'森を抱く土の丘',cut:'金 — 金属家具、光沢のある白い面、円形の繰り返しを減らします',add:'木（たっぷりと）— 弱い肝を補う：無垢材の家具、リネン、植物、縦に長い形',live:'土 — ライムストーン・漆喰仕上げ、低い陶器のテーブル、サンドベージュ・カーキ',oil:'パイン · ティーツリー',life:'休むことを知らない推進型なので、目線を低くする床座の休息スペースを設けます',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
+const tabs=document.getElementById('tabs'),$=id=>document.getElementById(id);
+function show(i){const r=ROOMS[i];
+ [...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+ $('r-img').src='../img/'+r.k+'.webp';$('r-img').alt=r.t+' 体質処方のリビング';
+ $('r-name').textContent=r.n;$('r-sub').textContent=r.t+' — '+r.s;
+ $('r-add').textContent=r.add;$('r-cut').textContent=r.cut;$('r-live').textContent=r.live;
+ $('r-oil').textContent=r.oil;$('r-life').textContent=r.life;
+ $('r-dot').style.background=r.c;$('r-color').textContent='ポイントカラー '+r.cn;}
+ROOMS.forEach((r,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=r.t;b.onclick=()=>show(i);tabs.appendChild(b);});
+show(0);
+const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>window.innerHeight*.6),{passive:true});
+</script>
+<!-- langs:start --><style>.sz-langs{position:fixed;top:76px;right:16px;z-index:9998;display:flex;gap:2px;background:rgba(30,22,18,.82);border-radius:999px;padding:4px;font:600 12px/1 Montserrat,'Noto Sans KR',sans-serif}.sz-langs a{color:#efe8dc;text-decoration:none;padding:7px 9px;border-radius:999px}.sz-langs a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-langs{display:none}}@media(max-width:760px){.sz-langs{top:auto;bottom:70px;right:50%;transform:translateX(50%)}}</style><nav class="sz-langs" aria-label="Language"><a href="../" hreflang="ko">KO</a><a href="../en/" hreflang="en">EN</a><a href="../ja/" hreflang="ja" aria-current=page>JA</a><a href="../zh/" hreflang="zh-Hans">ZH</a><a href="../it/" hreflang="it">IT</a></nav><!-- langs:end --><!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="四象体質 3館"><span>四象体質 3館</span><a href="../../chejilhub/">ハブ</a><a href="../../sasang-life-wellness/ja/">スパ・リゾート</a><a href="../../sasang-feng-shui/ja/" aria-current=page>インテリア</a></nav><!-- sz-tri:end --></body>
+</html>

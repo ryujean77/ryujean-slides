@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feng Shui delle costituzioni Sasang</title>
+<meta name="description" content="Un feng shui che mette al centro chi abita. Materiali, colori, luce e profumi prescritti secondo la costituzione Sasang: un progetto d’interni su misura della persona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--organ:#7a1508;--organ-2:#9b2a17;--cream:#efe8dc;--paper:#f7f3ec;--gray:#cfc9be;--khaki:#8a8463;--ink:#2a1a14;--muted:#6f625a;--line:rgba(122,21,8,.18);
+--wood:#5f7a4e;--fire:#b8442c;--earth:#c49a52;--metal:#a7a39b;--water:#1f2f45}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.75 'Noto Sans KR',system-ui,sans-serif;word-break:keep-all;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.marble{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><g fill='none' stroke='%237a1508' stroke-opacity='.07' stroke-width='1.2'><path d='M0 120 C180 60 260 260 420 210 S700 40 900 140'/><path d='M0 480 C140 420 300 560 470 500 S760 380 900 470'/><path d='M120 900 C200 700 160 620 300 520 S520 300 560 0'/><path d='M640 900 C600 760 720 680 700 560 S820 360 900 320'/></g></svg>")}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s}
+header.solid{background:var(--organ)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 14px Montserrat,sans-serif;letter-spacing:.28em;color:var(--cream);text-decoration:none}
+nav a{color:var(--cream);text-decoration:none;font-size:13px;margin-left:22px;opacity:.85}
+nav a:hover{opacity:1}
+@media(max-width:760px){nav{display:none}}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:grid;grid-template-rows:1fr auto;background:linear-gradient(180deg,rgba(42,26,20,.15),rgba(42,26,20,.55)),url(../img/hero.webp) center/cover;color:var(--cream)}
+.hero .wrap{align-self:end;padding-bottom:clamp(40px,8vh,96px);width:100%}
+.eyebrow{font:700 12px Montserrat,sans-serif;letter-spacing:.32em;text-transform:uppercase}
+.hero h1{font:800 clamp(44px,9vw,120px)/.95 Montserrat,'Noto Sans KR',sans-serif;letter-spacing:-.02em;margin:18px 0 22px}
+.hero p{max-width:560px;font-size:clamp(16px,2vw,19px);margin:0}
+.hero .meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(239,232,220,.4);padding:16px 0 22px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+/* sections */
+section{padding:clamp(72px,12vw,140px) 0}
+.split{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,6vw,96px)}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.big{font:800 clamp(32px,5.4vw,64px)/1.05 Montserrat,'Noto Sans KR',sans-serif;color:var(--organ);text-transform:uppercase;letter-spacing:-.01em;margin:0}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--ink)}
+.small-cap{font:700 11px Montserrat,sans-serif;letter-spacing:.24em;color:var(--khaki);text-transform:uppercase;margin-bottom:16px;display:block}
+.compare{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--organ);margin-top:28px}
+.compare div{padding:20px 18px 20px 0;border-bottom:1px solid var(--line)}
+.compare div:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+.compare b{display:block;font:800 13px Montserrat,'Noto Sans KR';color:var(--organ);letter-spacing:.06em;margin-bottom:4px}
+.compare .h{font:800 12px Montserrat,'Noto Sans KR';letter-spacing:.14em;color:var(--muted);padding-top:12px}
+/* organ band */
+.band{background:var(--organ);color:var(--cream)}
+.band .big{color:var(--cream)}
+.band .small-cap{color:#e0b9a8}
+.cycle{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:40px 0 18px}
+@media(max-width:700px){.cycle{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}}
+.el{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;border:1px solid rgba(239,232,220,.35)}
+.el span{font:700 clamp(22px,4vw,40px) 'Noto Serif KR',serif;display:block;line-height:1}
+.el small{font-size:clamp(10px,1.4vw,13px);opacity:.85}
+.legend{font-size:14px;opacity:.85}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(239,232,220,.35)}
+@media(max-width:860px){.rules{grid-template-columns:1fr 1fr}}
+.rules div{padding:22px 18px 8px 0}
+.rules i{font:800 40px Montserrat;font-style:normal;color:#e0b9a8;display:block}
+.rules b{font-size:17px;display:block;margin:4px 0}
+.rules p{font-size:14px;opacity:.85;margin:0}
+/* selector */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0}
+.tabs button{font:700 14px 'Noto Sans KR';padding:10px 18px;border:1px solid var(--organ);background:transparent;color:var(--organ);cursor:pointer;border-radius:999px}
+.tabs button[aria-selected=true]{background:var(--organ);color:var(--cream)}
+.room{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,56px);align-items:start}
+@media(max-width:860px){.room{grid-template-columns:1fr}}
+.room img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.room h3{font:800 clamp(26px,3.6vw,40px)/1.1 Montserrat,'Noto Sans KR';color:var(--organ);margin:0 0 4px;text-transform:uppercase}
+.room .sub{color:var(--khaki);margin:0 0 20px}
+.rx{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:15px;margin:0}
+.rx dt{font:800 12px Montserrat,'Noto Sans KR';letter-spacing:.08em;color:var(--organ);padding-top:3px}
+.rx dd{margin:0}
+.chip{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px}
+.chip i{width:22px;height:22px;border-radius:50%;display:inline-block;border:1px solid var(--line)}
+/* table */
+.tw{overflow-x:auto;margin-top:28px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px;background:rgba(247,243,236,.8)}
+th{background:var(--ink);color:var(--cream);text-align:left;padding:11px 12px;font-weight:600}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font:700 20px 'Noto Serif KR',serif;color:var(--organ);white-space:nowrap}
+/* steps */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:40px;border-top:2px solid var(--organ)}
+@media(max-width:900px){.steps{grid-template-columns:1fr}}
+.steps li{list-style:none;padding:22px 18px 22px 0;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font:800 32px Montserrat;color:var(--organ);display:block}
+.steps b{display:block;font-size:17px;margin:6px 0}
+.steps p{margin:0;font-size:14px;color:var(--muted)}
+.mat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+@media(max-width:860px){.mat{grid-template-columns:1fr}}
+/* apps */
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+@media(max-width:860px){.apps{grid-template-columns:1fr}}
+.apps div{background:var(--cream);padding:28px}
+.apps b{font:800 13px Montserrat,'Noto Sans KR';letter-spacing:.12em;color:var(--organ);text-transform:uppercase}
+.apps h4{font-size:20px;margin:8px 0}
+.apps p{font-size:14px;color:var(--muted);margin:0}
+.refs{font-size:14px;color:var(--muted);padding-left:18px}
+.cta{display:inline-block;margin-top:28px;background:var(--cream);color:var(--organ);padding:14px 26px;font:800 13px Montserrat,'Noto Sans KR';letter-spacing:.14em;text-decoration:none;text-transform:uppercase}
+footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
+.note{font-size:13px;color:var(--muted);margin-top:24px}
+</style>
+</head>
+<body class="marble">
+<header id="hd"><div class="wrap"><a class="logo" href="#top">SASANG · FENG SHUI</a>
+<nav><a href="guide.html">Guida</a><a href="#concept">Concetto</a><a href="#principle">Principio</a><a href="#rooms">Le stanze</a><a href="#method">Metodo</a><a href="#objects">Interni e oggetti</a><a href="#apply">Applicazioni</a></nav></div></header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Sasang Constitution Feng Shui</span>
+    <h1>Feng shui<br>a misura<br>di chi abita</h1>
+    <p>La stessa casa, abitata da persone diverse, chiede prescrizioni diverse. Il Feng Shui delle costituzioni Sasang toglie e aggiunge materiali, colori, luce e profumi secondo la costituzione di chi vive lo spazio.</p>
+  </div>
+  <div class="wrap meta"><span>Space that knows who lives in it</span><span>Concept originale Dr. Yim DongKoo · Korea Constitution Life Institute</span></div>
+</div>
+
+<section id="concept">
+  <div class="wrap split">
+    <div><span class="small-cap">01 · Concept</span><h2 class="big">Prima<br>la persona,<br>poi la casa</h2></div>
+    <div>
+      <p class="lead">Il feng shui domestico tradizionale mette al centro la disposizione dei luoghi e l’armonia tra yin, yang e i cinque elementi. Ma anche la persona porta con sé una propria energia quando entra in uno spazio. Noi leggiamo quella persona attraverso la costituzione Sasang.</p>
+      <p>Leggiamo costituzione e sensibilità con la medicina Sasang, una tradizione propriamente coreana nata nel 1894 con il Dongui Suse Bowon di Lee Je-ma, e usiamo il ciclo generativo e il ciclo di controllo dei cinque elementi (Wu Xing) come linguaggio simbolico per prescrivere lo spazio. L’interno diventa così uno strumento che accompagna la persona verso uno stato di armonia: <b>陰陽和平之人</b>, l’essere umano in cui yin e yang sono in equilibrio.</p>
+      <div class="compare">
+        <div class="h">La prospettiva del feng shui tradizionale</div><div class="h">Feng Shui delle costituzioni Sasang</div>
+        <div><b>Al centro</b>Disposizione dei luoghi, contesto, yin-yang e cinque elementi</div><div><b>Al centro</b>La costituzione e la vita quotidiana di chi abita lo spazio</div>
+        <div><b>Come si legge la persona</b>Il metodo delle Otto Dimore e altri ricavano l’orientamento personale da anno di nascita e sesso</div><div><b>Come si legge la persona</b>Costituzione Sasang: dimensione relativa degli organi, temperamento, preferenze sensoriali</div>
+        <div><b>Valutazione</b>Criteri interpretativi delle diverse scuole</div><div><b>Valutazione</b>Comfort, preferenze e usabilità percepiti da chi abita</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="principle">
+  <div class="wrap">
+    <span class="small-cap">02 · Principle</span>
+    <h2 class="big">Esaltare la forza,<br>bilanciare<br>la fragilità</h2>
+    <div class="cycle" aria-label="Corrispondenza tra costituzioni e cinque elementi" style="grid-template-columns:repeat(4,1fr)">
+      <div class="el" style="background:var(--wood)"><div><span>木</span><small>Tae-eum · fegato</small></div></div>
+      <div class="el" style="background:var(--earth)"><div><span>土</span><small>So-yang · milza</small></div></div>
+      <div class="el" style="background:var(--metal);color:var(--ink)"><div><span>金</span><small>Tae-yang · polmoni</small></div></div>
+      <div class="el" style="background:var(--water)"><div><span>水</span><small>So-eum · reni</small></div></div>
+    </div>
+    <p class="legend">L’elemento di una costituzione è quello del suo organo grande (fegato, milza, polmoni, reni). Tae-eum: fegato grande, polmoni piccoli. So-yang: milza grande, reni piccoli. So-eum: reni grandi, milza piccola. Tae-yang: polmoni grandi, fegato piccolo. Poiché la costituzione Sasang distingue le persone in base a quattro organi, 火 (il cuore) non viene considerato.<br>Ciclo generativo 木→火→土→金→水 · Ciclo di controllo 木→土→水→火→金 · La corrispondenza tra costituzioni ed elementi non appartiene al canone del sistema Sasang originale: è il modello interpretativo con cui Dr. Yim DongKoo traduce la costituzione Sasang nello spazio.</p>
+    <div class="rules">
+      <div><i>1</i><b>Ridurre (瀉) dove si è forti</b><p>L’energia dell’organo grande la persona la porta già con sé. Accumularla anche nello spazio la farebbe traboccare: perciò si alleggerisce.</p></div>
+      <div><i>2</i><b>Integrare (補) dove si è deboli</b><p>Materiali, colori e profumi colmano l’energia dell’organo piccolo e ristabiliscono l’equilibrio.</p></div>
+      <div><i>3</i><b>Valorizzare la forza</b><p>Si aggiunge l’elemento che nutre l’elemento nativo nel ciclo generativo, perché la forza si esprima pienamente senza eccessi.</p></div>
+      <div><i>4</i><b>Integrare senza eccedere</b><p>Se l’elemento che integra domina l’elemento nativo, lo si usa con discrezione. Colmare una fragilità non deve spezzare una forza.</p></div>
+    </div>
+    <p class="legend" style="margin-top:28px">I cinque elementi sono un linguaggio simbolico di colori, forme e materiali, non regole che vietano materiali reali. Vengono prima le norme strutturali, antincendio, di ventilazione e di accessibilità. La prescrizione è un punto di partenza; il giudizio finale spetta al benessere di chi abita.</p>
+  </div>
+</section>
+
+<section id="rooms">
+  <div class="wrap">
+    <span class="small-cap">03 · Four Rooms</span>
+    <h2 class="big">Quattro costituzioni,<br>quattro volti<br>dello spazio</h2>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="room" id="room" aria-live="polite">
+      <img id="r-img" alt="">
+      <div>
+        <h3 id="r-name"></h3><p class="sub" id="r-sub"></p>
+        <dl class="rx">
+          <dt>Ridurre</dt><dd id="r-cut"></dd>
+          <dt>Integrare</dt><dd id="r-add"></dd>
+          <dt>Valorizzare</dt><dd id="r-live"></dd>
+          <dt>Profumo</dt><dd id="r-oil"></dd>
+          <dt>Abitare</dt><dd id="r-life"></dd>
+        </dl>
+        <span class="chip"><i id="r-dot"></i><span id="r-color"></span></span>
+      </div>
+    </div>
+    <p class="note">I colori d’accento sono i colori di riferimento per costituzione (PANTONE) indicati nel manoscritto del 2021 di Dr. Yim DongKoo. Per So-yang e Tae-yang coincidono con il colore che integra direttamente l’organo debole; per Tae-eum e So-eum con il colore che lo nutre nel ciclo generativo (osservazione del Korea Constitution Life Institute, non ancora verificata da Dr. Yim).</p>
+  </div>
+</section>
+
+<section id="method" style="background:var(--paper)">
+  <div class="wrap">
+    <span class="small-cap">04 · Method</span>
+    <h2 class="big">Cinque fasi</h2>
+    <ol class="steps">
+      <li><b>Diagnosi della costituzione</b><p>Questionario Sasang (KS-15 e altri) e colloquio con un esperto, insieme alle preferenze di luce, suono e tatto.</p></li>
+      <li><b>Lettura dello spazio</b><p>Stanza per stanza, materiali, colori, forme, luci e profumi vengono classificati secondo i cinque elementi e se ne registrano le proporzioni.</p></li>
+      <li><b>Progetto della prescrizione</b><p>Si stabilisce cosa ridurre, integrare e valorizzare, e si scelgono colore d’accento e profumo.</p></li>
+      <li><b>Styling</b><p>Si parte dalle superfici piccole (oggetti, profumi, quadri) per estendersi a quelle grandi (pavimenti, pareti, arredi).</p></li>
+      <li><b>Verifica nel quotidiano</b><p>Dopo due e quattro settimane si annotano sonno, stanchezza, concentrazione e umore, e si regola.</p></li>
+    </ol>
+    <p class="note">Se la famiglia è numerosa, soggiorno e cucina distribuiscono equamente i quattro elementi, con una lieve inclinazione verso la costituzione prevalente; camere e studi seguono la prescrizione di chi li abita.</p>
+  </div>
+</section>
+
+<section id="objects">
+  <div class="wrap">
+    <div class="mat">
+      <img src="../img/materials.webp" alt="Campioni di legno massello, travertino, ottone, vetro, terracotta, lino e oli aromatici" loading="lazy">
+      <div><span class="small-cap">05 · Interior &amp; Objects</span><h2 class="big">Dizionario<br>dei cinque<br>elementi</h2>
+      <p class="lead">Ogni prescrizione, alla fine, prende forma negli oggetti. Qui raccogliamo i colori, i materiali e le forme in cui si manifestano le quattro energie. 火 (luce, rosso) non è una prescrizione costituzionale: è una condizione di base.</p></div>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>Elemento</th><th>Colore</th><th>Materiale</th><th>Forma</th><th>Oggetti e dettagli</th><th>Luce e texture</th></tr></thead>
+      <tbody>
+        <tr><td>木</td><td>Verde, verde acqua</td><td>Legno massello, bambù, rattan, lino</td><td>Volumi verticali a colonna, righe</td><td>Piante alte, mensole in legno</td><td>Luce naturale, superfici opache</td></tr>
+        <tr><td>土</td><td>Giallo, ocra, beige, terracotta</td><td>Ceramica, pareti in terra cruda e calce, pietra calcarea</td><td>Bassa e ampia, quadrata</td><td>Vasi in ceramica, tavolini bassi, tappeti</td><td>Luce morbida e diffusa</td></tr>
+        <tr><td>金</td><td>Bianco, grigio, argento, oro</td><td>Ottone, acciaio, marmo bianco</td><td>Cerchio, arco</td><td>Specchi rotondi, cornici in metallo</td><td>Luce riflessa, superfici lisce</td></tr>
+        <tr><td>水</td><td>Nero, blu navy, blu profondo</td><td>Vetro, specchio, laccato lucido, acqua</td><td>Onde, curve, forme libere</td><td>Vasche d’acqua, pittura a inchiostro, vasi in vetro</td><td>Toni profondi, ombre soffuse</td></tr>
+      </tbody></table></div>
+    <h3 style="margin-top:56px;color:var(--organ)">Aromi e diffusori</h3>
+    <p>Al centro c’è l’olio di riferimento della costituzione, armonizzato con lavanda, tea tree e limone. Ai deodoranti sintetici e alle candele profumate preferiamo diffusori a ultrasuoni o a bastoncini, in uso intermittente: 30–60 minuti accesi, poi una pausa. Negli ambienti con neonati e bambini piccoli, donne in gravidanza o animali domestici, tipo di olio e concentrazione vanno verificati a parte.</p>
+  </div>
+</section>
+
+<section class="band" id="apply">
+  <div class="wrap">
+    <span class="small-cap">06 · Application</span>
+    <h2 class="big">Dalla casa<br>a Milano</h2>
+    <div class="apps" style="background:rgba(239,232,220,.25);border-color:rgba(239,232,220,.25)">
+      <div><b>Residence</b><h4>Townhouse · residenze collettive</h4><p>Diagnosi delle costituzioni familiari prima dell’ingresso → prescrizione spaziale per ogni unità abitativa. Camere secondo la costituzione di chi le abita, soggiorno in chiave di armonia familiare.</p></div>
+      <div><b>Exhibition</b><h4>Milano Design Week 2027</h4><p>WHO AM I SPACE (titolo provvisorio, in fase di progetto): un padiglione coreano partecipativo in cui scoprire la propria costituzione, modulare lo spazio e portare con sé la propria carta-prescrizione.</p></div>
+      <div><b>Hospitality</b><h4>Spa · caffè · hotel</h4><p>Uno standard di prescrizione spaziale che si estende da spa e caffè costituzionali alle camere d’albergo e agli spazi di pausa aziendali.</p></div>
+    </div>
+    <a class="cta" href="guide.html">Leggi la guida</a> <a class="cta" href="guidebook.pdf" download>Scarica la guida in PDF</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div><span class="small-cap">07 · References</span><h2 class="big" style="font-size:clamp(26px,3.4vw,40px)">Fonti</h2></div>
+    <ol class="refs">
+      <li>Lee Je-ma, Dongui Suse Bowon (1894) — la teoria della dimensione relativa degli organi nella medicina Sasang</li>
+      <li>Yim DongKoo, «Note sistematiche sulle costituzioni» (2021, Constitution Life Curation) — aromi e colori di riferimento per costituzione</li>
+      <li>Ryu JeongKun, manoscritto «Aromaterapia costituzionale» (2021) — oli rappresentativi per costituzione e principi di blending</li>
+      <li>Yim DongKoo, libro sulle costituzioni, cap. 2-13 «Il feng shui domestico secondo la costituzione»</li>
+      <li>Studio sui colori armonici e disarmonici per tipo costituzionale (tesi di laurea magistrale)</li>
+      <li>Conversazioni con Dr. Yim DongKoo, 2026-10-20 · 2026-10-24</li>
+    </ol>
+  </div>
+  <div class="wrap"><p class="note">Questo sito è una proposta di stile di vita che unisce il lifestyle delle costituzioni Sasang al progetto dello spazio. Le prescrizioni spaziali per costituzione sono un’interpretazione progettuale, non prescrizioni validate clinicamente. Il valore di uno spazio si misura in comfort, preferenze e usabilità; non sostituisce in alcun modo la diagnosi né la cura medica. Il nome del metodo è un titolo provvisorio.</p></div>
+</section>
+
+<footer><div class="wrap">© 2026 Korea Constitution Life Institute · Concept originale Dr. Yim DongKoo (Dr. Yim's Constitution Lifestyle Institute)</div></footer>
+
+<script>
+const ROOMS=[
+ {k:'taeeum',t:'Tae-eum · 木',n:'Water Room',s:'Un grande albero accanto all’acqua che scorre',cut:'木 — meno venature scure e meno frangisole verticali ripetuti; superfici più semplici',add:'金 (con discrezione) — integra i polmoni deboli: dettagli in metallo opaco, lino bianco, oggetti dalle forme rotonde. Evitare i metalli lucidi',live:'水 — accenti blu notte e grigio-azzurro, curve morbide, una luce tenue come uno specchio d’acqua, vasi in vetro',oil:'Menta piperita + lavanda',life:'Tende ad accumulare: contenitori chiusi danno ritmo al gesto di fare spazio',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
+ {k:'soyang',t:'So-yang · 土',n:'Breeze Room',s:'Una corte sull’acqua attraversata dalla brezza',cut:'土 — meno pareti in terra cruda, terracotta, tappeti spessi e ceramiche massicce',add:'水 (in abbondanza) — integra i reni deboli: vetro azzurro chiaro, partizioni traslucide, lino grigio-azzurro, vasi in vetro colmi d’acqua',live:'火生土, ma 火 resta fuori dalla prescrizione. Percorsi liberi e finestre aperte lasciano muovere il temperamento',oil:'Pompelmo + limone',life:'Si accalora facilmente: la camera da letto resti fresca e ben ventilata',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
+ {k:'soeum',t:'So-eum · 水',n:'Gold Room',s:'Uno studio caldo, dai riflessi dorati',cut:'水 — meno vetro, specchi e superfici nere; niente vasche d’acqua',add:'土 (con discrezione) — integra la milza debole: piccole ceramiche da tenere in mano, tessuti beige. Evitare le pesanti pareti in terra',live:'金 — lampade in ottone, specchi rotondi, tavoli circolari, vassoi in marmo bianco',oil:'Rosmarino · ylang-ylang',life:'Sente facilmente il freddo: pavimenti caldi, coperte di lana a strati, un angolo raccolto',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
+ {k:'taeyang',t:'Tae-yang · 金',n:'Earth Room',s:'Una collina di terra che custodisce un bosco',cut:'金 — meno arredi in metallo, superfici bianche lucide, forme circolari ripetute',add:'木 (in abbondanza) — integra il fegato debole: mobili in legno massello, lino, piante, forme slanciate in verticale',live:'土 — pietra calcarea e intonaco a calce, tavoli bassi in ceramica, beige sabbia e cachi',oil:'Pino · tea tree',life:'Un temperamento propulsivo che fatica a fermarsi: una seduta bassa, a terra, che abbassa lo sguardo',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
+const tabs=document.getElementById('tabs'),$=id=>document.getElementById(id);
+function show(i){const r=ROOMS[i];
+ [...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+ $('r-img').src='../img/'+r.k+'.webp';$('r-img').alt=r.t+' — soggiorno su misura per la costituzione';
+ $('r-name').textContent=r.n;$('r-sub').textContent=r.t+' — '+r.s;
+ $('r-add').textContent=r.add;$('r-cut').textContent=r.cut;$('r-live').textContent=r.live;
+ $('r-oil').textContent=r.oil;$('r-life').textContent=r.life;
+ $('r-dot').style.background=r.c;$('r-color').textContent='Colore d’accento '+r.cn;}
+ROOMS.forEach((r,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=r.t;b.onclick=()=>show(i);tabs.appendChild(b);});
+show(0);
+const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>window.innerHeight*.6),{passive:true});
+</script>
+<!-- langs:start --><style>.sz-langs{position:fixed;top:76px;right:16px;z-index:9998;display:flex;gap:2px;background:rgba(30,22,18,.82);border-radius:999px;padding:4px;font:600 12px/1 Montserrat,'Noto Sans KR',sans-serif}.sz-langs a{color:#efe8dc;text-decoration:none;padding:7px 9px;border-radius:999px}.sz-langs a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-langs{display:none}}@media(max-width:760px){.sz-langs{top:auto;bottom:70px;right:50%;transform:translateX(50%)}}</style><nav class="sz-langs" aria-label="Language"><a href="../" hreflang="ko">KO</a><a href="../en/" hreflang="en">EN</a><a href="../ja/" hreflang="ja">JA</a><a href="../zh/" hreflang="zh-Hans">ZH</a><a href="../it/" hreflang="it" aria-current=page>IT</a></nav><!-- langs:end --><!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="Sasang · 3 Sale"><span>Sasang · 3 Sale</span><a href="../../chejilhub/">Hub</a><a href="../../sasang-life-wellness/">Spa-Resort</a><a href="../../sasang-feng-shui/it/" aria-current=page>Interni</a></nav><!-- sz-tri:end --></body>
+</html>
