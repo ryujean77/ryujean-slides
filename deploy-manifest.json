@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-24T18:41:58.292Z",
-  "commit": "37d04aed1630a8479be48067105e7ba4bb7312b5",
-  "fileCount": 2512,
+  "generatedAt": "2026-10-24T18:59:09.466Z",
+  "commit": "a90aea0bcfd06e96cf9b5d452869ac7d80909148",
+  "fileCount": 2503,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -9532,24 +9532,12 @@
       "size": 222
     },
     {
-      "path": "sasang-feng-shui/en/guide.html",
-      "size": 26358
-    },
-    {
-      "path": "sasang-feng-shui/en/guidebook.pdf",
-      "size": 1691570
-    },
-    {
       "path": "sasang-feng-shui/en/index.html",
-      "size": 25147
+      "size": 23354
     },
     {
-      "path": "sasang-feng-shui/guide.html",
-      "size": 24614
-    },
-    {
-      "path": "sasang-feng-shui/guidebook.pdf",
-      "size": 2328662
+      "path": "sasang-feng-shui/gate.js",
+      "size": 8184
     },
     {
       "path": "sasang-feng-shui/img/hero.webp",
@@ -9577,43 +9565,19 @@
     },
     {
       "path": "sasang-feng-shui/index.html",
-      "size": 24288
-    },
-    {
-      "path": "sasang-feng-shui/it/guide.html",
-      "size": 28103
-    },
-    {
-      "path": "sasang-feng-shui/it/guidebook.pdf",
-      "size": 1698092
+      "size": 22425
     },
     {
       "path": "sasang-feng-shui/it/index.html",
-      "size": 26029
-    },
-    {
-      "path": "sasang-feng-shui/ja/guide.html",
-      "size": 27100
-    },
-    {
-      "path": "sasang-feng-shui/ja/guidebook.pdf",
-      "size": 3239714
+      "size": 24075
     },
     {
       "path": "sasang-feng-shui/ja/index.html",
-      "size": 25644
-    },
-    {
-      "path": "sasang-feng-shui/zh/guide.html",
-      "size": 22978
-    },
-    {
-      "path": "sasang-feng-shui/zh/guidebook.pdf",
-      "size": 3130677
+      "size": 23501
     },
     {
       "path": "sasang-feng-shui/zh/index.html",
-      "size": 23121
+      "size": 21467
     },
     {
       "path": "sasang-life-wellness/en/index.html",
