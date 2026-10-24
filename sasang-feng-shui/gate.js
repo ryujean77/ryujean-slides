@@ -1,7 +1,7 @@
 /* 가이드북 신청 게이트 — [data-guidebook] 버튼을 누르면 신청 창을 연다.
    GAS_URL 이 비어 있으면 문의 메일로 안내한다. 입력값은 textContent 로만 다룬다(XSS 방지). */
 (function () {
-  var GAS_URL = ""; // Apps Script 웹앱 배포 후 /exec 주소를 넣는다
+  var GAS_URL = "https://script.google.com/macros/s/AKfycbyRIsBdm4tdJRf9I9Los9UqRmqwnHvySQXR3wNhcetPFCPRWXXwwIYLZQBWDOkwXFU/exec"; // Apps Script 웹앱 (gate/Code.gs, clasp 배포 @1)
   var CONTACT = "ryujean77@gmail.com";
   var L = {
     ko: { t: "가이드북 신청", d: "입력하신 이메일로 사상체질 생활풍수 가이드북(PDF)을 보내드립니다.", n: "이름", e: "이메일", o: "소속 (선택)",
