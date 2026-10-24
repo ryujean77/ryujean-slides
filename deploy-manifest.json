@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-24T19:46:31.322Z",
-  "commit": "b87c71a77407dca52f9754661803bf194ed2c14b",
+  "generatedAt": "2026-10-24T20:41:20.069Z",
+  "commit": "e40e9e147e3390193339ce94428fd9b63394efa5",
   "fileCount": 2503,
   "files": [
     {
@@ -9537,31 +9537,31 @@
     },
     {
       "path": "sasang-feng-shui/gate.js",
-      "size": 8290
+      "size": 8737
     },
     {
       "path": "sasang-feng-shui/img/hero.webp",
-      "size": 226530
+      "size": 118804
     },
     {
       "path": "sasang-feng-shui/img/materials.webp",
-      "size": 216272
+      "size": 108450
     },
     {
       "path": "sasang-feng-shui/img/soeum.webp",
-      "size": 223392
+      "size": 142272
     },
     {
       "path": "sasang-feng-shui/img/soyang.webp",
-      "size": 177404
+      "size": 111924
     },
     {
       "path": "sasang-feng-shui/img/taeeum.webp",
-      "size": 214174
+      "size": 135958
     },
     {
       "path": "sasang-feng-shui/img/taeyang.webp",
-      "size": 177864
+      "size": 103094
     },
     {
       "path": "sasang-feng-shui/index.html",
