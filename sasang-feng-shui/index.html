@@ -104,7 +104,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
 </head>
 <body class="marble">
 <header id="hd"><div class="wrap"><a class="logo" href="#top">SASANG · FENG SHUI</a>
-<nav><a href="guide.html">설명서</a><a href="#concept">개념</a><a href="#principle">원리</a><a href="#rooms">체질별 공간</a><a href="#method">실행</a><a href="#objects">인테리어·소품</a><a href="#apply">적용</a></nav></div></header>
+<nav><a href="#concept">개념</a><a href="#principle">원리</a><a href="#rooms">체질별 공간</a><a href="#method">실행</a><a href="#objects">인테리어·소품</a><a href="#apply">적용</a></nav></div></header>
 
 <div class="hero" id="top">
   <div class="wrap">
@@ -161,13 +161,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
       <img id="r-img" alt="">
       <div>
         <h3 id="r-name"></h3><p class="sub" id="r-sub"></p>
-        <dl class="rx">
-          <dt>사 · 덜기</dt><dd id="r-cut"></dd>
-          <dt>보 · 채우기</dt><dd id="r-add"></dd>
-          <dt>살리기</dt><dd id="r-live"></dd>
-          <dt>향</dt><dd id="r-oil"></dd>
-          <dt>생활</dt><dd id="r-life"></dd>
-        </dl>
+        <dl class="rx"><dt>향</dt><dd id="r-oil"></dd></dl><p class="note" style="margin-top:14px">체질별 상세 처방(덜기·채우기·살리기)은 가이드북에 담았습니다.</p>
         <span class="chip"><i id="r-dot"></i><span id="r-color"></span></span>
       </div>
     </div>
@@ -219,7 +213,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
       <div><b>Exhibition</b><h4>밀라노 디자인위크 2027</h4><p>가칭 WHO AM I SPACE(기획 중) — 체질을 찾고, 공간을 조절해 보고, 처방 카드를 받아 가는 참여형 한국관.</p></div>
       <div><b>Hospitality</b><h4>스파·카페·호텔</h4><p>체질 스파와 체질 카페, 객실과 기업 휴게 공간으로 이어지는 공간 처방 표준.</p></div>
     </div>
-    <a class="cta" href="guide.html">설명서 읽기</a> <a class="cta" href="guidebook.pdf" download>가이드북 PDF 받기</a>
+    <a class="cta" href="#guidebook" data-guidebook>가이드북 신청하기</a>
   </div>
 </section>
 
@@ -242,21 +236,21 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
 
 <script>
 const ROOMS=[
- {k:'taeeum',t:'태음인 · 木',n:'Water Room',s:'흐르는 물 곁의 큰 나무',cut:'木 — 진한 나뭇결·수직 루버 반복을 줄이고 면을 단순하게',add:'金(은은하게) — 약한 폐를 보완: 무광 금속 디테일, 흰 리넨, 둥근 소품. 반짝이는 금속은 피합니다',live:'水 — 남색·청회색 포인트, 유연한 곡선, 수면 같은 약한 빛, 유리 화병',oil:'페퍼민트 + 라벤더',life:'쌓아 두는 성향이 있어 닫힌 수납으로 비우는 리듬을 만듭니다',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
- {k:'soyang',t:'소양인 · 土',n:'Breeze Room',s:'바람 드는 물가의 마당',cut:'土 — 황토벽·테라코타·두꺼운 러그·묵직한 도기를 줄입니다',add:'水(충분히) — 약한 신을 보완: 연청 유리, 반투명 파티션, 청회색 리넨, 물을 담은 유리 화병',live:'火生土이지만 火는 다루지 않습니다. 막힘없는 동선과 열린 창으로 기질이 움직이기 좋게',oil:'그레이프프루트 + 레몬',life:'열이 오르기 쉬워 침실은 서늘하고 환기가 잘 되게',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
- {k:'soeum',t:'소음인 · 水',n:'Gold Room',s:'따뜻한 금빛 서재',cut:'水 — 유리·거울·검정 면적을 줄이고 수반은 두지 않습니다',add:'土(은은하게) — 약한 비를 보완: 손에 닿는 도자 소품, 베이지 패브릭. 무거운 흙벽은 피합니다',live:'金 — 황동 조명, 둥근 거울, 원형 테이블, 흰 대리석 트레이',oil:'로즈마리 · 일랑일랑',life:'몸이 차기 쉬워 바닥 온기와 겹겹의 울 담요, 아늑한 구석을 둡니다',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
- {k:'taeyang',t:'태양인 · 金',n:'Earth Room',s:'숲을 품은 흙의 언덕',cut:'金 — 금속 가구, 유광 흰 면, 원형 반복을 줄입니다',add:'木(충분히) — 약한 간을 보완: 원목 가구, 리넨, 식물, 세로로 긴 형태',live:'土 — 라임스톤·석회 미장, 낮은 도자 테이블, 샌드 베이지·카키',oil:'파인 · 티트리',life:'쉬지 못하는 추진형이라 시선을 낮추는 좌식 휴식 자리를 둡니다',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
+ {k:'taeeum',t:'태음인 · 木',n:'Water Room',s:'흐르는 물 곁의 큰 나무',oil:'페퍼민트 + 라벤더',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
+ {k:'soyang',t:'소양인 · 土',n:'Breeze Room',s:'바람 드는 물가의 마당',oil:'그레이프프루트 + 레몬',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
+ {k:'soeum',t:'소음인 · 水',n:'Gold Room',s:'따뜻한 금빛 서재',oil:'로즈마리 · 일랑일랑',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
+ {k:'taeyang',t:'태양인 · 金',n:'Earth Room',s:'숲을 품은 흙의 언덕',oil:'파인 · 티트리',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
 const tabs=document.getElementById('tabs'),$=id=>document.getElementById(id);
 function show(i){const r=ROOMS[i];
  [...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));
  $('r-img').src='img/'+r.k+'.webp';$('r-img').alt=r.t+' 체질 처방 거실';
  $('r-name').textContent=r.n;$('r-sub').textContent=r.t+' — '+r.s;
- $('r-add').textContent=r.add;$('r-cut').textContent=r.cut;$('r-live').textContent=r.live;
- $('r-oil').textContent=r.oil;$('r-life').textContent=r.life;
+ 
+ $('r-oil').textContent=r.oil;
  $('r-dot').style.background=r.c;$('r-color').textContent='포인트 컬러 '+r.cn;}
 ROOMS.forEach((r,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=r.t;b.onclick=()=>show(i);tabs.appendChild(b);});
 show(0);
 const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>window.innerHeight*.6),{passive:true});
 </script>
-<!-- langs:start --><style>.sz-langs{position:fixed;top:76px;right:16px;z-index:9998;display:flex;gap:2px;background:rgba(30,22,18,.82);border-radius:999px;padding:4px;font:600 12px/1 Montserrat,'Noto Sans KR',sans-serif}.sz-langs a{color:#efe8dc;text-decoration:none;padding:7px 9px;border-radius:999px}.sz-langs a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-langs{display:none}}@media(max-width:760px){.sz-langs{top:auto;bottom:70px;right:50%;transform:translateX(50%)}}</style><nav class="sz-langs" aria-label="Language"><a href="" hreflang="ko" aria-current=page>KO</a><a href="en/" hreflang="en">EN</a><a href="ja/" hreflang="ja">JA</a><a href="zh/" hreflang="zh-Hans">ZH</a><a href="it/" hreflang="it">IT</a></nav><!-- langs:end --><!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="사상체질 3관"><span>사상체질 3관</span><a href="../chejilhub/">허브</a><a href="../sasang-life-wellness/">스파-리조트</a><a href="../sasang-feng-shui/" aria-current=page>인테리어</a></nav><!-- sz-tri:end --></body>
+<script src="gate.js" defer></script><!-- langs:start --><style>.sz-langs{position:fixed;top:76px;right:16px;z-index:9998;display:flex;gap:2px;background:rgba(30,22,18,.82);border-radius:999px;padding:4px;font:600 12px/1 Montserrat,'Noto Sans KR',sans-serif}.sz-langs a{color:#efe8dc;text-decoration:none;padding:7px 9px;border-radius:999px}.sz-langs a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-langs{display:none}}@media(max-width:760px){.sz-langs{top:auto;bottom:70px;right:50%;transform:translateX(50%)}}</style><nav class="sz-langs" aria-label="Language"><a href="" hreflang="ko" aria-current=page>KO</a><a href="en/" hreflang="en">EN</a><a href="ja/" hreflang="ja">JA</a><a href="zh/" hreflang="zh-Hans">ZH</a><a href="it/" hreflang="it">IT</a></nav><!-- langs:end --><!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="사상체질 3관"><span>사상체질 3관</span><a href="../chejilhub/">허브</a><a href="../sasang-life-wellness/">스파-리조트</a><a href="../sasang-feng-shui/" aria-current=page>인테리어</a></nav><!-- sz-tri:end --></body>
 </html>

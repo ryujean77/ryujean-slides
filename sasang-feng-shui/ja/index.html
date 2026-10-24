@@ -104,7 +104,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
 </head>
 <body class="marble">
 <header id="hd"><div class="wrap"><a class="logo" href="#top">SASANG · FENG SHUI</a>
-<nav><a href="guide.html">解説書</a><a href="#concept">コンセプト</a><a href="#principle">原理</a><a href="#rooms">体質別の空間</a><a href="#method">実践</a><a href="#objects">インテリア・小物</a><a href="#apply">展開</a></nav></div></header>
+<nav><a href="#concept">コンセプト</a><a href="#principle">原理</a><a href="#rooms">体質別の空間</a><a href="#method">実践</a><a href="#objects">インテリア・小物</a><a href="#apply">展開</a></nav></div></header>
 
 <div class="hero" id="top">
   <div class="wrap">
@@ -161,13 +161,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
       <img id="r-img" alt="">
       <div>
         <h3 id="r-name"></h3><p class="sub" id="r-sub"></p>
-        <dl class="rx">
-          <dt>瀉 · 減らす</dt><dd id="r-cut"></dd>
-          <dt>補 · 補う</dt><dd id="r-add"></dd>
-          <dt>生かす</dt><dd id="r-live"></dd>
-          <dt>香り</dt><dd id="r-oil"></dd>
-          <dt>暮らし</dt><dd id="r-life"></dd>
-        </dl>
+        <dl class="rx"><dt>香り</dt><dd id="r-oil"></dd></dl><p class="note" style="margin-top:14px">体質別の詳しい処方（瀉・補・生かす）はガイドブックに収めています。</p>
         <span class="chip"><i id="r-dot"></i><span id="r-color"></span></span>
       </div>
     </div>
@@ -219,7 +213,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
       <div><b>Exhibition</b><h4>ミラノ・デザインウィーク 2027</h4><p>仮称 WHO AM I SPACE（企画中）— 体質を見つけ、空間を調整してみて、処方カードを持ち帰る参加型の韓国館。</p></div>
       <div><b>Hospitality</b><h4>スパ・カフェ・ホテル</h4><p>体質スパと体質カフェ、客室や企業の休憩スペースへと広がる空間処方のスタンダード。</p></div>
     </div>
-    <a class="cta" href="guide.html">解説書を読む</a> <a class="cta" href="guidebook.pdf" download>ガイドブックPDFをダウンロード</a>
+    <a class="cta" href="#guidebook" data-guidebook>ガイドブックを申し込む</a>
   </div>
 </section>
 
@@ -242,21 +236,21 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
 
 <script>
 const ROOMS=[
- {k:'taeeum',t:'太陰人（テウム） · 木',n:'Water Room',s:'流れる水のそばの大樹',cut:'木 — 濃い木目・縦ルーバーの繰り返しを減らし、面をシンプルに',add:'金（さりげなく）— 弱い肺を補う：マットな金属のディテール、白いリネン、丸い小物。光沢のある金属は避けます',live:'水 — 藍色・青灰色のポイント、しなやかな曲線、水面のような淡い光、ガラスの花瓶',oil:'ペパーミント + ラベンダー',life:'溜め込みやすい傾向があるため、扉付きの収納で手放すリズムをつくります',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
- {k:'soyang',t:'少陽人（ソヤン） · 土',n:'Breeze Room',s:'風の通る水辺の庭',cut:'土 — 黄土の壁・テラコッタ・厚手のラグ・重い陶器を減らします',add:'水（たっぷりと）— 弱い腎を補う：淡い青のガラス、半透明のパーティション、青灰色のリネン、水を張ったガラスの花瓶',live:'火生土ですが、火は扱いません。滞りのない動線と開いた窓で、気質がのびやかに動けるように',oil:'グレープフルーツ + レモン',life:'熱がこもりやすいので、寝室は涼しく、風通しよく',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
- {k:'soeum',t:'少陰人（ソウム） · 水',n:'Gold Room',s:'あたたかな金色の書斎',cut:'水 — ガラス・鏡・黒の面積を減らし、水盤は置きません',add:'土（さりげなく）— 弱い脾を補う：手に触れる陶器の小物、ベージュのファブリック。重い土壁は避けます',live:'金 — 真鍮の照明、丸い鏡、円形テーブル、白大理石のトレイ',oil:'ローズマリー · イランイラン',life:'体が冷えやすいので、床のぬくもりと重ねたウールのブランケット、居心地のよい片隅を',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
- {k:'taeyang',t:'太陽人（テヤン） · 金',n:'Earth Room',s:'森を抱く土の丘',cut:'金 — 金属家具、光沢のある白い面、円形の繰り返しを減らします',add:'木（たっぷりと）— 弱い肝を補う：無垢材の家具、リネン、植物、縦に長い形',live:'土 — ライムストーン・漆喰仕上げ、低い陶器のテーブル、サンドベージュ・カーキ',oil:'パイン · ティーツリー',life:'休むことを知らない推進型なので、目線を低くする床座の休息スペースを設けます',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
+ {k:'taeeum',t:'太陰人（テウム） · 木',n:'Water Room',s:'流れる水のそばの大樹',oil:'ペパーミント + ラベンダー',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
+ {k:'soyang',t:'少陽人（ソヤン） · 土',n:'Breeze Room',s:'風の通る水辺の庭',oil:'グレープフルーツ + レモン',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
+ {k:'soeum',t:'少陰人（ソウム） · 水',n:'Gold Room',s:'あたたかな金色の書斎',oil:'ローズマリー · イランイラン',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
+ {k:'taeyang',t:'太陽人（テヤン） · 金',n:'Earth Room',s:'森を抱く土の丘',oil:'パイン · ティーツリー',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
 const tabs=document.getElementById('tabs'),$=id=>document.getElementById(id);
 function show(i){const r=ROOMS[i];
  [...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));
  $('r-img').src='../img/'+r.k+'.webp';$('r-img').alt=r.t+' 体質処方のリビング';
  $('r-name').textContent=r.n;$('r-sub').textContent=r.t+' — '+r.s;
- $('r-add').textContent=r.add;$('r-cut').textContent=r.cut;$('r-live').textContent=r.live;
- $('r-oil').textContent=r.oil;$('r-life').textContent=r.life;
+ 
+ $('r-oil').textContent=r.oil;
  $('r-dot').style.background=r.c;$('r-color').textContent='ポイントカラー '+r.cn;}
 ROOMS.forEach((r,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=r.t;b.onclick=()=>show(i);tabs.appendChild(b);});
 show(0);
 const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>window.innerHeight*.6),{passive:true});
 </script>
-<!-- langs:start --><style>.sz-langs{position:fixed;top:76px;right:16px;z-index:9998;display:flex;gap:2px;background:rgba(30,22,18,.82);border-radius:999px;padding:4px;font:600 12px/1 Montserrat,'Noto Sans KR',sans-serif}.sz-langs a{color:#efe8dc;text-decoration:none;padding:7px 9px;border-radius:999px}.sz-langs a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-langs{display:none}}@media(max-width:760px){.sz-langs{top:auto;bottom:70px;right:50%;transform:translateX(50%)}}</style><nav class="sz-langs" aria-label="Language"><a href="../" hreflang="ko">KO</a><a href="../en/" hreflang="en">EN</a><a href="../ja/" hreflang="ja" aria-current=page>JA</a><a href="../zh/" hreflang="zh-Hans">ZH</a><a href="../it/" hreflang="it">IT</a></nav><!-- langs:end --><!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="四象体質 3館"><span>四象体質 3館</span><a href="../../chejilhub/">ハブ</a><a href="../../sasang-life-wellness/ja/">スパ・リゾート</a><a href="../../sasang-feng-shui/ja/" aria-current=page>インテリア</a></nav><!-- sz-tri:end --></body>
+<script src="../gate.js" defer></script><!-- langs:start --><style>.sz-langs{position:fixed;top:76px;right:16px;z-index:9998;display:flex;gap:2px;background:rgba(30,22,18,.82);border-radius:999px;padding:4px;font:600 12px/1 Montserrat,'Noto Sans KR',sans-serif}.sz-langs a{color:#efe8dc;text-decoration:none;padding:7px 9px;border-radius:999px}.sz-langs a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-langs{display:none}}@media(max-width:760px){.sz-langs{top:auto;bottom:70px;right:50%;transform:translateX(50%)}}</style><nav class="sz-langs" aria-label="Language"><a href="../" hreflang="ko">KO</a><a href="../en/" hreflang="en">EN</a><a href="../ja/" hreflang="ja" aria-current=page>JA</a><a href="../zh/" hreflang="zh-Hans">ZH</a><a href="../it/" hreflang="it">IT</a></nav><!-- langs:end --><!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="四象体質 3館"><span>四象体質 3館</span><a href="../../chejilhub/">ハブ</a><a href="../../sasang-life-wellness/ja/">スパ・リゾート</a><a href="../../sasang-feng-shui/ja/" aria-current=page>インテリア</a></nav><!-- sz-tri:end --></body>
 </html>

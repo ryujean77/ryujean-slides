@@ -104,7 +104,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
 </head>
 <body class="marble">
 <header id="hd"><div class="wrap"><a class="logo" href="#top">SASANG · FENG SHUI</a>
-<nav><a href="guide.html">说明书</a><a href="#concept">概念</a><a href="#principle">原理</a><a href="#rooms">体质空间</a><a href="#method">实践</a><a href="#objects">室内·陈设</a><a href="#apply">应用</a></nav></div></header>
+<nav><a href="#concept">概念</a><a href="#principle">原理</a><a href="#rooms">体质空间</a><a href="#method">实践</a><a href="#objects">室内·陈设</a><a href="#apply">应用</a></nav></div></header>
 
 <div class="hero" id="top">
   <div class="wrap">
@@ -161,13 +161,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
       <img id="r-img" alt="">
       <div>
         <h3 id="r-name"></h3><p class="sub" id="r-sub"></p>
-        <dl class="rx">
-          <dt>泻 · 减</dt><dd id="r-cut"></dd>
-          <dt>补 · 补足</dt><dd id="r-add"></dd>
-          <dt>以相生激活</dt><dd id="r-live"></dd>
-          <dt>香</dt><dd id="r-oil"></dd>
-          <dt>生活</dt><dd id="r-life"></dd>
-        </dl>
+        <dl class="rx"><dt>香气</dt><dd id="r-oil"></dd></dl><p class="note" style="margin-top:14px">各体质的详细处方（泻·补·激活）收录于指南中。</p>
         <span class="chip"><i id="r-dot"></i><span id="r-color"></span></span>
       </div>
     </div>
@@ -219,7 +213,7 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
       <div><b>Exhibition</b><h4>米兰设计周 2027</h4><p>暂定名 WHO AM I SPACE（策划中）——寻找体质、亲手调节空间、领取处方卡的参与式韩国馆。</p></div>
       <div><b>Hospitality</b><h4>水疗·咖啡馆·酒店</h4><p>由体质水疗与体质咖啡馆，延伸至酒店客房与企业休憩空间的空间处方标准。</p></div>
     </div>
-    <a class="cta" href="guide.html">阅读说明书</a> <a class="cta" href="guidebook.pdf" download>下载指南 PDF</a>
+    <a class="cta" href="#guidebook" data-guidebook>申请指南</a>
   </div>
 </section>
 
@@ -242,21 +236,21 @@ footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
 
 <script>
 const ROOMS=[
- {k:'taeeum',t:'太阴人 · 木',n:'Water Room',s:'流水之畔的大树',cut:'木——减少深色木纹与垂直百叶的重复，让墙面归于简洁',add:'金（轻柔）——补益较弱的肺：哑光金属细节、白色亚麻、圆形小物。避免闪亮的金属',live:'水——藏青、蓝灰点缀，柔和曲线，如水面般的微光，玻璃花瓶',oil:'薄荷 + 薰衣草',life:'有囤积的倾向，以封闭式收纳建立清空的节奏',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
- {k:'soyang',t:'少阳人 · 土',n:'Breeze Room',s:'风过水岸的庭院',cut:'土——减少黄土墙、陶土砖、厚地毯与厚重陶器',add:'水（充分）——补益较弱的肾：淡青玻璃、半透明隔断、蓝灰亚麻、盛水的玻璃花瓶',live:'虽火生土，但不涉及火。以通畅的动线与敞开的窗，让气质自在流动',oil:'葡萄柚 + 柠檬',life:'容易上火，卧室宜凉爽、通风良好',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
- {k:'soeum',t:'少阴人 · 水',n:'Gold Room',s:'温暖的金色书房',cut:'水——减少玻璃、镜面与黑色的面积，不设水盘',add:'土（轻柔）——补益较弱的脾：触手可及的陶瓷小物、米色织物。避免厚重的土墙',live:'金——黄铜灯具、圆镜、圆桌、白色大理石托盘',oil:'迷迭香 · 依兰',life:'身体易寒，备好地面的暖意、层叠的羊毛毯与温馨的角落',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
- {k:'taeyang',t:'太阳人 · 金',n:'Earth Room',s:'怀抱森林的土丘',cut:'金——减少金属家具、亮面白色与圆形的重复',add:'木（充分）——补益较弱的肝：原木家具、亚麻、植物、纵向修长的形态',live:'土——石灰石与石灰抹面、低矮的陶瓷桌、沙米色与卡其色',oil:'松 · 茶树',life:'推进型性格难以停歇，设置让视线放低的席地休憩处',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
+ {k:'taeeum',t:'太阴人 · 木',n:'Water Room',s:'流水之畔的大树',oil:'薄荷 + 薰衣草',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
+ {k:'soyang',t:'少阳人 · 土',n:'Breeze Room',s:'风过水岸的庭院',oil:'葡萄柚 + 柠檬',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
+ {k:'soeum',t:'少阴人 · 水',n:'Gold Room',s:'温暖的金色书房',oil:'迷迭香 · 依兰',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
+ {k:'taeyang',t:'太阳人 · 金',n:'Earth Room',s:'怀抱森林的土丘',oil:'松 · 茶树',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
 const tabs=document.getElementById('tabs'),$=id=>document.getElementById(id);
 function show(i){const r=ROOMS[i];
  [...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));
  $('r-img').src='../img/'+r.k+'.webp';$('r-img').alt=r.t+' 体质处方客厅';
  $('r-name').textContent=r.n;$('r-sub').textContent=r.t+' — '+r.s;
- $('r-add').textContent=r.add;$('r-cut').textContent=r.cut;$('r-live').textContent=r.live;
- $('r-oil').textContent=r.oil;$('r-life').textContent=r.life;
+ 
+ $('r-oil').textContent=r.oil;
  $('r-dot').style.background=r.c;$('r-color').textContent='点缀色 '+r.cn;}
 ROOMS.forEach((r,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=r.t;b.onclick=()=>show(i);tabs.appendChild(b);});
 show(0);
 const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>window.innerHeight*.6),{passive:true});
 </script>
-<!-- langs:start --><style>.sz-langs{position:fixed;top:76px;right:16px;z-index:9998;display:flex;gap:2px;background:rgba(30,22,18,.82);border-radius:999px;padding:4px;font:600 12px/1 Montserrat,'Noto Sans KR',sans-serif}.sz-langs a{color:#efe8dc;text-decoration:none;padding:7px 9px;border-radius:999px}.sz-langs a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-langs{display:none}}@media(max-width:760px){.sz-langs{top:auto;bottom:70px;right:50%;transform:translateX(50%)}}</style><nav class="sz-langs" aria-label="Language"><a href="../" hreflang="ko">KO</a><a href="../en/" hreflang="en">EN</a><a href="../ja/" hreflang="ja">JA</a><a href="../zh/" hreflang="zh-Hans" aria-current=page>ZH</a><a href="../it/" hreflang="it">IT</a></nav><!-- langs:end --><!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="四象体质 三馆"><span>四象体质 三馆</span><a href="../../chejilhub/">中心</a><a href="../../sasang-life-wellness/">水疗度假</a><a href="../../sasang-feng-shui/zh/" aria-current=page>室内</a></nav><!-- sz-tri:end --></body>
+<script src="../gate.js" defer></script><!-- langs:start --><style>.sz-langs{position:fixed;top:76px;right:16px;z-index:9998;display:flex;gap:2px;background:rgba(30,22,18,.82);border-radius:999px;padding:4px;font:600 12px/1 Montserrat,'Noto Sans KR',sans-serif}.sz-langs a{color:#efe8dc;text-decoration:none;padding:7px 9px;border-radius:999px}.sz-langs a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-langs{display:none}}@media(max-width:760px){.sz-langs{top:auto;bottom:70px;right:50%;transform:translateX(50%)}}</style><nav class="sz-langs" aria-label="Language"><a href="../" hreflang="ko">KO</a><a href="../en/" hreflang="en">EN</a><a href="../ja/" hreflang="ja">JA</a><a href="../zh/" hreflang="zh-Hans" aria-current=page>ZH</a><a href="../it/" hreflang="it">IT</a></nav><!-- langs:end --><!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="四象体质 三馆"><span>四象体质 三馆</span><a href="../../chejilhub/">中心</a><a href="../../sasang-life-wellness/">水疗度假</a><a href="../../sasang-feng-shui/zh/" aria-current=page>室内</a></nav><!-- sz-tri:end --></body>
 </html>
