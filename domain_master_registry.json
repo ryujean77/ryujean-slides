@@ -1,7 +1,7 @@
 {
   "systemTitle": "RYUJEAN DOMAIN HQ — 통합 비즈니스 & 프로젝트 관리 포털",
   "director": "유정근 (웰니스 총괄 / 전담 테라피스트 / 비즈니스 디렉터) | 010-4728-9917 | ryujean77@gmail.com",
-  "lastUpdated": "2026-10-22 07:16:39 (KST)",
+  "lastUpdated": "2026-10-25 03:33:53 (KST)",
   "domains": [
     {
       "id": "DOM-THESIS-SASANG",
@@ -143,8 +143,8 @@
         "ppt-designer"
       ],
       "stats": {
-        "projectsCount": 11,
-        "liveUrlsCount": 2,
+        "projectsCount": 12,
+        "liveUrlsCount": 3,
         "status": "🟢 제안서 패키징 완료"
       }
     },
@@ -1361,6 +1361,34 @@
       "liveUrl": "",
       "deliverables": [],
       "description": "음성/문서 인박스에서 자동 생성된 기획안을 결재·승인하여 등록된 프로젝트. 최종산출물과 웹 리포트는 로컬 파이프라인(04_Final_Outbox / 05_Published_HTML)에 보관된다"
+    },
+    {
+      "id": "PRJ-SASANG-12",
+      "domainId": "DOM-SASANG",
+      "domainTag": "🧬 사상체질",
+      "title": "사상체질 생활풍수 — 체질 맞춤 인테리어 (임동구 박사 원안 · 밀라노 디자인위크 2027 준비)",
+      "status": "배포완료",
+      "statusBadge": "bg-cyan-500/10 text-cyan-400 border border-cyan-500/30",
+      "date": "2026-10-25",
+      "liveUrl": "https://ryujean77.github.io/ryujean-slides/sasang-feng-shui/",
+      "deliverables": [
+        {
+          "name": "소개 사이트 (index.html)",
+          "type": "html",
+          "path": "05_site/index.html"
+        },
+        {
+          "name": "설명서 (HTML)",
+          "type": "html",
+          "path": "01_guide.html"
+        },
+        {
+          "name": "가이드북 (PDF)",
+          "type": "pdf",
+          "path": "05_site/guidebook.pdf"
+        }
+      ],
+      "description": "거주자의 사상체질에 맞춰 소재·컬러·빛·향을 처방하는 체질 맞춤 생활풍수 인테리어. 강점은 살리고 약점은 보완하는 보·사 원칙, 네 체질의 방, 실행 5단계. 허브·스파-리조트와 3관으로 연결"
     }
   ]
 }

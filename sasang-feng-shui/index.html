@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>사상체질 생활풍수</title>
+<meta name="description" content="사는 사람이 중심인 풍수. 사상체질에 맞춰 소재·컬러·빛·향을 처방하는 체질 맞춤형 생활풍수 인테리어.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--organ:#7a1508;--organ-2:#9b2a17;--cream:#efe8dc;--paper:#f7f3ec;--gray:#cfc9be;--khaki:#8a8463;--ink:#2a1a14;--muted:#6f625a;--line:rgba(122,21,8,.18);
+--wood:#5f7a4e;--fire:#b8442c;--earth:#c49a52;--metal:#a7a39b;--water:#1f2f45}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.75 'Noto Sans KR',system-ui,sans-serif;word-break:keep-all;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.marble{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><g fill='none' stroke='%237a1508' stroke-opacity='.07' stroke-width='1.2'><path d='M0 120 C180 60 260 260 420 210 S700 40 900 140'/><path d='M0 480 C140 420 300 560 470 500 S760 380 900 470'/><path d='M120 900 C200 700 160 620 300 520 S520 300 560 0'/><path d='M640 900 C600 760 720 680 700 560 S820 360 900 320'/></g></svg>")}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s}
+header.solid{background:var(--organ)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 14px Montserrat,sans-serif;letter-spacing:.28em;color:var(--cream);text-decoration:none}
+nav a{color:var(--cream);text-decoration:none;font-size:13px;margin-left:22px;opacity:.85}
+nav a:hover{opacity:1}
+@media(max-width:760px){nav{display:none}}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:grid;grid-template-rows:1fr auto;background:linear-gradient(180deg,rgba(42,26,20,.15),rgba(42,26,20,.55)),url(img/hero.webp) center/cover;color:var(--cream)}
+.hero .wrap{align-self:end;padding-bottom:clamp(40px,8vh,96px);width:100%}
+.eyebrow{font:700 12px Montserrat,sans-serif;letter-spacing:.32em;text-transform:uppercase}
+.hero h1{font:800 clamp(44px,9vw,120px)/.95 Montserrat,'Noto Sans KR',sans-serif;letter-spacing:-.02em;margin:18px 0 22px}
+.hero p{max-width:560px;font-size:clamp(16px,2vw,19px);margin:0}
+.hero .meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(239,232,220,.4);padding:16px 0 22px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+/* sections */
+section{padding:clamp(72px,12vw,140px) 0}
+.split{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,6vw,96px)}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.big{font:800 clamp(32px,5.4vw,64px)/1.05 Montserrat,'Noto Sans KR',sans-serif;color:var(--organ);text-transform:uppercase;letter-spacing:-.01em;margin:0}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--ink)}
+.small-cap{font:700 11px Montserrat,sans-serif;letter-spacing:.24em;color:var(--khaki);text-transform:uppercase;margin-bottom:16px;display:block}
+.compare{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--organ);margin-top:28px}
+.compare div{padding:20px 18px 20px 0;border-bottom:1px solid var(--line)}
+.compare div:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+.compare b{display:block;font:800 13px Montserrat,'Noto Sans KR';color:var(--organ);letter-spacing:.06em;margin-bottom:4px}
+.compare .h{font:800 12px Montserrat,'Noto Sans KR';letter-spacing:.14em;color:var(--muted);padding-top:12px}
+/* organ band */
+.band{background:var(--organ);color:var(--cream)}
+.band .big{color:var(--cream)}
+.band .small-cap{color:#e0b9a8}
+.cycle{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:40px 0 18px}
+@media(max-width:700px){.cycle{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}}
+.el{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;border:1px solid rgba(239,232,220,.35)}
+.el span{font:700 clamp(22px,4vw,40px) 'Noto Serif KR',serif;display:block;line-height:1}
+.el small{font-size:clamp(10px,1.4vw,13px);opacity:.85}
+.legend{font-size:14px;opacity:.85}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(239,232,220,.35)}
+@media(max-width:860px){.rules{grid-template-columns:1fr 1fr}}
+.rules div{padding:22px 18px 8px 0}
+.rules i{font:800 40px Montserrat;font-style:normal;color:#e0b9a8;display:block}
+.rules b{font-size:17px;display:block;margin:4px 0}
+.rules p{font-size:14px;opacity:.85;margin:0}
+/* selector */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0}
+.tabs button{font:700 14px 'Noto Sans KR';padding:10px 18px;border:1px solid var(--organ);background:transparent;color:var(--organ);cursor:pointer;border-radius:999px}
+.tabs button[aria-selected=true]{background:var(--organ);color:var(--cream)}
+.room{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,56px);align-items:start}
+@media(max-width:860px){.room{grid-template-columns:1fr}}
+.room img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.room h3{font:800 clamp(26px,3.6vw,40px)/1.1 Montserrat,'Noto Sans KR';color:var(--organ);margin:0 0 4px;text-transform:uppercase}
+.room .sub{color:var(--khaki);margin:0 0 20px}
+.rx{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:15px;margin:0}
+.rx dt{font:800 12px Montserrat,'Noto Sans KR';letter-spacing:.08em;color:var(--organ);padding-top:3px}
+.rx dd{margin:0}
+.chip{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px}
+.chip i{width:22px;height:22px;border-radius:50%;display:inline-block;border:1px solid var(--line)}
+/* table */
+.tw{overflow-x:auto;margin-top:28px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px;background:rgba(247,243,236,.8)}
+th{background:var(--ink);color:var(--cream);text-align:left;padding:11px 12px;font-weight:600}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font:700 20px 'Noto Serif KR',serif;color:var(--organ);white-space:nowrap}
+/* steps */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:40px;border-top:2px solid var(--organ)}
+@media(max-width:900px){.steps{grid-template-columns:1fr}}
+.steps li{list-style:none;padding:22px 18px 22px 0;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font:800 32px Montserrat;color:var(--organ);display:block}
+.steps b{display:block;font-size:17px;margin:6px 0}
+.steps p{margin:0;font-size:14px;color:var(--muted)}
+.mat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+@media(max-width:860px){.mat{grid-template-columns:1fr}}
+/* apps */
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+@media(max-width:860px){.apps{grid-template-columns:1fr}}
+.apps div{background:var(--cream);padding:28px}
+.apps b{font:800 13px Montserrat,'Noto Sans KR';letter-spacing:.12em;color:var(--organ);text-transform:uppercase}
+.apps h4{font-size:20px;margin:8px 0}
+.apps p{font-size:14px;color:var(--muted);margin:0}
+.refs{font-size:14px;color:var(--muted);padding-left:18px}
+.cta{display:inline-block;margin-top:28px;background:var(--cream);color:var(--organ);padding:14px 26px;font:800 13px Montserrat,'Noto Sans KR';letter-spacing:.14em;text-decoration:none;text-transform:uppercase}
+footer{background:var(--ink);color:var(--gray);font-size:13px;padding:40px 0}
+.note{font-size:13px;color:var(--muted);margin-top:24px}
+</style>
+</head>
+<body class="marble">
+<header id="hd"><div class="wrap"><a class="logo" href="#top">SASANG · FENG SHUI</a>
+<nav><a href="guide.html">설명서</a><a href="#concept">개념</a><a href="#principle">원리</a><a href="#rooms">체질별 공간</a><a href="#method">실행</a><a href="#objects">인테리어·소품</a><a href="#apply">적용</a></nav></div></header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Sasang Constitution Feng Shui</span>
+    <h1>사는 사람이<br>중심인 풍수</h1>
+    <p>같은 집이라도 사는 사람이 다르면 처방이 달라야 합니다. 사상체질 생활풍수는 거주자의 체질에 맞춰 공간의 소재·컬러·빛·향을 덜고 더합니다.</p>
+  </div>
+  <div class="wrap meta"><span>Space that knows who lives in it</span><span>원안 임동구 박사 · 한국체질라이프진흥원</span></div>
+</div>
+
+<section id="concept">
+  <div class="wrap split">
+    <div><span class="small-cap">01 · Concept</span><h2 class="big">집보다<br>사람이<br>먼저다</h2></div>
+    <div>
+      <p class="lead">전통 생활풍수는 장소의 배치와 음양오행의 조화를 중심에 둡니다. 사람도 하나의 기운을 지니고 공간에 들어옵니다. 우리는 그 사람을 사상체질로 읽습니다.</p>
+      <p>1894년 이제마의 『동의수세보원』에서 시작된 한국 고유의 사상의학으로 체질과 감각을 읽고, 오행의 상생·상극을 상징 언어로 삼아 공간을 처방합니다. 실내 인테리어는 사람을 조화로운 상태, <b>음양화평지인(陰陽和平之人)</b>으로 이끄는 도구가 됩니다.</p>
+      <div class="compare">
+        <div class="h">전통 생활풍수의 주된 관점</div><div class="h">사상체질 생활풍수</div>
+        <div><b>중심</b>장소의 배치·주변 환경·음양오행</div><div><b>중심</b>공간에 사는 사람의 체질과 생활</div>
+        <div><b>사람을 읽는 법</b>팔택법 등은 생년·성별로 개인 방위를 본다</div><div><b>사람을 읽는 법</b>사상체질 — 장부 대소·기질·감각 선호</div>
+        <div><b>평가</b>유파별 해석 기준</div><div><b>평가</b>거주자가 느끼는 편안함·선호·사용성</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="principle">
+  <div class="wrap">
+    <span class="small-cap">02 · Principle</span>
+    <h2 class="big">강점은 살리고<br>약점은 보완한다</h2>
+    <div class="cycle" aria-label="체질과 오행 대응" style="grid-template-columns:repeat(4,1fr)">
+      <div class="el" style="background:var(--wood)"><div><span>木</span><small>태음인 · 간</small></div></div>
+      <div class="el" style="background:var(--earth)"><div><span>土</span><small>소양인 · 비</small></div></div>
+      <div class="el" style="background:var(--metal);color:var(--ink)"><div><span>金</span><small>태양인 · 폐</small></div></div>
+      <div class="el" style="background:var(--water)"><div><span>水</span><small>소음인 · 신</small></div></div>
+    </div>
+    <p class="legend">체질의 오행은 그 체질의 큰 장부(간·비·폐·신)의 오행입니다. 태음인은 간대폐소, 소양인은 비대신소, 소음인은 신대비소, 태양인은 폐대간소. 사상체질은 네 장부로 사람을 나누므로 火(심)는 다루지 않습니다.<br>상생 木→火→土→金→水 · 상극 木→土→水→火→金 · 체질-오행 대응은 원전(사상 체계)의 정설이 아니라 사상체질을 공간에 옮기기 위한 임동구 박사의 해석 모델입니다.</p>
+    <div class="rules">
+      <div><i>1</i><b>강한 곳은 사(瀉)한다</b><p>큰 장부의 기운은 이미 지니고 들어옵니다. 공간에서까지 쌓으면 넘치니 덜어냅니다.</p></div>
+      <div><i>2</i><b>약한 곳은 보(補)한다</b><p>작은 장부의 기운을 소재·색·향으로 채워 균형을 잡습니다.</p></div>
+      <div><i>3</i><b>강점은 살린다</b><p>본기를 생해 주는 기운을 더해, 강점이 넘치지 않으면서 잘 발휘되게 합니다.</p></div>
+      <div><i>4</i><b>보완은 과하지 않게</b><p>보하는 기운이 본기를 누르는 관계라면 은은하게. 약점을 채우다 강점을 꺾지 않습니다.</p></div>
+    </div>
+    <p class="legend" style="margin-top:28px">오행은 색·형태·소재의 상징 언어입니다. 실제 재료를 금지하는 규칙이 아니며, 구조·화재·환기·접근성 기준을 먼저 지킵니다. 처방은 출발점이고 최종 판단은 거주자의 편안함입니다.</p>
+  </div>
+</section>
+
+<section id="rooms">
+  <div class="wrap">
+    <span class="small-cap">03 · Four Rooms</span>
+    <h2 class="big">네 가지 체질,<br>네 가지 공간의 표정</h2>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="room" id="room" aria-live="polite">
+      <img id="r-img" alt="">
+      <div>
+        <h3 id="r-name"></h3><p class="sub" id="r-sub"></p>
+        <dl class="rx">
+          <dt>사 · 덜기</dt><dd id="r-cut"></dd>
+          <dt>보 · 채우기</dt><dd id="r-add"></dd>
+          <dt>살리기</dt><dd id="r-live"></dd>
+          <dt>향</dt><dd id="r-oil"></dd>
+          <dt>생활</dt><dd id="r-life"></dd>
+        </dl>
+        <span class="chip"><i id="r-dot"></i><span id="r-color"></span></span>
+      </div>
+    </div>
+    <p class="note">포인트 컬러는 임동구 박사의 2021 체질 원고가 제시한 체질 기준 컬러(PANTONE)입니다. 소양인·태양인은 약한 장부를 직접 보완하는 색, 태음인·소음인은 약한 장부를 생해 주는 색과 겹칩니다(진흥원 관찰, 박사님 확인 전).</p>
+  </div>
+</section>
+
+<section id="method" style="background:var(--paper)">
+  <div class="wrap">
+    <span class="small-cap">04 · Method</span>
+    <h2 class="big">실행 5단계</h2>
+    <ol class="steps">
+      <li><b>체질 진단</b><p>사상체질 설문(KS-15 등)과 전문가 상담, 빛·소리·촉감 선호를 함께 묻습니다.</p></li>
+      <li><b>공간 오행 진단</b><p>방마다 소재·컬러·형태·조명·향을 오행으로 분류해 비율을 기록합니다.</p></li>
+      <li><b>처방 설계</b><p>사·보·살리기를 정하고 포인트 컬러와 향을 고릅니다.</p></li>
+      <li><b>스타일링</b><p>작은 면(소품·향·그림)부터 바꾸고 큰 면(바닥·벽·가구)으로 넓힙니다.</p></li>
+      <li><b>생활 점검</b><p>2주·4주 뒤 수면·피로·집중·정서를 기록하고 조정합니다.</p></li>
+    </ol>
+    <p class="note">가족이 함께 산다면 거실·주방은 네 오행을 고르게 두고 다수 체질 쪽으로 조금 기울이며, 침실·서재는 방 주인의 체질 처방을 따릅니다.</p>
+  </div>
+</section>
+
+<section id="objects">
+  <div class="wrap">
+    <div class="mat">
+      <img src="img/materials.webp" alt="원목, 트래버틴, 황동, 유리, 테라코타, 리넨, 아로마 오일 샘플" loading="lazy">
+      <div><span class="small-cap">05 · Interior &amp; Objects</span><h2 class="big">오행<br>디자인 사전</h2>
+      <p class="lead">처방은 결국 물건으로 옮겨집니다. 네 기운이 어떤 색과 소재, 형태로 나타나는지 정리했습니다. 火(조명·붉은색)는 체질 처방이 아닌 기본 조건으로 둡니다.</p></div>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>오행</th><th>컬러</th><th>소재</th><th>형태</th><th>소품·요소</th><th>빛·질감</th></tr></thead>
+      <tbody>
+        <tr><td>木</td><td>그린, 청록</td><td>원목, 대나무, 라탄, 리넨</td><td>세로로 긴 기둥형, 줄무늬</td><td>키 큰 식물, 목재 선반</td><td>자연광, 매트한 결</td></tr>
+        <tr><td>土</td><td>옐로, 오커, 베이지, 테라코타</td><td>도자, 황토·석회벽, 라임스톤</td><td>낮고 넓은 사각</td><td>도자 화병, 낮은 테이블, 러그</td><td>부드러운 확산광</td></tr>
+        <tr><td>金</td><td>화이트, 그레이, 실버, 골드</td><td>황동, 스틸, 흰 대리석</td><td>원형, 아치</td><td>둥근 거울, 금속 프레임</td><td>반사광, 매끄러운 면</td></tr>
+        <tr><td>水</td><td>블랙, 네이비, 딥블루</td><td>유리, 거울, 하이글로스, 물</td><td>물결, 곡선, 비정형</td><td>수반, 수묵화, 유리 화병</td><td>깊은 톤, 은은한 그림자</td></tr>
+      </tbody></table></div>
+    <h3 style="margin-top:56px;color:var(--organ)">아로마와 디퓨저</h3>
+    <p>체질 기준 오일을 중심에 두고 라벤더·티트리·레몬으로 블렌딩합니다. 합성 방향제와 태우는 향초보다 초음파 디퓨저나 리드 확산을 권하고, 30~60분 켜고 쉬는 간헐 방식으로 씁니다. 영유아·임신부·반려동물이 있는 공간은 오일 종류와 농도를 따로 확인합니다.</p>
+  </div>
+</section>
+
+<section class="band" id="apply">
+  <div class="wrap">
+    <span class="small-cap">06 · Application</span>
+    <h2 class="big">주거에서<br>밀라노까지</h2>
+    <div class="apps" style="background:rgba(239,232,220,.25);border-color:rgba(239,232,220,.25)">
+      <div><b>Residence</b><h4>타운하우스 · 공동주택</h4><p>입주 전 가족 체질 진단 → 세대별 공간 처방서. 침실은 주인 체질로, 거실은 가족 조화형으로.</p></div>
+      <div><b>Exhibition</b><h4>밀라노 디자인위크 2027</h4><p>가칭 WHO AM I SPACE(기획 중) — 체질을 찾고, 공간을 조절해 보고, 처방 카드를 받아 가는 참여형 한국관.</p></div>
+      <div><b>Hospitality</b><h4>스파·카페·호텔</h4><p>체질 스파와 체질 카페, 객실과 기업 휴게 공간으로 이어지는 공간 처방 표준.</p></div>
+    </div>
+    <a class="cta" href="guide.html">설명서 읽기</a> <a class="cta" href="guidebook.pdf" download>가이드북 PDF 받기</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div><span class="small-cap">07 · References</span><h2 class="big" style="font-size:clamp(26px,3.4vw,40px)">근거 자료</h2></div>
+    <ol class="refs">
+      <li>이제마, 『동의수세보원』(1894) — 사상의학의 장부 대소론</li>
+      <li>임동구, 「체질원고정리」(2021, 체질라이프큐레이션) — 체질 기준 아로마·기준 컬러</li>
+      <li>유정근, 「체질 아로마테라피」 원고(2021) — 체질별 대표 오일과 블렌딩 원칙</li>
+      <li>임동구 체질책 2-13 「체질에 맞는 생활풍수」</li>
+      <li>체질유형별 조화·부조화 컬러 연구(석사학위논문)</li>
+      <li>임동구 박사 대담, 2026-10-20 · 2026-10-24</li>
+    </ol>
+  </div>
+  <div class="wrap"><p class="note">이 사이트는 사상체질 라이프스타일과 공간 디자인을 잇는 생활 제안입니다. 체질별 공간 처방은 디자인 해석이며 임상적으로 검증된 처방이 아닙니다. 공간의 가치는 편안함·선호·사용성으로 확인하고, 질병의 진단과 치료를 대신하지 않습니다. 방법론 명칭은 가칭입니다.</p></div>
+</section>
+
+<footer><div class="wrap">© 2026 한국체질라이프진흥원 · 원안 임동구 박사(Dr.Yim's 체질라이프스타일 연구소)</div></footer>
+
+<script>
+const ROOMS=[
+ {k:'taeeum',t:'태음인 · 木',n:'Water Room',s:'흐르는 물 곁의 큰 나무',cut:'木 — 진한 나뭇결·수직 루버 반복을 줄이고 면을 단순하게',add:'金(은은하게) — 약한 폐를 보완: 무광 금속 디테일, 흰 리넨, 둥근 소품. 반짝이는 금속은 피합니다',live:'水 — 남색·청회색 포인트, 유연한 곡선, 수면 같은 약한 빛, 유리 화병',oil:'페퍼민트 + 라벤더',life:'쌓아 두는 성향이 있어 닫힌 수납으로 비우는 리듬을 만듭니다',c:'#F2D86A',cn:'Primrose Yellow · PANTONE 13-0755'},
+ {k:'soyang',t:'소양인 · 土',n:'Breeze Room',s:'바람 드는 물가의 마당',cut:'土 — 황토벽·테라코타·두꺼운 러그·묵직한 도기를 줄입니다',add:'水(충분히) — 약한 신을 보완: 연청 유리, 반투명 파티션, 청회색 리넨, 물을 담은 유리 화병',live:'火生土이지만 火는 다루지 않습니다. 막힘없는 동선과 열린 창으로 기질이 움직이기 좋게',oil:'그레이프프루트 + 레몬',life:'열이 오르기 쉬워 침실은 서늘하고 환기가 잘 되게',c:'#26619C',cn:'Lapis Blue · PANTONE 19-4045'},
+ {k:'soeum',t:'소음인 · 水',n:'Gold Room',s:'따뜻한 금빛 서재',cut:'水 — 유리·거울·검정 면적을 줄이고 수반은 두지 않습니다',add:'土(은은하게) — 약한 비를 보완: 손에 닿는 도자 소품, 베이지 패브릭. 무거운 흙벽은 피합니다',live:'金 — 황동 조명, 둥근 거울, 원형 테이블, 흰 대리석 트레이',oil:'로즈마리 · 일랑일랑',life:'몸이 차기 쉬워 바닥 온기와 겹겹의 울 담요, 아늑한 구석을 둡니다',c:'#E25A2E',cn:'Flame · PANTONE 17-1462'},
+ {k:'taeyang',t:'태양인 · 金',n:'Earth Room',s:'숲을 품은 흙의 언덕',cut:'金 — 금속 가구, 유광 흰 면, 원형 반복을 줄입니다',add:'木(충분히) — 약한 간을 보완: 원목 가구, 리넨, 식물, 세로로 긴 형태',live:'土 — 라임스톤·석회 미장, 낮은 도자 테이블, 샌드 베이지·카키',oil:'파인 · 티트리',life:'쉬지 못하는 추진형이라 시선을 낮추는 좌식 휴식 자리를 둡니다',c:'#88B04B',cn:'Greenery · PANTONE 15-0343'}];
+const tabs=document.getElementById('tabs'),$=id=>document.getElementById(id);
+function show(i){const r=ROOMS[i];
+ [...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+ $('r-img').src='img/'+r.k+'.webp';$('r-img').alt=r.t+' 체질 처방 거실';
+ $('r-name').textContent=r.n;$('r-sub').textContent=r.t+' — '+r.s;
+ $('r-add').textContent=r.add;$('r-cut').textContent=r.cut;$('r-live').textContent=r.live;
+ $('r-oil').textContent=r.oil;$('r-life').textContent=r.life;
+ $('r-dot').style.background=r.c;$('r-color').textContent='포인트 컬러 '+r.cn;}
+ROOMS.forEach((r,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=r.t;b.onclick=()=>show(i);tabs.appendChild(b);});
+show(0);
+const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>window.innerHeight*.6),{passive:true});
+</script>
+<!-- sz-tri:start --><style>.sz-tri{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;gap:2px;align-items:center;padding:5px;background:rgba(30,22,18,.9);backdrop-filter:blur(8px);border-radius:999px;font:600 13px/1 'Noto Sans KR',Pretendard,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28)}.sz-tri span{color:#cbb9a8;padding:0 8px 0 10px;font-size:11px;letter-spacing:.08em}.sz-tri a{color:#efe8dc;text-decoration:none;padding:9px 13px;border-radius:999px}.sz-tri a:hover{background:rgba(239,232,220,.14)}.sz-tri a[aria-current]{background:#efe8dc;color:#2a1a14}@media print{.sz-tri{display:none}}@media(max-width:420px){.sz-tri span{display:none}.sz-tri a{padding:9px 10px}}</style><nav class="sz-tri" aria-label="사상체질 3관"><span>사상체질 3관</span><a href="../chejilhub/">허브</a><a href="../sasang-life-wellness/">스파-리조트</a><a href="../sasang-feng-shui/" aria-current=page>인테리어</a></nav><!-- sz-tri:end --></body>
+</html>
