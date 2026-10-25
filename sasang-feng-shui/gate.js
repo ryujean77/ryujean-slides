@@ -25,6 +25,15 @@
       m: "[Facoltativo] Desidero ricevere notizie occasionali dall'istituto (al massimo mensili).", s: "Invia la guidebook", ok: "Inviata. Controlla la posta in arrivo (o lo spam).",
       err: "Riprova tra poco.", pre: "Le richieste online apriranno a breve. Scrivici con oggetto 'Richiesta guidebook'.", x: "Chiudi" }
   };
+  // data-guidebook="spa" 버튼은 사상 라이프 소개서를 신청한다 (제목·설명만 바뀌고 나머지 문구는 공통)
+  var DOCS = {
+    spa: {
+      ko: { t: "자료 신청", d: "입력하신 이메일로 사상 라이프스타일 웰니스 소개서(PDF)를 보내드립니다.", s: "신청하기" },
+      en: { t: "Request the brochure", d: "We will email the Sasang Lifestyle Wellness brochure (PDF) to you.", s: "Send me the brochure" },
+      ja: { t: "資料請求", d: "ご入力のメールアドレスに四象ライフスタイル・ウェルネスのご紹介資料(PDF)をお送りします。", s: "申し込む" }
+    }
+  };
+  var doc = "guidebook";
   var lang = document.documentElement.lang || "ko";
   var T = L[lang] || L.en;
   var code = { ko: "ko", en: "en", ja: "ja", "zh-Hans": "zh", it: "it" }[lang] || "en";
@@ -61,7 +70,7 @@
     body = el("form", { novalidate: "" });
     body.appendChild(close);
     body.appendChild(el("h3", { id: "gb-t" }, T.t));
-    body.appendChild(el("p", {}, T.d));
+    body.appendChild(el("p", { id: "gb-d" }, T.d));
     var fName = el("input", { type: "text", name: "name", required: "", autocomplete: "name", maxlength: "60" });
     var fMail = el("input", { type: "email", name: "email", required: "", autocomplete: "email", maxlength: "120" });
     var fOrg = el("input", { type: "text", name: "org", autocomplete: "organization", maxlength: "80" });
@@ -71,7 +80,7 @@
     var lc = el("label", { "class": "gb-c" }); lc.appendChild(fC); lc.appendChild(el("span", {}, T.c)); body.appendChild(lc);
     var lm = el("label", { "class": "gb-c" }); lm.appendChild(fM); lm.appendChild(el("span", {}, T.m)); body.appendChild(lm);
     body.appendChild(fHp);
-    var btn = el("button", { type: "submit" }, T.s), msg = el("p", { "class": "gb-msg", role: "status" });
+    var btn = el("button", { type: "submit", id: "gb-s" }, T.s), msg = el("p", { "class": "gb-msg", role: "status" });
     body.appendChild(btn); body.appendChild(msg);
     body.addEventListener("submit", function (ev) {
       ev.preventDefault();
@@ -80,7 +89,7 @@
       fetch(GAS_URL, {
         method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({ name: fName.value.trim(), email: fMail.value.trim(), org: fOrg.value.trim(), website: fHp.value,
-          consent: fC.checked, newsletter: fM.checked, lang: code, page: location.pathname })
+          consent: fC.checked, newsletter: fM.checked, lang: code, doc: doc, page: location.pathname })
       }).then(function (r) { return r.json(); }).then(function (j) {
         msg.textContent = j && j.ok ? T.ok : T.err; if (!(j && j.ok)) btn.disabled = false;
       }).catch(function () { msg.textContent = T.err; btn.disabled = false; });
@@ -90,7 +99,12 @@
   document.body.appendChild(dlg);
   document.addEventListener("click", function (e) {
     var t = e.target.closest && e.target.closest("[data-guidebook]");
-    if (t) { e.preventDefault(); dlg.showModal(); }
+    if (!t) return;
+    e.preventDefault();
+    doc = DOCS[t.getAttribute("data-guidebook")] ? t.getAttribute("data-guidebook") : "guidebook";
+    var D = doc === "guidebook" ? T : ((DOCS[doc] || {})[code] || DOCS[doc].en);
+    [["gb-t", D.t], ["gb-d", D.d], ["gb-s", D.s]].forEach(function (x) { var n = document.getElementById(x[0]); if (n) n.textContent = x[1]; });
+    dlg.showModal();
   });
   // 이미지 우클릭·끌어 저장 막기 (텍스트 복사는 막지 않는다)
   var noSave = document.createElement("style");
