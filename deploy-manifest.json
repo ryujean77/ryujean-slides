@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-25T03:39:03.686Z",
-  "commit": "648b848ee1a49f9b468e4f61db9f1c04fced3034",
+  "generatedAt": "2026-10-25T03:56:36.545Z",
+  "commit": "1ff75d00be02fecf33689b4792411bb11f395cf5",
   "fileCount": 2536,
   "files": [
     {
@@ -9789,7 +9789,7 @@
     },
     {
       "path": "sasang-life/en/index.html",
-      "size": 56579
+      "size": 55891
     },
     {
       "path": "sasang-life/gate.js",
@@ -9797,11 +9797,11 @@
     },
     {
       "path": "sasang-life/index.html",
-      "size": 55710
+      "size": 55263
     },
     {
       "path": "sasang-life/ja/index.html",
-      "size": 58293
+      "size": 57657
     },
     {
       "path": "sasang-life/media/fonts/Cormorant-italic.woff2",
