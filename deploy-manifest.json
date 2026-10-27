@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-25T03:56:36.545Z",
-  "commit": "1ff75d00be02fecf33689b4792411bb11f395cf5",
-  "fileCount": 2536,
+  "generatedAt": "2026-10-27T14:56:57.583Z",
+  "commit": "8d561415797b088baecc6b084457594861fa9193",
+  "fileCount": 2545,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -29,7 +29,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 6540
+      "size": 7205
     },
     {
       "path": "academy/certificate.html",
@@ -306,6 +306,42 @@
     {
       "path": "academy/courses/myway/units/20-lab-finish.md",
       "size": 10649
+    },
+    {
+      "path": "academy/courses/teacher-ai/course.json",
+      "size": 3253
+    },
+    {
+      "path": "academy/courses/teacher-ai/units/01-why-app.md",
+      "size": 11475
+    },
+    {
+      "path": "academy/courses/teacher-ai/units/02-first-webapp.md",
+      "size": 25594
+    },
+    {
+      "path": "academy/courses/teacher-ai/units/03-add-ai.md",
+      "size": 23088
+    },
+    {
+      "path": "academy/courses/teacher-ai/units/04-next-apps.md",
+      "size": 16525
+    },
+    {
+      "path": "academy/courses/teacher-ai/units/05-data-management.md",
+      "size": 11709
+    },
+    {
+      "path": "academy/courses/teacher-ai/units/06-chatbot-to-agent.md",
+      "size": 12818
+    },
+    {
+      "path": "academy/courses/teacher-ai/units/07-single-agent.md",
+      "size": 12329
+    },
+    {
+      "path": "academy/courses/teacher-ai/units/08-direction.md",
+      "size": 11600
     },
     {
       "path": "academy/courses/vibe-system/course.json",
