@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-27T14:56:57.583Z",
-  "commit": "8d561415797b088baecc6b084457594861fa9193",
+  "generatedAt": "2026-10-29T21:59:43.945Z",
+  "commit": "470be5eb497ef044bbc6b01a80ae6ff89413bcea",
   "fileCount": 2545,
   "files": [
     {
@@ -309,7 +309,7 @@
     },
     {
       "path": "academy/courses/teacher-ai/course.json",
-      "size": 3253
+      "size": 3269
     },
     {
       "path": "academy/courses/teacher-ai/units/01-why-app.md",
@@ -333,15 +333,15 @@
     },
     {
       "path": "academy/courses/teacher-ai/units/06-chatbot-to-agent.md",
-      "size": 12818
+      "size": 14341
     },
     {
       "path": "academy/courses/teacher-ai/units/07-single-agent.md",
-      "size": 12329
+      "size": 14955
     },
     {
       "path": "academy/courses/teacher-ai/units/08-direction.md",
-      "size": 11600
+      "size": 11627
     },
     {
       "path": "academy/courses/vibe-system/course.json",
@@ -1457,7 +1457,7 @@
     },
     {
       "path": "chejilhub/index.html",
-      "size": 24738
+      "size": 25012
     },
     {
       "path": "chejilhub/items/gm-00071.html",
