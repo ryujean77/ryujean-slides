@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-30T03:54:35.786Z",
-  "commit": "7f7962507c28a7039e59eea7edb815bc9fba898d",
+  "generatedAt": "2026-10-30T04:06:54.450Z",
+  "commit": "72d202a2ce7a4be4b4f17196d60f692879f5d321",
   "fileCount": 2545,
   "files": [
     {
@@ -313,7 +313,7 @@
     },
     {
       "path": "academy/courses/teacher-ai/units/01-why-app.md",
-      "size": 11475
+      "size": 11478
     },
     {
       "path": "academy/courses/teacher-ai/units/02-first-webapp.md",
@@ -341,7 +341,7 @@
     },
     {
       "path": "academy/courses/teacher-ai/units/08-direction.md",
-      "size": 11627
+      "size": 11630
     },
     {
       "path": "academy/courses/vibe-system/course.json",
