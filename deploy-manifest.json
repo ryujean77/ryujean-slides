@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-29T21:59:43.945Z",
-  "commit": "470be5eb497ef044bbc6b01a80ae6ff89413bcea",
+  "generatedAt": "2026-10-30T03:54:35.786Z",
+  "commit": "7f7962507c28a7039e59eea7edb815bc9fba898d",
   "fileCount": 2545,
   "files": [
     {
@@ -337,7 +337,7 @@
     },
     {
       "path": "academy/courses/teacher-ai/units/07-single-agent.md",
-      "size": 14955
+      "size": 15080
     },
     {
       "path": "academy/courses/teacher-ai/units/08-direction.md",
