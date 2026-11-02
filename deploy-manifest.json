@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-02T16:49:09.006Z",
-  "commit": "b94e346ade0ef63e0aeb5fbbec6c9ea72c709c34",
-  "fileCount": 2547,
+  "generatedAt": "2026-11-02T19:17:26.743Z",
+  "commit": "887464d8998161cbc5a72e5db8a753a531ab4a49",
+  "fileCount": 2549,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -1069,11 +1069,15 @@
     },
     {
       "path": "ax-class/index.html",
-      "size": 10710
+      "size": 10548
     },
     {
       "path": "ax-class/og.png",
       "size": 52341
+    },
+    {
+      "path": "ax-class/og2.png",
+      "size": 52994
     },
     {
       "path": "birkman-sasang-a/index.html",
@@ -10010,6 +10014,10 @@
     {
       "path": "sasang-spa/사상체질_프리미엄_스파_프로젝트_제안서_발표자료.pptx",
       "size": 62260
+    },
+    {
+      "path": "sns-studio/index.html",
+      "size": 18303
     },
     {
       "path": "thesis-portal/index.html",
