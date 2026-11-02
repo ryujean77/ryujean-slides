@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNS 스튜디오 — 나만의 콘텐츠 제작·홍보 관리</title>
+<meta name="description" content="한 가지 메시지로 인스타·카톡·블로그·쇼츠 문구를 만들고, 발행 일정과 성과를 한 화면에서 관리합니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{--ink:#16202e;--paper:#f6f1e8;--line:#d9cfbf;--coral:#d9573b;--muted:#6b6457;--card:#fffdf8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Pretendard,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;word-break:keep-all}
+header{background:var(--ink);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+header h1{font-size:19px;letter-spacing:.02em}
+header h1 span{color:#f2a893}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav button{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:999px;padding:7px 15px;font:inherit;font-size:14px;cursor:pointer}
+nav button.on{background:#fff;color:var(--ink)}
+main{max-width:1080px;margin:0 auto;padding:28px 20px 64px}
+.tab{display:none}.tab.on{display:block}
+h2{font-size:22px;margin-bottom:6px}
+.hint{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:28px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.stat b{display:block;font-size:30px;color:var(--coral)}
+.stat small{color:var(--muted)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:20px}
+label{display:block;font-size:13.5px;font-weight:700;margin:12px 0 5px}
+input,select,textarea{width:100%;font:inherit;font-size:15px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+textarea{min-height:84px;resize:vertical}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.btn{font:inherit;font-weight:700;font-size:14.5px;border:0;border-radius:999px;padding:10px 18px;cursor:pointer;background:var(--ink);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.coral{background:var(--coral)}
+.btn.sm{padding:5px 12px;font-size:13px}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-size:12.5px;color:var(--muted);font-weight:700}
+.ch{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:#efe6d6;white-space:nowrap}
+.st{font-size:13px;padding:4px 6px;width:auto}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:18px}
+.out .panel{margin:0}
+.out h3{font-size:15px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.out pre{white-space:pre-wrap;font-family:inherit;font-size:14.5px;background:var(--paper);border-radius:8px;padding:12px;min-height:120px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:10px;min-height:120px;padding:8px;font-size:13px}
+.day.today{border-color:var(--coral);border-width:2px}
+.day b{display:block;font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.day div{background:#efe6d6;border-radius:6px;padding:4px 6px;margin-bottom:4px}
+.day div.done{background:#d8e6d3;text-decoration:line-through}
+.empty{color:var(--muted);text-align:center;padding:30px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.2s;pointer-events:none}
+.toast.on{opacity:1}
+@media(max-width:700px){.week{grid-template-columns:1fr}.day{min-height:auto}td:nth-child(5),th:nth-child(5){display:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>SNS <span>STUDIO</span></h1>
+  <nav id="nav">
+    <button data-t="home" class="on">대시보드</button>
+    <button data-t="make">문구 만들기</button>
+    <button data-t="plan">발행 일정</button>
+    <button data-t="perf">성과 기록</button>
+    <button data-t="data">백업</button>
+  </nav>
+</header>
+
+<main>
+  <!-- 대시보드 -->
+  <section class="tab on" id="home">
+    <h2>이번 주 홍보 현황</h2>
+    <p class="hint">한 가지 메시지를 여러 채널로 나눠 내보내고, 무엇이 반응을 얻었는지 기록합니다.</p>
+    <div class="stats" id="stats"></div>
+    <div class="week" id="week"></div>
+  </section>
+
+  <!-- 문구 만들기 -->
+  <section class="tab" id="make">
+    <h2>한 메시지 → 채널별 문구</h2>
+    <p class="hint">핵심 메시지 하나를 넣으면 인스타·카톡·블로그·쇼츠 초안이 나옵니다. 다듬기는 AI 에이전트에게 맡기세요.</p>
+    <div class="panel">
+      <div class="row">
+        <div><label for="fTitle">주제 (콘텐츠 제목)</label><input id="fTitle" placeholder="예: 강사 홈페이지, 직접 고치면 달라지는 것"></div>
+        <div><label for="fWho">누구에게</label><input id="fWho" placeholder="예: 강의는 잘하는데 홍보가 어려운 강사님"></div>
+      </div>
+      <label for="fMsg">핵심 메시지 (한두 문장)</label>
+      <textarea id="fMsg" placeholder="예: 외주로 맡기면 고칠 때마다 비용이 듭니다. 이미 쓰는 AI 구독 하나로 직접 만들고 직접 고칠 수 있습니다."></textarea>
+      <div class="row">
+        <div><label for="fPoints">근거·포인트 (줄마다 하나)</label><textarea id="fPoints" placeholder="코딩 몰라도 됩니다&#10;서버 비용 0원&#10;4주 뒤 사이트 3개"></textarea></div>
+        <div><label for="fCta">행동 유도 + 링크</label><input id="fCta" placeholder="무료 특강 신청"><label for="fLink">링크</label><input id="fLink" placeholder="https://..."><label for="fTags">해시태그 (띄어쓰기로)</label><input id="fTags" placeholder="AI강의 강사브랜딩 클로드코드"></div>
+      </div>
+      <div class="btns">
+        <button class="btn coral" id="gen">채널별 문구 만들기</button>
+        <button class="btn ghost" id="promptBtn">AI에게 다듬기 요청문 복사</button>
+      </div>
+    </div>
+    <div class="out" id="out"></div>
+  </section>
+
+  <!-- 발행 일정 -->
+  <section class="tab" id="plan">
+    <h2>발행 일정</h2>
+    <p class="hint">채널마다 언제 무엇을 올릴지 적고, 진행 상태를 바꿔 가며 관리합니다.</p>
+    <div class="panel">
+      <div class="row">
+        <div><label for="pTitle">콘텐츠</label><input id="pTitle" placeholder="예: 카드뉴스 — 홈페이지 고치는 세 마디"></div>
+        <div><label for="pCh">채널</label><select id="pCh"></select></div>
+        <div><label for="pDate">발행일</label><input id="pDate" type="date"></div>
+      </div>
+      <div class="btns"><button class="btn" id="addPost">일정 추가</button></div>
+    </div>
+    <div class="panel"><table><thead><tr><th>발행일</th><th>채널</th><th>콘텐츠</th><th>상태</th><th>링크</th><th></th></tr></thead><tbody id="list"></tbody></table></div>
+  </section>
+
+  <!-- 성과 기록 -->
+  <section class="tab" id="perf">
+    <h2>성과 기록</h2>
+    <p class="hint">발행한 콘텐츠의 숫자를 적어 두면, 어떤 주제·채널이 신청으로 이어지는지 보입니다.</p>
+    <div class="panel"><table><thead><tr><th>콘텐츠</th><th>채널</th><th>조회</th><th>반응</th><th>신청·문의</th></tr></thead><tbody id="perfList"></tbody></table></div>
+    <div class="stats" id="chStats"></div>
+  </section>
+
+  <!-- 백업 -->
+  <section class="tab" id="data">
+    <h2>백업과 옮기기</h2>
+    <p class="hint">기록은 이 브라우저에만 저장됩니다. 다른 컴퓨터로 옮기거나 지우기 전에 파일로 내려받아 두세요.</p>
+    <div class="panel">
+      <div class="btns">
+        <button class="btn" id="exp">파일로 내려받기</button>
+        <label class="btn ghost" style="margin:0">파일에서 불러오기<input type="file" id="imp" accept="application/json" hidden></label>
+        <button class="btn ghost" id="reset">예시 데이터로 초기화</button>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+// 모든 사용자 입력은 textContent 로만 화면에 넣는다 (innerHTML 금지)
+const KEY = 'sns-studio-v1';
+const CH = ['인스타 카드뉴스', '인스타 릴스', '카톡 단톡방', '카톡 채널', '블로그', '유튜브 쇼츠'];
+const ST = ['아이디어', '제작 중', '승인 대기', '발행 완료'];
+const $ = id => document.getElementById(id);
+const el = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
+const ymd = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; // 로컬 날짜 (toISOString 은 UTC라 한국 새벽에 하루 밀림)
+const addDays = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return ymd(d); };
+
+function sample() {
+  return { posts: [
+    { id: 1, title: '강사의 가게 세 칸', ch: '인스타 카드뉴스', date: addDays(-2), st: '발행 완료', link: '', views: 820, likes: 64, leads: 5 },
+    { id: 2, title: '무료 특강 첫 안내', ch: '카톡 단톡방', date: addDays(-1), st: '발행 완료', link: '', views: 140, likes: 12, leads: 9 },
+    { id: 3, title: '이력 한 장이 홈페이지가 되기까지', ch: '유튜브 쇼츠', date: addDays(1), st: '제작 중', link: '', views: 0, likes: 0, leads: 0 },
+    { id: 4, title: '외주 대신 직접 고치는 이유', ch: '블로그', date: addDays(3), st: '아이디어', link: '', views: 0, likes: 0, leads: 0 },
+    { id: 5, title: '특강 D-1 안내', ch: '카톡 채널', date: addDays(5), st: '승인 대기', link: '', views: 0, likes: 0, leads: 0 },
+  ] };
+}
+let db;
+try { db = JSON.parse(localStorage.getItem(KEY)) || sample(); } catch { db = sample(); }
+const save = () => { localStorage.setItem(KEY, JSON.stringify(db)); render(); };
+const toast = m => { const t = $('toast'); t.textContent = m; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 1600); };
+const copy = (s, m) => navigator.clipboard.writeText(s).then(() => toast(m || '복사했습니다'), () => toast('복사 권한이 없어 직접 선택해 주세요'));
+
+// 탭
+$('nav').addEventListener('click', e => {
+  const t = e.target.dataset.t; if (!t) return;
+  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.t === t));
+  document.querySelectorAll('.tab').forEach(s => s.classList.toggle('on', s.id === t));
+});
+
+// 대시보드
+function renderHome() {
+  const p = db.posts, s = $('stats'); s.replaceChildren();
+  const today = ymd(new Date()), weekEnd = addDays(6);
+  [['이번 주 예정', p.filter(x => x.date >= today && x.date <= weekEnd && x.st !== '발행 완료').length],
+   ['승인 대기', p.filter(x => x.st === '승인 대기').length],
+   ['발행 완료', p.filter(x => x.st === '발행 완료').length],
+   ['누적 신청·문의', p.reduce((a, x) => a + (+x.leads || 0), 0)]]
+    .forEach(([k, v]) => { const d = el('div', null, 'stat'); d.append(el('b', String(v)), el('small', k)); s.append(d); });
+  const w = $('week'); w.replaceChildren();
+  for (let i = 0; i < 7; i++) {
+    const day = addDays(i), d = el('div', null, 'day' + (i === 0 ? ' today' : ''));
+    const dt = new Date(day + 'T00:00');
+    d.append(el('b', `${dt.getMonth() + 1}/${dt.getDate()} ${'일월화수목금토'[dt.getDay()]}`));
+    p.filter(x => x.date === day).forEach(x => d.append(el('div', `${x.ch} · ${x.title}`, x.st === '발행 완료' ? 'done' : '')));
+    w.append(d);
+  }
+}
+
+// 발행 일정
+function renderPlan() {
+  const tb = $('list'); tb.replaceChildren();
+  const rows = [...db.posts].sort((a, b) => a.date.localeCompare(b.date));
+  if (!rows.length) { const tr = el('tr'); const td = el('td', '아직 일정이 없습니다', 'empty'); td.colSpan = 6; tr.append(td); tb.append(tr); return; }
+  rows.forEach(x => {
+    const tr = el('tr');
+    const sel = el('select', null, 'st'); ST.forEach(s => { const o = el('option', s); o.value = s; sel.append(o); }); sel.value = x.st;
+    sel.onchange = () => { x.st = sel.value; save(); };
+    const link = el('input'); link.value = x.link || ''; link.placeholder = '발행 주소'; link.className = 'st';
+    link.onchange = () => { x.link = link.value.trim(); save(); };
+    const del = el('button', '삭제', 'btn ghost sm'); del.onclick = () => { db.posts = db.posts.filter(y => y !== x); save(); };
+    const tds = [el('td', x.date), el('td'), el('td', x.title), el('td'), el('td'), el('td')];
+    tds[1].append(el('span', x.ch, 'ch')); tds[3].append(sel); tds[4].append(link); tds[5].append(del);
+    tr.append(...tds); tb.append(tr);
+  });
+}
+CH.forEach(c => { const o = el('option', c); o.value = c; $('pCh').append(o); });
+$('pDate').value = addDays(1);
+$('addPost').onclick = () => {
+  const title = $('pTitle').value.trim(); if (!title) return toast('콘텐츠 이름을 적어 주세요');
+  db.posts.push({ id: Date.now(), title, ch: $('pCh').value, date: $('pDate').value || addDays(0), st: '아이디어', link: '', views: 0, likes: 0, leads: 0 });
+  $('pTitle').value = ''; save(); toast('일정에 추가했습니다');
+};
+
+// 성과
+function renderPerf() {
+  const tb = $('perfList'); tb.replaceChildren();
+  const done = db.posts.filter(x => x.st === '발행 완료');
+  if (!done.length) { const tr = el('tr'); const td = el('td', '발행 완료된 콘텐츠가 생기면 여기에 숫자를 적습니다', 'empty'); td.colSpan = 5; tr.append(td); tb.append(tr); }
+  done.forEach(x => {
+    const tr = el('tr'); const tds = [el('td', x.title), el('td'), el('td'), el('td'), el('td')];
+    tds[1].append(el('span', x.ch, 'ch'));
+    ['views', 'likes', 'leads'].forEach((k, i) => {
+      const n = el('input', null, 'st'); n.type = 'number'; n.min = 0; n.value = x[k] || 0; n.style.width = '90px';
+      n.onchange = () => { x[k] = Math.max(0, +n.value || 0); save(); }; tds[i + 2].append(n);
+    });
+    tr.append(...tds); tb.append(tr);
+  });
+  const s = $('chStats'); s.replaceChildren();
+  CH.forEach(c => {
+    const xs = done.filter(x => x.ch === c); if (!xs.length) return;
+    const leads = xs.reduce((a, x) => a + (+x.leads || 0), 0);
+    const d = el('div', null, 'stat'); d.append(el('b', String(leads)), el('small', `${c} 신청·문의 (${xs.length}건)`)); s.append(d);
+  });
+}
+
+// 문구 만들기
+function fields() {
+  const v = id => $(id).value.trim();
+  return { title: v('fTitle'), who: v('fWho'), msg: v('fMsg'), points: v('fPoints').split('\n').map(s => s.trim()).filter(Boolean),
+           cta: v('fCta') || '자세히 보기', link: v('fLink'), tags: v('fTags').split(/\s+/).filter(Boolean).map(t => '#' + t.replace(/^#/, '')) };
+}
+function drafts(f) {
+  const pts = f.points.map(p => '✔ ' + p).join('\n'), link = f.link ? '\n' + f.link : '';
+  return [
+    ['인스타 캡션', `${f.title}\n\n${f.who ? f.who + '께 드리는 이야기입니다.\n\n' : ''}${f.msg}\n\n${pts}\n\n👉 ${f.cta}은(는) 프로필 링크에서\n\n${f.tags.join(' ')}`],
+    ['카톡 단톡방', `[${f.title}]\n\n${f.msg}\n\n${pts}\n\n${f.cta} 👉${link}`],
+    ['카톡 1:1 (지인)', `안녕하세요, 잘 지내시죠?\n\n요즘 제가 준비한 게 있어 먼저 연락드려요.\n${f.msg}\n\n부담 없이 한번 보시면 좋겠습니다.${link}`],
+    ['블로그 도입부', `${f.who ? f.who + '이라면 한 번쯤 이런 고민을 해 보셨을 겁니다.\n\n' : ''}${f.msg}\n\n오늘 글에서는 다음 ${f.points.length || '몇'}가지를 이야기합니다.\n${f.points.map((p, i) => `${i + 1}. ${p}`).join('\n')}\n\n(본문)\n\n${f.cta}${link}`],
+    ['쇼츠 대본 (30초)', `[0~3초 훅] ${f.title}?\n[3~20초] ${f.msg}\n${f.points.map(p => '— ' + p).join('\n')}\n[20~30초] ${f.cta}, 링크는 설명란에.`],
+  ];
+}
+$('gen').onclick = () => {
+  const f = fields(); if (!f.msg) return toast('핵심 메시지를 적어 주세요');
+  const out = $('out'); out.replaceChildren();
+  drafts(f).forEach(([name, text]) => {
+    const p = el('div', null, 'panel'), h = el('h3', name), b = el('button', '복사', 'btn ghost sm');
+    b.onclick = () => copy(text, name + ' 복사');
+    h.append(b); p.append(h, el('pre', text)); out.append(p);
+  });
+};
+$('promptBtn').onclick = () => {
+  const f = fields(); if (!f.msg) return toast('핵심 메시지를 적어 주세요');
+  copy(`다음 메시지로 SNS 홍보 문구를 채널별로 써 줘.\n\n- 주제: ${f.title}\n- 대상: ${f.who}\n- 핵심 메시지: ${f.msg}\n- 근거: ${f.points.join(' / ')}\n- 행동 유도: ${f.cta} ${f.link}\n- 해시태그: ${f.tags.join(' ')}\n\n채널: 인스타 캡션(1,000자 안팎), 카톡 단톡방(짧게), 카톡 1:1(지인에게 말하듯), 블로그 도입부, 쇼츠 30초 대본.\n과장·결과 약속 없이, 품격 있고 따뜻한 어조로. 채널마다 첫 문장을 다르게.`, 'AI 요청문을 복사했습니다 — 에이전트에게 붙여 넣으세요');
+};
+
+// 백업
+$('exp').onclick = () => {
+  const a = el('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(db, null, 1)], { type: 'application/json' }));
+  a.download = `sns-studio-${ymd(new Date())}.json`; a.click(); URL.revokeObjectURL(a.href);
+};
+$('imp').onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  f.text().then(t => { const d = JSON.parse(t); if (!Array.isArray(d.posts)) throw 0; db = d; save(); toast('불러왔습니다'); })
+   .catch(() => toast('SNS 스튜디오 백업 파일이 아닙니다'));
+};
+$('reset').onclick = () => { if (confirm('지금 기록을 지우고 예시 데이터로 바꿀까요?')) { db = sample(); save(); } };
+
+function render() { renderHome(); renderPlan(); renderPerf(); }
+render();
+</script>
+</body>
+</html>
