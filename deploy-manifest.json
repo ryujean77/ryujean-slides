@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-31T06:18:11.243Z",
-  "commit": "b9e47c81b5ac91a876e83e5f2a50c71fcce0013b",
-  "fileCount": 2545,
+  "generatedAt": "2026-11-02T16:40:25.660Z",
+  "commit": "3cc50576d71c4a27ac76d16ba393e21e5d9bf136",
+  "fileCount": 2547,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -1066,6 +1066,14 @@
     {
       "path": "assets/Gemini_Generated_Image_reciet_2.png",
       "size": 8960831
+    },
+    {
+      "path": "ax-class/index.html",
+      "size": 10412
+    },
+    {
+      "path": "ax-class/og.png",
+      "size": 52341
     },
     {
       "path": "birkman-sasang-a/index.html",
