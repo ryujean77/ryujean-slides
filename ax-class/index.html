@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강사의 가게 세 칸, 직접 짓기 — AX 에이전트 4주 과정</title>
+<meta name="description" content="이미 내고 있는 AI 구독료로 브랜드 홈페이지·클래스 사이트·마케팅 사이트를 직접 만들고 직접 고칩니다. 무료 특강 90분 신청.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="강사의 가게 세 칸, 직접 짓기">
+<meta property="og:description" content="AI 에이전트와 홈페이지·클래스 사이트·마케팅 사이트를 직접. 무료 특강 90분 → 얼리버드 4주 과정">
+<meta property="og:image" content="https://ryujean77.github.io/ryujean-slides/ax-class/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://ryujean77.github.io/ryujean-slides/ax-class/">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16202e;--paper:#f6f1e8;--line:#d9cfbf;--coral:#d9573b;--muted:#6b6457;--card:#fffdf8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Pretendard,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;word-break:keep-all}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Noto Serif KR',serif}
+header{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-size:14px;letter-spacing:.14em;color:var(--coral);font-weight:700}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.25;margin:18px 0 22px;font-weight:800}
+h1 em{font-style:normal;color:var(--coral)}
+.lead{font-size:clamp(17px,2.2vw,20px);color:#333;max-width:640px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-block;padding:16px 26px;border-radius:999px;font-weight:700;text-decoration:none;font-size:17px}
+.btn.main{background:var(--ink);color:#fff}
+.btn.kakao{background:#fee500;color:#191600}
+.btn:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(24px,3.6vw,32px);margin-bottom:28px;line-height:1.35}
+.shops{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.shop b{display:block;font-size:13px;color:var(--coral);letter-spacing:.1em}
+.shop h3{font-size:21px;margin:6px 0 8px}
+.shop p{color:var(--muted);font-size:15.5px}
+.shop a{font-size:14px;color:var(--ink)}
+.weeks{list-style:none}
+.weeks li{display:grid;grid-template-columns:72px 1fr;gap:18px;padding:22px 0;border-top:1px dashed var(--line)}
+.weeks li:first-child{border-top:0}
+.wk{font-weight:800;font-size:15px;color:var(--coral);padding-top:3px}
+.weeks h3{font-size:19px;margin-bottom:4px}
+.weeks p{color:var(--muted);font-size:15.5px}
+.weeks .got{display:inline-block;margin-top:8px;font-size:14px;background:#efe6d6;padding:3px 10px;border-radius:6px;color:var(--ink)}
+.bonus{display:flex;flex-wrap:wrap;gap:10px}
+.bonus span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:15px}
+.price{background:var(--ink);color:#fff;border-radius:18px;padding:40px 32px;text-align:center}
+.price .tag{font-size:14px;letter-spacing:.14em;color:#f2a893}
+.price .num{font-size:clamp(40px,7vw,60px);font-weight:800;margin:10px 0 4px}
+.price p{color:#c9cfd8}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:28px;counter-reset:s}
+.steps div{background:rgba(255,255,255,.07);border-radius:12px;padding:16px;font-size:15px;text-align:left}
+.steps div::before{counter-increment:s;content:counter(s);display:block;font-weight:800;color:#f2a893}
+.need{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.need div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.need h3{font-size:17px;margin-bottom:8px}
+.need ul{padding-left:18px;color:var(--muted);font-size:15.5px}
+.me p{font-size:17px}
+footer{padding:48px 0 64px;text-align:center}
+footer .cta{justify-content:center}
+footer small{display:block;margin-top:24px;color:var(--muted)}
+@media(max-width:560px){.need{grid-template-columns:1fr}.weeks li{grid-template-columns:1fr;gap:4px}header{padding-top:48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="kicker">AX AGENT CLASS · 4주 16시간</div>
+    <h1 class="serif">강사의 가게 세 칸,<br><em>직접 짓고 직접 고치세요.</em></h1>
+    <p class="lead">간판(브랜드 홈페이지), 매장(클래스 사이트), 전단지 배포대(마케팅 사이트). 외주로 맡기면 고칠 때마다 다시 비용이 듭니다. 이미 쓰고 있는 AI 구독 하나로, 세 칸을 짓고 원하는 대로 바꾸는 법을 알려 드립니다.</p>
+    <div class="cta">
+      <a class="btn main" href="https://docs.google.com/forms/d/e/1FAIpQLSeVMSgEBSAJEP_Y0K-KqO-j8G5MCeecOVdlP5VZoWCj6z2xcA/viewform" target="_blank" rel="noopener">무료 특강 신청하기 →</a>
+      <a class="btn kakao" href="https://pf.kakao.com/_cnmmX/chat" target="_blank" rel="noopener">카카오톡으로 묻기</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="serif">4주 뒤, 내 손에 남는 세 칸</h2>
+    <div class="shops">
+      <div class="shop"><b>간판</b><h3>나만의 브랜드 홈페이지</h3><p>이력·강의 사진·후기·문의 폼까지. 내 도메인 주소로 엽니다.</p><a href="https://eglslab.com" target="_blank" rel="noopener">강사가 운영 중인 사례 ↗</a></div>
+      <div class="shop"><b>매장</b><h3>나만의 클래스 사이트</h3><p>강의 목록·상세 페이지·수강 신청·입금 안내까지 갖춘 판매 창구.</p><a href="https://academy.eglslab.com" target="_blank" rel="noopener">강사가 운영 중인 사례 ↗</a></div>
+      <div class="shop"><b>전단지 배포대</b><h3>마케팅 콘텐츠 사이트</h3><p>칼럼·카드뉴스를 모아 두고, 카톡·SNS 홍보문까지 한 번에 뽑습니다.</p><a href="https://oillab.eglslab.com" target="_blank" rel="noopener">강사가 운영 중인 사례 ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="serif">주 1회 4시간, 매주 하나씩 완성</h2>
+    <ul class="weeks">
+      <li><div class="wk">1주</div><div><h3>에이전트 작업실 열기 + 첫 홈페이지</h3><p>Claude Code · ChatGPT Codex · Gemini Antigravity 중 하나를 설치하고, 내 이력 한 장으로 첫 페이지를 만들어 인터넷에 올립니다.</p><span class="got">인터넷 주소가 있는 내 홈페이지</span></div></li>
+      <li><div class="wk">2주</div><div><h3>원하는 대로 바꾸는 대화법</h3><p>"어디를 → 어떻게 → 무엇처럼" 세 마디로 고치는 법. 사진·후기·문의 폼을 넣고 내 도메인을 연결합니다.</p><span class="got">문의가 들어오는 완성 홈페이지</span></div></li>
+      <li><div class="wk">3주</div><div><h3>나만의 클래스 사이트</h3><p>강의 목록과 상세 페이지, 수강 신청 폼, 입금 안내까지. 내 강의를 파는 매장을 엽니다.</p><span class="got">강의를 파는 클래스 사이트</span></div></li>
+      <li><div class="wk">4주</div><div><h3>마케팅 사이트 + 반복 업무 맡기기</h3><p>콘텐츠 허브를 만들고, 세 사이트를 서로 잇습니다. 그리고 매주 반복하던 일 하나를 에이전트에게 넘깁니다.</p><span class="got">서로 연결된 3종 세트 + 내 자동화 1개</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="serif">덤으로 가져가는 것</h2>
+    <div class="bonus">
+      <span>HWP 이력서·강사카드 작성 → 메일 발송</span>
+      <span>강의안 PPT 초안 → 최종안</span>
+      <span>카톡 정리 맡기기</span>
+      <span>매주 반복 업무 자동화</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="need">
+      <div><h3>필요한 것</h3><ul><li>Claude · ChatGPT · Gemini 중 하나의 유료 구독</li><li>노트북(윈도우·맥)</li><li>내 이력과 강의 자료</li></ul></div>
+      <div><h3>필요 없는 것</h3><ul><li>코딩 지식</li><li>디자인 프로그램</li><li>서버·호스팅 비용</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="price">
+      <div class="tag">EARLY BIRD · 무료 특강 참석자 우선</div>
+      <div class="num">299,000원</div>
+      <p>4주 16시간 · 실습 결과물 3종 + 자동화 1개</p>
+      <div class="steps">
+        <div>아래 버튼으로 무료 특강 신청</div>
+        <div>카톡·문자로 일정과 링크 수신</div>
+        <div>90분 특강에서 직접 시연 보기</div>
+        <div>얼리버드로 4주 과정 합류</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="me">
+  <div class="wrap">
+    <h2 class="serif">강사 소개 — 유정근</h2>
+    <p>이글스랩(EGLS Lab) 총괄 디렉터. 위의 세 사이트를 모두 AI 에이전트와 함께 직접 만들고, 지금도 직접 고치며 운영하고 있습니다. 이력서 작성, 강의안, 카드뉴스, 신청 접수 보고까지 매일의 반복 업무를 에이전트에게 맡기고 있습니다. 이 과정에서는 제가 실제로 쓰는 방법을 그대로 보여 드립니다.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2 class="serif">먼저 90분, 무료로 보세요.</h2>
+    <div class="cta">
+      <a class="btn main" href="https://docs.google.com/forms/d/e/1FAIpQLSeVMSgEBSAJEP_Y0K-KqO-j8G5MCeecOVdlP5VZoWCj6z2xcA/viewform" target="_blank" rel="noopener">무료 특강 신청하기 →</a>
+      <a class="btn kakao" href="https://pf.kakao.com/_cnmmX/chat" target="_blank" rel="noopener">카카오톡으로 묻기</a>
+    </div>
+    <small>특강 일정은 신청하신 분께 개별로 안내드립니다 · 이글스랩 AI AX 아카데미</small>
+  </div>
+</footer>
+</body>
+</html>
