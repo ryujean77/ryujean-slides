@@ -80,7 +80,7 @@
     const user = await a.ready;
     if (!user || !user.emailVerified) return { box: lockBox("로그인이 필요한 수업입니다", "이 강의는 유료 과목입니다. 로그인한 뒤 유료 회원으로 등록되면 바로 열립니다.", `login.html?next=${here()}`, "로그인") };
     const r = await a.api(`/unit/${encodeURIComponent(c.id)}/${encodeURIComponent(u.id)}`);
-    if (r.status === 403) return { box: lockBox("유료 회원 전용 수업입니다", "맛보기 수업은 회원 누구나 볼 수 있습니다. 전체 수업은 유료 회원(수강료 99,000원, C4·C5 전체) 승인 뒤 열립니다.", "login.html", "등급과 신청 방법 보기") };
+    if (r.status === 403) return { box: lockBox("유료 회원 전용 수업입니다", "맛보기 수업은 회원 누구나 볼 수 있습니다. 전체 수업은 유료 회원(수강료 99,000원, 모든 유료 과목) 승인 뒤 열립니다.", "login.html", "등급과 신청 방법 보기") };
     if (!r.ok) throw new Error(r.status);
     return { md: await r.text() };
   }
