@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-04T07:44:16.340Z",
-  "commit": "1ad489af88e4cbcab36905f7d837e8bd4b25f354",
-  "fileCount": 2553,
+  "generatedAt": "2026-11-05T18:15:46.467Z",
+  "commit": "e087917a08acc0b79ef772aeceb39b00c2712c94",
+  "fileCount": 2517,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -21,7 +21,7 @@
     },
     {
       "path": "academy/app.js",
-      "size": 39665
+      "size": 39672
     },
     {
       "path": "academy/auth.js",
@@ -29,7 +29,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 7205
+      "size": 7363
     },
     {
       "path": "academy/certificate.html",
@@ -236,78 +236,6 @@
       "size": 10409
     },
     {
-      "path": "academy/courses/myway/units/03-index-map.md",
-      "size": 9481
-    },
-    {
-      "path": "academy/courses/myway/units/04-lab-map.md",
-      "size": 12730
-    },
-    {
-      "path": "academy/courses/myway/units/05-knowledge-base.md",
-      "size": 12138
-    },
-    {
-      "path": "academy/courses/myway/units/06-tacit.md",
-      "size": 8635
-    },
-    {
-      "path": "academy/courses/myway/units/07-refine.md",
-      "size": 8672
-    },
-    {
-      "path": "academy/courses/myway/units/08-museum-design.md",
-      "size": 11424
-    },
-    {
-      "path": "academy/courses/myway/units/09-lab-audit.md",
-      "size": 10233
-    },
-    {
-      "path": "academy/courses/myway/units/10-agent-reads.md",
-      "size": 9446
-    },
-    {
-      "path": "academy/courses/myway/units/11-charter-skills.md",
-      "size": 15223
-    },
-    {
-      "path": "academy/courses/myway/units/12-mcp.md",
-      "size": 13743
-    },
-    {
-      "path": "academy/courses/myway/units/13-retrieval-first.md",
-      "size": 10519
-    },
-    {
-      "path": "academy/courses/myway/units/14-digital-twin.md",
-      "size": 10503
-    },
-    {
-      "path": "academy/courses/myway/units/15-output-pipeline.md",
-      "size": 8840
-    },
-    {
-      "path": "academy/courses/myway/units/16-lab-twin.md",
-      "size": 8816
-    },
-    {
-      "path": "academy/courses/myway/units/17-osmu.md",
-      "size": 8607
-    },
-    {
-      "path": "academy/courses/myway/units/18-routine.md",
-      "size": 10083
-    },
-    {
-      "path": "academy/courses/myway/units/19-public-private.md",
-      "size": 10382
-    },
-    {
-      "path": "academy/courses/myway/units/20-lab-finish.md",
-      "size": 10649
-    },
-    {
       "path": "academy/courses/teacher-ai/course.json",
       "size": 3269
     },
@@ -366,78 +294,6 @@
     {
       "path": "academy/courses/work-automation/units/02-human-gate.md",
       "size": 10087
-    },
-    {
-      "path": "academy/courses/work-automation/units/03-flow.md",
-      "size": 10334
-    },
-    {
-      "path": "academy/courses/work-automation/units/04-lab-design.md",
-      "size": 11662
-    },
-    {
-      "path": "academy/courses/work-automation/units/05-watch-inbox.md",
-      "size": 16643
-    },
-    {
-      "path": "academy/courses/work-automation/units/06-voice-draft.md",
-      "size": 13144
-    },
-    {
-      "path": "academy/courses/work-automation/units/07-draft-form.md",
-      "size": 11210
-    },
-    {
-      "path": "academy/courses/work-automation/units/08-lab-inbox.md",
-      "size": 27408
-    },
-    {
-      "path": "academy/courses/work-automation/units/09-approval.md",
-      "size": 12007
-    },
-    {
-      "path": "academy/courses/work-automation/units/10-after-approval.md",
-      "size": 13767
-    },
-    {
-      "path": "academy/courses/work-automation/units/11-calendar.md",
-      "size": 16211
-    },
-    {
-      "path": "academy/courses/work-automation/units/12-form-sheet.md",
-      "size": 22209
-    },
-    {
-      "path": "academy/courses/work-automation/units/13-context-ledger.md",
-      "size": 16108
-    },
-    {
-      "path": "academy/courses/work-automation/units/14-stages.md",
-      "size": 15161
-    },
-    {
-      "path": "academy/courses/work-automation/units/15-lab-stream.md",
-      "size": 16200
-    },
-    {
-      "path": "academy/courses/work-automation/units/16-publish-guard.md",
-      "size": 19034
-    },
-    {
-      "path": "academy/courses/work-automation/units/17-local-cloud.md",
-      "size": 17129
-    },
-    {
-      "path": "academy/courses/work-automation/units/18-failure.md",
-      "size": 16041
-    },
-    {
-      "path": "academy/courses/work-automation/units/19-policy.md",
-      "size": 15556
-    },
-    {
-      "path": "academy/courses/work-automation/units/20-lab-operate.md",
-      "size": 15473
     },
     {
       "path": "academy/courses/workbox/course.json",
@@ -505,7 +361,7 @@
     },
     {
       "path": "academy/login.html",
-      "size": 9031
+      "size": 9049
     },
     {
       "path": "academy/login.js",
