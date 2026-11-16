@@ -55,7 +55,14 @@ async function showPay() {
   ch.append(el("b", "신청 연락 "));
   if (p.channel) ch.append(el("a", "카카오톡 채널로 회원 번호 보내기", { href: p.channel, target: "_blank", rel: "noopener noreferrer", class: "btn small" }));
   else ch.append("카카오톡 채널을 준비하고 있습니다. 개설되면 이곳에 연결됩니다.");
-  box.append(acc, kp, qr, el("p", "PC에서는 휴대폰 카메라나 카카오톡 QR 스캔으로 위 코드를 찍으세요.", { class: "muted" }), ch);
+  box.append(acc, kp, qr, el("p", "PC에서는 휴대폰 카메라나 카카오톡 QR 스캔으로 위 코드를 찍으세요.", { class: "muted" }));
+  // 해외 수강생: PayPal (한국 PayPal 계정끼리는 송금이 막혀 있어 해외 전용)
+  if (/^https:\/\/(www\.)?paypal\.me\/[\w-]+$/.test(p.paypal || "")) {
+    const pp = el("p"); pp.append(el("b", "해외 결제 (PayPal) "), el("a", "Pay with PayPal", { href: p.paypal, target: "_blank", rel: "noopener noreferrer", class: "btn small" }));
+    if (p.paypal_price) pp.append(` ${p.paypal_price}`);
+    box.append(pp);
+  }
+  box.append(ch);
 }
 
 // 쿠폰으로 열린 과목과 기한
