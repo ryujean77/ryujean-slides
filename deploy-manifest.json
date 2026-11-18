@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-18T08:00:11.909Z",
-  "commit": "083bed623bc79432598db04dd4f6d35b2fcfeeba",
+  "generatedAt": "2026-11-18T08:20:52.378Z",
+  "commit": "4d3ea8abd56035be7b235bc77959d2802efd5d3a",
   "fileCount": 2532,
   "files": [
     {
@@ -301,7 +301,7 @@
     },
     {
       "path": "academy/courses/workbox/units/00-review.md",
-      "size": 38969
+      "size": 41394
     },
     {
       "path": "academy/courses/workbox/units/01-lesson.md",
@@ -10009,7 +10009,7 @@
     },
     {
       "path": "workbox-class/kits/all_starter_kits.zip",
-      "size": 111099
+      "size": 113213
     },
     {
       "path": "workbox-class/kits/kit01_gov_grant.html",
@@ -10061,7 +10061,7 @@
     },
     {
       "path": "workbox-class/review.html",
-      "size": 65948
+      "size": 71281
     },
     {
       "path": "workbox-class/slides.pdf",
