@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⑤ AI 음악(Suno) 가사·소설·숏드라마 창작 스타터 키트 | 바이브 코딩 AI 업무자동화 스타터 키트</title>
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-alt: #F3EFE6;
+      --navy: #1B253B;
+      --navy-light: #2B3A5A;
+      --gold: #B68F52;
+      --gold-dark: #8B6932;
+      --gold-soft: #F7F1E5;
+      --text: #1F2430;
+      --muted: #5A6275;
+      --line: #E2DACB;
+      --emerald: #2D6E52;
+      --emerald-bg: #E7F3ED;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(27, 37, 59, 0.07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15.5px;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(27, 37, 59, 0.96);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: #FFFFFF;
+      font-family: inherit;
+    }
+    .top-btn.gold {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .top-btn:hover { opacity: 0.92; }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 32px 34px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+    .hero .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #F0D29C;
+      background: rgba(182, 143, 82, 0.22);
+      padding: 4px 11px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1.38;
+    }
+    .hero p {
+      margin: 0;
+      color: #D8E0EF;
+      font-size: 15px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .lead {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .callout {
+      background: var(--gold-soft);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 14px 0 0;
+      font-size: 14.5px;
+    }
+    ul.clean {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+    ul.clean li {
+      margin-bottom: 7px;
+    }
+    code {
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 13.5px;
+      color: #9B3022;
+    }
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: var(--surface);
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-alt);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    td.col-label {
+      width: 30%;
+      background: #FCFBF8;
+    }
+    td.col-label .hint {
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    textarea.kit-input {
+      width: 100%;
+      border: 1px dashed #CBBFA8;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font: inherit;
+      font-size: 14px;
+      line-height: 1.55;
+      background: #FCFBF9;
+      color: var(--text);
+      resize: vertical;
+    }
+    textarea.kit-input.compact {
+      font-size: 13.5px;
+      padding: 7px 9px;
+    }
+    textarea.kit-input:focus {
+      outline: 2px solid var(--gold);
+      border-style: solid;
+      background: #FFFFFF;
+    }
+    .form-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .toolbar-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn-sm {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: var(--surface-alt);
+      color: var(--navy);
+    }
+    .btn-sm.primary {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-color: var(--navy);
+    }
+    .prompt-card {
+      background: #FCFBF8;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .prompt-card:last-child { margin-bottom: 0; }
+    .prompt-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .p-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+    }
+    .prompt-head h3 {
+      margin: 0;
+      font-size: 16.5px;
+      color: var(--navy);
+    }
+    .p-desc {
+      margin: 0 0 10px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .copy-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #FFFFFF;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy-btn.copied {
+      background: var(--emerald);
+      border-color: var(--emerald);
+    }
+    pre.prompt-body {
+      margin: 0;
+      padding: 14px 16px;
+      background: #1B253B;
+      color: #F4F6FA;
+      border-radius: 10px;
+      font-family: "Pretendard Variable", Pretendard, Consolas, monospace;
+      font-size: 13.5px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      background: #FCFBF8;
+    }
+    .checklist li:hover { background: var(--gold-soft); }
+    .checklist input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--emerald);
+      flex-shrink: 0;
+    }
+    .checklist li.checked span {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 28px;
+    }
+    @media (max-width: 720px) {
+      td.col-label { width: auto; display: block; }
+      tr { display: block; margin-bottom: 12px; }
+      td { display: block; width: 100%; }
+      thead { display: none; }
+      .hero { padding: 24px 20px; }
+    }
+    @media print {
+      .topbar, .form-toolbar, .copy-btn { display: none; }
+      body { background: #FFFFFF; font-size: 11pt; }
+      .card, .hero, .prompt-card { box-shadow: none; break-inside: avoid; }
+      pre.prompt-body { background: #F5F5F5; color: #111111; border: 1px solid #CCCCCC; }
+      textarea.kit-input { border: 1px solid #BBBBBB; background: #FFFFFF; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="top-btn" href="../review.html" id="back-link">← 복습노트로 돌아가기</a>
+      <div class="top-actions">
+        <a class="top-btn" href="kit05_creative_music_story.md" download>⬇ 마크다운(.md) 저장</a>
+        <button type="button" class="top-btn gold" onclick="window.print()">🖨️ A4 인쇄 / PDF 저장</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <span class="badge">KIT 05 · AI 음악(Suno) · 소설 · 숏드라마 창작</span>
+      <h1>⑤ AI 음악(Suno) 가사·소설·숏드라마 창작 스타터 키트</h1>
+      <p>먼저 &#x27;헌정곡 / 대중곡 / 세계관&#x27; 창작 목표(Why)를 세우고, 서정적 문장력이 뛰어난 Claude로 가사와 남녀 대화형 대구를 다듬어 Suno에 연결합니다.</p>
+    </header>
+
+    <section class="card">
+      <div class="section-tag">STEP 01 · CORE STRATEGY &amp; RAW MATERIALS</div>
+      <h2>1. 현장 합격/성공 공식 &amp; 폴더에 넣을 원형 자료</h2>
+      <ul class="clean"><li><strong>작품의 목표(Why) 먼저 정하기:</strong> 배우자 한 사람을 위한 헌정곡인지, 대중 상업곡인지, 내 세계관 팬덤을 모을 곡인지에 따라 단어와 장르가 완전히 달라집니다.</li>
+<li><strong>책/인문학 기반 Claude 감성 활용:</strong> 서정적·시적 감수성은 Claude가 1위입니다. 단, 논리 가중치 때문에 대구를 까다롭게 지적할 땐 &#x27;꼬집지 말고 감성을 살려줘&#x27;라고 지시합니다.</li>
+<li><strong>남녀 대화형 대구 &amp; Suno 메타태그:</strong> 듀엣곡이나 숏드라마 대사는 화자 간 감정선과 음절 호흡(대구)을 맞춘 뒤 [Verse], [Chorus], [Duet] 태그로 Suno에 바로 넣습니다.</li></ul>
+      <div class="callout">
+        <strong>📁 내 작업 폴더(<code>workbox/</code>)에 먼저 넣어둘 원형 자료:</strong>
+        <ul class="clean"><li><code>01_창작_목표_설정지.md</code> — 이 키트 2번 양식(헌정곡/대중곡/세계관 구분 및 핵심 키워드)</li>
+<li><code>02_실제_에피소드_메모.txt</code> — 가사나 대본에 녹이고 싶은 실제 추억, 장소, 대화 한 토막</li></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 02 · INTERACTIVE WORKSHEET</div>
+      <h2>2. 창작 목표 설정지 (헌정곡 · 대중곡 · 세계관)</h2>
+      <p class="lead">AI에게 가사나 소설을 맡기기 전에, 이 작품이 누구의 마음을 움직여야 하는지 먼저 정합니다. (입력 내용은 현재 브라우저에 자동 저장됩니다.)</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:32%">설계 항목</th>
+              <th style="width:68%">나의 프로젝트 내용 작성 (예시 수정 가능)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class="col-label">
+                <strong>1. 창작 트랙 선택</strong>
+                <div class="hint">① 헌정곡(특정 1인) / ② 대중 상업곡 / ③ 나만의 세계관·커뮤니티용</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit05_creative_music_story_f1" rows="3" placeholder="예: ① 배우자에게 바치는 결혼기념일 헌정곡 (발라드/포크)">① 배우자(또는 소중한 가족) 한 사람의 심금을 울리는 헌정곡 + 숏드라마 배경음악</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>2. 핵심 청자 / 독자 페르소나</strong>
+                <div class="hint">이 노래·이야기를 들을 단 한 사람(또는 핵심 팬층)의 특징</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit05_creative_music_story_f2" rows="3" placeholder="예: 지난 30년간 묵묵히 곁을 지켜준 아내, 잔잔한 7080 포크·어쿠스틱 취향">바쁜 세월 속에서도 묵묵히 곁을 지켜준 배우자 (과한 수식어보다 담백하고 진솔한 일상의 언어를 좋아함)</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>3. 꼭 들어갈 실제 기억·키워드 5개</strong>
+                <div class="hint">추상적인 &#x27;사랑·영원&#x27; 대신 우리만의 구체적 사물·계절·장소</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit05_creative_music_story_f3" rows="3" placeholder="예: 비 오는 종로 골목, 낡은 커피잔, 새벽 첫차, 손등의 주름, 고맙다는 말">초겨울 붕어빵 봉투, 오래된 우산 하나, 거실 스탠드 불빛, 묵묵한 손길, 다시 돌아온 봄</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>4. 장르 · 템포 · 보컬 구성</strong>
+                <div class="hint">Suno 스타일 입력용 음악 방향 (솔로/남녀 듀엣, 악기, 분위기)</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit05_creative_music_story_f4" rows="3" placeholder="예: Acoustic Folk Ballad, 남녀 대화형 듀엣, 피아노와 어쿠스틱 기타, 76 BPM">Warm Korean Acoustic Folk Ballad, Male and Female Duet, Gentle Piano &amp; Nylon Guitar, Emotional, 74 BPM</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>5. 피해야 할 클리셰(금지어)</strong>
+                <div class="hint">AI가 자주 쓰는 뻔한 표현 중 빼고 싶은 말</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit05_creative_music_story_f5" rows="3" placeholder="예: &#x27;별빛이 쏟아지는&#x27;, &#x27;운명처럼 다가온&#x27;, 과도한 영어 섞어 쓰기 금지">AI 특유의 뻔한 클리셰(&#x27;별빛이 춤춘다&#x27;, &#x27;영원한 약속&#x27;, &#x27;심장이 터질 듯&#x27;) 금지. 실제 대화체와 담백한 한국어 사용.</textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-toolbar">
+        <span style="font-size:13px; color:var(--muted);" id="save-status">💾 입력 시 브라우저에 자동 저장됩니다.</span>
+        <div class="toolbar-btns">
+          <button type="button" class="btn-sm primary" id="copy-form-btn">📋 내가 작성한 양식 전체 복사</button>
+          <button type="button" class="btn-sm" id="reset-form-btn">↺ 기본 예시로 되돌리기</button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section class="card">
+      <div class="section-tag">STEP 03 · COPY-PASTE PROMPTS FOR AGY &amp; AI</div>
+      <h2>3. 바로 복사해 쓰는 실전 요청문 (프롬프트)</h2>
+      <p class="lead">오른쪽 <strong>[요청문 원클릭 복사]</strong> 버튼을 누른 뒤 Antigravity(AGY) 또는 Claude/Gemini 채팅창에 붙여넣으세요. 대괄호 <code>[...]</code> 부분을 내 상황에 맞게 바꿔 쓰면 됩니다.</p>
+      
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 01 · Claude · 서정적 작사</span>
+              <h3>헌정곡·대중곡·세계관 맞춤 Claude 서정적 작사 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit05_creative_music_story_prompt_1">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">시적이고 깊이 있는 한국어 가사 초안을 뽑을 때 (강의 팁 반영)</p>
+          <pre class="prompt-body" id="kit05_creative_music_story_prompt_1">아래 [창작 목표 설정지]를 읽고 한국어 노래 가사 1곡을 써 줘.
+
+[창작 목표 설정지 붙여넣기]
+
+작사 가이드:
+1. 문체는 책과 시집처럼 서정적이고 여운이 남게 써 줘. 금지한 클리셰는 절대 쓰지 마.
+2. 내가 준 &#x27;실제 기억·키워드 5개&#x27;를 1절, 후렴, 2절에 억지스럽지 않고 자연스러운 장면으로 녹여내 줘.
+3. (중요) 내 설정 메모에 논리적 빈틈이나 대구 비약이 보이더라도 차갑게 꼬집거나 훈계하지 말고, 화자의 따뜻한 감정선을 최대한 살려서 시적으로 아름답게 이어 줘.
+4. 구성: [Intro] - [Verse 1] - [Pre-Chorus] - [Chorus] - [Verse 2] - [Bridge] - [Chorus] - [Outro]</pre>
+        </div>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 02 · Claude · 남녀 대화형 대구 교정</span>
+              <h3>남녀 대화형(듀엣) 가사·숏드라마 대사 대구 교정 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit05_creative_music_story_prompt_2">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">남자 파트와 여자 파트가 서로 대답하듯 리듬과 대구가 딱 맞게 다듬고 싶을 때</p>
+          <pre class="prompt-body" id="kit05_creative_music_story_prompt_2">아래 남녀 대화형 가사(또는 숏드라마 대화 대본) 초안을 듀엣 호흡에 맞게 대구(對句)를 교정해 줘.
+
+[초안 가사 또는 대사 붙여넣기]
+
+교정 규칙:
+1. [Male] 파트가 던진 이미지나 질문에 [Female] 파트가 같은 음절 수(±1음절 이내)와 대칭되는 시어로 자연스럽게 응답하도록 대구를 맞춰 줘.
+2. 노래로 불렀을 때 입에 걸리는 딱딱한 한자어나 받침 연속 발음을 부드러운 발음으로 다듬어 줘.
+3. 각 줄 끝에 (남성 / 여성 / 함께) 화자 표시와 감정 디렉션(예: 속삭이듯, 담담하게, 고조되며)을 붙여 줘.
+4. 수정 전후가 어떻게 좋아졌는지 1줄 코멘트만 달고, 문법적 잔소리 없이 감성을 살린 2가지 버전을 보여 줘.</pre>
+        </div>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 03 · Suno AI 입력용 패키징</span>
+              <h3>Suno 전용 메타태그 가사 + 영문 Style Prompt 자동 생성 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit05_creative_music_story_prompt_3">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">완성된 가사를 Suno(Custom Mode)에 바로 복붙할 수 있는 형태로 변환할 때</p>
+          <pre class="prompt-body" id="kit05_creative_music_story_prompt_3">방금 확정한 한국어 가사를 Suno AI Custom Mode에 그대로 복사·붙여넣기 할 수 있도록 아래 두 박스로 변환해 줘.
+
+1) [Style of Music 박스 (영문 120자 이내)]:
+장르, 주된 악기, 보컬 성별/톤, 분위기, BPM, 곡 전개를 쉼표로 구분해 작성 (예: Korean acoustic ballad, male and female duet, warm piano, strings, emotional, 74 BPM)
+
+2) [Lyrics 박스]:
+Suno가 음악 구조를 정확히 인식하도록 [Intro: soft piano], [Verse 1 - Male], [Verse 2 - Female], [Chorus - Duet], [Guitar Solo], [Bridge], [Outro: fade out] 같은 대괄호 영문 메타태그를 가사 사이사이에 깔끔하게 배치해 줘.</pre>
+        </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 04 · HUMAN-IN-THE-LOOP</div>
+      <h2>4. 사람 승인(Human-in-the-Loop) 최종 검수 점검표</h2>
+      <p class="lead">AI가 초안을 10배 빠르게 만들어 주더라도, 최종 책임과 결재 도장은 반드시 사람(디렉터)이 찍습니다.</p>
+      <ul class="checklist" id="hitl-list">
+        <li><input type="checkbox" data-chk="kit05_creative_music_story_chk_1"><span>가사를 소리 내어 직접 읽어 보았을 때 호흡이 자연스럽고 어색한 발음이 없는가?</span></li>
+<li><input type="checkbox" data-chk="kit05_creative_music_story_chk_2"><span>나의 실제 경험·진심이 담겨 있으며 뻔한 AI 클리셰 문장이 남아 있지 않은가?</span></li>
+<li><input type="checkbox" data-chk="kit05_creative_music_story_chk_3"><span>헌정곡/상업곡에 타인의 명예나 사생활을 침해하는 실명이 무단 노출되지 않았는가?</span></li>
+<li><input type="checkbox" data-chk="kit05_creative_music_story_chk_4"><span>Suno로 2~3가지 버전을 생성해 들어본 뒤 가장 감정선이 잘 살아난 트랙을 최종 선택했는가?</span></li>
+
+      </ul>
+    </section>
+
+    <p class="footer-note">바이브 코딩 기반 AI 업무자동화 · 유정근 (Ryu JeongKun) | 나의 업무함(workbox) 스타터 키트</p>
+  </main>
+
+  <script>
+    (function() {
+      const KID = 'kit05_creative_music_story';
+      // 복습노트 돌아가기 경로 자동 판별 (deliverables vs workbox-class)
+      const backLink = document.getElementById('back-link');
+      if (backLink && location.pathname.indexOf('polytech_lecture_review') !== -1) {
+        backLink.href = '../01_복습노트_완성본.html#sec-files';
+      }
+
+      // 양식 입력값 저장/복원
+      const STORE_KEY = 'kit_form_' + KID;
+      const inputs = document.querySelectorAll('.kit-input');
+      const defaults = {};
+      inputs.forEach(el => { defaults[el.dataset.field] = el.value; });
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      inputs.forEach(el => {
+        const f = el.dataset.field;
+        if (Object.prototype.hasOwnProperty.call(saved, f)) {
+          el.value = saved[f];
+        }
+        el.addEventListener('input', () => {
+          saved[f] = el.value;
+          localStorage.setItem(STORE_KEY, JSON.stringify(saved));
+          const st = document.getElementById('save-status');
+          if (st) st.textContent = '✅ 방금 브라우저에 자동 저장되었습니다.';
+        });
+      });
+
+      // 텍스트 복사 헬퍼
+      function copyText(text, onDone) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(onDone).catch(() => fallbackCopy(text, onDone));
+        } else {
+          fallbackCopy(text, onDone);
+        }
+      }
+      function fallbackCopy(text, onDone) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        onDone();
+      }
+
+      // 프롬프트 원클릭 복사
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = document.getElementById(btn.dataset.copyTarget);
+          if (!target) return;
+          copyText(target.innerText, () => {
+            const orig = btn.textContent;
+            btn.textContent = '✅ 복사 완료!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.textContent = orig;
+              btn.classList.remove('copied');
+            }, 1800);
+          });
+        });
+      });
+
+      // 작성 양식 전체 복사
+      const copyFormBtn = document.getElementById('copy-form-btn');
+      if (copyFormBtn) {
+        copyFormBtn.addEventListener('click', () => {
+          const lines = ['[' + '⑤ AI 음악(Suno) 가사·소설·숏드라마 창작 스타터 키트' + ' - 작성본]', ''];
+          document.querySelectorAll('table tbody tr').forEach(tr => {
+            const labelEl = tr.querySelector('.col-label strong');
+            const ta = tr.querySelector('textarea.kit-input');
+            if (labelEl && ta) {
+              lines.push('■ ' + labelEl.innerText.trim());
+              lines.push(ta.value.trim() || '(미입력)');
+              lines.push('');
+            }
+          });
+          copyText(lines.join('\n'), () => {
+            const orig = copyFormBtn.textContent;
+            copyFormBtn.textContent = '✅ 양식 전체 복사 완료!';
+            setTimeout(() => { copyFormBtn.textContent = orig; }, 1800);
+          });
+        });
+      }
+
+      // 초기화
+      const resetBtn = document.getElementById('reset-form-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (!confirm('작성한 내용을 지우고 기본 예시로 되돌릴까요?')) return;
+          localStorage.removeItem(STORE_KEY);
+          inputs.forEach(el => { el.value = defaults[el.dataset.field] || ''; });
+        });
+      }
+
+      // HITL 체크리스트 저장
+      const CHK_KEY = 'kit_chk_' + KID;
+      const savedChk = JSON.parse(localStorage.getItem(CHK_KEY) || '{}');
+      document.querySelectorAll('#hitl-list li').forEach(li => {
+        const cb = li.querySelector('input[type="checkbox"]');
+        const id = cb.dataset.chk;
+        if (savedChk[id]) {
+          cb.checked = true;
+          li.classList.add('checked');
+        }
+        li.addEventListener('click', (e) => {
+          if (e.target !== cb) cb.checked = !cb.checked;
+          li.classList.toggle('checked', cb.checked);
+          savedChk[id] = cb.checked;
+          localStorage.setItem(CHK_KEY, JSON.stringify(savedChk));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
