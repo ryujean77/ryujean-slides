@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-18T08:20:52.378Z",
-  "commit": "4d3ea8abd56035be7b235bc77959d2802efd5d3a",
+  "generatedAt": "2026-11-18T13:11:39.499Z",
+  "commit": "5bcec3dd96192cf69d33044576286fd193bc2a1e",
   "fileCount": 2532,
   "files": [
     {
@@ -29,7 +29,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 7378
+      "size": 7417
     },
     {
       "path": "academy/certificate.html",
