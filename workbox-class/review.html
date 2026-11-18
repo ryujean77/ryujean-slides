@@ -1109,14 +1109,82 @@
     <section id="sec-part3" class="block">
       <div class="section-header">
         <span class="tag">PART 03 · BIG PICTURE ARCHITECTURE</span>
-        <h2>5. 바이브 코딩과 AI 에이전트 기술 생태계 총정리 (오전 2교시 요약)</h2>
+        <h2>5. 바이브 코딩과 AI 에이전트 기술 생태계 총정리 (오전 2교시 칠판 판서 요약)</h2>
       </div>
 
       <div class="card">
-        <h3>우리가 다루는 5대 핵심 인프라 구조</h3>
+        <h3>📊 [칠판 판서 정본] AI 플랫폼별 에이전트 · 개발 도구 · 인프라 비교표</h3>
+        <p style="margin-top:0; color:var(--muted); font-size:14.5px;">
+          주요 AI 플랫폼(OpenAI, Google, Anthropic)을 중심으로 대화형 챗봇부터 코드 에이전트·IDE 개발 도구, 로컬 파일 작업 환경, 확장 연동(GitHub·Skill·MCP) 및 배포·서버 인프라 구성을 항목별로 분류한 칠판 판서 정리표입니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:18%">구분 / 계층</th>
+                <th style="width:18%">OpenAI</th>
+                <th style="width:20%">Google</th>
+                <th style="width:18%">Anthropic</th>
+                <th style="width:26%">기타 및 공통 생태계</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. 챗봇 / 대화형 모델</strong><br><span style="font-size:12.5px; color:var(--muted);">(웹 채팅창)</span></td>
+                <td><strong>ChatGPT</strong></td>
+                <td><strong>Gemini</strong></td>
+                <td><strong>Claude</strong></td>
+                <td>브라우저 질의응답 및 초안 생성<br><span style="font-size:12.5px; color:var(--muted);">(창 변경 시 맥락 초기화, 수동 복사·붙여넣기)</span></td>
+              </tr>
+              <tr>
+                <td><strong>2. 코드 및 개발 도구</strong><br><span style="font-size:12.5px; color:var(--muted);">(에이전트 · IDE · 앱)</span></td>
+                <td>• <strong>Codex</strong><br>• Agent Code</td>
+                <td>• <strong>Antigravity IDE</strong><br>• <strong>Antigravity 2.0 App</strong></td>
+                <td>• <strong>Claude Code</strong></td>
+                <td>• <strong>VS Code</strong> (통합 개발 환경)<br>• <strong>Web App / 설치형 App</strong><br>• <strong>Windows 터미널 (CMD / PowerShell)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>3. 작업 환경 및 파일</strong><br><span style="font-size:12.5px; color:var(--muted);">(Local &amp; Cloud)</span></td>
+                <td>• <strong>Local Machine</strong><br>• <strong>File</strong> 직접 제어</td>
+                <td>• <strong>Local Machine</strong><br>• <strong>File</strong> 직접 제어</td>
+                <td>• <strong>Local Machine</strong><br>• <strong>File</strong> 직접 제어</td>
+                <td>• 내 PC 로컬 폴더(<code>workbox</code>)의 HWP·HTML·엑셀 직접 생성<br>• <strong>Google Drive · OneDrive</strong> 동기화 연동</td>
+              </tr>
+              <tr>
+                <td><strong>4. 확장 및 연동 기능</strong><br><span style="font-size:12.5px; color:var(--muted);">(버전관리 · 플러그인)</span></td>
+                <td>• <strong>Snapshot</strong><br>• <strong>GitHub</strong> 연동</td>
+                <td>• <strong>Plugin</strong><br>• <strong>Skill</strong></td>
+                <td>• <strong>Skill</strong> (스킬)<br>• <strong>MCP</strong> 연동</td>
+                <td>• <strong>GitHub</strong> 버전별 스냅샷(<strong>Commit / Push / Pull</strong>)<br>• 무료 HWP 제어 도구·보이스 클로닝 등 오픈소스</td>
+              </tr>
+              <tr>
+                <td><strong>5. 서버 및 인프라</strong></td>
+                <td>—</td>
+                <td>• <strong>Firebase</strong> (DB)</td>
+                <td>—</td>
+                <td>• <strong>Server</strong> &amp; <strong>Firebase</strong> 실시간 데이터베이스 연동</td>
+              </tr>
+              <tr>
+                <td><strong>6. 기타 플랫폼 / 배포</strong><br><span style="font-size:12.5px; color:var(--muted);">(Publishing)</span></td>
+                <td>—</td>
+                <td>• <strong>GAS</strong> (Google Apps Script)</td>
+                <td>—</td>
+                <td>• <strong>Cloudflare (클라우드플레어)</strong> 홈페이지 배포<br>• <strong>GitHub Pages</strong> 웹앱 무료 공개</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout gold" style="margin-bottom:20px;">
+          <strong class="title">📝 칠판 판서 필기 교정 및 핵심 구성 요약</strong>
+          • <strong>필기 용어 바로잡기:</strong> 판서 필기 중 <code>VSCross</code>는 통합 개발 도구인 <strong><code>VS Code (Visual Studio Code)</code></strong>이며, <code>Claud Flano</code>는 글로벌 웹·홈페이지 배포 서비스인 <strong><code>Cloudflare (클라우드플레어)</code></strong>입니다.<br>
+          • <strong>계층 요약:</strong> ① <strong>대화형 챗봇(ChatGPT·Gemini·Claude)</strong> 상위에 ② <strong>코드 에이전트 및 설치형 앱(Codex·Antigravity·Claude Code·VS Code)</strong>이 결합되어 ③ <strong>내 컴퓨터 로컬 파일(Local Machine File)</strong>을 직접 다루고, ④ <strong>GitHub 스냅샷·Plugin·Skill·MCP</strong>로 확장한 뒤 ⑤ <strong>GAS·Cloudflare·Firebase·GitHub Pages</strong>로 세상에 배포(Publishing)합니다.
+        </div>
+
+        <h3>우리가 다루는 5대 핵심 인프라 구조 해설</h3>
         <ol>
           <li><strong>로컬 머신(Local Machine) 제어 + 클라우드 동기화:</strong> 에이전트는 내 컴퓨터 안의 실제 파일을 다룹니다. 내 컴퓨터 폴더를 <strong>구글 드라이브(Google Drive)</strong>나 <strong>원드라이브(OneDrive)</strong>와 연결해 두면 집과 강의실 어디서나 똑같이 작업이 이어집니다.</li>
-          <li><strong>깃허브(GitHub) — 버전별 스냅샷 금고 & 오픈소스 보물창고:</strong>
+          <li><strong>깃허브(GitHub) — 버전별 스냅샷 금고 &amp; 오픈소스 보물창고:</strong>
             <ul>
               <li><strong>스냅샷(Commit)과 금고 보관(Push/Pull):</strong> HWP 문서나 프로그램을 완성하기까지 여러 단계의 수정이 필요합니다. 그때마다 버전별로 사진을 찍듯 저장하고 온라인 금고에 보관하는 도구입니다. (교안 18차시)</li>
               <li><strong>무료 오픈소스 생태계:</strong> 에이전트용 <strong>플러그인, 스킬(Skills), MCP</strong>, 음성 클로닝, 무료 HWP 제어 프로그램 등이 모두 GitHub를 통해 무료로 공유됩니다.</li>
