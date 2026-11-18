@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-16T16:04:25.831Z",
-  "commit": "685593affe7da96ca3aefdf3f26ca5398bb0fb42",
-  "fileCount": 2517,
+  "generatedAt": "2026-11-18T08:00:11.909Z",
+  "commit": "083bed623bc79432598db04dd4f6d35b2fcfeeba",
+  "fileCount": 2532,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -29,7 +29,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 7363
+      "size": 7378
     },
     {
       "path": "academy/certificate.html",
@@ -297,7 +297,11 @@
     },
     {
       "path": "academy/courses/workbox/course.json",
-      "size": 5412
+      "size": 5814
+    },
+    {
+      "path": "academy/courses/workbox/units/00-review.md",
+      "size": 38969
     },
     {
       "path": "academy/courses/workbox/units/01-lesson.md",
@@ -9997,11 +10001,67 @@
     },
     {
       "path": "workbox-class/index.html",
-      "size": 205315
+      "size": 205406
     },
     {
       "path": "workbox-class/instructor.html",
       "size": 153246
+    },
+    {
+      "path": "workbox-class/kits/all_starter_kits.zip",
+      "size": 111099
+    },
+    {
+      "path": "workbox-class/kits/kit01_gov_grant.html",
+      "size": 27873
+    },
+    {
+      "path": "workbox-class/kits/kit01_gov_grant.md",
+      "size": 7292
+    },
+    {
+      "path": "workbox-class/kits/kit02_youtube_media.html",
+      "size": 27681
+    },
+    {
+      "path": "workbox-class/kits/kit02_youtube_media.md",
+      "size": 7190
+    },
+    {
+      "path": "workbox-class/kits/kit03_foundation_finance.html",
+      "size": 25275
+    },
+    {
+      "path": "workbox-class/kits/kit03_foundation_finance.md",
+      "size": 6083
+    },
+    {
+      "path": "workbox-class/kits/kit04_paper_policy_review.html",
+      "size": 28998
+    },
+    {
+      "path": "workbox-class/kits/kit04_paper_policy_review.md",
+      "size": 8132
+    },
+    {
+      "path": "workbox-class/kits/kit05_creative_music_story.html",
+      "size": 26368
+    },
+    {
+      "path": "workbox-class/kits/kit05_creative_music_story.md",
+      "size": 6427
+    },
+    {
+      "path": "workbox-class/kits/kit06_glocal_ir_energy_proposal.html",
+      "size": 32099
+    },
+    {
+      "path": "workbox-class/kits/kit06_glocal_ir_energy_proposal.md",
+      "size": 9582
+    },
+    {
+      "path": "workbox-class/review.html",
+      "size": 65948
     },
     {
       "path": "workbox-class/slides.pdf",
