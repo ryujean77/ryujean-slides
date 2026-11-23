@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>③ 배운 것을 가르치는 교육 콘텐츠 스타터 키트 | 11/19 바이브 코딩 AI 업무자동화 스타터 키트</title>
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-alt: #F3EFE6;
+      --navy: #1B253B;
+      --navy-light: #2B3A5A;
+      --gold: #B68F52;
+      --gold-dark: #8B6932;
+      --gold-soft: #F7F1E5;
+      --text: #1F2430;
+      --muted: #5A6275;
+      --line: #E2DACB;
+      --emerald: #2D6E52;
+      --emerald-bg: #E7F3ED;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(27, 37, 59, 0.07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15.5px;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(27, 37, 59, 0.96);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: #FFFFFF;
+      font-family: inherit;
+    }
+    .top-btn.gold {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .top-btn:hover { opacity: 0.92; }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 32px 34px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+    .hero .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #F0D29C;
+      background: rgba(182, 143, 82, 0.22);
+      padding: 4px 11px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1.38;
+    }
+    .hero p {
+      margin: 0;
+      color: #D8E0EF;
+      font-size: 15px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .lead {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .callout {
+      background: var(--gold-soft);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 14px 0 0;
+      font-size: 14.5px;
+    }
+    ul.clean {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+    ul.clean li {
+      margin-bottom: 7px;
+    }
+    code {
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 13.5px;
+      color: #9B3022;
+    }
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: var(--surface);
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-alt);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    td.col-label {
+      width: 30%;
+      background: #FCFBF8;
+    }
+    td.col-label .hint {
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    textarea.kit-input {
+      width: 100%;
+      border: 1px dashed #CBBFA8;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font: inherit;
+      font-size: 14px;
+      line-height: 1.55;
+      background: #FCFBF9;
+      color: var(--text);
+      resize: vertical;
+    }
+    textarea.kit-input.compact {
+      font-size: 13.5px;
+      padding: 7px 9px;
+    }
+    textarea.kit-input:focus {
+      outline: 2px solid var(--gold);
+      border-style: solid;
+      background: #FFFFFF;
+    }
+    .form-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .toolbar-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn-sm {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: var(--surface-alt);
+      color: var(--navy);
+    }
+    .btn-sm.primary {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-color: var(--navy);
+    }
+    .prompt-card {
+      background: #FCFBF8;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .prompt-card:last-child { margin-bottom: 0; }
+    .prompt-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .p-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+    }
+    .prompt-head h3 {
+      margin: 0;
+      font-size: 16.5px;
+      color: var(--navy);
+    }
+    .p-desc {
+      margin: 0 0 10px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .copy-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #FFFFFF;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy-btn.copied {
+      background: var(--emerald);
+      border-color: var(--emerald);
+    }
+    pre.prompt-body {
+      margin: 0;
+      padding: 14px 16px;
+      background: #1B253B;
+      color: #F4F6FA;
+      border-radius: 10px;
+      font-family: "Pretendard Variable", Pretendard, Consolas, monospace;
+      font-size: 13.5px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      background: #FCFBF8;
+    }
+    .checklist li:hover { background: var(--gold-soft); }
+    .checklist input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--emerald);
+      flex-shrink: 0;
+    }
+    .checklist li.checked span {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 28px;
+    }
+    @media (max-width: 720px) {
+      td.col-label { width: auto; display: block; }
+      tr { display: block; margin-bottom: 12px; }
+      td { display: block; width: 100%; }
+      thead { display: none; }
+      .hero { padding: 24px 20px; }
+    }
+    @media print {
+      .topbar, .form-toolbar, .copy-btn { display: none; }
+      body { background: #FFFFFF; font-size: 11pt; }
+      .card, .hero, .prompt-card { box-shadow: none; break-inside: avoid; }
+      pre.prompt-body { background: #F5F5F5; color: #111111; border: 1px solid #CCCCCC; }
+      textarea.kit-input { border: 1px solid #BBBBBB; background: #FFFFFF; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="top-btn" href="../review.html#sec-files" id="back-link">← 복습노트로 돌아가기</a>
+      <div class="top-actions">
+        <a class="top-btn" href="kit03_teach_others.md" download>⬇ 마크다운(.md) 저장</a>
+        <button type="button" class="top-btn gold" onclick="window.print()">🖨️ A4 인쇄 / PDF 저장</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <span class="badge">KIT 03 · 교육 · 온라인 강의 · PPT · 출판</span>
+      <h1>③ 배운 것을 가르치는 교육 콘텐츠 스타터 키트</h1>
+      <p>가르치는 것이 곧 익힘입니다. 온라인 강의·PPT·책 가운데 산출물을 하나 정하고, 배우는 사람의 느낌까지 설계합니다.</p>
+    </header>
+
+    <section class="card">
+      <div class="section-tag">STEP 01 · CORE STRATEGY &amp; RAW MATERIALS</div>
+      <h2>1. 현장 합격/성공 공식 &amp; 폴더에 넣을 원형 자료</h2>
+      <ul class="clean"><li><strong>가르치면 내 습이 된다:</strong> 옆 사람에게 설명하듯 순서를 다시 만들면 내가 모르는 곳이 드러납니다.</li>
+<li><strong>녹음도 원형 자료:</strong> 17일 복습자료도 강의 녹음과 구체적인 요청문에서 나왔습니다.</li>
+<li><strong>형식보다 반응을 먼저:</strong> 배운 사람이 무엇을 느끼고 혼자 무엇을 하게 될지 정한 뒤 형식을 고릅니다.</li></ul>
+      <div class="callout">
+        <strong>📁 내 작업 폴더(<code>workbox/</code>)에 먼저 넣어둘 원형 자료:</strong>
+        <ul class="clean"><li><code>01_설명_녹음_또는_전사.txt</code> — 내가 설명한 녹음이나 받아 적은 글</li>
+<li><code>02_실습_기록.md</code> — 직접 해 본 순서와 막혔던 질문</li>
+<li><code>03_교육대상.md</code> — 배울 사람의 수준과 쓰는 기기</li></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 02 · INTERACTIVE WORKSHEET</div>
+      <h2>2. 교육 산출물 설계서</h2>
+      <p class="lead">첫 교육은 한 사람이 한 가지를 해내는 크기로 잡습니다. (입력 내용은 현재 브라우저에 자동 저장됩니다.)</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:32%">설계 항목</th>
+              <th style="width:68%">나의 프로젝트 내용 작성 (예시 수정 가능)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class="col-label">
+                <strong>1. 배울 사람</strong>
+                <div class="hint">경험과 어려움</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit03_teach_others_f1" rows="3" placeholder="누구에게">탐색기와 파일 경로가 낯선 동료 수강생</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>2. 배운 뒤 할 일</strong>
+                <div class="hint">눈으로 확인할 행동</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit03_teach_others_f2" rows="3" placeholder="혼자 무엇을">작업 폴더를 만들고 hello.txt를 생성해 열어 보인다.</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>3. 산출물 형식</strong>
+                <div class="hint">온라인·PPT·책</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit03_teach_others_f3" rows="3" placeholder="하나만 선택">10장 PPT와 따라 하기 1쪽</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>4. 느껴야 할 것</strong>
+                <div class="hint">보는 사람과 만든 나</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit03_teach_others_f4" rows="3" placeholder="예: 안심">배우는 사람은 &#x27;어렵지 않네&#x27;, 나는 &#x27;혼자 설명할 수 있네&#x27;</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>5. 합격 기준</strong>
+                <div class="hint">실제 사람으로 시험</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit03_teach_others_f5" rows="3" placeholder="어떻게 확인">초보자 한 명이 도움 없이 끝까지 따라 한다.</textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-toolbar">
+        <span style="font-size:13px; color:var(--muted);" id="save-status">💾 입력 시 브라우저에 자동 저장됩니다.</span>
+        <div class="toolbar-btns">
+          <button type="button" class="btn-sm primary" id="copy-form-btn">📋 내가 작성한 양식 전체 복사</button>
+          <button type="button" class="btn-sm" id="reset-form-btn">↺ 기본 예시로 되돌리기</button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section class="card">
+      <div class="section-tag">STEP 03 · COPY-PASTE PROMPTS FOR AGY &amp; AI</div>
+      <h2>3. 바로 복사해 쓰는 실전 요청문 (프롬프트)</h2>
+      <p class="lead">오른쪽 <strong>[요청문 원클릭 복사]</strong> 버튼을 누른 뒤 Antigravity(AGY)·Codex·Claude Code에 붙여넣으세요. 대괄호 <code>[...]</code> 부분을 내 상황에 맞게 바꿔 쓰면 됩니다.</p>
+      
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 01 · AGY · Claude</span>
+              <h3>녹음·기록을 교재 뼈대로 바꾸는 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit03_teach_others_prompt_1">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">설명 자료를 폴더에 넣은 뒤</p>
+          <pre class="prompt-body" id="kit03_teach_others_prompt_1">[자료 폴더 경로]의 설명 기록과 실습 메모를 처음부터 끝까지 읽고 교육 자료의 뼈대를 만들어 줘.
+
+배울 사람: [대상]
+배운 뒤 혼자 할 일: [행동]
+
+내가 실제로 강조한 말과 사례, 막혔던 질문을 살리고 잡담과 개인정보는 빼 줘.
+단계마다 목적, 따라 할 동작, 성공 화면, 막혔을 때의 질문을 넣어.
+기록에 없는 내용을 보강했으면 &#x27;보강&#x27;이라고 표시해 줘.</pre>
+        </div>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 02 · AGY · 제작</span>
+              <h3>온라인 강의·PPT·책 형식 제작 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit03_teach_others_prompt_2">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">뼈대를 확인한 뒤</p>
+          <pre class="prompt-body" id="kit03_teach_others_prompt_2">확정한 교재 뼈대 [파일 경로]를 [온라인 강의 / PPT / 책 원고] 중 내가 고른 형식으로 만들어 줘.
+
+보는 사람이 [원하는 느낌]을 받고 [원하는 행동]을 하게 만드는 것이 목적이야.
+먼저 목차와 첫 단원 견본을 보여 주고 내 확인을 받아.
+글자는 중장년이 읽기 크게, 한 화면에는 한 가지 동작만 넣어.
+완성본은 새 파일로 저장하고 실제로 열리는지 확인한 뒤 경로를 알려 줘.</pre>
+        </div>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 03 · 챗봇 · 초보자 검수</span>
+              <h3>처음 배우는 사람 눈높이 검수 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit03_teach_others_prompt_3">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">동료에게 보여 주기 전</p>
+          <pre class="prompt-body" id="kit03_teach_others_prompt_3">첨부한 교육 자료를 컴퓨터가 낯선 [연령대] 학습자의 입장에서 읽어 줘.
+
+처음부터 따라 한다고 가정하고 모르는 용어, 빠진 클릭, 확인할 수 없는 완료 기준, 한 번에 동작이 너무 많은 곳을 찾아 줘.
+각 문제마다 &#x27;어느 부분&#x27;, &#x27;왜 멈추는지&#x27;, &#x27;쉬운 문장으로 고친 예&#x27;를 표로 적어.
+잘된 점을 칭찬하는 것보다 실제로 멈출 곳을 찾는 데 집중해 줘.</pre>
+        </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 04 · HUMAN-IN-THE-LOOP</div>
+      <h2>4. 사람 승인(Human-in-the-Loop) 최종 검수 점검표</h2>
+      <p class="lead">AI가 초안을 10배 빠르게 만들어 주더라도, 최종 책임과 결재 도장은 반드시 사람(디렉터)이 찍습니다.</p>
+      <ul class="checklist" id="hitl-list">
+        <li><input type="checkbox" data-chk="kit03_teach_others_chk_1"><span>초보자 한 명이 실제로 따라 해서 끝까지 갔는가?</span></li>
+<li><input type="checkbox" data-chk="kit03_teach_others_chk_2"><span>수강생 이름·화면·발언 등 개인정보를 뺐는가?</span></li>
+<li><input type="checkbox" data-chk="kit03_teach_others_chk_3"><span>버튼 이름과 요금처럼 바뀌는 정보를 현재 화면으로 확인했는가?</span></li>
+<li><input type="checkbox" data-chk="kit03_teach_others_chk_4"><span>배운 사람이 내가 의도한 느낌을 받았는지 물어봤는가?</span></li>
+
+      </ul>
+    </section>
+
+    <p class="footer-note">바이브 코딩 기반 AI 업무자동화 11/19 · 유정근 (Ryu JeongKun) | 나의 업무함(workbox) 스타터 키트</p>
+  </main>
+
+  <script>
+    (function() {
+      const KID = "kit03_teach_others";
+      const NS = "workbox_vibe_20261119_";
+      // 양식 입력값 저장/복원
+      const STORE_KEY = 'kit_form_' + NS + KID;
+      const inputs = document.querySelectorAll('.kit-input');
+      const defaults = {};
+      inputs.forEach(el => { defaults[el.dataset.field] = el.value; });
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      inputs.forEach(el => {
+        const f = el.dataset.field;
+        if (Object.prototype.hasOwnProperty.call(saved, f)) {
+          el.value = saved[f];
+        }
+        el.addEventListener('input', () => {
+          saved[f] = el.value;
+          localStorage.setItem(STORE_KEY, JSON.stringify(saved));
+          const st = document.getElementById('save-status');
+          if (st) st.textContent = '✅ 방금 브라우저에 자동 저장되었습니다.';
+        });
+      });
+
+      // 텍스트 복사 헬퍼
+      function copyText(text, onDone) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(onDone).catch(() => fallbackCopy(text, onDone));
+        } else {
+          fallbackCopy(text, onDone);
+        }
+      }
+      function fallbackCopy(text, onDone) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        onDone();
+      }
+
+      // 프롬프트 원클릭 복사
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = document.getElementById(btn.dataset.copyTarget);
+          if (!target) return;
+          copyText(target.innerText, () => {
+            const orig = btn.textContent;
+            btn.textContent = '✅ 복사 완료!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.textContent = orig;
+              btn.classList.remove('copied');
+            }, 1800);
+          });
+        });
+      });
+
+      // 작성 양식 전체 복사
+      const copyFormBtn = document.getElementById('copy-form-btn');
+      if (copyFormBtn) {
+        copyFormBtn.addEventListener('click', () => {
+          const lines = ['[' + "③ 배운 것을 가르치는 교육 콘텐츠 스타터 키트" + ' - 작성본]', ''];
+          document.querySelectorAll('table tbody tr').forEach(tr => {
+            const labelEl = tr.querySelector('.col-label strong');
+            const ta = tr.querySelector('textarea.kit-input');
+            if (labelEl && ta) {
+              lines.push('■ ' + labelEl.innerText.trim());
+              lines.push(ta.value.trim() || '(미입력)');
+              lines.push('');
+            } else if (ta) {
+              lines.push([...tr.cells].map(td => {
+                const t = td.querySelector('textarea');
+                return t ? (t.value.trim() || '(미입력)') : td.innerText.trim();
+              }).join(' | '));
+            }
+          });
+          copyText(lines.join('\n'), () => {
+            const orig = copyFormBtn.textContent;
+            copyFormBtn.textContent = '✅ 양식 전체 복사 완료!';
+            setTimeout(() => { copyFormBtn.textContent = orig; }, 1800);
+          });
+        });
+      }
+
+      // 초기화
+      const resetBtn = document.getElementById('reset-form-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (!confirm('작성한 내용을 지우고 기본 예시로 되돌릴까요?')) return;
+          localStorage.removeItem(STORE_KEY);
+          Object.keys(saved).forEach(f => { delete saved[f]; });
+          inputs.forEach(el => { el.value = defaults[el.dataset.field] || ''; });
+        });
+      }
+
+      // HITL 체크리스트 저장
+      const CHK_KEY = 'kit_chk_' + NS + KID;
+      const savedChk = JSON.parse(localStorage.getItem(CHK_KEY) || '{}');
+      document.querySelectorAll('#hitl-list li').forEach(li => {
+        const cb = li.querySelector('input[type="checkbox"]');
+        const id = cb.dataset.chk;
+        if (savedChk[id]) {
+          cb.checked = true;
+          li.classList.add('checked');
+        }
+        li.addEventListener('click', (e) => {
+          if (e.target !== cb) cb.checked = !cb.checked;
+          li.classList.toggle('checked', cb.checked);
+          savedChk[id] = cb.checked;
+          localStorage.setItem(CHK_KEY, JSON.stringify(savedChk));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
