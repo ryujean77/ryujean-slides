@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-23T04:28:16.216Z",
-  "commit": "53a352b3512acb965a70bdf13c0ec5b80ba46e8f",
+  "generatedAt": "2026-11-23T04:36:27.462Z",
+  "commit": "ffb596ce8540a71b2af18642e2bf4913cd9e9489",
   "fileCount": 2548,
   "files": [
     {
@@ -305,7 +305,7 @@
     },
     {
       "path": "academy/courses/workbox/units/00b-review-1119.md",
-      "size": 87788
+      "size": 91948
     },
     {
       "path": "academy/courses/workbox/units/01-lesson.md",
