@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-19T19:07:06.036Z",
-  "commit": "b6ffc4f8c2622ecb6a224e2d71702cec71198384",
-  "fileCount": 2532,
+  "generatedAt": "2026-11-23T03:21:27.905Z",
+  "commit": "ba9b132dd098b5bf61e105b5f6ed19736c843974",
+  "fileCount": 2547,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -9916,6 +9916,66 @@
       "size": 13199
     },
     {
+      "path": "workbox-class/1119/kits/all_starter_kits.zip",
+      "size": 96752
+    },
+    {
+      "path": "workbox-class/1119/kits/kit01_business_plan.html",
+      "size": 24608
+    },
+    {
+      "path": "workbox-class/1119/kits/kit01_business_plan.md",
+      "size": 4839
+    },
+    {
+      "path": "workbox-class/1119/kits/kit02_shorts_skill.html",
+      "size": 24115
+    },
+    {
+      "path": "workbox-class/1119/kits/kit02_shorts_skill.md",
+      "size": 4424
+    },
+    {
+      "path": "workbox-class/1119/kits/kit03_teach_others.html",
+      "size": 23530
+    },
+    {
+      "path": "workbox-class/1119/kits/kit03_teach_others.md",
+      "size": 4134
+    },
+    {
+      "path": "workbox-class/1119/kits/kit04_daily_report.html",
+      "size": 23384
+    },
+    {
+      "path": "workbox-class/1119/kits/kit04_daily_report.md",
+      "size": 4003
+    },
+    {
+      "path": "workbox-class/1119/kits/kit05_creative_formats.html",
+      "size": 23375
+    },
+    {
+      "path": "workbox-class/1119/kits/kit05_creative_formats.md",
+      "size": 3986
+    },
+    {
+      "path": "workbox-class/1119/kits/kit06_rescue_handoff.html",
+      "size": 23590
+    },
+    {
+      "path": "workbox-class/1119/kits/kit06_rescue_handoff.md",
+      "size": 4150
+    },
+    {
+      "path": "workbox-class/1119/review.html",
+      "size": 83209
+    },
+    {
+      "path": "workbox-class/1119/review.md",
+      "size": 37051
+    },
+    {
       "path": "workbox-class/fig/fig1_lifecycle.html",
       "size": 147950
     },
@@ -10001,7 +10061,7 @@
     },
     {
       "path": "workbox-class/index.html",
-      "size": 205406
+      "size": 205496
     },
     {
       "path": "workbox-class/instructor.html",
