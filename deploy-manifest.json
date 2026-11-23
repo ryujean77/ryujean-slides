@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-23T04:36:27.462Z",
-  "commit": "ffb596ce8540a71b2af18642e2bf4913cd9e9489",
+  "generatedAt": "2026-11-23T13:26:34.821Z",
+  "commit": "7fef0b2e3afd2487ac9e1b50cde88dc387afae48",
   "fileCount": 2548,
   "files": [
     {
@@ -305,7 +305,7 @@
     },
     {
       "path": "academy/courses/workbox/units/00b-review-1119.md",
-      "size": 91948
+      "size": 95537
     },
     {
       "path": "academy/courses/workbox/units/01-lesson.md",
@@ -9921,7 +9921,7 @@
     },
     {
       "path": "workbox-class/1119/kits/all_starter_kits.zip",
-      "size": 128491
+      "size": 130817
     },
     {
       "path": "workbox-class/1119/kits/kit01_business_plan.html",
@@ -9973,11 +9973,11 @@
     },
     {
       "path": "workbox-class/1119/review.html",
-      "size": 155733
+      "size": 159531
     },
     {
       "path": "workbox-class/1119/review.md",
-      "size": 86766
+      "size": 90303
     },
     {
       "path": "workbox-class/fig/fig1_lifecycle.html",
