@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-23T03:21:27.905Z",
-  "commit": "ba9b132dd098b5bf61e105b5f6ed19736c843974",
-  "fileCount": 2547,
+  "generatedAt": "2026-11-23T04:28:16.216Z",
+  "commit": "53a352b3512acb965a70bdf13c0ec5b80ba46e8f",
+  "fileCount": 2548,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -29,7 +29,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 7417
+      "size": 7449
     },
     {
       "path": "academy/certificate.html",
@@ -297,11 +297,15 @@
     },
     {
       "path": "academy/courses/workbox/course.json",
-      "size": 5814
+      "size": 6255
     },
     {
       "path": "academy/courses/workbox/units/00-review.md",
       "size": 41394
+    },
+    {
+      "path": "academy/courses/workbox/units/00b-review-1119.md",
+      "size": 87788
     },
     {
       "path": "academy/courses/workbox/units/01-lesson.md",
@@ -9917,7 +9921,7 @@
     },
     {
       "path": "workbox-class/1119/kits/all_starter_kits.zip",
-      "size": 96752
+      "size": 128491
     },
     {
       "path": "workbox-class/1119/kits/kit01_business_plan.html",
@@ -9969,11 +9973,11 @@
     },
     {
       "path": "workbox-class/1119/review.html",
-      "size": 83209
+      "size": 155733
     },
     {
       "path": "workbox-class/1119/review.md",
-      "size": 37051
+      "size": 86766
     },
     {
       "path": "workbox-class/fig/fig1_lifecycle.html",
