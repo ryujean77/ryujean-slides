@@ -554,9 +554,9 @@ AC-3: 최종 저장된 HWP 파일을 한글 프로그램에서 열었을 때 표
   <script>
     (function() {
       const KID = 'kit01_gov_grant';
-      // 복습노트 돌아가기 경로 자동 판별 (deliverables vs workbox-class)
+      // 복습노트 돌아가기 경로: 공개 사이트(workbox-class)면 ../review.html, 그 밖(로컬 원본·ZIP 풀기)이면 원본 파일명
       const backLink = document.getElementById('back-link');
-      if (backLink && location.pathname.indexOf('polytech_lecture_review') !== -1) {
+      if (backLink && location.pathname.indexOf('/workbox-class/') === -1) {
         backLink.href = '../01_복습노트_완성본.html#sec-files';
       }
 

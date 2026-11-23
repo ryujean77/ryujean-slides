@@ -692,11 +692,13 @@
     .form-toast.show { display: block; }
 
     @media (max-width: 980px) {
-      .wrapper { grid-template-columns: 1fr; }
+      .wrapper { grid-template-columns: minmax(0, 1fr); }
       aside.sidebar { position: static; height: auto; }
       main.content { padding: 24px 18px 60px; }
       .summary-cards { grid-template-columns: 1fr; }
       .kit-grid, .form-row-2 { grid-template-columns: 1fr; }
+      .table-wrap table { min-width: 600px; }
+      .zip-btn { white-space: normal; }
     }
 
     @media print {
@@ -1305,7 +1307,16 @@
 
 <script>
   (function() {
-    const KEY = 'polytech_vibe_review_20261117';
+    const KEY = 'workbox_vibe_review_20261117';
+    try {
+      Object.keys(localStorage).forEach(k => {
+        const m = k.match(/^(?!workbox_)[a-z]+_vibe_(review|submit_draft)_20261117$/);
+        if (!m) return;
+        const nk = 'workbox_vibe_' + m[1] + '_20261117';
+        if (localStorage.getItem(nk) === null) localStorage.setItem(nk, localStorage.getItem(k));
+        localStorage.removeItem(k);
+      });
+    } catch (e) {}
     const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
     const items = document.querySelectorAll('#review-checklist li');
 
@@ -1325,7 +1336,7 @@
     });
 
     // Submission Form Handlers (Gmail Web / mailto / KakaoTalk Copy)
-    const DRAFT_KEY = 'polytech_vibe_submit_draft_20261117';
+    const DRAFT_KEY = 'workbox_vibe_submit_draft_20261117';
     const nameEl = document.getElementById('req-name');
     const emailEl = document.getElementById('req-email');
     const trackEl = document.getElementById('req-track');
@@ -1405,7 +1416,7 @@
         ].join('\n');
 
         const onCopied = () => {
-          showToast("✅ 카카오톡 제출용 양식이 복사되었습니다! '유정근 폴리텍 Ai 자동화' 단톡방에 붙여넣고(Ctrl+V) 파일을 함께 올려주세요.");
+          showToast("✅ 카카오톡 제출용 양식이 복사되었습니다! 수업 단톡방에 붙여넣고(Ctrl+V) 파일을 함께 올려주세요.");
         };
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
