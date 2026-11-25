@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-23T18:54:21.627Z",
-  "commit": "1bab308562c1ade441824a52aa758ec4e949b1cc",
-  "fileCount": 2548,
+  "generatedAt": "2026-11-25T14:36:16.217Z",
+  "commit": "ec9a03013038d0c2882e503639a7173f67a77700",
+  "fileCount": 2564,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -29,7 +29,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 7449
+      "size": 7481
     },
     {
       "path": "academy/certificate.html",
@@ -297,7 +297,7 @@
     },
     {
       "path": "academy/courses/workbox/course.json",
-      "size": 6255
+      "size": 6711
     },
     {
       "path": "academy/courses/workbox/units/00-review.md",
@@ -306,6 +306,10 @@
     {
       "path": "academy/courses/workbox/units/00b-review-1119.md",
       "size": 95537
+    },
+    {
+      "path": "academy/courses/workbox/units/00c-review-1125.md",
+      "size": 98426
     },
     {
       "path": "academy/courses/workbox/units/01-lesson.md",
@@ -9980,6 +9984,66 @@
       "size": 90303
     },
     {
+      "path": "workbox-class/1125/kits/all_starter_kits.zip",
+      "size": 129241
+    },
+    {
+      "path": "workbox-class/1125/kits/kit01_business_plan_goal.html",
+      "size": 24076
+    },
+    {
+      "path": "workbox-class/1125/kits/kit01_business_plan_goal.md",
+      "size": 4356
+    },
+    {
+      "path": "workbox-class/1125/kits/kit02_promo_site_pages.html",
+      "size": 23025
+    },
+    {
+      "path": "workbox-class/1125/kits/kit02_promo_site_pages.md",
+      "size": 4012
+    },
+    {
+      "path": "workbox-class/1125/kits/kit03_video_voice_edit.html",
+      "size": 22742
+    },
+    {
+      "path": "workbox-class/1125/kits/kit03_video_voice_edit.md",
+      "size": 3756
+    },
+    {
+      "path": "workbox-class/1125/kits/kit04_batch_sample_rules.html",
+      "size": 22796
+    },
+    {
+      "path": "workbox-class/1125/kits/kit04_batch_sample_rules.md",
+      "size": 3738
+    },
+    {
+      "path": "workbox-class/1125/kits/kit05_strategy_backtest.html",
+      "size": 22696
+    },
+    {
+      "path": "workbox-class/1125/kits/kit05_strategy_backtest.md",
+      "size": 3694
+    },
+    {
+      "path": "workbox-class/1125/kits/kit06_model_switch_continue.html",
+      "size": 24111
+    },
+    {
+      "path": "workbox-class/1125/kits/kit06_model_switch_continue.md",
+      "size": 4211
+    },
+    {
+      "path": "workbox-class/1125/review.html",
+      "size": 157107
+    },
+    {
+      "path": "workbox-class/1125/review.md",
+      "size": 93866
+    },
+    {
       "path": "workbox-class/fig/fig1_lifecycle.html",
       "size": 147950
     },
@@ -10065,7 +10129,7 @@
     },
     {
       "path": "workbox-class/index.html",
-      "size": 205496
+      "size": 205586
     },
     {
       "path": "workbox-class/instructor.html",
