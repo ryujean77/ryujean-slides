@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⑥ 모델 고르기 + 한도 바닥 대비 스타터 키트 | 11/25 바이브 코딩 AI 업무자동화 스타터 키트</title>
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-alt: #F3EFE6;
+      --navy: #1B253B;
+      --navy-light: #2B3A5A;
+      --gold: #B68F52;
+      --gold-dark: #8B6932;
+      --gold-soft: #F7F1E5;
+      --text: #1F2430;
+      --muted: #5A6275;
+      --line: #E2DACB;
+      --emerald: #2D6E52;
+      --emerald-bg: #E7F3ED;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(27, 37, 59, 0.07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15.5px;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(27, 37, 59, 0.96);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: #FFFFFF;
+      font-family: inherit;
+    }
+    .top-btn.gold {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .top-btn:hover { opacity: 0.92; }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 32px 34px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+    .hero .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #F0D29C;
+      background: rgba(182, 143, 82, 0.22);
+      padding: 4px 11px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1.38;
+    }
+    .hero p {
+      margin: 0;
+      color: #D8E0EF;
+      font-size: 15px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .lead {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .callout {
+      background: var(--gold-soft);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 14px 0 0;
+      font-size: 14.5px;
+    }
+    ul.clean {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+    ul.clean li {
+      margin-bottom: 7px;
+    }
+    code {
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 13.5px;
+      color: #9B3022;
+    }
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: var(--surface);
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-alt);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    td.col-label {
+      width: 30%;
+      background: #FCFBF8;
+    }
+    td.col-label .hint {
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    textarea.kit-input {
+      width: 100%;
+      border: 1px dashed #CBBFA8;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font: inherit;
+      font-size: 14px;
+      line-height: 1.55;
+      background: #FCFBF9;
+      color: var(--text);
+      resize: vertical;
+    }
+    textarea.kit-input.compact {
+      font-size: 13.5px;
+      padding: 7px 9px;
+    }
+    textarea.kit-input:focus {
+      outline: 2px solid var(--gold);
+      border-style: solid;
+      background: #FFFFFF;
+    }
+    .form-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .toolbar-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn-sm {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: var(--surface-alt);
+      color: var(--navy);
+    }
+    .btn-sm.primary {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-color: var(--navy);
+    }
+    .prompt-card {
+      background: #FCFBF8;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .prompt-card:last-child { margin-bottom: 0; }
+    .prompt-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .p-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+    }
+    .prompt-head h3 {
+      margin: 0;
+      font-size: 16.5px;
+      color: var(--navy);
+    }
+    .p-desc {
+      margin: 0 0 10px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .copy-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #FFFFFF;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy-btn.copied {
+      background: var(--emerald);
+      border-color: var(--emerald);
+    }
+    pre.prompt-body {
+      margin: 0;
+      padding: 14px 16px;
+      background: #1B253B;
+      color: #F4F6FA;
+      border-radius: 10px;
+      font-family: "Pretendard Variable", Pretendard, Consolas, monospace;
+      font-size: 13.5px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      background: #FCFBF8;
+    }
+    .checklist li:hover { background: var(--gold-soft); }
+    .checklist input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--emerald);
+      flex-shrink: 0;
+    }
+    .checklist li.checked span {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 28px;
+    }
+    @media (max-width: 720px) {
+      td.col-label { width: auto; display: block; }
+      tr { display: block; margin-bottom: 12px; }
+      td { display: block; width: 100%; }
+      thead { display: none; }
+      .hero { padding: 24px 20px; }
+    }
+    @media print {
+      .topbar, .form-toolbar, .copy-btn { display: none; }
+      body { background: #FFFFFF; font-size: 11pt; }
+      .card, .hero, .prompt-card { box-shadow: none; break-inside: avoid; }
+      pre.prompt-body { background: #F5F5F5; color: #111111; border: 1px solid #CCCCCC; }
+      textarea.kit-input { border: 1px solid #BBBBBB; background: #FFFFFF; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="top-btn" href="../review.html#sec-files" id="back-link">← 복습노트로 돌아가기</a>
+      <div class="top-actions">
+        <a class="top-btn" href="kit06_model_switch_continue.md" download>⬇ 마크다운(.md) 저장</a>
+        <button type="button" class="top-btn gold" onclick="window.print()">🖨️ A4 인쇄 / PDF 저장</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <span class="badge">KIT 06 · 모델 고르기 · 이어 가기</span>
+      <h1>⑥ 모델 고르기 + 한도 바닥 대비 스타터 키트</h1>
+      <p>일에 맞는 모델을 아래에서부터 고르고, 사용량이 바닥나도 같은 폴더를 다른 에이전트에 지정해 끊김 없이 이어 갑니다.</p>
+    </header>
+
+    <section class="card">
+      <div class="section-tag">STEP 01 · CORE STRATEGY &amp; RAW MATERIALS</div>
+      <h2>1. 현장 합격/성공 공식 &amp; 폴더에 넣을 원형 자료</h2>
+      <ul class="clean"><li><strong>아래에서 시작해 올라간다:</strong> 낮은 모델이나 기본값으로 시작해 답이 마음에 들면 계속 쓰고, 아니면 상위 모델로 올라갑니다. 모델을 고르는 이유는 시간과 비용 대비 효율입니다.</li>
+<li><strong>채팅이 아니라 에이전트로 옮긴다:</strong> 기록이 내 워크스페이스에 남아야 도구를 바꿔도 이어집니다. 한도가 바닥나면 다른 에이전트에 같은 폴더를 지정합니다.</li>
+<li><strong>진행 메모를 남겨 둔다:</strong> 단계가 끝날 때마다 진행 상황을 폴더에 메모로 남기게 하면, 새 에이전트가 폴더만 읽고도 이어 갑니다.</li></ul>
+      <div class="callout">
+        <strong>📁 내 작업 폴더(<code>workbox/</code>)에 먼저 넣어둘 원형 자료:</strong>
+        <ul class="clean"><li><code>01_작업_폴더/</code> — 지금 하는 프로젝트 폴더 전체</li>
+<li><code>02_진행_메모.md</code> — 어디까지 했는지, 남은 일, 결정한 것</li>
+<li><code>03_쓸_수_있는_도구.md</code> — 결제했거나 무료로 쓸 수 있는 에이전트와 모델 목록</li></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 02 · INTERACTIVE WORKSHEET</div>
+      <h2>2. 모델·도구 선택표</h2>
+      <p class="lead">새 일을 맡기기 전, 또는 한도가 바닥났을 때 채웁니다. (입력 내용은 현재 브라우저에 자동 저장됩니다.)</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:32%">설계 항목</th>
+              <th style="width:68%">나의 프로젝트 내용 작성 (예시 수정 가능)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class="col-label">
+                <strong>1. 맡길 일</strong>
+                <div class="hint">추론이 많이 필요한가</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit06_model_switch_continue_f1" rows="3" placeholder="예: 사업계획서 초안">한글 사업계획서 10쪽 초안</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>2. 시작 모델</strong>
+                <div class="hint">기본값이나 낮은 모델</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit06_model_switch_continue_f2" rows="3" placeholder="모델 이름">앱 기본값(중간 모델)</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>3. 올라갈 모델</strong>
+                <div class="hint">마음에 안 들 때</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit06_model_switch_continue_f3" rows="3" placeholder="모델 이름">최상위 모델</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>4. 판단 기준</strong>
+                <div class="hint">마음에 안 든다의 기준</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit06_model_switch_continue_f4" rows="3" placeholder="세 가지">근거 없는 숫자, 장황함, 형식 깨짐</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>5. 한도가 바닥나면</strong>
+                <div class="hint">옮겨 갈 에이전트</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit06_model_switch_continue_f5" rows="3" placeholder="도구 이름">타임리 에이전트에 같은 폴더 지정</textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-toolbar">
+        <span style="font-size:13px; color:var(--muted);" id="save-status">💾 입력 시 브라우저에 자동 저장됩니다.</span>
+        <div class="toolbar-btns">
+          <button type="button" class="btn-sm primary" id="copy-form-btn">📋 내가 작성한 양식 전체 복사</button>
+          <button type="button" class="btn-sm" id="reset-form-btn">↺ 기본 예시로 되돌리기</button>
+        </div>
+      </div>
+    </section>
+
+    
+      <section class="card">
+        <div class="section-tag">CHECK</div>
+        <h2>일의 종류별 모델 대조표</h2>
+        <p class="lead">강의에서 정리한 기준입니다. 내 경험을 오른쪽에 적어 갑니다.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>일의 종류</th><th>내가 써 본 모델과 결과</th></tr></thead>
+            <tbody><tr><td>고급 추론이 필요한 산출물 → 높은 모델</td><td><textarea class="kit-input compact" data-field="kit06_model_switch_continue_et_1_1" rows="2" placeholder="모델 이름과 결과"></textarea></td></tr><tr><td>반복 생성 → 낮은 모델</td><td><textarea class="kit-input compact" data-field="kit06_model_switch_continue_et_2_1" rows="2" placeholder="모델 이름과 결과"></textarea></td></tr><tr><td>정보 검색 → 더 낮은 모델</td><td><textarea class="kit-input compact" data-field="kit06_model_switch_continue_et_3_1" rows="2" placeholder="모델 이름과 결과"></textarea></td></tr><tr><td>대용량 반복 잡일·윤문 → 로컬 모델 시험</td><td><textarea class="kit-input compact" data-field="kit06_model_switch_continue_et_4_1" rows="2" placeholder="시험 결과"></textarea></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 03 · COPY-PASTE PROMPTS FOR AGENT</div>
+      <h2>3. 바로 복사해 쓰는 실전 요청문 (프롬프트)</h2>
+      <p class="lead">오른쪽 <strong>[요청문 원클릭 복사]</strong> 버튼을 누른 뒤 Antigravity(AGY)·Codex·Claude Code·타임리 에이전트에 붙여넣으세요. 대괄호 <code>[...]</code> 부분을 내 상황에 맞게 바꿔 쓰면 됩니다.</p>
+      
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 01 · 에이전트 · 모델 선택</span>
+              <h3>이 일에 맞는 모델 고르기 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit06_model_switch_continue_prompt_1">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">새 일을 맡기기 전</p>
+          <pre class="prompt-body" id="kit06_model_switch_continue_prompt_1">이번에 맡길 일은 [작업 내용]이야.
+지금 고를 수 있는 모델은 [화면에 보이는 모델 이름들]이야.
+1. 이 일에 고급 추론이 얼마나 필요한지 상·중·하로 판단해 줘.
+2. 가장 낮은 단계부터 시험할 모델 하나와, 결과가 마음에 안 들 때 올라갈 모델 하나를 골라 줘.
+3. 마음에 안 든다를 판단할 기준 세 가지를 적어 줘.
+모르는 모델이면 추측하지 말고 모른다고 말해 줘.</pre>
+        </div>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 02 · 다른 에이전트 · 이어 가기</span>
+              <h3>한도 바닥 뒤 이어 가기 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit06_model_switch_continue_prompt_2">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">사용량이 바닥나 다른 에이전트로 옮길 때</p>
+          <pre class="prompt-body" id="kit06_model_switch_continue_prompt_2">다른 에이전트에서 하던 작업을 여기서 이어서 하려고 해. 작업 폴더는 [폴더 경로]야.
+1. 폴더 안의 파일과 기록(계획서, 진행 메모, .md 파일)을 읽고 어디까지 됐는지 세 줄로 정리해 줘.
+2. 남은 일을 순서대로 적어 줘.
+3. 내가 확인하면 남은 일의 첫 단계부터 이어서 해 줘.
+4. 앞으로는 단계가 끝날 때마다 진행 메모를 이 폴더에 갱신해 줘.
+앞에서 만든 파일은 덮어쓰지 말고, 고칠 때는 백업을 먼저 만들어.</pre>
+        </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 04 · HUMAN-IN-THE-LOOP</div>
+      <h2>4. 사람 승인(Human-in-the-Loop) 최종 검수 점검표</h2>
+      <p class="lead">AI가 초안을 10배 빠르게 만들어 주더라도, 최종 책임과 결재 도장은 반드시 사람(디렉터)이 찍습니다.</p>
+      <ul class="checklist" id="hitl-list">
+        <li><input type="checkbox" data-chk="kit06_model_switch_continue_chk_1"><span>지금 쓰는 창이 채팅이 아니라 에이전트인가?</span></li>
+<li><input type="checkbox" data-chk="kit06_model_switch_continue_chk_2"><span>새 에이전트의 요약이 실제 진행 상황과 맞는가?</span></li>
+<li><input type="checkbox" data-chk="kit06_model_switch_continue_chk_3"><span>시작 모델의 결과를 판단 기준 세 가지로 평가했는가?</span></li>
+<li><input type="checkbox" data-chk="kit06_model_switch_continue_chk_4"><span>진행 메모가 폴더에 갱신되고 있는가?</span></li>
+
+      </ul>
+    </section>
+
+    <p class="footer-note">바이브 코딩 기반 AI 업무자동화 11/25 · 유정근 (Ryu JeongKun) | 나의 업무함(workbox) 스타터 키트</p>
+  </main>
+
+  <script>
+    (function() {
+      const KID = "kit06_model_switch_continue";
+      const NS = "workbox_vibe_20261125_";
+      // 양식 입력값 저장/복원
+      const STORE_KEY = 'kit_form_' + NS + KID;
+      const inputs = document.querySelectorAll('.kit-input');
+      const defaults = {};
+      inputs.forEach(el => { defaults[el.dataset.field] = el.value; });
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      inputs.forEach(el => {
+        const f = el.dataset.field;
+        if (Object.prototype.hasOwnProperty.call(saved, f)) {
+          el.value = saved[f];
+        }
+        el.addEventListener('input', () => {
+          saved[f] = el.value;
+          localStorage.setItem(STORE_KEY, JSON.stringify(saved));
+          const st = document.getElementById('save-status');
+          if (st) st.textContent = '✅ 방금 브라우저에 자동 저장되었습니다.';
+        });
+      });
+
+      // 텍스트 복사 헬퍼
+      function copyText(text, onDone) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(onDone).catch(() => fallbackCopy(text, onDone));
+        } else {
+          fallbackCopy(text, onDone);
+        }
+      }
+      function fallbackCopy(text, onDone) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        onDone();
+      }
+
+      // 프롬프트 원클릭 복사
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = document.getElementById(btn.dataset.copyTarget);
+          if (!target) return;
+          copyText(target.innerText, () => {
+            const orig = btn.textContent;
+            btn.textContent = '✅ 복사 완료!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.textContent = orig;
+              btn.classList.remove('copied');
+            }, 1800);
+          });
+        });
+      });
+
+      // 작성 양식 전체 복사
+      const copyFormBtn = document.getElementById('copy-form-btn');
+      if (copyFormBtn) {
+        copyFormBtn.addEventListener('click', () => {
+          const lines = ['[' + "⑥ 모델 고르기 + 한도 바닥 대비 스타터 키트" + ' - 작성본]', ''];
+          document.querySelectorAll('table tbody tr').forEach(tr => {
+            const labelEl = tr.querySelector('.col-label strong');
+            const ta = tr.querySelector('textarea.kit-input');
+            if (labelEl && ta) {
+              lines.push('■ ' + labelEl.innerText.trim());
+              lines.push(ta.value.trim() || '(미입력)');
+              lines.push('');
+            } else if (ta) {
+              lines.push([...tr.cells].map(td => {
+                const t = td.querySelector('textarea');
+                return t ? (t.value.trim() || '(미입력)') : td.innerText.trim();
+              }).join(' | '));
+            }
+          });
+          copyText(lines.join('\n'), () => {
+            const orig = copyFormBtn.textContent;
+            copyFormBtn.textContent = '✅ 양식 전체 복사 완료!';
+            setTimeout(() => { copyFormBtn.textContent = orig; }, 1800);
+          });
+        });
+      }
+
+      // 초기화
+      const resetBtn = document.getElementById('reset-form-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (!confirm('작성한 내용을 지우고 기본 예시로 되돌릴까요?')) return;
+          localStorage.removeItem(STORE_KEY);
+          Object.keys(saved).forEach(f => { delete saved[f]; });
+          inputs.forEach(el => { el.value = defaults[el.dataset.field] || ''; });
+        });
+      }
+
+      // HITL 체크리스트 저장
+      const CHK_KEY = 'kit_chk_' + NS + KID;
+      const savedChk = JSON.parse(localStorage.getItem(CHK_KEY) || '{}');
+      document.querySelectorAll('#hitl-list li').forEach(li => {
+        const cb = li.querySelector('input[type="checkbox"]');
+        const id = cb.dataset.chk;
+        if (savedChk[id]) {
+          cb.checked = true;
+          li.classList.add('checked');
+        }
+        li.addEventListener('click', (e) => {
+          if (e.target !== cb) cb.checked = !cb.checked;
+          li.classList.toggle('checked', cb.checked);
+          savedChk[id] = cb.checked;
+          localStorage.setItem(CHK_KEY, JSON.stringify(savedChk));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
