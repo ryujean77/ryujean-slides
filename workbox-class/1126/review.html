@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[복습노트] 바이브 코딩 기반 AI 업무자동화 11/26 — 나의 업무함 만들기 | 유정근</title>
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-alt: #F3EFE6;
+      --navy: #1B253B;
+      --navy-light: #2B3A5A;
+      --gold: #B68F52;
+      --gold-dark: #8B6932;
+      --gold-soft: #F7F1E5;
+      --text: #1F2430;
+      --muted: #5A6275;
+      --line: #E2DACB;
+      --emerald: #2D6E52;
+      --emerald-bg: #E7F3ED;
+      --coral: #B84439;
+      --coral-bg: #FDECEB;
+      --radius: 14px;
+      --shadow: 0 8px 28px rgba(27, 37, 59, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+      font-size: 16px;
+    }
+
+    /* Layout */
+    .wrapper {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    /* Sidebar Navigation */
+    aside.sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 28px 20px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .brand-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      background: rgba(182, 143, 82, 0.16);
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin: 0 0 6px;
+      line-height: 1.4;
+      color: #FFFFFF;
+    }
+    .sidebar p.sub {
+      font-size: 13px;
+      color: #A9B4C9;
+      margin: 0 0 24px;
+    }
+    .nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-list li {
+      margin-bottom: 6px;
+    }
+    .nav-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: #D2DAE9;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .nav-list a:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+    }
+    .nav-list a .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: rgba(182, 143, 82, 0.25);
+      color: #F0D29C;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .sidebar-footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 12.5px;
+      color: #9AA6BE;
+    }
+    .print-btn {
+      width: 100%;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .print-btn:hover { opacity: 0.9; }
+
+    /* Main Content */
+    main.content {
+      padding: 40px 52px 90px;
+      max-width: 1020px;
+    }
+
+    /* Hero Header */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #FFFFFF;
+      padding: 38px 40px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(182,143,82,0.25) 0%, transparent 70%);
+    }
+    .hero .eyebrow {
+      color: #F0D29C;
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 0 0 10px;
+    }
+    .hero h1 {
+      font-size: 28px;
+      margin: 0 0 14px;
+      line-height: 1.35;
+    }
+    .hero .meta-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 14px;
+      color: #D6DFEE;
+    }
+
+    /* Section Styling */
+    section.block {
+      margin-bottom: 48px;
+      scroll-margin-top: 24px;
+    }
+    .section-header {
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+    }
+    .section-header .tag {
+      display: inline-block;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+    .section-header h2 {
+      font-size: 23px;
+      color: var(--navy);
+      margin: 0;
+    }
+
+    /* 3-Line Summary Cards */
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .s-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .s-card .step-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .s-card h3 {
+      font-size: 17px;
+      margin: 0 0 10px;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+    .s-card p {
+      font-size: 14.5px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Content Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 19px;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      background: var(--surface);
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 12px 15px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-alt);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    tr:nth-child(even) td {
+      background: #FCFBF9;
+    }
+
+    /* Callouts */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+    .callout.gold {
+      background: var(--gold-soft);
+      border-left: 4px solid var(--gold);
+    }
+    .callout.emerald {
+      background: var(--emerald-bg);
+      border-left: 4px solid var(--emerald);
+    }
+    .callout.coral {
+      background: var(--coral-bg);
+      border-left: 4px solid var(--coral);
+    }
+    .callout strong.title {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    /* Case Grid */
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .case-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--navy);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+    }
+    .case-box .case-num {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .case-box h3 {
+      margin: 4px 0 12px;
+      font-size: 19px;
+      color: var(--navy);
+    }
+
+    /* Step Manual List */
+    .step-manual {
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .step-manual > li {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 24px 22px 68px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .step-manual > li::before {
+      counter-increment: step-counter;
+      content: "STEP " counter(step-counter);
+      position: absolute;
+      left: 18px;
+      top: 22px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--navy);
+      color: #F0D29C;
+      font-size: 10px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.1;
+      padding: 4px;
+    }
+    .step-manual h4 {
+      margin: 0 0 8px;
+      font-size: 17.5px;
+      color: var(--navy);
+    }
+    kbd {
+      background: var(--surface-alt);
+      border: 1px solid #C8BFA8;
+      border-bottom-width: 2px;
+      border-radius: 5px;
+      padding: 2px 7px;
+      font-family: Consolas, monospace;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    code {
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      color: #9B3022;
+    }
+
+    /* Interactive Checklist */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .checklist li:hover {
+      background: var(--gold-soft);
+    }
+    .checklist input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 3px;
+      accent-color: var(--emerald);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .checklist li.checked span {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
+    /* Q&A Details */
+    details.qa-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+    details.qa-item summary {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--navy);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details.qa-item summary::after {
+      content: "정답 및 해설 보기 ▼";
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 4px 10px;
+      border-radius: 99px;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    details.qa-item[open] summary::after {
+      content: "접기 ▲";
+    }
+    details.qa-item .answer {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+      font-size: 15px;
+    }
+
+    /* Follow-along Parts: 복사용 요청문 · 정상 결과/막혔을 때 · 접어 둔 추가 사례 */
+    .prompt-box {
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .prompt-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px 12px;
+      padding: 10px 14px;
+      background: var(--gold-soft);
+      border-bottom: 1px solid var(--line);
+    }
+    .prompt-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+    .prompt-copy {
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #FFFFFF;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .prompt-copy.copied {
+      background: var(--emerald);
+      border-color: var(--emerald);
+    }
+    pre.prompt-text {
+      margin: 0;
+      padding: 14px 16px;
+      background: var(--navy);
+      color: #F4F6FA;
+      font-family: "Pretendard Variable", Pretendard, "Malgun Gothic", sans-serif;
+      font-size: 14.5px;
+      line-height: 1.75;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .outcome {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 14px 0 6px;
+    }
+    .outcome > div {
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+    .outcome .ok {
+      background: var(--emerald-bg);
+      border-left: 4px solid var(--emerald);
+    }
+    .outcome .stuck {
+      background: var(--coral-bg);
+      border-left: 4px solid var(--coral);
+    }
+    .outcome strong.title {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+    details.fold {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 12px;
+    }
+    details.fold summary {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--navy);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details.fold summary::after {
+      content: "펼쳐 보기 ▼";
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 4px 10px;
+      border-radius: 99px;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    details.fold[open] summary::after {
+      content: "접기 ▲";
+    }
+    details.fold .answer {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line);
+      font-size: 15px;
+    }
+
+    /* Hero Action Buttons */
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, opacity 0.15s, background 0.15s;
+    }
+    .hero-btn:hover { transform: translateY(-1px); opacity: 0.94; }
+    .hero-btn.primary {
+      background: var(--gold);
+      color: #FFFFFF;
+      border: 1px solid var(--gold);
+    }
+    .hero-btn.ghost {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+    }
+
+    /* Starter Kits & File Submission Section */
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 18px 0 22px;
+    }
+    .kit-card {
+      background: #FCFBF8;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .kit-card:hover {
+      border-top-color: var(--gold);
+      box-shadow: 0 8px 22px rgba(27, 37, 59, 0.09);
+    }
+    .kit-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+    .kit-card h4 {
+      margin: 0 0 6px;
+      font-size: 16.5px;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+    .kit-card p {
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .kit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--line);
+    }
+    .kit-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .kit-link:hover { opacity: 0.88; }
+    .kit-link.open {
+      background: var(--navy);
+      color: #FFFFFF;
+    }
+    .kit-link.md {
+      background: var(--surface-alt);
+      color: var(--navy);
+      border: 1px solid var(--line);
+    }
+    .zip-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      background: linear-gradient(135deg, #F7F1E5 0%, #EFE5D1 100%);
+      border: 1px solid #D9C5A0;
+      border-radius: 12px;
+      padding: 18px 22px;
+    }
+    .zip-banner-text strong {
+      display: block;
+      font-size: 16px;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+    .zip-banner-text span {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .zip-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-dark);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(139, 105, 50, 0.25);
+    }
+    .zip-btn:hover { opacity: 0.92; }
+
+    /* Submission Form */
+    .submit-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .form-field label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid #D5CBB8;
+      border-radius: 9px;
+      font: inherit;
+      font-size: 14.5px;
+      background: #FCFBF9;
+      color: var(--text);
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      outline: 2px solid var(--gold);
+      border-color: var(--gold);
+      background: #FFFFFF;
+    }
+    .submit-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.12s, opacity 0.15s;
+    }
+    .action-btn:hover { transform: translateY(-1px); opacity: 0.93; }
+    .action-btn.gmail { background: #1B253B; color: #FFFFFF; }
+    .action-btn.mailto { background: var(--gold); color: #FFFFFF; }
+    .action-btn.kakao { background: #FEE500; color: #191600; border-color: #E5CE00; }
+    .form-toast {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 16px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--emerald-bg);
+      color: var(--emerald);
+      border-left: 4px solid var(--emerald);
+    }
+    .form-toast.show { display: block; }
+
+    @media (max-width: 980px) {
+      .wrapper { grid-template-columns: minmax(0, 1fr); }
+      aside.sidebar { position: static; height: auto; }
+      main.content { padding: 24px 18px 60px; }
+      .summary-cards { grid-template-columns: 1fr; }
+      .kit-grid, .form-row-2 { grid-template-columns: 1fr; }
+      .table-wrap table { min-width: 600px; }
+      .zip-btn { white-space: normal; }
+      .outcome { grid-template-columns: 1fr; }
+      .step-manual > li { padding: 66px 16px 18px; }
+      .step-manual > li::before { top: 16px; left: 16px; }
+    }
+
+    @media print {
+      aside.sidebar, .hero-btns, .submit-btns, .kit-actions, .prompt-copy { display: none; }
+      .wrapper { display: block; }
+      main.content { max-width: 100%; padding: 0; }
+      body { background: #FFFFFF; font-size: 12pt; }
+      .card, .case-box, .s-card, .kit-card, .step-manual > li, details.qa-item {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <aside class="sidebar">
+    <span class="brand-badge">WORKBOX × JJ EDU</span>
+    <h2>나의 업무함 만들기<br>바이브 코딩 복습노트</h2>
+    <p class="sub">나의 업무함 만들기 · 바이브 코딩 AI 업무자동화 특별과정</p>
+
+    <ul class="nav-list">
+      <li><a href="#sec-summary"><span class="num">01</span>핵심 3줄 요약</a></li>
+      <li><a href="#sec-files"><span class="num">★</span>목표별 스타터 키트·자료제출</a></li>
+      <li><a href="#sec-part1"><span class="num">02</span>Part 1. 오늘의 지도와 기록</a></li>
+      <li><a href="#sec-part2"><span class="num">03</span>Part 2. 깃허브 첫 연결</a></li>
+      <li><a href="#sec-part3"><span class="num">04</span>Part 3. 깃허브와 스킬</a></li>
+      <li><a href="#sec-part4"><span class="num">05</span>Part 4. 에이전트 전용 브라우저</a></li>
+      <li><a href="#sec-part5"><span class="num">06</span>Part 5. IDE로 law.md 들여다보기</a></li>
+      <li><a href="#sec-part6"><span class="num">07</span>Part 6. 에이전트별 첫 파일</a></li>
+      <li><a href="#sec-part7"><span class="num">08</span>Part 7. 규칙 확인과 나에게 맞추기</a></li>
+      <li><a href="#sec-check"><span class="num">09</span>체크리스트·문제 해결·Q&amp;A</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div><strong>담당 강사:</strong> 유정근 (Ryu JeongKun)</div>
+      <div><strong>강의 일자:</strong> 2026. 11. 26.</div>
+      <button class="print-btn" onclick="window.print()">🖨️ A4 교재로 인쇄 / PDF 저장</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <header class="hero">
+      <p class="eyebrow">나의 업무함 만들기 · 바이브 코딩 AI 업무자동화 특별과정</p>
+      <h1>저장소, 손발, 규칙: 에이전트를 내 직원으로<br>— 11월 26일 현장 강의 복습노트</h1>
+      <p style="margin:0; color:#E2E8F4; font-size:15.5px;">
+        에이전트와 <strong>깃허브</strong>를 처음 연결하는 산 넘기, 에이전트에게 손발을 주는 <strong>에고 라이트·어사이드 브라우저</strong>, 그리고 어떤 에이전트든 내 규칙을 따르게 하는 <strong>GEMINI.md·CLAUDE.md·AGENTS.md와 law.md</strong>까지, 수업에서 가장 어려웠던 날의 흐름을 순서대로 담았습니다.
+      </p>
+      <div class="meta-grid">
+        <span>👤 <strong>대표강사:</strong> 유정근 (Ryu JeongKun | JJ에듀 대표강사)</span>
+        <span>📅 <strong>강의 실록 기준일:</strong> 2026년 11월 26일 (오전·오후 녹음 6개 통합)</span>
+        <span>🎯 <strong>연계 교안:</strong> 나의 업무함(workbox) 20차시 정규 과정</span>
+      </div>
+      <div class="hero-btns">
+        <a class="hero-btn primary" href="https://academy.eglslab.com/course.html?c=workbox" target="_blank" rel="noopener">🎓 마이웨이 아카데미(C5)로 이동</a>
+        <a class="hero-btn ghost" href="https://ryujean77.github.io/ryujean-slides/workbox-class/" target="_blank" rel="noopener">📚 20차시 전체 온라인 교안 보기</a>
+        <a class="hero-btn ghost" href="#sec-files">🎁 분야별 스타터 키트·자료 제출함</a>
+      </div>
+    </header>
+
+    <!-- 1. 핵심 3줄 요약 -->
+    <section id="sec-summary" class="block">
+      <div class="section-header">
+        <span class="tag">CORE MESSAGE</span>
+        <h2>1. 강의를 관통하는 핵심 메시지 3줄 요약</h2>
+      </div>
+      <div class="summary-cards">
+        <div class="s-card">
+          <span class="step-badge">MESSAGE 01</span>
+          <h3>깃허브는 날아가지 않는 저장소,<br>처음 한 번 연결이 산이다</h3>
+          <p>작업은 내 PC에서 에이전트와 하고, 깃허브는 그 결과를 클라우드에 보관하는 저장소입니다. 로그인·승인·코드 입력을 한 번만 넘기면 그다음부터는 “깃허브에 올려 줘” 한마디면 됩니다. 막히면 강사가 아니라 에이전트에게 묻고 답을 받아 내는 것이 오늘의 연습이었습니다.</p>
+        </div>
+        <div class="s-card">
+          <span class="step-badge">MESSAGE 02</span>
+          <h3>브라우저를 주면<br>에이전트에게 손발이 생긴다</h3>
+          <p>에고 라이트·어사이드처럼 AI가 쓰기 좋게 만든 브라우저를 설치하면, 로그인만 내가 하고 검색·비교·글쓰기·예약 올리기는 에이전트가 직접 클릭합니다. 결제와 최종 승인은 사람이 합니다.</p>
+        </div>
+        <div class="s-card">
+          <span class="step-badge">MESSAGE 03</span>
+          <h3>규칙 파일 하나로<br>에이전트를 내 직원으로 만든다</h3>
+          <p>Antigravity는 GEMINI.md, Codex는 AGENTS.md, Claude Code는 CLAUDE.md를 제일 먼저 읽습니다. 여러 에이전트를 쓰면 공통 규칙을 law.md에 모으고, 하나만 쓰면 그 파일에 바로 씁니다. 처음엔 몇 줄로 시작해 거슬릴 때마다 한 줄씩 더합니다.</p>
+        </div>
+      </div>
+      <div class="callout gold">
+        <strong class="title">📖 이 노트를 읽는 방법</strong>
+        Part 1~7은 26일 수업이 흘러간 순서입니다(오전 오리엔테이션 → 깃허브 연결 실습 → 점심 뒤 깃허브와 스킬 → 브라우저 → 규칙 파일 → 마지막 시간 규칙 확인). 주제마다 <strong>왜 필요한가 → 수업 현장 → 따라 하기 단계 → 복사용 요청문 → 정상 결과와 막혔을 때</strong> 순서로 적었습니다. 요청문은 <strong>[📋 복사]</strong>를 눌러 에이전트 입력창에 붙이고 <code>[ ]</code> 안만 내 상황으로 바꾸세요. 강의에 없던 안내를 덧붙인 곳에는 <strong>(복습 보강)</strong>이라고 표시했습니다. 강사가 “오늘이 제일 어려운 날”이라고 미리 말한 날이니, 한 번에 다 하려 하지 말고 Part 하나씩 끝까지 해 보세요.
+      </div>
+    </section>
+
+    <!-- ★. 목표 분야별 스타터 키트 & 자료 제출함 -->
+    <section id="sec-files" class="block">
+      <div class="section-header">
+        <span class="tag">STARTER KITS & PROJECT SUBMISSION</span>
+        <h2>🎁 내 목표 분야별 맞춤 파일 받기 &amp; 내 프로젝트 자료 제출함</h2>
+      </div>
+
+      <!-- (A) 6대 분야별 스타터 키트 -->
+      <div class="card">
+        <h3>📥 내 목표 분야별 스타터 파일 즉시 받기 (양식 + 복사용 프롬프트)</h3>
+        <p style="margin-top:0; color:var(--muted); font-size:15px;">
+          26일 수업의 실습과 질문에서 나온 <strong>6대 실무 목표</strong>에 맞춰, 바로 복사해 쓰는 <strong>에이전트 요청문</strong>과 <strong>실전 설계서 양식</strong>을 한 파일씩 묶었습니다. 오늘 넘은 산(깃허브 연결·브라우저 설치·규칙 파일) 가운데 <strong>내가 아직 못 끝낸 것</strong>부터 여세요.
+        </p>
+
+        <div class="kit-grid">
+          <div class="kit-card">
+            <div>
+              <span class="kit-badge">KIT 01 · 깃허브</span>
+              <h4>① 깃허브 첫 연결 스타터 키트</h4>
+              <p>연결 준비 점검표, 방법 A·B 고르는 기준, 첫 업로드·인증 이어 가기 요청문 포함</p>
+            </div>
+            <div class="kit-actions">
+              <a class="kit-link open" href="kits/kit01_github_first_push.html" target="_blank" rel="noopener">📄 키트 열기 (인쇄·복사)</a>
+              <a class="kit-link md" href="kits/kit01_github_first_push.md" download>⬇ MD 양식</a>
+            </div>
+          </div>
+
+          <div class="kit-card">
+            <div>
+              <span class="kit-badge">KIT 02 · 전용 브라우저</span>
+              <h4>② 에이전트 전용 브라우저 스타터 키트</h4>
+              <p>설치·온보딩 점검표, 방식 비교표, 설치·로그인 넘기기 요청문 포함</p>
+            </div>
+            <div class="kit-actions">
+              <a class="kit-link open" href="kits/kit02_agent_browser_setup.html" target="_blank" rel="noopener">📄 키트 열기 (인쇄·복사)</a>
+              <a class="kit-link md" href="kits/kit02_agent_browser_setup.md" download>⬇ MD 양식</a>
+            </div>
+          </div>
+
+          <div class="kit-card">
+            <div>
+              <span class="kit-badge">KIT 03 · 조사 보고서</span>
+              <h4>③ 브라우저 조사·비교 보고서 스타터 키트</h4>
+              <p>비교 기준 설계서, 기준 다듬기 대조표, 조사·보고서 요청문 포함</p>
+            </div>
+            <div class="kit-actions">
+              <a class="kit-link open" href="kits/kit03_browse_compare_report.html" target="_blank" rel="noopener">📄 키트 열기 (인쇄·복사)</a>
+              <a class="kit-link md" href="kits/kit03_browse_compare_report.md" download>⬇ MD 양식</a>
+            </div>
+          </div>
+
+          <div class="kit-card">
+            <div>
+              <span class="kit-badge">KIT 04 · 예약 발행</span>
+              <h4>④ 1년치 예약 발행 스타터 키트</h4>
+              <p>시즌 달력 설계서, 승인 단계 대조표, 계획·예약 요청문 포함</p>
+            </div>
+            <div class="kit-actions">
+              <a class="kit-link open" href="kits/kit04_scheduled_publish.html" target="_blank" rel="noopener">📄 키트 열기 (인쇄·복사)</a>
+              <a class="kit-link md" href="kits/kit04_scheduled_publish.md" download>⬇ MD 양식</a>
+            </div>
+          </div>
+
+          <div class="kit-card">
+            <div>
+              <span class="kit-badge">KIT 05 · 규칙 파일</span>
+              <h4>⑤ 나만의 규칙 파일 스타터 키트</h4>
+              <p>규칙 설계서, 에이전트별 파일 대조표, 만들기·확인 요청문 포함</p>
+            </div>
+            <div class="kit-actions">
+              <a class="kit-link open" href="kits/kit05_my_rules_file.html" target="_blank" rel="noopener">📄 키트 열기 (인쇄·복사)</a>
+              <a class="kit-link md" href="kits/kit05_my_rules_file.md" download>⬇ MD 양식</a>
+            </div>
+          </div>
+
+          <div class="kit-card">
+            <div>
+              <span class="kit-badge">KIT 06 · 스킬</span>
+              <h4>⑥ 반복 작업을 스킬로 만드는 스타터 키트</h4>
+              <p>반복 작업 기록표, 스킬 설치 전 점검표, 스킬 만들기·찾기 요청문 포함</p>
+            </div>
+            <div class="kit-actions">
+              <a class="kit-link open" href="kits/kit06_repeat_to_skill.html" target="_blank" rel="noopener">📄 키트 열기 (인쇄·복사)</a>
+              <a class="kit-link md" href="kits/kit06_repeat_to_skill.md" download>⬇ MD 양식</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="zip-banner">
+          <div class="zip-banner-text">
+            <strong>📦 6대 분야 스타터 키트 + 복습노트 전체 한 번에 받기</strong>
+            <span>HTML 양식 6종 + 마크다운(.md) 프롬프트 6종 + 복습노트 원본(HTML/MD)이 모두 들어 있습니다.</span>
+          </div>
+          <a class="zip-btn" href="kits/all_starter_kits.zip" download>📦 전체 스타터 키트 일괄 다운로드 (ZIP)</a>
+        </div>
+      </div>
+
+      <!-- (B) 프로젝트 파일 보내기 & 맞춤 파일 신청기 -->
+      <div class="card">
+        <h3>📤 내 프로젝트 파일 보내기 &amp; 이메일/구글드라이브 맞춤 파일 신청기</h3>
+        <div class="callout gold" style="margin-top:8px;">
+          <strong class="title">💡 내가 만든 규칙 파일과 작업 폴더 자료를 보내주시면 맞춤형 스타터 파일을 만들어 드립니다!</strong>
+          아래 입력칸에 성함과 목표를 적고 <strong>[Gmail 웹에서 바로 보내기]</strong>를 누르면 유정근 디렉터(<code>ryujean77@gmail.com</code>) 앞으로 메일 창이 열립니다. 열린 메일 창 하단의 <strong>클립(📎) 아이콘</strong>을 눌러 내 PC의 PDF·PPTX·HWP 파일을 첨부해 보내주세요. (※ 주민번호·계좌 비밀번호 등 민감한 개인정보는 제외하고 보내주세요.)
+        </div>
+        <p style="margin:10px 0 0; font-size:14px; color:var(--muted);">※ 이 칸은 메일 작성창을 열어 주거나 카카오톡에 붙일 문구를 복사해 주는 도구입니다. 열린 메일에서 직접 [보내기]를 눌러야 전달되며, 자동 접수나 제출 현황 확인 기능은 없습니다. 입력한 내용은 이 기기의 브라우저에만 임시로 남습니다.</p>
+
+        <form class="submit-form" id="project-submit-form" onsubmit="return false;">
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="req-name">① 성함</label>
+              <input type="text" id="req-name" placeholder="예: 홍길동" autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="req-email">② 이메일 주소 (구글 드라이브 공유받을 주소)</label>
+              <input type="email" id="req-email" placeholder="예: myname@gmail.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="req-track">③ 희망 프로젝트 분야</label>
+            <select id="req-track">
+              <option value="① 깃허브 첫 연결·업로드">① 깃허브 첫 연결·업로드</option>
+              <option value="② 에이전트 전용 브라우저 설치">② 에이전트 전용 브라우저 설치</option>
+              <option value="③ 검색·비교 조사 보고서">③ 검색·비교 조사 보고서</option>
+              <option value="④ 유튜브·블로그 예약 발행">④ 유튜브·블로그 예약 발행</option>
+              <option value="⑤ 나만의 규칙 파일(GEMINI·CLAUDE·AGENTS.md)">⑤ 나만의 규칙 파일(GEMINI·CLAUDE·AGENTS.md)</option>
+              <option value="⑥ 반복 작업 스킬화·깃허브 스킬 찾기">⑥ 반복 작업 스킬화·깃허브 스킬 찾기</option>
+              <option value="⑦ 기타 맞춤형 AI 업무자동화 프로젝트">⑦ 기타 맞춤형 AI 업무자동화 프로젝트</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="req-goal">④ 내가 하고 싶은 목표 및 요청사항 (또는 첨부할 내 파일 설명)</label>
+            <textarea id="req-goal" rows="4" placeholder="예: 사업계획서를 반복해서 쓰는 일을 에이전트에게 맡기고 싶습니다. 지금 쓰는 에이전트는 Antigravity이고, 작업 폴더에 만든 GEMINI.md와 지난번 계획서 두 개를 첨부합니다. 규칙에 무엇을 더 넣으면 좋을지 알고 싶습니다."></textarea>
+          </div>
+
+          <div class="submit-btns">
+            <button type="button" class="action-btn gmail" id="btn-gmail">📧 Gmail 웹에서 바로 보내기 (파일 첨부 가능)</button>
+            <button type="button" class="action-btn mailto" id="btn-mailto">✉️ 기본 메일 앱으로 보내기</button>
+            <button type="button" class="action-btn kakao" id="btn-kakao">💬 카카오톡 단톡방 제출용 양식 복사</button>
+          </div>
+          <div class="form-toast" id="submit-toast" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 2. Part 1 -->
+    <section id="sec-part1" class="block">
+      <div class="section-header">
+        <span class="tag">PART 01 · ORCHESTRATION &amp; RECORDS</span>
+        <h2>2. AI를 지휘하는 사람이 되기: 오케스트레이팅, 마크다운, 그리고 기록</h2>
+      </div>
+
+      <div class="card">
+        <h3>① 오늘의 목표는 ‘지휘’입니다</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 26일 수업은 출석을 부른 뒤, 각자 정한 목표를 몇 %나 돌렸는지 묻는 것으로 시작했습니다. 한 바퀴를 돌려 보자고 했던 목표가 벌써 80~90%까지 간 분도 있었고, 아직 못 정한 분도 몇 분 남았습니다. “할 만하다·쉽다·어렵다”에 손을 들어 보니 아직 어렵다는 분도 계셨습니다. 강사는 오늘 할 일을 세 가지로 미리 펼쳐 놓았습니다. <strong>깃허브</strong>로 작업을 지키는 법, AI가 잘 쓰고 토큰을 줄여 주는 <strong>브라우저(어사이드, 에고 라이트)</strong>, 그리고 어떤 에이전트든 내 규칙을 따르게 만드는 <strong>워크스페이스 규칙(law.md)</strong>입니다.
+        </p>
+        <p>
+          이 셋을 묶는 말이 <strong>오케스트레이팅(orchestrating)</strong>입니다. 오케스트라 지휘자가 악기를 지휘하듯, 우리는 AI 에이전트들을 지휘해야 일을 시키고, 자동화도 하고, 직원처럼 둘 수 있습니다. 여러 에이전트를 지휘해 주는 별도의 에이전트도 있는데, 강사는 대표적인 예로 <strong>헤르메스(Hermes) 에이전트</strong>를 들었습니다. 설치해서 쓰는 앱처럼 생겼고, 자주 쓰는 일은 스킬로 만들고, 스킬이 안 좋으면 다른 것으로 갈아 끼우고, 토큰을 아끼는 로직이 들어 있다는 설명이었습니다.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ 수업 현장: 고삐를 쥐는 쪽은 나</strong>
+          강사는 말의 고삐를 예로 들었습니다. 고삐를 오른쪽으로 당기면 말은 오른쪽으로 갑니다. 에이전트를 지휘한다는 것은 이 고삐를 내가 쥐는 일입니다. 그리고 우리는 이미 그 기법 하나를 배웠습니다. 특정 에이전트에 매이지 않고 <strong>워크스페이스 폴더와 경로 복사</strong>로 어떤 에이전트든 같은 자료를 쓰게 하는 방법입니다. 오늘 배울 law.md가 두 번째 기법입니다.
+        </div>
+        <div class="callout coral">
+          <strong class="title">🔎 사실 확인 (복습 보강)</strong>
+          Hermes Agent는 Nous Research가 MIT 라이선스로 공개한 오픈소스 에이전트로, 끝낸 작업에서 스킬을 만들고 쓰면서 고쳐 가는 방식을 내세웁니다. 이름은 그리스 신화의 전령 신에서 왔습니다. 수업의 ‘고삐’ 비유는 이름의 뜻이 아니라, 에이전트를 묶어 다루는 틀을 뜻하는 <strong>하네스(harness, 마구)</strong>라는 말과 연결해 들으시면 정확합니다.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>② law.md는 우리 회사의 ‘사규’, 마크다운은 ‘공문서 형식’</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 지금까지 우리는 규칙 없이 에이전트에게 일을 맡겼고, 그래도 잘했습니다. 그때그때 내가 준 요청문이 규칙 노릇을 했기 때문입니다. law.md는 그 규칙을 파일로 만들어 워크스페이스에 넣어 두는 것입니다. 이름 그대로 법(law)이고, 회사로 치면 <strong>사규</strong>입니다. 워크스페이스에 이 파일이 있으면 거의 모든 에이전트가 이것부터 읽고, 그 규칙에 따라 움직입니다. “이런 문장은 쓰지 마라”, “거짓 정보를 지어내지 마라”, “내가 보기 전에 한 번 더 검수해라”를 넣으면 에이전트는 따릅니다.
+        </p>
+        <p>
+          왜 굳이 파일로 둘까요? 효율도 있지만 <strong>통일성</strong> 때문입니다. Claude, Codex, Antigravity는 각자 특성이 있습니다. 같은 규칙을 주면 어떤 에이전트를 쓰든 똑같은 환경에서 일하게 됩니다. 워크스페이스 전체에 하나를 둘 수도 있고, 프로젝트 폴더마다 따로 둘 수도 있습니다. 실제 내용은 몇 줄이면 시작할 수 있습니다.
+        </p>
+        <p>
+          .md는 <strong>마크다운(markdown)</strong> 파일입니다. 이름이 낯설 뿐 메모장으로 열리는 텍스트 파일이고, 메모장에서 쓰고 확장자만 .md로 바꿔도 됩니다. 강사는 공문서로 설명했습니다. 제목은 크게, 첫 번호는 한 단계 작게, 본문은 더 작게, 그리고 들여쓰기. 이렇게 계층이 있으면 어디부터 어디까지가 제목이고 내용인지 한눈에 구분됩니다. AI도 마찬가지로, 막 써 놓은 글보다 계층이 있는 마크다운의 맥락을 더 잘 읽습니다. 그래서 AI가 작업 기록이나 보고를 남길 때도 마크다운으로 씁니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:22%">구분</th><th style="width:39%">공문서(한글 문서)</th><th style="width:39%">마크다운(.md)</th></tr></thead>
+            <tbody>
+              <tr><td><strong>문서 제목</strong></td><td>가장 큰 글자</td><td><code># 제목</code></td></tr>
+              <tr><td><strong>큰 번호</strong></td><td>한 단계 작은 글자, 1. 2. 3.</td><td><code>## 1. 항목</code></td></tr>
+              <tr><td><strong>본문·세부</strong></td><td>본문 크기, 들여쓰기</td><td>그냥 문장, <code>- 목록</code></td></tr>
+              <tr><td><strong>만드는 도구</strong></td><td>한글·워드</td><td>메모장도 됨. 확장자만 .md</td></tr>
+              <tr><td><strong>AI가 읽을 때</strong></td><td>파일 형식을 풀어야 함</td><td>계층이 보여 맥락을 잘 읽음</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <ol class="step-manual">
+        <li>
+          <h4>내 메모를 마크다운 파일로 바꿔 보기</h4>
+          <ol>
+            <li><strong>준비:</strong> 메모장에 오늘 할 일이나 아무 메모를 서너 줄 적어 작업 폴더에 저장합니다.</li>
+            <li>에이전트(Antigravity·타임리 에이전트·Claude Code 등)에서 작업 폴더를 연 상태로 아래 요청문을 붙입니다.</li>
+            <li>만들어진 .md 파일을 탐색기에서 찾아 메모장으로 열어 봅니다. <code>#</code>과 <code>-</code>가 붙어 계층이 생겼는지 봅니다.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 메모를 마크다운으로</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">내 작업 폴더의 [메모 파일 이름.txt]를 읽고, 같은 내용을 마크다운 파일로 바꿔서 [새 파일 이름.md]로 저장해 줘.
+1. 맨 위에 문서 제목을 # 으로 달고, 큰 덩어리는 ## 1. 2. 3. 으로 나눠 줘.
+2. 세부 내용은 - 목록으로 들여 써 줘.
+3. 내 문장은 고치지 말고 구조만 정리해 줘.
+다 만들면 파일 경로를 알려 주고, 무엇을 어떻게 나눴는지 세 줄로 설명해 줘.</pre>
+          </div>
+          <div class="outcome">
+            <div class="ok"><strong class="title">✅ 정상 결과</strong>작업 폴더에 .md 파일이 생겼고, 메모장으로 열면 내 문장이 그대로인 채 제목과 번호, 목록으로 나뉘어 있습니다.</div>
+            <div class="stuck"><strong class="title">🧭 막혔을 때</strong>파일이 안 보이면 “방금 만든 파일의 전체 경로를 알려 줘”라고 묻습니다. 탐색기에서 확장자가 안 보이면 탐색기 보기 메뉴에서 ‘파일 확장명’을 켭니다(복습 보강).</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="card">
+        <h3>③ 검색 엔진이 AI로 바뀌었고, 생각은 멈추면 안 됩니다</h3>
+        <p>
+          강사가 브라우저까지 가르치는 이유도 여기서 나왔습니다. 예전엔 네이버·구글에서 검색했고, 좀 한다는 분은 유튜브에서 찾았습니다. 이제는 AI에게 묻고, AI가 대신 유튜브와 웹사이트를 뒤집니다. <strong>검색 엔진이 AI로 바뀐 것</strong>입니다. 그렇다면 내가 콘텐츠나 사이트를 만들 때도 AI가 잘 찾도록 만들어야 합니다. AI는 근거를 따지고 공신력을 좋아해서, 허술한 개인 사이트보다 규모 있는 회사 사이트를, 그리고 한 주제로 오래 쌓인 블로그를 신뢰합니다. 브랜드와 공신력을 갖추려는 노력이 그래서 필요합니다.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ 수업 현장: “이렇게 하시겠습니까?” 앞에서</strong>
+          AI가 “이렇게 하시겠습니까? 이게 최선입니다”라고 할 때 생각 없이 “예스, 예스” 하면 내가 지휘하는 걸까요, 끌려가는 걸까요? 강사는 뇌의 시냅스는 생각할수록 넓어지고 안 쓰면 퇴화한다며, 외우는 힘은 예전만 못해도 생각하는 힘은 나이와 상관없이 자란다고 했습니다. 근육처럼 생각도 쓰면 늘어납니다. 그래서 책을 읽듯 AI를 보고, 책도 보며 시야를 넓히라는 당부였습니다.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>④ 기록하는 사람이 살아남는다</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 어제 올린 복습노트를 본 수강생이 “어떻게 이렇게 자세하게 기록돼 있느냐”고 물었습니다. 답은 녹음입니다. 강사는 자기 강의를 전부 핀마이크로 녹음합니다. 원래 목적은 다시 들으며 <strong>설명이 부족했던 곳을 채우고</strong>, 그 기록을 재료로 더 높은 수준의 자료를 만드는 것입니다. 녹음 기록이 오해를 풀어 강사를 지켜 준 일도 있었다고 했습니다. 누군가는 사실의 한 조각만 기억하지만, 기록은 전체를 남기기 때문입니다.
+        </p>
+        <p>
+          그래서 나온 말이 ‘적자생존’, <strong>기록하는 사람이 살아남는다</strong>입니다. 내 모든 기록을 AI에게 주면, 나중에는 나처럼 생각하는 대리 비서가 됩니다. 요즘은 얇은 녹음기를 붙여 두면 하루의 대화를 앱이 정리해 주는 제품도 있고, 갤럭시 휴대폰은 한 시간이 넘는 녹음도 바로 텍스트로 바꿔 줍니다. 비싼 장비가 없어도 휴대폰 녹음으로 시작할 수 있습니다.
+        </p>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 녹음 텍스트를 회의록으로</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">내 작업 폴더의 [녹음 텍스트 파일 이름.txt]는 [회의·강의·상담] 녹음을 휴대폰으로 텍스트로 바꾼 거야.
+이걸 읽고 [회의록 이름.md]를 만들어 줘.
+1. 맨 위에 날짜, 참석자 수, 핵심 결론 세 줄.
+2. 이야기가 흘러간 순서대로 주제별 요약.
+3. 내가 해야 할 일과 기한을 표로.
+4. 받아쓰기가 이상해서 뜻이 불분명한 곳은 지어내지 말고 [확인 필요]로 표시해 줘.
+개인 이름이나 연락처는 회의록에 옮기지 마.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>회의록 .md가 생겼고, 할 일 표와 [확인 필요] 표시가 있습니다. 원본 녹음 텍스트는 그대로 남아 있습니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>텍스트가 너무 길어 중간이 빠진 것 같으면 “전체를 끝까지 읽었는지, 마지막 문장이 무엇인지 알려 줘”라고 확인합니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Part 2 -->
+    <section id="sec-part2" class="block">
+      <div class="section-header">
+        <span class="tag">PART 02 · FIRST GITHUB CONNECTION</span>
+        <h2>3. 깃허브 첫 연결: 에이전트와 묻고 답하며 산 하나 넘기</h2>
+      </div>
+
+      <div class="card">
+        <h3>① 에이전트에게 “올려 줘”라고 하면, 먼저 상태를 진단합니다</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 깃허브 가입은 지난 시간에 대부분 마쳤습니다(한 강의실에서 한꺼번에 가입하느라 막혔던 분은 집에서 마쳤습니다). 오늘은 내 워크스페이스 폴더를 깃허브에 올리는 것까지 갑니다. 시작은 간단합니다. 에이전트 화면 오른쪽에 <strong>Restart to update</strong> 같은 업데이트 표시가 뜨면 먼저 업데이트하고, 에이전트에게 “내가 작업한 것, 워크스페이스 폴더에 있는 것을 깃허브에 올리고 싶어. 어떻게 올려? 올려 줘”라고 적습니다. 글씨가 안 보인다는 분들을 위해 강사는 이 문장을 카톡으로 보내 복사해 붙이게 했습니다.
+        </p>
+        <p>
+          에이전트는 바로 올리지 않고 먼저 <strong>현재 상태</strong>를 보여 줍니다. 수업 화면에서는 “깃허브 CLI가 설치되지 않았다, 저장소가 초기화되지 않았다, 바로 푸시할 수 있는 상태가 아니어서 준비와 로그인이 필요하다”고 나왔습니다. 그리고 방법을 골라 달라고 합니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:24%">에이전트가 내민 방법</th><th style="width:38%">무엇을 하나</th><th style="width:38%">내가 할 일</th></tr></thead>
+            <tbody>
+              <tr><td><strong>방법 A (추천)</strong></td><td>에이전트가 설치부터 업로드 준비까지 대신 진행</td><td>“네가 해 줘”라고 말하기. 깃허브 로그인 승인만 직접</td></tr>
+              <tr><td><strong>방법 B</strong></td><td>깃을 설치해 터미널로 푸시. 저장소 주소·이름·공개 여부가 필요</td><td>저장소 주소를 알려 주거나, 새 저장소 이름과 공개 여부를 정해 주기</td></tr>
+              <tr><td><strong>웹에 직접 올리기</strong></td><td>프로그램 설치 없이 깃허브 사이트에서 New repository를 만들고 파일을 끌어다 올림</td><td>파일 끌어 놓기, Commit changes. 단, 에이전트는 이 사실을 모름</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          저장소(repository, 줄여서 ‘레포’)는 어제 책장에 비유했던 그것입니다. 깃허브 화면의 내 저장소 목록이 곧 저장소들입니다. 강사의 권유는 처음 한 번은 <strong>에이전트가 하게 두는 것</strong>입니다. “네가 해 줘”라고 하면 필요한 프로그램을 스스로 설치합니다. 앞으로 계속 작업을 올릴 것이므로, 손으로 한 번 올리는 것보다 에이전트가 올릴 수 있게 연결해 두는 쪽이 낫습니다.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>② 저장소 주소(URL)를 알아내는 세 가지 길</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 에이전트가 “저장소 URL을 알려 주시면 바로 푸시해 드리겠습니다”라고 하자, 많은 분이 거기서 멈췄습니다. 강사는 답을 알아내는 길을 세 가지로 정리했습니다. ① 에이전트에게 “깃허브 저장소 URL을 어떻게 알 수 있어? 알려 줘”라고 묻기. ② 검색해서 방법을 찾고, 깃허브 대시보드에서 직접 주소를 복사해 에이전트에게 주기. ③ 깃허브 페이지를 크롬으로 열어 둔 채, 크롬 오른쪽 위의 <strong>Gemini에게 물어보기</strong>를 눌러 “내 깃허브 저장소 URL은 어떻게 알 수 있어?”라고 묻고 그 답을 에이전트에게 전하기.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ 수업 현장: 페이지를 같이 보는 챗봇</strong>
+          크롬의 Gemini 창에는 ‘공유 중’ 표시가 뜹니다. 지금 보고 있는 웹페이지를 같이 본다는 뜻입니다. 강사는 관공서 사이트의 공지가 스무 개쯤 있을 때 “이 공지 중에서 내 사업과 관련된 것, 예를 들어 6차 산업 관련 공고를 찾아 줘”라고 하면 몇 번째에 무엇이 있는지 찾아 준다고 했습니다. 에이전트가 한 말을 드래그해 복사한 뒤 이 창에 붙여 “무슨 뜻이야?”라고 물어도 됩니다. 깃허브 주소는 보통 <code>github.com/</code><code>내아이디/</code><code>저장소이름.git</code> 모양입니다(앞에 https://가 붙습니다).
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 에이전트 말을 못 알아들을 때</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">방금 네가 한 말 중에서 이 부분을 이해하지 못했어:
+"[에이전트가 한 말을 드래그해서 그대로 붙여 넣기]"
+1. 이게 무슨 뜻인지 중학생도 알 수 있게 더 쉽게 설명해 줘.
+2. 내가 지금 직접 해야 하는 일이 있다면, 어디를 눌러 무엇을 입력하는지 한 단계씩 알려 줘.
+3. 네가 대신 할 수 있는 일이면 "제가 할게요"라고 말하고 진행해 줘.
+한국말인데도 어려우면 다시 물어볼 테니, 비유를 하나 들어 줘.</pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>③ 10분 동안 강사 말고 에이전트와 묻고 답하기</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 강사는 일부러 돕지 않고 10분을 주었습니다. 질문은 강사에게 하지 말고 에이전트와 주고받으라는 것입니다. 에이전트가 답을 주면 해 보고, 안 되면 다시 묻고, 두 번 세 번 거쳐서라도 답을 찾아 해결하면 그다음부터는 마음대로 할 수 있습니다. 설치, 로그인, 설정은 앞으로 콘텐츠를 만들 때도 계속 나옵니다. 이것을 넘어야 강사가 없는 곳에서도 에이전트만 있으면 일을 해결할 수 있습니다.
+        </p>
+        <p>
+          왜 챗봇이 아니라 Claude Code 같은 <strong>범용 에이전트</strong>를 쓸까요? 에이전트는 내 컴퓨터 안의 파일을 만들고 고칠 뿐 아니라, 로그인만 해 주면 인터넷(클라우드)에 있는 것도 알아서 만들고 연결하기 때문입니다. 깃허브 저장소를 만들고 내 PC와 묶는 일이 바로 그 예입니다.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ “이건 좀 어렵습니다. 이건 어려운 거 확실해요.”</strong>
+          강사는 어렵다는 것을 숨기지 않았습니다. 그래서 “한번 도전해서 이 산을 한번 넘어 보자”고 했습니다. 시간이 지나자 먼저 연결된 분들이 옆자리를 돕기 시작했고, 강사는 “연결 안 되신 분은 연결되신 분이 가서 빨리 도와주세요”라고 했습니다. 점심 뒤 확인해 보니 강사가 거의 돕지 않았는데도 대부분 스스로, 또는 동료의 도움으로 연결을 마쳤습니다. 강사는 “깃허브를 하신 우리 선생님들은 대한민국 0.1%입니다”라고 했습니다.
+        </div>
+      </div>
+
+      <ol class="step-manual">
+        <li>
+          <h4>에이전트에게 깃허브 업로드를 맡기기</h4>
+          <ol>
+            <li><strong>준비:</strong> 깃허브에 가입·로그인한 브라우저가 있고, 에이전트가 내 워크스페이스 폴더를 열고 있습니다. 업데이트 표시가 있으면 먼저 누릅니다.</li>
+            <li>아래 요청문을 붙여 넣습니다.</li>
+            <li>에이전트가 상태와 방법 A·B를 보여 주면, 처음에는 “네가 해 줘. 방법 A로 진행해 줘”라고 답합니다.</li>
+            <li>설치 허락(Allow, Yes)을 물으면 무엇을 설치하는지 읽고 허락합니다.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 첫 업로드 맡기기</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">내가 작업한 것, 지금 열린 워크스페이스 폴더 [폴더 경로]에 있는 것을 깃허브에 올리고 싶어. 깃허브 계정은 [내 깃허브 아이디]야.
+1. 먼저 지금 상태(깃 설치 여부, 저장소 연결 여부)를 확인해서 알려 줘.
+2. 필요한 프로그램 설치와 준비는 네가 해 줘.
+3. 새 저장소 이름은 [저장소 이름]으로 하고, 공개 여부는 [비공개(private)]로 해 줘.
+4. 로그인이나 승인처럼 내가 직접 해야 하는 일은 그때 멈추고, 어디를 눌러 무엇을 입력하는지 한 단계씩 알려 줘.
+다 올린 뒤에는 저장소 주소와 올라간 파일 수를 알려 줘.</pre>
+          </div>
+          <div class="outcome">
+            <div class="ok"><strong class="title">✅ 정상 결과</strong>에이전트가 깃(Git)과 깃허브 CLI를 설치하고, 로컬 저장소를 만들고 첫 커밋까지 마친 뒤 “브라우저 인증만 한 번 해 주세요”라고 합니다.</div>
+            <div class="stuck"><strong class="title">🧭 막혔을 때</strong>“바로 푸시할 수 있는 상태가 아니다”는 실패가 아니라 진단입니다. “네가 해 줘”라고 다시 말합니다. 같은 문제도 더 똑똑한(유료) 모델은 더 빨리 풀어 줍니다. 쿼터(사용량)가 다 됐다는 문구가 나오면 다른 에이전트로 옮기거나 다음 날 이어 갑니다.</div>
+          </div>
+        </li>
+        <li>
+          <h4>브라우저 인증으로 내 PC와 깃허브를 묶기</h4>
+          <ol>
+            <li>에이전트가 터미널 명령이나 바탕화면의 실행 파일로 로그인 창을 띄웁니다. 강사 화면처럼 에이전트가 직접 띄워 주기도 합니다.</li>
+            <li>브라우저에 깃허브 로그인 화면이 열리면 <strong>에이전트에 로그인한 것과 같은 아이디</strong>인지 확인하고 Continue를 누릅니다.</li>
+            <li>화면에 나온 <strong>일회용 인증 코드</strong>를 깃허브 기기 연결 페이지에 넣고 승인(Authorize)합니다.</li>
+            <li>에이전트 창으로 돌아와 “인증 완료했어”라고 알립니다. 에이전트가 이어서 푸시합니다.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 인증 뒤 이어 가기</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">브라우저에서 깃허브 인증을 완료했어. 일회용 코드를 넣고 승인까지 눌렀어.
+1. 인증이 실제로 됐는지 확인해 줘.
+2. 됐으면 지금까지 커밋한 내용을 저장소에 푸시해 줘.
+3. 푸시가 끝나면 브라우저에서 확인할 저장소 주소를 알려 줘.
+4. 앞으로 파일을 고친 뒤 다시 올릴 때 나는 너에게 뭐라고 말하면 되는지 한 줄로 알려 줘.
+안 되면 오류 문장을 그대로 보여 주고, 내가 할 다음 한 단계만 알려 줘.</pre>
+          </div>
+          <div class="outcome">
+            <div class="ok"><strong class="title">✅ 정상 결과</strong>“인증이 성공적으로 확인됐다, 계정 연동이 됐다”는 답이 나오고, 깃허브 저장소 페이지를 새로고침하면 내 파일들이 main 브랜치에 보입니다. 로그인 정보는 윈도우 자격 증명에 저장돼 다음부터는 묻지 않습니다.</div>
+            <div class="stuck"><strong class="title">🧭 막혔을 때</strong>팝업 창이 안 떴다면 “팝업이 안 떴어. 다른 방법으로 로그인 창을 띄워 줘”라고 합니다. 로그인 도중 이메일로 확인(verification) 코드가 오기도 하니 메일함을 엽니다. 코드는 시간이 지나면 만료되니, 오래 걸렸으면 새 코드를 받습니다(복습 보강).</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout coral">
+        <strong class="title">🔎 사실 확인 (복습 보강)</strong>
+        수업에서 띄운 것은 깃허브 CLI(<code>gh auth login</code>)의 기기 인증 방식입니다. 터미널이 일회용 코드를 보여 주고, 브라우저의 깃허브 기기 연결 페이지(github.com/login/device)에 그 코드를 넣어 승인합니다. 비밀번호를 에이전트에게 알려 주는 방식이 아니므로, 아이디·비밀번호는 내가 브라우저에서만 입력합니다. 강사 말대로 서비스들이 이렇게 이중·삼중으로 확인하는 것은 해킹 위험 때문이고, 사람들이 거의 다 여기서 막힙니다.
+      </div>
+
+      <div class="case-grid">
+        <div class="case-box">
+          <span class="case-num">CASE 01 · UPLOADED BY HAND</span>
+          <h3>웹에 직접 올려 버려서 에이전트가 모르는 경우</h3>
+          <ul>
+            <li><strong>상황:</strong> 에이전트가 방법을 묻는 사이 깃허브 웹사이트에서 저장소를 만들고 파일을 직접 올렸습니다.</li>
+            <li><strong>잘못된 접근:</strong> 에이전트가 알고 있을 거라고 생각하는 것. 직접 올린 것은 에이전트가 모릅니다.</li>
+            <li><strong>해결:</strong> 만든 저장소 주소를 에이전트에게 알려 주고, 에이전트가 제안한 “깃을 설치해 터미널로 푸시하는 방법”에 “진행해 줘”라고 답했습니다. 에이전트가 깃을 설치하고 로컬 커밋까지 한 뒤 브라우저 인증만 요청했습니다. 일하는 동안 채팅의 꺾쇠(&gt;) 표시를 눌러 펼치면 깃 설치, 저장소 초기화, 커밋, 푸시가 어디까지 진행됐는지 단계별로 볼 수 있었습니다.</li>
+            <li><strong>실무 포인트:</strong> 에이전트가 무엇을 물었는지 화면을 끝까지 내려 읽고, 내가 원하는 것(앞으로는 에이전트가 올리기)에 맞는 답을 고릅니다.</li>
+          </ul>
+        </div>
+        <div class="case-box">
+          <span class="case-num">CASE 02 · TWO ACCOUNTS</span>
+          <h3>아이디가 두 개라 저장소가 안 보이는 경우</h3>
+          <ul>
+            <li><strong>상황:</strong> 연결은 됐다는데 깃허브에서 저장소가 안 보였습니다.</li>
+            <li><strong>원인:</strong> 가입할 때 만든 아이디와 구글로 들어간 아이디가 달라, 다른 계정으로 들어가 있었습니다.</li>
+            <li><strong>해결:</strong> 오른쪽 위 프로필에서 지금 들어간 아이디를 확인하고, 에이전트가 연결한 아이디로 다시 들어갔습니다.</li>
+            <li><strong>실무 포인트:</strong> 인증 화면에서 “여기 로그인한 거랑 똑같은 아이디”인지 늘 확인합니다.</li>
+          </ul>
+        </div>
+        <div class="case-box">
+          <span class="case-num">CASE 03 · NAME ALREADY EXISTS</span>
+          <h3>“이미 있는 저장소 이름”이라고 나올 때</h3>
+          <ul>
+            <li><strong>상황:</strong> 에이전트가 시킨 대로 새 저장소를 만들려니 같은 이름이 이미 있다고 나왔습니다. 앞서 여러 번 시도하며 저장소를 몇 개 만들어 둔 상태였습니다.</li>
+            <li><strong>해결:</strong> 다른 이름으로 만들거나, 이미 만든 저장소의 주소(페이지 위쪽의 .git 주소)를 복사해 에이전트 채팅창에 붙였습니다.</li>
+            <li><strong>실무 포인트:</strong> 연습하다 생긴 빈 저장소가 여럿이면 하나만 쓰기로 정하고, 나머지는 나중에 정리합니다.</li>
+          </ul>
+        </div>
+        <div class="case-box">
+          <span class="case-num">CASE 04 · TERMINAL STEP</span>
+          <h3>“터미널 창을 클릭하라”는 말에서 막힌 경우</h3>
+          <ul>
+            <li><strong>상황:</strong> 에이전트가 화면 아래 터미널에 명령을 넣으라고 했는데, 어디가 터미널인지 몰라 실행하지 못했습니다.</li>
+            <li><strong>해결:</strong> 에이전트에게 다시 묻자 직접 실행 창을 띄우거나 바탕화면에 업로드용 실행 파일을 만들어 더블클릭하게 했고, 그 창에서 로그인 화면이 열렸습니다.</li>
+            <li><strong>실무 포인트:</strong> 같은 AI라도 매번 다른 답을 줍니다. 어려운 답이면 “못 하겠어, 네가 알아서 해 줘. 계속해 줘”라고 하면, 대개 마지막엔 “로그인만 해 주세요”로 좁혀집니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <details class="fold">
+        <summary>추가 사례: 저장소가 공개(public)로 만들어졌어요</summary>
+        <div class="answer">
+          <strong>현장:</strong> 연결을 마친 분의 저장소가 퍼블릭으로 만들어져 있었습니다. 강사는 프라이빗으로 바꿔야 한다고 했습니다. 공개 저장소는 누구나 볼 수 있고, 비공개는 나만 봅니다. 내 작업 폴더에는 개인 자료가 섞이기 쉬우니 처음엔 비공개가 안전합니다(복습 보강).
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">다시 묻는 요청문</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">내 깃허브 저장소 [저장소 이름]이 공개(public)로 되어 있어. 비공개(private)로 바꾸고 싶어.
+네가 바꿀 수 있으면 바꾸고 결과를 확인해 줘. 내가 직접 해야 하면 깃허브 화면에서 어디를 눌러야 하는지 한 단계씩 알려 줘.
+바꾸기 전에 지금 저장소에 개인정보나 비밀번호가 들어 있는 파일이 있는지도 확인해 줘.</pre>
+          </div>
+          <strong>성공 확인:</strong> 저장소 이름 옆 표시가 Private으로 바뀌었습니다.
+        </div>
+      </details>
+      <details class="fold">
+        <summary>추가 사례: 빈 폴더는 올라가지 않았어요</summary>
+        <div class="answer">
+          <strong>현장:</strong> 업로드를 마친 에이전트가 “빈 폴더는 포함되지 않는다”고 알렸습니다. 깃은 파일을 기록하는 도구라 안이 빈 폴더는 올리지 않습니다. 폴더 구조를 남기고 싶으면 그 안에 설명 파일(README.md 등) 하나를 넣어 두면 됩니다(복습 보강).
+          <strong>성공 확인:</strong> 파일이 든 폴더는 깃허브 화면에 모두 보입니다.
+        </div>
+      </details>
+    </section>
+
+    <!-- 4. Part 3 -->
+    <section id="sec-part3" class="block">
+      <div class="section-header">
+        <span class="tag">PART 03 · REPOSITORY &amp; SKILLS</span>
+        <h2>4. 깃허브는 작업장이 아니라 저장소, 그리고 스킬 창고</h2>
+      </div>
+
+      <div class="card">
+        <h3>① 작업은 내 PC에서, 깃허브는 클라우드 저장소</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 연결을 마친 수강생이 물었습니다. “그럼 앞으로 깃허브에 들어가서 작업하는 건가요?” 아닙니다. 강사는 깃허브는 들어가서 일하는 곳이 아니라 <strong>클라우드에 있는 저장소</strong>이고, 접속만 하는 곳이라고 짚었습니다. 작업은 내 컴퓨터나 노트북에서 AI 에이전트와 합니다. 다 했으면 에이전트에게 “깃허브에 저장해 줘”라고 하고, 에이전트가 올립니다(push). 다른 노트북에서 이어 하려면 깃허브의 최신 버전을 내려받습니다(pull). 그 노트북에서 작업한 것도 또 올리면 됩니다. 다만 집 PC처럼 다른 컴퓨터에서 처음 이어 하려면 그 컴퓨터에도 깃을 설치하고 연결한 뒤 내려받아야 합니다. 올릴 때 나오는 <strong>커밋(commit)</strong>은 “여기까지 됐다”를 확정 짓는 일이고, <strong>푸시(push)</strong>는 그 확정본을 깃허브로 보내는 일입니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:22%">구분</th><th style="width:39%">내 PC(로컬)</th><th style="width:39%">깃허브(클라우드)</th></tr></thead>
+            <tbody>
+              <tr><td><strong>하는 일</strong></td><td>에이전트와 실제 작업</td><td>작업 결과 보관, 버전 기록</td></tr>
+              <tr><td><strong>옮기는 말</strong></td><td>“깃허브에 올려 줘(커밋·푸시해 줘)”</td><td>“최신 버전을 내려받아 줘(풀)”</td></tr>
+              <tr><td><strong>예전 방식</strong></td><td colspan="2">USB에 파일을 담아 왔다 갔다 → 분실 위험, 어느 게 최신인지 헷갈림</td></tr>
+              <tr><td><strong>지금 방식</strong></td><td colspan="2">언제 올렸는지, 몇 번째 버전인지 기록이 자동으로 남음</td></tr>
+              <tr><td><strong>요금</strong></td><td colspan="2">깃허브 저장은 크레딧을 쓰지 않음(수업 질문에 대한 강사 답)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout gold">
+          <strong class="title">🎙️ “중요한 거는 내가 판단을 할 수 있어야 돼요. 추정을 하면 안 돼요.”</strong>
+          “다 올라갔을 거예요”가 아니라 직접 열어 보고 판단합니다. 추정했다면 그다음엔 분명하게 결정하고, 그 결정이 틀렸으면 “틀렸구나, 다시 확인해야지” 하면 됩니다. 에이전트에게 “깃허브에 다 올라갔어?”라고 물으면 완료 여부를 확인해 알려 줍니다. 그리고 내 눈으로 저장소 페이지를 열어 파일을 봅니다.
+        </div>
+      </div>
+
+      <ol class="step-manual">
+        <li>
+          <h4>올라간 것을 확인하고, 수정본을 다시 올려 보기</h4>
+          <ol>
+            <li><strong>준비:</strong> Part 2에서 연결을 마친 상태입니다.</li>
+            <li>깃허브 저장소 페이지를 새로고침해 내 파일이 보이는지 봅니다.</li>
+            <li>작업 폴더의 파일 하나(예: hello.txt)를 에이전트에게 고치게 합니다.</li>
+            <li>아래 요청문으로 다시 올리고, 저장소 페이지에서 바뀐 내용과 시각을 확인합니다.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 수정본 다시 올리기</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">[파일 이름]의 내용을 [바꿀 내용]으로 고쳤으면, 이 변경을 깃허브에 올려 줘.
+1. 커밋 메시지는 "[오늘 날짜] [무엇을 바꿨는지 한 줄]"로 해 줘.
+2. 커밋하고 푸시까지 해 줘.
+3. 다 되면 깃허브에서 확인할 주소와, 이번에 바뀐 파일 목록을 알려 줘.
+올리면 안 되는 파일(비밀번호, 개인정보)이 섞여 있으면 올리기 전에 멈추고 나에게 물어봐.</pre>
+          </div>
+          <div class="outcome">
+            <div class="ok"><strong class="title">✅ 정상 결과</strong>로그인을 다시 묻지 않고 바로 올라갑니다. 저장소 페이지에 방금 쓴 커밋 메시지와 시각이 보입니다.</div>
+            <div class="stuck"><strong class="title">🧭 막혔을 때</strong>다시 로그인하라고 하면 다른 아이디로 연결됐을 수 있습니다. “지금 연결된 깃허브 계정이 누구인지 확인해 줘”라고 묻습니다.</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="card">
+        <h3>② 에이전트에 깃을 붙이면 능력이 무궁무진해집니다</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 깃허브는 내 파일만 두는 곳이 아닙니다. 어제 만든 index 페이지 같은 홈페이지도 올리고, 사람들이 만든 <strong>스킬</strong>도 공개(public)로 잔뜩 올라와 있습니다. 유튜브에서 “200명짜리 회사를 운영하는 스킬이 올라왔다”, “다빈치 리졸브 없이 영상을 편집하는 스킬이 올라왔다” 하는 것들이 다 깃허브에 있습니다. 에이전트와 깃을 연결해 두면, 필요한 스킬을 에이전트가 검색해서 끌어와 설치합니다. 강사는 에이전트를 쓰면서 깃을 연결하지 않는 것을 ‘앙꼬 빠진 찐빵’에 빗댔습니다.
+        </p>
+        <p>
+          예를 들어 “파워포인트를 더 예쁘게 디자인하는 스킬을 깃에서 설치해 줘”, “결과물이 마음에 안 드는데, 깃허브에서 이걸 더 좋게 만드는 스킬 중 가장 인기 있는 세 가지를 추천해 줘”라고 할 수 있습니다. 목소리를 바꾸는 스킬, 마케터·디자이너·프로그래머·재무 역할을 갖춘 1인 회사 운영 스킬, 개인 비서 스킬도 올라와 있습니다. 강사가 단톡방에 복습 파일을 올리는 것도 AI가 하는데, 그 카톡 연결 도구(MCP)도 깃허브에 있었습니다.
+        </p>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 깃허브에서 스킬 찾기</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">나는 [하려는 일, 예: 파워포인트 발표자료를 디자이너가 만든 것처럼 만들기]를 더 잘하고 싶어.
+깃허브에서 이 일에 쓰는 에이전트 스킬 중 많이 쓰이는 것 세 가지를 찾아 줘.
+1. 각각 이름, 저장소 주소, 별(star) 수, 마지막 업데이트 날짜, 무엇을 해 주는지 한 줄.
+2. 설치하기 전에 그 스킬이 내 PC에서 무엇을 실행하는지 요약해 줘.
+3. 내가 하나를 고르면 그때 설치해 줘. 고르기 전에는 설치하지 마.
+확인하지 못한 정보는 지어내지 말고 모른다고 해 줘.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>스킬 세 가지가 주소와 함께 나왔고, 내가 고른 하나만 설치됐습니다. 같은 일을 시켰을 때 결과가 달라졌는지 비교해 봤습니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>남이 만든 스킬은 내 PC에서 명령을 실행할 수 있습니다. 출처가 불분명하거나 설명과 다르게 무언가를 내려받는 스킬은 설치하지 않습니다(복습 보강).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>③ 같은 일을 세 번 하면, 스킬로 만들 때입니다</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 강사는 복습노트를 17일, 19일, 25일 세 번 만들었습니다. 반복 작업이죠. 세 번째쯤 되자 Claude가 먼저 “이걸 스킬로 만들어 드릴까요?”라고 물었습니다. “만들어”라고 하자 샘플을 하나 만들어 보여 주며 “이 정도로 만들면 될까요?”라고 했고, 마음에 안 드는 곳을 두세 번 고쳐 스킬로 확정했습니다. 오늘 복습노트도 그 스킬로 만들어 끝나자마자 올린다고 했습니다.
+        </p>
+        <p>
+          사업계획서를 반복해서 쓰는 분, 논문 수십 편을 읽고 요점을 뽑는 분도 똑같습니다. 나만의 퀄리티가 나온 작업을 두세 번 하면 작업 기록이 남고, 에이전트가 그 기록을 보고 스킬을 만듭니다. 그 스킬을 깃허브에 올려 두면 그것이 곧 나만의 사업계획서 스킬, 논문 요약 스킬이 됩니다. 반복할수록 속도는 빨라지고 퀄리티는 좋아집니다. 다만 <strong>마지막엔 반드시 검수</strong>합니다.
+        </p>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 반복 작업을 스킬로</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">나는 [반복하는 일, 예: 강의 녹음으로 복습자료 만들기]를 지금까지 [횟수]번 했어. 결과물은 [폴더 경로들]에 있어.
+1. 이 결과물들을 비교해서, 매번 같았던 순서와 기준을 뽑아 줘.
+2. 그 순서와 기준을 스킬(SKILL.md)로 만들어 줘. 입력, 작업 순서, 완성 기준, 마지막 검수 항목을 넣어 줘.
+3. 만든 스킬로 샘플을 하나 만들어 나에게 먼저 보여 줘. 내가 "확정"이라고 하기 전에는 스킬을 고정하지 마.
+내가 고칠 점을 말하면 스킬에 반영하고, 무엇을 바꿨는지 알려 줘.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>스킬 폴더에 SKILL.md가 생겼고, 그 스킬로 만든 샘플을 보고 두세 번 고친 뒤 확정했습니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>아직 한 번밖에 안 해 봤다면 스킬로 만들 재료가 부족합니다. 먼저 한 바퀴를 끝까지 돌리고, 마음에 드는 결과가 두세 개 쌓인 뒤 만듭니다.</div>
+        </div>
+      </div>
+
+      <div class="callout emerald">
+        <strong class="title">🧭 산을 넘으면 고속도로</strong>
+        강사는 깃허브 연결에서 자기가 질문을 받지 않았다는 점을 짚었습니다. 질문은 AI가 받았습니다. 수없이 묻고 답해 보면 에이전트가 어떻게 대답할지가 눈에 보이고, 그 감이 강사의 10분의 1만 생겨도 엄청나게 발전한다는 것입니다. 컴퓨터를 좀 아는 분이 처음엔 빠르지만, 이 허들만 넘으면 각자 자기 전문 분야에 집중할 수 있고, 그때부터는 막힘없는 고속도로라고 했습니다.
+      </div>
+    </section>
+
+    <!-- 5. Part 4 -->
+    <section id="sec-part4" class="block">
+      <div class="section-header">
+        <span class="tag">PART 04 · AGENT BROWSER</span>
+        <h2>5. 에이전트에게 손발을: 에고 라이트·어사이드 브라우저</h2>
+      </div>
+
+      <div class="card">
+        <h3>① 브라우저를 클릭하는 주인이 바뀝니다</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 브라우저는 인터넷 서버의 HTML 파일을 읽어 보여 주는 프로그램이고, 검색 도구이기도 합니다. 지금까지는 사람이 클릭했습니다. 그런데 일을 시키려면 에이전트가 클릭해야 합니다. 예를 들어 작업 폴더에 상품 이미지와, 상품 코드·이름·가격·사이즈가 든 엑셀이 있다면 “네이버 스마트스토어에 올려 줘”라고 에이전트에게 시킬 수 있습니다. 브라우저를 누르는 것은 이제 에이전트입니다.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ 수업 현장: 열어 주는 건 너, 입력은 나</strong>
+          에이전트에게 브라우저를 시켜 본 수강생이 있었습니다. “브라우저를 열어서 가입하는 과정을 내가 볼 수 있게 해 주고, 입력은 내가 할 테니 열어 주는 것까지 네가 해 줘”라고 했다고 합니다. 강사는 바로 그것이라고 했습니다. 브라우저를 열고 화면을 준비하는 것까지 에이전트가 했고, 개인 정보 입력은 사람이 했습니다.
+        </div>
+        <p>
+          크롬도 에이전트가 쓸 수 있지만, AI가 쓰기 좋게 만든 브라우저가 따로 있습니다. <strong>어사이드(Aside)</strong>와 <strong>에고 라이트(ego lite)</strong>입니다. 쓰는 방식은 크롬과 거의 같고, 크롬에서 쓰던 탭도 그대로 가져옵니다. 에이전트에게 “앞으로 에고 라이트 브라우저를 써서 작업해”라고 하면 그걸 쓰고, <strong>토큰이 줄고 속도가 빨라집니다</strong>. Antigravity처럼 안에 브라우저가 들어 있는 앱도 있지만, 네이버 같은 회사들이 앱 안 브라우저를 막는 경우가 있어 그럴 때는 크롬이나 이런 외부 브라우저를 불러 씁니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:24%">방식</th><th style="width:38%">특징</th><th style="width:38%">언제 쓰나</th></tr></thead>
+            <tbody>
+              <tr><td><strong>앱 내장 브라우저</strong></td><td>Antigravity 2.0 안에 들어 있음. 따로 설치 없음</td><td>일반 작업. 단, 일부 사이트는 막음</td></tr>
+              <tr><td><strong>크롬 + 확장 프로그램</strong></td><td>확장을 설치하면 에이전트가 크롬을 다룸. 사이트 보안 경고로 막히는 일이 있음</td><td>평소 쓰는 크롬 그대로 쓰고 싶을 때</td></tr>
+              <tr><td><strong>컴퓨터 화면 제어</strong></td><td>에이전트가 화면 전체를 보고 조작. 받아들일 정보가 많아 토큰이 많이 듦</td><td>다른 방법이 안 될 때</td></tr>
+              <tr><td><strong>에고 라이트·어사이드</strong></td><td>AI 자동화 전용으로 만든 브라우저. 토큰이 적게 들어 같은 일을 싸게 함</td><td>에이전트와 함께 웹 작업할 때(강사는 평소엔 크롬, AI와는 에고 라이트)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>② 시연: Claude Code가 에고 라이트로 네이버를 열고, 로그인은 사람이</h3>
+        <p>
+          강사는 Claude Code(Opus 5.5 모델)에 “에고 라이트 브라우저를 열어서 네이버 로그인 할 거야”라고 입력했습니다. 에고 라이트를 설치하고 <strong>ego-browser 스킬</strong>로 등록해 두었고, 브라우저 작업은 무조건 이것을 쓰도록 규칙에 적어 두었기 때문에 바로 그 스킬이 불려 나왔습니다. 에이전트는 “네이버 로그인 페이지를 열었고 제어권을 넘겨 드린 상태입니다. 2단계 인증이나 보호 문자가 오면 직접 하셔야 합니다. 로그인을 마치고 ‘됐어’라고 알려 주시면 같은 작업 공간을 이어받겠습니다”라고 답했습니다.
+        </p>
+        <p>
+          에고 라이트 창에는 파란색으로 <strong>Need your action</strong> 표시가 떠 있었고, 화면에 파란 테두리가 쳐져 지금은 사람이 조작한다는 것을 보여 줬습니다. 강사가 로그인한 뒤 <strong>Return to agent</strong>를 누르자 다시 에이전트가 조작권을 가졌고, 채팅창에 “됐어”라고 치자 에이전트가 로그인 쿠키와 로그아웃 버튼을 확인하고 “네이버에서 할 일을 말씀해 주세요”라고 했습니다.
+        </p>
+        <p>
+          이어서 “네이버 쇼핑에서 가장 최신 AI 전용 노트북을 세 가지만 검색해 줘. 가격대는 200만원 이하, 최신 출시순”이라고 시켰습니다. 에이전트는 첫 결과에 오래된 모델이 섞인 해외 직구 상품이 있자 스스로 “가격비교 카탈로그 상품만 다시 살펴보겠다”며 방향을 고쳤고, ‘AI 전용 노트북’의 기준을 Microsoft의 Copilot+ PC로 잡아 200만원 이하 최신순 세 제품을 가격과 함께 보여 줬습니다. 강사의 말로는 <strong>직원 한 명을 시킨 것</strong>입니다. 조건을 준 검색 자체는 챗봇도 하지만, 에이전트는 <strong>실제로 브라우저를 조작해</strong> 네이버 가격비교 화면에서 찾아 보여 준다는 점이 다릅니다. 결제는 내가 해야 하지만 검색과 비교는 시킬 수 있고, 사이트 100개를 분석해 내 상품과 비교하는 일도, 그것을 PDF나 PPT 보고서로 만드는 일도 됩니다.
+        </p>
+        <div class="callout coral">
+          <strong class="title">🔎 사실 확인 (복습 보강)</strong>
+          에이전트가 기준으로 삼은 Copilot+ PC는 Microsoft가 정한 규격으로, 초당 40조 회 이상 연산하는 NPU(<strong>40 TOPS 이상</strong>)를 요구합니다. 수업에서는 “40테라플랍스”라고 읽혔는데, 단위는 TOPS(초당 연산 횟수)입니다. 제품 목록과 가격은 날마다 바뀌니 살 때는 그날 다시 검색합니다.
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 로그인은 내가, 검색·비교는 에이전트가</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">에고 라이트 브라우저를 열어서 [사이트 이름, 예: 네이버]에 로그인할 거야.
+1. 로그인 페이지까지만 열고 나에게 제어권을 넘겨 줘. 아이디·비밀번호·인증 문자는 내가 직접 입력할게.
+2. 내가 "됐어"라고 하면 로그인이 됐는지 확인해 줘.
+3. 그다음 [할 일, 예: 쇼핑에서 200만원 이하 최신 AI 노트북 세 가지를 최신 출시순으로] 찾아서 표로 보여 줘. 기준을 어떻게 잡았는지도 적어 줘.
+4. 결제, 주문, 글 게시처럼 되돌리기 어려운 일은 하지 말고 나에게 먼저 물어봐.
+결과는 [보고서 이름.md]로 작업 폴더에 저장해 줘.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>에고 라이트에 사이트가 열리고 Need your action 표시가 뜹니다. 로그인 뒤 Return to agent를 누르고 “됐어”라고 하면 에이전트가 로그인 상태를 확인하고 일을 이어 갑니다. 결과 표가 파일로 남습니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>에고 라이트가 없다고 하면 아래 ③으로 먼저 설치합니다. 에이전트가 기준을 엉뚱하게 잡으면 “그래픽카드 5060 이상이 들어간 것”처럼 기준을 더 줘서 다시 시킵니다.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>③ 설치도 에이전트에게 물어서</h3>
+        <p>
+          <strong>왜 필요한가.</strong> “에고 라이트는 따로 깔아야 하나요?”라는 질문에 강사는 크롬처럼 설치하는 브라우저라고 답하고, 그 질문도 에이전트에게 물어보면 된다며 Antigravity에 바로 입력해 보였습니다. 에이전트는 검색해서 설정 방법을 찾고, 연결 스킬은 설치한 뒤 브라우저 앱은 직접 설치해 달라고 안내했습니다.
+        </p>
+      </div>
+
+      <ol class="step-manual">
+        <li>
+          <h4>에고 라이트(또는 어사이드) 설치하고 에이전트와 연결 확인</h4>
+          <ol>
+            <li><strong>준비:</strong> 지금 쓰는 에이전트(Antigravity, Claude Code 등)를 엽니다.</li>
+            <li>아래 요청문을 붙입니다. 에이전트가 설치 순서를 안내합니다.</li>
+            <li>공식 사이트(lite.ego.app)에서 한국어로 표시를 고르고 <strong>Windows 다운로드</strong>를 받아 크롬처럼 설치합니다.</li>
+            <li>처음 실행하면 나오는 <strong>온보딩</strong>(소개 화면)에서 크롬 데이터 가져오기 여부, 가로·세로 탭 모양을 고르고 기본값으로 설정합니다. 온보딩 화면에는 Codex·ChatGPT 연결, 경쟁사 동향 분석 같은 기능도 있어서 브라우저 자체를 에이전트처럼 쓸 수도 있습니다.</li>
+            <li>에이전트에게 “설치 완료했어”라고 알리면 에이전트가 연결 테스트(verify)를 합니다.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 에이전트 전용 브라우저 설치</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">나는 [에고 라이트 / 어사이드] 브라우저를 연결해서 쓰고 싶어. 설치해 줘.
+1. 공식 사이트와 설치 방법을 먼저 확인해서 알려 줘. 공식이 아닌 다운로드 주소는 쓰지 마.
+2. 네가 설치할 수 있는 부분(연결 스킬 등)은 네가 하고, 내가 직접 설치해야 하는 앱은 순서대로 알려 줘.
+3. 내가 "설치 완료했어"라고 하면 연결이 되는지 시험해 보고 결과를 알려 줘.
+4. 앞으로 브라우저가 필요한 작업은 이 브라우저를 쓰도록 규칙 파일에 한 줄 추가할지 나에게 물어봐.</pre>
+          </div>
+          <div class="outcome">
+            <div class="ok"><strong class="title">✅ 정상 결과</strong>에이전트가 “에고 브라우저 연결까지 모두 확인됐습니다. 브라우저 작업이 필요하면 말씀해 주세요”라고 답합니다.</div>
+            <div class="stuck"><strong class="title">🧭 막혔을 때</strong>온보딩 도중 구독 결제 안내가 나오면 무료로 쓸 수 있는지 먼저 확인합니다. 에고 라이트가 안 되면 크롬 확장 방식으로도 같은 일을 시킬 수 있습니다.</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="card">
+        <h3>④ 브라우저를 주면 할 수 있게 되는 일: 예약 발행까지</h3>
+        <p>
+          블로그 글쓰기, 유튜브 쇼츠와 인스타그램 예약 올리기도 됩니다(PC에서). 강사는 유튜브 스튜디오를 열어 쇼츠 목록을 보여 줬습니다. 공개 상태가 ‘예약’이고 12월 날짜마다 하나씩 걸려 있었습니다. 에이전트에게 시켜 예약해 둔 것입니다. 1년치도 예약할 수 있습니다. 쇼핑몰이라면 졸업·입학, 크리스마스, 설, 추석, 여름휴가 같은 시즌에 맞춰 1년 계획을 짜고 콘텐츠를 미리 만든 뒤, 그 시기에 트렌드를 조사해 놓치지 않게 예약합니다.
+        </p>
+        <p>
+          시키는 방법은 <strong>계획을 말하는 것</strong>입니다. “60·70대가 좋아할 주제를 20개쯤 뽑고, 주제마다 대본을 열 개씩 3분·1분·30초 길이로 뽑아 영상으로 제작하고, 매일 하나 또는 이틀에 하나씩 내 유튜브 채널에 올리고 싶어. 어떻게 하면 돼?”라고 하면, 에이전트는 주제 검색, 영상 제작 스킬 내려받기, 초안 하나 만들어 검수받기, 유튜브 연결 순서로 계획을 내놓습니다. 강사는 이것을 예약 작업으로 걸어 둡니다. 예약 작업은 <strong>내 컴퓨터가 켜져 있을 때</strong> 돌아갑니다. 작업이 끝나면 슬랙으로 “검수해 주세요” 메시지가 오게 해서 <strong>승인한 것만 올라가게</strong> 합니다. 공공기관 사이트의 신청이나 일정 연기 신청을 맡기고, 확인 메일이 온 것까지 확인하게 한 사례도 소개했습니다.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ “이 브라우저를 주는 거는 에이전트한테 손발을 주는 거예요.”</strong>
+          깃허브는 우리가 만든 산출물과 스킬이 날아가지 않게 지켜 주고, 에고 라이트는 에이전트가 바깥 세상에서 일하게 합니다. 강사는 이 둘을 설치하면 자동화든 사업이든 인터넷으로 하는 모든 일을 할 준비가 끝난다고 했습니다.
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 예약 발행 계획 세우기</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">나는 [채널, 예: 내 유튜브 채널]에 [대상, 예: 60·70대]가 좋아할 [콘텐츠 종류, 예: 1분 쇼츠]를 [주기, 예: 이틀에 하나씩] 올리고 싶어.
+1. 주제 후보 20개를 찾아서 표로 보여 줘. 근거가 된 검색 결과도 적어 줘.
+2. 내가 고른 주제로 대본 하나와 영상 초안 하나를 먼저 만들어 줘. 필요한 스킬이 있으면 설치 전에 알려 줘.
+3. 초안을 내가 검수하고 "승인"하기 전에는 아무것도 올리거나 예약하지 마.
+4. 승인하면 에고 라이트 브라우저로 예약 업로드하는 순서를 알려 주고, 로그인은 내가 할게.
+5. 한 달치 일정표를 [일정표 이름.md]로 저장해 줘.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>주제표와 초안 하나가 나왔고, 내가 승인한 것만 예약으로 걸렸습니다. 유튜브 스튜디오에서 공개 상태가 ‘예약’으로 보입니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>“쿼터가 다 됐다, 플랜을 업그레이드하라”는 문구는 사용량이 다 찼으니 돈을 내라는 뜻입니다. 다른 에이전트로 옮기거나 다음 날 이어 갑니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Part 5 -->
+    <section id="sec-part5" class="block">
+      <div class="section-header">
+        <span class="tag">PART 05 · IDE &amp; THE RULE BOOK</span>
+        <h2>6. 통합 개발 툴로 강사의 law.md를 들여다보기</h2>
+      </div>
+
+      <div class="card">
+        <h3>① 앱과 IDE: 한 화면에 채팅·터미널·파일</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 오후의 핵심은 규칙 파일이었고, 그 파일을 보여 주기 위해 강사는 화면을 바꿨습니다. 우리가 쓰는 것은 <strong>Antigravity 2.0 앱</strong>입니다. 그 옆에 검은 화면의 <strong>Antigravity IDE</strong>가 있습니다(강사는 실수하지 않으려고 두 창의 색을 다르게 해 둡니다). 예전엔 앱 오른쪽 위에 IDE로 가는 아이콘이 있었는데, 수업 날 수강생 화면에서는 버전이 올라가면서 사라져 있었습니다.
+        </p>
+        <p>
+          IDE는 <strong>통합 개발 툴</strong>입니다. 채팅 화면, 아래쪽 터미널(검은 화면), 코드와 파일을 보는 창이 한 화면에 있어서 창을 오가지 않아도 됩니다. 에이전트가 PDF나 index.html을 만들면 원래는 탐색기에서 그 경로를 찾아 열어야 하지만, IDE에서는 바로 보입니다. 원래 VS Code라는 개발 툴이 있고, 구글이 그 형태를 따와 만든 것이 Antigravity IDE입니다. 겉보기엔 더 어려워 보여도 익숙해지면 오히려 쉽다는 것이 강사의 말이었습니다.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>② 에이전트는 일을 받으면 무엇부터 읽을까</h3>
+        <p>
+          아까 Claude에게 “에고 라이트를 열어서 네이버에 로그인할 거야”라고 시켰을 때, 에이전트가 제일 먼저 읽은 파일이 화면에 보였습니다. <strong>law.md</strong>입니다. Codex에게 시켜도 강사의 워크스페이스에서 시작하면 똑같이 law.md를 먼저 읽습니다. 그 안에 규칙이 있기 때문입니다. 강사는 경로를 Ctrl+클릭해 IDE 가운데 창에 law.md를 열어 보였습니다. 그래서 통합 개발 툴을 쓰는 것입니다. “여러 에이전트를 지휘하는 장면은 강사 아니면 못 보지 않느냐”는 수강생 말에, 강사는 <strong>에이전트 하나를 규칙으로 지휘하는 것도 지휘</strong>이고 그게 중요하다고 답했습니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:26%">law.md 안의 칸</th><th style="width:74%">들어 있는 내용 (강사 화면 기준)</th></tr></thead>
+            <tbody>
+              <tr><td><strong>머리말</strong></td><td>이 워크스페이스에서 일하는 모든 AI 어시스턴트와 개발자가 지켜야 하는 최우선 헌장이자 행동 지침</td></tr>
+              <tr><td><strong>용어 정의</strong></td><td>메인지침(최상위 law.md), 스킬(스킬 폴더), 산출물(결과물을 넣는 폴더)</td></tr>
+              <tr><td><strong>부록 열람 규칙</strong></td><td>핵심본은 매번 열고, 부록은 해당 작업 때만 연다. 처음부터 전부 열면 토큰이 많이 들기 때문</td></tr>
+              <tr><td><strong>부록 목록</strong></td><td>공개 배포할 때, 코드를 짤 때, 콘텐츠를 만들 때, 다른 서비스와 연동할 때 각각 여는 파일</td></tr>
+              <tr><td><strong>최우선 핵심 원칙</strong></td><td>사용자 요청 최우선(마음대로 하지 말라), law.md 먼저 확인, 작업 전 스킬 폴더 탐색, “스킬 만들어 줘”라고 하면 스킬 생성 절차를 따라 SKILL.md로 저장</td></tr>
+              <tr><td><strong>산출물 폴더</strong></td><td>결과물은 산출물 폴더에, 프로젝트마다 연월일시분 + 영문 이름 폴더를 만들어 그 안에 모은다</td></tr>
+              <tr><td><strong>인계(핸드오프)</strong></td><td>쿼터가 차거나 대화가 길어지면 인수인계서를 만들게 해서, “19일 복습 작업 이어서”라고 하면 이어서 한다</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout gold">
+          <strong class="title">🎙️ 수업 현장: 처음부터 이렇게 길지 않았습니다</strong>
+          강사는 이 파일이 처음부터 이렇게 늘어난 게 아니라고 했습니다. 하다가 규칙을 하나씩 추가했고, 부록도 하다 보니 생겼습니다. 이걸 강사가 다 썼을까요? 에이전트가 써 줬습니다. 강사는 말로 시켰을 뿐입니다. 산출물 폴더 규칙만 해도 “규칙을 추가해 줘. 새 프로젝트를 만들 때 구분하기 어려우니 연월일시와 프로젝트 이름을 넣어서 폴더를 만들고, 앞으로는 그렇게 해. 규칙으로 정해 줘”라고 한 것이 전부였습니다. 정답이 있는 것도 아닙니다. 본인만의 규칙이 있으면 됩니다.
+        </div>
+      </div>
+
+      <ol class="step-manual">
+        <li>
+          <h4>규칙 한 줄을 말로 추가해 보기</h4>
+          <ol>
+            <li><strong>준비:</strong> 에이전트가 내 워크스페이스 폴더를 열고 있습니다. 규칙 파일이 아직 없어도 됩니다(Part 6에서 만듭니다).</li>
+            <li>평소 거슬렸던 것 하나를 떠올립니다. 예: 결과물이 아무 데나 흩어진다.</li>
+            <li>아래 요청문으로 규칙을 추가하게 하고, 파일을 열어 그 줄이 들어갔는지 봅니다.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 말로 규칙 추가</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">규칙을 추가해 줘. 앞으로 결과물을 만들 때는 [산출물 폴더 이름] 폴더 안에, 프로젝트마다 [YYYYMMDD_HHMM]_[영문 프로젝트 이름] 폴더를 만들어서 그 안에 넣어 줘.
+1. 이 규칙을 이 워크스페이스의 규칙 파일([GEMINI.md / CLAUDE.md / AGENTS.md / law.md] 중 지금 쓰는 것)에 한 줄로 추가해 줘. 파일이 없으면 만들기 전에 물어봐.
+2. 추가한 문장을 그대로 보여 줘.
+3. 기존 규칙과 부딪히는 것이 있으면 알려 줘.</pre>
+          </div>
+          <div class="outcome">
+            <div class="ok"><strong class="title">✅ 정상 결과</strong>규칙 파일을 메모장이나 IDE로 열면 방금 말한 규칙이 한 줄로 들어 있습니다. 다음 작업부터 결과물이 그 폴더 형식으로 생깁니다.</div>
+            <div class="stuck"><strong class="title">🧭 막혔을 때</strong>규칙이 엉뚱한 파일에 들어갔다면 “지금 이 워크스페이스에서 네가 가장 먼저 읽는 규칙 파일이 무엇이고 어디에 있어?”라고 먼저 묻습니다.</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="card">
+        <h3>③ .md를 편하게 보는 도구와, 자료 관리도 물어서</h3>
+        <p>
+          IDE를 안 쓰면 law.md는 탐색기에서 더블클릭해 엽니다. 수강생이 “열 때마다 무엇으로 열지 묻는다”고 하자, 강사는 .md 파일에 연결된 전용 프로그램이 없어서 그렇다고 했습니다. 메모장으로 계속 열리게 지정해도 됩니다. 강사는 마크다운 전용 편집기 <strong>Zed(제드)</strong>를 보여 줬습니다. 제목과 목록에 색이 들어가 구조가 한눈에 보입니다. 설치 링크는 단톡방에 따로 주기로 했습니다.
+        </p>
+        <p>
+          파일이 많아지면 관리가 복잡해집니다. 어제도 그런 질문이 나왔습니다. 그때도 물어보면 됩니다. “너무 복잡하고 알아보기 힘든데 정리하는 좋은 방법을 추천해 줘, 관련 스킬이 있으면 찾아 주고, 지금 방식에서 조금만 바꿔 편하게 쓰는 방법도, 그리고 대시보드도 만들어 줘.” 텍스트 파일이 200개나 되는 수강생은 에이전트에게 <strong>인덱스 페이지</strong>를 만들게 했습니다. 파일을 고르면 옆에 내용이 바로 나오는 브라우저 페이지입니다.
+        </p>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 쌓인 파일을 한눈에 보는 인덱스 페이지</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">내 작업 폴더 [폴더 경로]에 텍스트·마크다운 파일이 많이 쌓여서 무엇이 어디 있는지 모르겠어.
+1. 폴더 안 파일 목록을 훑어보고, 정리하는 좋은 방법 두세 가지를 추천해 줘. 파일을 옮기거나 지우기 전에 반드시 나에게 물어봐.
+2. index.html 페이지를 하나 만들어 줘. 왼쪽에 파일 목록(제목·날짜), 파일을 클릭하면 오른쪽에 내용이 보이게.
+3. 맨 위에 검색 칸을 넣어 줘.
+4. 원본 파일은 고치지 마.
+다 만들면 브라우저로 여는 방법을 알려 줘.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>index.html을 브라우저로 열면 파일 목록이 보이고, 클릭하면 내용이 옆에 나옵니다. 원본 파일은 그대로입니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>한글 파일 이름이 깨지면 “한글 파일 이름이 깨져. UTF-8로 다시 만들어 줘”라고 합니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Part 6 -->
+    <section id="sec-part6" class="block">
+      <div class="section-header">
+        <span class="tag">PART 06 · GEMINI.md · CLAUDE.md · AGENTS.md</span>
+        <h2>7. 에이전트마다 먼저 읽는 파일이 있다: 나만의 규칙 파일 만들기</h2>
+      </div>
+
+      <div class="card">
+        <h3>① 그때그때 시키면 ‘알바’, 규칙이 있으면 ‘내 직원’</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 쉬는 시간이 끝나고 강사가 “나만의 에이전트 만들고 싶지 않으신가요?”라고 묻자 반응이 시원치 않았습니다. 한 수강생은 솔직하게 말했습니다. 규칙을 꼭 만들어야 하나, 원하는 걸 그때그때 시키면 알아서 하지 않느냐고요. 강사의 답은 이랬습니다. 그건 아르바이트를 쓰는 것이다. 그때그때 시켜도 알바 1, 알바 2, 알바 3이 일은 다 한다. 규칙 파일이 없어도 일은 된다. 다만 강사는 결과물이 나오면 늘 정해 둔 산출물 폴더에 날짜 폴더로 쌓이니 찾으러 다닐 필요가 없고, 규칙이 없으면 매번 내가 지정하거나 에이전트가 정한 이름을 따라가야 한다.
+        </p>
+        <p>
+          그래서 규칙 파일의 목적은 하나입니다. <strong>헛소리하지 않고 나에게 맞춘 에이전트</strong>를 만드는 것. 처음에는 간단한 규칙 몇 줄로 시작하고, 일하다 필요해지는 것을 차곡차곡 쌓으면 됩니다. 개념 설명이 길어서 복잡해 보이지만, 실제로 하는 일은 hello.txt를 만들듯 <strong>파일 하나를 만드는 것</strong>입니다.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>② 에이전트마다 실행하면 제일 먼저 읽는 파일</h3>
+        <p>
+          강사는 수강생 한 분이 에이전트에게 “law.md를 만들어 줘, 에이전트가 지켜야 할 규칙을 정해 놓은 문서야”라고 하자 에이전트가 이렇게 답했다는 이야기로 시작했습니다. “Antigravity는 제일 먼저 GEMINI.md나 AGENTS.md를 읽습니다.” 에이전트들은 실행되면 <strong>자기 고유의 설정 파일</strong>을 먼저 읽습니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:30%">에이전트</th><th style="width:30%">먼저 읽는 파일</th><th style="width:40%">비고</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Antigravity (AGY)</strong></td><td><code>GEMINI.md</code>, <code>AGENTS.md</code></td><td>Gemini 계열. 수업에서는 GEMINI.md를 씀</td></tr>
+              <tr><td><strong>Codex, Cursor 등</strong></td><td><code>AGENTS.md</code></td><td>여러 도구가 함께 쓰는 공통 이름</td></tr>
+              <tr><td><strong>Claude Code</strong></td><td><code>CLAUDE.md</code></td><td>새 대화를 시작할 때마다 자동으로 읽음</td></tr>
+              <tr><td><strong>여러 개를 함께 쓸 때</strong></td><td><code>law.md</code> (강사가 정한 이름)</td><td>위 세 파일에 “law.md를 먼저 읽어라” 한 줄만 두고, 규칙은 law.md 하나에</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout coral">
+          <strong class="title">🔎 사실 확인 (복습 보강)</strong>
+          Antigravity 공식 문서는 워크스페이스(와 그 위 폴더)에 둔 <code>AGENTS.md</code>·<code>GEMINI.md</code>, 또는 <code>.agents/rules/</code> 폴더의 규칙을 읽고, 모든 작업에 적용할 전역 규칙은 사용자 폴더의 <code>.gemini/GEMINI.md</code>에 둔다고 안내합니다. 버전이 바뀌면 위치가 달라질 수 있으니, 에이전트에게 “지금 버전에서 규칙 파일을 어디에 두면 읽어?”라고 한 번 확인하세요.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>③ 하나만 쓰면 그 파일에, 여러 개면 law.md 하나로 고삐를</h3>
+        <p>
+          <strong>왜 필요한가.</strong> Antigravity만 쓴다면 규칙은 GEMINI.md에 쓰면 됩니다. Codex를 쓰면 AGENTS.md, Claude면 CLAUDE.md입니다. 그런데 세 개를 다 쓰면 규칙을 바꿀 때마다 세 파일을 다 고쳐야 합니다. 그래서 강사는 세 파일에는 “제일 먼저 law.md를 읽고 그 규칙을 따르라”는 내용만 넣고, 실제 규칙은 law.md 하나에 모았습니다. 그러면 law.md만 바꿔도 세 에이전트가 모두 같은 규칙을 따릅니다. 이것이 에이전트들을 한 고삐로 묶는 <strong>하네스</strong>입니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:26%">나의 경우</th><th style="width:37%">규칙을 둘 곳</th><th style="width:37%">장단점</th></tr></thead>
+            <tbody>
+              <tr><td><strong>에이전트 하나만 씀</strong></td><td>그 에이전트의 파일(예: GEMINI.md)에 바로</td><td>간단함. law.md는 필요 없음</td></tr>
+              <tr><td><strong>두세 개를 섞어 씀</strong></td><td>각 파일엔 “law.md 먼저” 한 줄, 규칙은 law.md에</td><td>한 곳만 고치면 됨</td></tr>
+              <tr><td><strong>워크스페이스 하나에 다 쌓음 (강사 방식)</strong></td><td>최상위 폴더 하나에 규칙 파일</td><td>따로 관리할 필요 없음. 대신 처음 읽을 양이 많아 초기 토큰이 조금 더 듦</td></tr>
+              <tr><td><strong>프로젝트마다 폴더를 나눔</strong></td><td>사업계획서·유튜브 쇼츠·논문 폴더마다 각각의 규칙 파일</td><td>필요한 규칙만 읽어 가볍고, 폴더마다 다른 기준을 줄 수 있음</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>④ 강사의 규칙 파일 엿보기</h3>
+        <p>
+          강사의 워크스페이스에는 AGENTS.md, CLAUDE.md, GEMINI.md가 나란히 있습니다. 메모장으로 열어 보니 셋의 제목만 다르고(Agent Guidelines, Project Rule 등) 내용은 같았습니다. 맨 위에 “작업을 시작할 때 최상위 law.md를 가장 먼저 읽고 그 규칙을 철저히 지켜라”가 있고, 이어서 필수 규칙이 번호로 붙어 있습니다. CLAUDE.md에는 며칠 전 Claude와 작업하며 바꾸느라 6·7번이 빠져 있었는데, 어차피 law.md를 먼저 읽으니 law.md가 우선합니다.
+        </p>
+        <ol>
+          <li><strong>law.md 최우선 열람</strong>: 모든 작업과 대화 시작 때 먼저 확인</li>
+          <li><strong>스킬 탐색·적용</strong>: 작업 요청 때 스킬 폴더를 확인, “스킬 만들어 줘”는 스킬 생성 절차를 즉시 열람</li>
+          <li><strong>브라우저 지정</strong>: 웹 브라우저가 필요하면 에고 브라우저를 기본으로</li>
+          <li><strong>산출물 폴더</strong>: 결과물은 산출물 폴더의 연월일시분 폴더에</li>
+          <li><strong>답변 양식</strong>: 답변 첫 줄에 이번에 열어 본 파일 목록. 강사가 근거를 바로 보고 싶어서 넣은 것으로, 없어도 답은 나옵니다</li>
+          <li><strong>사용자 이름 표기</strong>: 한글·영문 이름을 정해진 대로만 표기</li>
+          <li><strong>진실성 원칙</strong>: 이력서·자격증·경력·논문·공문서처럼 사실 증빙이 필요한 문서에 없는 자격이나 가상 이력을 쓰지 말고, 확인되지 않은 정보로 빈칸을 채우지 말 것</li>
+        </ol>
+        <p>
+          강사는 law.md 쪽 규칙도 몇 가지 더 읽어 줬습니다. 불확실하거나 검수가 필요한 내용은 내부 기억만으로 답하지 말고 확인할 것(팩트체크), 불필요한 파일을 만들지 말 것, 임시·검증 파일은 늘 스크래치(<code>_scratch</code>) 폴더에 둘 것, 한 번에 크게 말고 점진적으로 바꿀 것, 파일 링크를 꼭 표기할 것, 환경 변수 같은 보안 정보를 화면에 출력하지 말 것, 그리고 단계마다 인계 파일을 갱신하고 새 대화로 넘길 때는 핸드오프할 것.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ 수업 현장: 에이전트마다 지키는 정도가 다릅니다</strong>
+          챗봇에도 ‘맞춤 지침’이나 ‘개인화’ 칸이 있습니다. 같은 개념인데, 에이전트는 이 파일을 훨씬 자세히, 거의 그대로 따릅니다. 그래도 Gemini가 안 따를 때가 있었다고 합니다. “이렇게 하라고 했잖아”라고 하자 “law.md를 읽었지만 제가 너무 창작을 했군요”라고 사과했다고요. 강사의 경험으로는 Claude는 거의 지키고 Codex는 중간 정도입니다. 그래서 검수가 꼭 필요합니다.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>⑤ 강사가 준 기본 파일을 받으면: 이름 바꾸고, 첫 줄 지우기</h3>
+        <p>
+          <strong>왜 필요한가.</strong> 강사가 “제가 쓰는 파일을 드릴까요?”라고 묻자 수강생들이 반겼습니다. 강사는 자기 파일을 그대로 주지 않고, 지금 환경에 맞지 않는 규칙이 너무 많으니 <strong>초기 버전</strong>을 찾아 GEMINI.md, CLAUDE.md, AGENTS.md 기본 파일을 주기로 했습니다. 그대로 쓰면 큰일 납니다. 이름 표기 규칙이 있어서, 그대로 쓰면 여러분이 만드는 문서의 작성자가 전부 강사 이름이 됩니다. 이름은 반드시 내 것으로 바꿉니다. 그리고 에이전트를 하나만 쓴다면 맨 위의 “law.md를 먼저 읽어라” 줄을 지웁니다. law.md 파일이 없는데 그 줄이 남아 있으면 에이전트가 없는 파일을 찾습니다.
+        </p>
+      </div>
+
+      <ol class="step-manual">
+        <li>
+          <h4>내 작업 폴더에 규칙 파일 만들기</h4>
+          <ol>
+            <li><strong>준비:</strong> 내 워크스페이스(작업) 폴더가 어디인지 탐색기로 찾아 둡니다. 모르면 에이전트에게 “지금 열린 작업 폴더의 전체 경로를 알려 줘”라고 묻습니다.</li>
+            <li>쓰는 에이전트에 맞는 파일 이름을 고릅니다: Antigravity는 GEMINI.md, Claude Code는 CLAUDE.md, Codex는 AGENTS.md.</li>
+            <li>강사가 준 기본 파일이 있으면 그 파일을 작업 폴더 맨 위(최상위)에 넣습니다. 없으면 아래 요청문으로 에이전트가 만들게 합니다.</li>
+            <li>파일을 메모장으로 열어 <strong>이름</strong>을 내 것으로 바꾸고, 하나만 쓴다면 law.md 관련 줄을 모두 지우고 저장합니다.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 나의 첫 규칙 파일</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">이 작업 폴더의 맨 위에 [GEMINI.md / CLAUDE.md / AGENTS.md] 규칙 파일을 만들어 줘. 나는 이 에이전트 하나만 써.
+규칙은 아래 다섯 줄로 시작할게. 마크다운 번호 목록으로 써 줘.
+1. 모든 답변은 한국어로 한다.
+2. 결과물은 [산출물 폴더 이름] 폴더 안에 [YYMMDD]_[영문 프로젝트 이름] 폴더를 만들어 저장한다.
+3. 확인하지 않은 사실, 없는 자료, 없는 주소를 지어내지 않는다. 모르면 모른다고 한다.
+4. 문서 작성자는 [내 한글 이름] / [내 영문 이름]으로 적는다.
+5. 큰 작업을 끝내면 내가 보기 전에 한 번 더 스스로 검수한다.
+파일을 만든 뒤 전체 경로와 내용을 그대로 보여 줘.</pre>
+          </div>
+          <div class="outcome">
+            <div class="ok"><strong class="title">✅ 정상 결과</strong>작업 폴더 맨 위에 규칙 파일이 있고, 메모장으로 열면 내 이름과 다섯 규칙이 보입니다. law.md를 찾으라는 줄은 없습니다.</div>
+            <div class="stuck"><strong class="title">🧭 막혔을 때</strong>파일이 작업 폴더가 아닌 엉뚱한 곳(웹, 다른 폴더)에 생겼다면 아래 ⑥을 먼저 확인합니다.</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="card">
+        <h3>⑥ 내 작업 폴더가 정말 내 컴퓨터에 있나요</h3>
+        <p>
+          <strong>수업 현장.</strong> 한 수강생은 탐색기에서 GEMINI.md를 아무리 찾아도 없었습니다. 알고 보니 Claude를 <strong>웹(클라우드)</strong>에서 쓰고 있었습니다. 웹에서 한 작업은 인터넷 쪽에 있어서 내 PC 폴더에 파일이 없습니다. 채팅 기록은 웹과 앱이 동기화되지만, 깃을 쓰거나 다른 것과 연계하는 작업은 다릅니다. 강사는 <strong>모든 기준은 내 컴퓨터</strong>라고 정리했습니다. 앞으로는 앱에서, 그중에서도 ‘코드’ 메뉴에서 일합니다. 구름 표시는 클라우드(서버), 내 컴퓨터를 골라야 로컬입니다.
+        </p>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 지금 어디서 일하고 있는지 확인</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">지금 이 대화가 내 컴퓨터(로컬)에서 돌고 있는지, 클라우드(웹)에서 돌고 있는지 알려 줘.
+1. 로컬이면 지금 열린 작업 폴더의 전체 경로를 알려 줘.
+2. 클라우드라면 내 컴퓨터의 [작업 폴더 경로]에서 일하려면 앱의 어디를 눌러야 하는지 한 단계씩 알려 줘.
+3. 이 폴더에 [GEMINI.md / CLAUDE.md / AGENTS.md]가 있는지 확인하고, 있으면 첫 다섯 줄을 보여 줘.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>새 대화를 만들 때 환경을 <strong>내 컴퓨터(로컬)</strong>로, 작업 폴더를 내 워크스페이스로 고르고 “이 워크스페이스를 신뢰하겠느냐”에 신뢰를 누르면, 그 대화의 결과물은 내 폴더에 저장됩니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>폴더가 지정되지 않은 채로 대화를 시작했다면 새로 만들기에서 다시 시작합니다. 웹에서 만든 파일은 내려받아 작업 폴더에 넣습니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Part 7 -->
+    <section id="sec-part7" class="block">
+      <div class="section-header">
+        <span class="tag">PART 07 · CHECK &amp; TAILOR THE RULES</span>
+        <h2>8. 규칙이 먹히는지 확인하고, 나에게 맞게 고치기</h2>
+      </div>
+
+      <div class="card">
+        <h3>① 남들은 규칙을 어떻게 쓰나: 공식 예시를 한글로</h3>
+        <p>
+          <strong>왜 필요한가.</strong> “무엇을 적어야 할지 모르겠다”면 예시를 보면 됩니다. 강사는 에이전트에게 “가장 일반적으로 쓰이는 GEMINI.md 파일 예시를 알려 줘”라고 물었습니다. 에이전트는 공식 문서와 실제 사례에서 대표 세 가지를 찾아, 작은 개인 프로젝트용 최소 구성부터 보여 줬습니다. Gemini CLI 공식 문서의 예는 ‘나의 타입스크립트 라이브러리’ 프로젝트로, 들여쓰기는 스페이스 두 칸, 인터페이스 이름 앞엔 I를 붙인다 같은 코딩 스타일 규칙이었습니다. 영어로 나오자 강사는 “한글로 다시 작성해 줘”라고 했습니다.
+        </p>
+        <p>
+          쇼핑몰이나 코딩을 하는 분이라면 검사(lint)·빌드·테스트 방법, 테스트 파일 위치, “메인 브랜치에 직접 커밋하지 마라”(짬뽕이 되지 않게) 같은 규칙이 들어갑니다. 소설을 쓰는 분이라면 같은 틀로 ‘나의 소설 창작 라이브러리’, 일반 지침, 문장 스타일을 적으면 됩니다. 이렇게까지 세세할 필요는 없고 <strong>내게 꼭 필요한 것</strong>만 넣습니다.
+        </p>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 규칙 파일 예시를 내 분야로</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">가장 일반적으로 쓰이는 [GEMINI.md / CLAUDE.md / AGENTS.md] 파일 예시를 공식 문서에서 찾아 알려 줘. 출처 주소도 붙여 줘.
+1. 작은 개인 프로젝트용 최소 예시와, 보통 프로젝트용 예시를 한글로 옮겨 줘.
+2. 그 틀을 내 분야 [분야, 예: 소설 창작 / 쇼핑몰 운영 / 사업계획서 작성]에 맞게 바꾼 예시를 열 줄 안으로 만들어 줘.
+3. 아직 파일에 쓰지는 말고 보여만 줘. 내가 고른 줄만 나중에 추가할게.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>공식 출처가 붙은 예시와, 내 분야로 바꾼 열 줄짜리 초안을 받았습니다. 그중 필요한 줄만 골랐습니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>코딩 용어가 많아 어려우면 “코딩 규칙은 빼고, 문서 작업에 쓰는 규칙만 남겨 줘”라고 합니다.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>② 강사가 넣은 규칙의 이유: 거슬릴 때마다 한 줄</h3>
+        <p>
+          강사의 기준은 분명했습니다. 할루시네이션, 곧 <strong>거짓 정보를 넣지 마라</strong>. 사업계획서 같은 문서는 근거가 확실해야 하는데, 에이전트는 없는 논문을 있는 것처럼 주소까지 붙여 넣기도 합니다. 그래서 근거 없는 것을 넣지 말라는 규칙과 ‘절대 누락 금지’ 규칙이 생겼습니다. 산출물을 정해진 폴더에 넣으라는 규칙도 같은 식으로 생겼습니다. 반복 작업을 하다가 “왜 자꾸 이렇게 만들지?” 싶을 때 “이렇게 하지 마, 앞으로는 이렇게 해”라고 한 것이 한 줄씩 들어간 것입니다. 지금은 머리가 아프겠지만 두세 개 규칙으로 시작하면 됩니다. 길이도 적당한 게 좋습니다. 강사는 자기 것이 많은 편이라 했고, 기본 파일의 열 몇 줄 정도면 괜찮다고 했습니다.
+        </p>
+      </div>
+
+      <ol class="step-manual">
+        <li>
+          <h4>에이전트를 껐다 켜고, 규칙 파일을 읽는지 확인하기</h4>
+          <ol>
+            <li><strong>준비:</strong> 진행 중인 작업이 있으면 끝내거나 멈춥니다. 계속 질문을 쌓으면 과부하가 걸립니다.</li>
+            <li>Antigravity(또는 쓰는 에이전트) 프로그램을 완전히 종료(X)했다가 다시 실행합니다.</li>
+            <li>탐색기로 내 작업 폴더에 규칙 파일(예: GEMINI.md)이 있는지 다시 확인합니다.</li>
+            <li>왼쪽 사이드바에서 내 프로젝트(작업 폴더)를 고르고 <strong>새 대화</strong>를 엽니다. 입력창 위의 <strong>This computer</strong>(이 컴퓨터)를 고르고, 옆의 프로젝트 폴더가 내 폴더인지 봅니다. 업데이트 표시가 있으면 먼저 누릅니다.</li>
+            <li>폴더 옆에 <strong>main</strong>이 보이면 그 폴더가 깃허브와 연결된 것입니다. 안 보여도 상관없습니다.</li>
+            <li>아래 요청문으로 두 가지를 묻습니다.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 규칙 파일 읽는지 확인</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">이 작업 폴더에 [GEMINI.md / CLAUDE.md / AGENTS.md] 설정 파일이 있어?
+1. 있으면 그 파일의 전체 경로와 규칙 목록을 요약해서 보여 줘.
+2. 너는 새 대화를 시작할 때 이 파일을 가장 먼저 읽어 들이는 거야? 그렇다면 지금 이 대화에서도 읽었는지 알려 줘.
+3. 규칙 가운데 지금 폴더에 없는 파일이나 폴더를 가리키는 것이 있으면 알려 줘.
+파일 내용은 아직 고치지 마.</pre>
+          </div>
+          <div class="outcome">
+            <div class="ok"><strong class="title">✅ 정상 결과</strong>에이전트가 “있습니다”라며 규칙을 요약해 보여 주고, 새 대화마다 이 파일을 먼저 읽는다고 답합니다.</div>
+            <div class="stuck"><strong class="title">🧭 막혔을 때</strong>“최우선 열람 파일이 존재하지 않습니다”처럼 없는 파일을 찾는다고 하면 아래 ③의 경우입니다. 모델을 고르는 칸에 쿼터가 다 됐다는 표시가 있으면 다른 모델로 바꿔 계속합니다.</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="card">
+        <h3>③ 첫 줄만 지우고 1번은 남겼더니: 외우지 말고 이해하기</h3>
+        <p>
+          <strong>수업 현장.</strong> 강사의 기본 파일을 넣은 수강생들에게 “law.md를 먼저 읽어라 줄은 지우라”고 했습니다. 그런데 확인해 보니 에이전트가 계속 law.md를 찾았습니다. 맨 위 한 줄만 지우고, 바로 아래 <strong>1번 “law.md 최우선 열람”</strong>은 남겨 둔 것입니다. 에이전트는 그 규칙을 지키려고 없는 파일을 계속 찾았고, “최우선 열람 파일은 존재하지 않습니다”라고 답했습니다.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ “암기가 아니라 이해를 해야 돼요.”</strong>
+          제일 위의 것만 지우라 했더니 달랑 그것만 지우셨다고 강사가 짚었습니다. 읽어 보면 압니다. law.md가 없으면 law.md를 가리키는 모든 줄이 필요 없다는 것을요. 외울 것은 몇 개 안 됩니다. 수학처럼 보이는 것은 낯설어서이고, 처음 보는 주식 자동매매 화면이 눈 돌아가게 보여도 익숙해지면 자연스러운 것과 같습니다. 이렇게 될까 안 될까 <strong>생각하고, 추론하고, 실행해 보는 것</strong>. 실행해도 고장 나지 않습니다. 강사는 오늘 수업이 불친절하고 어렵게 느껴졌다면 바로 이 연습을 시키려는 것이었고, 그 대신 복습 파일은 더 세세하게 드리겠다고 했습니다.
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 없는 파일을 가리키는 규칙 정리</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">이 작업 폴더에는 law.md가 없고, 나는 [Antigravity / Claude Code / Codex] 하나만 써.
+1. [GEMINI.md / CLAUDE.md / AGENTS.md]에서 law.md를 가리키거나, 이 폴더에 없는 파일·폴더를 가리키는 줄을 모두 찾아 보여 줘.
+2. 각 줄을 지울지, 이 파일 안의 규칙으로 바꿔 쓸지 제안해 줘.
+3. 내가 "적용"이라고 하면 그대로 고치고, 고치기 전 파일은 [파일 이름]_backup.md로 남겨 줘.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>새 대화에서 “규칙 파일을 먼저 읽었고, 찾지 못한 파일은 없다”고 답합니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>에이전트에게 “law.md 파일이 없는데 어떻게 지울까요?”라고 그대로 물어봐도 됩니다. 이유와 고칠 곳을 함께 알려 줍니다.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>④ 규칙은 내 것: 항목별로 바꾸는 법</h3>
+        <p>
+          강사의 기본 파일은 예시일 뿐 정해진 것이 아닙니다. 마음대로 고칠 수 있고, 고치는 방법도 에이전트에게 말로 하면 됩니다. 수업에서 하나씩 짚은 내용을 표로 모았습니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:22%">규칙</th><th style="width:38%">강사의 기본값과 이유</th><th style="width:40%">나에게 맞게 바꾸는 말</th></tr></thead>
+            <tbody>
+              <tr><td><strong>스킬 폴더</strong></td><td>작업 전 스킬 폴더를 확인. 아직 없으면 앞으로 에이전트가 만들어 감</td><td>그대로 둬도 됨</td></tr>
+              <tr><td><strong>브라우저</strong></td><td>에고 브라우저를 기본으로</td><td>“앞으로 브라우저는 크롬을 쓰는 걸로 규칙을 만들어 줘” → 에이전트가 그 줄을 크롬으로 바꿈</td></tr>
+              <tr><td><strong>폴더 날짜</strong></td><td>YYYYMMDD_HHMM. 오래 쓸 것 같아서 네 자리 연도, 오전·오후 구분하려고 시분까지</td><td>3~4년만 쓸 거면 YYMMDD, 시만 알면 HH, 초까지 알고 싶으면 SS 추가</td></tr>
+              <tr><td><strong>답변 첫 줄</strong></td><td>열어 본 파일 목록. 근거를 바로 보려고</td><td>필요 없으면 빼도 답은 똑같이 나옴</td></tr>
+              <tr><td><strong>작성자 이름</strong></td><td>PPT·한글 파일의 작성자 칸에 이름을 매번 쓰기 귀찮아서 자동으로</td><td>내 한글·영문 이름으로 바꾸거나, 필요할 때 “작성자는 ○○로 넣어 줘”</td></tr>
+              <tr><td><strong>진실성 원칙</strong></td><td>이력·논문·공문서는 사실만. 강사는 신뢰성을 가장 따짐</td><td>창작할 때는 방해가 되므로, 창작용 프로젝트 폴더를 따로 만들고 그 폴더의 규칙 파일에서는 뺌</td></tr>
+              <tr><td><strong>답변 언어</strong></td><td>(수업 예) 계속 영어로 답하면 “항상 한국어로 답하라”</td><td>“이 폴더에서는 한국어로 답한 뒤 아래에 중국어를 함께 달아라” → 서른 번 묻는 동안 매번 번역을 시킬 필요가 없음</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-head"><span class="prompt-label">복사용 요청문 · 거슬리는 습관을 규칙으로 고치기</span><button type="button" class="prompt-copy">📋 복사</button></div>
+          <pre class="prompt-text">작업할 때 네가 자꾸 [거슬리는 행동, 예: 영어로 답한다 / 결과물을 바탕화면에 둔다]. 앞으로는 [원하는 방식]으로 해.
+1. 이걸 이 작업 폴더의 규칙 파일([파일 이름])에 한 줄로 추가해 줘.
+2. 이미 있는 규칙과 부딪히면 어느 쪽을 남길지 나에게 물어봐.
+3. 추가한 뒤 새 대화에서도 지켜지는지 확인하는 방법을 알려 줘.</pre>
+        </div>
+        <div class="outcome">
+          <div class="ok"><strong class="title">✅ 정상 결과</strong>규칙 파일에 한 줄이 늘었고, 새 대화에서 같은 일을 시키면 바뀐 방식으로 합니다.</div>
+          <div class="stuck"><strong class="title">🧭 막혔을 때</strong>규칙을 넣었는데도 안 지키면 “규칙 파일의 ○번을 읽었어? 왜 지키지 않았는지 말해 줘”라고 묻고, 결과는 늘 내가 검수합니다.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>⑤ ‘천재 만드는 MD’보다 백지에서, 그리고 나를 닮은 두뇌로</h3>
+        <p>
+          수업 끝 무렵 “에이전트를 천재로 만든다는 MD 파일이 돌아다니는데 써도 되느냐”는 질문이 나왔습니다. 써도 괜찮지만, 강사는 실제로는 규칙을 주지 않고 쓰는 편이 좋은 경우도 많다고 했습니다.
+        </p>
+        <div class="callout gold">
+          <strong class="title">🎙️ “백지 상태에서 내가 원하는 규칙만 집어넣는 게 가장 좋습니다.”</strong>
+          깃허브, 규칙 파일, 에고 라이트는 지금 있는 것에서 새것을 조사하고 만드는 도구입니다. 진짜로 해야 할 일은 따로 있습니다. 내가 가진 자료, 내가 쓴 글, 논문 천 편 같은 지식 파일 속에서 새로운 인사이트를 끌어내는 것. 그리고 나의 <strong>생각하는 방식</strong>을 에이전트에게 주는 것입니다. 바나나를 그리라는 문제를 받았을 때 내가 제일 먼저 무엇을 떠올리는지, 그 사고의 흐름을 강사는 ‘암묵지’라고 했습니다. 이것을 주입해 어떤 문제가 와도 나처럼 답하는 <strong>디지털 트윈</strong>을 만드는 것이 핵심이고, 거기에 에이전트의 지식과 스킬이 더해져 나보다 나은 결과가 나오기를 우리는 바랍니다. 이 작업은 과정 안에서 다 하지는 못할 것 같다고 했습니다.
+        </div>
+      </div>
+
+      <div class="case-grid">
+        <div class="case-box">
+          <span class="case-num">CASE 05 · UNASKED LAW.md</span>
+          <h3>시키지 않았는데 Claude가 규칙 파일들을 만들었어요</h3>
+          <ul>
+            <li><strong>상황:</strong> 수업 뒤 한 수강생이 Claude로 작업하다 보니 시키지 않은 law.md가 생겨 찜찜해서 취소하고 싶다고 했습니다.</li>
+            <li><strong>확인:</strong> 함께 열어 보니 CLAUDE.md에 “Claude가 새 대화를 시작할 때마다 자동으로 읽는다, 이 폴더의 작업 헌법, 모든 규칙의 최우선, 상세는 law.md”가 있고, 진행 상황·확정 사실·남은 일을 적는 인수인계(핸드오프) 파일도 있었습니다. 사용자는 한국어로 대화한다는 규칙도 들어 있었습니다.</li>
+            <li><strong>해결:</strong> 강사는 지울 필요 없이 그냥 두면 된다고 했습니다. 이미 잘 만든 것이고, 사업계획서 작업도 이 규칙을 따라 이어집니다. CLAUDE.md가 이미 만들어져 있으니 강사가 보낸 기본 파일을 따로 넣지 않아도 된다고 했습니다.</li>
+            <li><strong>실무 포인트:</strong> 작성자 이름 같은 규칙이 필요하면 파일을 직접 고치지 않고 “작성자 이름은 ○○로 넣는 규칙을 추가해 줘”라고 하면 됩니다.</li>
+          </ul>
+        </div>
+        <div class="case-box">
+          <span class="case-num">CASE 06 · WHAT IS HANDOFF</span>
+          <h3>규칙 파일 옆에 ‘HANDOFF.md’가 생겼어요</h3>
+          <ul>
+            <li><strong>상황:</strong> “law.md를 만들어 줘”라고 했더니 핸드오프 파일도 생겨, 무엇인지 에이전트에게 물어본 분이 있었습니다(강사는 잘하셨다고 했습니다).</li>
+            <li><strong>설명:</strong> 핸드오프는 인수인계서입니다. 대화가 길어지면 토큰이 엄청나게 들기 때문에, 작업을 단위별로 끊고 대화를 압축해 넘겨서 새 대화에서 이어 가게 합니다.</li>
+            <li><strong>실무 포인트:</strong> 긴 작업을 하는 분에게 쓸모 있습니다. 신경 쓰이지 않으면 그대로 두고 써 보면 됩니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout emerald">
+        <strong class="title">📤 여기까지 했다면</strong>
+        내가 만든 규칙 파일(GEMINI.md, CLAUDE.md, AGENTS.md)과 “이 규칙으로 하고 싶은 일” 한 줄을 <a href="#sec-files">자료 제출함</a>으로 보내 주세요. 규칙이 내 목표에 맞는지 보고 맞춤 스타터 파일을 만들어 드립니다. 다음 시간에는 CLAUDE.md로 이어서 작업합니다.
+      </div>
+    </section>
+
+    <!-- 9. 체크리스트 · 현장 문제 해결(접기) · Q&A -->
+    <section id="sec-check" class="block">
+      <div class="section-header">
+        <span class="tag">ACTION ITEMS, TROUBLESHOOTING &amp; REVIEW Q&amp;A</span>
+        <h2>9. 실전 체크리스트, 현장 문제 해결, 핵심 복습 Q&amp;A</h2>
+      </div>
+      <div class="card">
+        <h3>✅ 집에서 직접 눌러보는 10대 복습 체크리스트</h3>
+        <p style="font-size:14px; color:var(--muted); margin-top:0;">항목을 클릭하면 완료 표시가 이 기기의 브라우저에 저장됩니다.</p>
+        <ul class="checklist" id="review-checklist">
+          <li><input type="checkbox" data-id="c1"><span><strong>1. 마크다운:</strong> 메모 하나를 에이전트에게 .md로 바꾸게 하고 메모장으로 열어 계층을 확인했다.</span></li>
+          <li><input type="checkbox" data-id="c2"><span><strong>2. 깃허브 연결:</strong> 에이전트에게 “워크스페이스를 깃허브에 올려 줘”라고 하고, 브라우저 인증(일회용 코드)까지 마쳤다.</span></li>
+          <li><input type="checkbox" data-id="c3"><span><strong>3. 눈으로 확인:</strong> 깃허브 저장소 페이지를 새로고침해 내 파일이 올라간 것을 직접 봤다.</span></li>
+          <li><input type="checkbox" data-id="c4"><span><strong>4. 비공개:</strong> 내 저장소가 Private인지 확인했다.</span></li>
+          <li><input type="checkbox" data-id="c5"><span><strong>5. 다시 올리기:</strong> 파일 하나를 고쳐 로그인 없이 다시 올리고, 커밋 메시지와 시각을 확인했다.</span></li>
+          <li><input type="checkbox" data-id="c6"><span><strong>6. 전용 브라우저:</strong> 에고 라이트 또는 어사이드를 설치하고 온보딩을 마친 뒤, 에이전트가 연결 테스트를 통과시켰다.</span></li>
+          <li><input type="checkbox" data-id="c7"><span><strong>7. 로그인 넘기기:</strong> 에이전트가 연 사이트에 내가 로그인하고 Return to agent로 돌려준 뒤, 검색·비교 결과를 파일로 받았다.</span></li>
+          <li><input type="checkbox" data-id="c8"><span><strong>8. 규칙 파일:</strong> 내 에이전트에 맞는 GEMINI.md, CLAUDE.md, AGENTS.md 중 하나를 작업 폴더 맨 위에 만들고, 이름을 내 것으로 바꿨다.</span></li>
+          <li><input type="checkbox" data-id="c9"><span><strong>9. 읽는지 확인:</strong> 프로그램을 껐다 켜고 This computer·내 폴더로 새 대화를 열어 “이 파일을 가장 먼저 읽어?”라고 확인했다.</span></li>
+          <li><input type="checkbox" data-id="c10"><span><strong>10. 한 줄 추가:</strong> 거슬렸던 행동 하나를 말로 규칙에 추가하고, 새 대화에서 지켜지는지 봤다.</span></li>
+        </ul>
+      </div>
+
+      <h3 style="color:var(--navy); margin:28px 0 8px;">🧰 현장 문제 해결 (필요한 것만 펼쳐 보세요)</h3>
+      <details class="fold">
+        <summary>1. 에이전트가 “저장소 URL을 알려 달라”는데 모르겠어요</summary>
+        <div class="answer">
+          <strong>현장:</strong> 오전 실습에서 가장 많이 멈춘 곳입니다. 길은 세 가지입니다. 에이전트에게 묻기, 검색해서 깃허브 대시보드에서 복사하기, 크롬의 Gemini에게 묻기. 새 저장소를 만들 거라면 주소 대신 이름과 공개 여부만 알려 줘도 됩니다.
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">다시 묻는 요청문</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">내 깃허브 저장소 URL을 어떻게 알 수 있어? 내 깃허브 아이디는 [아이디]야.
+아직 저장소가 없다면 네가 [저장소 이름]으로 비공개 저장소를 새로 만들어 줘. 만들 수 없으면 깃허브 화면에서 만드는 순서를 한 단계씩 알려 줘.</pre>
+          </div>
+          <strong>성공 확인:</strong> 에이전트가 주소를 받아 “푸시를 진행하겠습니다”라고 이어 갑니다.
+        </div>
+      </details>
+      <details class="fold">
+        <summary>2. 연결했다는데 깃허브에 파일이 안 보여요</summary>
+        <div class="answer">
+          <strong>현장:</strong> 아이디가 두 개라 다른 계정으로 들어가 있던 경우, 웹에서 직접 만든 저장소와 에이전트가 올린 저장소가 서로 다른 경우가 있었습니다. 오른쪽 위 프로필 아이디와 저장소 이름을 먼저 맞춰 봅니다.
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">다시 묻는 요청문</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">깃허브에 다 올라갔어? 지금 연결된 깃허브 계정 아이디와, 파일을 올린 저장소의 정확한 주소를 알려 줘.
+그 주소에 실제로 어떤 파일들이 올라가 있는지 목록도 확인해 줘.</pre>
+          </div>
+          <strong>성공 확인:</strong> 에이전트가 알려 준 주소를 열면, 같은 아이디로 로그인된 화면에 파일이 보입니다.
+        </div>
+      </details>
+      <details class="fold">
+        <summary>3. 로그인 팝업·터미널 창이 안 떠요</summary>
+        <div class="answer">
+          <strong>현장:</strong> “파란색 팝업 창이 나타났을 것”이라는데 안 나타난 분, 터미널이 어디인지 모르는 분이 있었습니다. 에이전트에게 그대로 말하면 실행 파일을 만들어 주거나 다른 방식으로 창을 띄웁니다. 설치나 실행 허락(Allow)을 묻는 칸을 놓치지 않았는지도 봅니다.
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">다시 묻는 요청문</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">네가 말한 팝업 창(또는 터미널 창)이 내 화면에 안 보여.
+다른 방법으로 깃허브 로그인 창을 띄워 줘. 내가 무엇을 더블클릭하거나 어디를 눌러야 하는지 한 단계씩만 알려 줘.</pre>
+          </div>
+          <strong>성공 확인:</strong> 깃허브 로그인 또는 일회용 코드 입력 화면이 브라우저에 열립니다.
+        </div>
+      </details>
+      <details class="fold">
+        <summary>4. 탐색기에서 GEMINI.md(규칙 파일)가 안 보여요</summary>
+        <div class="answer">
+          <strong>현장:</strong> 웹(클라우드)에서 작업해 파일이 내 PC에 없었던 경우, 작업 폴더를 지정하지 않고 대화를 시작한 경우가 있었습니다. 새로 만들기에서 환경을 내 컴퓨터로, 폴더를 내 워크스페이스로 고르고 신뢰를 누른 뒤 다시 만듭니다.
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">다시 묻는 요청문</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">지금 열린 작업 폴더의 전체 경로를 알려 줘. 그 폴더 맨 위에 GEMINI.md가 있는지 확인하고, 없으면 만들기 전에 나에게 물어봐.</pre>
+          </div>
+          <strong>성공 확인:</strong> 알려 준 경로를 탐색기 주소창에 붙이면 그 폴더가 열리고 규칙 파일이 보입니다.
+        </div>
+      </details>
+      <details class="fold">
+        <summary>5. 에이전트가 계속 law.md를 찾아요</summary>
+        <div class="answer">
+          <strong>현장:</strong> 강사가 준 기본 파일에서 맨 위 한 줄만 지우고 1번 “law.md 최우선 열람”을 남긴 경우입니다. law.md를 쓰지 않는다면 그것을 가리키는 줄을 모두 지웁니다. 읽어 보고 이해하면 어느 줄을 지울지 보입니다.
+          <strong>성공 확인:</strong> 새 대화에서 “없는 파일을 찾았다”는 말이 나오지 않습니다.
+        </div>
+      </details>
+      <details class="fold">
+        <summary>6. 에이전트가 너무 느리거나, 쿼터가 다 됐대요</summary>
+        <div class="answer">
+          <strong>현장:</strong> 오후 내내 질문을 쌓자 과부하가 걸렸습니다. 강사는 질문을 멈추고 답이 나올 때까지 기다린 뒤, 프로그램을 끄고 다시 켜게 했습니다. “플랜 업그레이드”는 사용량이 다 찼다는 뜻이니 다른 모델이나 에이전트로 옮깁니다. 긴 작업은 인수인계서(HANDOFF.md)를 만들게 하고 새 대화에서 이어 갑니다.
+          <div class="prompt-box">
+            <div class="prompt-head"><span class="prompt-label">다시 묻는 요청문</span><button type="button" class="prompt-copy">📋 복사</button></div>
+            <pre class="prompt-text">지금까지 한 작업을 HANDOFF.md로 정리해 줘. 확정한 것, 남은 일, 핵심 파일 경로, 내가 한 지시를 적어 줘.
+새 대화에서 "HANDOFF.md 읽고 이어서 해 줘"라고 하면 이어 갈 수 있게 해 줘.</pre>
+          </div>
+          <strong>성공 확인:</strong> 새 대화에서 인계 파일을 읽고 남은 일부터 이어 갑니다.
+        </div>
+      </details>
+
+      <h3 style="color:var(--navy); margin:28px 0 14px;">💬 핵심 복습 질문 3가지 (클릭하여 모범 답안 확인)</h3>
+      <details class="qa-item" open>
+        <summary>Q1. 깃허브를 연결하면 앞으로 깃허브에 들어가서 작업하나요?</summary>
+        <div class="answer">
+          <strong>💡 모범 답안:</strong><br>
+          아닙니다. 작업은 내 PC에서 에이전트와 합니다. 깃허브는 클라우드에 있는 저장소라서, 다 한 것을 “깃허브에 올려 줘”라고 하면 에이전트가 올리고(커밋·푸시), 다른 컴퓨터에서는 최신 버전을 내려받아(풀) 이어 합니다. USB로 오가던 일을 대신하고, 언제 무엇을 올렸는지 버전이 자동으로 남습니다. 처음 한 번 로그인·승인만 넘기면 그다음부터는 로그인 없이 올라갑니다.
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>Q2. 에고 라이트 같은 브라우저를 왜 따로 설치하나요?</summary>
+        <div class="answer">
+          <strong>💡 모범 답안:</strong><br>
+          에이전트가 직접 클릭해 일하게 하려고, 즉 손발을 주려고 설치합니다. 크롬과 쓰는 법은 같지만 AI 자동화용으로 만들어져 토큰이 적게 들고 빠릅니다. 앱 안의 브라우저를 막는 사이트에서도 쓸 수 있습니다. 로그인과 결제·최종 승인은 내가 하고, 검색·비교·글쓰기·예약 업로드는 에이전트가 합니다.
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>Q3. GEMINI.md, CLAUDE.md, AGENTS.md, law.md는 어떻게 다른가요?</summary>
+        <div class="answer">
+          <strong>💡 모범 답안:</strong><br>
+          앞의 셋은 각 에이전트가 실행되면 가장 먼저 읽는 자기 설정 파일입니다(Antigravity는 GEMINI.md·AGENTS.md, Codex 등은 AGENTS.md, Claude Code는 CLAUDE.md). 에이전트 하나만 쓰면 그 파일에 규칙을 바로 쓰면 됩니다. 여러 개를 쓰면 세 파일에 “law.md를 먼저 읽어라”만 두고 공통 규칙을 law.md 하나에 모아, 한 곳만 고쳐도 모두 같은 규칙을 따르게 합니다. law.md는 강사가 정한 이름이고, 쓰지 않는다면 그것을 가리키는 줄은 모두 지웁니다.
+        </div>
+      </details>
+    </section>
+  </main>
+</div>
+
+<script>
+  (function() {
+    const KEY = 'workbox_vibe_review_20261126';
+    const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    const items = document.querySelectorAll('#review-checklist li');
+
+    items.forEach(li => {
+      const cb = li.querySelector('input[type="checkbox"]');
+      const id = cb.getAttribute('data-id');
+      if (saved[id]) {
+        cb.checked = true;
+        li.classList.add('checked');
+      }
+      li.addEventListener('click', (e) => {
+        if (e.target !== cb) cb.checked = !cb.checked;
+        li.classList.toggle('checked', cb.checked);
+        saved[id] = cb.checked;
+        localStorage.setItem(KEY, JSON.stringify(saved));
+      });
+    });
+
+    // Submission Form Handlers (Gmail Web / mailto / KakaoTalk Copy)
+    const DRAFT_KEY = 'workbox_vibe_submit_draft_20261126';
+    const nameEl = document.getElementById('req-name');
+    const emailEl = document.getElementById('req-email');
+    const trackEl = document.getElementById('req-track');
+    const goalEl = document.getElementById('req-goal');
+    const toastEl = document.getElementById('submit-toast');
+
+    if (nameEl && emailEl && trackEl && goalEl) {
+      const draft = JSON.parse(localStorage.getItem(DRAFT_KEY) || '{}');
+      if (draft.name) nameEl.value = draft.name;
+      if (draft.email) emailEl.value = draft.email;
+      if (draft.track) trackEl.value = draft.track;
+      if (draft.goal) goalEl.value = draft.goal;
+
+      const saveDraft = () => {
+        localStorage.setItem(DRAFT_KEY, JSON.stringify({
+          name: nameEl.value,
+          email: emailEl.value,
+          track: trackEl.value,
+          goal: goalEl.value
+        }));
+      };
+      [nameEl, emailEl, trackEl, goalEl].forEach(el => {
+        el.addEventListener('input', saveDraft);
+        el.addEventListener('change', saveDraft);
+      });
+
+      const showToast = (msg) => {
+        toastEl.textContent = msg;
+        toastEl.classList.add('show');
+      };
+
+      const buildPayload = () => {
+        const name = (nameEl.value || '').trim() || '(성함 미입력)';
+        const email = (emailEl.value || '').trim() || '(이메일 미입력)';
+        const track = trackEl.value;
+        const goal = (goalEl.value || '').trim() || '(목표 및 첨부파일 설명을 적어주세요)';
+        const subject = `[맞춤형 스타터 키트 신청] ${name} - ${track}`;
+        const body = [
+          '안녕하세요, 유정근 디렉터님.',
+          '11/26 바이브 코딩 기반 AI 업무자동화 강의(깃허브·브라우저·규칙 파일) 맞춤형 파일 신청 및 자료를 전달드립니다.',
+          '',
+          `1. 신청자 성함: ${name}`,
+          `2. 구글 드라이브 공유받을 이메일: ${email}`,
+          `3. 희망 프로젝트 분야: ${track}`,
+          '4. 나의 목표 및 요청사항(첨부파일 설명):',
+          goal,
+          '',
+          '※ (메일 전송 시) 보유하신 PDF/PPTX/HWP 참고 자료를 이 메일에 첨부하여 보내드립니다.'
+        ].join('\n');
+        return { name, email, track, goal, subject, body };
+      };
+
+      document.getElementById('btn-gmail').addEventListener('click', () => {
+        const { subject, body } = buildPayload();
+        const url = `https://mail.google.com/mail/?view=cm&fs=1&to=ryujean77@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(url, '_blank', 'noopener');
+        showToast('📧 Gmail 새 창을 열었습니다. 열리지 않으면 팝업 차단을 허용해 주시고, 메일 창 하단 클립(📎) 아이콘으로 내 파일을 첨부해 보내주세요!');
+      });
+
+      document.getElementById('btn-mailto').addEventListener('click', () => {
+        const { subject, body } = buildPayload();
+        const url = `mailto:ryujean77@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = url;
+        showToast('✉️ PC 기본 메일 앱을 실행했습니다. 첨부할 자료가 있다면 메일에 파일을 추가해 전송해 주세요.');
+      });
+
+      document.getElementById('btn-kakao').addEventListener('click', () => {
+        const { name, email, track, goal } = buildPayload();
+        const kakaoText = [
+          '[📌 맞춤형 프로젝트 자료 제출 & 파일 신청]',
+          `- 성함: ${name}`,
+          `- 회신/구글드라이브 이메일: ${email}`,
+          `- 희망 분야: ${track}`,
+          `- 목표 및 첨부파일 설명: ${goal}`,
+          '',
+          '(※ 아래에 내 참고 파일 PDF/PPTX/HWP를 함께 올려주세요!)'
+        ].join('\n');
+
+        const onCopied = () => {
+          showToast("✅ 카카오톡 제출용 양식이 복사되었습니다! '과정' 단톡방에 붙여넣고(Ctrl+V) 파일을 함께 올려주세요.");
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(kakaoText).then(onCopied).catch(() => {
+            const ta = document.createElement('textarea');
+            ta.value = kakaoText;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            onCopied();
+          });
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = kakaoText;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          onCopied();
+        }
+      });
+    }
+  })();
+</script>
+<script>
+  (function() {
+    function copyText(text, done) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+      } else {
+        fallbackCopy(text, done);
+      }
+    }
+    function fallbackCopy(text, done) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      done();
+    }
+    document.querySelectorAll('.prompt-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.closest('.prompt-box').querySelector('.prompt-text').innerText;
+        copyText(text, () => {
+          const label = btn.textContent;
+          btn.textContent = '✅ 복사됨';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = label;
+            btn.classList.remove('copied');
+          }, 1600);
+        });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>② 에이전트 전용 브라우저 스타터 키트 | 11/26 바이브 코딩 AI 업무자동화 스타터 키트</title>
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-alt: #F3EFE6;
+      --navy: #1B253B;
+      --navy-light: #2B3A5A;
+      --gold: #B68F52;
+      --gold-dark: #8B6932;
+      --gold-soft: #F7F1E5;
+      --text: #1F2430;
+      --muted: #5A6275;
+      --line: #E2DACB;
+      --emerald: #2D6E52;
+      --emerald-bg: #E7F3ED;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(27, 37, 59, 0.07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15.5px;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(27, 37, 59, 0.96);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: #FFFFFF;
+      font-family: inherit;
+    }
+    .top-btn.gold {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .top-btn:hover { opacity: 0.92; }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 32px 34px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+    .hero .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #F0D29C;
+      background: rgba(182, 143, 82, 0.22);
+      padding: 4px 11px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1.38;
+    }
+    .hero p {
+      margin: 0;
+      color: #D8E0EF;
+      font-size: 15px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .lead {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .callout {
+      background: var(--gold-soft);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 14px 0 0;
+      font-size: 14.5px;
+    }
+    ul.clean {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+    ul.clean li {
+      margin-bottom: 7px;
+    }
+    code {
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 13.5px;
+      color: #9B3022;
+    }
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: var(--surface);
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-alt);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    td.col-label {
+      width: 30%;
+      background: #FCFBF8;
+    }
+    td.col-label .hint {
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    textarea.kit-input {
+      width: 100%;
+      border: 1px dashed #CBBFA8;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font: inherit;
+      font-size: 14px;
+      line-height: 1.55;
+      background: #FCFBF9;
+      color: var(--text);
+      resize: vertical;
+    }
+    textarea.kit-input.compact {
+      font-size: 13.5px;
+      padding: 7px 9px;
+    }
+    textarea.kit-input:focus {
+      outline: 2px solid var(--gold);
+      border-style: solid;
+      background: #FFFFFF;
+    }
+    .form-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .toolbar-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn-sm {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: var(--surface-alt);
+      color: var(--navy);
+    }
+    .btn-sm.primary {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-color: var(--navy);
+    }
+    .prompt-card {
+      background: #FCFBF8;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .prompt-card:last-child { margin-bottom: 0; }
+    .prompt-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .p-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+    }
+    .prompt-head h3 {
+      margin: 0;
+      font-size: 16.5px;
+      color: var(--navy);
+    }
+    .p-desc {
+      margin: 0 0 10px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .copy-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #FFFFFF;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy-btn.copied {
+      background: var(--emerald);
+      border-color: var(--emerald);
+    }
+    pre.prompt-body {
+      margin: 0;
+      padding: 14px 16px;
+      background: #1B253B;
+      color: #F4F6FA;
+      border-radius: 10px;
+      font-family: "Pretendard Variable", Pretendard, Consolas, monospace;
+      font-size: 13.5px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      background: #FCFBF8;
+    }
+    .checklist li:hover { background: var(--gold-soft); }
+    .checklist input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--emerald);
+      flex-shrink: 0;
+    }
+    .checklist li.checked span {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 28px;
+    }
+    @media (max-width: 720px) {
+      td.col-label { width: auto; display: block; }
+      tr { display: block; margin-bottom: 12px; }
+      td { display: block; width: 100%; }
+      thead { display: none; }
+      .hero { padding: 24px 20px; }
+    }
+    @media print {
+      .topbar, .form-toolbar, .copy-btn { display: none; }
+      body { background: #FFFFFF; font-size: 11pt; }
+      .card, .hero, .prompt-card { box-shadow: none; break-inside: avoid; }
+      pre.prompt-body { background: #F5F5F5; color: #111111; border: 1px solid #CCCCCC; }
+      textarea.kit-input { border: 1px solid #BBBBBB; background: #FFFFFF; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="top-btn" href="../review.html#sec-files" id="back-link">← 복습노트로 돌아가기</a>
+      <div class="top-actions">
+        <a class="top-btn" href="kit02_agent_browser_setup.md" download>⬇ 마크다운(.md) 저장</a>
+        <button type="button" class="top-btn gold" onclick="window.print()">🖨️ A4 인쇄 / PDF 저장</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <span class="badge">KIT 02 · 브라우저 · 에고 라이트·어사이드</span>
+      <h1>② 에이전트 전용 브라우저 스타터 키트</h1>
+      <p>AI가 쓰기 좋은 브라우저를 설치하고, 로그인은 내가 하고 나머지는 에이전트가 하는 손발을 만듭니다.</p>
+    </header>
+
+    <section class="card">
+      <div class="section-tag">STEP 01 · CORE STRATEGY &amp; RAW MATERIALS</div>
+      <h2>1. 현장 합격/성공 공식 &amp; 폴더에 넣을 원형 자료</h2>
+      <ul class="clean"><li><strong>브라우저는 에이전트의 손발:</strong> 브라우저를 주면 에이전트가 사이트를 열고, 검색하고, 글을 쓰고, 예약을 겁니다. 크롬과 쓰는 법은 같지만 AI 자동화용이라 토큰이 적게 듭니다.</li>
+<li><strong>로그인과 결제는 사람이:</strong> 에이전트는 로그인 페이지까지 열고 제어권을 넘깁니다. 아이디·비밀번호·인증 문자는 내가 넣고 Return to agent로 돌려줍니다. 결제와 게시처럼 되돌리기 어려운 일은 내가 승인합니다.</li>
+<li><strong>설치도 에이전트에게 묻는다:</strong> “에고 라이트를 연결해서 쓰고 싶어, 설치해 줘”라고 하면 에이전트가 방법을 찾아 연결 부분은 하고, 앱 설치 순서를 안내합니다. 공식 사이트에서만 받습니다.</li></ul>
+      <div class="callout">
+        <strong>📁 내 작업 폴더(<code>workbox/</code>)에 먼저 넣어둘 원형 자료:</strong>
+        <ul class="clean"><li><code>01_쓰는_에이전트.txt</code> — Antigravity·Claude Code·Codex 중 지금 쓰는 것</li>
+<li><code>02_자주_가는_사이트.md</code> — 에이전트에게 맡기고 싶은 사이트와 할 일 목록</li></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 02 · INTERACTIVE WORKSHEET</div>
+      <h2>2. 전용 브라우저 설치 점검표</h2>
+      <p class="lead">설치 전후로 채웁니다. (입력 내용은 현재 브라우저에 자동 저장됩니다.)</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:32%">설계 항목</th>
+              <th style="width:68%">나의 프로젝트 내용 작성 (예시 수정 가능)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class="col-label">
+                <strong>1. 고른 브라우저</strong>
+                <div class="hint">에고 라이트 또는 어사이드</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit02_agent_browser_setup_f1" rows="3" placeholder="이름">에고 라이트 (lite.ego.app)</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>2. 온보딩 선택</strong>
+                <div class="hint">크롬 데이터 가져오기, 탭 모양</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit02_agent_browser_setup_f2" rows="3" placeholder="고른 것">크롬 탭 가져오기 예, 세로 탭, 기본값으로 설정</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>3. 연결 테스트 결과</strong>
+                <div class="hint">에이전트가 확인했는가</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit02_agent_browser_setup_f3" rows="3" placeholder="에이전트 답 그대로">에고 브라우저 연결까지 모두 확인됨</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>4. 규칙에 넣을지</strong>
+                <div class="hint">브라우저 작업은 이걸 쓰라고 정할지</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit02_agent_browser_setup_f4" rows="3" placeholder="예/아니요">예. 규칙 파일에 기본 브라우저로 한 줄 추가</textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-toolbar">
+        <span style="font-size:13px; color:var(--muted);" id="save-status">💾 입력 시 브라우저에 자동 저장됩니다.</span>
+        <div class="toolbar-btns">
+          <button type="button" class="btn-sm primary" id="copy-form-btn">📋 내가 작성한 양식 전체 복사</button>
+          <button type="button" class="btn-sm" id="reset-form-btn">↺ 기본 예시로 되돌리기</button>
+        </div>
+      </div>
+    </section>
+
+    
+      <section class="card">
+        <div class="section-tag">COMPARE</div>
+        <h2>브라우저 방식 비교</h2>
+        <p class="lead">수업에서 정리한 네 가지 방식입니다.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>방식</th><th>특징</th></tr></thead>
+            <tbody><tr><td>앱 내장 브라우저</td><td>설치 없음. 일부 사이트가 막음</td></tr><tr><td>크롬 + 확장</td><td>평소 크롬 그대로. 보안 경고로 막히기도 함</td></tr><tr><td>화면 제어</td><td>정보량이 많아 토큰이 많이 듦</td></tr><tr><td>에고 라이트·어사이드</td><td>AI 전용. 토큰이 적고 빠름</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 03 · COPY-PASTE PROMPTS FOR AGENT</div>
+      <h2>3. 바로 복사해 쓰는 실전 요청문 (프롬프트)</h2>
+      <p class="lead">오른쪽 <strong>[요청문 원클릭 복사]</strong> 버튼을 누른 뒤 Antigravity(AGY)·Codex·Claude Code·타임리 에이전트에 붙여넣으세요. 대괄호 <code>[...]</code> 부분을 내 상황에 맞게 바꿔 쓰면 됩니다.</p>
+      
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 01 · 에이전트 · 설치</span>
+              <h3>전용 브라우저 설치 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit02_agent_browser_setup_prompt_1">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">처음 설치할 때</p>
+          <pre class="prompt-body" id="kit02_agent_browser_setup_prompt_1">나는 [에고 라이트 / 어사이드] 브라우저를 연결해서 쓰고 싶어. 설치해 줘.
+1. 공식 사이트와 설치 방법을 먼저 확인해서 알려 줘. 공식이 아닌 다운로드 주소는 쓰지 마.
+2. 네가 설치할 수 있는 부분은 네가 하고, 내가 직접 설치할 앱은 순서대로 알려 줘.
+3. 내가 &quot;설치 완료했어&quot;라고 하면 연결 테스트를 하고 결과를 알려 줘.
+4. 앞으로 브라우저 작업에 이걸 쓰도록 규칙 파일에 추가할지 나에게 물어봐.</pre>
+        </div>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 02 · 에이전트 · 로그인 넘기기</span>
+              <h3>로그인은 내가, 일은 에이전트가</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit02_agent_browser_setup_prompt_2">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">로그인이 필요한 사이트 작업</p>
+          <pre class="prompt-body" id="kit02_agent_browser_setup_prompt_2">에고 라이트 브라우저를 열어서 [사이트 이름]에 로그인할 거야.
+1. 로그인 페이지까지만 열고 나에게 제어권을 넘겨 줘. 아이디·비밀번호·인증은 내가 직접 할게.
+2. 내가 &quot;됐어&quot;라고 하면 로그인 상태를 확인해 줘.
+3. 그다음 [할 일]을 해 줘.
+4. 결제·주문·게시·삭제처럼 되돌리기 어려운 일은 하기 전에 나에게 물어봐.
+결과는 작업 폴더에 [파일 이름.md]로 남겨 줘.</pre>
+        </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 04 · HUMAN-IN-THE-LOOP</div>
+      <h2>4. 사람 승인(Human-in-the-Loop) 최종 검수 점검표</h2>
+      <p class="lead">AI가 초안을 10배 빠르게 만들어 주더라도, 최종 책임과 결재 도장은 반드시 사람(디렉터)이 찍습니다.</p>
+      <ul class="checklist" id="hitl-list">
+        <li><input type="checkbox" data-chk="kit02_agent_browser_setup_chk_1"><span>공식 사이트에서 내려받았는가?</span></li>
+<li><input type="checkbox" data-chk="kit02_agent_browser_setup_chk_2"><span>로그인 정보는 내가 브라우저에 직접 넣었는가?</span></li>
+<li><input type="checkbox" data-chk="kit02_agent_browser_setup_chk_3"><span>결제·게시 같은 일은 내가 승인한 것만 실행됐는가?</span></li>
+<li><input type="checkbox" data-chk="kit02_agent_browser_setup_chk_4"><span>에이전트의 연결 테스트 통과 답을 확인했는가?</span></li>
+
+      </ul>
+    </section>
+
+    <p class="footer-note">바이브 코딩 기반 AI 업무자동화 11/26 · 유정근 (Ryu JeongKun) | 나의 업무함(workbox) 스타터 키트</p>
+  </main>
+
+  <script>
+    (function() {
+      const KID = "kit02_agent_browser_setup";
+      const NS = "workbox_vibe_20261126_";
+      // 양식 입력값 저장/복원
+      const STORE_KEY = 'kit_form_' + NS + KID;
+      const inputs = document.querySelectorAll('.kit-input');
+      const defaults = {};
+      inputs.forEach(el => { defaults[el.dataset.field] = el.value; });
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      inputs.forEach(el => {
+        const f = el.dataset.field;
+        if (Object.prototype.hasOwnProperty.call(saved, f)) {
+          el.value = saved[f];
+        }
+        el.addEventListener('input', () => {
+          saved[f] = el.value;
+          localStorage.setItem(STORE_KEY, JSON.stringify(saved));
+          const st = document.getElementById('save-status');
+          if (st) st.textContent = '✅ 방금 브라우저에 자동 저장되었습니다.';
+        });
+      });
+
+      // 텍스트 복사 헬퍼
+      function copyText(text, onDone) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(onDone).catch(() => fallbackCopy(text, onDone));
+        } else {
+          fallbackCopy(text, onDone);
+        }
+      }
+      function fallbackCopy(text, onDone) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        onDone();
+      }
+
+      // 프롬프트 원클릭 복사
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = document.getElementById(btn.dataset.copyTarget);
+          if (!target) return;
+          copyText(target.innerText, () => {
+            const orig = btn.textContent;
+            btn.textContent = '✅ 복사 완료!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.textContent = orig;
+              btn.classList.remove('copied');
+            }, 1800);
+          });
+        });
+      });
+
+      // 작성 양식 전체 복사
+      const copyFormBtn = document.getElementById('copy-form-btn');
+      if (copyFormBtn) {
+        copyFormBtn.addEventListener('click', () => {
+          const lines = ['[' + "② 에이전트 전용 브라우저 스타터 키트" + ' - 작성본]', ''];
+          document.querySelectorAll('table tbody tr').forEach(tr => {
+            const labelEl = tr.querySelector('.col-label strong');
+            const ta = tr.querySelector('textarea.kit-input');
+            if (labelEl && ta) {
+              lines.push('■ ' + labelEl.innerText.trim());
+              lines.push(ta.value.trim() || '(미입력)');
+              lines.push('');
+            } else if (ta) {
+              lines.push([...tr.cells].map(td => {
+                const t = td.querySelector('textarea');
+                return t ? (t.value.trim() || '(미입력)') : td.innerText.trim();
+              }).join(' | '));
+            }
+          });
+          copyText(lines.join('\n'), () => {
+            const orig = copyFormBtn.textContent;
+            copyFormBtn.textContent = '✅ 양식 전체 복사 완료!';
+            setTimeout(() => { copyFormBtn.textContent = orig; }, 1800);
+          });
+        });
+      }
+
+      // 초기화
+      const resetBtn = document.getElementById('reset-form-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (!confirm('작성한 내용을 지우고 기본 예시로 되돌릴까요?')) return;
+          localStorage.removeItem(STORE_KEY);
+          Object.keys(saved).forEach(f => { delete saved[f]; });
+          inputs.forEach(el => { el.value = defaults[el.dataset.field] || ''; });
+        });
+      }
+
+      // HITL 체크리스트 저장
+      const CHK_KEY = 'kit_chk_' + NS + KID;
+      const savedChk = JSON.parse(localStorage.getItem(CHK_KEY) || '{}');
+      document.querySelectorAll('#hitl-list li').forEach(li => {
+        const cb = li.querySelector('input[type="checkbox"]');
+        const id = cb.dataset.chk;
+        if (savedChk[id]) {
+          cb.checked = true;
+          li.classList.add('checked');
+        }
+        li.addEventListener('click', (e) => {
+          if (e.target !== cb) cb.checked = !cb.checked;
+          li.classList.toggle('checked', cb.checked);
+          savedChk[id] = cb.checked;
+          localStorage.setItem(CHK_KEY, JSON.stringify(savedChk));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
