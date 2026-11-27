@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-26T08:19:12.703Z",
-  "commit": "202fda250631979270b82ecec8d39c2cbad8c411",
-  "fileCount": 2580,
+  "generatedAt": "2026-11-27T12:38:23.685Z",
+  "commit": "507ee96cb654081008d3994549f94447079e1458",
+  "fileCount": 2596,
   "files": [
     {
       "path": ".githooks/pre-commit",
@@ -29,7 +29,7 @@
     },
     {
       "path": "academy/catalog.json",
-      "size": 7513
+      "size": 7545
     },
     {
       "path": "academy/certificate.html",
@@ -297,7 +297,7 @@
     },
     {
       "path": "academy/courses/workbox/course.json",
-      "size": 7179
+      "size": 7625
     },
     {
       "path": "academy/courses/workbox/units/00-review.md",
@@ -314,6 +314,10 @@
     {
       "path": "academy/courses/workbox/units/00d-review-1126.md",
       "size": 96512
+    },
+    {
+      "path": "academy/courses/workbox/units/00e-review-1127.md",
+      "size": 97589
     },
     {
       "path": "academy/courses/workbox/units/01-lesson.md",
@@ -10108,6 +10112,66 @@
       "size": 92368
     },
     {
+      "path": "workbox-class/1127/kits/all_starter_kits.zip",
+      "size": 128327
+    },
+    {
+      "path": "workbox-class/1127/kits/kit01_learning_report_mail.html",
+      "size": 24151
+    },
+    {
+      "path": "workbox-class/1127/kits/kit01_learning_report_mail.md",
+      "size": 4415
+    },
+    {
+      "path": "workbox-class/1127/kits/kit02_gmail_assistant.html",
+      "size": 22980
+    },
+    {
+      "path": "workbox-class/1127/kits/kit02_gmail_assistant.md",
+      "size": 4073
+    },
+    {
+      "path": "workbox-class/1127/kits/kit03_hwp_skill_docs.html",
+      "size": 22404
+    },
+    {
+      "path": "workbox-class/1127/kits/kit03_hwp_skill_docs.md",
+      "size": 3513
+    },
+    {
+      "path": "workbox-class/1127/kits/kit04_automation_design.html",
+      "size": 24334
+    },
+    {
+      "path": "workbox-class/1127/kits/kit04_automation_design.md",
+      "size": 4297
+    },
+    {
+      "path": "workbox-class/1127/kits/kit05_drive_inbox_calls.html",
+      "size": 22709
+    },
+    {
+      "path": "workbox-class/1127/kits/kit05_drive_inbox_calls.md",
+      "size": 3765
+    },
+    {
+      "path": "workbox-class/1127/kits/kit06_call_to_report_skill.html",
+      "size": 22758
+    },
+    {
+      "path": "workbox-class/1127/kits/kit06_call_to_report_skill.md",
+      "size": 3759
+    },
+    {
+      "path": "workbox-class/1127/review.html",
+      "size": 156069
+    },
+    {
+      "path": "workbox-class/1127/review.md",
+      "size": 93555
+    },
+    {
       "path": "workbox-class/fig/fig1_lifecycle.html",
       "size": 147950
     },
@@ -10193,7 +10257,7 @@
     },
     {
       "path": "workbox-class/index.html",
-      "size": 205676
+      "size": 205766
     },
     {
       "path": "workbox-class/instructor.html",
