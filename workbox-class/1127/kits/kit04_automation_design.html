@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>④ 반복 업무 자동화 설계 스타터 키트 | 11/27 바이브 코딩 AI 업무자동화 스타터 키트</title>
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-alt: #F3EFE6;
+      --navy: #1B253B;
+      --navy-light: #2B3A5A;
+      --gold: #B68F52;
+      --gold-dark: #8B6932;
+      --gold-soft: #F7F1E5;
+      --text: #1F2430;
+      --muted: #5A6275;
+      --line: #E2DACB;
+      --emerald: #2D6E52;
+      --emerald-bg: #E7F3ED;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(27, 37, 59, 0.07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15.5px;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(27, 37, 59, 0.96);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: #FFFFFF;
+      font-family: inherit;
+    }
+    .top-btn.gold {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .top-btn:hover { opacity: 0.92; }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 32px 34px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+    .hero .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #F0D29C;
+      background: rgba(182, 143, 82, 0.22);
+      padding: 4px 11px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1.38;
+    }
+    .hero p {
+      margin: 0;
+      color: #D8E0EF;
+      font-size: 15px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .lead {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .callout {
+      background: var(--gold-soft);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 14px 0 0;
+      font-size: 14.5px;
+    }
+    ul.clean {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+    ul.clean li {
+      margin-bottom: 7px;
+    }
+    code {
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 13.5px;
+      color: #9B3022;
+    }
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: var(--surface);
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-alt);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    td.col-label {
+      width: 30%;
+      background: #FCFBF8;
+    }
+    td.col-label .hint {
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    textarea.kit-input {
+      width: 100%;
+      border: 1px dashed #CBBFA8;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font: inherit;
+      font-size: 14px;
+      line-height: 1.55;
+      background: #FCFBF9;
+      color: var(--text);
+      resize: vertical;
+    }
+    textarea.kit-input.compact {
+      font-size: 13.5px;
+      padding: 7px 9px;
+    }
+    textarea.kit-input:focus {
+      outline: 2px solid var(--gold);
+      border-style: solid;
+      background: #FFFFFF;
+    }
+    .form-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .toolbar-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn-sm {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: var(--surface-alt);
+      color: var(--navy);
+    }
+    .btn-sm.primary {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-color: var(--navy);
+    }
+    .prompt-card {
+      background: #FCFBF8;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .prompt-card:last-child { margin-bottom: 0; }
+    .prompt-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .p-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+    }
+    .prompt-head h3 {
+      margin: 0;
+      font-size: 16.5px;
+      color: var(--navy);
+    }
+    .p-desc {
+      margin: 0 0 10px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .copy-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #FFFFFF;
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy-btn.copied {
+      background: var(--emerald);
+      border-color: var(--emerald);
+    }
+    pre.prompt-body {
+      margin: 0;
+      padding: 14px 16px;
+      background: #1B253B;
+      color: #F4F6FA;
+      border-radius: 10px;
+      font-family: "Pretendard Variable", Pretendard, Consolas, monospace;
+      font-size: 13.5px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      background: #FCFBF8;
+    }
+    .checklist li:hover { background: var(--gold-soft); }
+    .checklist input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--emerald);
+      flex-shrink: 0;
+    }
+    .checklist li.checked span {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 28px;
+    }
+    @media (max-width: 720px) {
+      td.col-label { width: auto; display: block; }
+      tr { display: block; margin-bottom: 12px; }
+      td { display: block; width: 100%; }
+      thead { display: none; }
+      .hero { padding: 24px 20px; }
+    }
+    @media print {
+      .topbar, .form-toolbar, .copy-btn { display: none; }
+      body { background: #FFFFFF; font-size: 11pt; }
+      .card, .hero, .prompt-card { box-shadow: none; break-inside: avoid; }
+      pre.prompt-body { background: #F5F5F5; color: #111111; border: 1px solid #CCCCCC; }
+      textarea.kit-input { border: 1px solid #BBBBBB; background: #FFFFFF; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="top-btn" href="../review.html#sec-files" id="back-link">← 복습노트로 돌아가기</a>
+      <div class="top-actions">
+        <a class="top-btn" href="kit04_automation_design.md" download>⬇ 마크다운(.md) 저장</a>
+        <button type="button" class="top-btn gold" onclick="window.print()">🖨️ A4 인쇄 / PDF 저장</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <span class="badge">KIT 04 · 설계 · 반복 업무 자동화</span>
+      <h1>④ 반복 업무 자동화 설계 스타터 키트</h1>
+      <p>교재 279~282쪽 방식으로 반복 업무를 고르고, 입력·판단·처리·출력으로 쪼갠 뒤 트리거·조건·액션 설계서를 만듭니다.</p>
+    </header>
+
+    <section class="card">
+      <div class="section-tag">STEP 01 · CORE STRATEGY &amp; RAW MATERIALS</div>
+      <h2>1. 현장 합격/성공 공식 &amp; 폴더에 넣을 원형 자료</h2>
+      <ul class="clean"><li><strong>반복되는 일만 자동화한다:</strong> 1년에 한두 번 하는 일은 그때 시키면 됩니다. 자주 하고, 순서가 늘 같고, 시간이 꽤 들고, 옮겨 적다 실수가 나는 일 가운데 셋 이상이면 자동화 대상입니다.</li>
+<li><strong>판단과 약속은 사람 손에:</strong> 사람의 판단이 매번 다른 일, 밖으로 돈이나 약속이 나가는 일은 자동화하지 않고 사람이 합니다. 설계서에 사람 확인 지점을 꼭 적습니다.</li>
+<li><strong>반복은 대화가 아니라 스킬로:</strong> 매번 대화로 시키면 에이전트는 늘 새 일로 받아들입니다. 설계가 굳으면 스킬로, 토큰을 아끼려면 파이썬 프로그램으로 만듭니다.</li></ul>
+      <div class="callout">
+        <strong>📁 내 작업 폴더(<code>workbox/</code>)에 먼저 넣어둘 원형 자료:</strong>
+        <ul class="clean"><li><code>01_업무_목록.md</code> — 요즘 하는 업무를 반복·계속·끝남으로 나눈 목록</li>
+<li><code>02_고른_업무_순서.md</code> — 자동화할 업무 하나의 순서(이름·연락처 없이)</li></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 02 · INTERACTIVE WORKSHEET</div>
+      <h2>2. 업무 자동화 설계서</h2>
+      <p class="lead">업무 하나를 골랐을 때 채웁니다. (입력 내용은 현재 브라우저에 자동 저장됩니다.)</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:32%">설계 항목</th>
+              <th style="width:68%">나의 프로젝트 내용 작성 (예시 수정 가능)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class="col-label">
+                <strong>1. 고른 업무</strong>
+                <div class="hint">네 조건 중 셋 이상 해당하는가</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit04_automation_design_f1" rows="3" placeholder="업무 이름">매주 들어오는 신청 메일 명단 정리</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>2. 입력</strong>
+                <div class="hint">누가, 무엇을, 어디로</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit04_automation_design_f2" rows="3" placeholder="입력">신청 메일이 Gmail로 들어온다</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>3. 판단</strong>
+                <div class="hint">어떤 기준으로</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit04_automation_design_f3" rows="3" placeholder="판단">신청 조건(지역·인원)에 맞는지 본다</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>4. 처리</strong>
+                <div class="hint">무엇을 바꾸거나 옮기나</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit04_automation_design_f4" rows="3" placeholder="처리">명단 표에 옮겨 적는다</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>5. 출력</strong>
+                <div class="hint">결과를 어디로</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit04_automation_design_f5" rows="3" placeholder="출력">확인 메일 초안을 만들어 나에게 보여 준다</textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-label">
+                <strong>6. 트리거·조건·액션</strong>
+                <div class="hint">언제·무엇이면·무엇을</div>
+              </td>
+              <td>
+                <textarea class="kit-input" data-field="kit04_automation_design_f6" rows="3" placeholder="한 문장">매일 9시, 제목에 &#x27;신청&#x27;이 있으면, 명단에 추가하고 나에게 알린다</textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-toolbar">
+        <span style="font-size:13px; color:var(--muted);" id="save-status">💾 입력 시 브라우저에 자동 저장됩니다.</span>
+        <div class="toolbar-btns">
+          <button type="button" class="btn-sm primary" id="copy-form-btn">📋 내가 작성한 양식 전체 복사</button>
+          <button type="button" class="btn-sm" id="reset-form-btn">↺ 기본 예시로 되돌리기</button>
+        </div>
+      </div>
+    </section>
+
+    
+      <section class="card">
+        <div class="section-tag">CHECK</div>
+        <h2>자동화하기 좋은 일 네 가지 조건</h2>
+        <p class="lead">셋 이상이면 자동화를 고려합니다.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>조건</th><th>내 업무는?</th></tr></thead>
+            <tbody><tr><td>자주 한다</td><td><textarea class="kit-input compact" data-field="kit04_automation_design_et_1_1" rows="2" placeholder="예 / 아니오"></textarea></td></tr><tr><td>순서가 늘 같다</td><td><textarea class="kit-input compact" data-field="kit04_automation_design_et_2_1" rows="2" placeholder="예 / 아니오"></textarea></td></tr><tr><td>시간이 꽤 든다</td><td><textarea class="kit-input compact" data-field="kit04_automation_design_et_3_1" rows="2" placeholder="예 / 아니오"></textarea></td></tr><tr><td>옮겨 적다 실수가 난다</td><td><textarea class="kit-input compact" data-field="kit04_automation_design_et_4_1" rows="2" placeholder="예 / 아니오"></textarea></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 03 · COPY-PASTE PROMPTS FOR AGENT</div>
+      <h2>3. 바로 복사해 쓰는 실전 요청문 (프롬프트)</h2>
+      <p class="lead">오른쪽 <strong>[요청문 원클릭 복사]</strong> 버튼을 누른 뒤 Antigravity(AGY)·Codex·Claude Code·타임리 에이전트에 붙여넣으세요. 대괄호 <code>[...]</code> 부분을 내 상황에 맞게 바꿔 쓰면 됩니다.</p>
+      
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 01 · 에이전트·챗봇 · 예외 찾기</span>
+              <h3>교재 280쪽 업무 분석 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit04_automation_design_prompt_1">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">네 단계를 적은 뒤</p>
+          <pre class="prompt-body" id="kit04_automation_design_prompt_1">너는 사무 업무 분석가다. 아래는 내가 반복하는 업무를 입력·판단·처리·출력 네 단계로 적은 것이다.
+내가 놓쳤을 수 있는 예외 상황을 단계마다 두 개씩 질문 형태로 물어봐 줘.
+내가 적지 않은 단계를 새로 만들지 말고, 답은 &#x27;단계 / 놓쳤을 수 있는 예외 / 확인 질문&#x27; 세 칸 표로 줘.
+모르는 업무 용어가 있으면 추측하지 말고 나에게 물어봐.
+
+입력: [ ]
+판단: [ ]
+처리: [ ]
+출력: [ ]</pre>
+        </div>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <div>
+              <span class="p-badge">PROMPT 02 · 에이전트 · 설계서와 스킬</span>
+              <h3>트리거·조건·액션 설계 후 스킬로 만드는 요청문</h3>
+            </div>
+            <button type="button" class="copy-btn" data-copy-target="kit04_automation_design_prompt_2">📋 요청문 원클릭 복사</button>
+          </div>
+          <p class="p-desc">예외까지 정리한 뒤</p>
+          <pre class="prompt-body" id="kit04_automation_design_prompt_2">[02_고른_업무_순서.md]와 예외 표를 바탕으로 자동화 설계서를 만들어 줘.
+1. 트리거(언제), 조건(무엇이면), 액션(무엇을)을 문장으로.
+2. 사람이 확인할 지점과 자동화하지 않을 일을 따로 표시.
+3. 가장 단순한 버전부터 시작하고, 확장 버전은 나중 단계로 나눠 줘.
+4. 내가 승인하면 이 설계를 스킬로 만들어 줘. 토큰을 아낄 수 있는 부분은 파이썬 프로그램으로 바꿀 수 있는지도 알려 줘.
+승인 전에는 실행하지 마.</pre>
+        </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">STEP 04 · HUMAN-IN-THE-LOOP</div>
+      <h2>4. 사람 승인(Human-in-the-Loop) 최종 검수 점검표</h2>
+      <p class="lead">AI가 초안을 10배 빠르게 만들어 주더라도, 최종 책임과 결재 도장은 반드시 사람(디렉터)이 찍습니다.</p>
+      <ul class="checklist" id="hitl-list">
+        <li><input type="checkbox" data-chk="kit04_automation_design_chk_1"><span>정말 반복되는 일인가(네 조건 중 셋 이상)?</span></li>
+<li><input type="checkbox" data-chk="kit04_automation_design_chk_2"><span>판단이나 약속이 들어가는 단계를 사람에게 남겼는가?</span></li>
+<li><input type="checkbox" data-chk="kit04_automation_design_chk_3"><span>신청자 이름·연락처 같은 실제 개인정보를 넣지 않았는가?</span></li>
+<li><input type="checkbox" data-chk="kit04_automation_design_chk_4"><span>단순 버전을 먼저 돌려 보고 결과를 확인했는가?</span></li>
+
+      </ul>
+    </section>
+
+    <p class="footer-note">바이브 코딩 기반 AI 업무자동화 11/27 · 유정근 (Ryu JeongKun) | 나의 업무함(workbox) 스타터 키트</p>
+  </main>
+
+  <script>
+    (function() {
+      const KID = "kit04_automation_design";
+      const NS = "workbox_vibe_20261127_";
+      // 양식 입력값 저장/복원
+      const STORE_KEY = 'kit_form_' + NS + KID;
+      const inputs = document.querySelectorAll('.kit-input');
+      const defaults = {};
+      inputs.forEach(el => { defaults[el.dataset.field] = el.value; });
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      inputs.forEach(el => {
+        const f = el.dataset.field;
+        if (Object.prototype.hasOwnProperty.call(saved, f)) {
+          el.value = saved[f];
+        }
+        el.addEventListener('input', () => {
+          saved[f] = el.value;
+          localStorage.setItem(STORE_KEY, JSON.stringify(saved));
+          const st = document.getElementById('save-status');
+          if (st) st.textContent = '✅ 방금 브라우저에 자동 저장되었습니다.';
+        });
+      });
+
+      // 텍스트 복사 헬퍼
+      function copyText(text, onDone) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(onDone).catch(() => fallbackCopy(text, onDone));
+        } else {
+          fallbackCopy(text, onDone);
+        }
+      }
+      function fallbackCopy(text, onDone) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        onDone();
+      }
+
+      // 프롬프트 원클릭 복사
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = document.getElementById(btn.dataset.copyTarget);
+          if (!target) return;
+          copyText(target.innerText, () => {
+            const orig = btn.textContent;
+            btn.textContent = '✅ 복사 완료!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.textContent = orig;
+              btn.classList.remove('copied');
+            }, 1800);
+          });
+        });
+      });
+
+      // 작성 양식 전체 복사
+      const copyFormBtn = document.getElementById('copy-form-btn');
+      if (copyFormBtn) {
+        copyFormBtn.addEventListener('click', () => {
+          const lines = ['[' + "④ 반복 업무 자동화 설계 스타터 키트" + ' - 작성본]', ''];
+          document.querySelectorAll('table tbody tr').forEach(tr => {
+            const labelEl = tr.querySelector('.col-label strong');
+            const ta = tr.querySelector('textarea.kit-input');
+            if (labelEl && ta) {
+              lines.push('■ ' + labelEl.innerText.trim());
+              lines.push(ta.value.trim() || '(미입력)');
+              lines.push('');
+            } else if (ta) {
+              lines.push([...tr.cells].map(td => {
+                const t = td.querySelector('textarea');
+                return t ? (t.value.trim() || '(미입력)') : td.innerText.trim();
+              }).join(' | '));
+            }
+          });
+          copyText(lines.join('\n'), () => {
+            const orig = copyFormBtn.textContent;
+            copyFormBtn.textContent = '✅ 양식 전체 복사 완료!';
+            setTimeout(() => { copyFormBtn.textContent = orig; }, 1800);
+          });
+        });
+      }
+
+      // 초기화
+      const resetBtn = document.getElementById('reset-form-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (!confirm('작성한 내용을 지우고 기본 예시로 되돌릴까요?')) return;
+          localStorage.removeItem(STORE_KEY);
+          Object.keys(saved).forEach(f => { delete saved[f]; });
+          inputs.forEach(el => { el.value = defaults[el.dataset.field] || ''; });
+        });
+      }
+
+      // HITL 체크리스트 저장
+      const CHK_KEY = 'kit_chk_' + NS + KID;
+      const savedChk = JSON.parse(localStorage.getItem(CHK_KEY) || '{}');
+      document.querySelectorAll('#hitl-list li').forEach(li => {
+        const cb = li.querySelector('input[type="checkbox"]');
+        const id = cb.dataset.chk;
+        if (savedChk[id]) {
+          cb.checked = true;
+          li.classList.add('checked');
+        }
+        li.addEventListener('click', (e) => {
+          if (e.target !== cb) cb.checked = !cb.checked;
+          li.classList.toggle('checked', cb.checked);
+          savedChk[id] = cb.checked;
+          localStorage.setItem(CHK_KEY, JSON.stringify(savedChk));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
